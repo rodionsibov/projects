@@ -1,4 +1,3 @@
 # my-rep
-repository about my life
-<p>
-  I want to learn coding
+
+I want to learn coding
