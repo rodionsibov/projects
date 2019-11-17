@@ -1,3 +1,3 @@
 # web-projects
 
-I going to learn coding
+I am going to learn coding
