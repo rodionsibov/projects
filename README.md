@@ -2,3 +2,4 @@
 
 I am going to learn coding
 and ...
+use pull command
