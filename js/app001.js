@@ -1,17 +1,9 @@
-const palindrome = str => {
-    if (
-	str ===
-	    str
-	    .split("")
-	    .reverse()
-	    .join("")
-    ) {
-	console.log("it is");
-    } else {
-	console.log("false");
-    }
-};
+let startAt = performance.now();
 
-palindrome('cac');	
+for (let i = 0; i < 299; i++) {
+    console.log(i);
+}
 
-
+let endAt = performance.now();
+console.log(`${endAt - startAt} took ms to execute`);
+    

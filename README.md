@@ -1,5 +1,3 @@
 # web-projects
 
 I am going to learn coding
-and ...
-here we go )
