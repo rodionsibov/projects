@@ -1,10 +1,11 @@
-Web-projects
+# Web-projects
 
-cooking
-js-practice
-js-scroll
-laptop-ui-master
-modal-js-css
-pure-css-hamburger-menu
-visual-effect-js
+** image-slider
+** cooking
+** js-practice
+** js-scroll
+** laptop-ui-master
+** modal-js-css
+** pure-css-hamburger-menu
+** visual-effect-js
 
