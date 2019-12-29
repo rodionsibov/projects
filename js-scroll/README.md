@@ -1,1 +1,1 @@
-How to do the smooth scroll effect in vanilla javascript.
+How to do the smooth scroll effect in Vanilla Javascript.
