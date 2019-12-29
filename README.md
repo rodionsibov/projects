@@ -1,6 +1,6 @@
 # Web-projects
 
-## image-slider
+* image-slider
 * cooking
 * js-practice
 * js-scroll
