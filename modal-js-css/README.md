@@ -1,0 +1,1 @@
+How to create a simple modal in javascript and css. Does not use Bootstrap or any other css frameworks or javascript frameworks.

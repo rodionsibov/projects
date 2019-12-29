@@ -1,0 +1,1 @@
+Explore how to do visual effects in vanilla javascript. A modern and simple way to do animations on scroll.

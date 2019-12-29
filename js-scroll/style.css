@@ -1,0 +1,30 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+span {
+
+    font-weight: bold;
+}
+
+
+.box1 {
+    height: 100vh;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box2 {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+.photo {
+    width: 60%;
+}
