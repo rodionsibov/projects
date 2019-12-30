@@ -1,5 +1,6 @@
 # Web-projects
 
+* blurry-loading
 * background-changer
 * simple-form-design
 * image-slider
