@@ -1,2 +1,5 @@
-const isEven = number => number % 2 === 0;
-console.log(!!isEven(43));
+
+
+const isNeutralSoldier = (color, shield) => color !== "red" && shield === "black";
+
+console.log(isNeutralSoldier("blsdfs", "black"));
