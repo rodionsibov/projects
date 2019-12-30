@@ -1,5 +1,6 @@
 # Web-projects
 
+* simple-form-design
 * image-slider
 * cooking
 * js-practice
