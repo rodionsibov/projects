@@ -1,0 +1,39 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+section {
+    background-image: url(./StockSnap_ZWO9JIXREK.jpg);
+    background-size: cover;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    filter: blur(100px);
+}
+
+
+
+h1 {
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+
+}
+
+
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
