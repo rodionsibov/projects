@@ -1,4 +1,4 @@
-
+sdssdsdd
 
 const isNeutralSoldier = (color, shield) => (color !== "red") && shield === "black";
 
