@@ -1,0 +1,1 @@
+Course card UI design

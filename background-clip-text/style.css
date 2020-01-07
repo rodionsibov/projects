@@ -1,0 +1,26 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+
+.image-mask {
+    background-size: cover;
+    background: url('./photo-1572376313139-2d2c6ff7de20.jpeg') no-repeat fixed;
+    background-position: center;
+    text-align: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 30vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+body {
+    height: 150vh;
+}

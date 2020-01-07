@@ -1,15 +1,22 @@
 # Web-projects
 
-* rain-drops
-* blurry-loading
 * background-changer
-* simple-form-design
+* background-clip-text
+* bg-image-zoom-rotate-css
+* blurry-loading
+* course-card-ui-design
+* css-animation-box
+* css-flip-card
+* form-validation-edit
 * image-slider
-* cooking
 * js-practice
 * js-scroll
 * laptop-ui-master
 * modal-js-css
+* pulse-effect
 * pure-css-hamburger-menu
+* rain-drops
+* responsive-navbar
+* simple-form-design
+* simple-landing-page-cooking-master
 * visual-effect-js
-

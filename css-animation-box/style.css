@@ -1,0 +1,46 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+htlm {
+    background: #f2f2f2;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: #FFF;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    animation-name: movingBox;
+    animation-duration: 1300ms;
+    animation-iteration-count: infinite;
+    /* Causes the animation to reverse on every odd iteration */
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes movingBox {
+    0% {
+	transform: translate(0, 0);
+	opacity: 0.3;
+    }
+
+    25% {
+	opacity: 0.9;
+    }
+
+    50% {
+	transform: translate(200px, 0px);
+	opacity: 0.2;
+    }
+
+    100% {
+	transform: translate(30px, 100px);
+	opacity: 0.8;
+    }
+}
