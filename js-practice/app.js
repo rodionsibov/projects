@@ -1,7 +1,11 @@
-const getTypeOfSentence = (sentence) => {
-const lastChar = sentence[sentence.length - 1];
-    return `Last character is "${lastChar}"`;
+const printNumbers = (lastNumber) => {
+  let i = 1;
 
+  while (i <= lastNumber) {
+    console.log(i);
+    i = i + 1;
+  }
+  console.log('finished!');
 }
 
-console.log(getTypeOfSentence("wer"));
+printNumbers(33);

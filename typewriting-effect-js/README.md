@@ -1,0 +1,1 @@
+Typewriting effect with Javascript

@@ -1,0 +1,39 @@
+body {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.intro {
+    display: flex;
+    height: 100vh;
+    background: url("https://images.pexels.com/photos/3429875/pexels-photo-3429875.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover;
+}
+
+.typing {
+    margin-left: 10px;
+    position: relative;
+}
+
+.typing::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    width: 1px;
+    height: 2.1rem;
+    border-right: 2px solid black;
+    animation: blink 0.5s infinite ease;
+}
+
+
+@keyframes blink {
+    0% {
+	opacity: 0;
+    }
+    100% {
+	opacity: 1;
+    }
+}
