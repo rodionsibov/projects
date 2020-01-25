@@ -1,5 +1,5 @@
 * [animated-navbar](https://rodionsibov.github.io/projects/animated-navbar/index.html)
-* [app-random-dog](https://rodionsibov.github.io/projects/app-random-dog/index.html)
+
 * [background-changer](https://rodionsibov.github.io/projects/background-changer/index.html)
 * [background-clip-text]()
 * [bg-image-zoom-rotate-css]()
@@ -27,3 +27,4 @@
 * [svg-animation-text-css]()
 * [transition-background-css3]()
 * [typewriting-effect-js]()
+* [app-random-dog](https://rodionsibov.github.io/projects/app-random-dog/index.html)
