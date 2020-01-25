@@ -1,6 +1,6 @@
 # Web-projects
 
-* [background-changer](./animated-navbar/index.html)
+* [background-changer](https://raw.githubusercontent.com/rodionsibov/projects/master/animated-navbar/index.html)
 * background-clip-text
 * bg-image-zoom-rotate-css
 * blurry-loading
