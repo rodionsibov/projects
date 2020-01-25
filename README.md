@@ -1,6 +1,6 @@
 # Web-projects
 
-* background-changer
+* [background-changer](https://github.com/rodionsibov/projects/animated-navbar/index.html)
 * background-clip-text
 * bg-image-zoom-rotate-css
 * blurry-loading
