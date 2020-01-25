@@ -1,4 +1,4 @@
-* [animated-navbar](https://raw.githubusercontent.com/rodionsibov/projects/master/animated-navbar/index.html)
+* [animated-navbar](https://rodionsibov.github.io/projects/animated-navbar/index.html)
 * [app-random-dog]()
 * [background-changer]()
 * [background-clip-text]()
