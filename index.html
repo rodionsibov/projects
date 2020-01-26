@@ -20,23 +20,46 @@
 
 }
 
+p {
+    font-size: 1.2em;
+}
+
 h1 {
-    animation: pulse 2s infinite;
-    font-size: 64px;
+    font-size: 2em;
+    padding: 10px;
+}
+
+header {
+    background-image: radial-gradient( circle farthest-corner at 7.4% 45.1%,  rgba(236,206,251,1) 0%, rgba(205,237,246,1) 45.1%, rgba(227,251,252,1) 78.4%, rgba(230,247,235,1) 90% );
+
+
+    color: #4d4646;
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin: 100px 0 50px 0;
+    margin: 0 0 50px 0;
+    height: 30vh;
+    flex-direction: column;
+}
+
+ul, a {
+    line-height: 170%;
+    transition: 0.3s ease-in;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-size: 1.2em;
 }
 
 
 body {
-    background-image: radial-gradient( circle farthest-corner at 7.4% 45.1%,  rgba(236,206,251,1) 0%, rgba(205,237,246,1) 45.1%, rgba(227,251,252,1) 78.4%, rgba(230,247,235,1) 90% );
     animation: fadeUp 0.5s ease-in-out 0.2s forwards;
     opacity: 0;
-
+   
 }
 
 section {
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,15 +68,9 @@ section {
 
 a:hover {
     opacity: 0.5;
+
 }
 
-ul, a {
-    transition: 0.3s ease-in;
-    text-decoration: none;
-    list-style: none;
-    color: black;
-    font-size: 18px;
-}
 
 @keyframes fadeUp {
         from {
@@ -64,65 +81,80 @@ ul, a {
 	opacity: 1;
 	transform: translateY(0px);
     }
+}
 
-@keyframes pulse {
-    0% {
-	transform: scale(0.9);
-	box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
-    }
-    
-    70% {
-	transform: scale(1.4);
-	box-shadow: 0 0 0 40px rgba(255, 255, 255, 0);
-    }
-
-    100% {
-	transform: scale(0.9);
-	box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-    }
+.box {
+    font-size: 5em;
+    position: absolute;
+    top: 260px;
+    left: 70px;
+    animation: movingHand 0.4s 9 ease-in-out alternate;
+    transform-origin: 100px 100px;;
 }
 
 
-</style>
+@keyframes movingHand {
+    0% {
+	transform: rotate(10deg);
+    }
+    100% {
+	transform: rotate(0deg);
+    }
+    
+}
+
+
+
+
+    </style>
 
 </head>
 <body>
 
-<h1>My web projects</h1>
+<header>
+<h1>Projects to Practise My Web Development Skills</h1>
+<p>The more you practice, the better your skills will become 😉</p>
+
+</header>
+<div class="box" title="Hello! How are you?">👋</div>
+
 <section>
+
 <ul>
 
 <li><a href="https://rodionsibov.github.io/projects/animated-navbar/index.html">Animated Navbar</a></li>
 
 <li><a href="https://rodionsibov.github.io/projects/background-changer/index.html">Background Changer</a></li>
 <li><a href="https://rodionsibov.github.io/projects/background-clip-text/index.html">Background Clip Text</a></li>
-<li><a href="https://rodionsibov.github.io/projects/bg-image-zoom-rotate-css/index.html">bg-image-zoom-rotate-css</a></li>
+<li><a href="https://rodionsibov.github.io/projects/bg-image-zoom-rotate-css/index.html">Bg Image Zoom Rotate CSS</a></li>
 
-<li><a href="https://rodionsibov.github.io/projects/blurry-loading/index.html">blurry-loading</a></li>
-<li><a href="https://rodionsibov.github.io/projects/course-card-ui-design/index.html">course-card-ui-design</a></li>
-<li><a href="https://rodionsibov.github.io/projects/css-animation-box/index.html">css-animation-box</a></li>
-<li><a href="https://rodionsibov.github.io/projects/css-flip-card/index.html">css-flip-card</a></li>
+<li><a href="https://rodionsibov.github.io/projects/blurry-loading/index.html">Blurry Loading</a></li>
+<li><a href="https://rodionsibov.github.io/projects/course-card-ui-design/index.html">Course Card UI Design</a></li>
+<li><a href="https://rodionsibov.github.io/projects/css-animation-box/index.html">CSS Animation Box</a></li>
+<li><a href="https://rodionsibov.github.io/projects/css-flip-card/index.html">CSS Flip Card</a></li>
 
-<li><a href="https://rodionsibov.github.io/projects/image-animations-html-css/index.html">image-animations-html-css</a></li>
-<li><a href="https://rodionsibov.github.io/projects/image-gallery-html-css/index.html">image-gallery-html-css</a></li>
-<li><a href="https://rodionsibov.github.io/projects/image-slider/index.html">image-slider</a></li>
+<li><a href="https://rodionsibov.github.io/projects/image-animations-html-css/index.html">Image Animations HTML CSS</A></li>
+<li><a href="https://rodionsibov.github.io/projects/image-gallery-html-css/index.html">Image Gallery HTML CSS</a></li>
+<li><a href="https://rodionsibov.github.io/projects/image-slider/index.html">Image Slider</a></li>
 
-<li><a href="https://rodionsibov.github.io/projects/input-animations-html-css/index.html">input-animations-html-css</a></li>
-<li><a href="https://rodionsibov.github.io/projects/js-practice/index.html">js-practice</a></li>
-<li><a href="https://rodionsibov.github.io/projects/js-scroll/index.html">js-scroll</a></li>
-<li><a href="https://rodionsibov.github.io/projects/landing-page/index.html">landing-page</a></li>
-<li><a href="https://rodionsibov.github.io/projects/laptop-ui-master/index.html">laptop-ui-master</a></li>
-<li><a href="https://rodionsibov.github.io/projects/modal-js-css/index.html">modal-js-css</a></li>
-<li><a href="https://rodionsibov.github.io/projects/pulse-effect/index.html">pulse-effect</a></li>
-<li><a href="https://rodionsibov.github.io/projects/pure-css-hamburger-menu/index.html">pure-css-hamburger-menu</a></li>
-<li><a href="https://rodionsibov.github.io/projects/rain-drops/index.html">rain-drops</a></li>
-<li><a href="https://rodionsibov.github.io/projects/responsive-navbar/index.html">responsive-navbar</a></li>
-<li><a href="https://rodionsibov.github.io/projects/simple-form-design/index.html">simple-form-design</a></li>
-<li><a href="https://rodionsibov.github.io/projects/simple-landing-page-cooking-master/index.html">simple-landing-page-cooking-master</a></li>
-<li><a href="https://rodionsibov.github.io/projects/svg-animation-text-css/index.html">svg-animation-text-css</a></li>
-<li><a href="https://rodionsibov.github.io/projects/transition-background-css3/index.html">transition-background-css3</a></li>
-<li><a href="https://rodionsibov.github.io/projects/typewriting-effect-js/index.html">typewriting-effect-js</a></li>
+<li><a href="https://rodionsibov.github.io/projects/input-animations-html-css/index.html">Input Animations HTML CSS</a></li>
+
+<li><a href="https://rodionsibov.github.io/projects/js-scroll/index.html">JS Scroll</a></li>
+<li><a href="https://rodionsibov.github.io/projects/landing-page/index.html">Landing Page</a></li>
+<li><a href="https://rodionsibov.github.io/projects/laptop-ui-master/index.html">Laptop UI Master</a></li>
+<li><a href="https://rodionsibov.github.io/projects/modal-js-css/index.html">Modal JS CSS</a></li>
+<li><a href="https://rodionsibov.github.io/projects/pulse-effect/index.html">Pulse Effect</a></li>
+<li><a href="https://rodionsibov.github.io/projects/pure-css-hamburger-menu/index.html">Pure CSS Hamburger Menu</a></li>
+<li><a href="https://rodionsibov.github.io/projects/rain-drops/index.html">Rain Drops</a></li>
+<li><a href="https://rodionsibov.github.io/projects/responsive-navbar/index.html">Responsive Navbar</a></li>
+<li><a href="https://rodionsibov.github.io/projects/simple-form-design/index.html">Simple Form Design</a></li>
+<li><a href="https://rodionsibov.github.io/projects/simple-landing-page-cooking-master/index.html">Simple Landing Page Cooking-Master</a></li>
+<li><a href="https://rodionsibov.github.io/projects/svg-animation-text-css/index.html">SVG Animation Text CSS</a></li>
+<li><a href="https://rodionsibov.github.io/projects/transition-background-css3/index.html">Transition Background CSS3</a></li>
+<li><a href="https://rodionsibov.github.io/projects/typewriting-effect-js/index.html">Typewriting Effect Js</a></li>
 </ul>
 </section>
+
+</footer>
 </body>
 </html>
