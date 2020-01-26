@@ -22,18 +22,21 @@
 
 p {
     font-size: 1.2em;
+    animation: fadeUp 0.5s ease-in-out 0.8s forwards;
+    opacity: 0;
 }
 
 h1 {
     font-size: 2em;
     padding: 10px;
+    animation: fadeUp 0.5s ease-in-out 0.6s forwards;
+    opacity: 0;
 }
 
 header {
-    background-image: radial-gradient( circle farthest-corner at 7.4% 45.1%,  rgba(236,206,251,1) 0%, rgba(205,237,246,1) 45.1%, rgba(227,251,252,1) 78.4%, rgba(230,247,235,1) 90% );
-
-
-    color: #4d4646;
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,11 +58,12 @@ ul, a {
 body {
     animation: fadeUp 0.5s ease-in-out 0.2s forwards;
     opacity: 0;
-   
+
 }
 
 section {
-    
+    animation: fadeUp 0.5s ease-in-out 1.2s forwards;
+    opacity: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,22 +87,22 @@ a:hover {
     }
 }
 
+
 .box {
     font-size: 5em;
     position: absolute;
-    top: 260px;
+    top: 60px;
     left: 70px;
-    animation: movingHand 0.4s 9 ease-in-out alternate;
-    transform-origin: 100px 100px;;
+    animation: movingUp 0.9s infinite ease-in-out alternate;
 }
 
 
-@keyframes movingHand {
+@keyframes movingUp {
     0% {
-	transform: rotate(10deg);
+	transform: translateY(0);
     }
     100% {
-	transform: rotate(0deg);
+	transform: translateY(5px);
     }
     
 }
@@ -116,7 +120,8 @@ a:hover {
 <p>The more you practice, the better your skills will become 😉</p>
 
 </header>
-<div class="box" title="Hello! How are you?">👋</div>
+<div class="box" title="Hello! How are you?"> 👨‍💻</div>
+
 
 <section>
 
