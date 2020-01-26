@@ -1,52 +1,101 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Projects</title>
+<title>Projects</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Krub&display=swap" rel="stylesheet">
 
-    <style>
+<style>
 
-      * {
-	  margin: 0px;
-	  padding: 0px;
-	  box-sizing: border-box;
-      }
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Krub', sans-serif;
 
-      body {
-	  background-color: #F8F9FD;
-	  font-family: 'Muli', sans-serif;
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  min-height: 100vh;
-      }
+}
 
-      a {
-	  
-      }
-      
-    </style>
+h1 {
+    animation: pulse 2s infinite;
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    margin: 100px 0 50px 0;
+}
 
-  </head>
-  <body>
+
+body {
+    background-image: radial-gradient( circle farthest-corner at 7.4% 45.1%,  rgba(236,206,251,1) 0%, rgba(205,237,246,1) 45.1%, rgba(227,251,252,1) 78.4%, rgba(230,247,235,1) 90% );
+    animation: fadeUp 0.5s ease-in-out 0.2s forwards;
+    opacity: 0;
+
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 100px 100px 100px;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+ul, a {
+    transition: 0.3s ease-in;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-size: 18px;
+}
+
+@keyframes fadeUp {
+        from {
+	opacity: 0;
+	transform: translateY(-20px);
+    }
+    to {
+	opacity: 1;
+	transform: translateY(0px);
+    }
+
+@keyframes pulse {
+    0% {
+	transform: scale(0.9);
+	box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    }
+    
+    70% {
+	transform: scale(1.4);
+	box-shadow: 0 0 0 40px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+	transform: scale(0.9);
+	box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+
+</style>
+
+</head>
+<body>
+
 <h1>My web projects</h1>
-    <ul>
-      <li><a href="https://rodionsibov.github.io/projects/animated-navbar/index.html">animated-navbar</a></li>
+<section>
+<ul>
 
-    </ul>
+<li><a href="https://rodionsibov.github.io/projects/animated-navbar/index.html">Animated Navbar</a></li>
 
-
-
-<li><a href="https://rodionsibov.github.io/projects/animated-navbar/index.html">animated-navbar</a></li>
-
-<li><a href="https://rodionsibov.github.io/projects/background-changer/index.html">background-changer</a></li>
-<li><a href="https://rodionsibov.github.io/projects/background-clip-text/index.html">background-clip-text</a></li>
+<li><a href="https://rodionsibov.github.io/projects/background-changer/index.html">Background Changer</a></li>
+<li><a href="https://rodionsibov.github.io/projects/background-clip-text/index.html">Background Clip Text</a></li>
 <li><a href="https://rodionsibov.github.io/projects/bg-image-zoom-rotate-css/index.html">bg-image-zoom-rotate-css</a></li>
 
 <li><a href="https://rodionsibov.github.io/projects/blurry-loading/index.html">blurry-loading</a></li>
@@ -58,21 +107,22 @@
 <li><a href="https://rodionsibov.github.io/projects/image-gallery-html-css/index.html">image-gallery-html-css</a></li>
 <li><a href="https://rodionsibov.github.io/projects/image-slider/index.html">image-slider</a></li>
 
-<li><a href="https://rodionsibov.github.io/projects//index.html">input-animations-html-css</a></li>
-<li><a href="https://rodionsibov.github.io/projects//index.html">js-practice</a></li>
-<li><a href="https://rodionsibov.github.io/projects//index.html">js-scroll</a></li>
-<li><a href="https://rodionsibov.github.io/projects//index.html">landing-page</a></li>
-<li><a href="https://rodionsibov.github.io/projects//index.html">laptop-ui-master</a></li>
-<li><a href="https://rodionsibov.github.io/projects//index.html">modal-js-css</a></li>
-<li><a href="https://rodionsibov.github.io/projects//index.html">pulse-effect</a></li>
-<li><a href="https://rodionsibov.github.io/projects//index.html">pure-css-hamburger-menu</a></li>
-<li><a href="https://rodionsibov.github.io/projects//index.html">rain-drops</a></li>
-<li><a href="https://rodionsibov.github.io/projects//index.html">responsive-navbar</a></li>
-<li><a href="https://rodionsibov.github.io/projects//index.html">simple-form-design</a></li>
-<li><a href="https://rodionsibov.github.io/projects//index.html">simple-landing-page-cooking-master</a></li>
-<li><a href="https://rodionsibov.github.io/projects//index.html">svg-animation-text-css</a></li>
-<li><a href="https://rodionsibov.github.io/projects//index.html">transition-background-css3</a></li>
-<li><a href="https://rodionsibov.github.io/projects//index.html">typewriting-effect-js</a></li>
-
-  </body>
+<li><a href="https://rodionsibov.github.io/projects/input-animations-html-css/index.html">input-animations-html-css</a></li>
+<li><a href="https://rodionsibov.github.io/projects/js-practice/index.html">js-practice</a></li>
+<li><a href="https://rodionsibov.github.io/projects/js-scroll/index.html">js-scroll</a></li>
+<li><a href="https://rodionsibov.github.io/projects/landing-page/index.html">landing-page</a></li>
+<li><a href="https://rodionsibov.github.io/projects/laptop-ui-master/index.html">laptop-ui-master</a></li>
+<li><a href="https://rodionsibov.github.io/projects/modal-js-css/index.html">modal-js-css</a></li>
+<li><a href="https://rodionsibov.github.io/projects/pulse-effect/index.html">pulse-effect</a></li>
+<li><a href="https://rodionsibov.github.io/projects/pure-css-hamburger-menu/index.html">pure-css-hamburger-menu</a></li>
+<li><a href="https://rodionsibov.github.io/projects/rain-drops/index.html">rain-drops</a></li>
+<li><a href="https://rodionsibov.github.io/projects/responsive-navbar/index.html">responsive-navbar</a></li>
+<li><a href="https://rodionsibov.github.io/projects/simple-form-design/index.html">simple-form-design</a></li>
+<li><a href="https://rodionsibov.github.io/projects/simple-landing-page-cooking-master/index.html">simple-landing-page-cooking-master</a></li>
+<li><a href="https://rodionsibov.github.io/projects/svg-animation-text-css/index.html">svg-animation-text-css</a></li>
+<li><a href="https://rodionsibov.github.io/projects/transition-background-css3/index.html">transition-background-css3</a></li>
+<li><a href="https://rodionsibov.github.io/projects/typewriting-effect-js/index.html">typewriting-effect-js</a></li>
+</ul>
+</section>
+</body>
 </html>
