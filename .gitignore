@@ -3,5 +3,3 @@
 .#*
 gitignore
 
-# server auth directory
-server/
