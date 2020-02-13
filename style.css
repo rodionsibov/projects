@@ -2,68 +2,172 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Krub', sans-serif;
-
-}
-
-p {
-    font-size: 1.2em;
-    animation: fadeUp 0.5s ease-in-out 0.8s forwards;
-    opacity: 0;
-    margin: 10px 0 0 0;
-    
-}
-
-h1 {
-    font-size: 2em;
-    animation: fadeUp 0.5s ease-in-out 0.6s forwards;
-    opacity: 0;
-    margin: 30px 0 0 0;
-}
-
-header {
-    background-color: #FF3CAC;
-    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    flex-direction: column;
-    position: relative;
-}
-
-ul, a {
-    line-height: 170%;
-    transition: 0.3s ease-in;
-    text-decoration: none;
-    list-style: none;
-    color: black;
-    font-size: 1.2em;
-    margin: 100px auto;
-    
-}
-
-a:hover {
-    color: rgba(0,0,0,0.5);
 
 }
 
 body {
+    user-select: none;
+}
+
+.welcome-screen {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.background {
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
     animation: fadeUp 0.5s ease-in-out 0.2s forwards;
     opacity: 0;
 
-
 }
 
-section {
-    animation: fadeUp 0.5s ease-in-out 1.2s forwards;
+.photo {
+    animation: movingUp 1s infinite ease-in-out alternate;   position: absolute;
+    animation: fadeUp 0.5s ease-in-out 0.2s forwards;
     opacity: 0;
+    position: absolute;
+    top: 116px;
+    margin: 0 auto;
+}
+
+img {
+    width: 300px;
+}
+
+
+.welcome {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+    animation: fadeUp 0.5s ease-in-out 0.4s forwards;
+    opacity: 0;
 }
 
+
+.presentation {
+    animation: fadeUp 0.5s ease-in-out 0.4s forwards;
+    opacity: 0;
+    text-align: center;
+    padding: 0 20px;
+    font-size: 44px;
+    margin-top: 50px;
+    color: #784BA0;
+} 
+
+.description {
+    animation: fadeUp 0.5s ease-in-out 0.6s forwards;
+    opacity: 0;
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: center;
+    
+
+    margin-top: 10px;
+}
+
+
+.btn {
+    margin-top: 40px;
+    text-align: center;
+    padding: 10px 20px;
+
+    background: #5A5D68;
+    border-radius: 3px;
+    color: #eee;
+    font-size: 14px;
+    font-family: sans-serif;
+    transition: 0.2s;
+    user-select: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background: #75787F;
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+
+}
+
+.btn:active {
+    background: #4A4D56;
+    transform: translateY(1px);
+}
+
+a {
+    line-height: 170%;
+    text-decoration: none;
+    color: white;
+
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 80px;
+
+    z-index: 100;
+    top: 0;
+    opacity: 0.9;
+    position: fixed;
+    justify-content: center;
+
+
+}
+
+.beautiful-phrases {
+    padding: 5px 10px;
+
+    border-radius: 3px;
+    border: 1px solid white;
+
+    background: white;
+    font-family: sans-serif;
+    opacity: 0.8;
+    animation: pulse 1.8s infinite;
+}
+
+.project-screen {
+    font-family: sans-serif;
+
+
+    display: flex;
+    align-items: center;
+    padding: 100px;
+    flex-direction: column;
+
+}
+
+
+.project-screen ul {
+    list-style: none;
+
+}
+
+.project-screen a {
+    line-height: 170%;
+    transition: 0.2s;
+    text-decoration: none;
+    font-size: 33px;
+    color: black;
+    transition: 0.2s;
+}
+
+
+.project-screen a:hover {
+    color: #2B86C5;
+    transform: translateY(1px);
+}
 
 
 @keyframes fadeUp {
@@ -77,28 +181,8 @@ section {
     }
 }
 
-.arrow {
-    position: absolute;
-    bottom: 25px;
-    animation: fadeUp 0.5s ease-in-out 1s forwards;
-    opacity: 0;
-}
 
-.down-button {
-    width: 40px;
-    height: 40px;
-    animation: pulse 2s infinite;
 
-}
-
-.box {
-    animation: movingUp 0.9s infinite ease-in-out alternate;
-}
-
-.avatar {
-    width: 240px;
-    animation: fadeUp 0.5s ease-in-out 0.4s forwards;
-    opacity: 0;
 }
 
 @keyframes movingUp {
@@ -106,7 +190,7 @@ section {
 	transform: translateY(0);
     }
     100% {
-	transform: translateY(5px);
+	transform: translateY(3px);
     }
     
 }
@@ -114,16 +198,16 @@ section {
 @keyframes pulse {
     0% {
 	transform: scale(0.9);
-	opacity: 0.1;
+
     }
     
     70% {
 	transform: scale(1);
-	opacity: 0.3;
     }
 
     100% {
 	transform: scale(0.9);
-	opacity: 0.1;
     }
 }
+
+

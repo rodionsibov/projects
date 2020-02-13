@@ -23,7 +23,7 @@ function animation(currentTime) {
     requestAnimationFrame(animation);
 }
 
-var header = document.querySelector(".arrow");
+var header = document.querySelector(".btn");
 
 header.addEventListener("click", function() {
     smoothScroll("section", 1000);
