@@ -29,7 +29,7 @@ Coming Soon page. Website is currently undergoing scheduled maintenance.
 
 ## [Animated Navbar](https://rodionsibov.github.io/projects/animated-navbar/index.html)
 
-Animated Navigation Bar. HTML CSS JAVASCRIPT.
+Animated Navigation Bar | HTML CSS JAVASCRIPT.
 
 
 ## [Typed CSS](https://rodionsibov.github.io/projects/typed-css/index.html)
@@ -125,7 +125,7 @@ Pure CSS Hamburger Menu.
 Rain Drops effect JS.
 
 
-## [Responsive Navigation Bar | HTML, CSS, JavaScript](https://rodionsibov.github.io/projects/responsive-navbar/index.html)
+## [Responsive Navigation Bar. HTML, CSS, JavaScript](https://rodionsibov.github.io/projects/responsive-navbar/index.html)
 
 Responsive navigation bar (burger menu) with media queries and a sprinkle of animations (keyframe) and basic JavaScript (toggling).
 
