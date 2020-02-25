@@ -1,0 +1,383 @@
+:root {
+    --font-color: black;
+    --font-size: 9px;
+}
+
+
+html {
+    font-size: var(--font-size);
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: var(--font-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.container {
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.jc-right {
+    justify-content: flex-end;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.bg-gray {
+    background-color: #F7F7F7;
+}
+
+.bg-white {
+    background-color: #FFF;
+}
+
+.c-white {
+    color: #FFF;
+}
+
+.fw-light {
+    font-weight: 300;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.fs-16 {
+    font-size: 1.6rem;
+}
+
+.fs-18 {
+    font-size: 1.8rem;
+}
+
+.fs-24 {
+    font-size: 2.4rem;
+}
+
+.td-none {
+    text-decoration: none;
+}
+
+.anchor {
+    padding-top: 7rem;
+    margin-top: -7rem;
+    background-clip: content-box;
+}
+
+
+/* Header */
+
+.header {
+    height: 7rem;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.header-inner {
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 2.5rem;
+}
+
+.header-logo-image img {
+    height: 4rem;
+}
+
+.header-logo-title {
+    margin-left: 1.5rem;
+    color: #313745;
+}
+
+.header-link {
+    margin-left: 2.5rem;
+    color: #313745;
+}
+
+.header-link:first-child {
+    margin-left: 0;
+}
+
+.header-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Main / Intro */
+
+.intro {
+    height: 60rem;
+    flex-direction: column;
+    justify-content: center;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(https://images.pexels.com/photos/810890/nature-night-sky-milky-way-810890.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260) center 75% no-repeat;
+    background-size: cover;
+
+}
+
+@keyframes scale {
+    0% {
+	transform: scale(1, 1);
+    }
+    50% {
+	transform: scale(1.8, 1.8);
+    }
+}
+
+
+
+
+.intro-inner {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.intro-logo {
+    animation: scale 30s infinite;    
+    margin-bottom: 1rem;
+}
+
+.intro-logo img {
+
+    height: 25rem;
+}
+
+.intro-title {
+    margin-top: 3.7rem;
+    margin-bottom: .7rem;
+    font-size: 4.8rem;
+}
+
+.intro-subtitle {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+
+/* Button */
+
+.btn {
+    display: inline-block;
+    padding: 1.2rem 1.2rem;
+    min-width: 16rem;
+
+    border: 2px solid #fff;
+    border-radius: 0.7rem;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn-request:hover {
+
+    background: tan;
+
+}
+
+.btn-request:focus {
+    box-shadow: 0 0 6px #FFF;
+}
+
+
+/* Main / About */
+
+.main {
+    margin-top: 7rem;
+}
+
+.about-inner {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 5rem 0;
+}
+
+.about-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.about-text {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.about-image img {
+    max-width: 50rem;
+}
+
+
+/* Main / Request */
+
+.request-inner {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 5rem 0;
+}
+
+.request-title {
+    margin-bottom: 3rem;
+}
+
+.request-form {
+    flex-direction: column;
+    margin: 0 auto;
+    width: 42rem;
+}
+
+
+.form-fieldset {
+    border: 1px solid gray;
+    padding: 3rem;
+    margin-bottom: 2rem;
+}
+
+.form-fieldset:last-child {
+    margin-bottom: 0;
+}
+
+.form-legend {
+    color: gray;
+}
+
+.form-item {
+    margin: 1rem 0;
+    justify-content: flex-start;
+}
+
+.form-label {
+    width: 45%;
+}
+
+.form-select {
+    width: 45%;
+    border: 1px solid gray;
+
+    padding: 5.5rem;
+}
+
+.form-select:focus {
+    outline: none;
+
+}
+
+.form-input {
+    width: 55%;
+    border: 1px solid gray;
+    border-radius: 10rem;
+    padding: 0.5rem;
+}
+
+.form-input:focus {
+    outline: none;
+
+}
+
+
+.btn-send {
+    background: white;
+
+    color: black;
+}
+
+.btn-send:hover {
+    background: black;
+    color: white;
+    box-shadow: 0 0 3px white;
+}
+
+.btn-send:focus {
+    box-shadow: 0 0 6px white;
+}
+
+
+/* Footer */
+
+.footer {
+    background-color: #313745;
+}
+
+.footer-inner {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.footer-item {
+    padding: 3rem 0;
+}
+
+.footer-item:first-child {
+    padding: 2.5rem 0 3rem;
+}
+
+.footer-logo {
+    margin-bottom: 1rem;
+}
+
+.footer-logo-image img {
+    height: 3rem;
+    margin-right: 1rem;
+}
+
+.footer-copyright,
+.footer-list {
+    font-size: 1.4rem;
+}
+
+.footer-list-item {
+    margin-bottom: .5rem;
+}
+
+.footer-list-link:hover {
+    text-decoration: underline;
+}
+
+
+
+@media screen and (max-width: 300px) {
+
+    
+
+}
