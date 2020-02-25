@@ -2,7 +2,7 @@
 The more you practice, the better your skills will become 😉
 
 
-![img](https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260 "Photo by Oleg Magni from Pexels")
+![img](https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=150&w=1260 "Photo by Oleg Magni from Pexels")
 
 
 
