@@ -32,7 +32,7 @@ Simple landing page. HTML, CSS. 10 strange facts you didn't know about the Moon.
 
 ## [Image Slider](https://rodionsibov.github.io/projects/image-slider/index.html)
 
-##[Form Validation](https://rodionsibov.github.io/projects/form-validation/index.html)
+## [Form Validation](https://rodionsibov.github.io/projects/form-validation/index.html)
 
 ## [Input Animations HTML CSS](https://rodionsibov.github.io/projects/input-animations-html-css/index.html)
 
