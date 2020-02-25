@@ -1,1 +1,0 @@
-A simple CSS background image zoom and rotate

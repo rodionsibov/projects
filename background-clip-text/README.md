@@ -1,1 +1,0 @@
-Background clip text

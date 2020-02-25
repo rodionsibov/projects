@@ -1,2 +1,0 @@
-Pure CSS Hamburger Menu.
-

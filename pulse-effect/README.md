@@ -1,1 +1,0 @@
-Pulse animation with box-shadow

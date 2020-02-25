@@ -1,1 +1,0 @@
-An image gallery in html css and js
