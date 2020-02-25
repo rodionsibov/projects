@@ -2,7 +2,7 @@
 The more you practice, the better your skills will become 😉
 
 
-![img]((https://rodionsibov.github.io/projects/projects-start-page.png)
+![img](https://rodionsibov.github.io/projects/projects-start-page.png)
 
 
 
