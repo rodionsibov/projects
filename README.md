@@ -6,14 +6,21 @@ The more you practice, the better your skills will become 😉
 
 
 
-
-
 ## Table of Contents
 
 - [Interesting facts about the Moon](#interesting-facts-about-the-moon)
 - [Under Construction Page](#under-construction-page)
-- 
-
+- [Animated Navbar](#animated-navbar)
+- [Typed CSS](#typed-css)
+- [Background Changer](#background-changer)
+- [Background Clip Text](#background-clip-text)
+- [Bg Image Zoom Rotate CSS](#bg-image-zoom-rotate-css)
+- [Blurry Loading](#blurry-loading)
+- [Course Card UI Design](#course-card-ui-design)
+- [CSS Flip Card](#css-flip-card)
+- [Image Animations HTML CSS](#image-animations-html-css)
+- [Image Gallery HTML CSS](#image-gallery-html-css)
+- [Image Slider](#image-slider)
 
 
 
@@ -125,7 +132,7 @@ Pure CSS Hamburger Menu.
 Rain Drops effect JS.
 
 
-## [Responsive Navigation Bar. HTML, CSS, JavaScript](https://rodionsibov.github.io/projects/responsive-navbar/index.html)
+## [Responsive Navigation Bar HTML, CSS, JavaScript](https://rodionsibov.github.io/projects/responsive-navbar/index.html)
 
 Responsive navigation bar (burger menu) with media queries and a sprinkle of animations (keyframe) and basic JavaScript (toggling).
 
