@@ -2,63 +2,103 @@
 The more you practice, the better your skills will become 😉
 
 
-![img](https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=150&w=1260 "Photo by Oleg Magni from Pexels")
+![img]((https://rodionsibov.github.io/projects/projects-start-page.png)
 
 
 
 [Facts about the Moon](https://rodionsibov.github.io/projects/facts-about-the-moon/index.html)
 
-https://rodionsibov.github.io/projects/under-construction-page/index.htmlUnder
-Construction Page
-https://rodionsibov.github.io/projects/animated-navbar/index.htmlAnimated
+[Under Construction Page](https://rodionsibov.github.io/projects/under-construction-page/index.html)
+
+
+
+
+
+
+
+
+https://rodionsibov.github.io/projects/animated-navbar/index.html
+Animated
 Navbar
-https://rodionsibov.github.io/projects/typed-css/index.htmlTyped CSS
-https://rodionsibov.github.io/projects/background-changer/index.htmlBackground
+https://rodionsibov.github.io/projects/typed-css/index.html
+Typed CSS
+https://rodionsibov.github.io/projects/background-changer/index.html
+Background
 Changer
-https://rodionsibov.github.io/projects/background-clip-text/index.htmlBackground
+https://rodionsibov.github.io/projects/background-clip-text/index.html
+Background
 Clip Text
-https://rodionsibov.github.io/projects/bg-image-zoom-rotate-css/index.htmlBg
+https://rodionsibov.github.io/projects/bg-image-zoom-rotate-css/index.html
+Bg
 Image Zoom Rotate CSS
-https://rodionsibov.github.io/projects/blurry-loading/index.htmlBlurry
+https://rodionsibov.github.io/projects/blurry-loading/index.html
+Blurry
 Loading
-https://rodionsibov.github.io/projects/course-card-ui-design/index.htmlCourse
+https://rodionsibov.github.io/projects/course-card-ui-design/index.html
+Course
 Card UI Design
-https://rodionsibov.github.io/projects/css-flip-card/index.htmlCSS
-Flip Card
-https://rodionsibov.github.io/projects/image-animations-html-css/index.htmlImage
-Animations HTML CSS
-https://rodionsibov.github.io/projects/image-gallery-html-css/index.htmlImage
-Gallery HTML CSS
-https://rodionsibov.github.io/projects/image-slider/index.htmlImage
-Slider
-https://rodionsibov.github.io/projects/form-validation/index.htmlForm
-Validation
-https://rodionsibov.github.io/projects/input-animations-html-css/index.htmlInput
-Animations HTML CSS
-https://rodionsibov.github.io/projects/js-scroll/index.htmlJS Scroll
-https://rodionsibov.github.io/projects/landing-page/index.htmlLanding
-Page
-https://rodionsibov.github.io/projects/laptop-ui-master/index.htmlLaptop
-UI Master
-https://rodionsibov.github.io/projects/modal-js-css/index.htmlModal JS
+https://rodionsibov.github.io/projects/css-flip-card/index.html
 CSS
-https://rodionsibov.github.io/projects/pulse-effect/index.htmlPulse
+Flip Card
+https://rodionsibov.github.io/projects/image-animations-html
+-css/index.html
+Image
+Animations HTML
+ CSS
+https://rodionsibov.github.io/projects/image-gallery-html
+-css/index.html
+Image
+Gallery HTML
+ CSS
+https://rodionsibov.github.io/projects/image-slider/index.html
+Image
+Slider
+https://rodionsibov.github.io/projects/form-validation/index.html
+Form
+Validation
+https://rodionsibov.github.io/projects/input-animations-html
+-css/index.html
+Input
+Animations HTML
+ CSS
+https://rodionsibov.github.io/projects/js-scroll/index.html
+JS Scroll
+https://rodionsibov.github.io/projects/landing-page/index.html
+Landing
+Page
+https://rodionsibov.github.io/projects/laptop-ui-master/index.html
+Laptop
+UI Master
+https://rodionsibov.github.io/projects/modal-js-css/index.html
+Modal JS
+CSS
+https://rodionsibov.github.io/projects/pulse-effect/index.html
+Pulse
 Effect
-https://rodionsibov.github.io/projects/pure-css-hamburger-menu/index.htmlPure
+https://rodionsibov.github.io/projects/pure-css-hamburger-menu/index.html
+Pure
 CSS Hamburger Menu
-https://rodionsibov.github.io/projects/rain-drops/index.htmlRain Drops
-https://rodionsibov.github.io/projects/responsive-navbar/index.htmlResponsive
+https://rodionsibov.github.io/projects/rain-drops/index.html
+Rain Drops
+https://rodionsibov.github.io/projects/responsive-navbar/index.html
+Responsive
 Navbar
-https://rodionsibov.github.io/projects/simple-form-design/index.htmlSimple
+https://rodionsibov.github.io/projects/simple-form-design/index.html
+Simple
 Form Design
-https://rodionsibov.github.io/projects/simple-landing-page-cooking-master/index.htmlSimple
+https://rodionsibov.github.io/projects/simple-landing-page-cooking-master/index.html
+Simple
 Landing Page Cooking-Master
-https://rodionsibov.github.io/projects/svg-animation-text-css/index.htmlSVG
+https://rodionsibov.github.io/projects/svg-animation-text-css/index.html
+SVG
 Animation Text CSS
-https://rodionsibov.github.io/projects/transition-background-css3/index.htmlTransition
+https://rodionsibov.github.io/projects/transition-background-css3/index.html
+Transition
 Background CSS3
-https://rodionsibov.github.io/projects/typewriting-effect-js/index.htmlTypewriting
+https://rodionsibov.github.io/projects/typewriting-effect-js/index.html
+Typewriting
 Effect JS
 =======
-[See projects](https://rodionsibov.github.io/projects/index.html)
+[See projects](https://rodionsibov.github.io/projects/index.html
+)
 
