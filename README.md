@@ -1,10 +1,6 @@
 ![img](https://rodionsibov.github.io/projects/projects-start-page.png)
-# Projects to Practise My Web Development Skills
+# [Projects](https://rodionsibov.github.io/projects/index.html "See projects") to Practise My Web Development Skills
 The more you practice, the better your skills will become 😉
-
-
-
-
 
 
 [Facts about the Moon](https://rodionsibov.github.io/projects/facts-about-the-moon/index.html)
@@ -99,7 +95,6 @@ Background CSS3
 https://rodionsibov.github.io/projects/typewriting-effect-js/index.html
 Typewriting
 Effect JS
-=======
-[See projects](https://rodionsibov.github.io/projects/index.html
-)
+
+
 
