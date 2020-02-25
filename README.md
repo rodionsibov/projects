@@ -6,6 +6,17 @@ The more you practice, the better your skills will become 😉
 
 
 
+
+
+## Table of Contents
+
+- [Interesting facts about the Moon](https://rodionsibov.github.io/projects/facts-about-the-moon/index.html)
+- [Under Construction Page](https://rodionsibov.github.io/projects/under-construction-page/index.html)
+
+
+
+
+
 ## [Interesting facts about the Moon](https://rodionsibov.github.io/projects/facts-about-the-moon/index.html)
 
 Simple landing page. HTML, CSS. 10 strange facts you didn't know about the Moon. What created the Moon? And what are moonquakes?
