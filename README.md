@@ -1,5 +1,6 @@
 # Projects to Practise My Web Development Skills
 The more you practice, the better your skills will become 😉
+<<<<<<< HEAD
 
 [](https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260 "")
 
@@ -58,3 +59,6 @@ https://rodionsibov.github.io/projects/transition-background-css3/index.htmlTran
 Background CSS3
 https://rodionsibov.github.io/projects/typewriting-effect-js/index.htmlTypewriting
 Effect JS
+=======
+[See projects](https://rodionsibov.github.io/projects/index.html)
+>>>>>>> 3569d7d1c978336f2c311dbe269da72def6f2943
