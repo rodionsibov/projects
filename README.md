@@ -10,8 +10,8 @@ The more you practice, the better your skills will become 😉
 
 ## Table of Contents
 
-- [Interesting facts about the Moon](#"Interesting facts about the Moon")
-- [Under Construction Page](https://rodionsibov.github.io/projects/under-construction-page/index.html)
+- [Interesting facts about the Moon](#interesting-facts-about-the-moon)
+- [Under Construction Page](#under-construction-page)
 - 
 
 
@@ -29,7 +29,7 @@ Coming Soon page. Website is currently undergoing scheduled maintenance.
 
 ## [Animated Navbar](https://rodionsibov.github.io/projects/animated-navbar/index.html)
 
-Animated Navigation Bar | HTML CSS JAVASCRIPT.
+Animated Navigation Bar. HTML CSS JAVASCRIPT.
 
 
 ## [Typed CSS](https://rodionsibov.github.io/projects/typed-css/index.html)
