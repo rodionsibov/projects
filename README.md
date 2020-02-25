@@ -4,7 +4,6 @@ The more you practice, the better your skills will become 😉
 
 
 [Facts about the Moon](https://rodionsibov.github.io/projects/facts-about-the-moon/index.html)
-
 [Under Construction Page](https://rodionsibov.github.io/projects/under-construction-page/index.html)
 
 
