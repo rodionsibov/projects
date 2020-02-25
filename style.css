@@ -5,218 +5,114 @@
 
 }
 
-body {
-    user-select: none;
-}
+
 
 .welcome-screen {
-    animation: fadeUp 0.5s ease-in-out 0.2s forwards;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.background {
     width: 100%;
-    height: 50%;
-    background: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
-    animation: fadeUp 0.5s ease-in-out 0.2s forwards;
-    opacity: 0;
-    position: sticky;
-    top: -5px;
+    height: 100vh;
+    color: #fff;
+
 }
 
-.photo {
 
-    position: absolute;
-    animation: fadeUp 0.5s ease-in-out 0.2s forwards;
-    opacity: 0;
-    top: 116px;
-    margin: 0 auto;
-}
-
-img {
-    width: 300px;
-    animation: movingUp 1s infinite ease-in-out alternate;
+.photo img {
+    height: 100vh;
 }
 
 
 .welcome {
-    display: flex;
-    align-items: center;
+    height: 100vh;
     justify-content: center;
+    align-items: flex-start;
+    display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 60%;
-    animation: fadeUp 0.5s ease-in-out 0.4s forwards;
-    opacity: 0;
+    background: black;
+    order: 2;
+    padding: 50px;
 }
 
 
-.presentation {
-    animation: fadeUp 0.5s ease-in-out 0.4s forwards;
-    opacity: 0;
-    text-align: center;
-    padding: 0 20px;
-    font-size: 44px;
-    margin-top: 50px;
-
+.welcome h1 {
+    font-size: 3em;
 } 
 
-.description {
-    animation: fadeUp 0.5s ease-in-out 0.6s forwards;
-    opacity: 0;
+.welcome p {
     font-size: 20px;
     font-family: sans-serif;
-    text-align: center;
-    
-
-    margin-top: 10px;
+    padding-top: 10px;
+    line-height: 30px;
+    color: #999;
 }
 
 
-.btn {
-    margin-top: 40px;
-    text-align: center;
-    padding: 10px 20px;
 
-    background: #FF3CAC/* #5A5D68 */;
-    border-radius: 3px;
-    color: #eee;
+ul  {
+    padding: 50px;
+    justify-content: center;
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    height: 100vh;
+    
+
+}
+    
+.banner {
     font-size: 14px;
     font-family: sans-serif;
-    transition: 0.2s;
-    user-select: none;
-}
-
-.btn:hover {
-    cursor: pointer;
-    background: #75787F;
-    transform: translateY(-1px);
-    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    font-weight: bold;
+    color: #999;;
+    border-bottom: 2px solid #999;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
 
 }
 
-.btn:active {
-    background: #4A4D56;
-    transform: translateY(1px);
-}
-
-a {
-
-    text-decoration: none;
-    color: white;
-
-}
-
-.banner {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    height: 60px;
-    background: black;
-    
-
-
-    position: fixed;
-    overflow: hidden;
-
-    
-}
-
-
-
-.banner p {
+.projects a,
+.btn a {
+    margin: 30px 20px 0 0;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 14px;
     font-family: sans-serif;
+    text-decoration: none;
     color: #fff;
-    animation: scroll-left 20s linear infinite;
-
+    font-weight: bold;
+    background: #0971f1;
 }
 
-@keyframes scroll-left {
-    0%   { 
-	transform: translateX(100%); 		
-    }
-    100%   { 
-	transform: translateX(100%); 		
-    }
-    50% { 
-	transform: translateX(-100%); 
-    }
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
 }
 
 
-.project-screen {
-    font-family: sans-serif;
-
-
+.credits {
     display: flex;
-    align-items: center;
-    padding: 100px;
-    flex-direction: column;
+    width: 100%;
+    background: black;
 
+    padding: 10px;
+    align-items: flex-end;
+    
 }
 
-
-.project-screen ul {
-    list-style: none;
-
-}
-
-.project-screen a {
-    line-height: 170%;
+.credits a {
+    font-family: sans-serif;
+    font-size: 12px;
     text-decoration: none;
-    font-size: 33px;
-    color: black;
-    transition: 0.2s;
-}
-
-
-.project-screen a:hover {
-    color: #2B86C5;
-    transform: translateY(1px);
-}
-
-
-@keyframes fadeUp {
-        from {
-	opacity: 0;
-	transform: translateY(-20px);
-    }
-    to {
-	opacity: 1;
-	transform: translateY(0px);
-    }
-}
-
-@keyframes movingUp {
-    0% {
-	transform: translateY(0);
-    }
-    100% {
-	transform: translateY(3px);
-    }
+    color: #999;
     
 }
-
-@keyframes pulse {
-    0% {
-	transform: scale(0.9);
-
-    }
-    
-    70% {
-	transform: scale(1);
-    }
-
-    100% {
-	transform: scale(0.9);
-    }
-}
-
-
