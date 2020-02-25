@@ -1,1 +1,0 @@
-SVG animation text with HTML and CSS

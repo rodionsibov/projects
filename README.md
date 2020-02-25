@@ -109,19 +109,36 @@ Pulse animation with box-shadow.
 
 Pure CSS Hamburger Menu.
 
-## [Drops Rain](https://rodionsibov.github.io/projects/rain-drops/index.html)
+## [Rain Drops](https://rodionsibov.github.io/projects/rain-drops/index.html)
 
-## [Responsive Navbar](https://rodionsibov.github.io/projects/responsive-navbar/index.html)
+Rain Drops effect JS.
+
+
+## [Responsive Navigation Bar | HTML, CSS, JavaScript](https://rodionsibov.github.io/projects/responsive-navbar/index.html)
+
+Responsive navigation bar (burger menu) with media queries and a sprinkle of animations (keyframe) and basic JavaScript (toggling).
+
 
 ## [Simple Form Design](https://rodionsibov.github.io/projects/simple-form-design/index.html)
 
+Simple form design.
+
+
 ## [Simple Landing Page Cooking-Master](https://rodionsibov.github.io/projects/simple-landing-page-cooking-master/index.html)
+
+Simple Landing Page Cooking-Master HTML & CSS.
+
 
 ## [SVG Animation Text CSS](https://rodionsibov.github.io/projects/svg-animation-text-css/index.html)
 
+SVG animation text with HTML and CSS.
+
+
 ## [Transition Background CSS3](https://rodionsibov.github.io/projects/transition-background-css3/index.html)
+
+A simple transition on the background while we scroll down the page.
+
 
 ## [Typewriting Effect JS](https://rodionsibov.github.io/projects/typewriting-effect-js/index.html)
 
-
-
+Typewriting effect with Javascript.
