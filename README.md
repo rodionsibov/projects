@@ -21,6 +21,23 @@ The more you practice, the better your skills will become 😉
 - [Image Animations HTML CSS](#image-animations-html-css)
 - [Image Gallery HTML CSS](#image-gallery-html-css)
 - [Image Slider](#image-slider)
+- [Form Validation](#form-validation)
+- [Input Animations HTML CSS](#input-animations-html- css)
+- [JS Scroll](#js-scroll)
+- [Landing Page](#landing-page)
+- [Laptop UI Master](#laptop-ui-master)
+- [Modal JS CSS](#modal-js-css)
+- [Pulse Effect](#pulse-effect)
+- [Pure CSS Hamburger Menu](#pure-css-hamburger-menu)
+- [Rain Drops](#rain-drops)
+- [Responsive Navigation Bar HTML, CSS, JavaScript](#responsive-navigation-bar-html-css-javascript)
+- [Simple Form Design](#simple-form-design)
+- [Simple Landing Page Cooking-Master](#simple-landing-page-cooking-master)
+- [SVG Animation Text CSS](#svg-animation-text-css)
+- [Transition Background CSS3](#transition-background-css3)
+- [Typewriting Effect JS](#typewriting-effect-js)
+
+
 
 
 
