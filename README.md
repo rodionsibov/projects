@@ -22,7 +22,7 @@ The more you practice, the better your skills will become 😉
 - [Image Gallery HTML CSS](#image-gallery-html-css)
 - [Image Slider](#image-slider)
 - [Form Validation](#form-validation)
-- [Input Animations HTML CSS](#input-animations-html- css)
+- [Input Animations HTML CSS](#input-animations-html-css)
 - [JS Scroll](#js-scroll)
 - [Landing Page](#landing-page)
 - [Laptop UI Master](#laptop-ui-master)
