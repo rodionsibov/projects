@@ -61,4 +61,4 @@ https://rodionsibov.github.io/projects/typewriting-effect-js/index.htmlTypewriti
 Effect JS
 =======
 [See projects](https://rodionsibov.github.io/projects/index.html)
->>>>>>> 3569d7d1c978336f2c311dbe269da72def6f2943
+
