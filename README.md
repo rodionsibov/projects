@@ -1,4 +1,4 @@
-![img](https://rodionsibov.github.io/projects/projects-start-page.png)
+
 
 # [Projects](https://rodionsibov.github.io/projects/index.html "See projects") to Practise My Web Development Skills
 
@@ -8,6 +8,8 @@ The more you practice, the better your skills will become 😉
 
 ## Table of Contents
 
+- [placeholder-shown](#placeholder-shown)
+- [bg-clip-text](#bg-clip-text)
 - [Interesting facts about the Moon](#interesting-facts-about-the-moon)
 - [Under Construction Page](#under-construction-page)
 - [Animated Navbar](#animated-navbar)
@@ -39,6 +41,10 @@ The more you practice, the better your skills will become 😉
 
 
 
+## [placeholder-shown](https://rodionsibov.github.io/projects/placeholder-shown/index.html)
+
+
+## [bg-clip-text](https://rodionsibov.github.io/projects/bg-clip-text/index.html)
 
 
 ## [Interesting facts about the Moon](https://rodionsibov.github.io/projects/facts-about-the-moon/index.html)
