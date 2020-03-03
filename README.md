@@ -6,22 +6,16 @@ The more you practice, the better your skills will become 😉
 [bg-clip-text](https://rodionsibov.github.io/projects/bg-clip-text/index.html)
 
 ## Interesting facts about the Moon
-
 Simple landing page. HTML, CSS. 10 strange facts you didn't know about the Moon. What created the Moon? And what are moonquakes?
-
 [See project](https://rodionsibov.github.io/projects/facts-about-the-moon/index.html) 
 
-
-
 ## Under Construction Page
+Coming Soon page. Website is currently undergoing scheduled maintenance.
 [See project](https://rodionsibov.github.io/projects/under-construction-page/index.html)
 
-Coming Soon page. Website is currently undergoing scheduled maintenance.
-
-
-[Animated Navbar](https://rodionsibov.github.io/projects/animated-navbar/index.html)
-
+## Animated Navbar
 Animated Navigation Bar | HTML CSS JAVASCRIPT.
+[See project](https://rodionsibov.github.io/projects/animated-navbar/index.html)
 
 
 [Typed CSS](https://rodionsibov.github.io/projects/typed-css/index.html)
