@@ -4,8 +4,6 @@ The more you practice, the better your skills will become 😉
 
 
 - [placeholder-shown](https://rodionsibov.github.io/projects/placeholder-shown/index.html)
-
-
 - [bg-clip-text](https://rodionsibov.github.io/projects/bg-clip-text/index.html)
 
 
