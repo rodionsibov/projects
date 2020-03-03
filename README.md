@@ -1,11 +1,11 @@
 ## My personal projects 
 The more you practice, the better your skills will become 😉
 
-[placeholder-shown](https://rodionsibov.github.io/projects/placeholder-shown/index.html)
+# [placeholder-shown](https://rodionsibov.github.io/projects/placeholder-shown/index.html)
 
 [bg-clip-text](https://rodionsibov.github.io/projects/bg-clip-text/index.html)
 
-[Interesting facts about the Moon](https://rodionsibov.github.io/projects/facts-about-the-moon/index.html)
+# [Interesting facts about the Moon](https://rodionsibov.github.io/projects/facts-about-the-moon/index.html)
 
 Simple landing page. HTML, CSS. 10 strange facts you didn't know about the Moon. What created the Moon? And what are moonquakes?
 
