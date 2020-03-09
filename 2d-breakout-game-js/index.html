@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Gamedev Canvas Workshop</title>
     <style>
@@ -11,38 +11,50 @@
       }
 
       canvas {
-
 	  background: #eee;
 	  display: block;
-	  margin: 0 auto;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
       }
       
     </style>
-</head>
-<body>
+  </head>
+  <body>
 
-<canvas id="myCanvas" width="800" height="600"></canvas>
+    <canvas id="myCanvas" width="800" height="600"></canvas>
 
-<script>
+    <script>
 
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+      var x = canvas.width/2;
+      var y = canvas.height-30;
+      var dx = 2;
+      var dy = -2;  
 
-function draw() {
-ctx.beginPath();
-ctx.arc(50, 50, 20, 0, Math.PI*2);
-ctx.fillStyle = "#0095DD";
-ctx.fill();
-ctx.closePath();
-}
-setInterval(draw, 10);
 
-var x = canvas.width/2;
-var y = canvas.height-30;
+      function drawBall() {
+	  ctx.beginPath();
+	  ctx.arc(x, y, 20, 0, Math.PI*2);
+	  ctx.fillStyle = "#0095DD";
+	  ctx.fill();
+	  ctx.closePath();
+      }
 
-  
 
-</script>
+      function draw() {
+	  ctx.clearRect(0, 0, canvas.width, canvas.height);
+	  drawBall();
+	  x += dx;
+	  y += dy;
+      }
 
-</body>
+      setInterval(draw, 1000);
+
+
+    </script>
+
+  </body>
 </html>
