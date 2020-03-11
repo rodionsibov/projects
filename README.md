@@ -1,5 +1,8 @@
 ## My personal projects 
-The more you practice, the better your skills will become 😉
+> The more you practice, the better your skills will become 😉
+
+- [2d Breakout Game JS](https://rodionsibov.github.io/projects/2d-breakout-game-js/index.html):
+A simple breakout game written entirely in pure JavaScript and rendered on HTML5 `<canvas>`.
 
 - [Placeholder Shown](https://rodionsibov.github.io/projects/placeholder-shown/index.html):
 The :placeholder-shown pseudo-selector opens up a few fun possibilities in styling your forms. This allows us to style the entire input based on whether or not the placeholder is visible.
