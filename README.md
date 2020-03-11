@@ -1,16 +1,14 @@
 ## My personal projects 
 The more you practice, the better your skills will become 😉
 
-- [Placeholder Shown](https://rodionsibov.github.io/projects/placeholder-shown/index.html)
-
+- [Placeholder Shown](https://rodionsibov.github.io/projects/placeholder-shown/index.html):
 The :placeholder-shown pseudo-selector opens up a few fun possibilities in styling your forms. This allows us to style the entire input based on whether or not the placeholder is visible.
 
-## Bg Clip Text
-[See project](https://rodionsibov.github.io/projects/bg-clip-text/index.html)
+[Bg Clip Text](https://rodionsibov.github.io/projects/bg-clip-text/index.html):
+...
 
-## Interesting facts about the Moon
+[Interesting facts about the Moon](https://rodionsibov.github.io/projects/facts-about-the-moon/index.html):
 Simple landing page. HTML, CSS. 10 strange facts you didn't know about the Moon. What created the Moon? And what are moonquakes?
-[See project](https://rodionsibov.github.io/projects/facts-about-the-moon/index.html) 
 
 ## Under Construction Page
 Coming Soon page. Website is currently undergoing scheduled maintenance.
