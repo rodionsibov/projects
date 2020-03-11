@@ -1,7 +1,8 @@
 ## My personal projects 
 The more you practice, the better your skills will become 😉
 
-- [Placeholder Shown](https://rodionsibov.github.io/projects/placeholder-shown/index.html) The :placeholder-shown pseudo-selector opens up a few fun possibilities in styling your forms. This allows us to style the entire input based on whether or not the placeholder is visible.
+- [Placeholder Shown](https://rodionsibov.github.io/projects/placeholder-shown/index.html)
+The :placeholder-shown pseudo-selector opens up a few fun possibilities in styling your forms. This allows us to style the entire input based on whether or not the placeholder is visible.
 
 ## Bg Clip Text
 [See project](https://rodionsibov.github.io/projects/bg-clip-text/index.html)
