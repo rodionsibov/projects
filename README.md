@@ -1,8 +1,7 @@
-# My personal projects 
+## My personal projects 
 The more you practice, the better your skills will become 😉
 
-## Placeholder Shown
-[See project](https://rodionsibov.github.io/projects/placeholder-shown/index.html)
+- [Placeholder Shown](https://rodionsibov.github.io/projects/placeholder-shown/index.html)
 
 ## Bg Clip Text
 [See project](https://rodionsibov.github.io/projects/bg-clip-text/index.html)
