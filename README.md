@@ -93,3 +93,7 @@ A simple transition on the background while we scroll down the page.
 
 - [Typewriting Effect JS](https://rodionsibov.github.io/projects/typewriting-effect-js/index.html):
 Typewriting effect with Javascript.
+
+
+---
+_You are free to modify, save, share, use or do whatever you want with it_
