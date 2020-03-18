@@ -1,7 +1,7 @@
 ## My personal projects 
 > The more you practice, the better your skills will become 😉
 
-- [search](https://rodionsibov.github.io/projects/page-for-you/index.html#viewport-20
+- [search](https://rodionsibov.github.io/projects/index.html#viewport-4
 ):
 Search
 
