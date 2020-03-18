@@ -1,97 +1,102 @@
 ## My personal projects 
 > The more you practice, the better your skills will become 😉
 
-- [2d Breakout Game JS](https://rodionsibov.github.io/projects/2d-breakout-game-js/index.html):
+- [search](https://rodionsibov.github.io/projects/page-for-you/index.html#viewport-20
+):
+Search
+
+
+- [2d Breakout Game JS]():
 A simple breakout game written entirely in pure JavaScript and rendered on HTML5 `<canvas>`.
 
-- [Placeholder Shown](https://rodionsibov.github.io/projects/placeholder-shown/index.html):
+- [Placeholder Shown]():
 The :placeholder-shown pseudo-selector opens up a few fun possibilities in styling your forms. This allows us to style the entire input based on whether or not the placeholder is visible.
 
-- [Bg Clip Text](https://rodionsibov.github.io/projects/bg-clip-text/index.html):
+- [Bg Clip Text]():
 ...
 
-- [Interesting facts about the Moon](https://rodionsibov.github.io/projects/facts-about-the-moon/index.html):
+- [Interesting facts about the Moon]():
 Simple landing page. HTML, CSS. 10 strange facts you didn't know about the Moon. What created the Moon? And what are moonquakes?
 
-- [Under Construction Page](https://rodionsibov.github.io/projects/under-construction-page/index.html):
+- [Under Construction Page]():
 Coming Soon page. Website is currently undergoing scheduled maintenance.
 
-- [Animated Navbar](https://rodionsibov.github.io/projects/animated-navbar/index.html):
+- [Animated Navbar]():
 Animated Navigation Bar | HTML CSS JAVASCRIPT.
 
-- [Typed CSS](https://rodionsibov.github.io/projects/typed-css/index.html):
+- [Typed CSS]():
 Simple typed pure CSS effect.
 
-- [Background Changer](https://rodionsibov.github.io/projects/background-changer/index.html):
+- [Background Changer]():
 Background changer.
 
-- [Background Clip Text](https://rodionsibov.github.io/projects/background-clip-text/index.html):
+- [Background Clip Text]():
 Background clip text.
 
-- [Bg Image Zoom Rotate CSS](https://rodionsibov.github.io/projects/bg-image-zoom-rotate-css/index.html):
+- [Bg Image Zoom Rotate CSS]():
 A simple CSS background image zoom and rotate.
 
-- [Blurry Loading](https://rodionsibov.github.io/projects/blurry-loading/index.html):
+- [Blurry Loading]():
 Blurry loading.
 
-- [Course Card UI Design](https://rodionsibov.github.io/projects/course-card-ui-design/index.html):
+- [Course Card UI Design]():
 Course card UI design.
 
-- [CSS Flip Card](https://rodionsibov.github.io/projects/css-flip-card/index.html):
+- [CSS Flip Card]():
 A simple Flip Card achieved with only css and html.
 
-- [Image Animations HTML CSS](https://rodionsibov.github.io/projects/image-animations-html-css/index.html):
+- [Image Animations HTML CSS]():
 Image Animations with HTML CSS.
 
-- [Image Gallery HTML CSS](https://rodionsibov.github.io/projects/image-gallery-html-css/index.html):
+- [Image Gallery HTML CSS]():
 An image gallery in html css and js.
 
 - [Image Slider](https://rodionsibov.github.io/projects/image-slider/index.html):
 An Image Slider In HTML, CSS & Javascript.
 
-- [Form Validation](https://rodionsibov.github.io/projects/form-validation/index.html):
+- [Form Validation]():
 Form Validation.
 
-- [Input Animations HTML CSS](https://rodionsibov.github.io/projects/input-animations-html-css/index.html):
+- [Input Animations HTML CSS]():
 Input Animations With HTML And CSS.
 
-- [JS Scroll](https://rodionsibov.github.io/projects/js-scroll/index.html):
+- [JS Scroll]():
 How to do the smooth scroll effect in Vanilla Javascript.
 
-- [Landing Page](https://rodionsibov.github.io/projects/landing-page/index.html):
+- [Landing Page]():
 Simple landing page.
 
-- [Laptop UI Master](https://rodionsibov.github.io/projects/laptop-ui-master/index.html):
+- [Laptop UI Master]():
 :)
 
-- [Modal JS CSS](https://rodionsibov.github.io/projects/modal-js-css/index.html):
+- [Modal JS CSS]():
 A simple modal in Javascript and CSS. Does not use Bootstrap or any other CSS or Javascript frameworks.
 
-- [Pulse Effect](https://rodionsibov.github.io/projects/pulse-effect/index.html):
+- [Pulse Effect]():
 Pulse animation with box-shadow.
 
-- [Pure CSS Hamburger Menu](https://rodionsibov.github.io/projects/pure-css-hamburger-menu/index.html):
+- [Pure CSS Hamburger Menu]():
 Pure CSS Hamburger Menu.
 
-- [Rain Drops](https://rodionsibov.github.io/projects/rain-drops/index.html):
+- [Rain Drops]():
 Rain Drops effect JS.
 
-- [Responsive Navigation Bar HTML, CSS, JavaScript](https://rodionsibov.github.io/projects/responsive-navbar/index.html):
+- [Responsive Navigation Bar HTML, CSS, JavaScript](h):
 Responsive navigation bar (burger menu) with media queries and a sprinkle of animations (keyframe) and basic JavaScript (toggling).
 
-- [Simple Form Design](https://rodionsibov.github.io/projects/simple-form-design/index.html):
+- [Simple Form Design]():
 Simple form design.
 
-- [Simple Landing Page Cooking-Master](https://rodionsibov.github.io/projects/simple-landing-page-cooking-master/index.html):
+- [Simple Landing Page Cooking-Master]():
 Simple Landing Page Cooking-Master HTML & CSS.
 
-- [SVG Animation Text CSS](https://rodionsibov.github.io/projects/svg-animation-text-css/index.html):
+- [SVG Animation Text CSS]():
 SVG animation text with HTML and CSS.
 
-- [Transition Background CSS3](https://rodionsibov.github.io/projects/transition-background-css3/index.html):
+- [Transition Background CSS3]():
 A simple transition on the background while we scroll down the page.
 
-- [Typewriting Effect JS](https://rodionsibov.github.io/projects/typewriting-effect-js/index.html):
+- [Typewriting Effect JS]():
 Typewriting effect with Javascript.
 
 

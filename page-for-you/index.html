@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Rodion - A page for you</title>
+
+    <style>
+      .love {
+	  font-size: 4em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row vh-100 align-items-center">
+	<div class="col text-center">
+	  <p class="lead">This is a page for you</p>
+	  <div class="vibe display-3">
+	  </div>
+	  <div class="love">
+	    ❤️
+	  </div>
+	  <button type="button" class="btn-lg mt-5 btn btn-outline-info" onClick="window.location.reload();">Reload</button>
+	</div>
+      </div>
+    </div>
+    <script>
+
+      const vibes = [
+	  "Never look back",
+	  "All we need is love",
+	  "Enjoy every moment",
+	  "Follow your heart"
+      ];
+
+      // choose a random good vibe
+      var vibe = vibes[Math.floor(Math.random() * Math.floor(vibes.length))];
+
+      // display a good vibe
+      document.querySelector(".vibe").append(vibe);
+
+    </script>
+
+  </body>
+</html>
