@@ -2,6 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Gamedev Canvas Workshop</title>
     <style>
 
@@ -23,7 +25,7 @@
   </head>
   <body>
 
-    <canvas id="myCanvas" width="800" height="600"></canvas>
+    <canvas id="myCanvas" width="600" height="400"></canvas>
 
     <script>
       var canvas = document.getElementById("myCanvas");
@@ -39,8 +41,8 @@
       var rightPressed = false;
       var leftPressed = false;
       var brickRowCount = 3;
-      var brickColumnCount = 8;
-      var brickWidth = 83;
+      var brickColumnCount = 6;
+      var brickWidth = 80;
       var brickHeight = 20;
       var brickPadding = 10;
       var brickOffsetTop = 30;
@@ -96,7 +98,7 @@
 			  b.status = 0;
 			  score++;
 			  if(score == brickRowCount*brickColumnCount) {
-                              alert("YOU WIN, CONGRATULATIONS!");
+                              console.log("YOU WIN, CONGRATULATIONS!");
                               document.location.reload();
 			  }
 		      }
@@ -172,7 +174,7 @@
 	      else {
 		  lives--;
 		  if(!lives) {
-		      alert("GAME OVER");
+		      console.log("GAME OVER");
 		      document.location.reload();
 		  }
 		  else {
