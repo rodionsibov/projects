@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Hello, world!</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Raleway:900&display=swap');
+
+html, body {
+  position: relative;
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(20px) scale(1.5);
+  overflow: hidden;
+}
+@media screen and (max-width: 600px) {
+  .wrapper {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.container {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+}
+[data-typing] {
+  position: absolute;
+  top: 0;
+  /*   border: 1px solid #f55; */
+  transform-origin: 0% 0%;
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+  top: 100px;
+  line-height: 1;
+  color: #333;
+}
+[data-typing="i"] {
+  top: 0;
+  left: 50px;
+  font-size: 90px;
+  height: 70px;
+  line-height: 70px;
+}
+[data-typing="frontend"] {
+  top: 3px;
+  left: 80px;
+  font-size: 27px;
+  letter-spacing: 1px;
+}
+[data-typing="engineer"] {
+  top: 30px;
+  left: 80px;     
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+[data-typing="with"] {
+  top: 74px;
+  left: 265px;
+  font-size: 36px;
+  transform: rotate(90deg);
+  background: #333;
+  color: #fff;
+  padding: 0px 4px;
+}
+[data-typing="javascript"] {
+  top: 74px;
+  left: 229px;
+  transform: rotate(90deg);
+  font-size: 35px;
+}
+[data-typing="typescript"] {
+  top: 72px;
+  right: 110px;
+  font-size: 25px;
+}
+[data-typing="css"] {
+  top: 97px;
+  right: 110px;
+  font-size: 40px;
+}
+[data-typing="nodejs"] {
+  top: 134px;
+  right: 110px;
+  font-size: 35px;
+}
+[data-typing="animation"] {
+  top: 167px;
+  right: 110px;
+  font-size: 35px;
+}
+[data-typing="scenejs"] {
+  top: 200px;
+  right: 110px;
+  font-size: 35px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+body .scenejs-editor-timeline {
+  position: fixed;
+  bottom: 0;
+  max-height: 300px;
+}
+</style>
+    <script src="//daybrush.com/scenejs/release/latest/dist/scene.min.js"></script>
+  </head>
+
+  <body>
+
+<div class="wrapper">
+  <div class="container">
+    <a href="https://github.com/daybrush" target="_blank" data-typing="i">I</a>
+    <a href="https://github.com/daybrush" target="_blank" data-typing="frontend">'m Front-End</a>
+    <a href="https://github.com/daybrush" target="_blank" data-typing="engineer">Engineer</a>
+    <p data-typing="with">with</p>
+    <p data-typing="javascript">JavaScript</p>
+    <p data-typing="typescript">TypeScript</p>
+    <p data-typing="css">CSS</p>
+    <p data-typing="nodejs">Node.js</p>
+    <p data-typing="animation">Animation</p>
+    <a href="https://github.com/daybrush/scenejs" target="_blank" data-typing="scenejs">Scene.js</a>
+  </div>
+</div>
+
+
+
+    
+
+
+
+
+<script>
+/*
+https://github.com/daybrush/scenejs
+*/
+const scene = new Scene({
+  ".container": {}
+}, {
+  selector: true,
+});
+
+const item = scene.getItem(".container");
+
+
+function move(startTime, endTime, left, top, rotate, scale) {
+  item.set({
+    [`${startTime}, ${endTime}`]: Scene.kineticFrame({
+      left: `${left}px`,
+      top: `${top}px`
+    }).set({
+      transform: {
+        rotate: `${rotate}deg`,
+        scale,
+      }
+    }),
+  });
+}
+
+
+
+move(0, 0, 90, 115, 0, 5);
+move(1, 1, 90, 115, 0, 2);
+move(2, 3, 0, 115, 0, 1);
+move(4, 4.5, -100, 0, -90, 2);
+move(5.5, 6, -52, -18, -90, 1.6);
+move(7, 7.5, 30, 45, 0, 2);
+move(8.5, 9,  10, 30, 0, 3);
+move(10, 10.5, 28, 0, 0, 2.2);
+move(11.5, 12, 50, -35, 0, 1.65);
+move(13, 13.5, 35, -70, 0, 2);
+move(14.5, 18, 0, 0, 0, 1);
+
+
+/*
+typing
+https://github.com/daybrush/scenejs-effects
+*/
+scene.set({
+  "[data-typing='i']": Scene.typing({ text: "I ", duration: 1}),
+  "[data-typing='frontend']": {
+    1: Scene.typing({ text: "'m Front-End", duration: 1}),
+  },
+  "[data-typing='engineer']": {
+    1.5: Scene.typing({ text: "Engineer", duration: 1}),
+  },
+  "[data-typing='with']": {
+    3.3: Scene.typing({ text: "with", duration: 0.5}),
+  },
+  "[data-typing='javascript']": {
+    4.5: Scene.typing({ text: "JavaScript", duration: 1}),
+  },
+  "[data-typing='typescript']": {
+    6: Scene.typing({ text: "TypeScript", duration: 1}),
+  },
+  "[data-typing='css']": {
+    7.5: Scene.typing({ text: "CSS", duration: 0.7}),
+  },
+  "[data-typing='nodejs']": {
+    9: Scene.typing({ text: "Node.js", duration: 1}),
+  },
+  "[data-typing='animation']": {
+    10.5: Scene.typing({ text: "Animation", duration: 1}),
+  },
+  "[data-typing='scenejs']": {
+    12: Scene.typing({ text: "Scene.js", duration: 1}),
+  },
+});
+
+scene.setPlaySpeed(1);
+scene.setEasing("ease-in-out");
+scene.setIterationCount("infinite");
+scene.play();
+
+
+// new Timeline(scene, document.body)
+</script>
+
+  </body>
+</html>
