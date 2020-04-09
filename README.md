@@ -2,7 +2,7 @@
 
 The more you practice, the better your skills will become 😉
 
--[custom-progress-bar](custom-progress-bar.html)
+- [custom-progress-bar](custom-progress-bar.html)
 
 `
 Experiment and have fun!
