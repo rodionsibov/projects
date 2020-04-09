@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello, world!</title>
+    <style>
+      .bg {
+	  background-image: url(https://images.unsplash.com/photo-1586332035275-1f996a2ad174?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1482&q=80);
+	  position: relative;
+	  height: 60vh;
+	  width: 80vw;
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  margin: 50px auto;
+	  background-position: center;
+	  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+      }
+
+      .bg::after {
+	  background-image: inherit;
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  content: "";
+	  width: inherit;
+	  height: inherit;
+	  position: absolute;
+	  bottom: -100%;
+	  transform: rotateX(180deg);
+      }
+
+      .bg::before {
+	  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), #ffffff 60%, #ffffff);
+	  content: "";
+	  position: absolute;
+	  bottom: -100%;
+	  width: inherit;
+	  height: inherit;
+	  z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg"></div>
+    
+  </body>
+</html>
