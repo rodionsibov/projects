@@ -2,7 +2,7 @@
 
 The more you practice, the better your skills will become 😉
 
-- [custom-progress-bar](rodionsibov.github.io/projects/custom-progress-bar.html)
+- [custom-progress-bar]("rodionsibov.github.io/projects/custom-progress-bar.html")
 
 `
 Experiment and have fun!
