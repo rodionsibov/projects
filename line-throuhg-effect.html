@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello, world!</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+      * {
+	  box-sizing: border-box;
+      }
+
+      body {
+	  background-color: #efa8e4;
+	  font-family: 'Lato', sans-serif;
+	  overflow: hidden;
+}
+
+      h1 {
+	  font-size: 10vw;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  margin: 0;
+	  width: 100%;
+	  text-align: center;
+	  color: #594a4e;
+      }
+
+    
+      .line {
+	  border-radius: 50px;
+	  animation: grow 3s linear forwards;
+	  background-color: #f8e1f4;
+	  position: absolute;
+	  top: 50%;
+	  left: -1vw;
+	  transform: translateY(-50%);
+ 	  width: 0;
+	  height: 3vh;
+	  z-index: 2;
+      }
+
+      @keyframes grow {
+	  to {
+	      width: 102vw;
+	  }
+      }
+
+      .overlay {
+	  z-index: 2;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="line"></div>
+    <h1 id="text">We love to play</h1>
+    <script>
+      const text = document.getElementById("text");
+      const textArr = text.innerText.split("");
+      // console.log(textArr);
+      const newEl = document.createElement("h1");
+      newEl.innerHTML = `${textArr.map(letter => `<span style="${randomVisibility()}">${letter}</span>`).join("")}`;
+      newEl.classList.add("overlay");
+      document.body.appendChild(newEl);
+      function randomVisibility() {
+	  return Math.random() < 0.5 ? "visibility: hidden" : "visibility: visible";
+      }
+      
+    </script>
+ </body>
+</html>
