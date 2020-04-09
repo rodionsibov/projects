@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello, world!</title>
+    <style>
+
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+      /* font-family: 'Montserrat', sans-serif; */
+
+
+    </style>
+  </head>
+  <body>
+    <div class="progress">
+      <div class="progress-done" data-done="70">70 %</div>
+    </div>
+    <script>
+      const progress = document.querySelector(".progress-done");
+      setTimeout(() => {
+	  progress.style.width = progress.getAttribute("data-done") + "%";
+	  progress.style.opacity = 1;
+      }, 500)
+    </script>
+  </body>
+</html>
