@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Hello, world!</title>
+    <style>
+
+      @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+      body {
+	  font-family: 'Lato', sans-serif;
+	  margin: 0;
+	  height: 100vh;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+      }
+
+      .results {
+	  flex-direction: column;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+      }
+
+      .result {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  margin: 10px;
+	  height: 400px;
+	  width: 300px;
+      }
+
+      .result img {
+	  border-radius: 4px;
+	  object-fit: cover;
+	  box-sizing: border-box;
+	  background:snow ;
+	  height: 100%;
+	  width: 100%;
+      }
+
+      .buttons {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  
+      }
+
+      button {
+	  background-color: forestgreen;
+	  border: 0;
+	  border-radius: 4px;
+	  color: #fff;
+	  font-size: 18px;
+	  padding: 10px;
+	  margin: 10px;
+	  width: 300px;
+	  transition: all 0.1s;
+      }
+
+      button:hover {
+	  filter: brightness(110%);
+      }
+      
+      button:active {
+	  transform: scale(0.98);
+      }
+
+      button:focus {
+	  outline: none
+      }
+      
+      @media screen and (max-width: 760px) {
+	  body {
+	      flex-direction: column;
+	      height: auto;
+}
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="results">
+      <div id="cat_result" class="result">
+	<p>Random Cat Placeholder</p>
+      </div>
+    <div class="buttons">
+	<button id="cat_btn">Get Cat</button>
+    </div>
+    </div>
+    <div class="results">
+      <div id="dog_result" class="result">
+	<p>Random Dog Placeholder</p>
+      </div>
+      <div class="buttons">
+	<button id="dog_btn">Get Dog</button>
+      </div>
+    </div>
+
+      <script>
+
+	const cat_result = document.getElementById("cat_result");
+	const dog_result = document.getElementById("dog_result");
+	const cat_btn = document.getElementById("cat_btn");
+	const dog_btn = document.getElementById("dog_btn");
+
+	cat_btn.addEventListener("click", getRandomCat)
+	dog_btn.addEventListener("click", getRandomDog)
+
+	function getRandomCat() {
+	    fetch("https://aws.random.cat/meow")
+		.then(res => res.json())
+		.then(data => {
+		    cat_result.innerHTML = `<img src="${data.file}">`
+		})
+	}
+
+	function getRandomDog() {
+	    fetch("https://random.dog/woof.json")
+		.then(res => res.json())
+		.then(data => {
+		    dog_result.innerHTML = `<img src="${data.url}">`
+		})
+	}
+
+	</script>
+  </body>
+</html>
