@@ -9,7 +9,10 @@
     <style>
 
       .grid {
-	  
+	  display: flex;
+	  flex-wrap: wrap;
+	  height: 300px;
+	  width: 400px;
       }
       </style>
   </head>
@@ -18,6 +21,72 @@
     <div class="grid">
     </div>
     <script>
+
+      // card options
+      const cardArray = [
+	  {
+	      name: "fries",
+	      img: "https://image.flaticon.com/icons/svg/1864/1864473.svg",
+	  },
+	  {
+	      name: "fries",
+	      img: "https://image.flaticon.com/icons/svg/1864/1864601.svg",
+	  },
+	  {
+	      name: "fries",
+	      img: "https://image.flaticon.com/icons/svg/1864/1864481.svg",
+	  },
+	  {
+	      name: "fries",
+	      img: "https://image.flaticon.com/icons/svg/1864/1864521.svg",
+	  },
+	  {
+	      name: "fries",
+	      img: "https://image.flaticon.com/icons/svg/1864/1864474.svg",
+	  },
+	  {
+	      name: "fries",
+	      img: "",
+	  },
+	  {
+	      name: "fries",
+	      img: "",
+	  },
+	  {
+ 	      name: "fries",
+	      img: "https://image.flaticon.com/icons/svg/1864/1864508.svg",
+	  }
+      ];
+
+      const grid = document.querySelector(".grid");
+      var cardChosen = []
+      var cardChosenId = []
+      
+      // create board
+      function createBoard() {
+	  for (let i = 0; i < cardArray.length; i++) {
+	      var card = document.createElement("img")
+	      card.setAttribute("src", "https://image.flaticon.com/icons/svg/189/189665.svg")
+	      card.setAttribute("data-id", i)
+	      card.AddEventListener("click", flipcard
+	      grid.appendChild(card)
+	      
+	  }
+      }
+
+      // check for matches
+
+      // flip card
+
+	  function flipCard() {
+	  var cardId = this.getAttribute("data-id")
+	  cardChosen.push(cardArray[cardId].name)
+	  cardChosenId.push(cardId)
+      }
+
+
+      
+      createBoard()
     </script>
   </body>
 </html>
