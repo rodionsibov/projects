@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello, world!</title>
+
+    <style>
+
+      body {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  height: 100vh;
+	  background: #333;
+	  margin: 0;
+      }
+      .sandbox img {
+	  max-height: 90vh;
+	  transition: all 0.3s ease;
+      }
+
+      .sandbox:hover {
+	  cursor: crosshair;
+      }
+
+      .grayscale {
+	  filter: grayscale(0.9);
+      }
+
+      .grayscale:hover {
+	  filter: grayscale(0);
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="sandbox">
+      <img src="https://images.unsplash.com/photo-1488793207478-ff0892419e30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80" alt="" class="grayscale">
+    </div>
+    <script>
+    </script>
+  </body>
+</html>
