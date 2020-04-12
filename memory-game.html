@@ -8,6 +8,11 @@
     <title>Hello, world!</title>
     <style>
 
+      img {
+	  margin: 5px;
+	  max-width: 30%;
+      }
+      
       .grid {
 	  display: flex;
 	  flex-wrap: wrap;
@@ -21,6 +26,7 @@
     <div class="grid">
     </div>
     <script>
+    
 
       // card options
       const cardArray = [
@@ -58,10 +64,12 @@
 	  }
       ];
 
+      cardArray.sort(() => 0.5 - Math.random())
+
       const grid = document.querySelector(".grid")
       const resultDisplay = document.querySelector("#result")
-      var cardChosen = []
-      var cardChosenId = []
+      var cardsChosen = []
+      var cardsChosenId = []
       var cardsWon = []
       
       // create board
@@ -70,7 +78,7 @@
 	      var card = document.createElement("img")
 	      card.setAttribute("src", "https://image.flaticon.com/icons/svg/189/189665.svg")
 	      card.setAttribute("data-id", i)
-	      card.AddEventListener("click", flipcard)
+	      card.addEventListener("click", flipCard)
 	      grid.appendChild(card)
 	      
 	  }
@@ -107,14 +115,14 @@
 	      cardsChosen.push(cardArray[cardId].name)
 	      cardsChosenId.push(cardId)
 	      this.setAttribute("src", cardArray[cardId].img)
-	      if (cardChosen.length === 2) {
+	      if (cardsChosen.length === 2) {
 		  setTimeout(checkForMatch, 500)
 	      }
-      }
+	  }
 
-
+	  createBoard()
       
-      createBoard()
+      
     </script>
   </body>
 </html>

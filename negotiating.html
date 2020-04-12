@@ -1,51 +1,59 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta name="description" content="Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	  rel="stylesheet">
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Hello, world!</title>
 
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 
       body {
-	  animation: example 2s;
+	  color: #444;
+	  background: snow;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+	  font-family: 'Roboto', sans-serif;
+	  height: 100vh;
       }
 
-      @keyframes example {
+
+     .vibe {
+	  animation: blink 2s;
+	  margin-top: 0px;
+	  font-size: 5vw;
+	  text-align: center;
+	  font-weight: lighter;
+      }
+      
+      @keyframes blink {
 	  from {
 	      opacity: 0;
 	  }
 	  to {
 	      opacity: 1;
 	  }
-}
+      }
+
+      @media screen and (max-width: 360px) {
+	  .vibe {
+	      font-size: 10vw;
+	  }
+      }
     </style>
 
   </head>
   <body>
 
-    <div class="container">
-      <div class="row vh-100 align-items-center">
-	<div class="col text-center">
-	  <p class="lead">The rules of negotiating
-	  </p>
-	  <div class="vibe display-4">
-	  </div>
-
-	</div>
-      </div>
-    </div>
+    <p>The rules of negotiating</p>
+    <h1 class="vibe"></h1>
 
     <script>
       function blink() {window.location.reload()}
@@ -55,6 +63,7 @@
     <script>
 
       const vibes = [
+
 	  "Get everything in writing",
 	  "Always keep the door open",
 	  "Information is power",

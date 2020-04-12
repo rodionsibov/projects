@@ -1,22 +1,59 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <meta name="description" content="Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Hello, world!</title>
 
     <style>
+
+      @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+      
+      body {
+	  background: snow;
+	  margin: 0;
+      	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  font-family: 'EB Garamond', serif;
+	  flex-direction: column;
+	  height: 100vh;
+	  font-size: 3vh;
+	  color: #555;
+
+      }
+
+      .vibe {
+	  font-size: 10vw;
+      }
       
       .love {
+	  margin: 10px;
 	  font-size: 4em;
+      }
+
+      button {
+	  letter-spacing: 1px;
+	  text-transform: uppercase;
+	  background: #ffd31d;
+	  cursor: pointer;
+	  margin: 50px;
+	  padding: 20px 30px;
+	  border-radius: 30px;
+	  border: none;
+	  transition: all 0.1s;
+	  box-shadow: 0 5px 20px rgba(255, 20, 147, 0.2);
+	  font-size: 12px;
+	  font-weight: bold;
+      }
+
+      button:hover, button:active {
+	  transform: scale(0.98);
+	  filter: brightness(98%);
+			  
       }
       
     </style>
@@ -24,36 +61,28 @@
   </head>
   <body>
 
-    <div class="container">
-      <div class="row vh-100 align-items-center">
-	<div class="col text-center">
-	  <p class="lead">This is a page for you</p>
-	  <div class="vibe display-3">
-	  </div>
-	  <div class="love">
-	    ❤️
-	  </div>
-	  <button type="button" class="btn-lg mt-5 btn btn-outline-info" onClick="window.location.reload();">Reload</button>
-	</div>
-      </div>
-    </div>
+    <p>This is a page for you</p>
+    <div class="vibe"></div>
 
-    <script>
+    <div class="love">❤️</div>
+    <button type="button" class="btn-lg mt-5 btn btn-outline-info" onClick="window.location.reload();">Get a new good vibe</button>
+</div>
+</div>
+</div>
 
-      const vibes = [
-	  "Never look back",
-	  "All we need is love",
-	  "Enjoy every moment",
-	  "Follow your heart"
-      ];
+<script>
 
-      // choose a random good vibe
-      var vibe = vibes[Math.floor(Math.random() * Math.floor(vibes.length))];
+  const vibes = [
+      "Never look back",
+      "All we need is love",
+      "Enjoy every moment",
+      "Follow your heart"
+  ];
 
-      // display a good vibe
-      document.querySelector(".vibe").append(vibe);
+  var vibe = vibes[Math.floor(Math.random() * Math.floor(vibes.length))];
+  document.querySelector(".vibe").append(vibe);
 
-    </script>
+</script>
 
-  </body>
+</body>
 </html>

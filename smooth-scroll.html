@@ -6,21 +6,22 @@
     <title>Hello, world!</title>
     <style>
 
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:800&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
 
       html {
 	  scroll-behavior: smooth;
       }
 
       body {
-	  font-family: 'Montserrat', sans-serif;
 	  margin: 0;
+	  font-family: 'Montserrat', sans-serif;
+
       }
 
       section {
-	  color: white;
-	  font-size: 3em;
-	  font-weight: 800;
+	  color: snow;
+	  font-size: 2em;
 	  display: flex;
 	  align-items: center;
 	  justify-content: center;
@@ -28,37 +29,46 @@
       }
 
       #page-1, nav a:nth-of-type(1) {
-	  background-color: #8e44ad;
+	  background-color: blueviolet;
       }
       
       #page-2, nav a:nth-of-type(2) {
-	  background-color: #e74c3c;
+	  background-color: orangered;
       }
 
       #page-3, nav a:nth-of-type(3) {
-	  background-color: #2980b9;
+	  background-color: dodgerblue;
       }
       
       #page-4, nav a:nth-of-type(4) {
-	  background-color: #2ecc71;
+	  background-color: limegreen;
       }
 
       nav {
 	  position: fixed;
 	  top: 50%;
-	  right: 0;
+	  left: 10px;
 	  transform: translateY(-50%);
       }
 
       nav a {
-	  border: 4px solid #fff;
+	  border: 2px solid snow;
 	  border-radius: 50%;
 	  display: block;
 	  margin: 10px;
 	  height: 30px;
 	  width: 30px;
+	  transition: all 0.2s;
+      }
+      
+      nav a:active {
+	  transform: translateY(2px);
       }
 
+      nav a:hover {
+	  border-radius: 10%;
+      }
+      
     </style>
   </head>
   <body>
@@ -68,18 +78,11 @@
       <a href=#page-3></a>
       <a href=#page-4></a>
     </nav>
-    <section id="page-1">
-      Page 1 - PURPLE
-    </section>
-    <section id="page-2">
-      Page 2 - RED
-    </section>
-    <section id="page-3">
-      Page-3 - BLUE
-    </section>
-    <section id="page-4">
-      Page-4 - GREEN
-    </section>
+
+    <section id="page-1">Page 1</section>
+    <section id="page-2">Page 2</section>
+    <section id="page-3">Page 3</section>
+    <section id="page-4">Page 4</section>
     
   </body>
 </html>
