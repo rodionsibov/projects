@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <title>Hello, world!</title>
+
+
+    <style>
+
+      :root {
+	  --bright: snow;
+	  --dark: indigo;
+      }
+
+      body {
+	  background: var(--bright);
+      }
+
+      #container {
+	  font-family: monospace;
+	  font-size: 2vh;
+	  color: var(--dark);
+	  background: var(--bright);
+      }
+
+
+      #barcontainer {
+	  position: absolute;
+	  top: 18vh;
+	  left: 0;
+	  right: 0;
+	  height: 75vh;
+	  overflow: hidden;
+      }
+
+      #yp,
+      #mp,
+      #dp,
+      #hp,
+      #mip {
+	  margin-left: 10vw;
+	  margin-bottom: 1vh;
+      }
+
+      #ygraph,
+      #mgraph,
+      #dgraph,
+      #hgraph,
+      #migraph {
+	  height: 4vh;
+	  width: 80vw;
+	  border: 1px solid var(--dark);
+	  margin-bottom: 5vh;
+	  margin-left: 10vw;
+      }
+
+      #ybar,
+      #mbar,
+      #dbar,
+      #hbar,
+      #mibar {
+	  height: 4vh;
+	  width: 0vw;
+	  background: var(--dark);
+	  transition: width 0.5s;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+
+    <div id="container">
+      <div id="barcontainer">
+	<div id="yp">Year Progress: <span id="ypp"></span></div>
+	<div id="ygraph">
+	  <div id="ybar"></div>
+	</div>
+	<div id="mp">Month Progress: <span id="mpp"></span></div>
+	<div id="mgraph">
+	  <div id="mbar"></div>
+	</div>
+	<div id="dp">Day Progress: <span id="dpp"></span></div>
+	<div id="dgraph">
+	  <div id="dbar"></div>
+	</div>
+	<div id="hp">Hour Progress: <span id="hpp"></span></div>
+	<div id="hgraph">
+	  <div id="hbar"></div>
+	</div>
+	<div id="mip">Minute Progress: <span id="mipp"></span></div>
+	<div id="migraph">
+	  <div id="mibar"></div>
+	</div>
+      </div>
+
+    
+
+    <script>
+
+      let def_with = 80;
+      let exp = true;
+      let dm;
+      let root = document.documentElement;
+
+    
+      //Main Interval
+      setInterval(() => {
+	  //Set start of year
+	  let d = new Date();
+	  d.setMonth(0);
+	  d.setDate(1);
+	  d.setHours(0);
+	  d.setMinutes(0);
+	  d.setSeconds(0);
+
+	  //calculate seconds since start of Year
+	  let now = new Date();
+	  let elapsedY = now - d;
+	  //calculate percentage for year
+	  let spy = secondsPerYear(now.getFullYear());
+	  let yperc = elapsedY / 1000 / spy;
+	  yperc = Math.round(yperc * 10000000) / 100000;
+	  ypp.innerHTML = yperc + "%";
+	  ybar.style.width = def_with * yperc / 100 + "vw";
+
+	  //calculate percentage for month
+	  let startOfMonth = new Date();
+	  startOfMonth.setDate(1);
+	  startOfMonth.setHours(0);
+	  startOfMonth.setMinutes(0);
+	  startOfMonth.setSeconds(0);
+	  startOfMonth.setMilliseconds(0);
+	  let elapsedM = now - startOfMonth;
+	  let spm = secondsPerMonth(now.getFullYear(), now.getMonth() + 1);
+	  let mperc = elapsedM / 1000 / spm;
+	  mperc = Math.round(mperc * 1000000) / 10000;
+	  mpp.innerHTML = mperc + "%";
+	  mbar.style.width = def_with * mperc / 100 + "vw";
+
+	  //calculate percentage for day
+	  let startOfDay = new Date();
+	  startOfDay.setHours(0);
+	  startOfDay.setMinutes(0);
+	  startOfDay.setSeconds(0);
+	  startOfDay.setMilliseconds(0);
+	  let elapsedD = now - startOfDay;
+	  let dperc = elapsedD / 1000 / 86400;
+	  dperc = Math.round(dperc * 100000) / 1000;
+	  dpp.innerHTML = dperc + "%";
+	  dbar.style.width = def_with * dperc / 100 + "vw";
+
+	  //calculate percentage for hour
+	  let startOfHour = new Date();
+	  startOfHour.setMinutes(0);
+	  startOfHour.setSeconds(0);
+	  startOfHour.setMilliseconds(0);
+	  let elapsedH = now - startOfHour;
+	  let hperc = elapsedH / 1000 / 3600;
+	  hperc = Math.round(hperc * 10000) / 100;
+	  hpp.innerHTML = hperc + "%";
+	  hbar.style.width = def_with * hperc / 100 + "vw";
+
+	  //calculate percentage for minute
+	  let startOfMinute = new Date();
+	  startOfMinute.setSeconds(0);
+	  startOfMinute.setMilliseconds(0);
+	  let elapsedMi = now - startOfMinute;
+	  let miperc = elapsedMi / 1000 / 60;
+	  miperc = Math.round(miperc * 1000) / 10;
+	  mipp.innerHTML = miperc + "%";
+	  mibar.style.width = def_with * miperc / 100 + "vw";
+      }, 1000);
+
+
+
+
+      //Helper Functions
+      function secondsPerYear(year) {
+	  if (leapYear(year)) {
+	      return 31622400;
+	  } else {
+	      return 31536000;
+	  }
+      }
+
+      function leapYear(year) {
+	  return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+      }
+
+      function secondsPerMonth(y, m) {
+	  let spm = new Date(y, m, 0).getDate() * 24 * 3600;
+	  return spm;
+      }
+
+    </script>
+  </body>
+</html>
