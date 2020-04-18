@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">    
+
+    
+    <title>Rodion - My Personal Projects</title>
+
+    <style>
+
+      @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+      * {
+	  margin: 0;
+      }
+      
+      body {
+	  
+	  background: snow;
+	  color: #555;
+	  font-family: 'Roboto', sans-serif;
+
+      }
+     
+      h1 {
+	  font-weight: normal;
+	  font-size: 4em;
+	  font-family: 'EB Garamond', serif;
+	  line-height: 10px;
+	  margin: 20px auto;
+      }
+
+      @media screen and (max-width: 360px) {
+	  h1 {
+	      margin: 20px 0 60px 0;
+	  }
+      }
+
+      .header {
+
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  text-align: center;
+	  width: 90%;
+	  margin: auto;
+      }
+
+      .footer {
+	  text-align: center;
+	  padding: 30px;
+	  color: gray;
+      }
+
+      .progress {
+	  height: 3px;
+	  width: 102%;
+	  position: fixed;
+	  top: 0;
+	  z-index: 200;
+	  left: -1%;
+	  overflow: hidden;
+      }
+
+      .progress__highlight {
+	  transition: width 0.15s linear;
+	  background: dodgerblue;
+	  height: 100%;
+	  width: 0%;
+      }
+
+      
+      ::selection {
+	  background: navy;
+	  color: gold;
+
+      }
+
+      .image-gallery {
+
+	  
+	  display: flex;
+	  justify-content: center;
+	  width: 90%;
+	  margin: 10px auto 0;
+	  flex-wrap: wrap;
+      }
+ 
+      .images {
+	  background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black),
+			    linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+	  background-size: 60px 60px;
+	  background-position: 0 0, 30px 30px;
+
+	  position: relative;
+	  width: 300px;
+	  height: 300px;
+
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  margin: 10px;
+	  overflow: hidden;
+      	  animation: blink 2s;
+      }
+
+
+ 
+      .grayscale {
+	  filter: grayscale(1);
+      }
+
+      .grayscale:hover {
+	  filter: grayscale(0);
+      }
+
+      .invert {
+	  filter: invert(0);
+      }
+
+      .invert:hover {
+	  filter: invert(1);
+      }
+
+      .sepia {
+	  filter: sepia(0);
+      }
+
+      .sepia:hover {
+	  filter: sepia(1);
+      }
+
+
+      .images img {
+	  transition: all 0.3s ease;
+	  z-index: 100;
+	  object-fit: cover;
+	  height: 100%;
+	  width: 100%;
+      }
+
+      .images img:hover {
+ 	  cursor: crosshair;
+	  transform: scale(1.1) rotate(-5deg);
+
+
+      }
+
+      .images::after {
+	  content: "Image size 300x300 px";
+	  position: absolute;
+	  font-size: 12px;
+	  color: white;
+	  background: gray;
+	  padding: 5px;
+	  font-family: sans;
+      }
+
+      .vibe {
+	  
+	  letter-spacing: 10px;
+	  text-transform: uppercase;
+	  margin: 20px;
+      	  animation: blink 2s;
+	  padding-bottom: 10px; 
+	  border-bottom: 1px solid #eee;
+      }
+      
+      button {
+	  vertical-align: 10%;
+	  font-family: inherit;
+	  border-radius: 5px;
+	  margin: 5px;
+	  background: transparent;
+	  letter-spacing: 1px;
+	  text-transform: uppercase;
+	  cursor: pointer;
+	  padding: 20px;
+	  border: none;
+	  transition: all 0.1s;
+	  font-size: 0.7em;
+	  font-weight: bold;
+      }
+
+      button:focus {
+	  outline: none;
+      }
+
+      @keyframes blink {
+	  from {
+	      opacity: 0;
+	  }
+	  to {
+	      opacity: 1;
+	  }
+      }
+
+
+      
+    </style>
+  </head>
+  <body>
+
+    <div class="progress">
+      <div class="progress__highlight" id="js-highlight"></div>
+    </div>
+    
+    <div id="js-container">
+
+
+      <div class="header">
+
+      <div class="vibe"></div>
+
+
+
+    <h1><button id="btn"><span id="emoji" class="material-icons">update</span></button>Image Gallery</h1>
+
+  <p class="typewriter">Let's have fun with CSS filters and show you some examples:</p>
+    
+    </div>
+    
+    
+    
+    <div class="image-gallery">
+      
+      <div class="images">
+	<img class=" grayscale" src="./gallery/07.jpg" alt="">
+      </div>
+
+      <div class="images">
+	<img class=" grayscale" src="./gallery/11.jpg" alt="">
+      </div>
+
+      <div class="images">
+	<img class="grayscale" src="./gallery/12.jpg" alt="">
+      </div>
+
+      <div class="images">
+	<img class="grayscale" src="./gallery/13.jpg" alt="">
+      </div>
+
+
+      <div class="images">
+	<img class="grayscale" src="./gallery/15.jpg">
+      </div>
+
+      <div class="images">
+	<img class="grayscale" src="./gallery/16.jpg">
+      </div>
+
+      <div class="images">
+	<img class="grayscale" src="./gallery/17.jpg">
+      </div>
+
+      <div class="images">
+	<img class="grayscale" src="./gallery/18.jpg">
+      </div>
+   
+      <div class="images">
+	<img class="grayscale" src="./gallery/19.jpg">
+      </div>
+
+      <div class="images">
+	<img class="grayscale" src="./gallery/00.jpg">
+      </div>
+
+      <div class="images">
+	<img class="grayscale" src="./gallery/05.jpg">
+      </div>
+
+      <div class="images">
+	<img class="grayscale" src="./gallery/14.jpg">
+      </div>
+
+      <div class="images">
+	<img class="grayscale" src="./gallery/06.jpg">
+      </div>
+
+      <div class="images">
+	<img class="grayscale" src="./gallery/01.jpg">
+      </div>
+
+    </div>
+    <!-- progress end -->
+    </div>
+    
+
+    <div class="footer">
+      <small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov/projects">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
+    </div>
+
+        <script>
+
+      const container = document.getElementById('js-container');
+      const highlight = document.getElementById('js-highlight');
+      var containerHeight;
+
+      window.onscroll = function() {
+
+	  containerHeight = container.offsetHeight - window.innerHeight;
+	  containerPos = container.getBoundingClientRect();
+	  diff = containerHeight + containerPos.top;
+	  progressPercentage =  diff / containerHeight * 100;
+	  cssWidth = Math.floor(100 - progressPercentage);
+  
+	  highlight.style.width = cssWidth + "%"; 
+
+      };
+
+
+    </script>
+    
+
+
+    <script>
+
+	const result = document.getElementById("emoji");
+	const btn = document.getElementById("btn");
+
+	btn.addEventListener("click", getRandomImage)
+
+
+	function getRandomImage() {
+	    fetch("https://raw.githubusercontent.com/github/gemoji/master/db/emoji.json")
+		.then(res => res.json())
+		.then(data => {
+		    let randomData = data[Math.floor(Math.random() * data.length)]
+		    console.log(randomData)
+		    result.innerHTML = `<p title="${randomData.description.toUpperCase()}">${randomData.emoji}</p>`
+
+		});
+
+	}
+
+	</script>
+
+
+
+
+
+    <script>
+
+
+      const vibes = [
+	  "Never look back",
+	  "All we need is love",
+	  "Enjoy every moment",
+	  "Follow your heart",
+	  
+	  "Get everything in writing ",
+	  "Always keep the door open",
+	  "Information is power",
+	  "Always be positive",
+	  "Don’t be the decision maker",
+	  "Have alternatives",
+	  "Proclaim reasons for everything",
+	  "Be motivated by more than just money",
+	  "Understand what they value",
+	  "Be winnable"
+
+  ];
+
+  var vibe = vibes[Math.floor(Math.random() * Math.floor(vibes.length))];
+  document.querySelector(".vibe").append(vibe);
+
+</script>
+
+    <script>
+      function w(d,e,c) {
+	  b = d.slice(0, c),
+	  b == d ? e.innerHTML = b : (e.innerHTML = b + "|",
+				      setTimeout(w, 70, d, e, c + 1))
+      }
+
+      window.addEventListener("DOMContentLoaded", function() {
+	  for (i of document.getElementsByClassName("typewriter"))
+	      w(i.innerHTML, i, 0)
+      }, false)
+    </script>
+
+
+    
+  </body>
+</html>
