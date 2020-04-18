@@ -14,50 +14,62 @@
 
       
       body {
+	  box-sizing: border-box;
+	  height: 100vh;
 	  margin: 0;
+	  padding: 10px;
 	  font-family: 'Open Sans', sans-serif;
-	  background: darkblue;
-	  text-align: center;
-	  color: snow;
+	  display: flex;
+	  flex-wrap: wrap;
       }
 
-      .social {
-	  padding: 20px;
-	  position: fixed;
-	  bottom: 0;
-      }
       
       span {
 	  cursor: pointer;
 	  vertical-align: middle;
 	  margin-left: 10px;
-	        }
-
-      h1 {
-	  font-size: 5vh;
-	  margin: 50px 0 0;
       }
 
-      p {
+      h1, p, form { 
+	  margin: 50px 0 0 40px;
+      }
 
-	  margin: 10px 0 0;
-	  padding: 0 20px;
+      h1 { 
+	  position: relative;
+	  top: 30px;
+      }
+
+      h1, p, small {
+	  color: snow;
+      }
+
+
+      .form-help {
+	  margin: 10px 0 0 40px;
+	  
+      }
+
+      .social {
+	  margin: 50px 0 0 40px;
+      }
+      
+      .social svg:hover {
+	  opacity: 0.5;
       }
       
       form {
-	  margin: 30px 0 0;
 	  display: flex;
-	  border-radius: 50px;    
-	  overflow: hidden;
+
       }
 
       form .text {
-	  width: 200px;
+	  width: 40%;
 	  font-size: 18px;
 	  padding: 15px 20px;
 	  border: none;
 	  background: snow;
 	  outline-style: none;
+
       }
 
       form .text::placeholder {
@@ -68,31 +80,71 @@
       }
 
       form .btn {
+	  border-radius: 0 50px 50px 0;    
+	  
 	  font-size: 12px;
 	  cursor: pointer;
 	  padding: 15px 20px;
 	  border: none;
-	  background: deeppink;
+	  background: aqua;
 	  font-weight: 600;
-	  color: snow;
       }
 
-      .btn:hover {
-	  filter: brightness(1.5);
+      form .btn:hover {
+	  filter: brightness(0.9);
       }
       
-      .container {
-	  height: 100vh;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
+      .info {
+	  width: 50%;
+	  background: #333;
 	  flex-direction: column;
+
       }
 
       .animation svg {
-	  width: 100%;
+	  width: 50%;
+	  margin: 40px 150px 0;
       }
 
+      .bg-image {
+	  width: 50%;
+
+	  background: url(https://images.unsplash.com/photo-1587125297377-3a861a894a55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=696&q=80)  center right / cover no-repeat;
+
+      }
+      
+      @media screen and (max-width: 400px) {
+	  body {
+	      padding: 0;
+	  }
+
+      .animation svg {
+	  width: 70%;
+	  margin: 40px auto 0;
+	  
+      }
+      form  {
+	  justify-content: center;
+	  width: 100%;
+	  margin: 20px auto 0;
+      }
+      
+      h1, p { 
+	  margin: 0;
+	  padding: 20px;
+      }
+
+      .info {
+	  width: 100%;
+	  text-align: center;
+
+      }
+      
+      .social, .form-help {
+	  margin: 0;
+	  padding: 10px 30px 30px;
+	  }
+      }
       
       .animation svg .diamond {
 	  animation: pulse 1.8s infinite;  
@@ -122,8 +174,10 @@
 
   </head>
   <body>
+    <div class="bg-image">
+    </div>
 
-    <div class="container">
+    <div class="info">
 	  
 	<div class="animation">
 	  <svg width="370" heighty="230" viewBox="0 0 370 230" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -179,8 +233,9 @@
 	  <input class="btn" type="submit" value="NOTIFY US">
 	</form>
 
-	<p><small>Sign up now to get early notification of our launch date!</small></p>
-
+	<div class="form-help">
+	  <small>Sign up now to get early notification of our launch date!</small>
+	</div>
 
 	<div class="social">
 	  
