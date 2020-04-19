@@ -224,7 +224,7 @@
 
     <h1><button id="btn"><span id="emoji" class="material-icons">update</span></button>Image Gallery</h1>
 
-  <p class="typewriter">Let's have fun with CSS filters and show you some examples:</p>
+  <p id="demo"></p>
     
     </div>
     
@@ -374,19 +374,23 @@
 
 </script>
 
+
+
     <script>
-      function w(d,e,c) {
-	  b = d.slice(0, c),
-	  b == d ? e.innerHTML = b : (e.innerHTML = b + "|",
-				      setTimeout(w, 70, d, e, c + 1))
+      var i = 0;
+      var txt = `Let's have fun with CSS filters and show you some examples:`; /* The text */
+      var speed = 50; /* The speed/duration of the effect in milliseconds */
+      
+      function typeWriter() {
+	  if (i < txt.length) {
+	      document.getElementById("demo").innerHTML += txt.charAt(i);
+	      i++;
+	      setTimeout(typeWriter, speed);
+	  }
       }
 
-      window.addEventListener("DOMContentLoaded", function() {
-	  for (i of document.getElementsByClassName("typewriter"))
-	      w(i.innerHTML, i, 0)
-      }, false)
-    </script>
-
+      window.addEventListener("DOMContentLoaded", typeWriter(), false);
+      </script>
 
     
   </body>
