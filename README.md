@@ -4,4 +4,4 @@ The more you practice, the better your skills will become. You are free to modif
 
 https://rodionsibov.github.io/projects/image-gallery.html
 
-https://rodionsibov.github.io/projects/.html
+https://rodionsibov.github.io/projects/under-construction-page.html
