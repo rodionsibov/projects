@@ -16,6 +16,7 @@
       body {
 	  box-sizing: border-box;
 	  height: 100vh;
+	  overflow: hidden;
 	  margin: 0;
 	  padding: 10px;
 	  font-family: 'Open Sans', sans-serif;
@@ -31,7 +32,7 @@
       }
 
       h1, p, form { 
-	  margin: 50px 0 0 40px;
+	  margin: 50px 40px 0 40px;
       }
 
       h1 { 
@@ -45,12 +46,12 @@
 
 
       .form-help {
-	  margin: 10px 0 0 40px;
+	  margin: 10px 40px 0 40px;
 	  
       }
 
       .social {
-	  margin: 50px 0 0 40px;
+	  margin: 50px 40px 0 40px;
       }
       
       .social svg:hover {
@@ -63,7 +64,7 @@
       }
 
       form .text {
-	  width: 40%;
+	  width: 50%;
 	  font-size: 18px;
 	  padding: 15px 20px;
 	  border: none;
@@ -104,6 +105,7 @@
       .animation svg {
 	  width: 50%;
 	  margin: 40px 150px 0;
+	  left: 50px;
       }
 
       .bg-image {
@@ -113,12 +115,18 @@
 
       }
       
-      @media screen and (max-width: 400px) {
+      @media screen and (max-width: 800px) {
 	  body {
 	      padding: 0;
 	  }
 
-      .animation svg {
+
+	  .bg-image {
+	      display: none;
+	  }
+
+
+	  .animation svg {
 	  width: 70%;
 	  margin: 40px auto 0;
 	  
