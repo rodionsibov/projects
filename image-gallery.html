@@ -227,61 +227,6 @@
       
       <div class="image-gallery">
 	
-	<div class="images">
-	  <img class=" grayscale" src="./gallery/07.jpg" alt="">
-	</div>
-
-	<div class="images">
-	  <img class=" grayscale" src="./gallery/11.jpg" alt="">
-	</div>
-
-	<div class="images">
-	  <img class="grayscale" src="./gallery/12.jpg" alt="">
-	</div>
-
-	<div class="images">
-	  <img class="grayscale" src="./gallery/13.jpg">
-	</div>
-
-	<div class="images">
-	  <img class="grayscale" src="./gallery/15.jpg">
-	</div>
-
-	<div class="images">
-	  <img class="grayscale" src="./gallery/16.jpg">
-	</div>
-
-	<div class="images">
-	  <img class="grayscale" src="./gallery/17.jpg">
-	</div>
-
-	<div class="images">
-	  <img class="grayscale" src="./gallery/18.jpg">
-	</div>
-	
-	<div class="images">
-	  <img class="grayscale" src="./gallery/19.jpg">
-	</div>
-
-	<div class="images">
-	  <img class="grayscale" src="./gallery/00.jpg">
-	</div>
-
-	<div class="images">
-	  <img class="grayscale" src="./gallery/05.jpg">
-	</div>
-
-	<div class="images">
-	  <img class="grayscale" src="./gallery/14.jpg">
-	</div>
-
-	<div class="images">
-	  <img class="grayscale" src="./gallery/06.jpg">
-	</div>
-
-	<div class="images">
-	  <img class="grayscale" src="./gallery/01.jpg">
-	</div>
 
       </div>
       <!-- progress end -->
@@ -295,11 +240,52 @@
     <script>
       //filter effect on hover
 
+      const imgGalleryDiv = document.querySelector('.image-gallery')
+      const newDiv = document.createElement('div')
+      imgGalleryDiv.appendChild(newDiv)
+      const att = document.createAttribute('class')
+      att.value = "images"
+      newDiv.setAttributeNode(att)
+      
+
       const imgEl = document.querySelectorAll('.images')
+      console.log(imgEl)      
+      const filters = [
+	  "blur",
+	  "brightness",
+	  "contrast",
+	  "grayscale",
+	  "huerotate",
+	  "invert",
+	  "opacity",
+	  "saturate",
+	  "sepia"
+      ]
+
+      const imgFile = [
+	  "./gallery/00.jpg",
+	  "./gallery/01.jpg",
+	  "./gallery/02.jpg",
+	  "./gallery/03.jpg",
+	  "./gallery/04.jpg",
+	  "./gallery/05.jpg",
+	  "./gallery/06.jpg",
+	  "./gallery/07.jpg",
+	  "./gallery/08.jpg",
+	  "./gallery/09.jpg",
+	  "./gallery/10.jpg",
+	  "./gallery/11.jpg",
+	  "./gallery/12.jpg",
+	  "./gallery/13.jpg",
+	  "./gallery/14.jpg",
+	  "./gallery/15.jpg",
+	  "./gallery/16.jpg"
+      ]
+      
 
       
-      imgEl[0].innerHTML = `<img class="" src="#">`
-      console.log(imgEl[0])
+      imgEl[0].innerHTML = `<img class="${filters[0]}" src="${imgFile[0]}">`
+
 
       </script>
 
