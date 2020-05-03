@@ -34,14 +34,11 @@
 	  font-weight: normal;
 	  font-size: 4em;
 	  font-family: 'EB Garamond', serif;
-	  line-height: 10px;
-	  margin: 20px auto;
+	  line-height: 55px;
+	  margin: 40px;
       }
 
       @media screen and (max-width: 360px) {
-	  h1 {
-	      margin: 20px 0 60px 0;
-	  }
       }
 
       .header {
@@ -112,31 +109,35 @@
       	  animation: blink 2s;
       }
 
-
+      /* filters */
  
-      .grayscale {
-	  filter: grayscale(1);
-      }
+      .grayscale {filter: grayscale(1);}
+      .grayscale:hover {filter: grayscale(0);}
 
-      .grayscale:hover {
-	  filter: grayscale(0);
-      }
+      .invert {filter: invert(0);}
+      .invert:hover {filter: invert(1);}
 
-      .invert {
-	  filter: invert(0);
-      }
+      .sepia {filter: sepia(0);}
+      .sepia:hover {filter: sepia(1);}
 
-      .invert:hover {
-	  filter: invert(1);
-      }
 
-      .sepia {
-	  filter: sepia(0);
-      }
 
-      .sepia:hover {
-	  filter: sepia(1);
-      }
+
+      .blur {filter: blur(4px);}
+      .brightness {filter: brightness(0.30);}
+      .contrast {filter: contrast(180%);}
+      .grayscale {filter: grayscale(100%);}
+      .huerotate {filter: hue-rotate(180deg);}
+      .invert {filter: invert(100%);}
+      .opacity {filter: opacity(50%);}
+      .saturate {filter: saturate(7);}
+      .sepia {filter: sepia(100%);}
+
+
+
+
+
+      
 
 
       .images img {
@@ -223,7 +224,7 @@
 
 
 
-      <h1><button id="btn"><span id="emoji" class="material-icons">update</span></button>Image Gallery<sup> beta</sup></h1>
+      <h1>Image Gallery<sup> beta</sup></h1>
 
     <div id="demo">
     </div>
@@ -323,28 +324,6 @@
     </script>
     
 
-
-    <script>
-
-	const result = document.getElementById("emoji");
-	const btn = document.getElementById("btn");
-
-	btn.addEventListener("click", getRandomImage)
-
-
-	function getRandomImage() {
-	    fetch("https://raw.githubusercontent.com/github/gemoji/master/db/emoji.json")
-		.then(res => res.json())
-		.then(data => {
-		    let randomData = data[Math.floor(Math.random() * data.length)]
-		    console.log(randomData)
-		    result.innerHTML = `<p title="${randomData.description.toUpperCase()}">${randomData.emoji}</p>`
-
-		});
-
-	}
-
-	</script>
 
 
 
