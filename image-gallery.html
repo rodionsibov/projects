@@ -24,8 +24,8 @@
       
       body {
 	  
-	  background: snow;
-	  color: #555;
+	  background: whitesmoke;
+	  color: lightslategray;
 	  font-family: 'Roboto', sans-serif;
 
       }
@@ -54,7 +54,11 @@
       .footer {
 	  text-align: center;
 	  padding: 30px;
-	  color: gray;
+	  color: lightslategray;
+      }
+
+      a {
+	  color: lightslategray;
       }
 
       .progress {
@@ -76,7 +80,7 @@
 
       
       ::selection {
-	  background: navy;
+	  background: green;
 	  color: gold;
 
       }
@@ -111,32 +115,24 @@
 
       /* filters */
       
-      .grayscale {filter: grayscale(1);}
-      .grayscale:hover {filter: grayscale(0);}
-
+      .blur {filter: blur(0);}
+      .blur:hover {filter: blur(1px);}
+      .brightness {filter: brightness(1);}
+      .brightness:hover {filter: brightness(0.30);}
+      .contrast {filter: contrast(1);}
+      .contrast:hover {filter: contrast(180%);}
+      .grayscale {filter: grayscale(0);}
+      .grayscale:hover {filter: grayscale(100%);}
+      .huerotate {filter: hue-rotate(0deg);}
+      .huerotate:hover {filter: hue-rotate(180deg);}
       .invert {filter: invert(0);}
-      .invert:hover {filter: invert(1);}
-
+      .invert:hover {filter: invert(100%);}
+      .opacity {filter: opacity(1);}
+      .opacity:hover {filter: opacity(70%);}
+      .saturate {filter: saturate(1);}
+      .saturate:hover {filter: saturate(3);}
       .sepia {filter: sepia(0);}
-      .sepia:hover {filter: sepia(1);}
-
-
-
-
-      .blur {filter: blur(4px);}
-      .brightness {filter: brightness(0.30);}
-      .contrast {filter: contrast(180%);}
-      .grayscale {filter: grayscale(100%);}
-      .huerotate {filter: hue-rotate(180deg);}
-      .invert {filter: invert(100%);}
-      .opacity {filter: opacity(50%);}
-      .saturate {filter: saturate(7);}
-      .sepia {filter: sepia(100%);}
-
-
-
-
-
+      .sepia:hover {filter: sepia(100%);}
       
 
 
@@ -216,7 +212,7 @@
       <div class="progress__highlight" id="js-highlight"></div>
     </div>
     
-    <div id="js-container">
+    <div id="js-container"> 
 
 
       <div class="header">
@@ -234,22 +230,12 @@
     
 
     <div class="footer">
-      <small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov/projects">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
+      <small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
     </div>
 
     <script>
       //filter effect on hover
 
-      const imgGalleryDiv = document.querySelector('.image-gallery')
-      const newDiv = document.createElement('div')
-      imgGalleryDiv.appendChild(newDiv)
-      const att = document.createAttribute('class')
-      att.value = "images"
-      newDiv.setAttributeNode(att)
-      
-
-      const imgEl = document.querySelectorAll('.images')
-      console.log(imgEl)      
       const filters = [
 	  "blur",
 	  "brightness",
@@ -278,13 +264,32 @@
 	  "./gallery/12.jpg",
 	  "./gallery/13.jpg",
 	  "./gallery/14.jpg",
-	  "./gallery/15.jpg",
-	  "./gallery/16.jpg"
+	  "./gallery/15.jpg"
       ]
-      
 
+      const imgGalleryDiv = document.querySelector('.image-gallery')
+
+      for (let i = 0; i < imgFile.length; i++){
+	  const newDiv = document.createElement('div')
+	  imgGalleryDiv.appendChild(newDiv)
+	  const att = document.createAttribute('class')
+	  att.value = "images"
+	  newDiv.setAttributeNode(att)
+	  
+      }
       
-      imgEl[0].innerHTML = `<img class="${filters[0]}" src="${imgFile[0]}">`
+      const imgEl = document.querySelectorAll('.images')
+
+
+      for (let i = 0; i < imgEl.length; i++){
+	  const imgFileRandom = imgFile[Math.floor(Math.random() * imgFile.length)]
+	  const filterRandom = filters[Math.floor(Math.random() * filters.length)]
+
+	  imgEl[i].innerHTML = `<img title="${filterRandom.toUpperCase()}" class="${filterRandom}" src="${imgFileRandom}">`
+
+
+	  
+      }
 
 
       </script>
