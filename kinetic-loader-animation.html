@@ -2,16 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hello, world!</title>
     <style>
 
-      * {
-	  box-sizing: border-box;
-      }
 
       body {
-	  background-image: radial-gradient( circle 360px at 50% 50%,  rgba(54,96,172,1) 0%, rgba(46,53,89,1) 100.2% );
+	  background: whitesmoke;
 	  display: flex;
 	  align-items: center;
 	  justify-content: center;
@@ -20,27 +17,34 @@
       }
 
       .kinetic {
+	  animation: show 1s both;
 	  position: relative;
 	  height: 80px;
 	  width: 80px;
+	  opacity: 0;
       }
 
+      @keyframes show {
+	  to {
+	      opacity: 1;
+	  }
+      }
       .kinetic::after, .kinetic::before {
 	  content: '';
 	  width: 0;
 	  height: 0;
-	  border: 50px solid transparent;
-	  border-bottom-color: #fff;
+	  border: 100px solid transparent;
+	  border-bottom-color: dodgerblue;
 	  position: absolute;
-	  top: 0;
-	  left: 0;
+	  top: -50px;
+	  left: -50px;
 	  animation: rotateA 2s linear infinite 0.5s;
       }
 
       .kinetic::before {
 	  transform: rotate(90deg);
 	  animation: rotateB 2s linear infinite;
-            }
+      }
       
       @keyframes rotateA {
 	  0%, 25% {
@@ -69,9 +73,13 @@
 	      transform: rotate(450deg);
 	  }
       }
+
+
+
+      
     </style>
   </head>
   <body>
     <div class="kinetic"></div>
- </body>
+  </body>
 </html>
