@@ -6,12 +6,102 @@
     <title>Hello, world!</title>
 
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+      * {
+	  box-sizing: border-box;
+      }
+
+      body {
+	  font-family: 'Poppins', sans-serif;
+	  background-color: #edeef6;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  min-height: 100vh;
+	  margin: 0;
+      }
+
+      button {
+	  font-family: inherit;
+	  background-color: #47a386;
+	  border: 0;
+	  border-radius: 5px;
+	  color: #fff;
+	  padding: 10px 25px;
+	  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	  font-size: 24px;
+      }
+      
+      .modal-container {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100vw;
+	  height: 100vh;
+	  background-color: rgba(0, 0, 0, 0.3);
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  opacity: 0;
+	  pointer-events: none;
+	  transition: opacity 0.3s ease;
+      }
+
+      .modal-container.show {
+	  opacity: 1;
+	  pointer-events: auto;
+      }
+
+      .modal {
+	  background-color: #fff;
+	  width: 600px;
+	  max-width: 100%;
+	  padding: 30px 50px;
+	  border-radius: 5px;
+	  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	  text-align:center;
+      }
+      
+      .modal h1 {
+	  margin: 0;
+	 
+      }
+
+      .modal p {
+	  opacity: 0.7;
+      }
     </style>
   </head>
   <body>
+
     <button id="open">Click me please</button>
-    <div class="modal-container" id="modal_container">
-      <h1>Modals are 😎
-    
+
+    <div id="modal_container" class="modal-container">
+
+      <div class="modal">
+      <h1>Modals are cool</h1>
+      
+      <p>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. </p>
+      <button id="close">Close me</button>
+      </div>
+      
+    </div>
+
+    <script>
+      const open = document.getElementById('open')
+      const modal_container = document.getElementById('modal_container')
+      const close = document.getElementById('close')
+
+      open.addEventListener('click', () => {
+	  modal_container.classList.add('show')  
+      })
+      
+      close.addEventListener('click', () => {
+	  modal_container.classList.remove('show')  
+      })
+
+    </script>
   </body>
 </html>
