@@ -4,6 +4,8 @@ The more you practice, the better your skills will become. You are free to modif
 
 - https://rodionsibov.github.io/projects/image-gallery.html
 - https://rodionsibov.github.io/projects/get-emoji.html
+- https://rodionsibov.github.io/projects/modal.html
+- https://rodionsibov.github.io/projects/how-old.html
 - https://rodionsibov.github.io/projects/under-construction-page.html
 - https://rodionsibov.github.io/projects/cutout-text.html
 - https://rodionsibov.github.io/projects/line-throuhg-effect.html
