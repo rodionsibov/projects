@@ -6,61 +6,111 @@
     <title>Hello world!</title>
 
     <style>
+
+      body {
+	  margin: 0 auto;
+	  width: 80%;
+	  background: whitesmoke;
+      }
       
+      h1 {
+	  text-align: center;
+	  margin-bottom: 40px;
+      }
+      
+      .penguin {
+	  width: 40%;
+	  background: white;	  
+	  margin: 20px auto;
+	  padding: 20px;
+	  text-align: center;
+	  transition: all 0.3s;
+	  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+	  border-radius: 10px;
+      }
+
+      .penguin:hover {
+	  transform: scale(1.1);
+	  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+      }
+      
+      h2 {
+	  margin: 10px;
+	  padding: 0 10px;
+	  color: #333;
+      }
+
+      .todo {
+	  background: red
+      }
+      
+      .done {
+	  background: green;
+      }
+      
+      .complited {
+	  display: inline;
+      }
+      
+      p {
+	  margin: 5px;
+	  font-family: sans;
+      }
       
     </style>
 
-    
+
   </head>
   <body>
+    <h1>Penguins Organizer</h1>
 
     <script> 
 
 
-      console.log(navigator.appVersion)
-      
+const  getPenguins = () => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+	.then(response => response.json())
+	.then(json => {
+	    console.log(json)
 
-      const  getPenguins = () => {
-	  fetch("https://jsonplaceholder.typicode.com/users")
-	      .then(response => response.json())
-	      .then(json => {
-		  let a = []
-		  let re = /ax/
-		  let sum = 0
-//		  console.log(json)
 		  for (let i = 0; i < json.length; i++) {
-//		      console.log(`${json[i].name}\nemail: ${json[i].email}\nID: ${Math.round(Math.sqrt(json[i].id) * 100) / 100}`)
-		      sum += '\n' + json[i].phone
-		      if (json[i].username.match(re) || json[i].username.length < 8) {
-			  a.push(json[i].username)
-		      }
+		      document.body.innerHTML += `<div class="penguin"><h2>${json[i].name}</h2><p>${json[i].company.name}</p><p>${json[i].email}</p></div>`
+		      
 		  }
-//		  console.log('The SUM is:', sum)
-//		  console.log('FILTER:', a)	  
 	      })
       }
 
+getPenguins();
+
+      const penguin = document.getElementsByClassName('penguin')
 
 
-
-
-
-      getPenguins()
-
-      
       const getTodos = () => {
 	  fetch("https://jsonplaceholder.typicode.com/todos")
 	      .then(response => response.json())
 	      .then(json => {
-		  json.forEach(e => {
-		      console.log(e)
-		  })
+		  console.log(json)
+		  for (let i = 0; i < 4; i++) {
+		      document.body.innerHTML  += `<div class="penguin"><p>${json[i].title}</p><p class="complited">${json[i].completed}</p></div>`;
+		      const complited = document.getElementsByClassName('comlited')
+		      console.log(comlited)
+		      json[i].complited === true
+			  ? complited.classList.add('done')
+			  : console.log('aaa')
+			  
+
+		  }
 	      })
       }
+      
+
+
+//      getTodos();
 
 
       
-      </script>
+
+    </script>
 
 
   </body>
