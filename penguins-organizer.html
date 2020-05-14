@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello world!</title>
+    <title>Penguins Organizer</title>
 
     <style>
+      
 
       body {
-	  margin: 0 auto;
-	  width: 80%;
-	  background: whitesmoke;
+	  font-family: sans;
+	  background: snow;
+	  color: #555;
       }
       
       h1 {
@@ -18,99 +19,87 @@
 	  margin-bottom: 40px;
       }
       
-      .penguin {
+      .penguin, .todo p{
+	  padding: 10px;
+	  margin: 0;
+      }
+
+      .penguins {
+	  width: 60%;
+      }
+      
+      .todos {
+	  border: 1px solid black;
+	  overflow: auto;
+	  height: 400px;
+	  position: fixed;
+	  top: 20px;
+	  right: 20px;
 	  width: 40%;
-	  background: white;	  
-	  margin: 20px auto;
-	  padding: 20px;
-	  text-align: center;
-	  transition: all 0.3s;
-	  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-	  border-radius: 10px;
+      }
+      
+      .completed {
+	  text-decoration: line-through;
+      }
+      
+      .company, .email {
+	  padding: 0 10px 2px;
+	  margin: 0;
       }
 
-      .penguin:hover {
-	  transform: scale(1.1);
-	  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
-      }
-      
-      h2 {
-	  margin: 10px;
-	  padding: 0 10px;
-	  color: #333;
+      .name {
+	  padding: 10px 10px 3px;
+	  font-size: 20px;
+	  margin: 0;
+	  transition: all 0.2s;
+	  cursor: pointer;
+	  text-decoration: underline;
       }
 
-      .todo {
-	  background: red
-      }
-      
-      .done {
-	  background: green;
-      }
-      
-      .complited {
-	  display: inline;
-      }
-      
-      p {
-	  margin: 5px;
-	  font-family: sans;
-      }
-      
     </style>
 
 
   </head>
   <body>
-    <h1>Penguins Organizer</h1>
 
     <script> 
+      document.body.innerHTML += '<div class="penguins"></div><div class="todos"></div>'
+      document.body.appendChild(document.body.querySelector('script'))
 
+      const getPenguins = () => {
+	  fetch("https://jsonplaceholder.typicode.com/users")
+	      .then(response => response.json())
+	      .then(json => {
+		  console.log(json)
 
-const  getPenguins = () => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-	.then(response => response.json())
-	.then(json => {
-	    console.log(json)
-
-		  for (let i = 0; i < json.length; i++) {
-		      document.body.innerHTML += `<div class="penguin"><h2>${json[i].name}</h2><p>${json[i].company.name}</p><p>${json[i].email}</p></div>`
-		      
+		  const divEl = document.querySelector('.penguins')
+		  for (const i of json) {
+		      divEl.innerHTML += `<div class="penguin"><p onclick="getTodos()" class="name">${i.name}</p><p class="company">${i.company.name}<p class="email">${i.email}</p></div>`
 		  }
 	      })
+
       }
-
-getPenguins();
-
-      const penguin = document.getElementsByClassName('penguin')
+      getPenguins();
 
 
-      const getTodos = () => {
+    const getTodos = () => {
 	  fetch("https://jsonplaceholder.typicode.com/todos")
 	      .then(response => response.json())
 	      .then(json => {
 		  console.log(json)
-		  for (let i = 0; i < 4; i++) {
-		      document.body.innerHTML  += `<div class="penguin"><p>${json[i].title}</p><p class="complited">${json[i].completed}</p></div>`;
-		      const complited = document.getElementsByClassName('comlited')
-		      console.log(comlited)
-		      json[i].complited === true
-			  ? complited.classList.add('done')
-			  : console.log('aaa')
-			  
+		  const divEl = document.querySelector('.todos')
+		  for (let i = 0; i < json.length; i++) {
 
+		      json[i].completed === true
+			  ? divEl.innerHTML += `<div class="todo"><p class="completed">${json[i].id} ${json[i].title}</p></div>`
+			  : divEl.innerHTML += `<div class="todo"><p>${json[i].id} ${json[i].title}</p></div>`;			  					      
 		  }
 	      })
       }
-      
 
 
-//      getTodos();
 
-
-      
-
-    </script>
+      </script>
 
 
   </body>
