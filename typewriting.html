@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Hello World!</title>
+
+    <style>
+
+      body {
+	  margin: 0;
+	  background: #333;
+	  font-family: 'Poppins', sans-serif;
+      }
+      
+      .container {
+	  display: flex;
+	  min-height: 100vh;
+	  padding: 60px;
+	  box-sizing: border-box;
+	  font-size: 40px;
+	  font-weight: 700;
+	  margin: 0;
+	  color: snow;
+	  animation: move 8s 1.5s infinite;
+	  opacity: 0;
+      }
+
+      @keyframes move {
+	  50% {
+	      opacity: 1;
+	  }
+	  100 {
+	      opacity: 0;
+	  }
+      }
+
+      ::selection {
+	  background: gold;
+	  color: black;
+      }
+
+      footer {
+	  background: gold;
+	  text-align: center;
+	  padding: 30px;
+	  color: #222;
+      }
+
+      footer a {
+	  color: #222;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+          <p id="demo"></p>
+    </div>
+      <footer>
+	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
+      </footer>
+
+
+
+    <script>
+      //type effect
+      
+      var i = 0;
+      var txt = `It’s never too late to be what you might have been.`; 
+            
+      function typeWriter() {
+	  
+	  
+	  if (i < txt.length) {
+	      document.getElementById("demo").innerHTML += txt[i];
+	      i++;
+	      setTimeout(typeWriter, 80);
+	  }
+      }
+      
+      window.addEventListener("DOMContentLoaded", () => {setTimeout(typeWriter, 1000)}, false);
+    </script>
+
+  </body>
+</html>

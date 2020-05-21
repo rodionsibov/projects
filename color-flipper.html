@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Color Flipper</title>
+    <style>
+
+      * {
+	  margin: 0;
+	  box-sizing: border-box;
+      }
+      
+      body {
+	  font-family: Poppins;
+      }
+
+      nav {
+	  position: fixed;
+	  width: 100%;
+	  background: white;
+	  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+	  padding: 20px;
+	  z-index: 100;
+      }
+
+      nav, .nav-links {
+	  display: flex;
+	  align-items: center;
+      }
+
+      .nav-links {
+	  justify-content: flex-end;
+	  list-style-type: none;
+	  padding: 0;
+      }
+
+      .nav-links li {
+	  margin-left: 20px;
+      }
+
+      .nav-links, .nav-header {
+	  width: 50%;
+      }
+
+      .nav-links li a {
+	  color: #222;
+	  opacity: 0.5;
+      }
+      
+      .nav-links li a:hover {
+	  opacity: 1;
+      }
+
+      section {
+	  height: 100vh;
+	  background: azure;
+      }
+
+      .container {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  height: 100%;
+	  text-align: center;
+      }
+
+      .container h2 {
+	  background: rgba(0,0,0,0.7);
+	  color: snow;
+	  padding: 20px 40px;
+	  border-radius: 8px;
+	  margin: 50px;
+	  font-size: 30px;
+      }
+
+      span, h1 {
+	  color: dodgerblue;
+      }
+
+      .btn {
+	  font-size: 18px;
+	  font-weight: 600;
+	  letter-spacing: 2px;
+	  text-transform: uppercase;
+	  font-family: inherit;
+	  padding: 5px 20px;
+	  border: 3px solid #222;
+	  border-radius: 8px;
+	  background: none;
+	  transition: all 0.2s;
+	  cursor: pointer;
+	  outline: none;
+      }
+
+      .btn:hover {
+	  color: snow;
+	  background: #222;
+      }
+
+      .btn:active {
+	  transform: translateY(1px);
+      }
+
+
+      html {
+      	  scroll-behavior: smooth;
+      }
+
+
+      footer {
+	  background: dodgerblue;
+	  text-align: center;
+	  padding: 30px;
+	  color: snow;
+      }
+
+      footer a {
+	  color: snow;
+      }
+
+    </style>
+    <body>
+      <nav>
+	<h1 class="nav-header">Color Flipper</h1>
+	<ul class="nav-links">
+	  <li><a href="#simple-cf">Simple</a></li>
+	  <li><a href="#hex-cf">HEX</a></li>
+	</ul>
+      </nav>
+      <section id="simple-cf">
+	<div class="container">
+	  <h2>Simple Background Color:<br><span class="color">
+	      #f1f5f8
+	  </span></h2>
+	  <button class="btn" id="btn-simple">click me</button>
+	</div>
+      </section>
+      <section id="hex-cf">
+	<div class="container">
+	  <h2>Hex Background Color:<br><span class="color">
+	      #f1f5f8
+	  </span></h2>
+	  <button class="btn" id="btn-hex">click me</button>
+	</div>
+      </section>
+
+      <footer>
+	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
+      </footer>
+
+
+
+
+      <script>
+
+	const colors = ['green', 'red', 'rgba(133, 122, 200)', '#f15025'];
+	const sectionSimple = document.querySelector('#simple-cf');
+	const btnSimple = document.getElementById('btn-simple');
+	const colorSimple = document.querySelectorAll('.color')[0];
+	
+	btnSimple.addEventListener('click', function(){
+	    const randomNumber = Math.floor(Math.random() * colors.length);
+	    sectionSimple.style.backgroundColor = colors[randomNumber];
+	    colorSimple.textContent = colors[randomNumber];
+	})
+
+
+	const sectionHex = document.querySelector('#hex-cf');
+	const btnHex = document.getElementById('btn-hex');
+	const colorHex = document.querySelectorAll('.color')[1];
+	
+	btnHex.addEventListener('click', () => {
+	    
+	    const randomHex = () => {
+		let characters = '0123456789ABCDEF';
+		let result = '#';
+		for (let i = 0; i < 6; i++) {
+		    result += characters[Math.floor(Math.random() * characters.length)]
+		}
+	 	return result;
+	    }
+
+	    sectionHex.style.backgroundColor = randomHex();
+	    colorHex.textContent = randomHex();
+	})
+
+	
+      </script>
+    </body>
+  </head>
