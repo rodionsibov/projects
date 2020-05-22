@@ -13,3 +13,5 @@ The more you practice, the better your skills will become. You are free to modif
 - https://rodionsibov.github.io/projects/kinetic-loader-animation.html
 - https://rodionsibov.github.io/projects/image-reflection.html
 - https://rodionsibov.github.io/projects/under-construction-page.html
+- https://rodionsibov.github.io/projects/tetris-game.html
+
