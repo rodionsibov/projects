@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Counter</title>
+    <style>
+
+      * {
+	  margin: 0;
+	  box-sizing: border-box;
+      }
+      
+      body {
+	  font-family: Poppins;
+      }
+
+
+      .container {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  height: 100vh;
+	  text-align: center;
+      }
+
+      span {
+	  font-size: 16vh;
+	  color: dodgerblue;
+      }
+
+      .btn {
+	  margin: 10px;
+	  font-size: 18px;
+	  font-weight: 600;
+	  letter-spacing: 2px;
+	  text-transform: uppercase;
+	  font-family: inherit;
+	  padding: 5px 20px;
+	  border: 3px solid #222;
+	  border-radius: 8px;
+	  background: none;
+	  transition: all 0.2s;
+	  cursor: pointer;
+	  outline: none;
+      }
+
+      .btn:hover {
+	  color: snow;
+	  background: #222;
+      }
+
+      .btn:active {
+	  transform: translateY(1px);
+      }
+
+      footer {
+	  width: 100%;
+	  position: fixed;
+	  bottom: 0;
+	  background: dodgerblue;
+	  text-align: center;
+	  padding: 30px;
+	  color: snow;
+      }
+
+      footer a {
+	  color: snow;
+      }
+
+
+
+    </style>
+    <body>
+      <main>
+	<div class="container">
+	  <h1>Counter</h1>
+	  <span id="value">0</span>
+	  <div class="button-container">
+	    <button class="btn decrease">Decrease</button>
+	    <button class="btn reset">Reset</button>
+	    <button class="btn increase">Increase</button>
+	  </div>
+	</div>
+      </main>
+
+      <footer>
+	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
+      </footer>
+
+
+
+
+      <script>
+	//set initial count
+	let count = 0;
+
+	//select value and buttons
+	const value = document.querySelector('#value');
+	const btns = document.querySelectorAll('.btn');
+
+	btns.forEach(function(btn) {
+	    btn.addEventListener('click', function(e) {
+		const styles = e.currentTarget.classList;
+		if (styles.contains('decrease')) {
+		    count--;
+		} else if (styles.contains('increase')) {
+		    count++;
+		} else {
+		    count = 0;
+		}
+
+		if (count > 0) {
+		    value.style.color = "green";
+		}
+		if (count < 0) {
+		    value.style.color = "red";
+		}
+		if (count === 0) {
+		    value.style.color = "dodgerblue";
+		}
+		
+		value.textContent = count;
+	    });
+	});
+
+      </script>
+    </body>
+  </head>
