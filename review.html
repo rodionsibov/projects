@@ -30,7 +30,7 @@
 	  text-align: center;
       }
       
-      main {
+      .container {
 	  display: flex;
 	  flex-direction: column;
 	  align-items:center;
@@ -38,12 +38,12 @@
 	  height: 100vh;
       }
       
-      .container {
+      .review {
 	  border-radius: 5px;
 	  width: 60%;
 	  background-color: snow;
 	  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-	  padding: 20px;
+	  padding: 25px;
       }
 
       p, .img-container, .button-container {
@@ -56,7 +56,7 @@
 	  width: 33%;
 	  border-radius: 1px;
 	  background-color: dodgerblue;
-	  margin: 10px auto;
+	  margin: 0 auto 80px;
       }
 
       .material-icons {
@@ -103,6 +103,25 @@
 	  color: snow;
       }
 
+      @media only screen and (max-width: 360px) {
+	  .container {
+	      height: auto;
+	  }
+
+	  .title {
+	      margin-top: 20px;
+	  }
+
+	  article {
+	      margin-bottom: 50px;
+	      min-width: 80%;
+	  }
+
+	  .underline {
+	      margin: 0 auto 40px;
+	  }
+
+      }
     </style>
     <body>
       <main>
@@ -181,12 +200,13 @@
 
 	//load initial item
 	window.addEventListener('DOMContentLoaded', function () {
-	    showPerson(currentItem);
+	    showPerson();
 	}) 
-	
+
+
 	//show person based on item
-	function showPerson(person) {
-	    const item = reviews[person];
+	function showPerson() {
+	    const item = reviews[currentItem];
 	    img.src = item.img;
 	    author.textContent = item.name;
 	    job.textContent = item.job;
@@ -199,7 +219,7 @@
 	    if (currentItem > reviews.length - 1) {
 		currentItem = 0;
 	    }
-	    showPerson(currentItem);
+	    showPerson();
 	})
 
 	//show prev person
@@ -208,10 +228,14 @@
 	    if (currentItem < 0) {
 		currentItem = reviews.length - 1;
 	    }
-	    showPerson(currentItem);
+	    showPerson();
 	})
 
-
+	//show random person
+	randomBtn.addEventListener('click', function () {
+	    currentItem = Math.floor(Math.random() * reviews.length);
+	    showPerson();
+	})
 
       </script>
     </body>
