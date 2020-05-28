@@ -39,6 +39,7 @@
       }
       
       .container {
+	  border-radius: 5px;
 	  width: 60%;
 	  background-color: snow;
 	  box-shadow: 0 0 20px rgba(0,0,0,0.1);
@@ -113,16 +114,11 @@
 	  </div>
 	  <article class="review">
 	    <div class="img-container">
-	      <img id="person-img" src="https://img.icons8.com/doodle/100/000000/user-female-circle.png" alt="Female User icon by Icons8">
+	      <img id="person-img" src="#" alt="User icon by Icons8">
 	    </div>
-	    <h4 id="author">sara jones</h4>
-	    <p id="job">ux desinger</p>
-	    <p id="info">
-	      
-Fusce felis eros, eleifend ac erat non, eleifend viverra urna. Proin nec lacus aliquet erat molestie dignissim quis sed nisl. Aliquam risus quam, interdum eget diam sed, sodales porta leo.
-
-
-	    </p>
+	    <h4 id="author"></h4>
+	    <p id="job"></p>
+	    <p id="info"></p>
 	    <div class="button-container">
 	      <button class="prev-btn"><span class="material-icons">chevron_left</span></button>
 	      <button class="next-btn"><span class="material-icons">chevron_right</span></button>
@@ -179,6 +175,26 @@ Fusce felis eros, eleifend ac erat non, eleifend viverra urna. Proin nec lacus a
 	const prevBtn = document.querySelector('.prev-btn');
 	const nextBtn = document.querySelector('.next-btn');
 	const randomBtn = document.querySelector('.random-btn');
+
+	//set starting item
+	let currentItem = 0;
+
+	//load initial item
+	window.addEventListener('DOMContentLoaded', function() {
+	    showPerson(currentItem);
+	})
+	
+	//show person based on item
+	function showPerson(person) {
+	    const item = reviews[person];
+	    img.src = item.img;
+	    author.textContent = item.name;
+	    job.textContent = item.job;
+	    info.textContent = item.text;
+	}
+
+	//show next person
+
 
       </script>
     </body>
