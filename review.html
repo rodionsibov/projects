@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Review Project</title>
+    <style>
+
+      * {
+	  margin: 0;
+	  box-sizing: border-box;
+      }
+      
+      body {
+	  font-family: Poppins;
+	  background-color: azure;
+      }
+
+      h2, h4 {
+	  text-transform: capitalize;
+	  letter-spacing: 2px;
+	  text-align: center;
+      }
+
+      #job {
+	  text-transform: uppercase;
+	  color: dodgerblue;
+	  text-align: center;
+      }
+      
+      main {
+	  display: flex;
+	  flex-direction: column;
+	  align-items:center;
+	  justify-content: center;
+	  height: 100vh;
+      }
+      
+      .container {
+	  width: 60%;
+	  background-color: snow;
+	  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	  padding: 20px;
+      }
+
+      p, .img-container, .button-container {
+	  text-align: center;
+	  margin-top: 10px;
+      }
+      
+      .underline {
+	  height: 3px;
+	  width: 33%;
+	  border-radius: 1px;
+	  background-color: dodgerblue;
+	  margin: 10px auto;
+      }
+
+      .material-icons {
+	  font-size: 40px;
+	  color: dodgerblue;
+      }
+
+      button {
+	  border: none;
+	  background-color: transparent;
+	  text-transform: capitalize;
+	  letter-spacing: 2px;
+      }
+
+      article {
+	  text-align: center;
+      }
+      
+      .random-btn {
+	  margin: 10px;
+	  padding: 10px;
+	  border-radius: 5px;
+	  border: 2px solid dodgerblue;
+	  color: dodgerblue;
+	  transition: all 0.2s;
+	  background-color: azure;
+      }
+      
+      .random-btn:hover {
+	  color: snow;
+	  background-color: dodgerblue;
+	  border: 2px solid snow;
+      }
+
+      footer {
+	  bottom: 0;
+	  background-color: dodgerblue;
+	  text-align: center;
+	  padding: 30px;
+	  color: snow;
+      }
+
+      footer a {
+	  color: snow;
+      }
+
+    </style>
+    <body>
+      <main>
+	<section class="container">
+	  <div class="title">
+	    <h2>our reviews</h2>
+	    <div class="underline">
+	    </div>
+	  </div>
+	  <article class="review">
+	    <div class="img-container">
+	      <img src="https://img.icons8.com/doodle/100/000000/user-female-circle.png" alt="Female User icon by Icons8" id="person-img">
+	    </div>
+	    <h4 id="author">sara jones</h4>
+	    <p id="job">ux desinger</p>
+	    <p id="info">
+	      
+Fusce felis eros, eleifend ac erat non, eleifend viverra urna. Proin nec lacus aliquet erat molestie dignissim quis sed nisl. Aliquam risus quam, interdum eget diam sed, sodales porta leo.
+
+
+	    </p>
+	    <div class="button-container">
+	      <button class="prev-btn"><span class="material-icons">chevron_left</span></button>
+	      <button class="next-btn"><span class="material-icons">chevron_right</span></button>
+	    </div>
+	    <!-- random button -->
+	    <button class="random-btn">suprise me</button>
+	  </article>
+	</section>
+      </main>
+
+      <footer>
+	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
+      </footer>
+
+
+
+
+      <script>
+
+      </script>
+    </body>
+  </head>
