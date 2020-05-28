@@ -113,7 +113,7 @@
 	  </div>
 	  <article class="review">
 	    <div class="img-container">
-	      <img src="https://img.icons8.com/doodle/100/000000/user-female-circle.png" alt="Female User icon by Icons8" id="person-img">
+	      <img id="person-img" src="https://img.icons8.com/doodle/100/000000/user-female-circle.png" alt="Female User icon by Icons8">
 	    </div>
 	    <h4 id="author">sara jones</h4>
 	    <p id="job">ux desinger</p>
@@ -137,10 +137,48 @@ Fusce felis eros, eleifend ac erat non, eleifend viverra urna. Proin nec lacus a
 	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
       </footer>
 
-
-
-
       <script>
+
+	const reviews = [
+	    {
+		id: 1,
+		name: "susan smith",
+		job: "web developer",
+		img: "https://img.icons8.com/doodle/100/000000/user-female-circle.png",
+		text: "Nullam sit amet laoreet odio, at ultrices odio. Donec euismod metus in ipsum feugiat, ac cursus massa sollicitudin. Morbi eu porttitor sapien, ut volutpat orci. Donec egestas justo vel est gravida, sed faucibus sapien tincidunt."
+	    },
+	    {
+		id: 2,
+		name: "anna johnson",
+		job: "web desinger",
+		img: "https://img.icons8.com/doodle/100/000000/user-female-circle.png",
+		text: "Nam id tortor sem. Curabitur ut malesuada mauris. Nullam est velit, molestie sit amet aliquet ac, congue sit amet neque. Donec id lectus non lorem aliquam bibendum vitae sed lacus. Sed at quam eget neque."
+	    },
+	    {
+		id: 3,
+		name: "peter jones",
+		job: "intern",
+		img: "https://img.icons8.com/doodle/100/000000/user-male-circle.png",
+		text: "Proin accumsan eget lorem eu maximus. Mauris malesuada sapien purus, a porta dolor varius quis. Vestibulum porta, ex vel ornare sodales, odio ligula varius sem, vel aliquet lorem neque a nisi. Class aptent taciti sociosqu."
+	    },
+	    {
+		id: 4,
+		name: "bill anderson",
+		job: "the boss",
+		img: "https://img.icons8.com/doodle/100/000000/user-male-circle.png",
+		text: "Aliquam lobortis id augue eget mollis. Praesent ac dolor sem. Morbi rutrum eros a sem laoreet vehicula. Vivamus turpis augue, mollis vitae ex eu, facilisis suscipit nulla. Donec egestas, lacus in malesuada hendrerit, erat sem."
+	    }
+	];
+
+	//select items
+	const img = document.querySelector('#person-img');
+	const author = document.querySelector('#author');
+	const job = document.querySelector('#job');
+	const info = document.querySelector('#info');
+
+	const prevBtn = document.querySelector('.prev-btn');
+	const nextBtn = document.querySelector('.next-btn');
+	const randomBtn = document.querySelector('.random-btn');
 
       </script>
     </body>
