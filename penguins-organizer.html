@@ -7,100 +7,25 @@
 
     <style>
       
-      * {
-	  margin: 0;
-      }
-
-      body {
-	  background-color: whitesmoke;
-	  font-family: sans;
-      }
-
-      .penguins {
-	  margin: 20px auto;
-	  width: 90%;
-	  text-align: center;
-      }
-
-      .penguin {
-	  border-radius: 5px;
-	  background-color: white;
-	  width: 70%;
-	  box-shadow: 0 0 20px 5px rgba(0,0,0,0.1);
-	  margin: 30px auto;
-	  padding: 30px;
-	  
-      }
-
-      .todos {
-	  margin: 20px;
-      }
-      
-      .completed {
-	  text-decoration: line-through;
-      }
-      
-      .name {
-	  margin-bottom: 10px;
-      }
-
-      .company {
-	  font-weight: bold;
-	  color: dodgerblue;
-      }
-
-      .email {
-	  color: #888;
-      }
-
-      .todo {
-	  margin: 10px;
-      }
-
-      summary {
-	  cursor: pointer;
-	  display: inline;
-      }
-
-      summary::-webkit-details-marker {
-	  display: none;
-      }
-
-      summary:before {
-	  content: "🐧";
-	  margin-right: 5px;
-      }
-
     </style>
 
 
   </head>
   <body>
-    <div class="penguins"></div>
 
     <script>
 
       
 
-      //penguins
       fetch("https://jsonplaceholder.typicode.com/users")
     .then(response => response.json())
+    .then(data => console.log(data))
       
-
-      //todos
       fetch("https://jsonplaceholder.typicode.com/todos")
     .then(response => response.json())
     .then(data => console.log(data))
 
 	  
-
-      const divEl = document.querySelector('.penguins')
-
-//      divEl.innerHTML += `<div class="penguin"><h1 class="name">${i.name}</h1><p class="company">${i.company.name}<p class="email">${i.email}</p><details class="todos"><summary>Todos</summary><p class="todo">?</p></details></div>`
-
-
-
-
 
 
     </script>
