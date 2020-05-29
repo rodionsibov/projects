@@ -7,53 +7,64 @@
 
     <style>
       
-
-      body {
-	  font-family: sans;
-	  background: snow;
-	  color: #555;
-      }
-      
-      h1 {
-	  text-align: center;
-	  margin-bottom: 40px;
-      }
-      
-      .penguin, .todo p{
-	  padding: 10px;
+      * {
 	  margin: 0;
       }
 
-      .penguins {
-	  width: 60%;
+      body {
+	  background-color: whitesmoke;
+	  font-family: sans;
       }
-      
+
+      .penguins {
+	  margin: 20px auto;
+	  width: 90%;
+	  text-align: center;
+      }
+
+      .penguin {
+	  border-radius: 5px;
+	  background-color: white;
+	  width: 70%;
+	  box-shadow: 0 0 20px 5px rgba(0,0,0,0.1);
+	  margin: 30px auto;
+	  padding: 30px;
+	  
+      }
+
       .todos {
-	  border: 1px solid black;
-	  overflow: auto;
-	  height: 400px;
-	  position: fixed;
-	  top: 20px;
-	  right: 20px;
-	  width: 40%;
+	  margin: 20px;
       }
       
       .completed {
 	  text-decoration: line-through;
       }
       
-      .company, .email {
-	  padding: 0 10px 2px;
-	  margin: 0;
+      .name {
+	  margin-bottom: 10px;
       }
 
-      .name {
-	  padding: 10px 10px 3px;
-	  font-size: 20px;
-	  margin: 0;
-	  transition: all 0.2s;
+      .company {
+	  font-weight: bold;
+	  color: dodgerblue;
+      }
+
+      .email {
+	  color: #888;
+      }
+
+      summary {
 	  cursor: pointer;
-	  text-decoration: underline;
+	  display: inline;
+      }
+
+      summary::-webkit-details-marker {
+	  display: none;
+      }
+
+      summary:before {
+	  content: "🐧";
+	  margin-right: 5px;
       }
 
     </style>
@@ -61,45 +72,32 @@
 
   </head>
   <body>
+    <div class="penguins"></div>
 
-    <script> 
-      document.body.innerHTML += '<div class="penguins"></div><div class="todos"></div>'
-      document.body.appendChild(document.body.querySelector('script'))
+    <script>
+      let penguins;
+      //todos
+      fetch("https://jsonplaceholder.typicode.com/todos")
+    .then(response => response.json())
+    .then(json => {
+	penguins = JSON.parse(json)
 
-      const getPenguins = () => {
-	  fetch("https://jsonplaceholder.typicode.com/users")
-	      .then(response => response.json())
-	      .then(json => {
-		  console.log(json)
+    })
 
-		  const divEl = document.querySelector('.penguins')
-		  for (const i of json) {
-		      divEl.innerHTML += `<div class="penguin"><p onclick="getTodos()" class="name">${i.name}</p><p class="company">${i.company.name}<p class="email">${i.email}</p></div>`
-		  }
-	      })
-
-      }
-      getPenguins();
-
-
-    const getTodos = () => {
-	  fetch("https://jsonplaceholder.typicode.com/todos")
-	      .then(response => response.json())
-	      .then(json => {
-		  console.log(json)
-		  const divEl = document.querySelector('.todos')
-		  for (let i = 0; i < json.length; i++) {
-
-		      json[i].completed === true
-			  ? divEl.innerHTML += `<div class="todo"><p class="completed">${json[i].id} ${json[i].title}</p></div>`
-			  : divEl.innerHTML += `<div class="todo"><p>${json[i].id} ${json[i].title}</p></div>`;			  					      
-		  }
-	      })
-      }
+      //penguins
+      fetch("https://jsonplaceholder.typicode.com/users")
+    .then(response => response.json())
+    .then(json => {
+	
+	const divEl = document.querySelector('.penguins')
+	for (const i of json) {
+	    divEl.innerHTML += `<div class="penguin"><h1 class="name">${i.name}</h1><p class="company">${i.company.name}<p class="email">${i.email}</p><details class="todos"><summary>Todos</summary><p>?</p></details></div>`
+	}
+    })
 
 
-
-      </script>
+      
+    </script>
 
 
   </body>
