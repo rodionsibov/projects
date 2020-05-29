@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Dark Mode Effects</title>
+    <style>
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  outline: none;
+	  font-family: 'Poppins', sans-serif;
+      }
+
+      section {
+	  background: white;
+	  min-height: 100%;
+	  padding: 80px 100px;
+      }
+
+      p {
+	  margin-bottom: 20px;
+	  text-align: justify;
+      }
+      
+      h1 {
+	  filter: inherit;
+	  color: dodgerblue;
+	  font-size: 44px;
+	  margin-bottom: 40px;
+      }
+
+      section img {
+	  max-width: 45%;
+	  float: left;
+	  margin: 10px 30px 10px 0;
+	  filter: inherit;
+      }
+
+      input[type="checkbox"] {
+	  position: fixed;
+	  z-index: 1;
+	  top: 40px;
+	  right: 100px;
+	  cursor: pointer;
+	  -webkit-appearance: none;
+      }
+      
+      input[type="checkbox"]:before {
+	  content: 'Dark';
+	  color: white;
+	  background: black;
+	  padding: 10px 20px;
+	  position: absolute;
+      }
+
+      input[type="checkbox"]:checked:before {
+	  content: 'Light';
+	  color: black;
+	  background: white;
+      }
+
+      input[type="checkbox"]:checked ~ *:not(footer) {
+	  filter: invert(1);
+      }
+      
+
+      footer {
+	  padding: 10px;
+	  background-color: azure;
+	  text-align: center;
+	  color: #555;
+      }
+
+      footer a {
+	  filter: inherit;
+	  color: dodgerblue;
+      }
+
+      @media screen and (max-width: 800px) {
+	  h1 {
+	      text-align: center;
+	      margin-top: 70px;
+	      padding: 10px;
+	      line-height: 55px;
+	  }
+
+	  section {
+	      padding: 20px;
+	  }
+
+	  img {
+	      min-width: 100%;
+	  }
+
+	  footer {
+	      padding: 20px;
+	  }
+      }
+
+    </style>
+    <body>
+      <input type="checkbox" >
+      <section>
+	<h1>Curabitur nec cursus Maecenas</h1>
+	<p>
+	  Donec sed vehicula nibh. Mauris commodo eros sit amet magna congue lobortis. Donec et dui maximus, feugiat mi ut, scelerisque ipsum. Sed in tellus sollicitudin, scelerisque mi vel, semper metus. Duis convallis aliquam massa et mattis. Donec varius eu nunc quis congue. Pellentesque quis ligula magna. Maecenas commodo dolor eget ipsum malesuada fermentum. Integer egestas gravida volutpat. Curabitur ac bibendum mauris, a rutrum nisi.
+	</p>
+	<img src="https://images.unsplash.com/photo-1551452131-c0fb95d8cb83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="Photo by Cristian Lozan">
+	<p>
+	  Proin tempus mattis mauris, et rhoncus turpis iaculis et. Quisque id imperdiet nulla. Etiam pretium purus velit, eget ultricies tellus laoreet eget. Ut id erat vel tellus volutpat congue eget at orci. Nulla hendrerit orci urna, sed ornare libero facilisis in. Cras aliquam aliquet velit at semper. Vivamus in leo sem. Praesent et augue et dui vehicula venenatis. Suspendisse at libero mi. Nunc ut justo eu augue pharetra tempus sit amet eu dolor. Ut ut pharetra nibh. Aliquam aliquet arcu ac hendrerit mattis. Fusce rhoncus nisl justo, in luctus mi consequat ac. Praesent quis tortor scelerisque, efficitur tortor nec, cursus dolor. Pellentesque ante diam, tincidunt sit amet scelerisque id, varius id mauris.
+	</p>
+	<p>
+	  Cras magna orci, placerat quis ex in, suscipit euismod quam. Suspendisse in lorem feugiat lectus dapibus suscipit. Donec suscipit ipsum vel eros viverra, sit amet efficitur dolor efficitur. Aenean luctus, diam nec maximus auctor, nisl ante hendrerit nisl, eu congue ante orci sit amet ligula. Etiam sit amet urna et leo luctus faucibus. Phasellus et vestibulum urna. Quisque condimentum purus id tellus imperdiet, sed fringilla sapien sollicitudin. Pellentesque tempus egestas pretium. Pellentesque ultricies imperdiet nisl, ut ultricies turpis lacinia eget. Curabitur eu ligula eget arcu eleifend placerat et id augue. Ut erat tellus, commodo sed sem quis, pharetra posuere leo. Cras mollis elementum tellus, sit amet tempor ex. Integer eleifend ligula quis auctor porta. Sed viverra, odio a porttitor pulvinar, libero lacus efficitur nulla, ac fringilla augue erat nec ipsum.
+	</p>
+	<p>
+	  Nunc eget ultrices nulla. Phasellus non pellentesque nisi. In hac habitasse platea dictumst. In ac ligula ante. Praesent feugiat placerat finibus. Maecenas fermentum orci erat, nec porta quam accumsan eu. Proin non ligula ligula. Donec nec volutpat ipsum. Aenean auctor arcu non posuere viverra. Proin eros odio, luctus vitae libero at, tristique ornare massa. Suspendisse lacinia purus et tincidunt congue. Integer diam velit, placerat tempus sapien eget, molestie pulvinar enim.
+	</p>
+	<p>
+	  Cras ultricies lacus vitae dolor ultrices, in lobortis nisi euismod. Nam at lorem tellus. Donec fermentum bibendum mi vel congue. Suspendisse ut orci orci. In molestie volutpat metus ut porta. Donec eget ante eget ligula dignissim porta malesuada ac erat. In luctus ipsum sit amet sapien auctor, vel imperdiet tellus commodo. Donec sed maximus nibh, sit amet tincidunt nunc. Aliquam egestas non enim vel maximus. Cras nec dolor sed eros porttitor dapibus. Aenean imperdiet erat nibh, ut iaculis nisl vestibulum vel.
+	</p>
+      </section>
+
+      <footer>
+	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
+      </footer>
+
+      <script>
+
+      </script>
+    </body>
+  </head>
