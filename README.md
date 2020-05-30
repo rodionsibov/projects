@@ -2,7 +2,7 @@
 
 The more you practice, the better your skills will become. You are free to modify, save, share, use or do whatever you want with them. Experiment and have fun! 😉
 
--1 https://rodionsibov.github.io/projects/js-booklist-app.html
+1. https://rodionsibov.github.io/projects/js-booklist-app.html
 - https://rodionsibov.github.io/projects/card-hover.html
 - https://rodionsibov.github.io/projects/clip-mask.html
 - https://rodionsibov.github.io/projects/curved-header.html
