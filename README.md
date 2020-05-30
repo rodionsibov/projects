@@ -2,6 +2,7 @@
 
 The more you practice, the better your skills will become. You are free to modify, save, share, use or do whatever you want with them. Experiment and have fun! 😉
 
+- https://rodionsibov.github.io/projects/gooey.html
 - https://rodionsibov.github.io/projects/div-box.html
 - https://rodionsibov.github.io/projects/video-inside-text.html
 - https://rodionsibov.github.io/projects/reflection.html
