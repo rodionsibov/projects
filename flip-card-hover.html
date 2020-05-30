@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+
+    <title>3D Flip Card Hover Effects</title>
+    <style>
+
+      
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  outline: none;
+	  font-family: 'Roboto', sans-serif;
+	  
+      }
+
+      main {
+	  width: 100%;
+	  min-height: 100vh;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  background: #222;
+      }
+
+      .card {
+	  position: relative;
+	  width: 300px;
+	  height: 400px;
+	  transform-style: preserve-3d;
+      }
+      
+      .card .face {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  transform-style: preserve-3d;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  transition: 2s ease-in-out;
+	  backface-visibility: hidden;
+	  transform: perspective(500px) rotateY(0deg);
+	  
+      }
+
+      .card .face.front {
+	  background: #ff0;
+      }
+
+      .card:hover .face.front {
+	  transform: perspective(500px) rotateY(180deg);
+      }
+
+      .card .face.back {
+	  background: #3bc2ff;
+	  color: white;
+	  transform: perspective(500px) rotateY(180deg);
+      }
+
+      .card:hover .face.back {
+	  transform: perspective(500px) rotateY(360deg);
+      }
+
+      footer {
+	  text-align: center;
+	  padding: 7px;
+	  color: #555;
+	  background: azure;
+	  transition: 0.2s;
+	  border-top: 1px solid rgba(0,0,0,0.05);
+	  
+      }
+
+      .card .face h2 {
+	  font-size: 4em;
+	  text-transform: uppercase;
+	  transform: perspective(500px) translateZ(50px);
+      }
+
+      footer a {
+	  color: dodgerblue;
+      }
+      
+      footer:hover {
+	  color: black;
+      }
+      
+      @media screen and (max-width: 360px) {
+	  footer {
+	      padding: 20px;
+	  }
+
+      }
+
+    </style>
+    <body>
+      <main>
+      <div class="card">
+	<div class="face front">
+	  <h2>Front</h2>
+	</div>
+      </div>
+
+      <div class="card">
+	<div class="face back">
+	  <h2>Back</h2>
+	</div>
+      </div>
+      </main>
+      <footer>
+	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
+      </footer>
+
+      <script>
+
+      </script>
+    </body>
+  </head>
