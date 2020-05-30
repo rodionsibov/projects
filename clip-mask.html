@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+
+    <title>CSS Clip-Mask Parallax Scrolling Effects</title>
+    <style>
+
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  outline: none;
+	  font-family: 'Roboto', sans-serif;
+	  
+      }
+
+      section {
+	  positiion: relative;
+	  width: 100%;
+	  mib-height: 100vh;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  padding: 50px 0;
+      }
+
+      section .content {
+	  text-align: center;
+      }
+
+      section .content h2 {
+	  margin-bottom: 10px;
+	  font-family: 'Poppins', sans-serif;
+	  font-size: 24vw;
+	  text-transform: uppercase;
+	  font-weight: bold;
+	  line-height: 1em;
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+	  background-attachment: fixed;
+      }
+      
+      section:nth-child(1) .content h2 {
+	  background-image: url("https://images.unsplash.com/photo-1543005472-1b1d37fa4eae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80");
+      }
+
+      section:nth-child(2) .content h2 {
+	  background-image: url("https://images.unsplash.com/photo-1483004406427-6acb078d1f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+      }
+
+
+      section:nth-child(3) .content h2 {
+	  background-image: url("https://images.unsplash.com/photo-1563439070049-aed1d7cc9d33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+      }
+
+      section:nth-child(4) .content h2 {
+	  background-image: url("https://images.unsplash.com/photo-1433878665141-d6ceaf394ae2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80");
+      }
+
+      section .content p {
+	  max-width: 800px;
+	  margin: 0 auto;
+	  padding: 0 30px;
+	  line-height: 1.4em;
+      }
+
+      section .content a {
+	  display: inline-block;
+	  padding: 10px 20px;
+	  border: 2px solid #222;
+	  text-decoration: none;
+	  color: #222;
+	  margin-top: 20px;
+      }
+      
+      footer {
+	  text-align: center;
+	  padding: 7px;
+	  color: #555;
+	  background: azure;
+	  transition: 0.2s;
+	  border-top: 1px solid rgba(0,0,0,0.05);
+	  
+      }
+
+      footer a {
+	  color: dodgerblue;
+      }
+      
+      footer:hover {
+	  color: black;
+      }
+      
+      @media screen and (max-width: 360px) {
+	  footer {
+	      padding: 20px;
+	  }
+
+      }
+
+    </style>
+    <body>
+
+      <section>
+	<div class="content">
+	  <h2>Fire</h2>
+	  <p>
+	  Sed rutrum, lorem ac porta ultrices, mi arcu feugiat neque, sed cursus felis nibh vitae metus. Proin et metus eu tortor varius pellentesque. Mauris nec volutpat purus. In lorem diam, accumsan vel nisi eu, laoreet consequat nisi. Nunc dictum dignissim ornare. Nulla aliquam magna id elit commodo euismod. Donec porta eu dui eget ullamcorper. Nullam non scelerisque nisl.
+	  </p>
+	  <a href="#">Read More</a>
+	</div>
+      </section>
+      <section>
+	<div class="content">
+	  <h2>Water</h2>
+	  <p>
+	  Sed rutrum, lorem ac porta ultrices, mi arcu feugiat neque, sed cursus felis nibh vitae metus. Proin et metus eu tortor varius pellentesque. Mauris nec volutpat purus. In lorem diam, accumsan vel nisi eu, laoreet consequat nisi. Nunc dictum dignissim ornare. Nulla aliquam magna id elit commodo euismod. Donec porta eu dui eget ullamcorper. Nullam non scelerisque nisl.
+	  </p>
+	  <a href="#">Read More</a>
+	</div>
+      </section>
+      <section>
+	<div class="content">
+	  <h2>Sand</h2>
+	  <p>
+	  Sed rutrum, lorem ac porta ultrices, mi arcu feugiat neque, sed cursus felis nibh vitae metus. Proin et metus eu tortor varius pellentesque. Mauris nec volutpat purus. In lorem diam, accumsan vel nisi eu, laoreet consequat nisi. Nunc dictum dignissim ornare. Nulla aliquam magna id elit commodo euismod. Donec porta eu dui eget ullamcorper. Nullam non scelerisque nisl.
+	  </p>
+	  <a href="#">Read More</a>
+	</div>
+      </section>
+      <section>
+	<div class="content">
+	  <h2>Ice</h2>
+	  <p>
+	  Sed rutrum, lorem ac porta ultrices, mi arcu feugiat neque, sed cursus felis nibh vitae metus. Proin et metus eu tortor varius pellentesque. Mauris nec volutpat purus. In lorem diam, accumsan vel nisi eu, laoreet consequat nisi. Nunc dictum dignissim ornare. Nulla aliquam magna id elit commodo euismod. Donec porta eu dui eget ullamcorper. Nullam non scelerisque nisl.
+	  </p>
+	  <a href="#">Read More</a>
+	</div>
+      </section>
+      
+      <footer>
+	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
+      </footer>
+
+      <script>
+
+      </script>
+    </body>
+  </head>
