@@ -4,13 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
-
-
     <title>Cards Hover Effects</title>
     <style>
-
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
-
 
       * {
 	  margin: 0;
@@ -18,7 +13,6 @@
 	  box-sizing: border-box;
 	  outline: none;
 	  font-family: 'Roboto', sans-serif;
-	  
       }
 
       main {
@@ -32,7 +26,6 @@
 	  width: 1000px;
 	  display: flex;
 	  justify-content: space-between;
-	  
       }
       
       .container .card {
@@ -65,19 +58,8 @@
 	  background-color: #1bcaff;
       }
 
-      
       .container .card:nth-child(3):before {
 	  background-color: #e33cff;
-      }
-
-      footer {
-	  text-align: center;
-	  padding: 7px;
-	  color: #555;
-	  background: azure;
-	  transition: 0.2s;
-	  border-top: 1px solid rgba(0,0,0,0.05);
-	  
       }
 
       .container .card:hover:before {
@@ -95,7 +77,6 @@
 	  transition: 0.5s;
 	  color: #777;
       }
-
 
       .container .card div p {
 	  line-height: 1.4;
@@ -119,13 +100,20 @@
 	  border-radius: 5px;
       }
 
-      
       .container .card:hover div h2,
       .container .card:hover div p {
 	  color: white;
       }
 
-      
+      footer {
+	  text-align: center;
+	  padding: 7px;
+	  color: #555;
+	  background: azure;
+	  transition: 0.2s;
+	  border-top: 1px solid rgba(0,0,0,0.05);
+      }
+
       footer a {
 	  color: dodgerblue;
       }
@@ -134,11 +122,21 @@
 	  color: black;
       }
       
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 800px) {
 	  footer {
+	      margin-top: 50px;
 	      padding: 20px;
 	  }
-
+	  
+	  .container {
+	      margin-top: 30px;
+	      align-items: center;
+	      flex-direction: column;
+	  }
+	  
+	  .container .card {
+	      margin: 20px;
+	  }
       }
 
     </style>
