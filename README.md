@@ -2,6 +2,7 @@
 
 The more you practice, the better your skills will become. You are free to modify, save, share, use or do whatever you want with them. Experiment and have fun! 😉
 
+- https://rodionsibov.github.io/projects/card-hover.html
 - https://rodionsibov.github.io/projects/clip-mask.html
 - https://rodionsibov.github.io/projects/curved-header.html
 - https://rodionsibov.github.io/projects/loading-page.html

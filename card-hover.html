@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+
+    <title>CSS Clip-Mask Parallax Scrolling Effects</title>
+    <style>
+
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  outline: none;
+	  font-family: 'Roboto', sans-serif;
+	  
+      }
+
+      main {
+	  min-height: 100vh;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+      }
+
+      .container {
+	  width: 1000px;
+	  display: flex;
+	  justify-content: space-between;
+	  
+      }
+      
+      .container .card {
+	  position: relative;
+	  width: 300px;
+	  padding: 40px;
+	  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+	  overflow: hidden;
+	  border-radius: 3% 3% 0% 0%;
+      }
+      
+      .container .card:before {
+	  content: "";
+	  position: absolute;
+	  left: 0;
+	  bottom: calc(-100% + 4px);
+	  width: 100%;
+	  height: 100%;
+	  background: black;
+	  z-index: 1;
+	  transition: 0.5s ease-in-out;
+      }
+
+      .container .card:nth-child(1):before {
+	  background-color: #ff56ac;
+      }
+
+
+      .container .card:nth-child(2):before {
+	  background-color: #1bcaff;
+      }
+
+      
+      .container .card:nth-child(3):before {
+	  background-color: #e33cff;
+      }
+
+      footer {
+	  text-align: center;
+	  padding: 7px;
+	  color: #555;
+	  background: azure;
+	  transition: 0.2s;
+	  border-top: 1px solid rgba(0,0,0,0.05);
+	  
+      }
+
+      .container .card:hover:before {
+	  bottom: 0;
+      }
+
+      .container .card div {
+	  position: relative;
+	  z-index: 2;
+      }
+
+      .container .card div h2 {
+	  margin-bottom: 10px;
+	  font-size: 30px;
+	  transition: 0.5s;
+	  color: #777;
+      }
+
+
+      .container .card div p {
+	  line-height: 1.4;
+	  font-size: 18px;
+	  transition: 0.5s;
+	  color: #777;
+      }
+
+
+      .container .card div a {
+	  margin-top: 20px;
+	  font-size: 14px;
+	  display: inline-block;
+	  text-decoration: none;
+	  transition: 0.5s;
+	  background: white;
+	  padding: 10px 20px;
+	  color: #777;
+	  font-weight: bold;
+	  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+	  border-radius: 5px;
+      }
+
+      
+      .container .card:hover div h2,
+      .container .card:hover div p {
+	  color: white;
+      }
+
+      
+      footer a {
+	  color: dodgerblue;
+      }
+      
+      footer:hover {
+	  color: black;
+      }
+      
+      @media screen and (max-width: 360px) {
+	  footer {
+	      padding: 20px;
+	  }
+
+      }
+
+    </style>
+    <body>
+      <main>
+      <div class="container">
+	<div class="card">
+	  <div>
+	  <h2>Design</h2>
+	  <p>
+	  Nulla ante velit, pharetra scelerisque nisl quis, sollicitudin laoreet purus. Sed volutpat orci enim, vel aliquam risus porttitor ut.</p>
+	  <a href="#">Read More</a>
+	  </div>
+	</div>
+	<div class="card">
+	  <div>
+	  <h2>Code</h2>
+	  <p>
+Praesent dignissim tellus non diam blandit, eget posuere velit bibendum. Pellentesque aliquam turpis in ligula bibendum, sed viverra leo mollis.	  </p>
+	  <a href="#">Read More</a>
+	  </div>
+	</div>
+	<div class="card">
+	  <div>
+	  <h2>Launch</h2>
+	  <p>
+Aliquam egestas massa et erat iaculis lacinia. Aenean posuere, neque a pharetra mollis, sem lorem consectetur neque, nec gravida.	  </p>
+	  <a href="#">Read More</a>
+	  </div>
+	</div>
+      </div>
+      </main>
+      <footer>
+	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
+      </footer>
+
+      <script>
+
+      </script>
+    </body>
+  </head>
