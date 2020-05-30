@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+
+    <title>Curve Header</title>
+    <style>
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  font-family: 'Roboto', sans-serif;
+	  
+      }
+
+      section {
+	  position: relative;
+	  width: 100%;
+	  height: 80vh;
+	  display: flex;
+	  justify-content; center;
+	  align-items: center;
+	  overflow: hidden;
+      }
+
+      section:before {
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  background: linear-gradient(45deg, #ff0081, #6827b0);
+	  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+	  transform: scaleX(1.5);
+      }
+
+      section .content {
+	  position: relative;
+	  z-index: 1;
+	  margin: 0 auto;
+	  max-width: 900px;
+	  text-align: center;
+      }
+
+      section .content h2 {
+	  padding: 20px 20px 10px 20px;
+	  color: white;
+	  font-size: 3em;
+      }
+      
+
+      section .content p {
+	  line-height: 1.5;
+	  color: white;
+	  font-size: 1.2em;
+	  padding: 30px;
+      }
+
+      footer {
+	  position: absolute;
+	  right: 20px;
+	  bottom: 30px;
+	  width: 280px;
+	  border-radius: 5px;
+	  padding: 20px;
+	  color: #555;
+	  background: azure;
+	  transition: 0.2s;
+	  border: 1px solid rgba(0,0,0,0.05);
+	  z-index: 1;
+      }
+
+      footer a {
+	  color: dodgerblue;
+      }
+      
+      footer:hover {
+	  color: black;
+      }
+
+
+      @media screen and (max-width: 550px) {
+	  footer {
+	      position: relative;
+	      left: 0;
+	      right: 0;
+	      margin: 0 auto;
+	  }
+
+	  section:before {
+	      transform: scaleX(3);
+	  }
+
+	  section {
+	      height: auto;
+	      padding-bottom: 50px;
+	  }
+	  
+      }
+
+    </style>
+    <body>
+
+      <section>
+	<div class="content">
+	  <h2>In hac habitasse platea dictumst</h2>
+	  <p>
+	    Curabitur nec elit non orci ornare ultrices faucibus eu quam. Maecenas ultrices nibh vel nisl iaculis, eget fringilla arcu finibus. Proin nec ante pretium, pretium enim et, elementum sapien. Proin lacinia justo non nisl vestibulum, eget malesuada tellus auctor. Sed efficitur non felis scelerisque volutpat. 
+	  </p>
+	</div>
+      </section>
+      <footer>
+	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
+      </footer>
+
+      <script>
+
+      </script>
+    </body>
+  </head>
