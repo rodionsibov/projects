@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Menu</title>
+    <style>
+
+      img {
+	  max-width: 100%;
+      }
+      
+    </style>
+    <body>
+
+      <section class="menu container mb-5">
+	<!-- title -->
+      <div class="title text-center mt-3">
+	<h1>Curabitur</h1>
+	<hr>
+      </div>
+      <!-- filter buttons-->
+      <div class="btn-container container my-4 text-center">
+
+      </div>
+      <!-- menu items -->
+      <div class="section-center row">
+	<!-- single item -->
+
+	<!-- end of single item -->
+	
+      </div>
+    </section>
+      <footer class="p-4 bg-light text-muted text-center">
+	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</a></small>
+      </footer>
+
+      <script>
+
+	const menu = [
+	    {
+		photo: "https://images.unsplash.com/photo-1543528176-61b239494933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80",
+		alt: "Photo by Massimiliano Martini | https://unsplash.com/photos/IeEFsajuORc",
+		title: "Nullam ut elit ultricies",
+		description: "Proin sollicitudin, turpis ac aliquam sagittis, felis nisi egestas risus, vel placerat neque nunc imperdiet elit. Fusce vel tortor id lacus finibus mattis.",
+		price: 15.99,
+		category: "red"
+	    },
+	    {
+		photo: "https://images.unsplash.com/photo-1522507806580-0be3530796be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
+		alt: "Photo by Dan Gold | https://unsplash.com/photos/xQ0WWUyqAmo",
+		title: "Donec lobortis consect",
+		description: "Fusce quis leo vitae lorem vulputate condimentum. Nulla placerat, mi vitae tristique interdum, neque felis sagittis turpis, quis feugiat ante risus dignissim nisl.",
+		price: 11.99,
+		category: "green"
+	    },
+	    {
+		photo: "https://images.unsplash.com/photo-1528733770294-01233206c53c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
+		alt: "Photo by Fikri Rasyid | https://unsplash.com/photos/iJdnf9pkB50",
+		title: "Duis quis ornare erat",
+		description: "Aliquam scelerisque porttitor dignissim. Proin iaculis tellus ut tortor consequat sagittis. Integer lacinia, elit eget pretium tempus, risus risus congue mauris, ut blandit tortor risus ac nisl.",
+		price: 8.99,
+		category: "orange"
+	    },
+	]
+
+	const sectionCenter = document.querySelector('.section-center');
+
+	// load items
+	window.addEventListener('DOMContentLoaded', () => {
+	    displayMenuItems(menu);
+
+	    const categories = menu.reduce((values, item) => {
+		if (!values.includes(item.category)) {
+		    values.push(item.category)
+		}
+		return values
+	    }, ['all']);
+	    
+	    const categoryBtns = categories.map(item => {
+		return `
+<button class="filter-btn btn btn-outline-primary btn-sm mx-1 text-capitalize" data-id="${item}">${item}</button>
+`;
+	    }).join('')
+
+	    document.querySelector('.btn-container').innerHTML = categoryBtns;
+	    const filterBtn = document.querySelectorAll('.filter-btn');
+
+	// filter items
+	filterBtn.forEach(btn => {
+	    btn.addEventListener('click', (e) => {
+		const category = e.currentTarget.dataset.id;
+		const menuCategory = menu.filter(item => {
+		    if (item.category === category) {
+			return item;
+		    }
+		})
+		if (category === 'all') {
+		    displayMenuItems(menu)
+		} else {
+		    displayMenuItems(menuCategory)
+		}
+	    })
+	})
+
+	});
+
+	const displayMenuItems = (menuItem) => {
+	    let displayMenu = menuItem.map(item => {
+		return `
+<article class="menu-item col-md-4">
+<img class="photo" title="${item.alt}" src="${item.photo}" alt="${item.alt}">
+<div class="item-info">
+<p class="h4 mt-3">${item.title} <span class="badge badge-primary">$${item.price}</span></p>
+<p class="text-secondary">${item.description}</p>
+</div>
+</article>
+`;
+	    }).join('');
+	    sectionCenter.innerHTML = displayMenu;
+	    
+	} 
+
+
+      </script>
+    </body>
+  </head>
