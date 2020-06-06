@@ -2,6 +2,7 @@
 
 The more you practice, the better your skills will become. You are free to modify, save, share, use or do whatever you want with them. Experiment and have fun! 😉
 
+1. https://rodionsibov.github.io/projects/login-form.html
 1. https://rodionsibov.github.io/projects/menu.html
 1. https://rodionsibov.github.io/projects/js-booklist-app.html
 1. https://rodionsibov.github.io/projects/review.html
@@ -18,6 +19,7 @@ The more you practice, the better your skills will become. You are free to modif
 1. https://rodionsibov.github.io/projects/dark-mode.html
 1. https://rodionsibov.github.io/projects/penguins-organizer.html
 1. https://rodionsibov.github.io/projects/typewriting.html
+1. https://rodionsibov.github.io/projects/video.html
 1. https://rodionsibov.github.io/projects/image-gallery.html
 1. https://rodionsibov.github.io/projects/get-emoji.html
 1. https://rodionsibov.github.io/projects/modal.html

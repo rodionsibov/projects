@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Video</title>
+    <style>
+      
+      header {
+	  min-height: 100vh;
+	  position: relative;
+	  display: grid;
+	  place-items: center;
+      }
+
+      header::after {
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  background:  rgba(0,0,0,0.7);
+	  z-index: -1;
+      }
+      
+      body {
+	  color: white;
+      }
+      
+      .video-container {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  z-index: -2;
+      }
+
+      .custom-control-label {
+	  transform: scale(2);
+      }
+      
+      footer {
+	  display: none;
+      }
+
+      .preloader {
+	  min-height: 100vh; 
+	  width: 100%;
+	  background: white;
+	  position: fixed;
+	  display: grid;
+	  visibility: visible;
+	  z-index: 1;
+	  place-items: center;
+      }
+
+      .progress {
+	  width: 210px;
+      }
+      
+      .hide-preloader {
+	  visibility: hidden;
+      }
+
+    </style>
+    <body>
+      
+      <div class="preloader">
+	<div class="progress">
+	<div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0"></div>
+	</div>
+      </div>
+      
+      <header>
+	<video class="video-container" muted autoplay loop title="Video by Sean JOHNSTON from Pexels">
+	  <source src="2802271.mp4" type="video/mp4">
+	</video>
+	<h1>Video Project</h1>
+	<div class="custom-control custom-switch">
+	  <input type="checkbox" class="custom-control-input" checked id="customSwitch">
+	  <label class="custom-control-label" for="customSwitch"></label>
+	</div>
+      </header>
+      <footer class="p-4 bg-light text-muted text-center">
+	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</a></small>
+      </footer>
+
+      <script>
+	const btn = document.querySelector('.custom-control-input')
+	const video = document.querySelector('.video-container')
+
+	btn.addEventListener('click', () => {
+	    if (!btn.checked === true) {
+		video.pause()
+	    } else {
+		video.play()
+	    }
+	})
+	
+
+	const preloader = document.querySelector('.preloader')
+	window.addEventListener('load', (e) => {
+	    console.log(e.timeStamp)
+	    document.querySelector('.progress-bar').style.width = `${e.timeStamp}%`
+	    preloader.classList.add('hide-preloader')
+	})
+
+
+      </script>
+    </body>
+  </head>
