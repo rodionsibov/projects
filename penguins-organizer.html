@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Penguins Organizer (Fetch API Sandbox)</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
     <style>
       
     </style>
@@ -13,70 +15,71 @@
 
   </head>
   <body>
-    <div class="container">
-      <h1 class="display-4 mb-4">Fetch API Sandbox</h1>
-      <div class="d-flex">
-	<button id="getUsers" class="btn btn-primary">Get Users</button>
-      </div>
-    <hr>
-    <div id="output"></div>
-    <form id="addPost">
-      <div class="form-group">
-	<input class="form-control" type="text" id="title" placeholder="title">
-      </div>
-      <div class="form-group">
-	<textarea class="form-control" id="body" placeholder="body"></textarea>
-      </div>
-      <input class="btn btn-secondary" type="submit" value="Submit">
-    </form>
-
+    <div class="container text-center mt-5">
+      <h1 class="display-4">Penguins 🐧 Organizer</h1>
+      <p class="lead">Fetch API Sandbox</p>
     </div>
+    <div class="container" id="root">
+
+<div class="card mb-5">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Penguins</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Todos</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- card body -->
+
+</div>
 
 
+      
+    </div>
+    
     <script>
       // "https://jsonplaceholder.typicode.com/todos"
       // "https://jsonplaceholder.typicode.com/users"
 
-      document.querySelector('#getUsers').addEventListener('click', () => {
+      window.addEventListener('DOMContentLoaded', () => {
 	  fetch("https://jsonplaceholder.typicode.com/users")
 	      .then(response => response.json())
 	      .then(data => {
-		  let output = `<h1>Users</h1>`
-		  data.forEach(user => {
-		      output += `<ul class="list-group mb-3"><li class="list-group-item">${user.name}</li><li class="list-group-item">${user.company.name}</li><li class="list-group-item">${user.email}</li></ul>`
-		  })
-		  document.querySelector('#output').innerHTML = output;
-	      })
-	      .catch(err => console.log(err))
-      })
+		  const results = data.map(item => {
+		      return `
+  <div class="card-body">
+    <h5 class="card-title"><a href="#">${item.name}</a></h5>
+    <p class="card-text"><i class="fas fa-envelope"></i> ${item.email} <i class="fas fa-map-marker-alt"></i> ${item.address.city}, ${item.address.street}, ${item.address.suite} <i class="fas fa-building"></i> ${item.company.name}</p>
+    <button class="btn btn-outline-primary btn-sm m-1">New Todos</button>
+    <button class="btn btn-outline-primary btn-sm m-1">Edit Todos</button>
+    <button class="btn btn-outline-primary btn-sm m-1">Remove Todos</button>
+<hr>
+  </div>
 
-
-      document.querySelector('#addPost').addEventListener('submit', (e) => {
-	  e.preventDefault();
-
-	  let title = document.querySelector('#title').value
-	  let body = document.querySelector('#body').value
-
-	  fetch("./file.json", {
-	      method: "POST",
-	      headers: {
-		  "Accept": "application/json, text/plain, */*",
-		  "Content-type": "application/json"
-	      },
-	      body: JSON.stringify({title: title, body: body})
-	  })
-	      .then(response => response.json())
-	      .then(data => {
+`;
+		  }).join('')
+		  document.querySelector('.card').innerHTML += results;
 		  console.log(data)
-	      })
-	      .catch(err => console.log(err))
-      })
 
-    //   fetch("https://jsonplaceholder.typicode.com/todos")
+
+//   fetch("https://jsonplaceholder.typicode.com/todos")
     // .then(res => res.json())
     // .then(data => console.log(data))
-      
-      
+
+		  document.querySelectorAll('.card-title').forEach(btn => {
+		    btn.addEventListener('click', (e) => {
+		      console.log(e.target)   
+		    })  
+		  })
+	
+		  
+		  
+	      });
+      })
 	  
 
 
