@@ -16,6 +16,7 @@ The more you practice, the better your skills will become. You are free to modif
 1. https://rodionsibov.github.io/projects/video-inside-text.html
 1. https://rodionsibov.github.io/projects/reflection.html
 1. https://rodionsibov.github.io/projects/dark-mode.html
+1. https://rodionsibov.github.io/projects/penguins-organizer.html
 1. https://rodionsibov.github.io/projects/typewriting.html
 1. https://rodionsibov.github.io/projects/image-gallery.html
 1. https://rodionsibov.github.io/projects/get-emoji.html
