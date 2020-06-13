@@ -63,17 +63,20 @@
 
       // Add event listener
       filterInput.addEventListener('keyup', () => {
+
 	  // Get value of input
 	  const filterValue = filterInput.value.toUpperCase()
 
 	  // Get names ul
 	  const ul = document.querySelector('#names')
+
 	  // Get lis from ul
 	  const li = ul.querySelectorAll('li.collection-item')
 
 	  // Loop through collection-item lis
 	  li.forEach(e => {
 	      const a = e.querySelectorAll('a')[0]
+
 	      // If matched
 	      if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
 		  e.style.display = ''
