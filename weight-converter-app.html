@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weight Converter</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <style>
+      body {
+	  background: #333;
+	  color: whitesmoke;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+	<div class="col-md-6 offset-md-3">
+	  <h1 class="display-4 text-center mb-4">Weight Converter</h1>
+	  <form>
+	    <div class="form-group">
+	      <input
+		type="number"
+		class="form-control form-control-lg"
+		placeholder="Enter Pounds..."
+		id="lbsInput"
+		>
+	    </div>
+	  </form>
+	  <div id="output">
+	    <div class="card bg-primary mb-2">
+	      <div class="card-body">
+		<h4>Grams:</h4>
+		<div id="gramsOutput"></div>
+	      </div>
+	    </div>
+	    <div class="card bg-success mb-2">
+	      <div class="card-body">
+		<h4>Kilograms:</h4>
+		<div id="kgOutput"></div>
+	      </div>
+	    </div>
+	    <div class="card bg-danger mb-2">
+	      <div class="card-body">
+		<h4>Ounces:</h4>
+		<div id="ozOutput"></div>
+	      </div>
+	    </div>
+	</div>
+      </div>
+    </div>
+    
+      <script>
+	
+	document.querySelector('#output').style.visibility = 'hidden'
+	
+	document.querySelector('#lbsInput').addEventListener('input', (e) => {
+	    document.querySelector('#output').style.visibility = 'visible'
+	    const lbs = e.target.value
+
+	    document.querySelector('#gramsOutput').innerHTML = lbs / 0.0022046;
+	    document.querySelector('#kgOutput').innerHTML = lbs / 2.2046;
+	    document.querySelector('#ozOutput').innerHTML = lbs * 16;
+	})
+    </script>
+  </body>
+</html>
