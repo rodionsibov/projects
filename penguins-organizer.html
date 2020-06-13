@@ -21,21 +21,21 @@
     </div>
     <div class="container" id="root">
 
-<div class="card mb-5">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li class="nav-item">
-        <a class="penguins nav-link active" href="#">Penguins</a>
-      </li>
-      <li class="nav-item">
-        <a class="todos nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Todos</a>
-      </li>
-    </ul>
-  </div>
+      <div class="card mb-5">
+	<div class="card-header">
+	  <ul class="nav nav-tabs card-header-tabs">
+	    <li class="nav-item">
+              <a class="penguins nav-link active" href="#">Penguins</a>
+	    </li>
+	    <li class="nav-item">
+              <a class="todos nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Todos</a>
+	    </li>
+	  </ul>
+	</div>
 
-  <!-- card body -->
+	<!-- card body -->
 
-</div>
+      </div>
 
 
       
@@ -64,31 +64,31 @@
 		  }).join('')
 
 		  document.querySelector('.card').innerHTML += results
-//		  console.log(data)
+		  //		  console.log(data)
 
 
 		  document.querySelectorAll('.card-title').forEach(btn => {
-		    btn.addEventListener('click', () => {
-			document.querySelector('.todos').classList.add('active')
-			document.querySelector('.penguins').classList.remove('active')
+		      btn.addEventListener('click', () => {
+			  document.querySelector('.todos').classList.add('active')
+			  document.querySelector('.penguins').classList.remove('active')
 
 
-			fetch("https://jsonplaceholder.typicode.com/todos")
-			    .then(res => res.json())
-			    .then(data => {
-				const results = data.map(item => {
-				return `
+			  fetch("https://jsonplaceholder.typicode.com/todos")
+			      .then(res => res.json())
+			      .then(data => {
+				  const results = data.map(item => {
+				      return `
 
 
 `;
-				}).join('');
-				document.querySelector('.card').innerHTML += results;
-				console.log(results)
-				
-			    })
-		    })  
+				  }).join('');
+				  document.querySelector('.card').innerHTML += results;
+				  console.log(results)
+				  
+			      })
+		      })  
 		  })
-	
+		  
 		  document.querySelector('.penguins').addEventListener('click', () => {
 		      document.querySelector('.penguins').classList.add('active')
 		      document.querySelector('.todos').classList.remove('active')
@@ -99,10 +99,10 @@
 		  
 	      });
       })
-	  
+      
 
 
-    </script>
+      </script>
 
 
   </body>
