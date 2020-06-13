@@ -6,6 +6,7 @@ The more you practice, the better your skills will become. You are free to modif
 1. https://rodionsibov.github.io/projects/menu.html
 1. https://rodionsibov.github.io/projects/js-booklist-app.html
 1. https://rodionsibov.github.io/projects/review.html
+1. https://rodionsibov.github.io/projects/filterable-list.html
 1. https://rodionsibov.github.io/projects/counter.html
 1. https://rodionsibov.github.io/projects/color-flipper.html
 1. https://rodionsibov.github.io/projects/card-hover.html
