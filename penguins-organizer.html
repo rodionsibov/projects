@@ -21,6 +21,14 @@
     </div>
     <div class="container" id="root">
 
+      <form class="">
+	    <input type="text" id="name" class="form-control mb-2 mr-sm-2" placeholder="name">
+	    <input type="text" id="email" class="form-control mb-2 mr-sm-2" placeholder="email">
+	    <input type="text" id="company" class="form-control mb-2 mr-sm-2" placeholder="company">
+	    <input class="btn btn-primary mb-2" type="submit">
+
+      </form>
+      
       <div class="card mb-5">
 	<div class="card-header">
 	  <ul class="nav nav-tabs card-header-tabs">
@@ -45,61 +53,182 @@
       // "https://jsonplaceholder.typicode.com/todos"
       // "https://jsonplaceholder.typicode.com/users"
 
-      window.addEventListener('DOMContentLoaded', () => {
-	  fetch("https://jsonplaceholder.typicode.com/users")
-	      .then(response => response.json())
-	      .then(data => {
-		  const results = data.map(item => {
-		      return `
-  <div class="card-body">
-    <h5 class="card-title"><a href="#">${item.name}</a></h5>
-    <p class="card-text"><i class="fas fa-envelope"></i> ${item.email} <i class="fas fa-map-marker-alt"></i> ${item.address.city}, ${item.address.street}, ${item.address.suite} <i class="fas fa-building"></i> ${item.company.name}</p>
-    <button class="btn btn-outline-primary btn-sm m-1">New Todos</button>
-    <button class="btn btn-outline-primary btn-sm m-1">Edit Todos</button>
-    <button class="btn btn-outline-primary btn-sm m-1">Remove Todos</button>
-<hr>
-  </div>
+      //penguin class
+      class Penguin {
+	  constructor(name, email, company) {
+	      this.name = name;
+	      this.email = email;
+	      this.company = company;
+	  }
+      }
 
-`;
-		  }).join('')
+      //todo class
+      class Todo {
+	  constructor(title, complited) {
+	      this.title = title;
+	      this.complited = complited;
+	  }
+      }
 
-		  document.querySelector('.card').innerHTML += results
-		  //		  console.log(data)
+      //UI class
+      class UI {
+	  static displayPenguins() {
+	      const storedPenguins = Store.getPenguins()
 
+		    fetch("https://jsonplaceholder.typicode.com/users")
+		    .then(response => response.json())
+		    .then(data => {
 
-		  document.querySelectorAll('.card-title').forEach(btn => {
-		      btn.addEventListener('click', () => {
-			  document.querySelector('.todos').classList.add('active')
-			  document.querySelector('.penguins').classList.remove('active')
-
-
-			  fetch("https://jsonplaceholder.typicode.com/todos")
-			      .then(res => res.json())
-			      .then(data => {
-				  const results = data.map(item => {
-				      return `
-
-
-`;
-				  }).join('');
-				  document.querySelector('.card').innerHTML += results;
-				  console.log(results)
-				  
-			      })
-		      })  
 		  })
-		  
-		  document.querySelector('.penguins').addEventListener('click', () => {
-		      document.querySelector('.penguins').classList.add('active')
-		      document.querySelector('.todos').classList.remove('active')
-		      
-		      
+
+	      const penguins = storedPenguins
+	      penguins.forEach(penguin => UI.addPenguinToList(penguin))  
+	      
+	  }
+
+	  static addPenguinToList(penguin) {
+	      const card = document.querySelector('.card')
+	      const div = document.createElement('div')
+	  
+	      div.className = 'card-body'
+	      div.innerHTML = `
+      <h5 class="card-title"><a href="#">${penguin.name}</a></h5>
+      <p class="card-text"><i class="fas fa-envelope"></i> ${penguin.email} <i class="fas fa-building"></i> ${penguin.company.name}
+      <button class="btn btn-danger btn-sm delete float-right">X</button></p>
+    <hr>
+    `;
+	  card.appendChild(div)
+      }
+	  
+	  static deletePenguin(el) {
+	      if (el.classList.contains('delete')){
+		  el.parentElement.parentElement.remove()
+	      }
+	  }
+
+	  static showAlert(message, className) {
+	      const div = document.createElement('div')
+	      div.className = `alert alert-${className}`
+	      div.appendChild(document.createTextNode(message))
+	      document.querySelector('#root').insertBefore(div, document.querySelector('form'))
+
+	      //vanish in 3 seconds
+	      setTimeout(() => {
+		  document.querySelector('.alert').remove()
+	      }, 3000)
+	  }
+	  
+	  
+	  static clearFields() {
+	      document.querySelector('#name').value = ''
+	      document.querySelector('#email').value = ''
+	      document.querySelector('#company').value = ''
+	  }
+
+
+	  
+	  static displayTodos() {
+	      const storedTodos = [];
+	      
+	      fetch("https://jsonplaceholder.typicode.com/todos")
+		  .then(res => res.json())
+		  .then(data => {
+		      storedTodos.push(...data)
 		  })
-		  
-		  
-	      });
-      })
+
+	      const todos = storedTodos;
+	      todos.forEach(todo => UI.addTodoToList(todo))
+	  }
+
+	  static addTodoToList(){
+	  }
+      }
+
+      //store class
+
+      class Store {
+	  static getPenguins() {
+	      let penguins;
+	      if(localStorage.getItem('penguins') === null) {
+		  penguins = []
+	      } else {
+		  penguins = JSON.parse(localStorage.getItem('penguins'))
+	      }
+
+	      return penguins
+	  }
+
+	  static addPenguin(penguin) {
+	      const penguins = Store.getPenguins()
+	      penguins.push(penguin)
+
+	      localStorage.setItem('penguins', JSON.stringify(penguins))
+	  }
+
+	  static removePenguin(id) {
+	      const penguins = Store.getPenguins()
+	      penguins.forEach((penguin, index) => {
+		  if (penguin.id === id) {
+		      penguins.splice(index, 1)
+		  }
+	      })
+
+	      localStorage.setItem('penguins', JSON.stringify(penguins))
+
+	  }
+
+      }
       
+      //event display 
+      document.addEventListener('DOMContentLoaded', UI.displayPenguins);
+
+      //event add
+      document.querySelector('input[type="submit"]').addEventListener('click', () => {
+
+	  //prevent actual submit
+
+	  //get form values
+	  const name = document.querySelector('#name').value
+	  const email = document.querySelector('#email').value
+	  const company = document.querySelector('#company').value
+
+	  //validate
+	  if (name === '' || email === '' || company === '') {
+	      UI.showAlert('Please fill in all fields', 'danger')	      
+	  } else {
+
+	      //instantiate penguin
+	      const penguin = new Penguin(name, email, company)
+
+	      //add penguin to UI
+	      UI.addPenguinToList(penguin)
+
+	      //add penguin to store
+	      Store.addPenguin(penguin)
+
+	      //show success message
+	      UI.showAlert('Penguin Added', 'success')
+	      //clear fields
+	      UI.clearFields();
+	  }
+
+      })
+
+      //event remove
+
+      document.querySelector('.card').addEventListener('click', (e) => {
+
+	  //remove from UI
+	  UI.deletePenguin(e.target)
+
+	  //remove from store
+	  Store.removePenguin()
+	  
+	  //show success message
+	  UI.showAlert('Penguin Removed', 'success')
+      })
+
+
 
 
       </script>
