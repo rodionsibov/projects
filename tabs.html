@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Tabs Project</title>
+    <style>
+
+      * {
+	  margin: 0;
+	  box-sizing: border-box;
+      }
+      
+      body {
+	  font-family: Poppins;
+	  background-color: whitesmoke;
+      }
+
+      .title {
+	  text-align: center;
+	  width: 80%;
+	  margin: 40px auto;
+      }
+      
+      .about-img {
+	  width: 45%;
+	  margin-bottom: 40px;
+      }
+      
+      .about-img img {
+	  width: 100%;
+	  border-radius: 8px;
+      }
+
+      .section-center {
+	  margin: 0 auto;
+      }
+
+
+      .about-center {
+	  display: flex;
+	  padding: 20px;
+      }
+      
+      .about {
+	  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	  border-radius: 8px;
+	  background-color: white;
+	  width: 50%;
+	  margin: 0 auto 100px;
+      }
+      
+      .content {
+	  padding: 0 20px;
+	  display: none;
+	  transition: all 0.3s ease-in-out;
+	  padding-bottom: 50px;
+      }
+
+
+      .content h2 {
+	  margin: 30px 0;
+      }
+
+      li {
+	  padding-right: 50px;
+      }
+      
+      .content p, li {
+	  margin-bottom: 20px;
+	  color: slategray;
+      }
+
+      .btn-container {
+	  display: flex;
+	  justify-content: space-between;
+	  
+      }
+      
+      .tab-btn:nth-child(3) {
+	  border-radius: 0 8px 0 0;
+      }
+
+      .tab-btn:nth-child(1) {
+	  border-radius: 8px 0 0 0;
+      }
+
+      .tab-btn {
+	  filter: brightness(1.2);
+	  font-family: inherit;
+	  font-size: 18px;
+	  font-weight: bold;
+	  letter-spacing: 2px;
+	  flex-grow: 1;
+	  height: 60px;
+	  width: 100%;
+	  background: linear-gradient(-180deg, lightslategray 90%, rgba(0,0,0,0.4));
+	  border: none;
+	  color: white;
+	  cursor: pointer;
+	  outline: none;
+	  position: relative;
+	  transition: all 0.3s ease-in-out;
+	  
+      }
+
+      .tab-btn:hover {
+	  filter: brightness(1);
+      }
+      
+      .active.tab-btn {
+	  color: lightslategray;
+	  background: white;
+      }
+      
+      .active {
+	  display: block
+      }
+
+      
+      footer {
+	  text-align: center;
+	  padding: 30px;
+	  color: gray;
+      }
+
+      footer a {
+	  color: gray;
+      }
+
+      @media only screen and (max-width: 900px) {
+      .tab-btn {
+	  font-size: 14px;
+      }
+
+
+      .about-center {
+	  display: block;
+	  padding: 0;
+
+      }
+
+      .about-img {
+	  width: 100%;
+	  margin-bottom: 40px;
+      }
+	  
+      .title {
+	  font-size: 18px;
+	  margin: 20px auto;
+      }
+
+      .about {
+	  width: 90%;
+	  margin: 0 auto 100px;
+      }
+
+      
+      }
+
+
+    </style>
+    <body>
+      <main>
+	<section>
+	  <div class="title">
+	    <h1>About</h1>
+	    <p>Nullam vitae dolor id erat posuere viverra mollis vel mauris. Ut ac imperdiet lacus. Curabitur sit amet dolor quis augue posuere fermentum. 
+	    </p>
+	  </div>
+
+	  <div class="about-center section-center">
+	    <article class="about-img">
+	      <img src="https://images.unsplash.com/photo-1528988719300-046ff7faf8cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="about picture" title="Photo by Aaron Sebastian |  https://unsplash.com/photos/bfgEYpS0Znk">
+	    </article>
+
+	    <article class="about">
+
+	      <!-- button container -->
+	      <div class="btn-container">
+		<button class="tab-btn active" data-id="history">History</button>
+		<button class="tab-btn" data-id="vision">Vision</button>
+		<button class="tab-btn" data-id="goals">Goals</button>
+	      </div>
+
+	      <article class="about-center">
+		<div class="content active" id="history">
+		  <h2>History</h2>
+		  <p>Suspendisse imperdiet purus diam, id sagittis lectus scelerisque nec. Curabitur tincidunt justo nibh, ac commodo odio lacinia in. Pellentesque non est suscipitntum. Praesent sollicitudin eros ipsum, nec condimentum velit maximus eget. Integer id libero non libero finibus tempor quis nec felis. </p>
+		  <ul>
+		    <li>It amet odio facilisis vulputate. Ut et sem ut dui aliquet vulputate. Nam vel ullamcorper justo. Cras erat nulla, cursus eget sapien at, mo</li>
+		    <li> Et fermentum neque gravida a. Proin quam quam, iaculis a commodo pellentesque, ultrices vel lacus. Cras laoreet imperdiet massa a dapibus.</li>
+		    <li>llentesque gravida diam. Suspendisse vestibulum, est nec maximus vestibulum, felis arcu molestie metus, id interdum eros dui eget qu</li>
+		  </ul>
+		  <p>Integer facilisis arcu ac odio condimentum, id ultrices felis sodales. Vivamus convallis imperdiet neque in gravida. Vestibulum eget ex massa. Sed blandit diammollis vestibulum ante. Sed ut tortor eget erat tincidunt posuere. Ut nec imperdiet neque, a eleifend ex.</p>
+		 
+		</div>
+		<div class="content" id="vision">
+		  <h2>Vision</h2>
+		  <p>Ut mollis enim aliquam placerat viverra. Nulla facilisi. Fusce sollicitudin felis sed pellentesque porttitor. Pellentesque pharetra ipsum sem, et fermentum neque gravida a. Proin quam quam, iaculis a commodo pellentesque, ultrices vel lacus. Cras laoreet imperdiet massa a dapibus. Aliquam vestibulum ut dolor pulvinar porta. </p>
+		  <p>In vel lobortis justo. Phasellus nunc metus, lacinia aliquet dignissim id, convallis non felis. Aliquam faucibus urna ut aliquet pharetra. Donec id elit nec magna tempor convallis. Sed ex ante, dignissim eget tortor sit amet, pellentesque gravida diam. Suspendisse vestibulum, est nec maximus vestibulum, felis arcu molestie metus, id interdum eros dui eget quam.</p>
+		</div>
+		<div class="content" id="goals">
+		  <h2>Goals</h2>
+		  <p>Curabitur ac fringilla diam. In imperdiet turpis quis porttitor fringilla. Etiam molestie lacus eros, at luctus nunc porta aliquet. Aenean eget pulvinar lorem. Integer tortor urna, efficitur sed est sed, lacinia tempus purus. Sed sit amet velit odio. Vestibulum ultrices dui ac semper dapibus. Vestibulum pretium lectus sit amet dui lacinia, et tristique augue tincidunt. Aliquam erat volutpat. Phasellus mattis enim lacinia pharetra dignissim. Donec consequat elit molestie justo cursus blandit. Sed vel finibus magna. Nulla facilisi. Sed non tristique ligula, at tempor velit.</p>
+ <ul>
+		    <li>It amet odio facilisis vulputate. Ut et sem ut dui aliquet vulputate. Nam vel ullamcorper justo. Cras erat nulla, cursus eget sapien at, mo</li>
+				    <li>llentesque gravida diam. Suspendisse vestibulum, est nec maximus vestibulum, felis arcu molestie metus, id interdum eros dui eget qu</li>
+ </ul>
+		</div>
+	      </article>
+	      
+	    </article>
+	  </div>
+	</section>
+      </main>
+
+      <footer>
+	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
+      </footer>
+
+      <script>
+	
+	const btns = document.querySelectorAll('.tab-btn');
+	const about = document.querySelector('.about');
+	const articles = document.querySelectorAll('.content');
+
+	about.addEventListener('click', (e) => {
+	    //	    console.log(e.target.dataset.id)
+	    const id = e.target.dataset.id;
+	    if (id) {
+		btns.forEach(btn => btn.classList.remove('active'))
+		e.target.classList.add('active')
+	    
+		articles.forEach(article => article.classList.remove('active'))
+		const element = document.querySelector(`#${id}`)
+//		console.log(id)
+		element.classList.add('active')
+	    }
+	})
+
+      </script>
+    </body>
+  </head>
