@@ -35,4 +35,5 @@ The more you practice, the better your skills will become. You are free to modif
 1. https://rodionsibov.github.io/projects/under-construction-page.html
 1. https://rodionsibov.github.io/projects/tetris-game.html
 1. https://rodionsibov.github.io/projects/item-lister.html
+1. https://rodionsibov.github.io/projects/pdf-viewer.html
 
