@@ -2,6 +2,7 @@
 
 The more you practice, the better your skills will become. You are free to modify, save, share, use or do whatever you want with them. Experiment and have fun! 😉
 
+1. https://rodionsibov.github.io/projects/fetch-api.html
 1. https://rodionsibov.github.io/projects/weight-converter-app.html
 1. https://rodionsibov.github.io/projects/login-form.html
 1. https://rodionsibov.github.io/projects/tabs.html
