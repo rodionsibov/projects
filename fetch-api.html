@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Fetch API Sandbox</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+    <h1 class="display-4">Fetch API Sandbox</h1>
+    <button class="btn btn-primary mt-5" id="getText">Get Text</button>
+    </div>
+
+    <script>
+      document.querySelector('#getText').addEventListener('click', () => {
+	  fetch('sample.txt')
+	      .then(res => console.log(res))
+	      .catch(err => console.log(err))
+      })
+    </script>
+  </body>
+</html>
