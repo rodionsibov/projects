@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Welcome</title>
+    <style>
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+      }
+      
+      body {
+	  font-family: 'Quicksand', sans-serif;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  height: 100vh;
+	  text-align: center;
+	  color: black;
+      }
+
+      #time {
+	  font-size: 8rem;
+      }
+
+      h1 {
+	  margin-bottom: 3rem;
+      }
+
+      h2 {
+	  margin-bottom: 0.5rem;
+	  opacity: 0.6;
+      }
+
+      @media (max-width: 700px) {
+	  #time {
+	      font-size: 6rem;
+	  }
+      }
+
+      @media (max-width: 400px) {
+	  #time {
+	      font-size: 4rem;
+	  }
+
+	  h1 {
+	      margin-top: 1rem;
+	      font-size: 1.5rem;
+	  }
+
+	  h2 {
+	      font-size: 1.3rem;
+	  }
+	  
+      }
+
+    </style>
+    <body>
+      <time id="time"></time>
+      <h1>
+	<span id="greeting"></span>
+	<span id="name" contenteditable="true"></span>
+      </h1>
+
+      <h2> What is your focus for today? </h2>
+      <h2 id="focus" contenteditable="true"></h2>
+
+      <script>
+	// DOM elements
+	const time = document.querySelector('#time'),
+	      greeting = document.querySelector('#greeting'),
+	      name = document.querySelector('#name'),
+	      focus = document.querySelector('#focus');
+
+	// Options
+	const showAmPm = true;
+
+	// Show time
+	const showTime = () => {
+	    let today = new Date(),
+		hour = today.getHours(),
+		min = today.getMinutes(),
+		sec = today.getSeconds();
+
+	    // Set AM or PM
+	    const amPm = hour >= 12 ? 'PM' : 'AM';
+
+	    // 12hr format
+	    hour = hour % 12 || 12;
+
+	    // Output time
+	    time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPm : ''}`;
+	    
+	    setTimeout(showTime,1000);
+	}
+
+	// Add zeros
+	const addZero = n => {
+	    return (parseInt(n, 10) < 10 ? '0' : '') + n;
+	}
+
+	// Set background and greeting
+	const setBgGreet = () => {
+	    let today = new Date(),
+		hour = today.getHours();
+
+	    if (hour < 12) {
+		// Morning
+		document.body.style.background = 'url(https://images.unsplash.com/photo-1473759417970-8adfd65beed2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80) center center/cover no-repeat'
+		greeting.textContent = 'Good Morning';
+		document.body.style.color = 'white';
+	    } else if (hour < 18) {
+		// Afternoon
+		document.body.style.background = 'url(https://images.unsplash.com/photo-1541119638723-c51cbe2262aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80) center center/cover no-repeat'
+		greeting.textContent = 'Good Afternoon';
+	    } else {
+		// Evening
+		document.body.style.background = 'url(https://images.unsplash.com/photo-1488178964485-fc367028ffc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80) center center/cover no-repeat'
+		greeting.textContent = 'Good Evening';
+		document.body.style.color = 'white';
+	    }
+	}
+	
+	// Get name
+	const getName = () => {
+	    if (localStorage.getItem('name') === null) {
+		name.textContent = '[Enter name]';
+	    } else {
+		name.textContent = localStorage.getItem('name');
+	    }
+	}
+
+	// Set name
+	const setName = (e) => {
+	    if (e.type === 'keypress') {
+		// Make sure enter is pressed
+		if (e.keyCode == 13) {
+		    localStorage.setItem('name', e.target.innerText);
+		    name.blur();
+		}
+	    } else {
+		localStorage.setItem('name', e.target.innerText);
+	    }
+	}
+
+	// Get focus
+	const getFocus = () => {
+	    if (localStorage.getItem('focus') === null) {
+		focus.textContent = '[Enter focus]';
+	    } else {
+		focus.textContent = localStorage.getItem('focus');
+	    }
+	}
+	
+	// Set focus
+	const setFocus = (e) => {
+	    if (e.type === 'keypress') {
+		// Make sure enter is pressed
+		if (e.keyCode == 13) {
+		    localStorage.setItem('focus', e.target.innerText);
+		    focus.blur();
+		} 
+	    } else {
+		localStorage.setItem('focus', e.target.innerText);
+	    }
+	}
+
+	name.addEventListener('keypress', setName);
+	name.addEventListener('blur', setName);
+	focus.addEventListener('keypress', setFocus);
+	focus.addEventListener('blur', setFocus);
+	
+ 	// Run
+	showTime();
+	setBgGreet();
+	getName();
+	getFocus();
+
+      </script>
+    </body>
+  </head>
