@@ -14,6 +14,7 @@ The more you practice, the better your skills will become. You are free to modif
 1. https://rodionsibov.github.io/projects/counter.html
 1. https://rodionsibov.github.io/projects/color-flipper.html
 1. https://rodionsibov.github.io/projects/card-hover.html
+1. https://rodionsibov.github.io/projects/drag-and-drop.html
 1. https://rodionsibov.github.io/projects/clip-mask.html
 1. https://rodionsibov.github.io/projects/curved-header.html
 1. https://rodionsibov.github.io/projects/loading-page.html

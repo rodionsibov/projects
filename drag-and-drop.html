@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DragnDrop</title>
+    <style>
+
+      body {
+	  background: darksalmon;
+      }
+
+      .fill {
+	  background-image: url('http://source.unsplash.com/random/150x150');
+	  position: relative;
+	  height: 150px;
+	  width: 150px;
+	  top: 5px;
+	  left: 5px;
+	  cursor: pointer;
+      }
+
+      .empty {
+	  display: inline-block;
+	  height: 160px;
+	  width: 160px;
+	  margin: 10px;
+	  border: 3px solid salmon;
+	  background-color: white;
+	  
+      }
+
+      .hold {
+	  border: 4px solid #ccc;
+      }
+
+      .hovered {
+	  background: #f4f4f4;
+	  border-style: dashed;
+      }
+      
+      .invisible {
+	  display: none;
+      }
+      
+    </style>
+    <body>
+
+      <div class="empty">
+	<div class="fill" draggable="true"></div>
+      </div>
+      <div class="empty"></div>
+      <div class="empty"></div>
+      <div class="empty"></div>
+      <div class="empty"></div>
+
+      <script>
+	
+	const fill = document.querySelector('.fill');
+	const empties = document.querySelectorAll('.empty');
+
+	// drag functions
+	const dragStart = (e) => {
+	    e.target.className += ' hold'
+	    setTimeout(() => e.target.className = 'invisible', 0)
+	}
+
+	const dragEnd = (e) => {
+	    e.target.className = 'fill'
+	}
+
+	const dragOver = (e) => {
+	    e.preventDefault()
+	}
+	
+	const dragEnter = (e) => {
+	    e.preventDefault()
+	    e.target.className += ' hovered'
+	}
+
+	const dragLeave = (e) => {
+	    e.target.className = 'empty'
+	}
+	
+	const dragDrop = (e) => {
+	    e.target.className = 'empty'
+	    e.target.append(fill)
+	}
+	
+	// fill listeners
+	fill.addEventListener('dragstart', dragStart);
+	fill.addEventListener('dragend', dragEnd);
+
+	// loop through empties and call drag events
+	for (const empty of empties) {
+	    empty.addEventListener('dragover', dragOver);
+	    empty.addEventListener('dragenter', dragEnter);
+	    empty.addEventListener('dragleave', dragLeave);
+	    empty.addEventListener('drop', dragDrop);
+	}
+	
+
+      </script>
+    </body>
+  </head>
