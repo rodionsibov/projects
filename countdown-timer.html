@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
 
     <title>Countdown</title>
     <style>
@@ -12,13 +13,15 @@
       }
 
       body {
-	  background: azure;
+	  font-family: 'Lato', sans-serif;
+	  background: #ffe9ec;
       }
       
       .section-center {
 	  display: flex;
 	  height: 100vh;
-	  margin-top: 60px;
+	  margin: 100px auto 0;
+	  width: 80%;
       }
 
       article {
@@ -27,52 +30,95 @@
       }
       
       h3 {
-	  font-size: 2rem;
+	  font-size: 1.7rem;
 	  margin-bottom: 1rem;
 	  text-transform: uppercase;
-	  color: dodgerblue;
+	  color: darkmagenta;
+	  letter-spacing: 5px;
       }
 
       h4 {
-	  font-size: 1.2rem;
+	  font-size: 1rem;
 	  margin-bottom: 1rem;
+	  letter-spacing: 1px;
       }
 
       p {
 	  color: #555;
-	  margin: 30px 0;
+	  margin: 20px 0 30px;
+	  line-height: 25px;
       }
 
       .deadline {
 	  display: flex;
-	  justify-content: space-between;
       }
 
       .deadline-format {
-	  padding: 20px;
-	  background: #333;
+	  background: darkmagenta;
 	  color: whitesmoke;
-	  margin: 5px;
+	  padding: 15px 20px;
+	  border-radius: 5px;
+	  text-align: center;
+	  margin-right: 10px;
       }
       
-      .days {
-	  text-format: uppercase;
+      .deadline-format h4 {
 	  margin: 0;
+	  font-size: 2rem;
       }
+      
 
       .gift-image img{
 	  width: 100%;
 	  border-radius: 5px;
 	  margin-bottom: 20px;
+	  transition: 0.2s;
+	  
       }
 
-      @media (max-width: 360px) {
+      .gift-image img:hover {
+	  filter: hue-rotate(30deg);
+      }
+
+      @media (max-width: 900px) {
 	  .section-center {
 	      flex-direction: column;
-	      margin-top: 30px;
+	      height: auto;
+	      margin: 30px auto;
+
 	  }
  
       }
+      
+      @media (max-width: 360px) {
+	  .section-center {
+	      width: 100%;
+	  }
+	  
+	  .deadline {
+	      justify-content: space-around;
+	  }
+
+	  .deadline-format {
+	      margin: 0;
+	  }
+
+	  h3, .giveaway {
+	      text-align: center;
+	      padding: 0 30px;
+	  }
+	  
+      }
+
+      footer {
+	  text-align: center;
+	  color: gray;
+      }
+
+      footer a {
+	  color: gray;
+      }
+
       
     </style>
     <body>
@@ -87,34 +133,34 @@
 	  <h3>Old Phone Giveaway</h3>
 	  <h4 class="giveaway">Giveaway ends on Sunday, 24 April 2020, 8:00 AM</h4>
 	  <p>
-	    Sed at velit leo. Vivamus aliquet mauris sit amet elit viverra molestie. Donec ultrices enim nec est fringilla egestas. Donec quam erat, feugiat non nunc at, tincidunt ultrices risul arcu elementum, imperdiet nisi id, rutrum nulla. Mauris at finibus neque. In ac commodo ante.
+	    Sed at velit leo. Vivamus aliquet mauris sit amet elit viverra molestie. Donec ultrices enim nec est fringilla egestas. Donec quam erat, feugiat non nunc at, tincidunt ultrices risul.
 	  </p>
 	  <div class="deadline">
 
 	    <div class="deadline-format">
 	    <div>
-	      <h4 class="days">34</h4>
+	      <h4 class="days"></h4>
 	      <span>days</span>
 	    </div>
 	    </div>
 
 	    <div class="deadline-format">
 	    <div>
-	      <h4 class="hours">34</h4>
+	      <h4 class="hours"></h4>
 	      <span>hours</span>
 	    </div>
 	    </div>
 
 	    <div class="deadline-format">
 	    <div>
-	      <h4 class="mins">34</h4>
+	      <h4 class="mins"></h4>
 	      <span>mins</span>
 	    </div>
 	    </div>
 
 	    <div class="deadline-format">
 	    <div>
-	      <h4 class="secs">34</h4>
+	      <h4 class="secs"></h4>
 	      <span>secs</span>
 	    </div>
 	    </div>
@@ -145,7 +191,7 @@
 	    tempDay = tempDate.getDate()
 
 //	let futureDate = new Date(2020, 7, 25, 11, 30, 0);
-	let futureDate = new Date(tempYear, tempMonth, tempDay + 10, 21, 30, 0)
+	let futureDate = new Date(tempYear, tempMonth, tempDay + 10, 0, 30, 0)
 	let year = futureDate.getFullYear(),
 	      month = months[futureDate.getMonth()],
 	      date = futureDate.getDate(),
