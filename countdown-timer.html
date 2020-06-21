@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Countdown</title>
+    <style>
+
+      * {
+	  margin: 0;
+      }
+
+      body {
+	  background: azure;
+      }
+      
+      .section-center {
+	  display: flex;
+	  height: 100vh;
+	  margin-top: 60px;
+      }
+
+      article {
+	  width: 100%;
+	  padding: 0 20px;
+      }
+      
+      h3 {
+	  font-size: 2rem;
+	  margin-bottom: 1rem;
+	  text-transform: uppercase;
+	  color: dodgerblue;
+      }
+
+      h4 {
+	  font-size: 1.2rem;
+	  margin-bottom: 1rem;
+      }
+
+      p {
+	  color: #555;
+	  margin: 30px 0;
+      }
+
+      .deadline {
+	  display: flex;
+	  justify-content: space-between;
+      }
+
+      .deadline-format {
+	  padding: 20px;
+	  background: #333;
+	  color: whitesmoke;
+	  margin: 5px;
+      }
+      
+      .days {
+	  text-format: uppercase;
+	  margin: 0;
+      }
+
+      .gift-image img{
+	  width: 100%;
+	  border-radius: 5px;
+	  margin-bottom: 20px;
+      }
+
+      @media (max-width: 360px) {
+	  .section-center {
+	      flex-direction: column;
+	      margin-top: 30px;
+	  }
+ 
+      }
+      
+    </style>
+    <body>
+
+      <section class="section-center">
+	<!-- image -->
+	<article class="gift-image">
+	  <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1448&q=80" alt="gift" title="Photo by Ekaterina Shevchenko | https://unsplash.com/photos/ZLTlHeKbh04">
+	</article>
+	<!-- info -->
+	<article class="gift-info">
+	  <h3>Old Phone Giveaway</h3>
+	  <h4 class="giveaway">Giveaway ends on Sunday, 24 April 2020, 8:00 AM</h4>
+	  <p>
+	    Sed at velit leo. Vivamus aliquet mauris sit amet elit viverra molestie. Donec ultrices enim nec est fringilla egestas. Donec quam erat, feugiat non nunc at, tincidunt ultrices risul arcu elementum, imperdiet nisi id, rutrum nulla. Mauris at finibus neque. In ac commodo ante.
+	  </p>
+	  <div class="deadline">
+
+	    <div class="deadline-format">
+	    <div>
+	      <h4 class="days">34</h4>
+	      <span>days</span>
+	    </div>
+	    </div>
+
+	    <div class="deadline-format">
+	    <div>
+	      <h4 class="hours">34</h4>
+	      <span>hours</span>
+	    </div>
+	    </div>
+
+	    <div class="deadline-format">
+	    <div>
+	      <h4 class="mins">34</h4>
+	      <span>mins</span>
+	    </div>
+	    </div>
+
+	    <div class="deadline-format">
+	    <div>
+	      <h4 class="secs">34</h4>
+	      <span>secs</span>
+	    </div>
+	    </div>
+	    
+	  </div>
+	</article>
+      </section>
+      
+      <script>
+
+	const months = [
+	    "January", "February", "March", "April", "May", "June",
+	    "July", "August", "September", "October", "November", "December"
+	]
+
+	const weekdays = [
+	    "Monday", "Tuesday", "Wednesday",
+	    "Thursday", "Friday", "Saturday", "Sunday"
+	]
+
+	const deadline = document.querySelector('.deadline')
+	const giveaway = document.querySelector('.giveaway')
+	const items = document.querySelectorAll('.deadline-format h4')
+	
+	let tempDate = new Date(),
+	    tempYear = tempDate.getFullYear(),
+	    tempMonth = tempDate.getMonth(),
+	    tempDay = tempDate.getDate()
+
+//	let futureDate = new Date(2020, 7, 25, 11, 30, 0);
+	let futureDate = new Date(tempYear, tempMonth, tempDay + 10, 21, 30, 0)
+	let year = futureDate.getFullYear(),
+	      month = months[futureDate.getMonth()],
+	      date = futureDate.getDate(),
+	      hours = futureDate.getHours(),
+	      mins = futureDate.getMinutes(),
+	      secs = futureDate.getSeconds(),
+	      weekday = weekdays[futureDate.getDay()]
+
+	
+	// Options
+	const showAmPm = true;
+
+	// Set AM or PM
+	const amPm = hours >= 12 ? 'PM' : 'AM';
+
+	// 12hr format
+	hours = hours % 12 || 12;
+	
+
+	giveaway.textContent = `Giveaway ends on ${weekday}, ${date} ${month} ${year}, ${hours}:${mins} ${showAmPm ? amPm : ''}`
+	
+	// future time in ms
+	const futureTime = futureDate.getTime()
+
+	const getRemainingTime = () => {
+	    const today = new Date().getTime()
+	    const t = futureTime - today
+
+	    // values in ms
+	    const oneDay = 24 * 60 * 60 * 1000;
+	    const oneHour = 60 * 60 * 1000;
+	    const oneMinut = 60 * 1000;
+
+	    // calculate all values
+	    let days = Math.floor(t / oneDay)
+	    let hours = Math.floor((t % oneDay) / oneHour)
+	    let mins = Math.floor((t % oneHour) / oneMinut)
+	    let secs = Math.floor((t % oneMinut) / 1000)
+
+	    // set values array
+
+	    const format = (item) => {
+		if (item < 10) {
+		    return item = `0${item}`
+		} else {
+		    return item
+		}
+	    }
+	    
+	    const values = [days, hours, mins, secs]
+	    items.forEach((item, index) => {
+		item.innerHTML = format(values[index])
+	    })
+	    if (t < 0) {
+		clearInterval(countdown)
+		deadline.innerHTML = `<h4 class="expired">Sorry, this giveaway has expired</h4>`
+	    }
+	}
+
+	// countdown
+	let countdown = setInterval(getRemainingTime, 1000)
+
+	getRemainingTime()
+
+
+      </script>
+    </body>
+  </head>
