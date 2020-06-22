@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <title>Quick Autocomplete App</title>
+    <style>
+
+      * {
+	  margin: 0;
+      }
+      
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+	<div class="col-md-6 m-auto">
+	  <h3 class="text-center mb-3"><i class="far fa-flag"></i> State Capital Lookup</h3>
+	  <div class="form-group">
+	    <input type="text" class="form-control form-control-lg" id="search" placeholder="Enter state name or abbreviation...">
+	  </div>
+	  <div id="match-list"></div>
+	</div>
+      </div>
+    </div>
+
+    <script>
+
+      const search = document.querySelector('#search')
+      const matchList = document.querySelector('#match-list')
+
+      // search states.json and filter it
+      const searchStates = async searchText => {
+	  const res = await fetch('./states.json')
+	  const states = await res.json()
+
+	  // get matches to current text input
+	  let matches = states.filter(state => {
+	      const regex = new RegExp(`^${searchText}`, 'gi')
+	      return state.name.match(regex) || state.abbr.match(regex)
+	  })
+
+	  if (searchText.length === 0) {
+	      matches = []
+	      matchList.innerHTML = ''
+	  }
+
+	  outputHtml(matches)
+      }
+
+      // show results in HTML
+      const outputHtml = matches => {
+	  if (matches.length > 0) {
+	      const html = matches.map(match => `
+<div class="card card-body mb-1">
+<h4>
+${match.name} (${match.abbr}) <span class="text-primary">${match.capital}</span>
+</h4>
+<small>Lat: ${match.lat} / Long: ${match.long} </small>
+</div>
+`).join('')
+
+	      matchList.innerHTML = html
+	  }
+      }
+
+      search.addEventListener('input', () => searchStates(search.value))
+    </script>
+  </body>
+</html>
