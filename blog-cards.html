@@ -3,20 +3,210 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
     <title>Blog Cards</title>
     <style>
 
       * {
+	  box-sizing: border-box;
+      }
 
+      body {
+	  background-color: #f7f8fc;
+	  font-family: 'Open Sans', sans-serif;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  height: 100vh;
+	  margin: 0;
+      }
+
+      .container {
+	  display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	  gap: 20px;
+	  width: 940px;
+	  margin: auto;
       }
       
+      .card {
+	  background-color: white;
+	  border-radius: 10px;
+	  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+	  overflow: hidden;
+	  width: 300px;
+      }
+
+      .card-header img {
+	  width: 100%;
+	  height: 200px;
+	  object-fit: cover;
+      }
+
+      .card-body {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: flex-start;
+	  padding: 20px;
+	  min-height: 250px;
+      }
+
+      .tag {
+	  background-color: #777;
+	  border-radius: 50px;
+	  font-size: 12px;
+	  margin: 0;
+	  color: white;
+	  padding: 2px 10px;
+	  text-transform: uppercase; 
+      }
+
+      .tag-teal {
+	  background-color: #92d4e4;
+      }
+
+      .tag-purple {
+	  background-color: #3d1d94;
+      }
+
+      .tag-pink {
+	  background-color: #c62bcb;
+      }
+
+      .card-body h4 {
+	  margin: 10px 0;
+      }
+
+      .card-body p {
+	  font-size: 13px;
+	  margin: 0 0 40px;
+      }
+
+      .user {
+	  display: flex;
+	  margin-top: auto;
+      }
+
+      .user img {
+	  width: 40px;
+	  height: 40px;
+	  border-radius: 50%;
+	  margin-right: 10px;
+      }
+
+      .user-info h5 {
+	  margin: 0;
+      }
+
+      .user-info small {
+	  color: #888785;
+      }
+
+      @media (max-width: 940px) {
+	  .container {
+	      grid-template-columns: 1fr;
+	      justify-items: center;
+	      padding: 20px;
+	  }
+      }
+      
+
 
       
     </style>
   </head>
   <body>
+
+    <div class="container">
+
+      <div class="card">
+	<div class="card-header">
+	  <img src="" alt="">
+	</div>
+	<div class="card-body">
+	  <span class="tag tag-teal">Technology</span>
+	  <h4>Nulla mollis tellus id ligula finibus gravida?</h4>
+	  <p>Duis ornare felis quis neque interdum, ut dignissim nisi pharetra. </p>
+	  <div class="user">
+	    <img src="" alt="">
+	    <div class="user-info">
+	      <h5></h5>
+	      <small></small>
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+      <div class="card">
+	<div class="card-header">
+	  <img src="" alt="">
+	</div>
+	<div class="card-body">
+	  <span class="tag tag-purple">Popular</span>
+	  <h4>Nulla mollis tellus id ligula finibus gravida?</h4>
+	  <p>Duis ornare felis quis neque interdum, ut dignissim nisi pharetra. </p>
+	  <div class="user">
+	    <img src="#" alt="">
+	    <div class="user-info">
+	      <h5></h5>
+	      <small></small>
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+      <div class="card">
+	<div class="card-header">
+	  <img src="" alt="">
+	</div>
+	<div class="card-body">
+	  <span class="tag tag-pink">Design</span>
+	  <h4>Nulla mollis tellus id ligula finibus gravida?</h4>
+	  <p>Duis ornare felis quis neque interdum, ut dignissim nisi pharetra. </p>
+	  <div class="user">
+	    <img src="" alt="">
+	    <div class="user-info">
+	      <h5></h5>
+	      <small></small>
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+    </div>
+    <script>
+      const users = document.querySelectorAll('.user')
+      const cardImgs = document.querySelectorAll('.card-header img')
+      
+      // get random user
+      const getRandomUser = () => {
+	  
+	  users.forEach(async user => {
+	      const data = await fetch('https://randomuser.me/api/').then(res => res.json())	      
+
+	      user.querySelector('.user img').src = data.results[0].picture.large
+	      user.querySelector('.user-info h5').textContent = `${data.results[0].name.title} ${data.results[0].name.first} ${data.results[0].name.last}`
+	      user.querySelector('.user-info small').textContent = new Date(`${data.results[0].registered.date}`).toDateString()
+	  })
+      }
+
+      // get random img
+      const getRandomImg = () => {
+	  cardImgs.forEach(async img => {
+//	      const data = await fetch('https://source.unsplash.com/random/800x600')
+	      const data = await fetch('https://picsum.photos/800/600')
+	      img.src = data.url
+	  })
+      }
+
+
+      document.addEventListener('DOMContentLoaded', () => {
+	  getRandomUser()
+	  getRandomImg()
+      })
+
+    </script>
   </body>
 </html>
