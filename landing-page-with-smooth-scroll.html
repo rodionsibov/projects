@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/family=Catamaran&display=swap" rel="stylesheet">
+
+
+    <title>Smooth Scroll Landing Page</title>
+    <style>
+      
+      * {
+	  margin: 0;
+	  padding: 0;
+      }
+
+      body {
+	  font-family: Arial, Helvetica, sans-serif;
+	  background: #333;
+	  color: #fff;
+	  line-height: 1.6;
+	  height: 100vh;
+	  overflow: hidden;
+      }
+
+      .container {
+	  width: 100%;
+	  height: 100%;
+	  /* css smooth scroll */
+	  overflow: scroll;
+	  scroll-behavior: smooth;
+	  scroll-snap-type: y mandatory;
+      }
+
+      .navbar {
+	  position: fixed;
+	  top: 0;
+	  z-index: 1;
+	  display: flex;
+	  width: 100%;
+	  height: 60px;
+	  background: rgba(0,0,0,0.7);
+      }
+
+      .navbar ul {
+	  display: flex;
+	  list-style: none;
+	  width: 100%;
+	  justify-content: center;
+      }
+
+      .navbar ul li {
+	  margin: 0 1rem;
+	  padding: 1rem;
+      }
+
+      .navbar ul li a {
+	  text-decoration: none;
+	  text-transform: uppercase;
+	  color: #f4f4f4;
+      }
+
+      .navbar ul li a:hover {
+	  color: skyblue;
+      }
+
+      section {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  text-align: center;
+	  width: 100%;
+	  height: 100vh;
+	  scroll-snap-align: center;
+      }
+
+      section h1 {
+	  font-size: 3.5rem;
+      }
+
+      section p {
+	  font-size: 1.3rem;
+      }
+      
+      /* section images */
+      section#home {
+	  background: url('https://images.unsplash.com/photo-1488866022504-f2584929ca5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1486&q=80') no-repeat center center/cover;
+      }
+
+      section#about {
+	  background: url('https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+      }
+
+      section#service {
+	  background: url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1574&q=80') no-repeat center center/cover;
+      }
+
+      section#contact {
+	  background: url('https://images.unsplash.com/photo-1479669732031-affb2ce2d265?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2378&q=80') no-repeat center center/cover;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+	<ul>
+	  <li><a href="#home">Home</a></li>
+	  <li><a href="#about">About</a></li>
+	  <li><a href="#service">Service</a></li>
+	  <li><a href="#contact">Contact</a></li>
+	</ul>
+      </nav>
+      <section id="home">
+	<h1>Welcome to My Site</h1>
+	<p>Nullam sagittis rutrum tellus id pulvinar. Integer quis congue ipsum. Vivamus ut condimentum risus, et porta massa.</p>
+      </section>
+      <section id="about">
+	<h1>About</h1>
+	<p>Nullam sagittis rutrum tellus id pulvinar. Integer quis congue ipsum. Vivamus ut condimentum risus, et porta massa.</p>
+      </section>
+      <section id="service">
+	<h1>Service</h1>
+	<p>Nullam sagittis rutrum tellus id pulvinar. Integer quis congue ipsum. Vivamus ut condimentum risus, et porta massa.</p>
+      </section>
+      <section id="contact">
+	<h1>Contact</h1>
+	<p>Nullam sagittis rutrum tellus id pulvinar. Integer quis congue ipsum. Vivamus ut condimentum risus, et porta massa.</p>
+      </section>
+    </div>
+    <script>
+      
+    </script>
+  </body>
+</html>
