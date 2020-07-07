@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <title>Lorem Ipsum</title>
+    <style>
+
+      * {
+	  margin: 0;
+      }
+
+      input {
+	  max-width: 20%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <section class="container mt-5">
+      <div class="row">
+	<div class="col-md-6 m-auto">
+	  <h3 class="text-center mb-3">Tired of Boring Lorem Ipsum?</h3>
+	  <form class="lorem-form justify-content-center form-inline mb-3">
+	    <label for="amount">Paragraphs:</label>
+	    <input type="number" class="form-control form-control-lg mx-2" id="amount" placeholder="5">
+	    <button type="submit" class="btn btn-primary btn-lg">Generate</button>
+	  </form>
+	  <article class="lorem-text"></article>
+	</div>
+      </div>
+    </section>
+    
+    <script>
+      // lorem text
+      const text = [
+
+	  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac eros sed diam malesuada sagittis a id orci. Donec bibendum sed elit sit amet luctus. Nullam dapibus magna ut metus tincidunt viverra. Praesent ac iaculis est. Sed consectetur vehicula lacus, eu consequat erat sollicitudin vel. Nulla facilisi. Duis rutrum dictum tempus. Cras sollicitudin sem ut vestibulum molestie. Maecenas blandit semper ante, quis mattis odio pellentesque sed. Sed dictum eros et euismod euismod. Nam a mi ornare metus bibendum blandit in in est. Proin rutrum mi sit amet dui luctus, vitae aliquam tortor feugiat. Praesent metus nunc, convallis eget euismod et, pulvinar non elit. Vestibulum vitae maximus odio, sed mollis sem. Ut feugiat ac risus et suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+
+	  'Fusce consectetur mi a sollicitudin ultrices. Nullam ultrices leo mi, et bibendum odio finibus eget. In tempus blandit neque vitae dignissim. Ut gravida, augue et porta efficitur, neque justo tincidunt leo, quis auctor diam magna vitae nisi. Etiam feugiat posuere tellus vitae sollicitudin. Suspendisse potenti. Cras eu pulvinar orci. Aenean felis lectus, egestas eu nulla ac, blandit sollicitudin lectus. Donec eu nunc finibus, sollicitudin lorem non, bibendum lectus. Suspendisse feugiat maximus arcu a rhoncus. Cras rhoncus, ligula ut imperdiet ultrices, quam risus pulvinar nibh, sit amet consequat neque nisl in odio. Quisque facilisis ipsum eu molestie cursus. Sed mauris metus, gravida eget iaculis et, lobortis in arcu. Donec vel efficitur ex. Quisque aliquam orci et nulla imperdiet aliquam. Cras molestie tincidunt magna sed interdum.',
+	  
+	  'Duis non mauris pulvinar, porttitor enim vel, rutrum ligula. Nullam semper ut dolor at dignissim. Nam a convallis diam. Quisque ut consequat metus. Cras iaculis purus non venenatis tempus. Suspendisse potenti. Donec sollicitudin massa leo, sit amet pharetra mi vulputate at. Aliquam interdum sapien quis tortor mollis tincidunt. In hac habitasse platea dictumst. Mauris rutrum turpis eget facilisis luctus. Etiam finibus nisi neque, aliquam dapibus velit lobortis quis.',
+	      
+	  'Praesent ut magna sit amet elit tincidunt fermentum. Nam tempus ac arcu in fringilla. Proin dui odio, laoreet finibus porta et, congue vitae tortor. Pellentesque mollis neque mauris, non consequat quam mollis nec. Vivamus porttitor lacinia lacus eu posuere. Morbi ac est commodo, interdum urna id, lobortis neque. Phasellus turpis libero, gravida quis faucibus tristique, ornare et dui. Nunc sed odio scelerisque, sodales odio a, ultricies lacus. Vivamus ut viverra purus, in pharetra eros.',
+	  
+	  'Cras auctor odio bibendum, mattis ex eget, dignissim lectus. Maecenas id leo a magna sollicitudin lacinia. Nullam nec iaculis felis, ac posuere arcu. Aliquam in dui volutpat, semper sem at, aliquam sapien. Sed at nibh tortor. Phasellus ultrices sem eget elit interdum sodales. In aliquet et nisl vehicula aliquet. Donec at metus pretium, volutpat turpis a, elementum neque.',
+
+	  'Sed tempor ornare risus, quis scelerisque sem luctus ac. Suspendisse elementum lorem vel enim tristique sollicitudin. Morbi a iaculis erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed malesuada justo diam, et hendrerit sem tincidunt et. Sed tempor eros sem, vel sollicitudin felis venenatis vitae. Suspendisse bibendum neque et tortor tincidunt consequat. Curabitur vitae metus ultricies, finibus ex eu, hendrerit ante. In consectetur, felis at laoreet posuere, quam turpis scelerisque est, a rhoncus elit nisl sed elit. Duis placerat est vitae ante tincidunt placerat. Ut pharetra metus in facilisis tristique. Integer varius dui condimentum, auctor arcu nec, tincidunt enim. Nullam arcu nulla, aliquam malesuada rhoncus vitae, malesuada vel quam. Maecenas eget porta purus, in eleifend nisl. Phasellus aliquet luctus urna, quis tempus tellus rhoncus in. Nulla nec pulvinar nibh, ac lacinia tellus.',
+
+	  'Integer id pharetra odio. Sed lacinia augue vitae ante consectetur, nec posuere est venenatis. Morbi sagittis, ipsum vel tempor fringilla, turpis tortor interdum tortor, in luctus neque arcu vitae nibh. In ac neque est. Donec vel nisi commodo, maximus erat lobortis, molestie nibh. Sed in neque semper, lobortis purus et, rutrum lorem. Fusce vitae bibendum tortor. Ut quis bibendum orci, eu tincidunt metus. In feugiat risus sed urna posuere eleifend. Vivamus convallis dolor nec dui consectetur, id convallis neque accumsan. Praesent mollis sollicitudin quam eget condimentum. Duis sem nulla, pharetra sollicitudin pharetra eu, lacinia non odio.',
+
+	  'Nam maximus mauris urna, in finibus odio venenatis ac. Vestibulum suscipit diam libero, mattis fringilla urna malesuada at. Duis eu varius erat, id placerat nisi. Donec pretium ut magna eget gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eleifend lacus ut efficitur sodales. Fusce auctor magna quis dictum tristique. Maecenas pretium elit diam, nec tristique massa pretium quis. Nullam at purus libero. Suspendisse sagittis dui odio, vel volutpat ante dapibus sit amet.',
+
+	  'Cras justo arcu, pulvinar ac laoreet eu, vestibulum ut ligula. Nam vulputate accumsan pellentesque. Nullam congue, purus vitae gravida facilisis, dui nulla lacinia sem, ut faucibus metus mauris ac magna. Sed at ligula tellus. Nulla bibendum quam eu dolor gravida dapibus. Quisque ut erat finibus, vestibulum turpis dapibus, porta enim. Praesent aliquet ultrices augue nec faucibus. Donec ac elementum libero, a scelerisque libero. Cras ac elit venenatis, lacinia risus in, blandit metus. Etiam interdum, augue at dictum porta, dolor lacus vulputate ante, laoreet semper felis diam sit amet ipsum. Nunc id consectetur ex. Aenean porttitor tortor lacus, quis bibendum mi convallis a. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. '
+  
+      ];
+
+      const form = document.querySelector('.lorem-form')
+      const amount = document.querySelector('#amount')
+      const result = document.querySelector('.lorem-text')
+
+      form.addEventListener('submit', (e) => {
+	  e.preventDefault()
+	  const value = parseInt(amount.value)
+	  const random = Math.floor(Math.random() * text.length)
+	  // empty
+	  // -1
+	  // > 9
+	  if (isNaN(value) || value <= 0 || value > 9) {
+	      result.innerHTML = `<p class="result">${text[random]}</p>`
+	  } else {
+	      let tempText = text.slice(0, value)
+	      tempText = tempText.map(item => {
+		  return `<p class="result">${item}</p>`
+	      }).join('')
+	      result.innerHTML = tempText
+
+	  }
+	  
+      })
+      
+
+    </script>
+  </body>
+</html>

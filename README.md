@@ -40,10 +40,10 @@ The more you practice, the better your skills will become. You are free to modif
 1. https://rodionsibov.github.io/projects/cutout-text.html
 1. https://rodionsibov.github.io/projects/line-throuhg-effect.html
 1. https://rodionsibov.github.io/projects/kinetic-loader-animation.html
-1. https://rodionsibov.github.io/projects/image-reflection.html
+1. https://rodionsibov.github.io/projects/lorem-ipsum.html
 1. https://rodionsibov.github.io/projects/under-construction-page.html
 1. https://rodionsibov.github.io/projects/tetris-game.html
 1. https://rodionsibov.github.io/projects/item-lister.html
 1. https://rodionsibov.github.io/projects/pdf-viewer.html
-1. https://rodionsibov.github.io/projects/landing-page-with-smooth-scroll.htlm
+1. https://rodionsibov.github.io/projects/landing-page-with-smooth-scroll.html
 
