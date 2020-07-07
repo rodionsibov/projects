@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  border: 0 solid;
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Set core body defaults */
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+button,
+input,
+textarea,
+select {
+  color: inherit;
+  font: inherit;
+}
