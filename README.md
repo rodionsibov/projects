@@ -10,6 +10,7 @@ The more you practice, the better your skills will become. You are free to modif
 1. https://rodionsibov.github.io/projects/dynamic-landing-page.html
 1. https://rodionsibov.github.io/projects/fetch-api.html
 1. https://rodionsibov.github.io/projects/countdown-timer.html
+1. https://rodionsibov.github.io/projects/landing-page-with-smooth-scroll.html
 1. https://rodionsibov.github.io/projects/weight-converter-app.html
 1. https://rodionsibov.github.io/projects/login-form.html
 1. https://rodionsibov.github.io/projects/tabs.html
@@ -45,5 +46,5 @@ The more you practice, the better your skills will become. You are free to modif
 1. https://rodionsibov.github.io/projects/tetris-game.html
 1. https://rodionsibov.github.io/projects/item-lister.html
 1. https://rodionsibov.github.io/projects/pdf-viewer.html
-1. https://rodionsibov.github.io/projects/landing-page-with-smooth-scroll.html
+
 
