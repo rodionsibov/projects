@@ -37,15 +37,15 @@ The more you practice, the better your skills will become. You are free to modif
 1. https://rodionsibov.github.io/projects/image-gallery.html
 1. https://rodionsibov.github.io/projects/get-emoji.html
 1. https://rodionsibov.github.io/projects/modal.html
-1. https://rodionsibov.github.io/projects/how-old.html
 1. https://rodionsibov.github.io/projects/cutout-text.html
 1. https://rodionsibov.github.io/projects/line-throuhg-effect.html
 1. https://rodionsibov.github.io/projects/kinetic-loader-animation.html
 1. https://rodionsibov.github.io/projects/lorem-ipsum.html
-1. https://rodionsibov.github.io/projects/under-construction-page.html
 1. https://rodionsibov.github.io/projects/tetris-game.html
 1. https://rodionsibov.github.io/projects/item-lister.html
 1. https://rodionsibov.github.io/projects/pdf-viewer.html
 1. https://rodionsibov.github.io/projects/grocery-bud.html
+1. https://rodionsibov.github.io/projects/animated-text-fill.html
+1. https://rodionsibov.github.io/projects/tooltips.html
 
 
