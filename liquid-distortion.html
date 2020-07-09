@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image Distortion Hover Effects</title>
+    <style>
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+      }
+
+      body {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  min-height: 100vh;
+      }
+
+      .container {
+	  position: relative;
+	  width: 900px;
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+      }
+
+      .container .img-box {
+	  position: relative;
+	  width: 400px;
+	  height: 400px;
+	  margin: 20px;
+      }
+
+      .container .img-box img {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  display: none;
+      }
+
+      @media (max-width: 768px) {
+	  .container {
+	      flex-direction: column;
+	  }
+
+	  .container .img-box {
+	      width: 300px;
+	      height: 300px;
+	  }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="img-box">
+	<img src="https://source.unsplash.com/random?sig=1">
+	<img src="https://source.unsplash.com/random?sig=2">
+      </div>
+      <div class="img-box">
+	<img src="https://source.unsplash.com/random?sig=3">
+	<img src="https://source.unsplash.com/random?sig=4">
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r118/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+    
+    <script src="hover.umd.js"></script>
+    <script>
+      Array.from(document.querySelectorAll('.img-box')).forEach(e => {
+	  const imgs = Array.from(e.querySelectorAll('img'))
+
+	  new hoverEffect({
+              parent: e,
+              intensity: 0.3,
+              image1: imgs[0].getAttribute('src'),
+              image2: imgs[1].getAttribute('src'),
+              displacementImage: 'https://source.unsplash.com/random'
+	  });
+
+      })
+
+      
+      
+    </script>
+
+  </body>
+</html>

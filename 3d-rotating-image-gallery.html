@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CSS 3D Rotating Image Gallery</title>
+    <style>
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+      }
+
+      body {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  min-height: 100vh;
+	  background: #111;
+      }
+
+      .box {
+	  position: relative;
+	  width: 200px;
+	  height: 200px;
+	  transform-style: preserve-3d;
+	  animation: animate 20s linear infinite;
+      }
+
+      @keyframes animate {
+	  0% {
+	      transform: perspective(1000px) rotateY(0deg);
+	  }
+
+	  100% {
+	      transform: perspective(1000px) rotateY(360deg);
+	  }
+      }
+
+      .box span {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  transform-origin: center;
+	  transform-style: preserve-3d;
+	  transform: rotateY(calc(var(--i) * 45ged)) translateZ(400px);
+	  -webkit-box-reflect:  below 0 linear-gradient(transparent, transparent, #0001);
+      }
+
+      .box span img {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <span style="--i: 1;"><img src="https://picsum.photos/800.jpg?random=1"></span>
+      <span style="--i: 2;"><img src="https://picsum.photos/800.jpg?random=2"></span>
+      <span style="--i: 3;"><img src="https://picsum.photos/800.jpg?random=3"></span>
+      <span style="--i: 4;"><img src="https://picsum.photos/800.jpg?random=4"></span>
+      <span style="--i: 5;"><img src="https://picsum.photos/800.jpg?random=5"></span>
+      <span style="--i: 6;"><img src="https://picsum.photos/800.jpg?random=6"></span>
+      <span style="--i: 7;"><img src="https://picsum.photos/800.jpg?random=7"></span>
+      <span style="--i: 8;"><img src="https://picsum.photos/800.jpg?random=8"></span>
+    </div>
+  </body>
+</html>
