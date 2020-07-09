@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+
+    <title>Travel Website Landing Page Design</title>
+    <style>
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  font-family: 'Poppins', sans-serif;
+	  scroll-behavior: smooth;
+      }
+
+      body {
+	  background: #111;
+      }
+
+      section {
+	  position: relative;
+	  padding: 100px;
+      }
+      
+      .header {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: 1000;
+	  display: flex;
+	  justify-content: space-between;
+	  width: 100%;
+	  padding-top: 20px;
+	  padding-bottom: 20px;
+	  
+      }
+
+      .header .logo {
+	  color: white;
+	  text-decoration: none;
+	  font-size: 1.2em;
+	  
+      }
+
+      .header .toggle i {
+	  color: white;
+	  cursor: pointer;
+      }
+
+      .banner {
+	  position: relative;
+	  width: 100%;
+	  min-height: 100vh;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  
+      } 
+
+      .banner:before {
+	  content: '';
+	  position: absolute;
+	  bottom: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 400px;
+	  z-index: 1;
+	  background: linear-gradient(to top, #111, transparent);
+      }
+
+      .banner .content {
+	  position: relative;
+	  max-width: 900px;
+	  text-align: center;
+	  z-index: 1;
+      }
+
+      .banner .content h2 {
+	  color: white;
+	  font-size: 5em;
+      }
+
+      .banner .content p {
+	  color: white;
+	  font-size: 1.2em;
+      }
+
+      .btn {
+	  position: relative;
+	  display: inline-block;
+	  margin-top: 30px;
+	  padding: 10px 30px;
+	  background: white;
+	  color: #333;
+	  text-decoration: none;
+	  border-radius: 2px;
+      }
+
+      .fitBg {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  opacity: 0.8;
+      }
+      
+      .opacity {
+	  opacity: 0.5;
+      }
+
+      .about {
+	  position: relative;
+	  width: 100%;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  
+      }
+
+      .about .contentBx {
+	  min-width: 50%;
+	  width: 50%;
+	  text-align: end;
+	  padding-right: 40px;
+      }
+
+      .titleText {
+	  font-weight: 600;
+	  color: white;
+	  font-size: 2em;
+	  margin-bottom: 10px;
+      }
+
+      .text {
+	  color: white;
+	  font-size: 1em;
+      }
+
+      .about .imgBx {
+	  position: relative;
+	  min-width: 50%; 
+	  width: 50%;
+	  min-height: 500px;
+      }
+
+      .banner2,
+      .banner3 {
+	  position: relative;
+	  width: 100%;
+	  min-height: 100vh;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+      }
+
+      .banner2:before.
+      .banner3:before {
+	  content: '';
+	  position: absolute;
+	  bottom: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 400px;
+	  z-index: 1;
+	  background: linear-gradient(to top, #111, transparent);
+      }
+
+      .banner2:after,
+      .banner3:after {
+	  content: '';
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 400px;
+	  z-index: 1;
+	  background: linear-gradient(to bottom, #111, transparent);
+      }
+
+      .destination {
+	  text-align: center;
+      }
+
+      .destination .content {
+	  text-align: center;
+      }
+
+      .destination .destination-list {
+	  position: relative;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-wrap: wrap;
+	  margin-top: 40px;
+      }
+
+      .destination .destination-list .box {
+	  position: relative;
+	  min-width: 350px;
+	  height: 480px;
+	  background: #191919;
+	  transition: 0.5s;
+	  margin: 10px;
+      }
+      
+      .destination .destination-list:hover .box {
+	  opacity: 0.2;
+      }
+
+      .destination .destination-list .box:hover {
+	  opacity: 1;
+      }
+      
+      .destination .destination-list .box .imgBx {
+	  position: relative;
+	  width: 100%;
+	  height: 400px; 
+      }
+
+      .destination .destination-list .box .content {
+	  width: 100%;
+	  height: 80px;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+      }
+	  
+      .destination .destination-list .box .content h2 {
+	  color: white;
+	  font-weight: 500;
+	  line-height: 1.2em;
+      }
+
+      .destination .destination-list .box .content h2 span {
+	  font-size: 0.8em;
+	  font-weight: 300;
+	  opacity: 0.5;
+      }
+
+      .footer {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+      }
+
+      .footer .sci {
+	  position: relative;
+	  display: flex;
+      }
+
+      .footer .sci li {
+	  list-style: none;
+      }
+
+      .footer .sci li a {
+	  text-decoration: none;
+	  margin: 0 20px; 
+      }
+
+      .footer .sci li a i {
+	  color: white;
+      }
+
+      .copyleft-text {
+	  margin-top: 20px;
+	  color: white;
+	  font-size: 18px;
+	  font-weight: 300;
+	  color: #666;
+	  text-align: center;
+      }
+
+      .copyleft-text a {
+	  color: white;
+	  text-decoration: none;
+      }
+
+      @media (max-width: 768px) {
+	  section {
+	      padding: 40px;
+	  }
+
+	  .banner .content h2 {
+	      font-size: 2.5em;
+	  }
+
+	  .banner .content p {
+	      font-size: 1em;
+	  }
+
+	  .about {
+	      flex-direction: column;
+	  }
+
+	  .about .contentBx,
+	  .about .imgBx {
+	      min-width: 100%;
+	      width: 100%;
+	      text-align: center;
+	      padding-right: 0;
+	  }
+
+	  .about .imgBx {
+	      min-height: 250px;
+	  }
+
+	  .btn {
+	      margin-bottom: 30px;
+	  }
+
+	  .destination .destination-list .box {
+	      position: relative;
+	      max-width: 350px;
+	      min-width: initial;
+	      width: 350px;
+	      height: 400px;
+	  }
+
+	  .destination .destination-list .box .imgBx {
+	      height: 320px;
+	  }
+	  
+      }
+      
+    </style>
+  </head>
+  <body>
+    <section class="header">
+      <a href="#" class="logo"><h2>Travel</h2></a>
+      <div class="toggle"><i class="fa fa-bars fa-2x"></i></div>
+    </section>
+    <section class="banner">
+      <img src="https://source.unsplash.com/random?sig=1" class="fitBg opacity">
+      <div class="content">
+	<h2>Explore The World</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus orci in velit gravida rhoncus sed volutpat augue. Donec rutrum consequat consequat. Sed scelerisque accumsan dui, nec fermentum massa hendrerit eu.</p>
+	<a href="#about" class="btn">Learn More</a>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="contentBx">
+	<h2 class="titleText">Feel The Beauty of The World</h2>
+	<p class="text">Suspendisse luctus tincidunt interdum. Suspendisse semper, erat sodales pellentesque convallis, nulla purus aliquam eros, ut convallis nibh nulla id eros. Nulla consequat nisl ac sollicitudin imperdiet. Duis semper euismod diam in tempus. Mauris nunc tellus, malesuada quis augue ac, pellentesque commodo magna. Nam in congue magna. Donec interdum efficitur laoreet.<br><br>Mauris varius tellus vel orci viverra accumsan. Aliquam lacus diam, facilisis a justo nec, condimentum rhoncus dui. Pellentesque dignissim tristique pretium. In at velit ut est ornare pellentesque a at neque. Quisque id turpis dolor. Aliquam nunc mauris, vehicula at pellentesque ut, cursus vel ligula. Integer id feugiat nulla.</p>
+	<a href="#destination" class="btn">Popular Destination</a>
+      </div>
+      <div class="imgBx">
+	<img src="https://source.unsplash.com/random?sig=2" class="fitBg">
+      </div>
+    </section>
+    <section class="banner2">
+      <img src="https://source.unsplash.com/random?sig=3" class="fitBg">
+    </section>
+    <section class="destination" id="destination">
+      <div class="content">
+	<h2 class="titleText">Most Popular Travel Destination in The World</h2>
+	<p class="text">In hac habitasse platea dictumst. Pellentesque sodales urna lorem, eu posuere neque volutpat id. Proin gravida sapien ut libero rutrum bibendum. Morbi varius porttitor velit at ultricies. Phasellus quam elit, imperdiet quis nunc quis, fermentum malesuada velit. Nullam tempor justo eget nisl varius, in commodo velit faucibus. Proin at massa vel lacus convallis imperdiet porttitor ut lacus. Phasellus et pellentesque ligula.</p>
+      </div>
+      <div class="destination-list">
+	<div class="box">
+	  <div class="imgBx">
+	    <img src="https://source.unsplash.com/random?sig=4" class="fitBg">
+	  </div>
+	  <div class="content">
+	    <h2>Destination One<br><span>Country Name</span></h2>
+	  </div>
+	</div>
+	<div class="box">
+	  <div class="imgBx">
+	    <img src="https://source.unsplash.com/random?sig=5" class="fitBg">
+	  </div>
+	  <div class="content">
+	    <h2>Destination Two<br><span>Country Name</span></h2>
+	  </div>
+	</div>
+	<div class="box">
+	  <div class="imgBx">
+	    <img src="https://source.unsplash.com/random?sig=6" class="fitBg">
+	  </div>
+	  <div class="content">
+	    <h2>Destination Three<br><span>Country Name</span></h2>
+	  </div>
+	</div>
+      </div>
+      <a href="#" class="btn">View More</a>
+    </section>
+    <section class="banner3">
+      <img src="https://source.unsplash.com/random?sig=7" class="fitBg">
+    </section>
+    <section class="footer">
+      <ul class="sci">
+	<li><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
+	<li><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+	<li><a href="#"><i class="fab fa-youtube fa-2x"></i></a></li>
+      </ul>
+      <h4 class="copyleft-text">Copyleft &#127279;2020 <a href="#">Explore the World</a>. All right reserved.</h4>
+    </section> 
+  </body>
+</html>
