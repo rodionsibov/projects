@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+
+    <title>Acme Web Solutions</title>
+    <style>
+      /* core styles */
+      
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  font-family: 'Poppins', sans-serif;
+	  scroll-behavior: smooth;
+	  scroll-snap-type: y mandatory;
+      }
+
+      section, header {
+	  scroll-snap-align: center;
+      }
+
+      body {
+	  background: #333;
+	  color: white;
+	  font-size: 1.1em;
+	  line-height: 1.5;
+	  text-align: center;
+      }
+
+      img {
+	  display: block;
+	  height: auto;
+	  width: 100%;
+      }
+
+      h1, h2, h3 {
+	  padding: 1em 0;
+      }
+
+      p {
+	  padding: 1em 0;
+      }
+
+      .btn {
+	  background: #333;
+	  color: white;
+	  text-decoration: none;
+	  padding: 1em 2em;
+	  border: 1px solid #666;
+	  display: inline-block;
+	  margin: .5em 0;
+	  border-radius: 3px;
+      }
+
+      .btn:hover {
+	  background: #eaeaea;
+	  color: #333;
+      }
+
+      /* header showcase */
+
+      #showcase {
+	  min-height: 450px;
+	  color: white;
+      }
+
+      #showcase .bg-image {
+	  position: absolute;
+	  background: #333 url('https://source.unsplash.com/random') no-repeat center/cover;
+	  width: 100%;
+	  height: 450px;
+	  z-index: -1;
+	  opacity: 0.4;
+      }
+
+      #showcase h1 {
+	  padding-top: 100px;
+	  padding-botom: 0;
+      }
+
+      #showcase .content-wrap,
+      #section-a .content-wrap {
+	  padding: 0 1.5em;
+      }
+
+      /* section A */
+
+      #section-a {
+	  background: #eaeaea;
+	  color: #333;
+	  padding-bottom: 2em;
+      }
+
+      /* section B */
+
+      #section-b {
+	  padding: 2em 1em 1em;
+      }
+
+      #section-b ul {
+	  list-style: none;
+      }
+
+      #section-b li {
+	  margin-bottom: 1em;
+	  background: white;
+	  color: #333;
+      }
+
+      .card-content {
+	  padding: 1.5em;
+      }
+
+      /* section C */
+
+      #section-c {
+	  background: white;
+	  color: #333;
+	  padding: 2em;
+      }
+
+      /* section D / boxes*/
+
+      #section-d .box {
+	  padding: 2em;
+	  color: white;
+	  
+      }
+
+      #section-d .box:first-child {
+	  background: dodgerblue;
+      }
+
+      /* footer */
+      
+      #main-footer {
+	  padding: 2em;
+	  background: black;
+	  color: white;
+	  text-align: center;
+      }
+
+      #main-footer a {
+	  color: dodgerblue;
+	  text-decoration: none;
+      }
+
+      /* media queries */
+      
+      @media (min-width: 700px) {
+	  .grid {
+	      display: grid;
+	      grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+	  }
+
+	  #section-a .content-text {
+	      columns: 2;
+	      column-gap: 2em;
+	  }
+	  
+	  #section-a .content-text p {
+	      padding-top: 0;
+	  }
+	  
+	  .content-wrap,
+	  #section-b ul {
+	      grid-column: 2/4;
+	  }
+
+	  .box, #main-footer div {
+	      grid-column: span 2;
+	  }
+	  
+	  #section-b ul {
+	      display: flex;
+	      justify-content: space-around;
+	  }
+
+	  #section-b li {
+	      width: 31%;
+	  }
+
+      }
+
+      @media (max-width: 400px) {
+	  #showcase h1 {
+	      padding-top: 20px;
+	  }
+      }
+      
+    </style>
+  </head>
+  <body>
+
+    <!-- header showcase-->
+    <header id="showcase" class="grid">
+      <div class="bg-image"></div>
+      <div class="content-wrap">
+	<h1>Welcome to Acme Web</h1>
+	<p>Aliquam sollicitudin orci sem, in laoreet eros varius vel. Donec venenatis, justo sollicitudin sagittis vulputate, nisi quam ultrices ipsum, a lobortis dolor arcu non nisl. </p>
+	<a href="#section-b" class="btn">Read More</a>
+      </div>
+    </header>
+
+    <!-- main area -->
+    <main id="main">
+      <!-- section A -->
+    <section id="section-a" class="grid">
+      <div class="content-wrap">
+	<h2 class="content-title">Web & Application Development</h2>
+	<div class="content-text">
+	  <p>Sed cursus sed turpis vel pulvinar. Praesent ac facilisis ex. Nam sagittis, urna sit amet semper varius, enim sapien scelerisque purus, dapibus ultrices augue velit ut mi. Vestibulum dictum ligula metus, nec euismod turpis blandit pellentesque. </p>
+	</div>
+      </div>
+    </section>
+
+    <!-- section B -->
+    <section id="section-b" class="grid">
+      <ul>
+	<li>
+	  <div class="card">
+	    <img src="https://source.unsplash.com/random?sig=1">
+	    <div class="card-content">
+	      <h3 class="card-title">Web Development</h3>
+	      <p>Suspendisse nec lacus condimentum, consectetur velit eget, vestibulum urna. </p> 
+	    </div>
+	  </div>
+	</li>
+	<li>
+	  <div class="card">
+	    <img src="https://source.unsplash.com/random?sig=2">
+	    <div class="card-content">
+	      <h3 class="card-title">Mobile Applications</h3>
+	      <p>Suspendisse nec lacus condimentum, consectetur velit eget, vestibulum urna. </p> 
+	    </div>
+	  </div>
+	</li>
+	<li>
+	  <div class="card">
+	    <img src="https://source.unsplash.com/random?sig=3">
+	    <div class="card-content">
+	      <h3 class="card-title">Tech Marketing</h3>
+	      <p>Suspendisse nec lacus condimentum, consectetur velit eget, vestibulum urna. </p> 
+	    </div>
+	  </div>
+	</li>
+      </ul>
+    </section>
+
+    <!-- section C -->
+    <section id="section-c" class="grid">
+      <div class="content-wrap">
+	<h2 class="content-title">We Handle All Of Your Digital Needs</h2>
+	<p>Ut molestie, leo id luctus elementum, augue dolor facilisis nibh, accumsan lobortis nisl massa a sem. Etiam purus ipsum, fringilla non mi quis, placerat laoreet lacus. Donec blandit at elit et efficitur.</p>
+      </div>
+    </section>
+
+    <!-- section D -->
+    <section id="section-d" class="grid">
+      <div class="box">
+	<h2 class="content-title">Contact Us</h2>
+	<p>Ut enim dui, sagittis sit amet sem nec, mollis cursus augue. Sed convallis posuere convallis. </p>
+	<p>contact@acmewebsolutions.test</p>
+      </div>
+      <div class="box">
+	<h2 class="content-title">About Our Company</h2>
+	<p>Aenean quam est, posuere in pellentesque nec, commodo vitae libero. Morbi a vehicula risus. Integer suscipit sollicitudin luctus. Suspendisse nec lobortis erat.</p>
+      </div>
+    </section>
+    </main>
+
+    <!-- footer -->
+    <footer id="main-footer" class="grid">
+      <div>Acme Web Solutions</div>
+      <div>Project By <a href="https://rodionsibov.github.io" target="_blank">Rodion Sibov</a></div>
+    </footer>
+  </body>
+</html>
