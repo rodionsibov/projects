@@ -18,6 +18,7 @@ The more you practice, the better your skills will become. You are free to modif
 1. https://rodionsibov.github.io/projects/grid-css-res-web-layout.html
 1. https://rodionsibov.github.io/projects/weight-converter-app.html
 1. https://rodionsibov.github.io/projects/login-form.html
+1. https://rodionsibov.github.io/projects/grid-layout-with-image.html
 1. https://rodionsibov.github.io/projects/tabs.html
 1. https://rodionsibov.github.io/projects/liquid-distortion.html
 1. https://rodionsibov.github.io/projects/menu.html
