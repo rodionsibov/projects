@@ -20,8 +20,14 @@
     <p>Fetch API Sandbox</p>
     
     <div id="root"></div>
+    <footer><small><span class="year"></span> This website was created and is maintained by <a href="https://github.com/rodionsibov">Rodion Sibov</a></small></footer>
     <script>
+      const year = new Date().getFullYear()
+      document.querySelector('.year').innerHTML = year
+    </script>
 
+    <script>
+      
 
       
       // "https://jsonplaceholder.typicode.com/todos"
