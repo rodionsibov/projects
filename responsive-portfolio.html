@@ -10,11 +10,27 @@
     <style>
 
       :root {
-	  --primary-color: #444;
-	  --secondary-color: #eece1a;
+	  --colorPrimary-h: 0;
+	  --colorPrimary-s: 0%;
+	  --colorPrimary-l: 27%;
+	  --colorPrimary-a: 0.8;
+	  --colorPrimary: hsla(var(--colorPrimary-h), var(--colorPrimary-s), var(--colorPrimary-l), var(--colorPrimary-a));
+	  --lighten-percentage: 10%;
+	  --darken-percentage: 15%;
+	  --colorPrimary--light: hsla(var(--colorPrimary-h), var(--colorPrimary-s), calc(var(--colorPrimary-l) + var(--lighten-percentage)), var(--colorPrimary-a));
+	  --colorPrimary--dark: hsla(var(--colorPrimary-h), var(--colorPrimary-s), calc(var(--colorPrimary-l) - var(--darken-percentage)), var(--colorPrimary-a));
+  
+	  --colorSecondary-h: 51;
+	  --colorSecondary-s: 86%;
+	  --colorSecondary-l: 52%;
+	  --colorSecondary-a: 1;
+	  --colorSecondary: hsla(var(--colorSecondary-h), var(--colorSecondary-s), var(--colorSecondary-l), var(--colorSecondary-a));
+	  --colorSecondary--light: hsla(var(--colorSecondary-h), var(--colorSecondary-s), calc(var(--colorSecondary-l) + var(--lighten-percentage)), var(--colorSecondary-a));
+	  --colorSecondary--dark: hsla(var(--colorSecondary-h), var(--colorSecondary-s), calc(var(--colorSecondary-l) - var(--darken-percentage)), var(--colorSecondary-a));
+
 	  --transition: all 0.5s ease-out;
-	  --home-image: url('https://source.unsplash.com/random') center center/cover no-repeat fixed var(--primary-color);
-	  --background-opacity: 0.9;
+	  --home-image: url('https://source.unsplash.com/random') center/cover no-repeat fixed;
+	  --portrait: url();
       }
 
       * {
@@ -22,7 +38,7 @@
       }
       
       body {
-	  background: var(--primary-color);
+	  background: red;
 	  color: #fff;
 	  height: 100%;
 	  margin: 0;
@@ -31,19 +47,18 @@
       }
 
       body#bg-img {
-	  background: var(--home-image, var(--primary-color));
+	  background: var(--home-image);
       }
 
-      body#bg-img:after {
+      body#bg-img::after {
 	  content: '';
 	  position: absolute;
 	  top: 0;
 	  right: 0;
 	  width: 100%;
 	  height: 100%;
-	  background: var(--primary-color);
-	  opacity: var(--background-opacity);
 	  z-index: -1;
+	  background: var(--colorPrimary);
       }
 
       /* heading */
@@ -60,7 +75,7 @@
       h2.sm-heading {
 	  margin-bottom: 2rem;
 	  padding: 0.2rem 1rem;
-	  background: rgba(255,255,255,0.1);
+	  background: var(--colorPrimary--light);
       }
 
       a {
@@ -75,7 +90,7 @@
       }
 
       .text-secondary {
-	  color: var(--secondary-color);
+	  color: var(--colorSecondary);
       }
       
       main {
@@ -92,7 +107,7 @@
       }
 
       main .icons a:hover {
-	  color: var(--secondary-color);
+	  color: var(--colorSecondary);
 	  transition: var(--transition);
       }
 
@@ -143,6 +158,104 @@
 	  transform: rotate(-45deg) translate(7px, -6px);
       }
 
+      /* menu overlay */
+
+      .menu {
+	  position: fixed;
+	  top: 0;
+	  width: 100%;
+	  visibility: hidden;
+	  
+      }
+
+      .menu.show {
+	  visibility: visible;
+      }
+
+      .menu .menu-branding,
+      .menu .menu-nav {
+	  display: flex;
+	  flex-flow: column wrap;
+	  align-items: center;
+	  justify-content: center;
+	  float: left;
+	  width: 50%;
+	  height: 100vh;
+	  overflow: hidden;
+	  
+      }
+      
+      .menu .menu-nav {
+	  margin: 0;
+	  padding: 0;
+	  background: var(--colorPrimary--dark);
+	  list-style: none;
+	  transform: translate3d(0, -100%, 0);
+	  transition: var(--transition);
+      }
+
+      .menu .menu-nav.show {
+	  /* slide in from top */
+	  transform: translate3d(0, 0, 0);
+      }
+
+      /* branding side */
+      .menu .menu-branding {
+	  background: var(--colorPrimary);
+	  transform: translate3d(0, 100%, 0);
+	  transition: var(--transition);
+      }
+
+      .menu .menu-branding.show {
+	  /* slide in from bottom */
+	  transform: translate3d(0, 0, 0);
+      }
+
+      .menu .menu-branding .portrait {
+	  width: 250px;
+	  height: 250px;
+	  background: var(--portrait) no-repeat center/cover;
+	  border-radius: 50%;
+	  filter: grayscale(1);
+	  border: solid 3px var(--colorSecondary);
+      }
+
+      .menu .menu-nav .nav-item {
+	  transform: translate3d(600px, 0, 0);
+	  transition: var(--transition);
+      }
+      
+      .menu .menu-nav .nav-item.show {
+	  /* slide in from right */
+	  transform: translate3d(0, 0, 0);
+      }
+
+      .menu .menu-nav .nav-item.current > a {
+	  color: var(--colorSecondary);
+      }
+      
+      .nav-link {
+	  display: inline-block;
+	  position: relative;
+	  font-size: 30px;
+	  text-transform: uppercase;
+	  padding: 1rem 0;
+	  font-weight: 300;
+	  color: white;
+	  text-decoration: none;
+	  transition: var(--transition);
+      }
+
+      .nav-link:hover {
+	  color: var(--colorSecondary);
+      }
+      
+      /* delay each nav item slide by 0.1s */
+      .nav-item:nth-child(2) {
+	  background: red;
+      }
+      
+      
     </style>
   </head>
   <body id="bg-img">
@@ -158,7 +271,7 @@
 	  <div class="portrait"></div>
 	</div>
 	<ul class="menu-nav">
-	  <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+	  <li class="nav-item current"><a href="#" class="nav-link">Home</a></li>
 	  <li class="nav-item"><a href="#" class="nav-link">About me</a></li>
 	  <li class="nav-item"><a href="#" class="nav-link">My work</a></li>
 	  <li class="nav-item"><a href="#" class="nav-link">How to reach me</a></li>
@@ -211,8 +324,16 @@
 	      showMenu = false;
 	  }
       }
-
       
+
+      // generate random portrait
+      fetch('https://randomuser.me/api')
+    .then(res => res.json())
+    .then(data => {
+	document.querySelector('.portrait').style.setProperty('--portrait', `url(${data.results[0].picture.large})`)
+    })
+
+      const portraitUrl = getComputedStyle(document.querySelector('.portrait')).getPropertyValue('--portrait')
 
     </script>
   </body>
