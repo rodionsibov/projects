@@ -30,7 +30,7 @@
 
 	  --transition: all 0.5s ease-out;
 	  --home-image: url('https://source.unsplash.com/random') center/cover no-repeat fixed;
-	  --portrait: url();
+
       }
 
       * {
@@ -38,7 +38,7 @@
       }
       
       body {
-	  background: red;
+	  background: var(--colorPrimary);
 	  color: #fff;
 	  height: 100%;
 	  margin: 0;
@@ -315,6 +315,16 @@
 	      height: 150px;
 	  }
 
+	  .about-info {
+	      grid-template-areas:
+		  'bioimage'
+		      'bio'
+		      'job1'
+		      'job2'
+		      'job3';
+	      grid-template-columns: 1fr;
+	  }
+	  
       }
 
       @media screen and (min-width: 769px) and (max-width: 1170px) {
@@ -325,6 +335,60 @@
 	  
       }
 
+      .about-info {
+	  display: grid;
+	  grid-gap: 30px;
+	  grid-template-areas:
+	      'bioimage bio bio'
+		  'job1 job2 job3';
+	  grid-template-columns: repeat(3, 1fr);
+      }
+
+      .about-info .bio-image {
+	  height: 200px;
+	  border-radius: 50%;
+	  filter: grayscale(1);
+	  grid-area: bioimage;
+      }
+
+      .about-info .border {
+	  margin: auto;
+	  border: solid 3px var(--colorSecondary);
+	  border-radius: 50%;
+	  width: 206px;
+	  height: 206px;
+      }
+
+      .about-info .bio {
+	  grid-area: bio;
+	  font-size: 1.5rem;
+	  margin-bottom: 1.5rem;
+      }
+
+      .about-info .job-1 {
+	  grid-area: job1;
+      }
+
+      .about-info .job-2 {
+	  grid-area: job2;
+      }
+
+      .about-info .job-3 {
+	  grid-area: job3;
+      }
+
+      .about-info .job {
+	  background: var(--colorPrimary--light);
+	  padding: 0.5rem;
+	  border-bottom: var(--colorSecondary) 5px solid;
+      }
+      
+      #main-footer {
+	  text-align: center;
+	  padding: 1rem;
+	  background: var(--colorPrimary--dark);
+	  height: 60px;
+      }
 
     </style>
   </head>
@@ -348,6 +412,43 @@
 	</ul>
       </nav>
     </header>
+
+    <main id="about">
+      <h1 class="lg-heading">About <span class="text-secondary">Me</span></h1>
+      <h2 class="sm-heading">Let me tell you a few things...</h2>
+      <div class="about-info">
+	<div class="border"><img src="" alt="JD" class="bio-image"></div>
+      
+	<div class="bio">
+	  <h3 class="text-secondary">BIO</h3>
+	  <p>Proin dictum luctus mauris, sed aliquam arcu convallis vitae. Donec tristique sem sed tortor sodales varius. Ut ac fringilla nisl. Morbi non est id massa volutpat aliquam sed sit amet lectus.</p>
+	</div>
+
+	<div class="job job-1">
+	  <h3>123 Webshop</h3>
+	  <h6>Full Stack Developer</h6>
+	  <p>Sed fringilla fermentum mi vel blandit. Nunc in convallis massa. Nulla sit amet mauris ornare, viverra urna ac, tristique mi.</p>
+	</div>
+
+	<div class="job job-2">
+	  <h3>Designers ABC</h3>
+	  <h6>Front End Developer</h6>
+	  <p>Sed fringilla fermentum mi vel blandit. Nunc in convallis massa. Nulla sit amet mauris ornare, viverra urna ac, tristique mi.</p>
+	</div>
+
+	<div class="job job-3">
+	  <h3>Webworks</h3>
+	  <h6>Graphic Designer</h6>
+	  <p>Sed fringilla fermentum mi vel blandit. Nunc in convallis massa. Nulla sit amet mauris ornare, viverra urna ac, tristique mi.</p>
+	</div>
+      </div>
+    </main>
+    <footer id="main-footer">
+      Copyright &copy; 2020
+    </footer>
+
+
+
 
     <main id="home">
       <h1 class="lg-heading">John <span class="text-secondary">Doe</span></h1>
@@ -401,10 +502,18 @@
     .then(res => res.json())
     .then(data => {
 	document.querySelector('.portrait').style.setProperty('--portrait', `url(${data.results[0].picture.large})`)
+	document.querySelector('.bio-image').src = `${data.results[0].picture.large}`
     })
 
-      const portraitUrl = getComputedStyle(document.body).getPropertyValue('--portrait')
+      
+      document.querySelector('#home').classList.add('display-none')     
+      const style = document.createElement('style')
+      document.head.appendChild(style)
+      style.innerHTML = `.display-none {display: none;}`
 
-    </script>
+      document.body.removeAttribute('id')
+      
+      document.querySelector('#about').style = 'min-height: calc(100vh - 60px)'
+</script>
   </body>
 </html>
