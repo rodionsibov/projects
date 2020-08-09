@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Mousemove Parallax | Vanilla JavaScript</title>
+    <style>
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  font-family: 'Poppins', sans-serif;
+      }
+
+      body {
+	  background: #111;
+      }
+
+      section {
+	  position: relative;
+	  width: 100%;
+	  height: 100vh;
+	  overflow: hidden;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+      }
+
+      section h2 {
+	  position: absolute;
+	  color: #fff;
+	  font-size: 12em;
+      }
+
+      .z {
+	  z-index: 1;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <section>
+
+      <svg data-speed="-21" class="layer" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path d="M42 71L2.16283 2H81.8372L42 71Z" stroke="pink" stroke-width="4"/>
+      </svg>
+      
+      <svg  data-speed="27" class="layer z" width="54" height="52" viewBox="0 0 54 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<line x1="3.33068" y1="1.24574" x2="52.8796" y2="50.7947" stroke="magenta" stroke-width="3"/>
+	<line x1="1.20936" y1="50.7947" x2="50.7583" y2="1.24577" stroke="magenta" stroke-width="3"/>
+      </svg>
+
+      <svg data-speed="-24" class="layer" width="104" height="103" viewBox="0 0 104 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<rect x="2.36398" y="51.9431" width="70.164" height="70.164" transform="rotate(-45 2.36398 51.9431)" stroke="lime" stroke-width="3"/>
+      </svg>
+
+      <svg data-speed="19" class="layer z" width="96" height="91" viewBox="0 0 96 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path d="M2.21053 35.1221L48 1.8541L93.7895 35.1221L76.2995 88.9509H19.7006L2.21053 35.1221Z" stroke="yellow" stroke-width="3"/>
+      </svg>
+
+      <svg data-speed="-27" class="layer z" width="99" height="205" viewBox="0 0 99 205" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.8847 0.851196L0.907959 12.4611L16.2631 112.082L49.2204 87.3642L56.7107 154.777L84.0503 142.043L98.2819 204.587L93.4132 116.576L68.6952 131.182L61.2049 61.5226L27.4985 81.7465L18.8847 0.851196Z" fill="dodgerblue"/>
+      </svg>
+
+      <svg data-speed="17" class="layer" width="163" height="339" viewBox="0 0 163 339" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M30.723 0.683472L0.907959 19.939L26.375 185.164L81.0359 144.168L93.4589 255.975L138.803 234.856L162.406 338.587L154.331 192.618L113.336 216.843L100.913 101.309L45.0094 134.851L30.723 0.683472Z" fill="cyan"/>
+</svg>
+
+      <svg data-speed="-19" class="layer z" width="94" height="89" viewBox="0 0 94 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M34.7315 29.9983L47 2.66329L59.2685 29.9983C59.632 30.8083 60.3978 31.3647 61.2805 31.4601L91.0688 34.6812L68.8629 54.7962C68.2048 55.3922 67.9123 56.2925 68.0943 57.1615L74.236 86.4872L48.2435 71.5839C47.4733 71.1423 46.5267 71.1423 45.7565 71.5839L19.764 86.4872L25.9057 57.1615C26.0877 56.2925 25.7951 55.3922 25.1371 54.7962L2.93117 34.6812L32.7195 31.4601C33.6022 31.3647 34.368 30.8083 34.7315 29.9983Z" stroke="lime" stroke-width="3"/>
+</svg>
+
+      <svg data-speed="21" class="layer" width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.89542 3.86108V70.0251H70.0594V3.86108H3.89542ZM1.89542 0.861084C1.34313 0.861084 0.895416 1.3088 0.895416 1.86108V72.0251C0.895416 72.5774 1.34313 73.0251 1.89541 73.0251H72.0594C72.6117 73.0251 73.0594 72.5774 73.0594 72.0251V1.86108C73.0594 1.3088 72.6117 0.861084 72.0594 0.861084H1.89542Z" fill="pink"/>
+</svg>
+
+<svg data-speed="-12" class="layer z" width="101" height="101" viewBox="0 0 101 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="50.9604" cy="50.1831" r="48.5" stroke="tomato" stroke-width="3"/>
+</svg>
+
+
+      <h2>Parallax</h2>
+    </section>
+    <script>
+      document.addEventListener('mousemove', parallax)
+
+      function parallax(e) {
+	  this.querySelectorAll('.layer').forEach(layer => {
+	      const speed = layer.getAttribute('data-speed')
+
+	      const x = (window.innerWidth - e.pageX*speed)/100
+	      const y = (window.innerHeight - e.pageY*speed)/100
+
+	      layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+	  })
+      }
+
+
+    </script>
+  </body>
+</html>
