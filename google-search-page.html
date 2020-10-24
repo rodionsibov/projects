@@ -156,7 +156,46 @@
 	  background: #f2f2f2;
       }
 
+      section .footer .row {
+	  padding: 15px 25px;
+	  border-top: 1px solid rgba(0,0,0,0.05);
+      }
 
+      section .footer .row.row2 {
+	  display: flex;
+	  justify-content: space-between;
+      }
+
+      section .footer .row.row2 ul {
+	  display: flex;
+      }
+
+      section .footer .row.row2 ul li {
+	  list-style: none;
+      }
+
+      section .footer .row.row2 ul li a {
+	  text-decoration: none;
+	  font-size: 14px;
+	  color: #5f6368;
+	  margin-right: 25px;
+      }
+
+      section .footer .row.row2 ul:nth-child(2) li a {
+	  text-decoration: none;
+	  font-size: 14px;
+	  color: #5f6368;
+	  margin-right: 0;
+	  margin-left: 25px;
+      }
+
+      @media (max-width: 360px) {
+	  section .footer {
+	      display: none;
+	  }
+	  
+      }
+      
     </style>
   </head>
   <body>
