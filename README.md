@@ -56,5 +56,6 @@ The more you practice, the better your skills will become. You are free to modif
 1. https://rodionsibov.github.io/projects/tooltips.html
 1. https://rodionsibov.github.io/projects/calendar.html
 1. https://rodionsibov.github.io/projects/css-dynamic.html
+1. https://rodionsibov.github.io/projects/google-search-page.html
 
 
