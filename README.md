@@ -3,6 +3,7 @@
 The more you practice, the better your skills will become. You are free to modify, save, share, use or do whatever you want with them. Experiment and have fun! 😉
 
 
+1. https://rodionsibov.github.io/projects/animated-background.html
 1. https://rodionsibov.github.io/projects/travel-landing-page.html
 1. https://rodionsibov.github.io/projects/password-generator.html
 1. https://rodionsibov.github.io/projects/product-landing-page.html
