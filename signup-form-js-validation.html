@@ -164,8 +164,12 @@
       }
 
 
+      .error-icon,
+      .error-text {
+	  display: none;
+      }
+      
       .error-icon {
-	  display: block;
 	  position: absolute;
 	  top: 20%;
 	  right: 20px;
@@ -174,10 +178,57 @@
       }
       
       .error-text {
-	  display: block;
 	  text-align: right;
 	  font-size: 0.8rem;
 	  font-style: italic;
+	  color: hsl(0, 100%, 74%);
+	  font-weight: 500;
+      }
+
+      @media only screen and (min-width: 1000px) {
+	  .container {
+	      flex-direction: row;
+	  }
+
+	  .left-col {
+	      text-align: left;
+	      padding-right: 50px;
+	  }
+
+	  .left-col h1 {
+	      font-size: 3rem;
+	      line-height: 3.5rem;
+	  }
+
+	  .left-col p {
+	      font-size: 1.1rem;
+	  }
+
+	  .right-col {
+	      max-width: 500px;
+	  }
+
+	  .right-col .top-box p {
+	      font-size: 1.1rem;
+	  }
+	  
+	  .right-col .top-box {
+	      padding: 20px;
+	  }
+
+	  .right-col .form-container {
+	      padding: 40px;
+	  }
+
+	  .right-col input,
+	  .right-col input::placeholder {
+	      font-size: 1.05rem;
+	  }
+
+	  .right-col .form-footer {
+	      margin-top: 20px;
+	      font-size: 0.7rem;
+	  }
       }
 
     </style>
@@ -187,7 +238,7 @@
   <section id="intro">
     <div class="container">
       <div class="left-col">
-	<h1>Learn to code by watching others</h1>
+	<h1>Learn to code by <br>watching others</h1>
 	<p>See how experienced developers solve problem in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
       </div>
       <div class="right-col">
