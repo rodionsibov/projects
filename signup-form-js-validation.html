@@ -29,7 +29,7 @@
       .error-icon,
       .error-text {
 	  display: none;
-	  color: tomato;
+	  color: hsl(0, 100%, 74%);
       }
 
       html {
@@ -77,12 +77,95 @@
 	  line-height: 1.9rem;
       }
       
-
       .right-col {
 	  flex: 2;
       }
 
+      .right-col .top-box {
+	  background-color: hsl(248, 32%, 49%);
+	  color: white;
+	  padding: 15px 90px;
+	  border-radius: 15px;
+	  box-shadow: 0 7px hsla(249, 10%, 26%, 0.404);
+	  margin-bottom: 30px;
+      }
 
+      .right-col .top-box p {
+	  font-size: 1.3rem;
+	  line-height: 2.2rem;
+      }
+
+      .right-col .top-box p span {
+	  font-weight: 700;
+      }
+
+      .right-col .form-container {
+	  background-color: white;
+	  padding: 30px;
+	  border-radius: 15px;
+	  box-shadow: 0 7px hsla(249, 10%, 26%, 0.404);
+      }
+
+      .field-group {
+	  position: relative;
+	  margin-bottom: 25px;
+      }
+
+      .right-col label {
+	  display: none;
+      }
+      
+      .right-col input,
+      .right-col button {
+	  width: 100%;
+	  height: 60px;
+	  margin-bottom: 5px;
+	  border-radius: 8px;
+	  border: 1.3px solid hsl(246, 25%, 77%);
+	  padding-left: 20px;
+	  outline: none;
+	  color: hsl(249, 10%, 26%);
+	  font-family: 'Poppins';
+	  font-size: 1.1rem;
+	  font-weight: 600;
+      }
+
+      .right-col input:focus {
+	  border: 1.5px solid hsl(249, 10%, 26%);
+      }
+
+      .right-col input::placeholder {
+	  color: hsla(249, 10%, 26%, 0.678);
+	  font-size: 1.1rem;
+	  font-weight: 600;
+	  font-family: 'Poppins';
+      }
+
+      .right-col button {
+	  border: none;
+	  background-color: hsl(154, 59%, 51%);
+	  color: white;
+	  box-shadow: 0 4px hsl(154, 56%, 44%);
+	  font-weight: 500;
+	  font-size: 1.3rem;
+	  text-transform: uppercase;
+	  letter-spacing: 2px;
+	  margin-bottom: 0;
+      }
+
+      .right-col button:hover {
+	  background-color: hsl(154, 80%, 63%);
+      }
+
+      .right-col .form-footer {
+	  margin-top: 10px;
+	  color: hsl(246, 25%, 77%);
+      }
+
+      .right-col .form-footer span {
+	  color: hsl(0, 100%, 74%);
+	  font-weight: 700;
+      }
 
 
 
