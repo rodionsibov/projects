@@ -18,7 +18,9 @@
 	  color: hsl(228, 45%, 44%);
       }
 
-
+      .error-icon {
+	  color: tomato;
+      }
 
       
     
@@ -38,7 +40,20 @@
 	  <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
 	</div>
 	<div class="form-container">
-	  
+	  <form action="#">
+	    <div class="field-group">
+	      <label for="firstName">First Name</label>
+	      <input type="text" id="firstName" name="firstName" placeholder="First Name">
+	      <i class="fas fa-exclamation-circle error-icon"></i>
+	      <p class="error-text">First Name cannot be empty</p>
+	    </div>
+	    <div class="field-group">
+	      <label for="lastName">Last Name</label>
+	      <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+	      <i class="fas fa-exclamation-circle error-icon"></i>
+	      <p class="error-text">First Name cannot be empty</p>
+	    </div>
+	  </form>
 	</div>
       </div>
     </div>
