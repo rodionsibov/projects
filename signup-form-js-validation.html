@@ -9,6 +9,14 @@
     <title>Frontend Mentor | Intro component with sign ip form</title>
     <style>
 
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+      }
+
+      
+
       .attribution {
 	  font-size: 11px;
 	  text-align: center;
@@ -18,12 +26,65 @@
 	  color: hsl(228, 45%, 44%);
       }
 
-      .error-icon {
+      .error-icon,
+      .error-text {
+	  display: none;
 	  color: tomato;
       }
 
-      
+      html {
+	  font-size: 16px;
+	  font-family: 'Poppins', sans-serif;
+	  
+      }
     
+      #intro {
+	  min-height: 100vh;
+	  width: 100%;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  background-color: hsl(0, 100%, 74%);
+	  padding: 100px 0;
+      }
+
+      .container {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+	  text-align: center;
+	  padding: 0 30px;
+	  max-width: 1300px;
+	  margin: 0 auto;
+      }
+
+      .left-col {
+	  flex: 1;
+	  margin-bottom: 50px;
+      }
+
+      .left-col h1 {
+	  color: white;
+	  font-size: 2.5rem;
+	  line-height: 3rem;
+	  margin-bottom: 15px;
+      }
+      
+      .left-col p {
+	  color: white;
+	  font-size: 1.1rem;
+	  line-height: 1.9rem;
+      }
+      
+
+      .right-col {
+	  flex: 2;
+      }
+
+
+
+
 
     </style>
   </head>
@@ -51,29 +112,27 @@
 	      <label for="lastName">Last Name</label>
 	      <input type="text" id="lastName" name="lastName" placeholder="Last Name">
 	      <i class="fas fa-exclamation-circle error-icon"></i>
-	      <p class="error-text">First Name cannot be empty</p>
+	      <p class="error-text">Last Name cannot be empty</p>
 	    </div>
+	    <div class="field-group">
+	      <label for="email">Email</label>
+	      <input type="email" id="email" name="email" placeholder="Email Address">
+	      <i class="fas fa-exclamation-circle error-icon"></i>
+	      <p class="error-text">Looks like this is not an email</p>
+	    </div>
+	    <div class="field-group">
+	      <label for="password">Password</label>
+	      <input type="password" id="password" name="password" placeholder="Password">
+	      <i class="fas fa-exclamation-circle error-icon"></i>
+	      <p class="error-text">Password cannot be empty</p>
+	    </div>
+	    <button type="submit">Claim your free trial</button>
+	    <p class="form-footer">By clicking the button, you are agreeing to our<span> Terms and Services</span></p>
 	  </form>
 	</div>
       </div>
     </div>
   </section>
-
-  
-
-  
-
-  
-
-  First Name
-  Last Name
-  Email Address
-  Password
-
-  Claim your free trial
-
-  By clicking the button, you are agreeing to our Terms and Services
-
   <footer>
     <p class="attribution">
       Challange by <a href="#">Frontend Mentor</a>.
