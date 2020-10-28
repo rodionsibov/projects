@@ -4,184 +4,144 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
 
-    <title>Vertical Timeline</title>
+    <title>Awesome Web Page Design</title>
     <style>
 
       * {
 	  margin: 0;
 	  padding: 0;
-	  box-sizing: border-box;
       }
 
       html {
 	  font-family: 'Montserrat', sans-serif;
-	  color: white;
       }
 
-      .container {
-	  min-height: 100vh;
+      #hero {
 	  width: 100%;
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  padding: 100px 0;
-	  background-color: #101010;
-      }
-
-      .timeline {
-	  width: 80%;
-	  height: auto;
-	  max-width: 800px;
-	  margin: 0 auto;
+	  height: 100vh;
+	  background-image: url('https://source.unsplash.com/random/');
+	  background-size: cover;
+	  background-position: center;
 	  position: relative;
       }
 
-      .timeline ul {
-	  list-style: none;
+      .navbar {
+	  width: 90%;
+	  margin: auto;
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	  position: relative;
+	  z-index: 10;
       }
 
-      .timeline ul li {
-	  padding: 20px;
-	  background-color: #1e1f22;
+      .navbar .logo {
+	  font-size: 42px;
+	  margin: 30px 0;
+	  cursor: pointer;
 	  color: white;
-	  border-radius: 10px;
-	  margin-bottom: 20px;
       }
 
-      .timeline ul li:last-child {
-	  margin-bottom: 0;
+      .user {
+	  display: flex;
+	  align-items: center;
       }
 
-      .timeline-content h1 {
-	  font-size: 25px;
-	  font-weight: 500;
-	  line-height: 30px;
-	  margin-bottom: 10px;
+      .user img {
+	  width: 48px;
+	  border-radius: 50%;
+	  margin-left: 50px;
+	  cursor: pointer;
+      }
+      
+      button {
+	  padding: 8px 25px;
+	  background: transparent;
+	  outline: none;
+	  border: 2px solid #fff;
+	  border-radius: 20px;
+	  color: #fff;
+	  font-size: 12px;
+	  cursor: pointer;
+	  font-weight: bold;
       }
 
-      .timeline-content p {
-	  font-size: 16px;
-	  line-height: 30px;
-	  font-weight: 300;
+      .container {
+	  width: 50%;
+	  height: 100vh;
+	  background: rgba(86, 86, 86, 0.3);
+	  backdrop-filter: blur(10px);
+	  position: absolute;
+	  left: 0;
+	  top: 0;
       }
 
-      .timeline-content .date {
-	  font-size: 13px;
-	  font-weight: 300;
-	  margin-bottom: 10px;
-	  letter-spacing: 2px;
+      .info {
+	  width: 550px;
+	  color: white;
+	  position: absolute;
+	  right: 0;
+	  top: 50%;
+	  transform: translateY(-50%);
       }
 
-
-      @media only screen and (min-width: 768px) {
-	  .timeline::before {
-	      content: '';
-	      position: absolute;
-	      height: 100%;
-	      width: 2px;
-	      left: 50%;
-	      transform: translateX(-50%);
-	      background-color: gray;
-	  }
-
-	  .timeline ul li {
-	      width: 50%;
-	      margin-bottom: 50px;
-	      position: relative;
-	  }
-
-	  .timeline ul li:nth-child(odd) {
-	      float: left;
-	      clear: right;
-	      transform: translateX(-30px);
-	      border-radius: 20px 0 20px 20px;
-	  }
-	  
-	  .timeline ul li:nth-child(even) {
-	      float: right;
-	      clear: left;
-	      transform: translateX(30px);
-	      border-radius: 0 20px 20px 20px;
-	  }
-
-	  .timeline ul li::after {
-	      content: '';
-	      position: absolute;
-	      height: 20px;
-	      width: 20px;
-	      background-color: gray;
-	      border-radius: 50%;
-	      top: 0;
-	  }
-
-	  .timeline ul li:nth-child(odd)::after {
-	      right: -30px;
-	      transform: translate(50%, -50%);
-	  }
-
-      	  .timeline ul li:nth-child(even)::after {
-	      transform: translate(-50%, -50%);
-	      left: -30px;
-	  }
-
-	  .timeline ul li:hover:after {
-	      background-color: aqua;
-	  }
-
-	  .timeline-content .date {
-	      position: absolute;
-	      top: -30px;
-	  }
-
-
+      .info h1 {
+	  font-size: 60px;
+	  letter-spacing: 10px;
       }
 
+      .info p {
+	  color: #f0eef1;
+	  font-size: 11px;
+	  margin: 20px 0;
+	  line-height: 18px;
+	  padding-right: 100px;
+      }
+
+      .info input {
+	  width: 50%;
+	  padding: 8px 10px;
+	  outline: none;
+	  border: 2px solid #fff;
+	  border-radius: 20px;
+	  background: transparent;
+      }
 
 
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="timeline">
-	<ul>
-	  <li>
-	    <div class="timeline-content">
-	      <h2 class="date">20th may, 2010</h2>
-	      <h1>Heading 1</h1>
-	      <p>Vestibulum in scelerisque tortor. Aliquam at sem diam. Etiam ligula nibh, egestas ut mi iaculis, auctor laoreet elit. Proin vitae.</p>
-	    </div>
-	  </li>
-	  <li>
-	    <div class="timeline-content">
-	      <h2 class="date">20th may, 2010</h2>
-	      <h1>Heading 2</h1>
-	      <p>Vestibulum in scelerisque tortor. Aliquam at sem diam. Etiam ligula nibh, egestas ut mi iaculis, auctor laoreet elit. Proin vitae.</p>
-	    </div>
-	  </li>
-	  <li>
-	    <div class="timeline-content">
-	      <h2 class="date">20th may, 2010</h2>
-	      <h1>Heading 3</h1>
-	      <p>Vestibulum in scelerisque tortor. Aliquam at sem diam. Etiam ligula nibh, egestas ut mi iaculis, auctor laoreet elit. Proin vitae.</p>
-	    </div>
-	  </li>
-	  <li>
-	    <div class="timeline-content">
-	      <h2 class="date">20th may, 2010</h2>
-	      <h1>Heading 4</h1>
-	      <p>Vestibulum in scelerisque tortor. Aliquam at sem diam. Etiam ligula nibh, egestas ut mi iaculis, auctor laoreet elit. Proin vitae.</p>
-	    </div>
-	  </li>
-	  <li>
-	    <div class="timeline-content">
-	      <h2 class="date">20th may, 2010</h2>
-	      <h1>Heading 5</h1>
-	      <p>Vestibulum in scelerisque tortor. Aliquam at sem diam. Etiam ligula nibh, egestas ut mi iaculis, auctor laoreet elit. Proin vitae.</p>
-	    </div>
-	  </li>
-	</ul>
+    <div id="hero">
+      <div class="navbar">
+	<i class="fas fa-camera-retro logo"></i>
+	<div class="user">
+	  <button type="button">Explore</button>
+	  <img src="#" class="portrait">
+	</div>
       </div>
+
+      <div class="container">
+	<div class="info">
+	  <h1>Discover</h1>
+	  <p>Pellentesque convallis porta quam, id pulvinar felis. Fusce sodales quam vel tortor laoreet facilisis. Proin eu pretium ligula. Sed placerat metus vel massa ornare feugiat eget vitae magna.</p>
+	  <input type="text" placeholder="Search">
+	</div>
+      </div>
+      
     </div>
+
+    <script>
+
+      // generate random portrait
+      fetch('https://randomuser.me/api')
+    .then(res => res.json())
+    .then(data => {
+	document.querySelector('.portrait').src = `${data.results[0].picture.large}`
+    })
+      
+    </script>
+    
   </body>
 </html>
