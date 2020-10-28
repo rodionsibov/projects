@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
+    <title>Vertical Timeline</title>
+    <style>
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+      }
+
+      html {
+	  font-family: 'Montserrat', sans-serif;
+	  color: white;
+      }
+
+      .container {
+	  min-height: 100vh;
+	  width: 100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  padding: 100px 0;
+	  background-color: #101010;
+      }
+
+      .timeline {
+	  width: 80%;
+	  height: auto;
+	  max-width: 800px;
+	  margin: 0 auto;
+	  position: relative;
+      }
+
+      .timeline ul {
+	  list-style: none;
+      }
+
+      .timeline ul li {
+	  padding: 20px;
+	  background-color: #1e1f22;
+	  color: white;
+	  border-radius: 10px;
+	  margin-bottom: 20px;
+      }
+
+      .timeline ul li:last-child {
+	  margin-bottom: 0;
+      }
+
+      .timeline-content h1 {
+	  font-size: 25px;
+	  font-weight: 500;
+	  line-height: 30px;
+	  margin-bottom: 10px;
+      }
+
+      .timeline-content p {
+	  font-size: 16px;
+	  line-height: 30px;
+	  font-weight: 300;
+      }
+
+      .timeline-content .date {
+	  font-size: 13px;
+	  font-weight: 300;
+	  margin-bottom: 10px;
+	  letter-spacing: 2px;
+      }
+
+
+      @media only screen and (min-width: 768px) {
+	  .timeline::before {
+	      content: '';
+	      position: absolute;
+	      height: 100%;
+	      width: 2px;
+	      left: 50%;
+	      transform: translateX(-50%);
+	      background-color: gray;
+	  }
+
+	  .timeline ul li {
+	      width: 50%;
+	      margin-bottom: 50px;
+	      position: relative;
+	  }
+
+	  .timeline ul li:nth-child(odd) {
+	      float: left;
+	      clear: right;
+	      transform: translateX(-30px);
+	      border-radius: 20px 0 20px 20px;
+	  }
+	  
+	  .timeline ul li:nth-child(even) {
+	      float: right;
+	      clear: left;
+	      transform: translateX(30px);
+	      border-radius: 0 20px 20px 20px;
+	  }
+
+	  .timeline ul li::after {
+	      content: '';
+	      position: absolute;
+	      height: 20px;
+	      width: 20px;
+	      background-color: gray;
+	      border-radius: 50%;
+	      top: 0;
+	  }
+
+	  .timeline ul li:nth-child(odd)::after {
+	      right: -30px;
+	      transform: translate(50%, -50%);
+	  }
+
+      	  .timeline ul li:nth-child(even)::after {
+	      transform: translate(-50%, -50%);
+	      left: -30px;
+	  }
+
+	  .timeline ul li:hover:after {
+	      background-color: aqua;
+	  }
+
+	  .timeline-content .date {
+	      position: absolute;
+	      top: -30px;
+	  }
+
+
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="timeline">
+	<ul>
+	  <li>
+	    <div class="timeline-content">
+	      <h2 class="date">20th may, 2010</h2>
+	      <h1>Heading 1</h1>
+	      <p>Vestibulum in scelerisque tortor. Aliquam at sem diam. Etiam ligula nibh, egestas ut mi iaculis, auctor laoreet elit. Proin vitae.</p>
+	    </div>
+	  </li>
+	  <li>
+	    <div class="timeline-content">
+	      <h2 class="date">20th may, 2010</h2>
+	      <h1>Heading 2</h1>
+	      <p>Vestibulum in scelerisque tortor. Aliquam at sem diam. Etiam ligula nibh, egestas ut mi iaculis, auctor laoreet elit. Proin vitae.</p>
+	    </div>
+	  </li>
+	  <li>
+	    <div class="timeline-content">
+	      <h2 class="date">20th may, 2010</h2>
+	      <h1>Heading 3</h1>
+	      <p>Vestibulum in scelerisque tortor. Aliquam at sem diam. Etiam ligula nibh, egestas ut mi iaculis, auctor laoreet elit. Proin vitae.</p>
+	    </div>
+	  </li>
+	  <li>
+	    <div class="timeline-content">
+	      <h2 class="date">20th may, 2010</h2>
+	      <h1>Heading 4</h1>
+	      <p>Vestibulum in scelerisque tortor. Aliquam at sem diam. Etiam ligula nibh, egestas ut mi iaculis, auctor laoreet elit. Proin vitae.</p>
+	    </div>
+	  </li>
+	  <li>
+	    <div class="timeline-content">
+	      <h2 class="date">20th may, 2010</h2>
+	      <h1>Heading 5</h1>
+	      <p>Vestibulum in scelerisque tortor. Aliquam at sem diam. Etiam ligula nibh, egestas ut mi iaculis, auctor laoreet elit. Proin vitae.</p>
+	    </div>
+	  </li>
+	</ul>
+      </div>
+    </div>
+  </body>
+</html>
