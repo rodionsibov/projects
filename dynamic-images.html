@@ -107,7 +107,30 @@
 	  border: 2px solid #fff;
 	  border-radius: 20px;
 	  background: transparent;
+	  color: #fff;
+	  font-size: 12px;
       }
+
+      ::placeholder {
+	  color: #ccc;
+      }
+
+      .slider {
+	  display: flex;
+	  align-items: center;
+	  position: absolute;
+	  right: 30px;
+	  bottom: 50px;
+      }
+
+      #prev, #next {
+	  font-size: 22px; 
+      }
+      
+      .thumbnail {
+	  width: 150px;
+      }
+
 
 
     </style>
@@ -128,6 +151,18 @@
 	  <p>Pellentesque convallis porta quam, id pulvinar felis. Fusce sodales quam vel tortor laoreet facilisis. Proin eu pretium ligula. Sed placerat metus vel massa ornare feugiat eget vitae magna.</p>
 	  <input type="text" placeholder="Search">
 	</div>
+      </div>
+
+      <div class="slider">
+	<i class="fas fa-chevron-left" id="prev"></i>
+	<div class="preview">
+	  <img src="https://picsum.photos/300/200?random=1"  class="thumbnail">
+	  <img src="https://picsum.photos/300/200?random=2"  class="thumbnail">
+	  <img src="https://picsum.photos/300/200?random=3"  class="thumbnail">
+	  <img src="https://picsum.photos/300/200?random=4"  class="thumbnail">
+	  <img src="https://picsum.photos/300/200?random=5"  class="thumbnail">
+	</div>
+	<i class="fas fa-chevron-right" id="next"></i>
       </div>
       
     </div>
