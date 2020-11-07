@@ -131,15 +131,21 @@
       .preview {
 	  display: flex;
 	  align-items: center;
-	  margin: 0 60px;
+	  margin: 0 50px;
       }
 
       .preview img {
-	  width: 60px;
+	  width: 90px;
 	  margin: 0 10px;
+	  opacity: 0.5;
       }
 
-
+      .preview .active {
+	  display: block;
+	  border: 3px solid #fff;
+	  width: 100px;
+	  opacity: 1;
+      }
 
     </style>
   </head>
@@ -164,11 +170,10 @@
       <div class="slider">
 	<i class="fas fa-chevron-left" id="prev"></i>
 	<div class="preview">
-	  <img src="https://picsum.photos/300/200?random=1"  class="thumbnail">
+	  <img src="https://picsum.photos/300/200?random=1"  class="active thumbnail">
 	  <img src="https://picsum.photos/300/200?random=2"  class="thumbnail">
 	  <img src="https://picsum.photos/300/200?random=3"  class="thumbnail">
 	  <img src="https://picsum.photos/300/200?random=4"  class="thumbnail">
-	  <img src="https://picsum.photos/300/200?random=5"  class="thumbnail">
 	</div>
 	<i class="fas fa-chevron-right" id="next"></i>
       </div>
@@ -183,7 +188,23 @@
     .then(data => {
 	document.querySelector('.portrait').src = `${data.results[0].picture.large}`
     })
-      
+
+
+
+      // add action to arrows
+      const prev = document.querySelector('#prev');
+      const next = document.querySelector('#next');
+      const thumbnail = document.querySelectorAll('.thumbnail');
+      const hero = document.querySelector('#hero');
+
+      const backgroundImg = [
+	  'https://picsum.photos/300/200?random=1',
+	  'https://picsum.photos/300/200?random=2',
+	  'https://picsum.photos/300/200?random=3',
+	  'https://picsum.photos/300/200?random=4',
+      ];
+
+
     </script>
     
   </body>
