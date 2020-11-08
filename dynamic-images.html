@@ -21,7 +21,7 @@
       #hero {
 	  width: 100%;
 	  height: 100vh;
-	  background-image: url('https://source.unsplash.com/random/');
+	  background-image: url('https://picsum.photos/id/1002/900');
 	  background-size: cover;
 	  background-position: center;
 	  position: relative;
@@ -126,6 +126,8 @@
       #prev, #next {
 	  font-size: 22px; 
 	  cursor: pointer;
+	  color: white;
+	  opacity: 0.5;
       }
       
       .preview {
@@ -146,6 +148,56 @@
 	  width: 100px;
 	  opacity: 1;
       }
+
+      @media only screen and (max-width: 400px) {
+	  .slider {
+	      
+	  }
+
+	  .container {
+	      width: 100%;
+	      height: 50vh;
+	  }
+
+	  .info {
+	      width: 100%;
+	      text-align: center;
+	      top: 60%;
+	  }
+
+	  .info h1 {
+	      font-size: 40px;
+	  }
+
+	  .info p {
+	      margin: 0;
+	      padding: 20px;
+	  }
+
+	  button {
+	      display: none;
+	  }
+
+	  .slider {
+	      bottom: 10px;
+	      right: 70px;
+	  }
+	  
+	  .preview {
+	      flex-direction: column;
+	      padding: 0;
+	      margin: 0;
+	  }
+
+	  .preview img {
+	      margin: 5px 0;
+	  }
+
+	  #prev, #next {
+	      padding: 20px;
+	  }
+      }
+
 
     </style>
   </head>
@@ -170,10 +222,10 @@
       <div class="slider">
 	<i class="fas fa-chevron-left" id="prev"></i>
 	<div class="preview">
-	  <img src="https://picsum.photos/300/200?random=1"  class="active thumbnail">
-	  <img src="https://picsum.photos/300/200?random=2"  class="thumbnail">
-	  <img src="https://picsum.photos/300/200?random=3"  class="thumbnail">
-	  <img src="https://picsum.photos/300/200?random=4"  class="thumbnail">
+	  <img src="https://picsum.photos/id/1002/300/200"  class="active thumbnail">
+	  <img src="https://picsum.photos/id/1015/300/200"  class="thumbnail">
+	  <img src="https://picsum.photos/id/1016/300/200"  class="thumbnail">
+	  <img src="https://picsum.photos/id/1019/300/200"  class="thumbnail">
 	</div>
 	<i class="fas fa-chevron-right" id="next"></i>
       </div>
@@ -198,11 +250,33 @@
       const hero = document.querySelector('#hero');
 
       const backgroundImg = [
-	  'https://picsum.photos/300/200?random=1',
-	  'https://picsum.photos/300/200?random=2',
-	  'https://picsum.photos/300/200?random=3',
-	  'https://picsum.photos/300/200?random=4',
+	  'https://picsum.photos/id/1002/900',
+	  'https://picsum.photos/id/1015/900',
+	  'https://picsum.photos/id/1016/900',
+	  'https://picsum.photos/id/1019/900',
       ];
+
+      let i = 0;
+
+      next.onclick = function() {
+	  if (i < backgroundImg.length - 1) {
+	      hero.style.backgroundImage = 'url("'+backgroundImg[i + 1]+'")'
+	      thumbnail[i + 1].classList.add('active');
+	      thumbnail[i].classList.remove('active');
+	      i ++;
+	  }
+      }
+
+      prev.onclick = function() {
+	  if (i > 0) {
+	      hero.style.backgroundImage = 'url("'+backgroundImg[i - 1]+'")'
+	      thumbnail[i - 1].classList.add('active');
+	      thumbnail[i].classList.remove('active');
+	      i --;
+	  }
+      }
+
+
 
 
     </script>
