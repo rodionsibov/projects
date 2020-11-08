@@ -9,6 +9,7 @@ The more you practice, the better your skills will become. You are free to modif
 1. https://rodionsibov.github.io/projects/travel-landing-page.html
 1. https://rodionsibov.github.io/projects/password-generator.html
 1. https://rodionsibov.github.io/projects/product-landing-page.html
+1. https://rodionsibov.github.io/projects/google-search-page.html
 1. https://rodionsibov.github.io/projects/ads-manager.html
 1. https://rodionsibov.github.io/projects/login.html
 1. https://rodionsibov.github.io/projects/blog-cards.html
@@ -59,6 +60,6 @@ The more you practice, the better your skills will become. You are free to modif
 1. https://rodionsibov.github.io/projects/tooltips.html
 1. https://rodionsibov.github.io/projects/calendar.html
 1. https://rodionsibov.github.io/projects/css-dynamic.html
-1. https://rodionsibov.github.io/projects/google-search-page.html
+1. https://rodionsibov.github.io/projects/dynamic-images.html
 
 
