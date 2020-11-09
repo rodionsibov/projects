@@ -31,6 +31,7 @@
       h1, h2, h3, h4, h5, h6, strong {
 	  color: var(--mainText);
 	  font-family: 'Russo One', sans-serif;
+	  font-weight: 500;
       }
 
       p, li, span, label, input, textarea {
@@ -72,6 +73,44 @@
 	  margin: 0 auto;
       }
 
+      .greeting-wrapper {
+	  display: grid;
+	  text-align: center;
+	  align-content: center;
+	  border: 2px dashed lightcoral;
+	  min-height: 10em;
+      }
+
+      .intro-wrapper {
+	  background-color: var(--secondaryColor);
+	  border: 1px solid var(--borderColor);
+	  box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+      
+	  display: grid;
+	  grid-template-columns: 1fr 1fr;
+	  grid-template-rows: 3em 30em;
+	  grid-template-areas:
+	      'nav-wrapper nav-wrapper'
+	      'left-column right-column';
+      }
+      
+      .nav-wrapper {
+	  grid-area: nav-wrapper;
+	  border: 1px dashed lightcoral;
+      }
+
+      .left-column {
+	  grid-area: left-column;
+	  border: 1px dashed lightcoral;
+      }
+      
+      .right-column {
+	  grid-area: right-column;
+	  border: 1px dashed lightcoral;
+      }
+
+
+
       @media screen and (max-width: 900px) {
 	  .main-container {
 	      width: 95%;
@@ -84,9 +123,22 @@
     <body>
       <section class="s1">
 	<div class="main-container">
-	  <h1>Hi, I'am Rodion Sibov</h1>
-	  <p>This is the sentence</p>
-	  <a href="#">Link</a>
+	  <div class="greeting-wrapper">
+	    <h1>Hi, I'am Rodion Sibov</h1>
+	  </div>
+
+	  <div class="intro-wrapper">
+	    <div class="nav-wrapper">
+	      nav
+	    </div>
+	    <div class="left-column">
+	      left-column
+	    </div>
+	    <div class="right-column">
+	      right-column
+	    </div>
+	  </div>
+
 	</div>
       </section>
 
