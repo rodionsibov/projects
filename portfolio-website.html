@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
 
     <title>Rodion Sibov</title>
@@ -24,26 +25,86 @@
       html, body {
 	  padding: 0;
 	  margin: 0;
+	  
       }
 
       h1, h2, h3, h4, h5, h6, strong {
 	  color: var(--mainText);
+	  font-family: 'Russo One', sans-serif;
       }
 
       p, li, span, label, input, textarea {
 	  color: var(--secondaryText);
+	  font-family: 'Roboto Mono', monospace;
       }
 
+      a {
+	  text-decoration: none;
+	  color: #17a2b8;
+      }
 
+      ul {
+	  list-style: none;
+      }
+      
+      h1 {font-size: 56px;}
+      h2 {font-size: 36px;}
+      h3 {font-size: 28px;}
+      h4 {font-size: 24px;}
+      h5 {font-size: 20px;}
+      h6 {font-size: 16px;}
+
+
+      .s1 {
+	  background-color: var(--mainColor);
+	  border-bottom: 1px solid var(--borderColor);
+	  overflow: auto;
+      }
+
+      .s2 {
+	  background-color: var(--secondaryColor);
+	  border-bottom: 1px solid var(--borderColor);
+	  overflow: auto;
+      }
+
+      .main-container {
+	  width: 900px;
+	  margin: 0 auto;
+      }
+
+      @media screen and (max-width: 900px) {
+	  .main-container {
+	      width: 95%;
+	  }
+	  
+      }
 
     </style>
 
     <body>
-      <section>
-	<div>
+      <section class="s1">
+	<div class="main-container">
 	  <h1>Hi, I'am Rodion Sibov</h1>
 	  <p>This is the sentence</p>
 	  <a href="#">Link</a>
+	</div>
+      </section>
+
+      <section class="s2">
+	<div class="main-container">
+	  About
+	</div>
+      </section>
+      
+      <section class="s1">
+	<div class="main-container">
+	  Portfolio
+	</div>
+      </section>
+
+      <section class="s2">
+	<div class="main-container">
+	  Contact
 	</div>
       </section>
 
