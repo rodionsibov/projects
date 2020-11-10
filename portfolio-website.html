@@ -92,7 +92,7 @@
 	  border-radius: 5px 5px 0 0;
 
 	  box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
-      
+	  
 	  display: grid;
 	  grid-template-columns: 1fr 1fr;
 	  grid-template-areas:
@@ -284,6 +284,41 @@
 	  width: 100%;
       }
       
+      .post-wrapper {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, 320px);
+	  gap: 20px;
+	  justify-content: center;
+	  padding-bottom: 50px;
+      }
+
+      .post {
+	  border: 1px solid var(--borderColor);
+	  box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+      }
+      
+      .thumbnail {
+	  display: block;
+	  width: 100%;
+	  height: 180px;
+	  object-fit: cover;
+      }
+
+      .post-preview {
+	  background-color: #fff;
+	  padding: 15px;
+      }
+
+      .post-title {
+	  color: black;
+	  margin: 0;
+      }
+
+      .post-intro {
+	  color: #4b5156;
+	  font-size: 14px;
+      }
+      
       @media screen and (max-width: 1000px) {
 	  .main-container {
 	      width: 95%;
@@ -368,28 +403,28 @@
 	      <h4>More about me</h4>
 	      <p>I am a follower of clean code and I pay close attention to the small details. I'm confident, hard working and dependable.</p>
 	      <p>I am engaged in front end development, user interface design, accessibility + usability, and
-digital publishing workflows committed to open access.</p>
+		digital publishing workflows committed to open access.</p>
 
-	    <hr>
-	    <h4>Top Expertise</h4>
-	    <p>Front End developer with primary focus on CSS:<a href="#" target="_blank">Download Resume</a></p>
+	      <hr>
+	      <h4>Top Expertise</h4>
+	      <p>Front End developer with primary focus on CSS:<a href="#" target="_blank">Download Resume</a></p>
 
-	    <div id="skills">
-	      <ul>
-		<li>Python</li>
-		<li>Django</li>
-		<li>JavaScript</li>
-		<li>React</li>
-		<li>Postgres</li>
-	      </ul>
-	      <ul>
-		<li>Google Maps API</li>
-		<li>JS Charts</li>
-		<li>AWS (RDS/S3)</li>
-		<li>Heroku</li>
-		<li>HTML/CSS</li>
-	      </ul>
-	    </div>
+	      <div id="skills">
+		<ul>
+		  <li>Python</li>
+		  <li>Django</li>
+		  <li>JavaScript</li>
+		  <li>React</li>
+		  <li>Postgres</li>
+		</ul>
+		<ul>
+		  <li>Google Maps API</li>
+		  <li>JS Charts</li>
+		  <li>AWS (RDS/S3)</li>
+		  <li>Heroku</li>
+		  <li>HTML/CSS</li>
+		</ul>
+	      </div>
 	    </div>
 	    
 	    <div class="social-links">
@@ -405,7 +440,43 @@ digital publishing workflows committed to open access.</p>
       
       <section class="s1">
 	<div class="main-container">
-	  Portfolio
+	  <h3 style="text-align: center;">Some of my past projects</h3>
+	  <div class="post-wrapper">
+
+	    <div>
+	    <div class="post">
+	      <img class="thumbnail" src="https://picsum.photos/400?random=1">
+	      <div class="post-preview">
+		<h6 class="post-title">Laboratory Management System</h6>
+		<p class="post-intro">Designed built & mantained a the lab management system for FOI Labaratories</p>
+		<a href="#">Read More</a>
+	      </div>
+	    </div>
+	    </div>
+	    
+	    <div>
+	    <div class="post">
+	      <img class="thumbnail" src="https://picsum.photos/400?random=2">
+	      <div class="post-preview">
+		<h6 class="post-title">Online Store - CoursePost Title</h6>
+		<p class="post-intro">Online store with paypal payments integration and guest user shoping </p>
+		<a href="#">Read More</a>
+	      </div>
+	    </div>
+	    </div>
+
+	    <div>
+	    <div class="post">
+	      <img class="thumbnail" src="https://picsum.photos/400?random=3">
+	      <div class="post-preview">
+		<h6 class="post-title">Membership Website</h6>
+		<p class="post-intro">Modulized guide for online courses with step by step instructions</p>
+		<a href="#">Read More</a>
+	      </div>
+	    </div>
+	    </div>
+
+	  </div>
 	</div>
       </section>
 
