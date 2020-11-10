@@ -77,13 +77,14 @@
 	  display: grid;
 	  text-align: center;
 	  align-content: center;
-	  border: 2px dashed lightcoral;
 	  min-height: 10em;
       }
 
       .intro-wrapper {
 	  background-color: var(--secondaryColor);
 	  border: 1px solid var(--borderColor);
+	  border-radius: 5px 5px 0 0;
+
 	  box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
       
 	  display: grid;
@@ -96,20 +97,62 @@
       
       .nav-wrapper {
 	  grid-area: nav-wrapper;
-	  border: 1px dashed lightcoral;
+	  border-bottom: 1px solid var(--borderColor);
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	  background-color: var(--mainColor);
+	  border-radius: 5px 5px 0 0;
       }
+
+      #navigation {
+	  margin: 0;
+	  padding: 10px;
+      }
+
+      #navigation li {
+	  display: inline-block;
+	  margin-right: 5px;
+	  margin-left: 5px;
+      }
+
+      .dots-wrapper {
+	  display: flex;
+	  padding: 10px;
+      }
+
+      .browser-dot {
+	  background-color: black;
+	  height: 15px;
+	  width: 15px;
+	  border-radius: 50%;
+	  margin: 5px;
+
+	  box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+      }
+
+      #dot-1 {
+	  background-color: #fc6058;
+      }
+
+      #dot-2 {
+	  background-color: #fec02f;
+      }
+
+      #dot-3 {
+	  background-color: #2aca3e;
+      }
+
 
       .left-column {
 	  grid-area: left-column;
-	  border: 1px dashed lightcoral;
       }
       
       .right-column {
 	  grid-area: right-column;
-	  border: 1px dashed lightcoral;
       }
 
-
+      
 
       @media screen and (max-width: 900px) {
 	  .main-container {
@@ -129,11 +172,21 @@
 
 	  <div class="intro-wrapper">
 	    <div class="nav-wrapper">
-	      nav
+	      <div class="dots-wrapper">
+		<div id="dot-1" class="browser-dot"></div>
+		<div id="dot-2" class="browser-dot"></div>
+		<div id="dot-3" class="browser-dot"></div>
+	      </div>
+	      
+	      <ul id="navigation">
+		<li><a href="#">Contact</a></li>
+	      </ul>
 	    </div>
+
 	    <div class="left-column">
 	      left-column
 	    </div>
+
 	    <div class="right-column">
 	      right-column
 	    </div>
