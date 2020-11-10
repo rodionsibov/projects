@@ -19,6 +19,8 @@
 	  
 	  --mainText: black;
 	  --secondaryText: #4b5156;
+	  
+	  --themeDotBorder: #24292e;
       }
 
 
@@ -89,7 +91,6 @@
       
 	  display: grid;
 	  grid-template-columns: 1fr 1fr;
-	  grid-template-rows: 3em 30em;
 	  grid-template-areas:
 	      'nav-wrapper nav-wrapper'
 	      'left-column right-column';
@@ -146,8 +147,62 @@
 
       .left-column {
 	  grid-area: left-column;
+	  padding-top: 50px;
+	  padding-bottom: 50px;
       }
       
+      #profile_pic {
+	  display: block;
+	  margin: 0 auto;
+
+	  height: 200px;
+	  width: 200px;
+	  object-fit: cover;
+	  border: 2px solid var(--borderColor);
+      }
+
+      #theme-options-wrapper {
+	  display: flex;
+	  justify-content: center;
+      }
+
+      .theme-dot {
+	  height: 30px;
+	  width: 30px;
+	  background-color: black;
+	  border-radius: 50%;
+	  margin: 5px;
+	  border: 2px solid var(--themeDotBorder);
+	  box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	  cursor: pointer;
+      }
+
+      .theme-dot:hover {
+	  border-width: 5px;
+      }
+
+      #light-mode {
+	  background-color: #fff;
+      }
+
+      #blue-mode {
+	  background-color: #192734;
+      }
+
+      #green-mode {
+	  background-color: #78866b;
+      }
+
+      #purple-mode {
+	  background-color: #7e4c74;
+      }
+      
+      #settings-note {
+	  font-size: 12px;
+	  font-style: italic;
+	  text-align: center;
+      }
+
       .right-column {
 	  grid-area: right-column;
       }
@@ -184,7 +239,18 @@
 	    </div>
 
 	    <div class="left-column">
-	      left-column
+	      <img id="profile_pic" src="https://picsum.photos/id/447/200">
+	      <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
+	      
+	      <div id="theme-options-wrapper">
+		<div id="light-mode" class="theme-dot"></div>
+		<div id="blue-mode" class="theme-dot"></div>
+		<div id="green-mode" class="theme-dot"></div>
+		<div id="purple-mode" class="theme-dot"></div>
+	      </div>
+
+	      <p id="settings-note">*Theme settings will be saved <br>for your next visit</p>
+	      
 	    </div>
 
 	    <div class="right-column">
