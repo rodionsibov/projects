@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
 
-    <title>Rodion Sibov</title>
+    <title>Rodion - Web developer</title>
     <style>
 
       :root {
@@ -47,6 +47,7 @@
       a {
 	  text-decoration: none;
 	  color: #17a2b8;
+	  font-family: 'Roboto Mono', monospace;
       }
 
       ul {
@@ -259,6 +260,30 @@
 	  right: -5px;
       }
       
+      .about-wrapper {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	  padding-bottom: 50px;
+	  padding-top: 50px;
+	  gap: 100px;
+      }
+
+      #skills {
+	  display: flex;
+	  justify-content: space-evenly;
+	  background-color: var(--previewShadow);
+      }
+
+      .social-links {
+	  display: grid;
+	  align-content: center;
+	  text-align: center;
+      }
+      
+      #social_img {
+	  width: 100%;
+      }
+      
       @media screen and (max-width: 1000px) {
 	  .main-container {
 	      width: 95%;
@@ -286,7 +311,7 @@
       <section class="s1">
 	<div class="main-container">
 	  <div class="greeting-wrapper">
-	    <h1>Hi, I'am Rodion Sibov</h1>
+	    <h1>Hi, I'am Rodion</h1>
 	  </div>
 
 	  <div class="intro-wrapper">
@@ -337,7 +362,44 @@
 
       <section class="s2">
 	<div class="main-container">
-	  About
+
+	  <div class="about-wrapper">
+	    <div class="about-me">
+	      <h4>More about me</h4>
+	      <p>I am a follower of clean code and I pay close attention to the small details. I'm confident, hard working and dependable.</p>
+	      <p>I am engaged in front end development, user interface design, accessibility + usability, and
+digital publishing workflows committed to open access.</p>
+
+	    <hr>
+	    <h4>Top Expertise</h4>
+	    <p>Front End developer with primary focus on CSS:<a href="#" target="_blank">Download Resume</a></p>
+
+	    <div id="skills">
+	      <ul>
+		<li>Python</li>
+		<li>Django</li>
+		<li>JavaScript</li>
+		<li>React</li>
+		<li>Postgres</li>
+	      </ul>
+	      <ul>
+		<li>Google Maps API</li>
+		<li>JS Charts</li>
+		<li>AWS (RDS/S3)</li>
+		<li>Heroku</li>
+		<li>HTML/CSS</li>
+	      </ul>
+	    </div>
+	    </div>
+	    
+	    <div class="social-links">
+	      <img id="social_img" src="https://picsum.photos/id/1/500">
+	      <h3>Find me on Twitter & Youtube</h3>
+	      <a href="#" target="_blank">Youtube: @rodion</a>
+	      <br>
+	      <a href="#" target="_blank">Twitter: @rodion</a>
+	    </div>
+	  </div>
 	</div>
       </section>
       
