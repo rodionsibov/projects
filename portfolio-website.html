@@ -5,34 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    
+    <link id="theme-style" rel="stylesheet" type="text/css" href="default.css">
 
     <title>Rodion - Web developer</title>
     <style>
 
-      :root {
-	  --mainColor: #eaeaea;
-	  --secondaryColor: #fff;
-
-	  --borderColor: #c1c1c1;
-	  
-	  --mainText: black;
-	  --secondaryText: #4b5156;
-	  
-	  --themeDotBorder: #24292e;
-
-	  --previewBg: rgba(251, 249, 243, 0.8);
-	  --previewShadow: #f0ead6;
-
-	  --buttonColor: black;
-      }
-
-
       html, body {
 	  padding: 0;
 	  margin: 0;
-	  
+      }
+
+      body * {
+	  transition: 0.3s;
       }
 
       h1, h2, h3, h4, h5, h6, strong {
@@ -359,6 +344,7 @@
 	  color: #fff;
 	  background-color: var(--buttonColor);
 	  border: none;
+	  cursor: pointer;
       }
 
 
@@ -410,10 +396,10 @@
 	      <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
 	      
 	      <div id="theme-options-wrapper">
-		<div id="light-mode" class="theme-dot"></div>
-		<div id="blue-mode" class="theme-dot"></div>
-		<div id="green-mode" class="theme-dot"></div>
-		<div id="purple-mode" class="theme-dot"></div>
+		<div data-mode="light" id="light-mode" class="theme-dot"></div>
+		<div data-mode="blue" id="blue-mode" class="theme-dot"></div>
+		<div data-mode="green" id="green-mode" class="theme-dot"></div>
+		<div data-mode="purple" id="purple-mode" class="theme-dot"></div>
 	      </div>
 
 	      <p id="settings-note">*Theme settings will be saved <br>for your next visit</p>
@@ -487,36 +473,36 @@
 	  <div class="post-wrapper">
 
 	    <div>
-	    <div class="post">
-	      <img class="thumbnail" src="https://picsum.photos/400?random=1">
-	      <div class="post-preview">
-		<h6 class="post-title">Laboratory Management System</h6>
-		<p class="post-intro">Designed built & mantained a the lab management system for FOI Labaratories</p>
-		<a href="#">Read More</a>
+	      <div class="post">
+		<img class="thumbnail" src="https://picsum.photos/400?random=1">
+		<div class="post-preview">
+		  <h6 class="post-title">Laboratory Management System</h6>
+		  <p class="post-intro">Designed built & mantained a the lab management system for FOI Labaratories</p>
+		  <a href="#">Read More</a>
+		</div>
 	      </div>
-	    </div>
 	    </div>
 	    
 	    <div>
-	    <div class="post">
-	      <img class="thumbnail" src="https://picsum.photos/400?random=2">
-	      <div class="post-preview">
-		<h6 class="post-title">Online Store - CoursePost Title</h6>
-		<p class="post-intro">Online store with paypal payments integration and guest user shoping </p>
-		<a href="#">Read More</a>
+	      <div class="post">
+		<img class="thumbnail" src="https://picsum.photos/400?random=2">
+		<div class="post-preview">
+		  <h6 class="post-title">Online Store - CoursePost Title</h6>
+		  <p class="post-intro">Online store with paypal payments integration and guest user shoping </p>
+		  <a href="#">Read More</a>
+		</div>
 	      </div>
-	    </div>
 	    </div>
 
 	    <div>
-	    <div class="post">
-	      <img class="thumbnail" src="https://picsum.photos/400?random=3">
-	      <div class="post-preview">
-		<h6 class="post-title">Membership Website</h6>
-		<p class="post-intro">Modulized guide for online courses with step by step instructions</p>
-		<a href="#">Read More</a>
+	      <div class="post">
+		<img class="thumbnail" src="https://picsum.photos/400?random=3">
+		<div class="post-preview">
+		  <h6 class="post-title">Membership Website</h6>
+		  <p class="post-intro">Modulized guide for online courses with step by step instructions</p>
+		  <a href="#">Read More</a>
+		</div>
 	      </div>
-	    </div>
 	    </div>
 
 	  </div>
@@ -545,6 +531,40 @@
 
 	</div>
       </section>
+      
+      <script>
+	const theme = localStorage.getItem('theme');
+	if (theme == null) {
+	    setTheme('light')
+	} else {
+	    setTheme(theme)
+	}
 
+	const themeDots = document.querySelectorAll('.theme-dot');
+
+	for (let i = 0; themeDots.length > i; i++) {
+	    themeDots[i].addEventListener('click', function(){
+		let mode = this.dataset.mode
+		setTheme(mode)
+	    })
+	}
+	
+	function setTheme(mode) {
+	    if (mode == 'light') {
+		document.querySelector('#theme-style').href = 'default.css';
+	    }
+	    if (mode == 'blue') {
+		document.querySelector('#theme-style').href = 'blue.css';
+	    }
+	    if (mode == 'green') {
+		document.querySelector('#theme-style').href = 'green.css';
+	    }
+	    if (mode == 'purple') {
+		document.querySelector('#theme-style').href = 'purple.css';
+	    }
+
+	    localStorage.setItem('theme', mode);
+	}
+      </script>
     </body>
   </head>
