@@ -21,6 +21,9 @@
 	  --secondaryText: #4b5156;
 	  
 	  --themeDotBorder: #24292e;
+
+	  --previewBg: rgba(251, 249, 243, 0.8);
+	  --previewShadow: #f0ead6;
       }
 
 
@@ -71,7 +74,7 @@
       }
 
       .main-container {
-	  width: 900px;
+	  width: 1000px;
 	  margin: 0 auto;
       }
 
@@ -205,15 +208,76 @@
 
       .right-column {
 	  grid-area: right-column;
+	  display: grid;
+	  align-content: center;
+	  padding-top: 50px;
+	  padding-bottom: 50px;
       }
 
+      #preview-shadow {
+	  background-color: var(--previewShadow);
+	  width: 300px;
+	  height: 180px;
+	  padding-left: 30px;
+	  padding-top: 30px;
+      }
       
+      #preview {
+	  width: 300px;
+	  border: 1.5px solid #17a2b8;
+	  background-color: var(--previewBg);
+	  padding: 15px;
+	  position: relative;
+      }
+      
+      .corner {
+	  width: 7px;
+	  height: 7px;
+	  border-radius: 50%;
+	  border: 1.5px solid #17a2b8;
+	  background-color: #fff;
+	  position: absolute;
+      }
 
-      @media screen and (max-width: 900px) {
+      #corner-tl {
+	  top: -5px;
+	  left: -5px;
+      }
+
+      #corner-tr {
+	  top: -5px;
+	  right: -5px;
+      }
+
+      #corner-bl {
+	  bottom: -5px;
+	  left: -5px;
+      }
+
+      #corner-br {
+	  bottom: -5px;
+	  right: -5px;
+      }
+      
+      @media screen and (max-width: 1000px) {
 	  .main-container {
 	      width: 95%;
 	  }
-	  
+      }
+
+      @media screen and (max-width: 800px) {
+	  .intro-wrapper {
+	      grid-template-columns: 1fr;
+	      grid-template-areas:
+		  'nav-wrapper'
+		  'left-column'
+		  'right-column';
+	  }
+
+	  .right-column {
+	      justify-content: center;
+	  }
+
       }
 
     </style>
@@ -254,7 +318,17 @@
 	    </div>
 
 	    <div class="right-column">
-	      right-column
+	      
+	      <div id="preview-shadow">
+		<div id="preview">
+		  <div id="corner-tl" class="corner"></div> 
+		  <div id="corner-tr" class="corner"></div> 
+		  <h3>What I Do</h3>
+		  <p>I am a web developer. My passion is to develop modern and responsive websites.</p>
+		  <div id="corner-bl" class="corner"></div> 
+		  <div id="corner-br" class="corner"></div> 
+		</div>
+	      </div>
 	    </div>
 	  </div>
 
