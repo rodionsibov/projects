@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Vanilla JS tutorial by Themesberg</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+  </head>
+  <body>
+
+    <div class="container mt-5">
+      <button id="tooltip" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+	Tooltip on top
+      </button>
+    </div>
+    
+    <div class="container mt-5">
+      <button id="toggleCardButton" type="button" class="btn btn-primary mb-2">Toggle Card</button>
+      <div id="card" class="card collapse show" style="width: 18rem;">
+        <img src="https://dev-to-uploads.s3.amazonaws.com/i/rphqzfoh2cbz3zj8m8t1.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Freecodecamp.org</h5>
+          <p class="card-text">Awesome resource to learn programming from.</p>
+          <a href="#" class="btn btn-primary">Learn coding for free</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+    <script>
+      var tooltipElement = document.getElementById('tooltip');
+      var tooltip = new bootstrap.Tooltip(tooltipElement);
+
+      var toggleButton = document.getElementById('toggleCardButton');
+      var card = document.getElementById('card');
+
+      var collapsableCard = new bootstrap.Collapse(card, {toggle: false});
+
+      toggleButton.addEventListener('click', function () {
+	  // do something when the button is being clicked
+	  collapsableCard.toggle();
+      });
+
+    </script>
+  </body>
+</html>
