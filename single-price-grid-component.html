@@ -13,8 +13,101 @@
 
       html {
 	  font-family: 'Karla', sans-serif;
+	  font-size: 16px;
+      }
+
+      * {
+	  padding: 0;
+	  margin: 0;
+	  box-sizing: border-box;
+      }
+
+      section {
+	  min-height: 100vh;
+	  width: 100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  background-color: hsl(204, 43%, 93%);
+	  padding: 100px 30px;
       }
       
+      .container {
+	  display: grid;
+	  grid-template-columns: 100%;
+	  max-width: 550px;
+	  margin: 0 auto;
+	  border-radius: 8px;
+	  box-shadow: 0 0 14px 1px #00000024;
+	  overflow: hidden;
+      }
+
+      .item {
+	  padding: 30px;
+      }
+
+      .item-1 {
+	  background-color: white;
+      }
+
+      .item-1 h2 {
+	  color: hsl(179, 62%, 43%);
+	  font-weight: 700;
+	  font-size: 1.3rem;
+	  margin-bottom: 15px;
+      }
+
+      .item-1 h3 {
+	  color: hsl(71, 73%, 54%);
+	  font-weight: 700;
+	  font-size: 1rem;
+	  margin-bottom: 15px;
+      }
+
+      .item-1 p {
+	  color: hsl(218, 22%, 67%);
+	  font-size: 1rem;
+	  line-height: 1.5rem;
+      }
+
+      .item-2 {
+	  background-color: hsl(179, 62%, 43%);
+      }
+
+      .item-2 h3 {
+	  color: white;
+	  font-weight: 400;
+	  font-size: 1.2rem;
+	  margin-bottom: 15px;
+      }
+
+      .item-2 p {
+	  color: hsl(204, 43%, 93%);
+	  font-size: 1rem;
+	  font-weight: 400;
+	  margin-bottom: 10px;
+      }
+
+      .item-2 p span {
+	  font-size: 2.5rem;
+	  font-weight: 700;
+      }
+
+      .item-2 .button {
+	  text-align: center;
+	  width: 100%;
+	  padding: 15px;
+	  background-color: hsl(71, 73%, 54%);
+	  display: inline-block;
+	  color: white;
+	  text-decoration: none;
+	  font-size: 1.2rem;
+	  margin-top: 30px;
+	  font-weight: 700;
+	  box-shadow: 0 4px 10px 1px #00000033;
+	  border-radius: 8px;
+      }
+
     </style>
   </head>
   <body>
@@ -28,17 +121,29 @@
 
 	<div class="item item-2">
 	  <h3>Monthly Subscription</h3>
-	  <p><span>&dollar;</span> 29 per month</p>
+	  <p><span>&dollar;29</span> per month</p>
 	  <p>Full access for less than &dollar; 1 a day</p>
 	  <a href="#" type="button" class="button">Sign Up</a>
 	</div>
 
 	<div class="item item-3">
 	  <h3>Why Us</h3>
-	  <p>Quisque sagittis est a leo placerat, faucibus lacinia metus scelerisque. Sed auctor ac nunc eu rutrum. Duis nec est id velit convallis porta. Donec pretium porta nisi a commodo. In est purus, feugiat eget leo non, facilisis molestie quam.</p>
+	  <p>Quisque sagittis est a leo placerat<br>
+	    Faucibus lacinia metus scelerisque<br>
+	    Sed auctor ac nunc eu rutrum<br>
+	    Duis nec est id velit convallis porta<br>
+	    Donec pretium porta nisi a commodo<br>
+	    In est purus, feugiat eget leo non<br>
+	    Facilisis molestie quam.</p>
 	</div>
       </div>
     </section>
+
+
+
+    <footer style="background-color: #333; color: #fff; padding: 5px; text-align: center;">
+      <p><small>Coded by <a style="color: #fff;" href="https://github.com/rodionsibov">Rodion Sibov</a> | 2020</small></p>
+    </footer>
   </body>
 </html>
 
