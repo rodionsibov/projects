@@ -98,18 +98,35 @@
       </div>
     </div>
 
+    <footer style="background-color: #333; color: #fff; padding: 5px; text-align: center;">
+      <p><small>Coded by <a style="color: #fff;" href="https://github.com/rodionsibov">Rodion Sibov</a> | 2020</small></p>
+    </footer>
+
+    
     <script>
       const text = document.querySelector('.content h2');
       const popup = document.querySelector('.popup');
 
       text.addEventListener('click', () => {
 	  popup.classList.add('active');
+	  copyToClipboard();
 	  //setTimeout(() => popup.classList.remove('active'), 1000);
       })
 
       popup.addEventListener('animationend', () => {
 	  popup.classList.remove('active');
       })
+
+      function copyToClipboard() {
+	  const textarea = document.createElement('textarea');
+	  textarea.setAttribute('readonly', '');
+	  textarea.style.position = 'absolute';
+	  textarea.value = text.innerText;
+	  document.body.appendChild(textarea);
+	  textarea.select();
+	  document.execCommand('copy');
+	  document.body.removeChild(textarea);
+      }
       
       </script>
   </body>
