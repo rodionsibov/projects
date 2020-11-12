@@ -3,6 +3,7 @@
 The more you practice, the better your skills will become. You are free to modify, save, share, use or do whatever you want with them. Experiment and have fun! 😉
 
 
+1. https://rodionsibov.github.io/projects/dark-theme-switcher.html
 1. https://rodionsibov.github.io/projects/custom-cursor.html
 1. https://rodionsibov.github.io/projects/copy-to-clipboard-js.html
 1. https://rodionsibov.github.io/projects/signup-form-js-validation.html
