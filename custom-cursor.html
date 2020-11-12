@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>A custom cursor for website</title>
 
     <style>
@@ -16,7 +16,7 @@
 	  padding: 0;
 	  box-sizing: border-box;
 	  cursor: none;
-	  font-family: sans;
+	  font-family: 'Roboto', sans-serif;
       }
 
       section {
@@ -27,6 +27,7 @@
 	  align-items: center;
 	  justify-content: center;
 	  color: white;
+	  font-size: 1.5rem;
       }
 
       .cursor {
@@ -73,8 +74,27 @@
 	      transform: translate(-50%, -50%) scale(5);
 	  }
       }
-      
-      </style>
+
+      @media only screen and (max-width: 768px) {
+
+	  .cursor {
+	      width: 60px;
+	      height: 60px;
+	  }
+
+	  @keyframes click {
+	      0% {
+		  opacity: 1;
+		  transform: translate(-50%, -50%) scale(1);
+	      }
+	      100% {
+		  opacity: 0;
+		  transform: translate(-50%, -50%) scale(9);
+	      }
+	  }
+	  
+      }
+    </style>
   </head>
   <body>
 
