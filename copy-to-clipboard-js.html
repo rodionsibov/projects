@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <title>Copy to Clipboard</title>
+
+    <style>
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+      }
+
+      body {
+	  font-family: 'Nunito', sans-serif;
+	  font-size: 18px;
+	  background-color: rgb(173, 236, 236);
+	  font-weight: 300;
+      }
+
+      .container {
+	  min-height: 100vh;
+	  width: 100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+      }
+
+      .content {
+	  background-color: white;
+	  color: black;
+	  border-radius: 10px;
+	  padding: 30px;
+	  position: relative;
+      }
+
+      .content h2 {
+	  cursor: pointer;
+	  font-size: 35px;
+	  font-weight: 700;
+      }
+
+      .popup {
+	  position: absolute;
+	  top: -100px;
+	  left: 50%;
+	  background-color: white;
+	  padding: 10px;
+	  border-radius: 5px;
+	  transform: translate(-50%, -20px);
+	  opacity: 0;
+	  pointer-events: none;
+      }
+
+      .popup.active {
+	  animation: popup 1s ease-in-out forwards;
+      }
+
+      @keyframes popup {
+	  0% {
+	      opacity: 0;
+	      pointer-events: none;
+	      transform: translate(-50%, -20px);
+	  }
+	  40% {
+	      opacity: 1;
+	      pointer-events: auto;
+	      transform: translate(-50%, 0);
+	  }
+	  80% {
+	      opacity: 1;
+	      pointer-events: auto;
+	      transform: translate(-50%, 0);
+	  }
+	  100% {
+	      opacity: 0;
+	      pointer-events: none;
+	      transform: translate(-50%, -20px);
+	  }
+
+      }
+      
+      </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+	<h2>Hello World!</h2>
+	<div class="popup">
+	  <h4>Copied 📋</h4>
+	</div>
+      </div>
+    </div>
+
+    <script>
+      const text = document.querySelector('.content h2');
+      const popup = document.querySelector('.popup');
+
+      text.addEventListener('click', () => {
+	  popup.classList.add('active');
+	  //setTimeout(() => popup.classList.remove('active'), 1000);
+      })
+
+      popup.addEventListener('animationend', () => {
+	  popup.classList.remove('active');
+      })
+      
+      </script>
+  </body>
+</html>
