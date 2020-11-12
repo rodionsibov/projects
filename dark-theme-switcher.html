@@ -35,17 +35,61 @@
 
       body {
 	  font-family: 'Roboto', sans-serif;
-	  
+	  color: var(--color-4);
       }
+
+      section {
+	  background-color: var(--color-1);
+	  min-height: 100vh;
+	  width: 100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+      }
+
+      .container {
+	  width: 90%;
+	  margin: 0 auto;
+	  background-color: var(--color-2);
+	  border-radius: 8px;
+	  padding: 20px;
+	  max-width: 500px;
+      }
+
+      h1 {
+	  font-size: 30px;
+	  font-weight: 500;
+	  text-transform: uppercase;
+      }
+
+      p {
+	  margin-top: 20px;
+	  font-size: 16px;
+	  line-height: 24px;
+      }
+
+      button {
+	  background-color: var(--color-4);
+	  padding: 10px 30px;
+	  border: none;
+	  font-size: 24px;
+	  text-transform: uppercase;
+	  color: var(--color-2);
+	  border-radius: 4px;
+	  margin-top: 20px;
+	  cursor: pointer;
+      }
+
 
     </style>
   </head>
-  <body>
+  <body data-theme="light">
     
     <section>
       <div class="container">
 	<h1>This is title</h1>
-	<p>Vestibulum a nibh facilisis, iaculis diam facilisis, semper metus. Maecenas ut molestie turpis. Cras faucibus lacinia lacinia. Pellentesque quis lorem at risus malesuada pretium id a turpis. Praesent eleifend tellus nibh, at pulvinar elit faucibus et. Quisque mollis diam ac fermentum euismod. Proin et hendrerit turpis. Vivamus interdum nisl lorem, eget tempus magna vehicula sed. Quisque ac libero velit. Sed justo lectus, sodales ut commodo eget, egestas in massa.</p>
+	<p>Vestibulum a nibh facilisis, iaculis diam facilisis, semper metus. Maecenas ut molestie turpis. Cras faucibus lacinia lacinia. Pellentesque quis lorem at risus malesuada pretium id a turpis. </p>
+	<p>Praesent eleifend tellus nibh, at pulvinar elit faucibus et. Quisque mollis diam ac fermentum euismod. Proin et hendrerit turpis. Vivamus interdum nisl lorem, eget tempus magna vehicula sed. Quisque ac libero velit. Sed justo lectus, sodales ut commodo eget, egestas in massa.</p>
 	<button>Hello!</button>
       </div>
     </section>
