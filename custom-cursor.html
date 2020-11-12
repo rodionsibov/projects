@@ -38,6 +38,35 @@
 	  transform: translate(-50%, -50%);
       }
 
+      .cursor::after,
+      .cursor::before {
+	  content: '';
+	  position: absolute;
+	  width: 5px;
+	  height: 5px;
+	  left: 50%;
+	  top: 50%;
+	  transform: translate(-50%, -50%);
+	  background-color: white;
+	  border-radius: 50px;
+      }
+      
+      .cursor::before {
+	  background-color: red;
+	  transform: translate(-50%, -50%) scale(3);
+      }
+
+      @keyframes click {
+	  0% {
+	      opacity: 1;
+	      transform: translate(-50%, -50%) scale(1);
+	  }
+	  100% {
+	      opacity: 0;
+	      transform: translate(-50%, -50%) scale(5);
+	  }
+      }
+      
       </style>
   </head>
   <body>
