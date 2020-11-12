@@ -62,7 +62,7 @@
 	  text-transform: uppercase;
       }
 
-      p {
+      .container p {
 	  margin-top: 20px;
 	  font-size: 16px;
 	  line-height: 24px;
@@ -80,6 +80,54 @@
 	  cursor: pointer;
       }
 
+      .theme-switcher {
+	  position: absolute;
+	  right: 30px;
+	  top: 10px;
+      }
+
+      input {
+	  width: 0;
+	  height: 0;
+	  visibility: hidden;
+      }
+
+      label {
+	  cursor: pointer;
+	  display: block;
+	  text-indent: -9999px;
+	  width: 60px;
+	  height: 30px;
+	  background-color: white;
+	  border-radius: 50px;
+	  position: relative;
+	  transition: 0.5s ease background-color;
+      }
+
+      label::after {
+	  content: '';
+	  position: absolute;
+	  width: 20px;
+	  height: 20px;
+	  border-radius: 50px;
+	  background-color: rgb(19, 16, 31);
+	  top: 50%;
+	  left: 5px;
+	  transform: translateY(-50%);
+	  transition: 0.5s ease;
+      }
+
+      input:checked + label {
+	  background-color: rgb(19, 16, 31);
+	  border: 2px solid white;
+      }
+
+      input:checked + label::after {
+	  background-color: white;
+	  left: calc(100% - 25px);
+      } 
+
+
 
     </style>
   </head>
@@ -89,7 +137,7 @@
       <div class="container">
 	<h1>This is title</h1>
 	<p>Vestibulum a nibh facilisis, iaculis diam facilisis, semper metus. Maecenas ut molestie turpis. Cras faucibus lacinia lacinia. Pellentesque quis lorem at risus malesuada pretium id a turpis. </p>
-	<p>Praesent eleifend tellus nibh, at pulvinar elit faucibus et. Quisque mollis diam ac fermentum euismod. Proin et hendrerit turpis. Vivamus interdum nisl lorem, eget tempus magna vehicula sed. Quisque ac libero velit. Sed justo lectus, sodales ut commodo eget, egestas in massa.</p>
+	<p>Praesent eleifend tellus nibh, at pulvinar elit faucibus et. Quisque mollis diam ac fermentum euismod. Proin et hendrerit turpis. Vivamus interdum nisl lorem, eget tempus magna vehicula sed. </p>
 	<button>Hello!</button>
       </div>
     </section>
@@ -107,7 +155,14 @@
 
     
     <script>
-      
+      const input = document.querySelector('.theme-switcher input');
+      input.addEventListener('change', (e) => {
+	  if (e.target.checked) {
+	      document.body.setAttribute('data-theme', 'dark');
+	  } else {
+	      document.body.setAttribute('data-theme', 'light');
+	  }
+      })
 
     </script>
   </body>
