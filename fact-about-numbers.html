@@ -79,7 +79,8 @@
       .number-fact {
 	  margin-top: 10px;
 	  height: auto;
-	  font-size: 20px;
+	  font-size: 19px;
+	  line-height: 26px;
 	  
       }
       
@@ -90,7 +91,7 @@
     <section>
       <div class="container">
 	<form>
-	  <input type="number" placeholder="Enter a number">
+	  <input type="number" min="1" required placeholder="Enter a number">
 	  <button type="submit">Go</button>
 	</form>
 	<div class="number-fact">
@@ -106,6 +107,25 @@
 
     
     <script>
+      
+      const form = document.querySelector('form');
+      const factDiv = document.querySelector('.number-fact');
+
+      form.addEventListener('submit', (e) => {
+	  e.preventDefault();
+	  const number = e.target.querySelector('input[type="number"]').value;
+	  const loadText = 'Wait a little bit ⏳';
+	  factDiv.innerHTML = loadText;
+	  const baseURL = 'https://cors-anywhere.herokuapp.com/http://numbersapi.com/';
+	  fetch(baseURL + number, {
+	      method: "GET",
+	      headers: {
+		  'x-requested-width': 'text/plain'
+	      }
+	  })
+	      .then(res => res.text())
+	      .then(text => factDiv.innerHTML = text)
+      });
       
     </script>
   </body>
