@@ -128,8 +128,25 @@
       }
 
       @media only screen and (min-width: 700px) {
-	  .container {
-	      
+	  .container .main {
+	      flex-direction: row;
+	  }
+	  .container .left {
+	      flex: 0.7;
+	      display: grid;
+	      grid-template: 1fr 1fr / 1fr 1fr;
+	      grid-gap: 20px;
+	  }
+	  .container .card {
+	      margin: 0;    
+	  }
+	  .container .right {
+	      flex: 0.3;
+	      margin: 30px;
+	  }
+	  .container .head h1 {
+	      font-size: 32px;
+	      line-height: 44px;
 	  }
       }
 
