@@ -47,22 +47,22 @@
       }
 
       .container p {
-	  font-size: 2rem;
-	  line-height: 3rem;
-	  text-align: justify;
+	  font-size: 1.5rem;
+	  line-height: 2.2rem;
+	  text-align: center;
       }
       
       button {
 	  margin-top: 4rem;
 	  width: fit-content;
 	  padding: 2rem;
-	  font-size: 2rem;
+	  font-size: 1.5rem;
 	  background-color: rgb(25, 28, 29);
 	  color: white;
 	  border: none;
 	  border-radius: 4px;
 	  cursor: pointer;
-	  align-self: flex-end;
+	  align-self: center;
       }
       
     </style>
@@ -72,7 +72,7 @@
     <section>
       <div class="container">
 	<div class="joke">
-	  <p>Phasellus purus magna, posuere sed orci eget, feugiat tempus est. Vestibulum nec enim in leo elementum laoreet in ut urna.</p>
+	  <p></p>
 	</div>
 	<button>Get a Dad Joke</button>
       </div>
@@ -86,8 +86,31 @@
     
     <script>
       
-//      https://icanhazdadjoke.com/
+      const button = document.querySelector('.container button');
+      const jokeText = document.querySelector('.container p');
 
+      document.addEventListener('DOMContentLoaded', getJoke);
+      button.addEventListener('click', getJoke);
+
+      function getJoke () {
+	  fetch('https://icanhazdadjoke.com/', {
+	      headers: {
+		  'Accept': 'application/json'
+	      }
+	  }).then(data => data.json())
+	      .then(obj => jokeText.innerHTML = obj.joke)
+      }
+
+      // async function getJoke () {
+      // 	  const jokeData = await fetch('https://icanhazdadjoke.com/', {
+      // 	      headers: {
+      // 		  'Accept': 'application/json'
+      // 	      }
+      // 	  });
+      // 	  const jokeObject = await jokeData.json();
+      // 	  jokeText.innerHTML = jokeObject.joke;
+      // };
+      
     </script>
   </body>
 </html>
