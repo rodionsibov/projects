@@ -31,16 +31,16 @@
 
       h1 {
 	  font-size: 90px;
+	  text-align: center;
       }
 
-      
     </style>
   </head>
   <body>
     
     <section>
       <div class="container">
-	<h1>00:00</h1>
+	<h1></h1>
       </div>
     </section>
 
@@ -52,6 +52,29 @@
     
     <script>
       
+      const timeH = document.querySelector('h1');
+      let timeSecond = 5;
+
+      displayTime(timeSecond);
+      
+      const countDown = setInterval(() => {
+	  timeSecond--;
+	  displayTime(timeSecond);
+	  if (timeSecond <= 0 || timeSecond < 1) {
+	      endTime();
+	      clearInterval(countDown)
+	  }
+      }, 1000);
+
+      function displayTime (second) {
+	  const min = Math.floor(second / 60);
+	  const sec = Math.floor(second % 60);
+	  timeH.innerHTML = `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0' : ''}${sec}`
+      }
+
+      function endTime () {
+	  timeH.innerHTML = 'Time Out';
+      }
 
     </script>
   </body>
