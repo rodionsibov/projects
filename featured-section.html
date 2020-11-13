@@ -17,6 +17,15 @@
 	  box-sizing: border-box;
       }
 
+      body {
+	  --color-1: #2f3144;
+	  --color-2: #ffffff;
+	  --color-3: #ffbc00;
+	  --color-4: #da8f00;
+	  --color-5: #e7e8ec;
+	  
+      }
+
       html {
 	  font-family: 'Roboto', sans-serif;
       }
@@ -25,9 +34,105 @@
 	  min-height: 100vh;
 	  width: 100%;
 	  display: flex;
+	  background-color: var(--color-2);
 	  align-items: center;
 	  justify-content: center;
       }
+      
+      .container {
+	  padding: 100px 30px;
+	  width: 100%;
+	  max-width: 1000px;
+      }
+      
+      .container .head h1 {
+	  font-size: 24px;
+	  line-height: 30px;
+	  color: var(--color-1);
+	  margin-bottom: 50px;
+	  max-width: 700px;
+      }
+
+      .container .main {
+	  display: flex;
+	  flex-direction: column;
+      }
+
+      .left .card {
+	  width: 100%;
+	  padding: 40px 20px;
+	  border-radius: 10px;
+	  margin-bottom: 20px;
+	  transition: 0.3s ease-in-out background-color;
+      }
+
+      .left .card ion-icon {
+	  padding: 15px;
+	  background-color: var(--color-3);
+	  border-radius: 50%;
+	  font-size: 25px;
+	  color: var(--color-2);
+      }
+
+      .left .card h2 {
+	  font-size: 20px;
+	  text-transform: capitalize;
+	  color: var(--color-1);
+	  margin: 10px 0;
+      }
+
+      .left .card p {
+	  line-height: 20px;
+      }
+
+      .left .card:hover {
+	  background-color: var(--color-3);
+      }
+
+      .left .card:hover ion-icon {
+	  background-color: var(--color-2);
+	  color: var(--color-1);
+      }
+
+      .right {
+	  border: 2px solid var(--color-5);
+	  padding: 20px;
+	  border-radius: 10px;
+      }
+
+      .right h1 {
+	  font-size: 22px;
+	  padding-left: 20px;
+      } 
+
+      .right .blog-item {
+	  padding: 10px 20px;
+	  margin-top: 20px;
+	  cursor: pointer;
+	  border-radius: 10px;
+	  transition: 0.3s ease-in-out background-color;
+    }
+
+      .blog-item h3 {
+	  font-size: 18px;
+	  line-height: 24px;
+      }
+      
+      .blog-item p {
+	  color: var(--color-4);
+	  margin-top: 10px;
+      }
+
+      .blog-item:hover {
+	  background-color: var(--color-5);
+      }
+
+      @media only screen and (min-width: 700px) {
+	  .container {
+	      
+	  }
+      }
+
 
     </style>
   </head>
@@ -35,9 +140,11 @@
     
     <section>
       <div class="container">
+
 	<div class="head">
 	  <h1>Programmatically or manually monitor, protect and report your data</h1>
 	</div>
+
 	<div class="main">
 	  <div class="left">
 
@@ -49,19 +156,19 @@
 	    
 	    <div class="card">
 	      <ion-icon name="layers-outline"></ion-icon>
-	      <h2>Collections</h2>
+	      <h2>Items</h2>
 	      <p>Praesent id dolor turpis. Etiam posuere, mauris in venenatis dictum, est risus gravida magna, ut accumsan ante ante sit amet metus. Suspendisse porttitor est in metus tristique imperdiet.</p>
 	    </div>
 
 	    <div class="card">
 	      <ion-icon name="image-outline"></ion-icon>
-	      <h2>Collections</h2>
+	      <h2>Images</h2>
 	      <p>Praesent id dolor turpis. Etiam posuere, mauris in venenatis dictum, est risus gravida magna, ut accumsan ante ante sit amet metus. Suspendisse porttitor est in metus tristique imperdiet.</p>
 	    </div>
 
 	    <div class="card">
 	      <ion-icon name="code-slash-outline"></ion-icon>
-	      <h2>Collections</h2>
+	      <h2>API Versions</h2>
 	      <p>Praesent id dolor turpis. Etiam posuere, mauris in venenatis dictum, est risus gravida magna, ut accumsan ante ante sit amet metus. Suspendisse porttitor est in metus tristique imperdiet.</p>
 	    </div>
 
