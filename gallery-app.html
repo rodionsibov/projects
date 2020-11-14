@@ -59,7 +59,7 @@
       }
 
       form {
-	  margin-top: 10px;
+	  margin-top: 20px;
 	  width: 80%;
 	  max-width: 300px;
 	  position: relative;
@@ -133,7 +133,16 @@
 	  object-fit: cover;
       }
 
-
+      @media only screen and (min-width: 900px) {
+	  .container {
+	      max-width: 1100px;
+	      padding: 100px;
+	  }
+	  .header {
+	      flex-direction: row;
+	      justify-content: space-between;
+	  }
+      }
 
     </style>
   </head>
