@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
     <title>Photo Gallery App </title>
 
     <style>
@@ -50,6 +51,81 @@
 	  justify-content: center;
 	  flex-direction: column;
       }
+      
+      .header h1 {
+	  font-size: 40px;
+	  font-weight: 900;
+	  letter-spacing: -1px;
+      }
+
+      form {
+	  margin-top: 10px;
+	  width: 80%;
+	  max-width: 300px;
+	  position: relative;
+      }
+      
+      input {
+	  border: none;
+	  border-bottom: 1px solid rgba(128, 128, 128, 0.479);
+	  margin-bottom: 10px;
+	  font-size: 20px;
+	  outline: none;
+	  width: 100%;
+	  color: grey;
+	  background-color: transparent;
+	  font-family: inherit;
+
+      }
+
+      input::placeholder {
+	  opacity: 0.5;
+	  color: grey;
+      }
+
+      form ion-icon {
+	  position: absolute;
+	  right: 0;
+	  opacity: 0.5;
+	  color: grey;
+	  font-size: 20px;
+
+      }
+
+      .gallery {
+	  width: 100%;
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	  margin-top: 50px;
+	  grid-gap: 20px;
+      }
+
+      .item {
+	  width: 100%;
+	  height: 300px;
+	  position: relative;
+	  overflow: hidden;
+	  border-radius: 8px;
+	  transition: 0.3s ease box-shadow;
+      }
+      
+      .item:hover {
+	  box-shadow: 0 0 20px 3px #00000042;
+      }
+
+      .item h3 {
+	  width: 100%;
+	  padding: 20px;
+	  position: absolute;
+	  background-color: #00000040;
+	  color: aliceblue;
+	  bottom: -70px;
+	  transition: 0.5s ease-in-out bottom;
+      }
+      
+      .item:hover h3 {
+	  bottom: 0;
+      }
 
       img {
 	  height: 100%;
@@ -81,31 +157,36 @@
 	      <img src="https://picsum.photos/500" alt="">
 	      <h3>Photographer Name</h3>
 	    </a>
-
+	  </div>
+	  
 	  <div class="item">
 	    <a href="#">
 	      <img src="https://picsum.photos/500" alt="">
 	      <h3>Photographer Name</h3>
 	    </a>
-
+	  </div>
+	    
 	  <div class="item">
 	    <a href="#">
 	      <img src="https://picsum.photos/500" alt="">
 	      <h3>Photographer Name</h3>
 	    </a>
-
+	  </div>
+	    
 	  <div class="item">
 	    <a href="#">
 	      <img src="https://picsum.photos/500" alt="">
 	      <h3>Photographer Name</h3>
 	    </a>
-
+	  </div>
+	  
 	  <div class="item">
 	    <a href="#">
 	      <img src="https://picsum.photos/500" alt="">
 	      <h3>Photographer Name</h3>
 	    </a>
-
+	  </div>
+	  
 	  </div>
       </div>
     </section>
@@ -114,7 +195,8 @@
       <p><small>Coded by <a style="color: #fff;" href="https://github.com/rodionsibov">Rodion Sibov</a> | 2020</small></p>
     </footer>
 
-    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+    
     <script>
       // https://api.pexels.com/v1
 
