@@ -17,13 +17,76 @@
 	  box-sizing: border-box;
       }
 
+      html {
+	  font-family: 'Roboto', sans-serif;
+      }
+
+      body {
+	  background-color: #dbe2e9;
+      }
+
+      section {
+	  min-height: 100vh;
+	  width: 100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+      }
+
+      img {
+	  height: 100%;
+	  width: 100%;
+	  object-fit: cover;
+      }
+
     </style>
   </head>
   <body>
     
     <section>
       <div class="container">
-	<div >
+
+	<div class="header">
+	  <h1 class="logo">PhotoGallery</h1>
+	  <form>
+	    <input type="text" placeholder="Search Images">
+	    <ion-icon name="search-outline"></ion-icon>
+	  </form>
+	</div>
+
+	<div class="gallery">
+
+	  <div class="item">
+	    <a href="#">
+	      <img src="https://picsum.photos/300" alt="">
+	      <h3>Photographer Name</h3>
+	    </a>
+
+	  <div class="item">
+	    <a href="#">
+	      <img src="https://picsum.photos/300" alt="">
+	      <h3>Photographer Name</h3>
+	    </a>
+
+	  <div class="item">
+	    <a href="#">
+	      <img src="https://picsum.photos/300" alt="">
+	      <h3>Photographer Name</h3>
+	    </a>
+
+	  <div class="item">
+	    <a href="#">
+	      <img src="https://picsum.photos/300" alt="">
+	      <h3>Photographer Name</h3>
+	    </a>
+
+	  <div class="item">
+	    <a href="#">
+	      <img src="https://picsum.photos/300" alt="">
+	      <h3>Photographer Name</h3>
+	    </a>
+
+	  </div>
       </div>
     </section>
     
@@ -33,7 +96,8 @@
 
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <script>
-      
+      // https://api.pexels.com/v1
+
 
     </script>
   </body>
