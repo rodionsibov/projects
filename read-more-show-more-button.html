@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+    <title>Read More / Show More Button</title>
+
+    <style>
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+      }
+
+      html {
+	  font-family: 'Roboto', sans-serif;
+      }
+
+      body {
+	  background-color: whitesmoke;
+      }
+
+      section {
+	  min-height: 100vh;
+	  width: 100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+      }
+
+      .container {
+	  background-color: white;
+	  width: 90%;
+	  max-width: 900px;
+	  margin: 0 auto;
+	  box-shadow: 0 0 61px 7px #5e849c40;
+	  padding: 50px 20px;
+	  border-radius: 8px;
+      }
+
+      .container h1 {
+	  color: dodgerblue;
+	  margin-bottom: 10px;
+	  font-size: 28px;
+      }
+
+      .text {
+	  color: #333;
+	  line-height: 22px;
+      }
+
+      .more-text {
+	  display: none;
+      }
+      
+      .read-more-btn {
+	  cursor: pointer;
+	  padding: 15px 60px;
+	  background-color: dodgerblue;
+	  color: white;
+	  border: none;
+	  outline: none;
+	  border-radius: 4px;
+	  font-size: 20px;
+	  margin-top: 10px;
+	  transition: 0.2s ease-in-out;
+      }
+
+      .read-more-btn:hover {
+	  opacity: 0.9;
+      }
+
+      .text.show-more .more-text {
+	  display: inline;
+      }
+
+      .text.show-more .dots {
+	  display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    
+    <section>
+      <div class="container">
+	<h1>Hello World!</h1>
+	<p class="text">Aliquam commodo dolor velit, dapibus malesuada tellus mattis vitae. Pellentesque magna quam, fringilla a ultricies at, semper at lacus. Donec porta, mauris quis pellentesque eleifend, enim magna <span class="dots">...</span><span class="more-text">placerat metus, nec ullamcorper sapien nibh ac nunc. Donec viverra, elit sit amet elementum congue, sapien felis fringilla ligula, non vestibulum sem ex sit amet felis. Duis mattis justo a vehicula fermentum. Aenean ut orci augue. Pellentesque purus erat, ornare et ipsum non, congue condimentum lorem. Nulla tincidunt eget tortor sed accumsan. Pellentesque malesuada nulla vitae orci elementum, vitae tincidunt turpis mattis. Ut id fermentum felis. Suspendisse nec dictum urna. Morbi lobortis urna vel imperdiet condimentum. Duis condimentum, ipsum a aliquam euismod, velit ipsum sodales enim, a pulvinar ligula turpis at purus. Nulla facilisi. Proin est ante, commodo in ultricies eu, volutpat ultricies ligula.
+	    <br>
+	    <br>
+	    Cras sagittis dui et tristique lacinia. Duis ullamcorper pellentesque tristique. Donec neque risus, congue eu tortor eget, aliquet iaculis purus. Praesent condimentum odio vitae mauris pellentesque feugiat. Donec dapibus vitae quam vitae blandit. Praesent ultricies lectus id mollis faucibus. Praesent cursus dui at posuere auctor. Sed purus tellus, ornare viverra bibendum sit amet, suscipit in arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+	    <br>
+	    <br>
+	    Quisque eu pellentesque metus, non dictum lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut vel ligula sapien. Aliquam dapibus lectus quis eros semper, eu efficitur diam pretium. Ut sit amet nunc lacus. Donec pharetra purus ut ex egestas, et tempor purus semper. Vestibulum facilisis magna eu arcu efficitur, quis commodo nunc semper. Morbi et maximus nunc. Etiam vel vulputate leo, vel commodo nunc. Vestibulum porttitor libero libero, quis semper libero interdum nec. Pellentesque nec sem purus. Sed dui nulla, porttitor ut condimentum quis, consectetur sit amet nisl.<span></p>
+
+	<button class="read-more-btn">Read More</button>
+	
+      </div>
+    </section>
+    
+    <footer style="background-color: #333; color: #fff; padding: 5px; text-align: center;">
+      <p><small>Coded by <a style="color: #fff;" href="https://github.com/rodionsibov">Rodion Sibov</a> | 2020</small></p>
+    </footer>
+
+    <script>
+      const readMoreBtn = document.querySelector('.read-more-btn');
+      const text = document.querySelector('.text');
+
+      readMoreBtn.addEventListener('click', (e) => {
+	  text.classList.toggle('show-more');
+	  if (readMoreBtn.innerText === 'Read More') {
+	      readMoreBtn.innerText = 'Read Less';
+	  } else {
+	      readMoreBtn.innerText = 'Read More';
+	  }
+      })
+      
+    </script>
+  </body>
+</html>
