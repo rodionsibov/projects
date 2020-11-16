@@ -26,7 +26,6 @@
       section {
 	  min-height: 100vh;
 	  width: 100%;
-	  padding: 100px 0;
 	  display: flex;
 	  align-items: center;
 	  justify-content: center;
@@ -84,10 +83,22 @@
 	  display: flex;
 	  align-items: center;
 	  justify-content: center;
+	  padding: 80px;
+	  text-align: center;
       }
 
       .overlay.hide {
 	  display: none;
+      }
+
+      @media only screen and (max-width: 800px) {
+	  .container {
+	      flex-direction: column;
+	  }
+	  .arrow {
+	      padding: 30px 0!Important;
+	      transform: rotate(90deg);
+	  }
       }
 
     </style>
@@ -99,7 +110,7 @@
 
 	<div class="key">
 	  <h1>Pressed Key</h1>
-	  <h2>H</h2>
+	  <h2>Space</h2>
 	</div>
 
 	<div class="arrow">
@@ -108,7 +119,7 @@
 
 	<div class="keyCode">
 	  <h1>Key Code</h1>
-	  <h2>34</h2>
+	  <h2>32</h2>
 	  <p>Click to Copy</p>
 	</div>
 
@@ -116,7 +127,7 @@
     </section>
 
     <div class="overlay">
-      <h1>Press Any Key to Start</h1>
+      <h1>Press any key to start</h1>
     </div>
     
     <footer style="background-color: #333; color: #fff; padding: 5px; text-align: center;">
@@ -130,6 +141,10 @@
       const keyCodeDiv = document.querySelector('.keyCode');
       const overlay = document.querySelector('.overlay');
 
+      window.addEventListener('touchstart', (e) => {
+	  overlay.classList.add('hide');
+      });
+	  
       window.addEventListener('keydown', (e) => {
 	  overlay.classList.add('hide');
 	  displayKey.innerText = e.key;
@@ -151,7 +166,7 @@
 	  keyCodeDiv.querySelector('p').innerText = 'Copied';
 	  setTimeout(() => {
 	      keyCodeDiv.querySelector('p').innerText = 'Click to Copy';
-	  }, 2000);
+	  }, 1000);
       })
 
     </script>
