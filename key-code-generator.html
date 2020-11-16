@@ -74,6 +74,22 @@
 	  transform: rotate(180deg);
       }
 
+      .overlay {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  height: 100%;
+	  width: 100%;
+	  background-color: aliceblue;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+      }
+
+      .overlay.hide {
+	  display: none;
+      }
+
     </style>
   </head>
   <body>
@@ -90,7 +106,7 @@
 	  <img src="https://static.thenounproject.com/png/1624571-200.png" alt="arrow img">
 	</div>
 
-	<div class="keycode">
+	<div class="keyCode">
 	  <h1>Key Code</h1>
 	  <h2>34</h2>
 	  <p>Click to Copy</p>
@@ -98,6 +114,10 @@
 
       </div>
     </section>
+
+    <div class="overlay">
+      <h1>Press Any Key to Start</h1>
+    </div>
     
     <footer style="background-color: #333; color: #fff; padding: 5px; text-align: center;">
       <p><small>Coded by <a style="color: #fff;" href="https://github.com/rodionsibov">Rodion Sibov</a> | 2020</small></p>
@@ -105,7 +125,35 @@
 
     <script>
 
-      
+      const displayKey = document.querySelector('.key h2');
+      const displayKeyCode = document.querySelector('.keyCode h2');
+      const keyCodeDiv = document.querySelector('.keyCode');
+      const overlay = document.querySelector('.overlay');
+
+      window.addEventListener('keydown', (e) => {
+	  overlay.classList.add('hide');
+	  displayKey.innerText = e.key;
+	  displayKeyCode.innerText = e.keyCode;
+	  if (e.keyCode === 32) {
+	      displayKey.innerText = 'Space';
+	  }
+      })
+
+      keyCodeDiv.addEventListener('click', () => {
+	  const textArea = document.createElement('textarea');
+	  textArea.setAttribute('readonly', '');
+	  textArea.style.position = 'absolute';
+	  textArea.value = keyCodeDiv.querySelector('h2').innerText;
+	  document.body.appendChild(textArea);
+	  textArea.select();
+	  document.execCommand('copy');
+	  document.body.removeChild(textArea);
+	  keyCodeDiv.querySelector('p').innerText = 'Copied';
+	  setTimeout(() => {
+	      keyCodeDiv.querySelector('p').innerText = 'Click to Copy';
+	  }, 2000);
+      })
+
     </script>
   </body>
 </html>
