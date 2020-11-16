@@ -33,7 +33,45 @@
       }
 
       .container {
+	  width: 90%;
+	  max-width: 900px;
+	  margin: 0 auto;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+      }
+      
+      .container div {
+	  background-color: white;
+	  display: flex;
+	  flex-direction: column;
+	  text-align: center;
+	  padding: 30px;
+	  border-radius: 10px;
+	  cursor: pointer;
+	  box-shadow: 0 0 10px 0 #0000001c;
+	  transition: 0.3s ease box-shadow;
+      }
 
+      .container div:hover {
+	  box-shadow: 0 0 60px 0 #0000001f;
+      }
+
+      .container h2 {
+	  margin: 20px 0;
+	  font-size: 60px;
+      }
+
+      .arrow {
+	  background-color: transparent!important;
+	  padding: 0 100px!important;
+	  box-shadow: none!important;
+	  cursor: default!important;
+      }
+
+      .arrow img {
+	  width: 80px;
+	  transform: rotate(180deg);
       }
 
     </style>
@@ -44,7 +82,8 @@
       <div class="container">
 
 	<div class="key">
-	  key
+	  <h1>Pressed Key</h1>
+	  <h2>H</h2>
 	</div>
 
 	<div class="arrow">
@@ -52,7 +91,9 @@
 	</div>
 
 	<div class="keycode">
-	  keyCode
+	  <h1>Key Code</h1>
+	  <h2>34</h2>
+	  <p>Click to Copy</p>
 	</div>
 
       </div>
