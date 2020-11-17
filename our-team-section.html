@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    
     <title>Our Team</title>
 
     <style>
@@ -20,23 +22,94 @@
 
       body {
 	  font-family: 'Roboto', sans-serif;
-	  background-color: whitesmoke;
+	  background-color: #f8f8f8;
 	  
       }
 
-      section {
+      #team {
 	  height: 100vh;
 	  width: 100%;
 	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+      }
+
+      section a {
+	  text-decoration: none;
+      }
+
+      .heading {
+	  font-size: 1.3rem;
+	  color: #2c2c2c;
+	  display: flex;
+	  align-items: center;
+	  margin: 20px;
+      }
+
+      .heading i {
+	  background-color: #507bfc;
+	  box-shadow: 2px 5px 30px rgba(80, 123, 252, 0.4);
+	  color: #fff;
+	  width: 40px;
+	  height: 40px;
+	  display: flex;
 	  align-items: center;
 	  justify-content: center;
+	  font-size: 0.9rem;
+	  margin: 0 20px;
+      }
+
+      .box {
+	  width: 266px;
+	  height: 340px;
+	  background-color: #fff;
+	  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.05);
+	  display: flex;
+	  padding: 20px;
+	  border-radius: 10px;
+	  margin: 20px;
+	  position: relative;
+      }
+
+      .container {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-wrap: wrap;
+      }
+
+      .top-bar {
+	  width: 50%;
+	  height: 4px;
+	  position: absolute;
+	  left: 50%;
+	  top: 0;
+	  transform: translateX(-50%);
+	  background-color: #507bfc;
+	  border-radius: 0 0 10px 10px;
+      }
+
+      .verify {
+	  color: #17b667;
       }
 
     </style>
   </head>
   <body>
     
-    <section>
+    <section id="team">
+
+      <h1 class="heading">
+	<i class="fas fa-rocket"></i>Team Members
+      </h1>
+
+      <div class="container">
+	<div class="box">
+	  <div class="top-bar"></div>
+	  <div class="nav"><i class="verify fas fa-check-circle"></i></div>
+	</div>
+      </div>
 
     </section>
 
