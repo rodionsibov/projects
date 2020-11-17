@@ -44,10 +44,37 @@
 	  flex: 1;
 	  cursor: pointer;
 	  transition: 0.3s ease flex;
+	  position: relative;
+	  overflow: hidden;
       }
 
       .item.show {
 	  flex: 8;
+      }
+
+      .caption {
+	  position: absolute;
+	  bottom: 0;
+	  left: 0;
+	  background-color: rgba(255, 255, 255, 0.472);
+	  padding: 20px;
+	  margin: 30px;
+	  border-radius: 4px;
+	  opacity: 0;
+      }
+
+      .caption h1 {
+	  margin-bottom: 10px;
+      }
+
+      .item.show .caption {
+	  opacity: 1;
+      }
+
+      @media only screen and (max-width: 768px) {
+	  section {
+	      flex-direction: column;
+	  }
       }
 
       
@@ -57,9 +84,19 @@
     
     <section>
       <div class="item"><img src="https://picsum.photos/700?random=1" alt=""></div>
-      <div class="item"><img src="https://picsum.photos/700?random=2" alt=""></div>
+      <div class="item"><img src="https://picsum.photos/700?random=2" alt="">
+	<div class="caption">
+	  <h1>Quam pellentesque mollis</h1>
+	  <p>Fusce euismod pulvinar malesuada. Duis nec maximus elit. Sed turpis enim, posuere non blandit quis, sodales ut erat. Mauris suscipit auctor quam pellentesque mollis.</p>
+	</div>
+      </div>
       <div class="item"><img src="https://picsum.photos/700?random=3" alt=""></div>
-      <div class="item"><img src="https://picsum.photos/700?random=4" alt=""></div>
+      <div class="item"><img src="https://picsum.photos/700?random=4" alt="">
+	<div class="caption">
+	  <h1>Mauris suscipit auctor</h1>
+	  <p>Fusce euismod pulvinar malesuada. Duis nec maximus elit. Sed turpis enim, posuere non blandit quis, sodales ut erat. Mauris suscipit auctor quam pellentesque mollis.</p>
+	</div>
+      </div>
       <div class="item"><img src="https://picsum.photos/700?random=5" alt=""></div>
     </section>
 
