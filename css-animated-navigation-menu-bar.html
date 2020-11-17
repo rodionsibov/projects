@@ -55,7 +55,9 @@
       }
 
       nav {
-	  position: relative;
+	  position: absolute;
+	  top: 10px;
+	  right: 100px;
       }
       
       .icon {
@@ -73,8 +75,55 @@
 	  background-size: 50%;
 	  cursor: pointer;
 	  box-shadow: 0 0 17px 0 #00000017;
+	  transition: 0.5s ease transform;
       }
       
+      .icon.close {
+	  transform: translateY(-50%) rotate(180deg); 
+	  background-image: url(https://image.flaticon.com/icons/svg/748/748122.svg);
+      }
+
+      ul {
+	  width: 0px;
+	  overflow: hidden;
+	  transform: translateX(50px);
+	  opacity: 0;
+	  pointer-events: none;
+	  transition: 0.5s ease;
+	  padding: 20px;
+      }
+
+      nav.show ul {
+	  width: 450px;
+	  transform: translate(0px);
+	  opacity: 1;
+	  pointer-events: all;
+      }
+
+      @media only screen and (max-width: 768px) {
+	  section {
+	      font-size: 14px;
+	  }
+	  li a {
+	      padding: 5px 10px;
+	  }
+	  nav ul {
+	      padding: 15px;
+	  }
+	  nav.show ul {
+	      width: 260px;
+	  }
+	  .icon {
+	      width: 45px;
+	      height: 45px;
+	      right: -50px;
+	  }
+	  nav {
+	      top: 10px;
+	      right: 60px;
+	  }
+      }
+
 
     </style>
   </head>
@@ -102,7 +151,13 @@
     </footer>
 
     <script>
+      const icon = document.querySelector('.icon');
+      const nav = document.querySelector('nav');
 
+      icon.addEventListener('click', () => {
+	  icon.classList.toggle('close');
+	  nav.classList.toggle('show');
+      });
 
     </script>
   </body>
