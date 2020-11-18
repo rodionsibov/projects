@@ -117,6 +117,10 @@
 	  color: #e41934; 
       }
 
+      .nav .heart-btn {
+	  display: none;
+      }
+
 
     </style>
   </head>
@@ -136,6 +140,16 @@
 	    <input class="heart-btn" type="checkbox" id="heart-btn">
 	    <label class="heart" for="heart-btn"></label>
 	  </div>
+
+	  <div class="details">
+	    <img src="https://picsum.photos/300" alt="">
+	    <strong>Emma Oliva</strong>
+	    <p>emmaoliva@gmail.com</p> 
+	  </div>
+	  <div class="btn">
+	    <a href="#"><i class="fas fa-clipboard-list"></i>Assign</a>
+	    <a href="#"><i class="fas fa-eye"></i>View</a>
+	  </div>
 	</div>
       </div>
 
@@ -147,6 +161,33 @@
     </footer>
 
     <script>
+
+      const users = document.querySelectorAll('.user')
+      const cardImgs = document.querySelectorAll('.details img')
+      
+      const getRandomUser = () => {
+	  
+	  users.forEach(async user => {
+	      const data = await fetch('https://randomuser.me/api/').then(res => res.json())	      
+
+	      user.querySelector('.user img').src = data.results[0].picture.large
+	      user.querySelector('.user-info h5').textContent = `${data.results[0].name.title} ${data.results[0].name.first} ${data.results[0].name.last}`
+	      user.querySelector('.user-info small').textContent = new Date(`${data.results[0].registered.date}`).toDateString()
+	  })
+      }
+
+      const getRandomImg = () => {
+	  cardImgs.forEach(async img => {
+	      const data = await fetch('https://picsum.photos/800/600')
+	      img.src = data.url
+	  })
+      }
+
+
+      document.addEventListener('DOMContentLoaded', () => {
+//	  getRandomUser()
+//	  getRandomImg()
+      })
 
     
     </script>
