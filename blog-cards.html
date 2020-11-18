@@ -184,7 +184,7 @@
       const getRandomUser = () => {
 	  
 	  users.forEach(async user => {
-	      const data = await fetch('https://randomuser.me/api/').then(res => res.json())	      
+	      const data = await fetch('https://api.randomuser.me/').then(res => res.json())	      
 
 	      user.querySelector('.user img').src = data.results[0].picture.large
 	      user.querySelector('.user-info h5').textContent = `${data.results[0].name.title} ${data.results[0].name.first} ${data.results[0].name.last}`
