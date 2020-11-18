@@ -27,7 +27,7 @@
       }
 
       #team {
-	  height: 100vh;
+	  min-height: 100vh;
 	  width: 100%;
 	  display: flex;
 	  justify-content: center;
@@ -66,6 +66,9 @@
 	  background-color: #fff;
 	  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.05);
 	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: space-between;
 	  padding: 20px;
 	  border-radius: 10px;
 	  margin: 20px;
@@ -121,6 +124,69 @@
 	  display: none;
       }
 
+      .details {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+      }
+
+      .details img {
+	  width: 100px;
+	  height: 100px;
+	  border-radius: 50%;
+	  overflow: hidden;
+	  object-fit: cover;
+	  object-position: center;
+      }
+
+      .details strong {
+	  color: #141414;
+	  letter-spacing: 1px;
+	  margin-top: 10px;
+      }
+
+      .details p {
+	  font-size: 0.8rem;
+	  color: #7a7a7a;
+	  margin: 5px 0;
+      }
+
+      .btn {
+	  width: 100%;
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+      }
+
+      .btn a {
+	  color: #8b8b8b;
+	  padding: 8px 22px;
+	  border-radius: 20px;
+	  font-size: 0.9rem;
+      }
+
+      .btn a i {
+	  margin-right: 10px;
+      }
+
+      .btn a:hover {
+	  color: #fff;
+	  background-color: #507bfc;
+	  box-shadow: 2px 5px 15px rgba(80, 123, 252, 0.5);
+	  transition: 0.3s ease all;
+      }
+      
+      .box:hover {
+	  box-shadow: 2px 2px 30px rgba(4, 15, 49, 0.1);
+      }
+
+      @media only screen and (max-width: 612px) {
+	  .box {
+	      flex-grow: 0.7;
+	  }
+      }
+
 
     </style>
   </head>
@@ -133,16 +199,16 @@
       </h1>
 
       <div class="container">
+
 	<div class="box">
 	  <div class="top-bar"></div>
 	  <div class="nav">
 	    <i class="verify fas fa-check-circle"></i>
-	    <input class="heart-btn" type="checkbox" id="heart-btn">
+	    <input class="heart-btn" type="checkbox" id="heart-btn1">
 	    <label class="heart" for="heart-btn"></label>
 	  </div>
-
 	  <div class="details">
-	    <img src="https://picsum.photos/300" alt="">
+	    <img src="https://picsum.photos/200" alt="">
 	    <strong>Emma Oliva</strong>
 	    <p>emmaoliva@gmail.com</p> 
 	  </div>
@@ -151,8 +217,62 @@
 	    <a href="#"><i class="fas fa-eye"></i>View</a>
 	  </div>
 	</div>
-      </div>
 
+	<div class="box">
+	  <div class="top-bar"></div>
+	  <div class="nav">
+	    <i class="verify fas fa-check-circle"></i>
+	    <input class="heart-btn" type="checkbox" id="heart-btn2">
+	    <label class="heart" for="heart-btn"></label>
+	  </div>
+	  <div class="details">
+	    <img src="https://picsum.photos/200" alt="">
+	    <strong>Emma Oliva</strong>
+	    <p>emmaoliva@gmail.com</p> 
+	  </div>
+	  <div class="btn">
+	    <a href="#"><i class="fas fa-clipboard-list"></i>Assign</a>
+	    <a href="#"><i class="fas fa-eye"></i>View</a>
+	  </div>
+	</div>
+
+	<div class="box">
+	  <div class="top-bar"></div>
+	  <div class="nav">
+	    <i class="verify fas fa-check-circle"></i>
+	    <input class="heart-btn" type="checkbox" id="heart-btn3">
+	    <label class="heart" for="heart-btn"></label>
+	  </div>
+	  <div class="details">
+	    <img src="https://picsum.photos/200" alt="">
+	    <strong>Emma Oliva</strong>
+	    <p>emmaoliva@gmail.com</p> 
+	  </div>
+	  <div class="btn">
+	    <a href="#"><i class="fas fa-clipboard-list"></i>Assign</a>
+	    <a href="#"><i class="fas fa-eye"></i>View</a>
+	  </div>
+	</div>
+
+	<div class="box">
+	  <div class="top-bar"></div>
+	  <div class="nav">
+	    <i class="verify fas fa-check-circle"></i>
+	    <input class="heart-btn" type="checkbox" id="heart-btn4">
+	    <label class="heart" for="heart-btn"></label>
+	  </div>
+	  <div class="details">
+	    <img src="https://picsum.photos/200" alt="">
+	    <strong>Emma Oliva</strong>
+	    <p>emmaoliva@gmail.com</p> 
+	  </div>
+	  <div class="btn">
+	    <a href="#"><i class="fas fa-clipboard-list"></i>Assign</a>
+	    <a href="#"><i class="fas fa-eye"></i>View</a>
+	  </div>
+	</div>
+
+      </div>
     </section>
 
     
@@ -162,31 +282,21 @@
 
     <script>
 
-      const users = document.querySelectorAll('.user')
-      const cardImgs = document.querySelectorAll('.details img')
-      
+      const details = document.querySelectorAll('.details')
+
       const getRandomUser = () => {
 	  
-	  users.forEach(async user => {
-	      const data = await fetch('https://randomuser.me/api/').then(res => res.json())	      
-
-	      user.querySelector('.user img').src = data.results[0].picture.large
-	      user.querySelector('.user-info h5').textContent = `${data.results[0].name.title} ${data.results[0].name.first} ${data.results[0].name.last}`
-	      user.querySelector('.user-info small').textContent = new Date(`${data.results[0].registered.date}`).toDateString()
-	  })
-      }
-
-      const getRandomImg = () => {
-	  cardImgs.forEach(async img => {
-	      const data = await fetch('https://picsum.photos/800/600')
-	      img.src = data.url
+	  details.forEach(async user => {
+	      const data = await fetch('https://api.randomuser.me/').then(res => res.json())	      
+	      user.querySelector('.details img').src = data.results[0].picture.large
+	      user.querySelector('.details strong').textContent = `${data.results[0].name.title} ${data.results[0].name.first} ${data.results[0].name.last}`
+	      user.querySelector('.details p').textContent = `${data.results[0].email}`
 	  })
       }
 
 
       document.addEventListener('DOMContentLoaded', () => {
-//	  getRandomUser()
-//	  getRandomImg()
+	  getRandomUser()
       })
 
     
