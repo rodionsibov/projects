@@ -35,14 +35,30 @@
 	  flex-direction: column;
       }
 
+      button {
+	  border: none;
+	  outline: none;
+	  background-color: aquamarine;
+	  color: black;
+	  font-size: 24px;
+	  padding: 20px;
+	  font-family: inherit;
+	  cursor: pointer;
+	  border-radius: 4px;
+      }
 
-
+      h2 {
+	  font-size: 24px;
+	  margin-top: 30px;
+      }
+      
     </style>
   </head>
   <body>
     
     <section>
-
+      <button>Change Bg Color</button>
+      <h2>Color Code</h2>
     </section>
 
     
@@ -51,7 +67,20 @@
     </footer>
 
     <script>
-    
+      
+      const button = document.querySelector('button');
+      const h2El = document.querySelector('h2');
+      const bgEl = document.querySelector('section');
+      
+      button.addEventListener('click', () => {
+	  let color = '#';
+	  color += Math.random().toString(16).slice(2, 8);
+
+	  h2El.innerText = color;
+	  bgEl.style.backgroundColor = color;
+      });
+      
+
     </script>
   </body>
 </html>
