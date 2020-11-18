@@ -22,8 +22,7 @@
 
       body {
 	  font-family: 'Roboto', sans-serif;
-	  background-color: #f8f8f8;
-	  
+	  background-color: whitesmoke;
       }
 
       section {
@@ -35,13 +34,70 @@
 	  flex-direction: column;
       }
 
+      .demo-1,
+      .demo-2,
+      .demo-3 {
+	  background-color: white;
+	  padding: 30px;
+	  margin: 80px 0;
+	  box-shadow: 0 0 20px #00000010;
+	  border-radius: 8px;
+      }
+
+      .tooltip {
+	  position: relative;
+      }
+
+      .tooltip::after,
+      .tooltip::before {
+	  content: '';
+	  position: absolute;
+	  background-color: black;
+	  height: auto;
+	  width: fit-content;
+	  top: 0;
+	  left: 50%;
+	  transform: translate(-50%, -100%);
+      }
+
+      .tooltip::before {
+	  font-size: 14px;
+	  content: attr(data-tooltip);
+	  color: white;
+	  line-height: 20px;
+	  top: -10px;
+	  padding: 10px;
+	  border-radius: 4px;
+	  transform: translate(-50%, -100%) scale(0);
+      }
+
+      .tooltip::after {
+	  height: 10px;
+	  width: 10px;
+	  transform: translate(-50%, -150%) rotate(45deg) scale(0);
+      }
+
+      .tooltip:hover::after {
+	  transform: translate(-50%, -150%) rotate(45deg) scale(0);
+      }
+
+      
+      
     </style>
   </head>
   <body>
     
     <section>
+      <div class="demo-1">
+	<h1 title="This is a title">This is demo 1</h1>
+      </div>
+      <div class="demo-2 tooltip" data-tooltip="In erat nunc, lacinia vitae purus imperdiet, blandit bibendum ipsum. Donec lacus nisl, viverra eget pretium et, blandit et odio. Cras ut magna id neque posuere faucibus quis quis metus.">
+	<h1>This is demo 2</h1>
+      </div>
+      <div class="demo-3">
+	<h1 title="This is a title">This is demo 3</h1>
+      </div>
     </section>
-
     
     <footer style="background-color: #333; color: #fff; padding: 5px; text-align: center;">
       <p><small>Coded by <a style="color: #fff;" href="https://github.com/rodionsibov">Rodion Sibov</a> | 2020</small></p>
