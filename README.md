@@ -2,6 +2,7 @@
 
 The more you practice, the better your skills will become. You are free to modify, save, share, use or do whatever you want with them. Experiment and have fun! 😉
 
+1. https://rodionsibov.github.io/projects/basic-tooltip.html
 1. https://rodionsibov.github.io/projects/color-generator.html
 1. https://rodionsibov.github.io/projects/our-team-section.html
 1. https://rodionsibov.github.io/projects/flex-box-photo-gallery.html
