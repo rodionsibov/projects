@@ -45,8 +45,14 @@
 	  font-family: inherit;
 	  cursor: pointer;
 	  border-radius: 4px;
+	  transition: 0.3s ease transform;
+	  box-shadow: 7px 3px 10px #00000017;
       }
 
+      button:active {
+	  transform: translateY(1px);
+      }
+      
       h2 {
 	  font-size: 24px;
 	  margin-top: 30px;
@@ -73,6 +79,7 @@
       const bgEl = document.querySelector('section');
       
       button.addEventListener('click', () => {
+	  button.style.backgroundColor= 'white';
 	  let color = '#';
 	  color += Math.random().toString(16).slice(2, 8);
 
