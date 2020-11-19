@@ -48,12 +48,26 @@
 	  position: absolute;
 	  left: 50%;
 	  bottom: 20px;
-	  transform: translateX(-50%);
 	  border-radius: 50px;
 	  cursor: pointer;
       }
 
-
+      .scroll-down::before,
+      .scroll-down::after {
+	  content: '';
+	  position: absolute;
+	  top: 20%;
+	  left: 50%;
+	  border: 2px solid black;
+	  height: 10px;
+	  width: 10px;
+	  transform: translate(-50%, -50%) rotate(45deg);
+	  border-top: transparent;
+	  border-left: transparent;
+	  
+      }
+      
+      
     </style>
   </head>
   <body>
