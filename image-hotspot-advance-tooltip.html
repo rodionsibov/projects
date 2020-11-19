@@ -60,7 +60,7 @@
 	  border-radius: 6px;
 	  width: 90vw;
 	  max-width: 300px;
-	  opacity: 0;
+	  opacity: 1;
 	  pointer-events: none;
 	  z-index: 2;
       }
@@ -141,6 +141,22 @@
 
     <script>
       
+      const tooltips = document.querySelectorAll('.all-tooltips .tooltip');
+      const fullDiv = document.querySelector('section');
+      const container = document.querySelector('.container');
+
+      function contentPosition() {
+	  tooltips.forEach(tooltip => {
+	      const pin = tooltip.querySelector('.pin');
+	      const content = tooltip.querySelector('.tooltip-content');
+	      const arrow = tooltip.querySelector('.arrow');
+
+	      content.style.left = pin.offsetLeft + 'px';
+	      content.style.top = pin.offsetTop + 'px';
+	  })
+      }
+
+      contentPosition();
 
     </script>
   </body>
