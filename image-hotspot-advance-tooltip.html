@@ -30,6 +30,7 @@
 	  display: flex;
 	  justify-content: center;
 	  align-items: center;
+	  overflow-x: hidden;
       }
 
       .container {
@@ -60,7 +61,7 @@
 	  border-radius: 6px;
 	  width: 90vw;
 	  max-width: 300px;
-	  opacity: 1;
+	  opacity: 0;
 	  pointer-events: none;
 	  z-index: 2;
       }
@@ -72,8 +73,8 @@
 	  border: 10px solid transparent;
 	  border-bottom-color: white;
 	  top: 0;
-	  transform: translate(-50%, -100%);
 	  left: 50%;
+	  transform: translate(-50%, -100%);
       }
 
       .pin {
@@ -98,6 +99,17 @@
 	  border-radius: 50%;
 	  animation: puls-effect 1s ease-in-out infinite;
       }
+
+      .tooltip.active .tooltip-content {
+	  opacity: 1;
+	  pointer-events: all;
+      }
+
+      .tooltip-1 .pin {
+	  left: 90%;
+	  
+      }
+
 
       @keyframes puls-effect {
 	  0% {
@@ -144,6 +156,10 @@
       const tooltips = document.querySelectorAll('.all-tooltips .tooltip');
       const fullDiv = document.querySelector('section');
       const container = document.querySelector('.container');
+      let timeoutId;
+
+      window.addEventListener('DOMContentLoaded', contentPosition);
+      window.addEventListener('resize', contentPosition);
 
       function contentPosition() {
 	  tooltips.forEach(tooltip => {
@@ -151,12 +167,42 @@
 	      const content = tooltip.querySelector('.tooltip-content');
 	      const arrow = tooltip.querySelector('.arrow');
 
-	      content.style.left = pin.offsetLeft + 'px';
-	      content.style.top = pin.offsetTop + 'px';
+	      if (pin.offsetLeft + content.offsetWidth / 2 > fullDiv.offsetWidth) {
+		  const extraLeft = fullDiv.offsetWidth - (pin.offsetLeft + content.offsetWidth / 2);
+		  content.style.left = pin.offsetLeft - content.offsetWidth / 2 + extraLeft + 'px';
+	      } else {
+		  content.style.left = pin.offsetLeft - content.offsetWidth / 2 + 'px';		  
+	      }
+
+	      content.style.top = pin.offsetTop + 40 + 'px';
+	      arrow.style.left = pin.offsetLeft - content.offsetLeft + pin.offsetWidth / 2 + 'px';
 	  })
       }
 
-      contentPosition();
+      tooltips.forEach(tooltip => {
+	  const pin = tooltip.querySelector('.pin');
+	  const content = tooltip.querySelector('.tooltip-content');
+
+	  pin.addEventListener('mouseover', () => {
+	      tooltip.classList.add('active');
+	  })
+	  pin.addEventListener('mouseleave', () => {
+	      timeoutId = setTimeout(() => {
+		  tooltip.classList.remove('active');
+	      }, 1000)
+	  })
+	  content.addEventListener('mouseover', () => {
+	      clearTimeout(timeoutId);
+	      tooltip.classList.add('active');
+	  })
+	  content.addEventListener('mouseleave', () => {
+	      timeoutId = setTimeout(() => {
+		  tooltip.classList.remove('active');
+	      }, 1000)
+	  })
+
+      })
+
 
     </script>
   </body>
