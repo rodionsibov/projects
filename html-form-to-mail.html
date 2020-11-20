@@ -44,9 +44,43 @@
       }
 
       .form-group {
-	  
+	  width: 100%;
+	  margin-top: 20px;
+	  font-size: 20px;
       }
 
+      .form-group input,
+      .form-group textarea {
+	  width: 100%;
+	  padding: 5px;
+	  font-size: 18px;
+	  font-family: inherit;
+	  border: 1px solid rgba(128, 128, 128, 0.199);
+	  margin-top: 5px;
+      }
+
+      textarea {
+	  resize: vertical;
+      }
+
+      button[type="submit"] {
+	  width: 100%;
+	  border: none;
+	  outline: none;
+	  padding: 20px;
+	  font-size: 24px;
+	  border-radius: 8px;
+	  font-family: inherit;
+	  color: rgb(27, 166, 247);
+	  text-align: center;
+	  cursor: pointer;
+	  margin-top: 10px;
+	  transition: 0.3s ease background-color;
+      }
+
+      button[type="submit"]:hover {
+	  background-color: rgb(214, 226, 236);
+      }
 
     </style>
   </head>
@@ -72,7 +106,7 @@
 
 	  <div class="form-group">
 	    <label for="message">Message</label>
-	    <textarea id="message" name="message"></textarea>
+	    <textarea id="message" name="message" rows="5"></textarea>
 	  </div>
 
 	  <button type="submit">Submit</button>
