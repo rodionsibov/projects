@@ -27,10 +27,11 @@
       section {
 	  min-height: 100vh;
 	  width: 100%;
+	  background-color: aliceblue;
 	  display: flex;
 	  justify-content: center;
 	  align-items: center;
-	  background-color: aliceblue;
+	  flex-direction: column;
       }
 
       .container {
@@ -82,6 +83,37 @@
 	  background-color: rgb(214, 226, 236);
       }
 
+      #status {
+	  width: 90%;
+	  max-width: 500px;
+	  text-align: center;
+	  padding: 10px;
+	  margin: 20px auto;
+	  border-radius: 8px;
+      }
+
+      #status.success {
+	  background-color: rgb(211, 250, 153);
+	  animation: status 4s ease forwards;
+      }
+
+      #status.error {
+	  background-color: rgb(250, 129, 92);
+	  color: white;
+	  animation: status 4s ease forwards;
+      }
+
+      @keyframes status {
+	  0% {
+	      opacity: 1;
+	      pointer-events: all;
+	  }
+	  100% {
+	      opacity: 0;
+	      pointer-events: none;
+	  }
+      }
+      
     </style>
   </head>
   <body>
@@ -113,6 +145,7 @@
 	</form>
       </div>
 
+      <div id="status" class="error"></div>
     </section>
 
     
