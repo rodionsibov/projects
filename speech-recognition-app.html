@@ -29,9 +29,9 @@
 	  width: 100%;
 	  background-color: rgb(37, 37, 37);
 	  display: flex;
-	  justify-content: center;
-	  align-items: center;
 	  flex-direction: column;
+	  padding: 50px 0;
+	  
       }
 
       section h1 {
@@ -53,13 +53,22 @@
 	  width: 90%;
 	  max-width: 500px;
 	  margin: 0 auto;
-	  padding: 20px;
-	  box-shadow: 0 0 20px #00000010;
-	  background-color: white;
-	  border-radius: 8px;
+	  justify-content: center;
       }
 
-
+      .texts p {
+	  color: black;
+	  text-align: left;
+	  background-color: white;
+	  width: 100%;
+	  padding: 10px;
+	  border-radius: 8px;
+	  margin-bottom: 10px;
+      }
+      
+      .texts p.replay {
+	  text-align: right;
+      }
       
     </style>
   </head>
@@ -82,7 +91,60 @@
     </footer>
 
     <script>
+      const texts = document.querySelector('.texts');
       
+      window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+      const recognition = new window.SpeechRecognition();
+      recognition.interimResults = true;
+
+      let p = document.createElement('p');
+
+      recognition.addEventListener('result', (e) => {
+	  const text = Array.from(e.results)
+		.map(result => result[0])
+		.map(result => result.transcript)
+		.join('');
+	  
+	  p.innerText = text;
+	  texts.appendChild(p);
+	  if (e.results[0].isFinal) {
+	      if (text.includes('hello')) {
+		  p = document.createElement('p')
+		  p.classList.add('replay');
+		  p.innerText = 'Hi';
+		  texts.appendChild(p);
+	      }
+	      if (text.includes('what is your name') || text.includes("what's your name")) {
+		  p = document.createElement('p')
+		  p.classList.add('replay');
+		  p.innerText = 'My name is Ros';
+		  texts.appendChild(p);
+	      }
+	      if (text.includes('open my page')) {
+		  p = document.createElement('p')
+		  p.classList.add('replay');
+		  p.innerText = 'Opening your page';
+		  texts.appendChild(p);
+		  window.open('https://github.com/rodionsibov');
+	      }
+	      if (text.includes('open YouTube channel')) {
+		  p = document.createElement('p')
+		  p.classList.add('replay');
+		  p.innerText = 'Opening your page';
+		  texts.appendChild(p);
+		  window.open('https://www.youtube.com/');
+	      }
+	      p = document.createElement('p');
+	  }
+	  
+      })
+
+      recognition.addEventListener('end', () => {
+	  recognition.start();
+      })
+      
+      recognition.start();
 
     </script>
   </body>
