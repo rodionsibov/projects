@@ -51,6 +51,8 @@
 	  width: 100%;
       }
 
+      /* Navbar */
+
       .navbar {
 	  background-color: #047aed;
 	  color: #fff;
@@ -74,7 +76,13 @@
       .navbar .flex {
 	  justify-content: space-between;
       }
+
+      /* Showcase */
+
       
+      
+      /* Utilities */
+
       .container {
 	  max-width: 1000px;
 	  margin: 0 auto;
@@ -116,8 +124,20 @@
 	  <a href="features.html" class="btn btn-outline">Read More</a>
 	</div>
 	
-	<div class="showcase-form">
-	  
+	<div class="showcase-form card">
+	  <h2>Request a Demo</h2>
+	  <form>
+	    <div class="form-control">
+	      <input type="text" name="name" placeholder="Name" required>
+	    </div>
+	    <div class="form-control">
+	      <input type="text" name="company" placeholder="Company Name" required>
+	    </div>
+	    <div class="form-control">
+	      <input type="email" name="email" placeholder="Email" required>
+	    </div>
+	    <input type="submit" value="Send" class="btn btn-primary">
+	  </form>
 	</div>
 	
       </div>
