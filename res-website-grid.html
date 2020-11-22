@@ -161,9 +161,21 @@
 	  font-weight: bold; 
       }
       
+      /* Cli */
+      .cli .grid {
+	  grid-template-columns: repeat(3, 1fr);
+	  grid-template-rows: repeat(2, 1fr);
+      }
+
+      .cli .grid > *:first-child {
+	  grid-column: 1 / span 2;
+	  grid-row: 1 / span 2;
+      }
+
+
       /* Utilities */
       .container {
-	  max-width: 1000px;
+	  max-width: 1100px;
 	  margin: 0 auto;
 	  overflow: auto;
 	  padding: 0 40px;
@@ -372,6 +384,19 @@
 	    <h3>2,343,265</h3>
 	    <p class="text-secondary">Projects</p>
 	  </div>
+	</div>
+      </div>
+    </section>
+
+    <!-- Cli -->
+    <section class="cli">
+      <div class="container grid">
+	<img src="https://picsum.photos/400/100" alt="">
+	<div class="card">
+	  <h3>Easy to use, cross platform CLI</h3>
+	</div>
+	<div class="card">
+	  <h3>Deploy in seconds</h3>
 	</div>
       </div>
     </section>
