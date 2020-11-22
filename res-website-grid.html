@@ -59,7 +59,7 @@
       /* Navbar */
 
       .navbar {
-	  background-color: #047aed;
+	  background-color: var(--primary-color);
 	  color: #fff;
 	  height: 70px;
       }
@@ -87,8 +87,23 @@
       .showcase {
 	  height: 400px;
 	  background-color: var(--primary-color);
+	  color: #fff;
+	  position: relative;
+      }
+
+      .showcase h1 {
+	  font-size: 40px;
       }
       
+      .showcase p {
+	  margin: 20px 0;
+      }
+
+      .showcase .grid {
+	  grid-template-columns: 55% 45%;
+      }
+
+
       /* Utilities */
 
       .container {
@@ -104,6 +119,16 @@
 	  align-items: center;
 	  height: 100%;
       }
+
+      .grid {
+	  display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	  gap: 20px;
+	  justify-content: center;
+	  align-items: center;
+	  height: 100%;
+      }
+      
       
     </style>
   </head>
