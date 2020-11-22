@@ -406,12 +406,34 @@
 
       /* Tablets and under */
       @media (max-width: 768px) {
-	  
+	  .grid,
+	  .showcase .grid,
+	  .stats .grid,
+	  .cli .grid,
+	  .cloud .grid {
+	      grid-template-columns: 1fr;
+	      grid-template-rows: 1fr;
+	  }
+
+	  .showcase {
+	      
+	  }
       }
       
       /* Mobile */
       @media (max-width: 500px) {
-	  
+	  .navbar {
+	      height: 110px;
+	  }
+
+	  .navbar .flex {
+	      flex-direction: column;
+	  }
+
+	  .navbar ul {
+	      padding: 10px;
+	      background-color: rgba(0, 0, 0, 0.1);
+	  }
       }
 
 
