@@ -100,10 +100,30 @@
       }
 
       .showcase .grid {
+	  overflow: visible;
 	  grid-template-columns: 55% 45%;
 	  gap: 30px;
       }
 
+      .showcase-form {
+	  position: relative;
+	  top: 60px;
+	  height: 350px;
+	  width: 400px;
+	  padding: 40px;
+	  z-index: 100;
+	  justify-self: flex-end;
+      }
+
+      .showcase-form .form-control {
+	  margin: 30px 0;
+      }
+
+      .showcase-form input[type="text"], 
+      .showcase-form input[type="email"] {
+	  border: 0;
+	  border-bottom: 1px solid #b4becb;
+      }
 
       /* Utilities */
 
@@ -116,6 +136,7 @@
 
       .card {
 	  background-color: #fff;
+	  color: #333;
 	  border-radius: 10px;
 	  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 	  padding: 20px;
