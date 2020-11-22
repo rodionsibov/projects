@@ -57,7 +57,6 @@
       }
 
       /* Navbar */
-
       .navbar {
 	  background-color: var(--primary-color);
 	  color: #fff;
@@ -83,7 +82,6 @@
       }
 
       /* Showcase */
-
       .showcase {
 	  height: 400px;
 	  background-color: var(--primary-color);
@@ -144,9 +142,12 @@
 	  transform: SkewY(-3deg);
       }
 
-
+      /* Stats */
+      .stats {
+	  padding-top: 100px;
+      }
+      
       /* Utilities */
-
       .container {
 	  max-width: 1000px;
 	  margin: 0 auto;
@@ -182,6 +183,13 @@
 	  transform: scale(0.98);
       }      
 
+      .text-center {
+	  text-align: center;
+      }
+
+      
+
+
       .flex {
 	  display: flex;
 	  justify-content: center;
@@ -196,6 +204,10 @@
 	  justify-content: center;
 	  align-items: center;
 	  height: 100%;
+      }
+
+      .grid-3 {
+	  grid-template-columns: repeat(3, 1fr);
       }
       
       
@@ -247,7 +259,27 @@
     <!-- Stats -->
     <section class="stats">
       <div class="container">
-	<h3></h3>
+	<h3 class="stats-heading text-center my-1">
+	  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+	</h3>
+
+	<div class="grid grid-3 text-center my-4">
+	  <div>
+	    <i class="fas fa-server fa-3x"></i>
+	    <h3>10,349,405</h3>
+	    <p class="text-secondary">Deployments</p>
+	  </div>
+	  <div>
+	    <i class="fas fa-upload fa-3x"></i>
+	    <h3>987 TB</h3>
+	    <p class="text-secondary">Published</p>
+	  </div>
+	  <div>
+	    <i class="fas fa-project-diagram fa-3x"></i>
+	    <h3>2,343,265</h3>
+	    <p class="text-secondary">Projects</p>
+	  </div>
+	</div>
       </div>
     </section>
 
