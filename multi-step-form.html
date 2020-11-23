@@ -156,8 +156,31 @@
       const nextBtn = document.querySelectorAll('form .next-btn');
       const prevBtn = document.querySelectorAll('form .previous-btn');
       const form = document.querySelector('form');
-      
-      console.log(steps)
+
+      nextBtn.forEach(button => {
+	  button.addEventListener('click', (e) => {
+	      changeStep('next');
+	  })
+      })
+
+      prevBtn.forEach(button => {
+	  button.addEventListener('click', (e) => {
+	      changeStep('prev');
+	  })
+      })
+
+      function changeStep(btn) {
+	  let index = 0;
+	  const active = document.querySelector('form .step.active');
+	  index = steps.indexOf(active);
+	  steps[index].classList.remove('active');
+	  if (btn === 'next') {
+	      index++; 
+	  } else if (btn === 'prev') {
+	      index--;
+	  }
+	  steps[index].classList.add('active');
+      }
 
     </script>
   </body>
