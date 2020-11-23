@@ -546,12 +546,14 @@ code, pre {
     .showcase-text {
 	text-align: center;
 	margin-top: 40px;
+	animation: slideInFromTop 1s ease-in;
     }
 
     .showcase-form {
 	justify-self: center;
 	margin: auto;
 	width: 100%;
+	animation: slideInFromBottom 1s ease-in;
     }
 
     .cli .grid > *:first-child {
