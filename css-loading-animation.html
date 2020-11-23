@@ -47,9 +47,15 @@
 	  width: 0;
 	  left: 0;
 	  top: 0;
-	  background-color: black;
+	  background-color: #00000010;
+	  animation: loader-bg 3s linear infinite alternate;
       }
-      
+
+      @keyframes loader-bg {
+	  100% {
+	      width: 100%;
+	  }
+      }
 
     </style>
   </head>
