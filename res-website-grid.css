@@ -109,6 +109,7 @@ code, pre {
     padding: 40px;
     z-index: 100;
     justify-self: flex-end;
+    animation: slideInFromRight 1s ease-in;
 }
 
 .showcase-form .form-control {
@@ -143,6 +144,7 @@ code, pre {
 /* Stats */
 .stats {
     padding-top: 100px;
+    animation: slideInFromBottom 1s ease-in;
 }
 
 .stats-heading {
