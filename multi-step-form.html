@@ -65,6 +65,23 @@
 	  margin-top: 5px;
 	  border-radius: 4px;
       }
+
+      button.next-btn,
+      button.previous-btn {
+	  float: right;
+	  margin-top: 20px;
+	  padding: 10px 30px;
+	  border: none;
+	  outline: none;
+	  background-color: rgb(180, 220, 255);
+	  font-family: inherit;
+	  font-size: 18px;
+	  cursor: pointer;
+      }
+
+      button.previous-btn {
+	  float: left;
+      }
       
 
     </style>
@@ -74,7 +91,7 @@
     <section>
       <div class="container">
 	<form>
-	  <div class="step step-1 active">
+	  <div class="step step-1">
 	    <div class="form-group">
 	      <label for="firstName">First Name</label>
 	      <input type="text" id="firstName" name="firstName">
@@ -90,7 +107,7 @@
 	    <button type="button" class="next-btn">Next</button>
 	  </div>
 
-	  <div class="step step-2">
+	  <div class="step step-2 active">
 	    <div class="form-group">
 	      <label for="email">Email</label>
 	      <input type="email" id="email" name="email">
