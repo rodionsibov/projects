@@ -67,7 +67,8 @@
       }
 
       button.next-btn,
-      button.previous-btn {
+      button.previous-btn,
+      button.submit-btn {
 	  float: right;
 	  margin-top: 20px;
 	  padding: 10px 30px;
@@ -83,6 +84,10 @@
 	  float: left;
       }
       
+      button.submit-btn {
+	  background-color: aquamarine;
+      }
+
 
     </style>
   </head>
@@ -107,7 +112,7 @@
 	    <button type="button" class="next-btn">Next</button>
 	  </div>
 
-	  <div class="step step-2 active">
+	  <div class="step step-2">
 	    <div class="form-group">
 	      <label for="email">Email</label>
 	      <input type="email" id="email" name="email">
@@ -120,7 +125,7 @@
 	    <button type="button" class="next-btn">Next</button>
 	  </div>
 
-	  <div class="step step-3">
+	  <div class="step step-3 active">
 	    <div class="form-group">
 	      <label for="country">Country</label>
 	      <input type="text" id="country" name="country">
