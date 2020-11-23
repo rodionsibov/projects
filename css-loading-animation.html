@@ -32,11 +32,24 @@
       }
 
       .container {
-	  width: 90%;
-	  max-width: 400px;
-	  margin: 0 auto;
+	  padding: 20px 40px;
+	  border: 2px solid black;
+	  letter-spacing: 10px;
+	  text-transform: uppercase;
+	  font-size: 24px;
+	  position: relative;
       }
 
+      .container::after {
+	  content: '';
+	  position: absolute;
+	  height: 100%;
+	  width: 0;
+	  left: 0;
+	  top: 0;
+	  background-color: black;
+      }
+      
 
     </style>
   </head>
@@ -44,6 +57,7 @@
     
     <section>
       <div class="container">
+	<h1>Loading...</h1>
       </div>
     </section>
 
