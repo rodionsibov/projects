@@ -20,6 +20,8 @@
 	  --secondary-color: #1c3fa8;
 	  --dark-color: #002240;
 	  --light-color: #f4f4f4;
+	  --success-color: #5cb85c;
+	  --error-color: #d9534f;
       }
 
 
@@ -59,6 +61,12 @@
 	  width: 100%;
       }
 
+      code, pre {
+	  background-color: #333;
+	  color: #fff;
+	  padding: 10px;
+      }
+      
       /* Navbar */
       .navbar {
 	  background-color: var(--primary-color);
@@ -310,6 +318,12 @@
 	  background-color: var(--dark-color);
 	  color: #fff;
       }
+      
+      .bg-light,
+      .btn-light {
+	  background-color: var(--light-color);
+	  color: #333;
+      }
 
       .bg-primary a,
       .btn-primary a,
@@ -319,11 +333,22 @@
       .btn-dark a {
 	  color: #fff;
       }  
+
+      /* Utilities: Text colors */
+      .text-primary {
+	  background-color: var(--primary-color);
+      }
+
+      .text-secondary {
+	  background-color: var(--secondary-color);
+      }
       
-      .bg-light,
-      .btn-light {
+      .text-dark {
+	  background-color: var(--dark-color);
+      }
+      
+      .text-light {
 	  background-color: var(--light-color);
-	  color: #333;
       }
 
       /* Utilities: Text sizes */
@@ -361,6 +386,16 @@
 
       .alert i {
 	  margin-right: 10px;
+      }
+
+      .alert-success {
+	  background-color: var(--success-color);
+	  color: #fff;
+      }
+
+      .alert-error {
+	  background-color: var(--error-color);
+	  color: #fff;
       }
 
       .flex {
@@ -559,7 +594,7 @@
 	  <h3 class="my-2">Essentials</h3>
 	  <nav>
 	    <ul>
-	      <li><a href="#">Introduction</a></li>
+	      <li><a href="#" class="text-primary">Introduction</a></li>
 	      <li><a href="#">About Loruki</a></li>
 	      <li><a href="#">Installation</a></li>
 	    </ul>
