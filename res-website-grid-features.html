@@ -12,14 +12,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     
     <title>Loruki | Cloud Hosting for Everyone</title>
-
-    <style>
+        <style>
 
       :root {
 	  --primary-color: #047aed;
 	  --secondary-color: #1c3fa8;
 	  --dark-color: #002240;
 	  --light-color: #f4f4f4;
+	  --success-color: #5cb85c;
+	  --error-color: #d9534f;
       }
 
 
@@ -59,6 +60,12 @@
 	  width: 100%;
       }
 
+      code, pre {
+	  background-color: #333;
+	  color: #fff;
+	  padding: 10px;
+      }
+      
       /* Navbar */
       .navbar {
 	  background-color: var(--primary-color);
@@ -201,7 +208,8 @@
       }
       
       /* Features */
-      .features-head img {
+      .features-head img,
+      .docs-head img {
 	  width: 200px;
 	  justify-self: flex-end;
       }
@@ -228,6 +236,27 @@
 	  grid-column: 1 / span 2;
       }
 
+      /* Docs */
+      .docs-main h3 {
+	  margin: 20px 0;
+      }
+
+      .docs-main .grid {
+	  grid-template-columns: 1fr 2fr;
+	  align-items: flex-start;
+      }
+
+      .docs-main nav ul li {
+	  font-size: 17px;
+	  padding-bottom: 5px;
+	  margin-bottom: 5px;
+	  border-bottom: 1px solid #ccc;
+      }
+
+      .docs-main a:hover {
+	  font-weight: bold;
+      }
+      
       /* Footer */
       .footer .social a {
 	  margin: 0 10px;
@@ -288,6 +317,12 @@
 	  background-color: var(--dark-color);
 	  color: #fff;
       }
+      
+      .bg-light,
+      .btn-light {
+	  background-color: var(--light-color);
+	  color: #333;
+      }
 
       .bg-primary a,
       .btn-primary a,
@@ -297,11 +332,22 @@
       .btn-dark a {
 	  color: #fff;
       }  
+
+      /* Utilities: Text colors */
+      .text-primary {
+	  color: var(--primary-color);
+      }
+
+      .text-secondary {
+	  color: var(--secondary-color);
+      }
       
-      .bg-light,
-      .btn-light {
-	  background-color: var(--light-color);
-	  color: #333;
+      .text-dark {
+	  color: var(--dark-color);
+      }
+      
+      .text-light {
+	  color: var(--light-color);
       }
 
       /* Utilities: Text sizes */
@@ -327,6 +373,28 @@
       
       .text-center {
 	  text-align: center;
+      }
+
+      /* Utilities: Alert */
+      .alert {
+	  background-color: var(--light-color);
+	  padding: 10px 20px;
+	  font-weight: bold;
+	  margin: 15px 0;
+      }
+
+      .alert i {
+	  margin-right: 10px;
+      }
+
+      .alert-success {
+	  background-color: var(--success-color);
+	  color: #fff;
+      }
+
+      .alert-error {
+	  background-color: var(--error-color);
+	  color: #fff;
       }
 
       .flex {
@@ -438,7 +506,9 @@
 	  .showcase .grid,
 	  .stats .grid,
 	  .cli .grid,
-	  .cloud .grid {
+	  .cloud .grid,
+	  .features-main .grid,
+	  .docs-main .grid {
 	      grid-template-columns: 1fr;
 	      grid-template-rows: 1fr;
 	  }
@@ -467,6 +537,23 @@
 	      padding: 10px;
 	  }
 
+	  .features-head,
+	  .features-sub-head,
+	  .docs-head {
+	      text-align: center;
+	  }
+
+	  .features-head img,
+	  .features-sub-head img,
+	  .docs-head img {
+	      justify-self: center;
+	  }
+
+	  .features-main .grid > *:first-child,
+	  .features-main .grid > *:nth-child(2) {
+	      grid-column: 1;
+	  }
+
 	  
       }
       
@@ -488,6 +575,7 @@
 
 
     </style>
+
   </head>
   <body>
 
@@ -535,27 +623,27 @@
       <div class="container grid grid-3">
 	<div class="card flex">
 	  <i class="fas fa-server fa-3x"></i>
-	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat egestas sapien, id vehicula ipsum pharetra a. Morbi aliquet nibh quis eros hendrerit posuere. Praesent consectetur purus a iaculis mollis.</p>
+	  <p> Adipiscing elit. Nam placerat egestas sapien, id vehicula ipsum pharetra a. </p>
 	</div>
 	<div class="card flex">
 	  <i class="fas fa-database fa-3x"></i>
-	  <p>Nam placerat egestas sapien, id vehicula ipsum pharetra. Morbi aliquet nibh quis eros hendrerit posuere. Praesent consectetur purus a iaculis mollis.</p>
+	  <p>Nam placerat egestas sapien, id vehicula ipsum pharetra. Morbi aliquet nibh quis eros hendrerit posuere. </p>
 	</div>
 	<div class="card flex">
 	  <i class="fas fa-power-off fa-3x"></i>
-	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat egestas sapien, id vehicula ipsum pharetra a. Morbi aliquet nibh quis eros hendrerit posuere.</p>
+	  <p> Amet, cons elit.  Vehicula ipsum pharetra a. Morbi aliquet nibh quis eros hendrerit posuere.</p>
 	</div>
 	<div class="card flex">
 	  <i class="fas fa-upload fa-3x"></i>
-	  <p>Vehicula ipsum pharetra a. Morbi aliquet nibh quis eros hendrerit posuere. Praesent consectetur purus a iaculis mollis.</p>
+	  <p>Vehicula ip. Morbi aliquet nibh quis eros hendrerit posuere. Praesent consectetur purus a iaculis mollis.</p>
 	</div>
 	<div class="card flex">
 	  <i class="fas fa-laptop-code fa-3x"></i>
-	  <p>Placerat egestas sapien, id vehicula ipsum pharetra a. Morbi aliquet nibh quis eros hendrerit posuere. Praesent consectetur purus a iaculis mollis.</p>
+	  <p>Placerat eg ipsum pharetra a. Morbi aliquet nibh quis eros hendrerit posuere iaculis mollis.</p>
 	</div>
 	<div class="card flex">
 	  <i class="fas fa-network-wired fa-3x"></i>
-	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat egestas sapien, id vehicula ipsum pharetra a. Morbi aliquet nibh quis eros hendrerit posuere.</p>
+	  <p>Lorem place sapien, id vehicula ipsum pharetra a. Morbi aliquet nibh quis eros hendrerit posuere.</p>
 	</div>
       </div>
     </section>
