@@ -169,6 +169,24 @@
 	  })
       })
 
+      form.addEventListener('submit', (e) => {
+	  e.preventDefault();
+	  const inputs = [];
+
+	  form.querySelectorAll('input').forEach(input => {
+	      const {name, value} = input;
+	      inputs.push({name, value});
+	  })
+	  console.log(inputs);
+	  form.reset();
+	  let index = 0;
+	  const active = document.querySelector('form .step.active');
+	  index = steps.indexOf(active);
+	  steps[index].classList.remove('active');
+	  steps[0].classList.add('active');
+	  
+      })
+
       function changeStep(btn) {
 	  let index = 0;
 	  const active = document.querySelector('form .step.active');
