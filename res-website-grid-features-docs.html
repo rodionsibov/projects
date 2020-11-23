@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    
+    <title>Loruki | Cloud Hosting for Everyone</title>
+
+    <style>
+
+      :root {
+	  --primary-color: #047aed;
+	  --secondary-color: #1c3fa8;
+	  --dark-color: #002240;
+	  --light-color: #f4f4f4;
+      }
+
+
+      * {
+	  box-sizing: border-box;
+	  padding: 0;
+	  margin: 0;
+      }
+
+      body {
+	  font-family: 'Lato', sans-serif;
+	  color: #333;
+	  line-height: 1.6;
+      }
+
+      ul {
+	  list-style-type: none;
+      }
+
+      a {
+	  text-decoration: none;
+	  color: #333;
+      }
+
+      h1,
+      h2 {
+	  font-weight: 300;
+	  line-height: 1.2;
+	  margin: 10px 0;
+      }
+      
+      p {
+	  margin: 10px 0;
+      }
+
+      img {
+	  width: 100%;
+      }
+
+      /* Navbar */
+      .navbar {
+	  background-color: var(--primary-color);
+	  color: #fff;
+	  height: 70px;
+      }
+
+      .navbar ul {
+	  display: flex;
+      }
+
+      .navbar a {
+	  color: #fff;
+	  padding: 10px;
+	  margin: 0 5px;
+      }
+      
+      .navbar a:hover {
+	  border-bottom: 2px solid #fff;
+      }
+
+      .navbar .flex {
+	  justify-content: space-between;
+      }
+
+      /* Showcase */
+      .showcase {
+	  height: 400px;
+	  background-color: var(--primary-color);
+	  color: #fff;
+	  position: relative;
+      }
+
+      .showcase h1 {
+	  font-size: 40px;
+      }
+      
+      .showcase p {
+	  margin: 20px 0;
+      }
+
+      .showcase .grid {
+	  overflow: visible;
+	  grid-template-columns: 55% 45%;
+	  gap: 30px;
+      }
+
+      .showcase-form {
+	  position: relative;
+	  top: 60px;
+	  height: 350px;
+	  width: 400px;
+	  padding: 40px;
+	  z-index: 100;
+	  justify-self: flex-end;
+      }
+
+      .showcase-form .form-control {
+	  margin: 30px 0;
+      }
+
+      .showcase-form input[type="text"], 
+      .showcase-form input[type="email"] {
+	  border: 0;
+	  border-bottom: 1px solid #b4becb;
+	  width: 100%;
+	  padding: 3px;
+	  font-size: 16px;
+      }
+
+      .showcase-form input:focus {
+	  outline: none;
+      }
+
+      .showcase::before,
+      .showcase::after {
+	  content: '';
+	  position: absolute;
+	  height: 100px;
+	  bottom: -70px;
+	  right: 0;
+	  left: 0;
+	  background-color: #fff;
+	  transform: SkewY(-3deg);
+      }
+
+      /* Stats */
+      .stats {
+	  padding-top: 100px;
+      }
+
+      .stats-heading {
+	  max-width: 500px;
+	  margin: auto;
+      }
+
+      .stats .grid h3 {
+	  font-size: 35px;
+      } 
+
+      .stats .grid p {
+	  font-size: 20px;
+	  font-weight: bold; 
+      }
+      
+      /* Cli */
+      .cli .grid {
+	  grid-template-columns: repeat(3, 1fr);
+	  grid-template-rows: repeat(2, 1fr);
+      }
+
+      .cli .grid > *:first-child {
+	  grid-column: 1 / span 2;
+	  grid-row: 1 / span 2;
+      }
+
+      /* Cloud */
+      .cloud .grid {
+	  grid-template-columns: 4fr 3fr;
+      }
+
+      /* Languages */
+      .languages .flex {
+	  flex-wrap: wrap;
+      }      
+
+      .languages .card {
+	  text-align: center;
+	  margin: 18px 10px 40px;
+	  transition: 0.2s ease-in transform;
+      }
+      
+      .languages .card h4 {
+	  font-size: 20px;
+	  margin-bottom: 10px;
+      }
+
+      .languages .card:hover {
+	  transform: translateY(-15px);
+      }
+      
+      /* Features */
+      .features-head img {
+	  width: 200px;
+	  justify-self: flex-end;
+      }
+
+      .features-sub-head img {
+	  width: 300px;
+	  justify-self: flex-end;
+      }
+
+      .features-main .card > i {
+	  margin-right: 20px;
+      }
+
+      .features-main .grid {
+	  padding: 30px;
+      }
+
+      .features-main .grid > *:first-child {
+	  grid-column: 1 / span 3;
+      }
+      
+
+      .features-main .grid > *:nth-child(2) {
+	  grid-column: 1 / span 2;
+      }
+
+      /* Footer */
+      .footer .social a {
+	  margin: 0 10px;
+      }
+
+      
+      /* Utilities */
+      .container {
+	  max-width: 1100px;
+	  margin: 0 auto;
+	  overflow: auto;
+	  padding: 0 40px;
+      }
+
+      .card {
+	  background-color: #fff;
+	  color: #333;
+	  border-radius: 10px;
+	  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+	  padding: 20px;
+	  margin: 10px;
+      }
+
+      .btn {
+	  display: inline-block;
+	  padding: 10px 30px;
+	  cursor: pointer;
+	  background-color: var(--primary-color);
+	  color: #fff;
+	  border: none;
+	  border-radius: 5px;
+      }
+
+      .btn-outline {
+	  background-color: transparent;
+	  border: 1px #fff solid;
+      }
+      
+      .btn:hover {
+	  transform: scale(0.98);
+      }      
+
+      /* Utilities: Backgrounds & colored buttons */
+      .bg-primary,
+      .btn-primary {
+	  background-color: var(--primary-color);
+	  color: #fff;
+      }
+
+      .bg-secondary,
+      .btn-secondary {
+	  background-color: var(--secondary-color);
+	  color: #fff;
+      }
+      
+      .bg-dark,
+      .btn-dark {
+	  background-color: var(--dark-color);
+	  color: #fff;
+      }
+
+      .bg-primary a,
+      .btn-primary a,
+      .bg-secondary a,
+      .btn-secondary a,
+      .bg-dark a,
+      .btn-dark a {
+	  color: #fff;
+      }  
+      
+      .bg-light,
+      .btn-light {
+	  background-color: var(--light-color);
+	  color: #333;
+      }
+
+      /* Utilities: Text sizes */
+      .lead {
+	  font-size: 20px;
+      }
+
+      .sm {
+	  font-size: 1rem;
+      }
+
+      .md {
+	  font-size: 2rem;
+      }
+
+      .lg {
+	  font-size: 3rem;
+      }
+
+      .xl {
+	  font-size: 4rem;
+      }
+      
+      .text-center {
+	  text-align: center;
+      }
+
+      .flex {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  height: 100%;
+      }
+
+      .grid {
+	  display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	  gap: 20px;
+	  justify-content: center;
+	  align-items: center;
+	  height: 100%;
+      }
+
+      .grid-3 {
+	  grid-template-columns: repeat(3, 1fr);
+      }
+      
+      /* Utilities: Margin */
+      .my-1 {
+	  margin: 1rem 0;
+      }
+
+      .my-2 {
+	  margin: 1.5rem 0;
+      }
+
+      .my-3 {
+	  margin: 2rem 0;
+      }
+
+      .my-4 {
+	  margin: 3rem 0;
+      }
+
+      .my-5 {
+	  margin: 4rem 0;
+      }
+
+      .m-1 {
+	  margin: 1rem;
+      }
+
+      .m-2 {
+	  margin: 1.5rem;
+      }
+
+      .m-3 {
+	  margin: 2rem;
+      }
+
+      .m-4 {
+	  margin: 3rem;
+      }
+
+      .m-5 {
+	  margin: 4rem;
+      }
+
+      /* Utilities: Padding */
+      .py-1 {
+	  padding: 1rem 0;
+      }
+
+      .py-2 {
+	  padding: 1.5rem 0;
+      }
+
+      .py-3 {
+	  padding: 2rem 0;
+      }
+
+      .py-4 {
+	  padding: 3rem 0;
+      }
+
+      .py-5 {
+	  padding: 4rem 0;
+      }
+
+      .p-1 {
+	  padding: 1rem;
+      }
+
+      .p-2 {
+	  padding: 1.5rem;
+      }
+
+      .p-3 {
+	  padding: 2rem;
+      }
+
+      .p-4 {
+	  padding: 3rem;
+      }
+
+      .p-5 {
+	  padding: 4rem;
+      }
+
+
+      /* Tablets and under */
+      @media (max-width: 768px) {
+	  .grid,
+	  .showcase .grid,
+	  .stats .grid,
+	  .cli .grid,
+	  .cloud .grid {
+	      grid-template-columns: 1fr;
+	      grid-template-rows: 1fr;
+	  }
+
+	  .showcase {
+	      height: auto;
+	  }
+
+	  .showcase-text {
+	      text-align: center;
+	      margin-top: 40px;
+	  }
+
+	  .showcase-form {
+	      justify-self: center;
+	      margin: auto;
+	      width: 100%;
+	  }
+
+	  .cli .grid > *:first-child {
+	      grid-column: 1;
+	      grid-row: 1;
+	  }
+
+	  .languages .card {
+	      padding: 10px;
+	  }
+
+	  
+      }
+      
+      /* Mobile */
+      @media (max-width: 500px) {
+	  .navbar {
+	      height: 110px;
+	  }
+
+	  .navbar .flex {
+	      flex-direction: column;
+	  }
+
+	  .navbar ul {
+	      padding: 10px;
+	      background-color: rgba(0, 0, 0, 0.1);
+	  }
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="container flex">
+	<h1 class="logo">Loruki.</h1>
+	<nav>
+	  <ul>
+	    <li><a href="res-website-grid.html">Home</a></li>
+	    <li><a href="res-website-grid-features.html">Features</a></li>
+	    <li><a href="res-website-grid-features-docs.html">Docs</a></li>
+	  </ul>
+	</nav>
+      </div>
+    </div>
+
+    <!-- Head -->
+    <section class="features-head bg-primary py-3">
+      <div class="container grid">
+	<div>
+	  <h1 class="xl">Features</h1>
+	  <p class="lead">
+	    Check out the features of Loruki that separate us from the competition
+	  </p>
+	</div>
+	<img src="https://picsum.photos/400" alt="">
+      </div>
+    </section>
+
+    <!-- Sub head -->
+    <section class="features-sub-head bg-light py-3">
+      <div class="container grid">
+	<div>
+	  <h1 class="md">The Loruki Platform</h1>
+	  <p>
+	    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat egestas sapien, id vehicula ipsum pharetra a. Morbi aliquet nibh quis eros hendrerit posuere. Praesent consectetur purus a iaculis mollis.
+	  </p>
+	</div>
+	<img src="https://picsum.photos/500" alt="">
+      </div>
+    </section>
+
+    <section class="features-main my-2">
+      <div class="container grid grid-3">
+	<div class="card flex">
+	  <i class="fas fa-server fa-3x"></i>
+	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat egestas sapien, id vehicula ipsum pharetra a. Morbi aliquet nibh quis eros hendrerit posuere. Praesent consectetur purus a iaculis mollis.</p>
+	</div>
+	<div class="card flex">
+	  <i class="fas fa-database fa-3x"></i>
+	  <p>Nam placerat egestas sapien, id vehicula ipsum pharetra. Morbi aliquet nibh quis eros hendrerit posuere. Praesent consectetur purus a iaculis mollis.</p>
+	</div>
+	<div class="card flex">
+	  <i class="fas fa-power-off fa-3x"></i>
+	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat egestas sapien, id vehicula ipsum pharetra a. Morbi aliquet nibh quis eros hendrerit posuere.</p>
+	</div>
+	<div class="card flex">
+	  <i class="fas fa-upload fa-3x"></i>
+	  <p>Vehicula ipsum pharetra a. Morbi aliquet nibh quis eros hendrerit posuere. Praesent consectetur purus a iaculis mollis.</p>
+	</div>
+	<div class="card flex">
+	  <i class="fas fa-laptop-code fa-3x"></i>
+	  <p>Placerat egestas sapien, id vehicula ipsum pharetra a. Morbi aliquet nibh quis eros hendrerit posuere. Praesent consectetur purus a iaculis mollis.</p>
+	</div>
+	<div class="card flex">
+	  <i class="fas fa-network-wired fa-3x"></i>
+	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat egestas sapien, id vehicula ipsum pharetra a. Morbi aliquet nibh quis eros hendrerit posuere.</p>
+	</div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark py-5">
+      <div class="container grid grid-3">
+	<div>
+	  <h1>Loruki.</h1>
+	  <p>
+	    Copyright &copy; 2020
+	  </p>
+	</div>
+	<nav>
+	  <ul>
+	    <li><a href="index.html">Home</a></li>
+	    <li><a href="features.html">Features</a></li>
+	    <li><a href="docs.html">Docs</a></li>
+	  </ul>
+	</nav>
+	<div class="social">
+	  <a href="#"><i class="fab fa-github fa-2x"></i></a>
+	  <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+	  <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+	  <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+	</div>
+      </div>
+    </footer>
+
+
+    <script>
+
+    </script>
+  </body>
+</html>
