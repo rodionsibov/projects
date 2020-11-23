@@ -336,19 +336,19 @@
 
       /* Utilities: Text colors */
       .text-primary {
-	  background-color: var(--primary-color);
+	  color: var(--primary-color);
       }
 
       .text-secondary {
-	  background-color: var(--secondary-color);
+	  color: var(--secondary-color);
       }
       
       .text-dark {
-	  background-color: var(--dark-color);
+	  color: var(--dark-color);
       }
       
       .text-light {
-	  background-color: var(--light-color);
+	  color: var(--light-color);
       }
 
       /* Utilities: Text sizes */
@@ -507,7 +507,9 @@
 	  .showcase .grid,
 	  .stats .grid,
 	  .cli .grid,
-	  .cloud .grid {
+	  .cloud .grid,
+	  .features-main .grid,
+	  .docs-main .grid {
 	      grid-template-columns: 1fr;
 	      grid-template-rows: 1fr;
 	  }
@@ -536,6 +538,19 @@
 	      padding: 10px;
 	  }
 
+	  .features-head,
+	  .features-sub-head,
+	  .docs-head {
+	      text-align: center;
+	  }
+
+	  .features-head img,
+	  .features-sub-head img,
+	  .docs-head img {
+	      justify-self: center;
+	  }
+
+	  .features
 	  
       }
       
