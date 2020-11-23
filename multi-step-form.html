@@ -96,7 +96,7 @@
     <section>
       <div class="container">
 	<form>
-	  <div class="step step-1">
+	  <div class="step step-1 active">
 	    <div class="form-group">
 	      <label for="firstName">First Name</label>
 	      <input type="text" id="firstName" name="firstName">
@@ -125,7 +125,7 @@
 	    <button type="button" class="next-btn">Next</button>
 	  </div>
 
-	  <div class="step step-3 active">
+	  <div class="step step-3">
 	    <div class="form-group">
 	      <label for="country">Country</label>
 	      <input type="text" id="country" name="country">
@@ -151,7 +151,9 @@
     </footer>
 
     <script>
-      
+
+      const steps = Array.from(document.querySelectorAll('form .step')); 
+      console.log(steps)
 
     </script>
   </body>
