@@ -42,8 +42,16 @@
 	  box-shadow: 0 0 20px #00000010;
 	  background-color: white;
 	  border-radius: 8px;
-	  margin-top: 40px;
       }
+
+      .step {
+	  display: none;
+      }
+
+      .step.active {
+	  display: block;
+      }
+
 
     </style>
   </head>
@@ -52,7 +60,7 @@
     <section>
       <div class="container">
 	<form>
-	  <div class="step step-1">
+	  <div class="step step-1 active">
 	    <div class="form-group">
 	      <label for="firstName">First Name</label>
 	      <input type="text" id="firstName" name="firstName">
