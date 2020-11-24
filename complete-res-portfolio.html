@@ -17,6 +17,10 @@
 	  font-family: 'Poppins', sans-serif;
       }
 
+      section {
+	  padding: 100px;
+      }
+
       .banner {
 	  position: relative;
 	  min-height: 100vh;
@@ -32,14 +36,72 @@
 	  font-size: 3em;
 	  color: #fff;
 	  font-weight: 500;
-	  line-height: 1.2em;
+	  line-height: 1.5em;
+      }
+
+      .banner h2 span {
+	  font-size: 1.5em;
+	  font-weight: 700;
       }
       
+      .banner h3 {
+	  font-size: 1.5em;
+	  color: #fff;
+	  font-weight: 500;
+      }
+
+      .btn {
+	  position: relative;
+	  background: #2196f3;
+	  display: inline-block;
+	  color: #fff;
+	  margin-top: 20px;
+	  padding: 10px 30px;
+	  font-size: 18px;
+	  text-transform: uppercase;
+	  text-decoration: none;
+	  letter-spacing: 2px;
+	  font-weight: 500;
+      }
+      
+      header {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  padding: 40px 100px;
+	  z-index: 1000;
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+      }
+      
+      header .logo {
+	  color: #fff;
+	  font-size: 24px;
+	  text-transform: uppercase;
+	  text-decoration: none;
+	  font-weight: 700;
+	  letter-spacing: 2px;
+      }
 
     </style>
   </head>
   <body>
     
+    <header>
+      <a href="#" class="logo">Portfolio</a>
+      <div class="toggle"></div>
+      <ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="#">About</a></li>
+	<li><a href="#">Services</a></li>
+	<li><a href="#">Work</a></li>
+	<li><a href="#">Testimonial</a></li>
+	<li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+
     <section class="banner">
       <div class="text-bx">
 	<h2>Hello, I'm<br><span>Rodion Sibov.</span></h2>
