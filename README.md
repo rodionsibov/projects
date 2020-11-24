@@ -2,7 +2,7 @@
 
 The more you practice, the better your skills will become. You are free to modify, save, share, use or do whatever you want with them. Experiment and have fun! 😉
 
-1. https://rodionsibov.github.io/projects/food-recipe-app.html
+1. https://rodionsibov.github.io/projects/contacts-app.html
 1. https://rodionsibov.github.io/projects/multi-step-form.html
 1. https://rodionsibov.github.io/projects/res-website-grid.html
 1. https://rodionsibov.github.io/projects/speech-recognition-app.html
