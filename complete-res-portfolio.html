@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Personal Portfolio | Responsive Website Design</title>
 
     <style>
@@ -13,18 +14,43 @@
 	  margin: 0;
 	  padding: 0;
 	  box-sizing: border-box;
+	  font-family: 'Poppins', sans-serif;
       }
+
+      .banner {
+	  position: relative;
+	  min-height: 100vh;
+	  background: url('https://via.placeholder.com/1000/000000/000000');
+	  background-size: cover;
+	  background-position: right;
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+      }
+
+      .banner h2 {
+	  font-size: 3em;
+	  color: #fff;
+	  font-weight: 500;
+	  line-height: 1.2em;
+      }
+      
 
     </style>
   </head>
   <body>
     
-    <section>
+    <section class="banner">
+      <div class="text-bx">
+	<h2>Hello, I'm<br><span>Rodion Sibov.</span></h2>
+	<h3>I'm a Front End Web Developer.</h3>
+	<a href="#" class="btn">About Me</a>
+      </div>
     </section>
 
     
     <footer style="background-color: #333; color: #fff; padding: 5px 10px; position: fixed; bottom: 0; border-top-right-radius: 4px;">
-      <p><small>Coded by <a style="color: #fff;" href="https://github.com/rodionsibov">Rodion Sibov</a> | 2020</small></p>
+      <p><small>Coded by <a style="color: #fff; text-decoration: none; border-bottom: 2px dashed #555;" href="https://github.com/rodionsibov">Rodion Sibov</a> | 2020</small></p>
     </footer>
 
     <script>
