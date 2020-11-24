@@ -61,13 +61,21 @@
       }
 
       form input {
-	  width: 100%;
+	  width: 90%;
 	  background-color: transparent;
 	  padding: 10px;
 	  border: none;
 	  outline: none;
-	  font-size: 1rem;
+	  font-size: 1.3rem;
 	  font-family: inherit;
+	  display: inline-block;
+      }
+
+      form ion-icon {
+	  width: 9%;
+	  font-size: 1.5rem;
+	  margin: -5px;
+	  color: rgb(75, 75, 75);
       }
 
 
@@ -80,6 +88,7 @@
 	<h1 class="brand">Recipe App</h1>
 	<form>
 	  <input type="text" placeholder="Search Your Recipe...">
+	  <ion-icon name="search-outline"></ion-icon>
 	</form>
 	<div class="search-result">
 	  <div class="item">
@@ -114,6 +123,8 @@
     <footer style="background-color: #333; color: #fff; padding: 5px; text-align: center;">
       <p><small>Coded by <a style="color: #fff;" href="https://github.com/rodionsibov">Rodion Sibov</a> | 2020</small></p>
     </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
 
     <script>
 
