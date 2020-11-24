@@ -126,7 +126,6 @@
 	  color: whitesmoke;
 	  display: block;
 	  margin-top: 10px;
-	  line-height: 2rem;
       }
 
 
@@ -136,36 +135,12 @@
     
     <section>
       <div class="container">
-	<h1 class="brand">Recipe App</h1>
+	<h1 class="brand">Contacts App</h1>
 	<form>
-	  <input type="text" placeholder="Search Your Recipe...">
+	  <input type="text" placeholder="Search Your Contacts...">
 	  <ion-icon name="search-outline"></ion-icon>
 	</form>
 	<div class="search-result">
-	  <div class="item">
-	    <img src="https://via.placeholder.com/300" alt="">
-	    <div class="flex-container">
-	      <h1 class="title">this is a recipe</h1>
-	      <a href="#">View Recipe</a>
-	    </div>
-	    <p class="item-data">Calories: 120</p>
-	  </div>
-	  <div class="item">
-	    <img src="https://via.placeholder.com/300" alt="">
-	    <div class="flex-container">
-	      <h1 class="title">this is a recipe</h1>
-	      <a href="#">View Recipe</a>
-	    </div>
-	    <p class="item-data">Calories: 120</p>
-	  </div>
-	  <div class="item">
-	    <img src="https://via.placeholder.com/300" alt="">
-	    <div class="flex-container">
-	      <h1 class="title">this is a recipe</h1>
-	      <a href="#">View Recipe</a>
-	    </div>
-	    <p class="item-data">Calories: 120</p>
-	  </div>
 	</div>
       </div>
     </section>
@@ -182,12 +157,44 @@
       const searchResultDiv = document.querySelector('.search-result');
       const container = document.querySelector('.container');
       let searchQuery = '';
+      // const APP_ID = '0afafdc7';
+      // const APP_key = '160d4b731396746f446124e1a7bbe0af';
 
       searchForm.addEventListener('submit', (e) => {
 	  e.preventDefault();
 	  searchQuery = e.target.querySelector('input').value;
-	  console.log(searchQuery)
-      })
+	  fetchAPI(searchQuery);	  
+      });
+
+      async function fetchAPI(s) {
+	  // const baseURL= `https://api.edamam.com/search?q=pizza&app_id=${APP_ID}&app_key=${APP_key}`;
+	  const baseURL= `https://randomuser.me/api/?seed=${s}`
+	  const response = await fetch(baseURL)
+	  const data = await response.json();
+	  generateHTML(data.results);
+	  console.log(data)
+      };
+
+      function generateHTML(results) {
+	  let generatedHTML = '';
+	  results.map(result => {
+	      generatedHTML += `
+		  <div class="item">
+		  <img src="${result.picture.large}" alt="">
+		  <div class="flex-container">
+		  <h1 class="title">${result.name.title} ${result.name.first} ${result.name.last}</h1>
+		  <a href="mailto:${result.email}" target="_blank">Send Email</a>
+		  </div>
+		  <p class="item-data"><small style="color: gray;">Location:</small> ${result.location.city}, ${result.location.country}</p>
+		  <p class="item-data"><small style="color: gray;">Phone:</small> ${result.phone}</p>
+		  <p class="item-data"><small style="color: gray;">Registered:</small> ${result.registered.date.slice(0, 10)}</p>
+		  </div>
+`;
+
+		  
+	  })
+	  searchResultDiv.innerHTML = generatedHTML;
+      };
       
     </script>
   </body>
