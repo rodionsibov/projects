@@ -152,6 +152,45 @@
 	  max-width: 100%;
       }
 
+      .services {
+	  background: #111;
+      }
+
+      .heading.white {
+	  color: #fff;
+      }
+
+      .services .content {
+	  display: flex;
+	  justify-content: center;
+	  flex-wrap: wrap;
+	  flex-direction: row;
+      }
+
+      .services .content .services-box {
+	  padding: 40px 20px;
+	  background: #222;
+	  color: #fff;
+	  max-width: 340px;
+	  margin: 20px;
+	  text-align: center;
+	  transition: 0.5s;
+      }
+
+      .services .content .services-box:hover {
+	  background: #2196f3; 
+      }
+
+      .services .content .services-box img {
+	  max-width: 80px;
+	  filter: invert(1);
+      }
+
+      .services .content .services-box h2 {
+	  font-size: 20px;
+	  font-weight: 600;
+      }
+
     </style>
   </head>
   <body>
@@ -194,8 +233,49 @@ Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. Praesent et ef
       </div>
     </section>
 
-
+    <section class="services">
+      <div class="heading white">
+	<h2>Our Services</h2>
+	<p>Suspendisse eu vehicula nibh, sed varius eros.</p>
+      </div>
+      <div class="content">
+	<div class="services-box">
+	  <img src="https://via.placeholder.com/200/">
+	  <h2>Web Design</h2>
+	  <p>Nulla tempus tristique risus maximus fringilla. Proin eget rhoncus ante. Curabitur sit amet sem a lorem fermentum sollicitudin. </p>
+	</div>
+	<div class="services-box">
+	  <img src="https://via.placeholder.com/200/">
+	  <h2>Web Development</h2>
+	  <p>Nulla tempus tristique risus maximus fringilla. Proin eget rhoncus ante. Curabitur sit amet sem a lorem fermentum sollicitudin. </p>
+	</div>
+	<div class="services-box">
+	  <img src="https://via.placeholder.com/200/">
+	  <h2>Android App</h2>
+	  <p>Nulla tempus tristique risus maximus fringilla. Proin eget rhoncus ante. Curabitur sit amet sem a lorem fermentum sollicitudin. </p>
+	</div>
+	<div class="services-box">
+	  <img src="https://via.placeholder.com/200/">
+	  <h2>Photography</h2>
+	  <p>Nulla tempus tristique risus maximus fringilla. Proin eget rhoncus ante. Curabitur sit amet sem a lorem fermentum sollicitudin. </p>
+	</div>
+	<div class="services-box">
+	  <img src="https://via.placeholder.com/200/">
+	  <h2>Content Writing</h2>
+	  <p>Nulla tempus tristique risus maximus fringilla. Proin eget rhoncus ante. Curabitur sit amet sem a lorem fermentum sollicitudin. </p>
+	</div>
+	<div class="services-box">
+	  <img src="https://via.placeholder.com/200/">
+	  <h2>Video Editing</h2>
+	  <p>Nulla tempus tristique risus maximus fringilla. Proin eget rhoncus ante. Curabitur sit amet sem a lorem fermentum sollicitudin. </p>
+	</div>
+      </div>
+    </section>    
     
+    <section class="work">
+      
+    </section>
+
     <footer style="background-color: #333; color: #fff; padding: 5px 10px; position: fixed; bottom: 0; border-top-right-radius: 4px;">
       <p><small>Coded by <a style="color: #fff; text-decoration: none; border-bottom: 2px dashed #555;" href="https://github.com/rodionsibov">Rodion Sibov</a> | 2020</small></p>
     </footer>
