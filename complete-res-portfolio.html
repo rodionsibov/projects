@@ -74,8 +74,15 @@
 	  display: flex;
 	  justify-content: space-between;
 	  align-items: center;
+	  transition: 0.5s;
       }
       
+      header.sticky {
+	  background: #fff;
+	  padding: 20px 100px;
+	  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      }
+
       header .logo {
 	  color: #fff;
 	  font-size: 24px;
@@ -83,6 +90,10 @@
 	  text-decoration: none;
 	  font-weight: 700;
 	  letter-spacing: 2px;
+      }
+
+      header.sticky .logo {
+	  color: #111;
       }
 
       header ul {
@@ -101,6 +112,10 @@
 	  margin: 0 15px;
 	  color: #fff;
 	  text-decoration: none;
+      }
+
+      header.sticky ul li a {
+	  color: #111;
       }
 
       .heading {
@@ -169,12 +184,12 @@
       <div class="content">
 	<div class="content-box w-50">
 	  <h3>I'm Front End Web Developer.</h3>
-	  <p>Cras nulla libero, consequat at nisl quis, porttitor vehicula risus. Donec posuere et odio ut hendrerit. Vivamus ornare enim lectus, eget faucibus arcu pulvinar eget. Mauris pulvinar lacus sit amet nisl ultricies egestas. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus. Praesent consequat ligula scelerisque arcu molestie semper.  
+	  <p>Cras nulla libero, consequat at nisl quis, porttitor vehicula risus. Donec posuere et odio ut hendrerit. Vivamus ornare enim lectus, eget faucibus arcu pulvinar eget. Mauris pulvinar lacus sit amet nisl ultricies egestas. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus.
 	    <br><br>
-Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. Praesent et efficitur risus. In at aliquam lorem. Aliquam venenatis nisl diam, vel sodales nisi egestas sit amet. Proin rutrum sapien orci, ac ultrices nisl finibus nec. Donec condimentum at nisi eu maximus. </p>
+Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. Praesent et efficitur risus. In at aliquam lorem. Aliquam venenatis nisl diam, vel sodales nisi egestas sit amet. Donec condimentum at nisi eu maximus. </p>
 	</div>
 	<div class="w-50">
-	  <img src="https://via.placeholder.com/500/" class="img">
+	  <img src="https://via.placeholder.com/500x400/" class="img">
 	</div>
       </div>
     </section>
@@ -186,7 +201,10 @@ Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. Praesent et ef
     </footer>
 
     <script>
-      
+      window.addEventListener('scroll', () => {
+	  const header = document.querySelector('header');
+	  header.classList.toggle('sticky', window.scrollY > 0);
+      })
       
     </script>
   </body>
