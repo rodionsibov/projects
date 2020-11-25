@@ -205,8 +205,49 @@
       .work .content .work-box img {
 	  max-width: 100%;
       }
+      
+      .testimonial {
+	  background: #f7f7f7;
+      }
+
+      .testimonial .content {
+	  display: flex;
+	  justify-content: space-between;
+	  flex-wrap: wrap;
+      }
+
+      .testimonial .content .testimonial-box {
+	  max-width: calc(50% - 40px);
+	  padding: 60px 40px;
+	  margin: 20px;
+	  background: #2196f3; 
+      }
+      
+      .testimonial .content .testimonial-box p {
+	  color: #fff;
+	  font-style: italic;
+	  font-size: 16px;
+	  font-weight: 300;
+      }
+
+      .testimonial .content .testimonial-box h3 {
+	  margin-top: 40px;
+	  text-align: end;
+	  color: #fff;
+	  font-weight: 600;
+	  font-size: 20px;
+	  line-height: 1em;
+      }
+
+      .testimonial .content .testimonial-box h3 span {
+	  font-size: 14px;
+	  font-weight: 400;
+	  
+      }
 
 
+
+	    
     </style>
   </head>
   <body>
@@ -309,6 +350,23 @@ Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. Praesent et ef
       </div>
       <div class="heading">
 	<a href="#" class="btn">View More</a>
+      </div>
+    </section>
+
+    <section class="testimonial">
+      <div class="heading">
+	<h2>Testimonial</h2>
+	<p>Fusce sagittis, nisi at commodo commodo, mauris risus iaculis arcu.</p>
+      </div>
+      <div class="content">
+	<div class="testimonial-box">
+	  <p>Sed aliquet feugiat neque, at bibendum velit mollis id. Nulla tempus tristique risus maximus fringilla. Proin eget rhoncus ante. Curabitur sit amet sem a lorem fermentum sollicitudin. Nam vitae nibh vel lacus faucibus cursus sit amet eu ex.</p>
+	  <h3>Someone Famous<br><span>Creative Designer</span></h3>
+	</div>
+	<div class="testimonial-box">
+	  <p>x Nulla tempus tristique risus maximus fringilla. Proin eget rhoncus ante. Curabitur sit amet sem a lorem fermentum sollicitudin. Nam vitae nibh vel lacus faucibus cursus sit amet eu ex.</p>
+	  <h3>Someone Famous<br><span>Creative Designer</span></h3>
+	</div>
       </div>
     </section>
 
