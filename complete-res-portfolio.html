@@ -103,6 +103,40 @@
 	  text-decoration: none;
       }
 
+      .heading {
+	  width: 100%;
+	  text-align: center;
+	  margin-bottom: 30px;
+	  color: #111;
+      }
+
+      .heading h2 {
+	  font-weight: 600;
+	  font-size: 30px;
+      }
+      
+      .content {
+	  display: flex;
+	  justify-content: space-between;
+      }
+      
+      .content-box {
+	  padding-right: 40px;
+      }
+
+      .content-box h3 {
+	  font-size: 24px;
+	  margin-bottom: 10px;
+      }
+
+      .w-50 {
+	  min-width: 50%;
+      }
+
+      img {
+	  max-width: 100%;
+      }
+
     </style>
   </head>
   <body>
@@ -127,6 +161,24 @@
 	<a href="#" class="btn">About Me</a>
       </div>
     </section>
+    
+    <section class="about">
+      <div class="heading">
+	<h2>About me</h2>
+      </div>
+      <div class="content">
+	<div class="content-box w-50">
+	  <h3>I'm Front End Web Developer.</h3>
+	  <p>Cras nulla libero, consequat at nisl quis, porttitor vehicula risus. Donec posuere et odio ut hendrerit. Vivamus ornare enim lectus, eget faucibus arcu pulvinar eget. Mauris pulvinar lacus sit amet nisl ultricies egestas. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus. Praesent consequat ligula scelerisque arcu molestie semper.  
+	    <br><br>
+Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. Praesent et efficitur risus. In at aliquam lorem. Aliquam venenatis nisl diam, vel sodales nisi egestas sit amet. Proin rutrum sapien orci, ac ultrices nisl finibus nec. Donec condimentum at nisi eu maximus. </p>
+	</div>
+	<div class="w-50">
+	  <img src="https://via.placeholder.com/500/" class="img">
+	</div>
+      </div>
+    </section>
+
 
     
     <footer style="background-color: #333; color: #fff; padding: 5px 10px; position: fixed; bottom: 0; border-top-right-radius: 4px;">
