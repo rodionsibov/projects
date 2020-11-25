@@ -7,6 +7,8 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <title>Personal Portfolio | Responsive Website Design</title>
 
     <style>
@@ -244,10 +246,98 @@
 	  font-weight: 400;
 	  
       }
+      
+      .contact {
+	  background: #111;
+      }
+
+      .form-box {
+	  min-width: 60%;
+      }
+
+      .form-box form {
+	  display: flex;
+	  flex-direction: column;
+      }
+
+      .form-box form h3,
+      .contact-info h3 {
+	  color: #fff;
+	  font-size: 20px;
+	  font-weight: 500;
+	  margin-bottom: 10px;
+      }
+
+      .form-box form input,
+      .form-box form textarea {
+	  margin-bottom: 20px;
+	  padding: 15px;
+	  font-size: 16px;
+	  background: transparent;
+	  border: none;
+	  outline: none;
+	  background: #222;
+	  color: #fff;
+	  resize: none;
+      }
+
+      .form-box form textarea {
+	  min-height: 200px;
+      }
+
+      .form-box form input::placeholder,
+      .form-box form textarea::placeholder {
+	  color: #999;
+      }
+      
+      .form-box form input[type="submit"] {
+	  max-width: 100px;
+	  background: #2196f3;
+	  cursor: pointer;
+	  text-transform: uppercase;
+	  letter-spacing: 2px;
+      }
+
+      .contact-info {
+	  min-width: 40%;
+      }
+      
+      .contact-info-box {
+	  position: relative;
+      }
+
+      .contact-info-box .box {
+	  position: relative;
+	  padding: 20px 0;
+	  display: flex;
+      }
+
+      .contact-info-box .box .icon {
+	  min-width: 40px;
+	  padding-top: 4px;
+	  color: #fff;
+	  display: flex;
+	  justify-content: center;
+	  align-items: flex-start;
+	  font-size: 24px;
+      }
+
+      .contact-info-box .box .text {
+	  display: flex;
+	  margin-left: 20px;
+	  font-size: 16px;
+	  color: #fff;
+	  flex-direction: column;
+	  font-weight: 300;
+      }
+
+      .contact-info-box .box .text h3 {
+	  font-weigh: 500;
+	  color: #2196f3;
+	  margin-bottom: 0;
+      }
 
 
-
-	    
     </style>
   </head>
   <body>
@@ -369,6 +459,51 @@ Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. Praesent et ef
 	</div>
       </div>
     </section>
+
+    <section class="contact">
+      <div class="heading white">
+	<h2>Contact</h2>
+	<p>Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. </p>
+      </div>
+      <div class="content">
+	<div class="contact-info">
+	  <h3>Contact Info</h3>
+	  <div class="contact-info-box">
+	    <div class="box">
+	      <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+	      <div class="text">
+		<h3>Address</h3>
+		<p>4523 Sugar Camp Road,<br>Owatonna, Minnesota,<br>55082</p>
+	      </div>
+	    </div>
+	    <div class="box">
+	      <div class="icon"><i class="fas fa-phone"></i></div>
+	      <div class="text">
+		<h3>Phone</h3>
+		<p>507-456-7094</p>
+	      </div>
+	    </div>
+	    <div class="box">
+	      <div class="icon"><i class="far fa-envelope"></i></div>
+	      <div class="text">
+		<h3>Email</h3>
+		<p>wifu76w8@temp-mail.net</p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="form-box">
+	  <form>
+	    <h3>Message Me</h3>
+	    <input type="text" name="name" placeholder="Full Name">
+	    <input type="email" name="email" placeholder="Email">
+	    <textarea placeholder="Your Message"></textarea>
+	    <input type="submit" value="Send">
+	  </form>
+	</div>
+      </div>
+    </section>
+    
 
     <footer style="background-color: #333; color: #fff; padding: 5px 10px; position: fixed; bottom: 0; border-top-right-radius: 4px;">
       <p><small>Coded by <a style="color: #fff; text-decoration: none; border-bottom: 2px dashed #555;" href="https://github.com/rodionsibov">Rodion Sibov</a> | 2020</small></p>
