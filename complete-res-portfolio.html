@@ -17,6 +17,7 @@
 	  padding: 0;
 	  box-sizing: border-box;
 	  font-family: 'Poppins', sans-serif;
+	  scroll-behavior: smooth;
       }
 
       section {
@@ -346,24 +347,24 @@
       <a href="#" class="logo">Portfolio</a>
       <div class="toggle"></div>
       <ul>
-	<li><a href="#">Home</a></li>
-	<li><a href="#">About</a></li>
-	<li><a href="#">Services</a></li>
-	<li><a href="#">Work</a></li>
-	<li><a href="#">Testimonial</a></li>
-	<li><a href="#">Contact</a></li>
+	<li><a href="#home">Home</a></li>
+	<li><a href="#about">About</a></li>
+	<li><a href="#services">Services</a></li>
+	<li><a href="#work">Work</a></li>
+	<li><a href="#testimonial">Testimonial</a></li>
+	<li><a href="#contact">Contact</a></li>
       </ul>
     </header>
 
-    <section class="banner">
+    <section class="banner" id="home">
       <div class="text-bx">
 	<h2>Hello, I'm<br><span>Rodion Sibov.</span></h2>
 	<h3>I'm a Front End Web Developer.</h3>
-	<a href="#" class="btn">About Me</a>
+	<a href="#about" class="btn">About Me</a>
       </div>
     </section>
     
-    <section class="about">
+    <section class="about" id="about">
       <div class="heading">
 	<h2>About me</h2>
       </div>
@@ -380,7 +381,7 @@ Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. Praesent et ef
       </div>
     </section>
 
-    <section class="services">
+    <section class="services" id="services">
       <div class="heading white">
 	<h2>Our Services</h2>
 	<p>Suspendisse eu vehicula nibh, sed varius eros.</p>
@@ -419,7 +420,7 @@ Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. Praesent et ef
       </div>
     </section>    
     
-    <section class="work">
+    <section class="work" id="work">
       <div class="heading">
 	<h2>Our Latest Work</h2>
 	<p>Praesent consequat ligula scelerisque arcu molestie semper. </p>
@@ -443,7 +444,7 @@ Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. Praesent et ef
       </div>
     </section>
 
-    <section class="testimonial">
+    <section class="testimonial" id="testimonial">
       <div class="heading">
 	<h2>Testimonial</h2>
 	<p>Fusce sagittis, nisi at commodo commodo, mauris risus iaculis arcu.</p>
@@ -460,7 +461,7 @@ Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. Praesent et ef
       </div>
     </section>
 
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="heading white">
 	<h2>Contact</h2>
 	<p>Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. </p>
@@ -503,10 +504,9 @@ Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. Praesent et ef
 	</div>
       </div>
     </section>
-    
-
-    <footer style="background-color: #333; color: #fff; padding: 5px 10px; position: fixed; bottom: 0; border-top-right-radius: 4px;">
-      <p><small>Coded by <a style="color: #fff; text-decoration: none; border-bottom: 2px dashed #555;" href="https://github.com/rodionsibov">Rodion Sibov</a> | 2020</small></p>
+        
+    <footer style="background-color: #333; color: #fff; text-align: center; padding: 5px;">
+      <p><small>Coded by <a style="color: #fff; text-decoration: none; border-bottom: 2px dotted #999;" href="https://github.com/rodionsibov">Rodion Sibov</a> | 2020</small></p>
     </footer>
 
     <script>
