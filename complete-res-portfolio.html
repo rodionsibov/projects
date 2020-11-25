@@ -191,6 +191,22 @@
 	  font-weight: 600;
       }
 
+      .work .content {
+	  display: flex;
+	  justify-content: space-between;
+	  flex-wrap: wrap;
+      }
+
+      .work .content .work-box {
+	  width: 50%;
+	  padding: 20px;
+      }
+
+      .work .content .work-box img {
+	  max-width: 100%;
+      }
+
+
     </style>
   </head>
   <body>
@@ -273,7 +289,27 @@ Vivamus nec dolor gravida, hendrerit mauris vitae, posuere augue. Praesent et ef
     </section>    
     
     <section class="work">
-      
+      <div class="heading">
+	<h2>Our Latest Work</h2>
+	<p>Praesent consequat ligula scelerisque arcu molestie semper. </p>
+      </div>
+      <div class="content">
+	<div class="work-box">
+	  <img src="https://via.placeholder.com/500/">
+	</div>
+	<div class="work-box">
+	  <img src="https://via.placeholder.com/500/">
+	</div>
+	<div class="work-box">
+	  <img src="https://via.placeholder.com/500/">
+	</div>
+	<div class="work-box">
+	  <img src="https://via.placeholder.com/500/">
+	</div>
+      </div>
+      <div class="heading">
+	<a href="#" class="btn">View More</a>
+      </div>
     </section>
 
     <footer style="background-color: #333; color: #fff; padding: 5px 10px; position: fixed; bottom: 0; border-top-right-radius: 4px;">
