@@ -43,7 +43,6 @@
 	  justify-content: center;
 	  align-items: center;
 	  z-index: -1;
-	  background-image: cover;
 	  transform: translateX(100%);
       }
 
@@ -69,19 +68,23 @@
       }
       
       .slide-1 {
-	  background: url(https://picsum.photos/900?random=1); 
+	  background: url(https://picsum.photos/900?random=1);
+	  background-size: cover;
       }
 
       .slide-2 {
-	  background: url(https://picsum.photos/900?random=2); 
+	  background: url(https://picsum.photos/900?random=2);
+	  background-size: cover;
       }
 
       .slide-3 {
-	  background: url(https://picsum.photos/900?random=3); 
+	  background: url(https://picsum.photos/900?random=3);
+	  background-size: cover;
       }
       
       .slide-4 {
-	  background: url(https://picsum.photos/900?random=4); 
+	  background: url(https://picsum.photos/900?random=4);
+	  background-size: cover;
       }
 
       .buttons {
@@ -226,6 +229,7 @@
       })
 
       function getNextSlide() {
+	  clearTimeout(timeoutId);
 	  const activeSlide = document.querySelector('.slide.active');
 	  const [next, prev] = getNextPrev();
 
@@ -244,6 +248,7 @@
       }
 
       function getPrevSlide() {
+	  clearTimeout(timeoutId);
 	  const activeSlide = document.querySelector('.slide.active');
 	  const [next, prev] = getNextPrev();
 
