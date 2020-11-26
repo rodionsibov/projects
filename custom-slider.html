@@ -49,6 +49,7 @@
 
       .slide.active {
 	  transform: translateX(0);
+	  z-index: 3;
       }
       
       .slide.top {
@@ -170,6 +171,7 @@
       const slider = document.querySelector('.slider');
       const buttons = document.querySelectorAll('.buttons div');
       const dotEl = document.querySelector('.dots');
+      let timeoutId;
 
       function getNextPrev() {
 	  const activeSlide = document.querySelector('.slide.active');
@@ -238,6 +240,7 @@
 	  next.style.transform = 'translateX(0)';
 	  getPosition();
 	  getActiveDot();
+	  autoLoop();
       }
 
       function getPrevSlide() {
@@ -276,10 +279,34 @@
 	  allDots[activeIndex].classList.add('active');
       }
 
+      function functionalDots() {
+	  const allDots = document.querySelectorAll('.dots .dot');
+	  allDots.forEach((dot, index) => {
+	      dot.addEventListener('click', () => {
+		  getDotSlide(index);
+	      })
+	  })
+      }
+
+      function getDotSlide(index) {
+	  slides.forEach(slide => {
+	      slide.classList.remove('active');
+	  })
+	  slides[index].classList.add('active');
+	  getPosition();
+	  getActiveDot();
+      }
       
+      function autoLoop() {
+	  timeoutId = setTimeout(() => {
+	      getNextSlide();
+	  }, 5000);
+      }
 
       getActiveDot();
-      
+      functionalDots();
+      autoLoop();
+
     </script>
   </body>
 </html>
