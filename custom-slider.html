@@ -108,6 +108,8 @@
 	  background-color: #fff;
       }
 
+      
+
     </style>
   </head>
   <body>
@@ -131,7 +133,9 @@
 	<div class="next"><i class="fas fa-chevron-right"></i></div>
 	<div class="prev"><i class="fas fa-chevron-left"></i></div>
       </div>
-
+      <div class="dots">
+	
+      </div>
     </section>
         
     <footer style="display: none; background-color: #333; color: #fff; text-align: center; padding: 5px;">
@@ -142,6 +146,7 @@
       const slides = Array.from(document.querySelectorAll('.slide'));
       const slider = document.querySelector('.slider');
       const buttons = document.querySelectorAll('.buttons div');
+      const dotEl = document.querySelector('.dots');
 
       function getNextPrev() {
 	  const activeSlide = document.querySelector('.slide.active');
@@ -199,6 +204,9 @@
 	  const activeSlide = document.querySelector('.slide.active');
 	  const [next, prev] = getNextPrev();
 
+	  if (activeSlide.classList.contains('top')) {
+	      return;
+	  }
 	  activeSlide.classList.add('top');
 	  next.classList.add('top');
 	  activeSlide.classList.remove('active');
@@ -212,6 +220,9 @@
 	  const activeSlide = document.querySelector('.slide.active');
 	  const [next, prev] = getNextPrev();
 
+	  if (activeSlide.classList.contains('top')) {
+	      return;
+	  }
 	  activeSlide.classList.add('top');
 	  prev.classList.add('top');
 	  activeSlide.classList.remove('active');
@@ -220,6 +231,13 @@
 	  prev.style.transform = 'translateX(0)';
 	  getPosition();
       }
+      
+      // Dots functionality
+      slides.forEach(slide => {
+	  const dot = document.createElement('div');
+	  dot.classList.add('dot');
+	  dotEl.appendChild(dot);
+      })
       
     </script>
   </body>
