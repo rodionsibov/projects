@@ -70,21 +70,25 @@
       .slide-1 {
 	  background: url(https://picsum.photos/900?random=1);
 	  background-size: cover;
+	  background-position: center;
       }
 
       .slide-2 {
 	  background: url(https://picsum.photos/900?random=2);
 	  background-size: cover;
+	  background-position: center;
       }
 
       .slide-3 {
 	  background: url(https://picsum.photos/900?random=3);
 	  background-size: cover;
+	  background-position: center;
       }
       
       .slide-4 {
 	  background: url(https://picsum.photos/900?random=4);
 	  background-size: cover;
+	  background-position: center;
       }
 
       .buttons {
@@ -263,6 +267,7 @@
 	  prev.style.transform = 'translateX(0)';
 	  getPosition();
 	  getActiveDot();
+	  autoLoop();
       }
       
       // Dots functionality
@@ -294,12 +299,14 @@
       }
 
       function getDotSlide(index) {
+	  clearTimeout(timeoutId);
 	  slides.forEach(slide => {
 	      slide.classList.remove('active');
 	  })
 	  slides[index].classList.add('active');
 	  getPosition();
 	  getActiveDot();
+	  autoLoop();
       }
       
       function autoLoop() {
