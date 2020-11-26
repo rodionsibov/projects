@@ -42,7 +42,7 @@
 	  display: flex;
 	  justify-content: center;
 	  align-items: center;
-	  /* z-index: -1; */
+	  z-index: -1;
 	  background-image: cover;
 	  transform: translateX(100%);
       }
@@ -51,6 +51,11 @@
 	  transform: translateX(0);
       }
       
+      .slide.top {
+	  transition: 0.3s ease transform;
+	  z-index: 3;
+      }
+
       .slide::after {
 	  content: '';
 	  position: absolute;
@@ -102,7 +107,6 @@
       .buttons div:hover {
 	  background-color: #fff;
       }
-
 
     </style>
   </head>
@@ -157,8 +161,65 @@
 	  }
 	  return [next, prev];
       }
+
+      function getPosition() {
+	  const activeSlide = document.querySelector('.slide.active');
+	  const activeIndex = slides.indexOf(activeSlide);
+	  const [next, prev] = getNextPrev();
+
+	  slides.forEach((slide, index) => {
+	      if (index === activeIndex) {
+		  slide.style.transform = 'translateX(0)';
+	      } else if (slide === prev) {
+		  slide.style.transform = 'translateX(-100%)';
+	      } else if (slide === next) {
+		  slide.style.transform = 'translateX(100%)';
+	      } else {
+		  slide.style.transform = 'transformX(100%)';
+	      }
+
+	      slide.addEventListener('transitionend', () => {
+		  slide.classList.remove('top');
+	      })
+	  })
+      }
       
-      getNextPrev();
+      
+      buttons.forEach(button => {
+	  button.addEventListener('click', () => {
+	      if (button.classList.contains('next')) {
+		  getNextSlide();
+	      } else if (button.classList.contains('prev')) {
+		  getPrevSlide();	  
+	      }
+	  })
+      })
+
+      function getNextSlide() {
+	  const activeSlide = document.querySelector('.slide.active');
+	  const [next, prev] = getNextPrev();
+
+	  activeSlide.classList.add('top');
+	  next.classList.add('top');
+	  activeSlide.classList.remove('active');
+	  activeSlide.style.transform = 'translateX(-100%)';
+	  next.classList.add('active');
+	  next.style.transform = 'translateX(0)';
+	  getPosition();
+      }
+
+      function getPrevSlide() {
+	  const activeSlide = document.querySelector('.slide.active');
+	  const [next, prev] = getNextPrev();
+
+	  activeSlide.classList.add('top');
+	  prev.classList.add('top');
+	  activeSlide.classList.remove('active');
+	  activeSlide.style.transform = 'translateX(100%)';
+	  prev.classList.add('active');
+	  prev.style.transform = 'translateX(0)';
+	  getPosition();
+      }
       
     </script>
   </body>
