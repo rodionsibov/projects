@@ -28,7 +28,7 @@
       }
 
       .container {
-	  margin: 0 50px;
+	  margin: 0 40px;
 	  width: fit-content;
       }
       
@@ -39,19 +39,26 @@
 	  margin: 0 5px;
 	  display: inline-block;
 	  border-radius: 50px;
+      }
+
+      .container:nth-child(1) .dot {
 	  animation: dotLoaders 0.9s linear infinite forwards;
       }
-
-      .dot-1 {
-	  animation-delay: 0.25;
+      
+      .container:nth-child(2) .dot {
+	  animation: dotLoaders2 1.5s linear infinite forwards;
       }
 
-      .dot-2 {
-	  animation-delay: 0.5;
+      .container .dot.dot-1 {
+	  animation-delay: 0.25s;
       }
 
-      .dot-3 {
-	  animation-delay: 0.75;
+      .container .dot.dot-2 {
+	  animation-delay: 0.5s;
+      }
+
+      .container .dot.dot-3 {
+	  animation-delay: 0.75s;
       }
 
       @keyframes dotLoaders {
@@ -66,12 +73,33 @@
 	  }
       }
 
+      @keyframes dotLoaders2 {
+	  0% {
+	      background: rgba(255, 255, 255, 0.137);
+	      transform: scale(0.8);
+	  }
+	  50% {
+	      background: white;
+	      transform: scale(1.5);
+	  }
+	  100% {
+	      background: rgba(255, 255, 255, 0.137);
+	      transform: scale(0.8);
+
+	  }
+      }
+
 
     </style>
   </head>
   <body>
     
     <section>
+      <div class="container">
+	<div class="dot dot-1"></div>
+	<div class="dot dot-2"></div>
+	<div class="dot dot-3"></div>
+      </div>
       <div class="container">
 	<div class="dot dot-1"></div>
 	<div class="dot dot-2"></div>
