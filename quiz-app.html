@@ -37,6 +37,7 @@
 	  color: #fff;
 	  position: relative;
 	  overflow: hidden;
+	  margin: 50px 0;
       }
 
       .container .scoreboard {
@@ -75,7 +76,8 @@
 	  color: dodgerblue;
       }
 
-      form button {
+      form button,
+      .container .result-overlay button {
 	  width: 100%;
 	  margin-top: 20px;
 	  padding: 10px;
@@ -84,15 +86,102 @@
 	  border: none;
 	  outline: none;
 	  color: rgb(20, 20, 20);
-	  border-radius: 4px;
 	  cursor: pointer;
 	  transition: 0.3s ease background;
       }
 
-      form button:hover {
+      form button:hover,
+      .container .result-overlay button:hover {
 	  background: rgb(145, 148, 155);
       }
+
+      form .option.correct {
+	  background: green;
+      }
+
+      .finish-btn,
+      .next-btn {
+	  width: 50%;
+	  display: inline-block;
+      }
+
+      .finish-btn {
+	  border-right: 1px solid black; 
+      }
+
+      .next-btn {
+	  border-left: 1px solid black; 
+      }
       
+      .container .result-overlay {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  height: 100%;
+	  width: 100%;
+	  background: rgb(40, 40, 44);
+	  text-align: center;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  flex-direction: column;
+      }
+
+      .container .result-overlay .final-result {
+	  font-size: 5rem;
+      }
+
+      .container .placeholder {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  height: 100%;
+	  width: 100%;
+	  background: rgb(40, 40, 44);
+      }
+      
+      .placeholder .dot {
+	  height: 12px;
+	  width: 12px;
+	  background: whitesmoke;
+	  margin: 0 5px;
+	  display: inline-block;
+	  border-radius: 50px;
+	  animation: dotLoaders 1.5s linear infinite forwards;
+      }
+
+      .placeholder .dot.dot-1 {
+	  animation-delay: 0.25s;
+      }
+
+      .placeholder .dot.dot-2 {
+	  animation-delay: 0.5s;
+      }
+
+      .placeholder .dot.dot-3 {
+	  animation-delay: 0.75s;
+      }
+
+      @keyframes dotLoaders {
+	  0% {
+	      background: rgba(255, 255, 255, 0.137);
+	      transform: scale(0.8);
+	  }
+	  50% {
+	      background: white;
+	      transform: scale(1.5);
+	  }
+	  100% {
+	      background: rgba(255, 255, 255, 0.137);
+	      transform: scale(0.8);
+	  }
+      }
+
+      
+
     </style>
   </head>
   <body>
@@ -100,27 +189,11 @@
     <section>
       <div class="container">
 	<div class="scoreboard">
-	  <span class="score-num">0</span>/<span class="answered-num">5</span>
+	  <span class="score-num">0</span>/<span class="answered-num">0</span>
 	</div>
 	  <form id="quiz-form">
-	    <h1>Q: <span class="qus">This is a qus?</span></h1>
+	    <h1>Q: <span class="qus"></span></h1>
 	    <div class="all-options">
-	      <div class="option">
-		<input type="radio" id="option-1" value="1" name="quiz">
-		<label for="option-1">This is option 1</label>
-	      </div>
-	      <div class="option">
-		<input type="radio" id="option-2" value="1" name="quiz">
-		<label for="option-2">This is option 1</label>
-	      </div>
-	      <div class="option">
-		<input type="radio" id="option-3" value="1" name="quiz">
-		<label for="option-3">This is option 1</label>
-	      </div>
-	      <div class="option">
-		<input type="radio" id="option-4" value="1" name="quiz">
-		<label for="option-4">This is option 1</label>
-	      </div>
 	    </div>
 
 	    <div class="buttons">
@@ -155,12 +228,29 @@
       window.addEventListener('DOMContentLoaded', quizApp);
 
       async function quizApp() {
+	  addPlaceholder();
+	  updateScoreboard();
 	  const data = await fetchQuiz();
 	  question = data[0].question;
 	  answer = data[0].correct_answer;
+	  options = [];
 	  data[0].incorrect_answers.map(option => options.push(option));
-	  console.log(question, answer, options)
+	  options.splice(Math.floor(Math.random() * options.length + 1), 0, answer);
+	  
+	  generateTemplate(question, options);
       }
+
+      form.addEventListener('submit', (e) => {
+	  e.preventDefault();
+
+	  if (e.target.quiz.value) {
+	      checkQuiz(e.target.quiz.value);
+	      e.target.querySelector('button').style.display = 'none';
+	      generateButtons();
+	  } else {
+	      return;
+	  }
+      })
 
       async function fetchQuiz() {
 	  const response = await fetch(baseURL);
@@ -168,8 +258,110 @@
 	  console.log(data.results)
 	  return data.results;
       }
+
+      function generateTemplate(question, options) {
+	  removePlaceholder();
+	  optionEl.innerHTML = '';
+	  qusEl.innerHTML = question;
+	  options.map((option, index) => {
+	      const item = document.createElement('div');
+	      item.classList.add('option');
+	      item.innerHTML = `
+<input type="radio" id="option-${index+1}" value="${option}" name="quiz">
+<label for="option-${index+1}">${option}</label>
+`;
+	      optionEl.appendChild(item);
+	  })
+      }
+
+      function checkQuiz(selected) {
+	  answeredQus++;
+	  if (selected === answer) {
+	      score++;
+	  }
+	  updateScoreboard();
+	  form.quiz.forEach(input => {
+	      if (input.value === answer) {
+		  input.parentElement.classList.add('correct');
+	      }
+	  })
+      }
+
+      function updateScoreboard() {
+	  scoreEl.innerText = score;
+	  answeredEl.innerText = answeredQus;
+      }
       
-      
-    </script>
+      function generateButtons() {
+	  const finishBtn = document.createElement('button');
+	  finishBtn.innerText = 'Finish';
+	  finishBtn.setAttribute('type', 'button');
+	  finishBtn.classList.add('finish-btn');
+	  buttonEl.appendChild(finishBtn);
+
+	  const nextBtn = document.createElement('button');
+	  nextBtn.innerText = 'Next Quiz';
+	  nextBtn.setAttribute('type', 'button');
+	  nextBtn.classList.add('next-btn');
+	  buttonEl.appendChild(nextBtn);
+	  
+	  finishBtn.addEventListener('click', finishQuiz);
+	  nextBtn.addEventListener('click', getNextQuiz);
+      }
+
+      function getNextQuiz() {
+	  const nextBtn = document.querySelector('.next-btn')
+	  const finishBtn = document.querySelector('.finish-btn')
+
+	  buttonEl.removeChild(nextBtn);
+	  buttonEl.removeChild(finishBtn);
+
+	  buttonEl.querySelector('button[type="submit"]').style.display = 'block';
+	  quizApp();
+      }
+
+      function finishQuiz() {
+	  const nextBtn = document.querySelector('.next-btn')
+	  const finishBtn = document.querySelector('.finish-btn')
+
+	  buttonEl.removeChild(nextBtn);
+	  buttonEl.removeChild(finishBtn);
+
+	  buttonEl.querySelector('button[type="submit"]').style.display = 'block';
+
+	  const overlay = document.createElement('div');
+	  overlay.classList.add('result-overlay');
+	  overlay.innerHTML = `
+<div class="final-result">${score}/${answeredQus}</div>
+<button>Play Again</button>
+`;
+	  
+	  containerEl.appendChild(overlay);
+	  overlay.querySelector('button').addEventListener('click', () => {
+	      containerEl.removeChild(overlay);
+	      playAgain();
+	  });
+      }
+
+      function playAgain() {
+	  score = 0;
+	  answeredQus = 0;
+
+	  quizApp();
+      }
+
+      function addPlaceholder() {
+	  const placeholder = document.createElement('div');
+	  placeholder.classList.add('placeholder');
+	  placeholder.innerHTML = '<div class="dot dot-1"></div><div class="dot dot-2"></div><div class="dot dot-3"></div>'
+	  containerEl.appendChild(placeholder);
+      }
+
+      function removePlaceholder() {
+	  const placeholder = document.querySelector('.placeholder');
+	  containerEl.removeChild(placeholder);
+      }
+
+      </script>
   </body>
 </html>
