@@ -72,7 +72,7 @@
       }
 
       form .option input[type="radio"]:checked + label {
-	  color: rgb(0, 238, 255);
+	  color: dodgerblue;
       }
 
       form button {
@@ -136,7 +136,40 @@
     </footer>
 
     <script>
-    
+
+      //Trivia API
+      const baseURL = 'https://opentdb.com/api.php?amount=1&category=9';
+      const containerEl = document.querySelector('.container');
+      const form = document.querySelector('form');
+      const qusEl = document.querySelector('.qus');
+      const optionEl = document.querySelector('.all-options');
+      const buttonEl = document.querySelector('.buttons');
+      const scoreEl = document.querySelector('.scoreboard .score-num');
+      const answeredEl = document.querySelector('.answered-num');
+
+      let question, answer;
+      let options = [];
+      let score = 0;
+      let answeredQus = 0;
+
+      window.addEventListener('DOMContentLoaded', quizApp);
+
+      async function quizApp() {
+	  const data = await fetchQuiz();
+	  question = data[0].question;
+	  answer = data[0].correct_answer;
+	  data[0].incorrect_answers.map(option => options.push(option));
+	  console.log(question, answer, options)
+      }
+
+      async function fetchQuiz() {
+	  const response = await fetch(baseURL);
+	  const data = await response.json();
+	  console.log(data.results)
+	  return data.results;
+      }
+      
+      
     </script>
   </body>
 </html>
