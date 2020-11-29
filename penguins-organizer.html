@@ -9,18 +9,60 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
     <style>
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  font-family: sans;
+      }
+      
+      section {
+	  min-height: 100vh;
+	  width: 100%;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+      }
+
+      .container {
+	  width: 90%;
+	  max-width: 500px;
+	  height: 400px;
+	  background: #eee;
+	  padding: 50px;
+	  margin: 50px 0;
+      }
+
+      section  h1 {
+	  font-size: 1.5em;
+	  margin-bottom: 10px;
+      }
+
+      section p {
+	  color: #555;
+      }
+
       
     </style>
 
 
   </head>
   <body>
-
-    <h1>Penguins 🐧 Organizer</h1>
-    <p>Fetch API Sandbox</p>
     
-    <div id="root"></div>
-    <footer><small><span class="year"></span> This website was created and is maintained by <a href="https://github.com/rodionsibov">Rodion Sibov</a></small></footer>
+    <section>
+      <h1>Penguins 🐧 Organizer</h1>
+      <p>Fetch API Sandbox</p>
+      <div class="container">
+	<div id="root"></div>
+      </div>
+    </section>
+    
+    <footer style="padding: 10px 50px; background: #333; color: white; text-align: center; font-family: sans;">
+      <p><small>This website was created and is maintained by <a style="color: white; text-decoration: none;" href="https://github.com/rodionsibov">Rodion Sibov</a> &bull; <span class="year"></span></small></p>
+    </footer>
+
     <script>
       const year = new Date().getFullYear()
       document.querySelector('.year').innerHTML = year
@@ -70,37 +112,37 @@
 
       // ##### Store Class #####
 
-	  class Store {
-	      static getUsersAndTodos() {
+      class Store {
+	  static getUsersAndTodos() {
 
+	      
+	      (async () => {
+       		  const usersData = await fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json())
+       		  const todosData =  await fetch('https://jsonplaceholder.typicode.com/todos').then(res => res.json())
+		  const usersFilter = usersData.map(({name, email, company: {name: company}}) => ({name, email, company}))
+		  const todosFilter = todosData.filter(todo => todo.id < 5)
 		  
-		  (async () => {
-       		      const usersData = await fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json())
-       		      const todosData =  await fetch('https://jsonplaceholder.typicode.com/todos').then(res => res.json())
-		      const usersFilter = usersData.map(({name, email, company: {name: company}}) => ({name, email, company}))
-		      const todosFilter = todosData.filter(todo => todo.id < 5)
-		      
-		      localStorage.setItem('users', JSON.stringify(usersFilter))
-		      localStorage.setItem('todos', JSON.stringify(todosFilter))
+		  localStorage.setItem('users', JSON.stringify(usersFilter))
+		  localStorage.setItem('todos', JSON.stringify(todosFilter))
 
-		      let users, todos
-		      localStorage.getItem('users' === null)
-			  ? users = []
-			  : users = JSON.parse(localStorage.getItem('users'))
+		  let users, todos
+		  localStorage.getItem('users' === null)
+		      ? users = []
+		      : users = JSON.parse(localStorage.getItem('users'))
 
-		      localStorage.getItem('todos' === null)
-			  ? todos = []
-			  : todos = JSON.parse(localStorage.getItem('todos'))
+		  localStorage.getItem('todos' === null)
+		      ? todos = []
+		      : todos = JSON.parse(localStorage.getItem('todos'))
 
-		  })()
+	      })()
 
-	      }
-	      
-	      
-	      static addUser() {
-		
-	      }
 	  }
+	  
+	  
+	  static addUser() {
+	      
+	  }
+      }
 
 
       //Event Display 
@@ -114,7 +156,7 @@
 
 
 
-      </script>
+    </script>
 
 
   </body>
