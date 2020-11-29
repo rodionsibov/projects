@@ -40,10 +40,59 @@
       }
 
       .container .scoreboard {
-	  
+	  position: absolute;
+	  top: 20px;
+	  right: 20px;
+      }
+
+      form h1 {
+	  margin-bottom: 2rem;
       }
       
+      form .option {
+	  margin: 8px 0 0 8px;
+	  padding: 8px;
+	  transition: 0.3s ease background-color;
+	  border-radius: 4px;
+	  width: 100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: stretch;
+      }
 
+      form .option label {
+	  width: 100%;
+	  margin-left: 10px;
+	  cursor: pointer;
+	  justify-self: stretch;
+      }
+
+      form .option:hover {
+	  background: rgb(23, 23, 24);
+      }
+
+      form .option input[type="radio"]:checked + label {
+	  color: rgb(0, 238, 255);
+      }
+
+      form button {
+	  width: 100%;
+	  margin-top: 20px;
+	  padding: 10px;
+	  font-size: 1.2rem;
+	  background: rgb(98, 100, 105);
+	  border: none;
+	  outline: none;
+	  color: rgb(20, 20, 20);
+	  border-radius: 4px;
+	  cursor: pointer;
+	  transition: 0.3s ease background;
+      }
+
+      form button:hover {
+	  background: rgb(145, 148, 155);
+      }
+      
     </style>
   </head>
   <body>
@@ -52,6 +101,7 @@
       <div class="container">
 	<div class="scoreboard">
 	  <span class="score-num">0</span>/<span class="answered-num">5</span>
+	</div>
 	  <form id="quiz-form">
 	    <h1>Q: <span class="qus">This is a qus?</span></h1>
 	    <div class="all-options">
@@ -71,13 +121,12 @@
 		<input type="radio" id="option-4" value="1" name="quiz">
 		<label for="option-4">This is option 1</label>
 	      </div>
+	    </div>
 
-	      <div class="buttons">
-		<button type="submit">Submit</button> 
-	      </div>
+	    <div class="buttons">
+	      <button type="submit">Submit</button> 
 	    </div>
 	  </form>
-	</div>
       </div>
     </section>
 
