@@ -180,6 +180,9 @@
 	  }
       }
 
+      @media (max-width: 768px) {
+	  
+      }
       
 
     </style>
@@ -209,6 +212,8 @@
     </footer>
 
     <script>
+
+      (()=>{
 
       //Trivia API
       const baseURL = 'https://opentdb.com/api.php?amount=1&category=9';
@@ -255,7 +260,7 @@
       async function fetchQuiz() {
 	  const response = await fetch(baseURL);
 	  const data = await response.json();
-	  console.log(data.results)
+//	  console.log(data.results)
 	  return data.results;
       }
 
@@ -362,6 +367,7 @@
 	  containerEl.removeChild(placeholder);
       }
 
+      })()
       </script>
   </body>
 </html>
