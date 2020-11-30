@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Quiz App</title>
+    <title>Weather Forecast App</title>
 
     <style>
       * {
@@ -25,6 +25,7 @@
 	  display: flex;
 	  align-items: center;
 	  justify-content: center;
+	  padding: 100px 0;
       }
 
 
@@ -37,6 +38,17 @@
 	<div class="details">
 	  <h1 class="temp">30</h1>
 	  <h1 class="status">Cloudy</h1>
+	  <div class="more-info">
+	    <p>info-1</p>
+	    <p>info-2</p>
+	    <p>info-3</p>
+	    <p>info-4</p>
+	  </div>
+
+	  <form>
+	    <input type="text" name="location" placeholder="Search Location...">
+	    <button type="submit"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+	  </form>
 	</div>
       </div>
     </section>
@@ -45,7 +57,6 @@
       <p><small>Coded by <a style="color: #fff; text-decoration: none;" href="https://github.com/rodionsibov"><b>Rodion Sibov</b></a> | 2020</small></p>
     </footer>
 
-
-      </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
   </body>
 </html>
