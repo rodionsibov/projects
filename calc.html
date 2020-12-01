@@ -58,6 +58,31 @@
 	  font-size: 20px;
 	  opacity: 0.4;
       }
+
+      .all-buttons {
+	  color: whitesmoke;
+	  display: grid;
+	  grid-template: repeat(4, 1fr) / repeat(4, 1fr); 
+      }
+
+      .button {
+	  border: 0.5px solid rgba(92, 92, 92, 0.14);
+	  height: 100px;
+	  width: 100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  font-size: 30px;
+	  cursor: pointer;
+      }
+
+      .button:hover {
+	  background-color: rgb(30, 43, 46);
+      }
+
+      .btn-0 {
+	  grid-column: 1 / span 2;
+      }
       
     </style>
   </head>
@@ -68,7 +93,7 @@
 	<div class="display">
 	  <div class="display-1">0</div>
 	  <div class="display-2">0</div>
-	  <div class="display-result">12</div>
+	  <div class="display-result"></div>
 	</div>
 
 	<div class="all-buttons">
