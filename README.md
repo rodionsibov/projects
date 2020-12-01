@@ -91,5 +91,6 @@ The more you practice, the better your skills will become. You are free to modif
 1. https://rodionsibov.github.io/projects/vanilla-js-bootstrap5.html 
 1. https://rodionsibov.github.io/projects/html-form-to-mail.html
 1. https://rodionsibov.github.io/projects/css-loading-animation.html
+1. https://rodionsibov.github.io/projects/weather-forecast-app.html
 
 
