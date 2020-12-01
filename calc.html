@@ -126,6 +126,34 @@
     </footer>
 
     <script>
+      
+      const display1El = document.querySelector('.display-1');
+      const display2El = document.querySelector('.display-2');
+      const displayResultEl = document.querySelector('.display-result');
+      const numbersEl = document.querySelectorAll('.number');
+      const operationEl = document.querySelectorAll('.operation');
+      const clearEl = document.querySelector('.all-clear');
+      const ClearLastEl = document.querySelector('.last-entity-clear');
+      const equalEl = document.querySelector('.equal');
+
+      let dis1Num = '';
+      let dis2Num = '';
+      let result = null;
+      let lastOperation = '';
+      let haveDot = false; 
+
+      numbersEl.forEach(number => {
+	  number.addEventListener('click', (e) => {
+	      if (e.target.innerText === '.' && !haveDot) {
+		  haveDot = true;
+	      } else if (e.target.innerText === '.' && haveDot) {
+		  return;
+	      }
+	      dis2Num += e.target.inneText;
+	      display2El.innerText = dis1Num2;
+	  })
+      })
+      
 
       </script>
   </body>
