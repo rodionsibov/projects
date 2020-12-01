@@ -128,27 +128,62 @@
     <section>
       <div class="container">
 	<div class="details">
-	  <h1 class="temp">30</h1>
-	  <h1 class="status">Cloudy</h1>
-	  <div class="more-info">
-	    <p>info-1</p>
-	    <p>info-2</p>
-	    <p>info-3</p>
-	    <p>info-4</p>
-	  </div>
-
-	  <form>
-	    <input type="text" name="location" placeholder="Search Location...">
-	    <button type="submit"><ion-icon name="chevron-forward-outline"></ion-icon></button>
-	  </form>
+	  <h1 class="pre-text">Welcome & Search by Location</h1>
 	</div>
+	<form>
+	  <input type="text" name="location" placeholder="Search Location...">
+	  <button type="submit"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+	</form>
       </div>
     </section>
 
     <footer style="display: block; background-color: #333; color: #fff; text-align: center; padding: 5px;">
       <p><small>Coded by <a style="color: #fff; text-decoration: none;" href="https://github.com/rodionsibov"><b>Rodion Sibov</b></a> | 2020</small></p>
     </footer>
-
     <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+    <script>
+
+      const key = '6a73ed993fb67076477df40767903d8a';
+      const formEl = document.querySelector('form');
+      const details = document.querySelector('.details');
+
+      formEl.addEventListener('submit', (e) => {
+	  e.preventDefault();
+	  details.innerHTML = '<h1>Loading...</h1>';
+	  const location = e.target.location.value;
+	  weatherApp(location);
+      })
+
+      async function weatherApp(location) {
+	  const data = await fetchAPI(location);
+	  generateHTML(data);
+      }
+
+      async function fetchAPI(location) {
+//	  const baseURL = `http://api.weatherstack.com/current?access_key=${key}&query=${location}`;
+	  const baseURL = `http://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=civillight&output=json`;
+
+	  const res = await fetch(baseURL);
+	  const data = await res.json();
+	  console.log(data)
+	  return data.dataseries[0];
+      }
+
+      function generateHTML(data) {
+	  const html = `
+<h1 class="temp">${data.temp2m.max} °C / ${data.temp2m.min} °C</h1>
+<h1 class="status" style="text-transform: capitalize;">${data.weather}</h1>
+<div class="more-info">
+<p>Wind Speed: ${data.wind10m_max} km/h</p>
+<p>Date: ${Date(data.date).slice(0, 15)}</p>
+</div>
+<div class="query"></div>
+`;
+	  details.innerHTML = html;
+      }
+
+      
+    </script>
+
   </body>
 </html>
