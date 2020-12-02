@@ -33,7 +33,20 @@
       const particleArray = [];
 
       // get mouse position
-      
+      const mouse = {
+	  x: null,
+	  y: null
+      }
+      window.addEventListener('mousemove', (e) => {
+	  mouse.x = e.x;
+	  mouse.y = e.y;
+//	  console.log(mouse.x, mouse.y);
+      });
+
+      setInterval(() => {
+	  mouse.x = undefined;
+	  mouse.y = undefined;
+      }, 200);
 
     </script>
   </body>
