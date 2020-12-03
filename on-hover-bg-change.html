@@ -91,9 +91,9 @@
     <section>
       <div class="container">
 	<div class="bg">
-	  <img id="1" src="https://picsum.photos/900?random=1">
-	  <img id="2" src="https://picsum.photos/900?random=2">
-	  <img id="3" src="https://picsum.photos/900?random=3">
+	  <img class="id-1" src="https://picsum.photos/900?random=1">
+	  <img class="id-2" src="https://picsum.photos/900?random=2">
+	  <img class="id-3" src="https://picsum.photos/900?random=3">
 	</div>
 	<a href="#" class="text"></a>
 	<h1>
@@ -109,9 +109,30 @@
     </footer>
     
     <script>
+      // change the footer background color
       const footerEl = document.querySelector('footer');
       footerEl.style.background = `#${Math.random().toString(16).slice(2, 8)}10`
 
+      // section code
+      const parentBgEl = document.querySelector('.bg');
+      const childEls = document.querySelectorAll('span');
+      const textEl = document.querySelector('.text');
+
+      childEls.forEach(el => {
+	  el.addEventListener('mouseover', (e) => {
+	      const id = el.getAttribute('data-id');
+	      const bgEl = parentBgEl.querySelector(`.id-${id}`);
+
+	      parentBgEl.querySelectorAll('img').forEach(img => {
+		  img.style.display = 'none';
+	      });
+
+	      bgEl.style.display = 'block';
+	  })
+      })
+
+     
+      
 
     </script>
   </body>
