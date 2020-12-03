@@ -47,6 +47,7 @@
 	  width: 100%;
 	  overflow: hidden;
 	  z-index: -1;
+	  background: black;
       }
 
       .bg::after {
@@ -56,7 +57,7 @@
 	  position: absolute;
 	  height: 100%;
 	  width: 100%;
-	  background: #00000099;
+	  background: #000000aa;
       }
 
       a {
@@ -64,6 +65,10 @@
 	  color: whitesmoke;
       }
 
+      .mobile-text {
+	  display: none;
+      }
+      
       h1 {
 	  display: flex;
 	  justify-content: flex-start;
@@ -72,11 +77,24 @@
 	  letter-spacing: 10px;
 	  color: whitesmoke;
 	  text-transform: uppercase;
+	  position: relative;
       }
 
       .container h1 span {
 	  margin-right: 50px;
 	  display: inline-block;
+      }
+
+      #line {
+	  position: absolute;
+	  left: 0;
+	  bottom: -5px;
+	  width: 260px;
+	  border-bottom: 5px solid royalblue;
+	  border-radius: 5px;
+	  pointer-events: none;
+	  z-index: -1;
+	  transition: 0.5s ease all;
       }
 
       .bg img {
@@ -85,12 +103,56 @@
 	  object-fit: cover;
       }
 
+      .container p {
+	  color: whitesmoke;
+	  font-size: 20px;
+	  max-width: 600px;
+	  margin-top: 20px;
+	  line-height: 30px;
+      }
+
+      button {
+	  background: royalblue;
+	  color: whitesmoke;
+	  display: inline-bock;
+	  padding: 15px 30px;
+	  border-radius: 8px;
+	  border: none;
+	  font-size: 20px;
+	  text-transform: uppercase;
+	  letter-spacing: 2px;
+	  margin-top: 30px;
+	  cursor: pointer;
+      }
+
+
       @keyframes anima {
 	  0% {
 	      opacity: 0.6;
+	      transform: scale(1);
 	  }
 	  100% {
 	      opacity: 1;
+	      transform: scale(1.1);
+	  }
+      }
+      
+      @media only screen and (max-width: 768px) {
+	  .mobile-text {
+	      display: block;
+	  }
+
+	  .text {
+	      display: none;
+	  }
+
+	  .container p {
+	      font-size: 16px;
+	      line-height: 22px;
+	  }
+	  
+	  h1 {
+	      letter-spacing: 5px;
 	  }
       }
 
@@ -104,12 +166,18 @@
 	  <img class="id-2" src="https://picsum.photos/900?random=2">
 	  <img class="id-3" src="https://picsum.photos/900?random=3">
 	</div>
-	<a href="#" class="text"></a>
+	<a href="#" class="text">
 	<h1>
 	  <span data-id="1" >Website</span>
 	  <span data-id="2" >APP</span>
 	  <span data-id="3" >UI/UX</span>
+	  <span id="line"></span>
 	</h1>
+	</a>
+	<h1 class="mobile-text">Website<br>APP<br>UI/UX</h1>
+	<p>
+	  Nam velit nulla, hendrerit quis lectus accumsan, condimentum bibendum lectus. Nullam consequat eleifend faucibus. Maecenas metus lacus, pulvinar a ultricies nec, pharetra nec tellus. Quisque quis diam varius, malesuada magna eu, sagittis nulla.</p>
+	<button>Click Me</button>
       </div>
     </section>
 
@@ -126,6 +194,7 @@
       const parentBgEl = document.querySelector('.bg');
       const childEls = document.querySelectorAll('span');
       const textEl = document.querySelector('.text');
+      const lineEl = document.querySelector('#line');
 
       childEls.forEach(el => {
 	  el.addEventListener('mouseover', (e) => {
@@ -134,10 +203,18 @@
 
 	      parentBgEl.querySelectorAll('img').forEach(img => {
 		  img.style.display = 'none';
+		  img.style.animation = '';
 	      });
 
 	      bgEl.style.display = 'block';
-	      
+	      bgEl.style.animation = 'anima 1s ease forwards';
+
+	      // line animation
+	      const cords = el.getBoundingClientRect();
+	      const textCords = textEl.getBoundingClientRect();
+
+	      lineEl.style.width = cords.width + 'px';
+	      lineEl.style.left = cords.left - textCords.left + 'px';
 	  })
       })
 
