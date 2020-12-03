@@ -20,19 +20,69 @@
 	  font-family: 'Montserrat', sans-serif;
       }
 
-      html {
-	  font-family: 'Montserrat', sans-serif;
-      }
-
       section {
 	  min-height: 100vh;
 	  width: 100%;
 	  display: flex;
 	  align-items: center;
-	  justify-content: center;
+	  justify-content: flex-start;
       }
 
       .container {
+	  width: 90%;
+	  max-width: 1000px;
+	  margin: 0 auto;
+	  height: 100%;
+	  display: flex;
+	  align-items: flex-start;
+	  justify-content: center;
+	  flex-direction: column;
+      }
+
+      .bg {
+	  position: absolute;
+	  left: 0;
+	  right: 0;
+	  height: 100%;
+	  width: 100%;
+	  overflow: hidden;
+	  z-index: -1;
+      }
+
+      .bg::after {
+	  content: '';
+	  left: 0;
+	  top: 0;
+	  position: absolute;
+	  height: 100%;
+	  width: 100%;
+	  background: #00000099;
+      }
+
+      a {
+	  text-decoration: none;
+	  color: whitesmoke;
+      }
+
+      h1 {
+	  display: flex;
+	  justify-content: flex-start;
+	  width: 100%;
+	  font-size: 40px;
+	  letter-spacing: 10px;
+	  color: whitesmoke;
+	  text-transform: uppercase;
+      }
+
+      .container h1 span {
+	  margin-right: 50px;
+	  display: inline-block;
+      }
+
+      .bg img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
       }
 
     </style>
@@ -41,9 +91,9 @@
     <section>
       <div class="container">
 	<div class="bg">
-	  <img id="1" src="https://picsum.photos/300?random=1">
-	  <img id="2" src="https://picsum.photos/300?random=2">
-	  <img id="3" src="https://picsum.photos/300?random=3">
+	  <img id="1" src="https://picsum.photos/900?random=1">
+	  <img id="2" src="https://picsum.photos/900?random=2">
+	  <img id="3" src="https://picsum.photos/900?random=3">
 	</div>
 	<a href="#" class="text"></a>
 	<h1>
@@ -59,7 +109,9 @@
     </footer>
     
     <script>
-      const footerEl = document.querySelector('footer').style.background = `#${Math.random().toString(16).slice(2, 8)}10`
+      const footerEl = document.querySelector('footer');
+      footerEl.style.background = `#${Math.random().toString(16).slice(2, 8)}10`
+
 
     </script>
   </body>
