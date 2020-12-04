@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Get Mouse Position</title>
+    <style>
+
+      p {
+	  font-size: 2em;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <p>
+      X: <span id="x-value"></span>
+    </p>
+    <p>
+      Y: <span id="y-value"></span>
+    </p>
+
+    <script>
+
+      window.addEventListener('mousemove', (e) => {
+	  document.querySelector('#x-value').innerText = e.x;
+	  document.querySelector('#y-value').innerText = e.y;
+      });
+
+    </script>
+</body>
+</html>
