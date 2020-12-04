@@ -10,17 +10,28 @@
 	  width: 250px;
 	  height: 250px;
 	  background: #009879;
-	  transition: opacity 1s linear 2s, background 2s;
+	  transition: opacity 2s;
       }
 
       .square:hover {
 	  opacity: 0;
-	  background: red;
+      }
+
+      button {
+	  margin-top: 20px;
       }
       
     </style>
   </head>
   <body>
-    <div class="square"></div>
+    <div id="square1" class="square"></div>
+    <button type="button" onclick="fadeOut()">Fade Out</button>
+    <script>
+      function fadeOut() {
+	  const square = document.querySelector('#square1');
+	  
+	  square.style.opacity = '0';
+      } 
+    </script>
   </body>
 </html>
