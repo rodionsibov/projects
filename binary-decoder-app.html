@@ -76,11 +76,18 @@
 	  position: absolute;
 	  font-size: 30px;
 	  color: white;
-	  bottom: 1%;
-	  right: -3%;
+	  bottom: 2%;
+	  right: -4%;
 	  cursor: pointer;
+	  transition: 0.3s transform, 0.3s opacity;
       }
 
+      .copy:active {
+	  transform: translateY(1px);
+	  opacity: 0.5;
+
+      }
+      
       @media (max-width: 768px) {
 	  form textarea,
 	  form .output {
@@ -88,8 +95,8 @@
 	  }
 
 	  .copy {
-	      bottom: 1%;
-	      right: 2%;
+	      bottom: 2%;
+	      right: 4%;
 	  }
 
       }
@@ -111,7 +118,7 @@
 	    Text Output...
 	  </div>
 	  <div class="copy">
-	    <i class="far fa-clipboard"></i>
+	    <i class="fas fa-copy"></i>
 	  </div>
 	</form>
       </div>
