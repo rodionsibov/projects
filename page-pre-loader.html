@@ -31,10 +31,13 @@
 	  align-content: center;
 	  justify-content: center;
 	  padding: 50px 0;
+	  background: #333;
       }
 
       .container {
-	  display: grid;
+	  display: flex;
+	  flex-wrap: wrap;
+	  justify-content: center;
         }
       
       .loader {
@@ -61,8 +64,11 @@
       .thumb {
 	  height: 300px;
 	  margin: 10px;
+	  filter: grayscale(1);
+	  transition: 0.5s ease filter, 0.5s ease border-radius;
+	  cursor: pointer;
       }
-
+      
       @keyframes fadeOut {
 	  100% {
 	      opacity: 0;
@@ -85,6 +91,7 @@
 	<img src="https://picsum.photos/800?random=1" class="thumb">
 	<img src="https://picsum.photos/800?random=2" class="thumb">
 	<img src="https://picsum.photos/800?random=3" class="thumb">
+	<img src="https://picsum.photos/800?random=4" class="thumb">
       </div>
     </section>
 
@@ -104,6 +111,18 @@
       window.addEventListener('load', () => {
 	  const loader = document.querySelector('.loader');
 	  loader.classList.add('hidden');
+      })
+
+      document.querySelectorAll('.thumb').forEach(item => {
+	  item.addEventListener('mouseover', () => {
+	      item.style.borderRadius = `${Math.floor(Math.random() * 100) + 1}% ${Math.floor(Math.random() * 100) + 1}% ${Math.floor(Math.random() * 100) + 1}% ${Math.floor(Math.random() * 100) +1}% `;
+	      item.style.filter = 'grayscale(0)';
+	      
+	  })
+
+	  item.addEventListener('mouseout', () => {
+	      item.removeAttribute('style');
+	  })
       })
       
     </script>
