@@ -65,7 +65,7 @@
 	  height: 300px;
 	  margin: 10px;
 	  filter: grayscale(1);
-	  transition: 0.5s ease filter, 0.5s ease border-radius;
+	  transition: 1s ease filter, 0.5s ease border-radius, 0.2s ease transform;
 	  cursor: pointer;
       }
       
@@ -122,6 +122,10 @@
 
 	  item.addEventListener('mouseout', () => {
 	      item.removeAttribute('style');
+	  })
+
+	  item.addEventListener('click', () => {
+	      item.style.transform = 'scale(0.7) rotate(360deg)';
 	  })
       })
       
