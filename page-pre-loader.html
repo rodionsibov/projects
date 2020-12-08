@@ -111,21 +111,30 @@
       window.addEventListener('load', () => {
 	  const loader = document.querySelector('.loader');
 	  loader.classList.add('hidden');
+
+	  document.querySelectorAll('.thumb').forEach(item => {
+	      item.style.borderRadius = `${Math.floor(Math.random() * 100) + 1}% ${Math.floor(Math.random() * 100) + 1}% ${Math.floor(Math.random() * 100) + 1}% ${Math.floor(Math.random() * 100) +1}%`;
+	      item.style.transform = 'scale(0.8)';
+
+	  })
+	  
       })
 
       document.querySelectorAll('.thumb').forEach(item => {
 	  item.addEventListener('mouseover', () => {
-	      item.style.borderRadius = `${Math.floor(Math.random() * 100) + 1}% ${Math.floor(Math.random() * 100) + 1}% ${Math.floor(Math.random() * 100) + 1}% ${Math.floor(Math.random() * 100) +1}% `;
+	      item.style.borderRadius = '4px';
 	      item.style.filter = 'grayscale(0)';
 	      
 	  })
 
 	  item.addEventListener('mouseout', () => {
 	      item.removeAttribute('style');
+	      item.style.borderRadius = `${Math.floor(Math.random() * 100) + 1}% ${Math.floor(Math.random() * 100) + 1}% ${Math.floor(Math.random() * 100) + 1}% ${Math.floor(Math.random() * 100) +1}%`;
+	      item.style.transform = 'scale(0.8)';
 	  })
 
 	  item.addEventListener('click', () => {
-	      item.style.transform = 'scale(0.7) rotate(360deg)';
+	      item.style.transform = 'scale(1) rotate(360deg)';
 	  })
       })
       
