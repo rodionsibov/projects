@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    
+    <title>Custom Loader</title>
+
+    <style>
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+      }
+
+      html {
+	  font-family: 'Roboto', sans-serif;
+      }
+
+      section {
+	  min-height: 100vh;
+	  width: 100%;
+	  display: grid;
+	  align-content: center;
+	  justify-content: center;
+      }
+
+      .loader {
+	  position: fixed;
+	  z-index: 99;
+	  top: 0;
+	  left: 0;
+	  
+      }
+
+      .thumb {
+	  height: 100px;
+	  border: 1px solid black;
+	  margin: 10px;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    
+    <section>
+      <div class="loader">
+	<img src="https://media1.tenor.com/images/0d96348a4df45355e98b243f7f447e7f/tenor.gif">
+      </div>
+
+      <div class="container">
+	<img src="https://picsum.photos/800?random=1" class="thumb">
+	<img src="https://picsum.photos/800?random=2" class="thumb">
+	<img src="https://picsum.photos/800?random=3" class="thumb">
+      </div>
+    </section>
+
+
+        <footer style="color: #222; border-top: 0.5px solid #ccc; text-align: center; padding: 5px;">
+	  <p><small>Coded by <a style="color: #222; text-decoration: none;" href="https://github.com/rodionsibov"><b>Rodion Sibov</b></a> | <span class="year"></span></small></p>
+    </footer>
+
+    <script>
+      // change the footer background color and update the year
+      document.querySelector('footer').style.background = `#${Math.random().toString(16).slice(2, 8)}30`
+      document.querySelector('.year').textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      
+      
+      
+    </script>
+  </body>
+</html>
