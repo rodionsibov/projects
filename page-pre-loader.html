@@ -33,13 +33,13 @@
 	  padding: 50px 0;
 	  background: #333;
       }
-
+      
       .container {
 	  display: flex;
 	  flex-wrap: wrap;
 	  justify-content: center;
-        }
-      
+      }
+
       .loader {
 	  position: fixed;
 	  z-index: 99;
@@ -47,7 +47,7 @@
 	  left: 0;
 	  width: 100%;
 	  height: 100%;
-	  background: white;
+	  background: #222;
 	  display: flex;
 	  justify-content: center;
 	  align-items: center;
@@ -55,10 +55,11 @@
 
       .loader > img {
 	  width: 200px;
+	  display: none;
       }
 
       .loader.hidden {
-	  animation: fadeOut 1s forwards;
+	  animation: fadeOut 0.5s forwards;
       }
       
       .thumb {
@@ -69,6 +70,43 @@
 	  cursor: pointer;
       }
       
+      .loader .dot {
+	  height: 12px;
+	  width: 12px;
+	  background: #ddd;
+	  margin: 0 5px;
+	  display: inline-block;
+	  border-radius: 50px;
+      }
+
+      .loader .dot {
+	  animation: dotLoaders 0.8s linear infinite forwards;
+      }
+      
+      .loader .dot.dot-1 {
+	  animation-delay: 0.25s;
+      }
+
+      .loader .dot.dot-2 {
+	  animation-delay: 0.5s;
+      }
+
+      .loader .dot.dot-3 {
+	  animation-delay: 0.75s;
+      }
+
+      @keyframes dotLoaders {
+	  0% {
+	      transform: translateY(0);
+	  }
+	  50% {
+	      transform: translateY(-20px);
+	  }
+	  100% {
+	      transform: translateY(0);
+	  }
+      }
+
       @keyframes fadeOut {
 	  100% {
 	      opacity: 0;
@@ -84,6 +122,11 @@
     
     <section>
       <div class="loader">
+
+	  <div class="dot dot-1"></div>
+	  <div class="dot dot-2"></div>
+	  <div class="dot dot-3"></div>
+
 	<img src="https://media1.tenor.com/images/0d96348a4df45355e98b243f7f447e7f/tenor.gif">
       </div>
 
@@ -118,6 +161,8 @@
 
 	  })
 	  
+	  loader.addEventListener('animationend', (e) => e.target.remove());
+
       })
 
       document.querySelectorAll('.thumb').forEach(item => {
