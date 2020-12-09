@@ -24,6 +24,18 @@
       button {
 	  padding: 7px;
 	  height: 40px;
+	  margin-top: 5px;
+      }
+
+      .message {
+	  transition: 0.5s opacity;
+	  padding: 10px;
+	  margin: 2px 0;
+	  border-radius: 4px;
+	  font-weight: bold;
+	  background: tomato;
+	  color: whitesmoke;
+	  display: inline-block;
       }
       
       fieldset {
@@ -34,7 +46,6 @@
   </head>
   <body>
 
-    
     <fieldset>
       <legend>Insert Data</legend>
       <input type="text" id="inpKey" placeholder="Enter Key...">
@@ -46,10 +57,40 @@
       <legend>Local Storage</legend>
       <div id="lsOutput"></div>
     </fieldset>
-    
+
       <script>
 	
-	
+	const inpKey = document.querySelector('#inpKey');
+	const inpValue = document.querySelector('#inpValue');
+	const btnInsert = document.querySelector('#btnInsert');
+	const lsOutput = document.querySelector('#lsOutput');
+
+	btnInsert.addEventListener('click', () => {
+	    const key = inpKey.value;
+	    const value = inpValue.value;
+
+	    if (key && value) {
+		localStorage.setItem(key, value);
+		location.reload();
+	    } else {
+		const pEl = document.createElement('p');
+		pEl.classList.add('message');
+		pEl.innerHTML = 'Please fill out all fields.';
+		document.body.insertBefore(pEl, document.querySelector('fieldset'))
+		setTimeout(() => pEl.style.opacity = '0', 1000);
+		pEl.addEventListener('transitionend', () => pEl.remove()); 
+				
+	    }
+	    
+	})
+
+	for (let i = 0; i < localStorage.length; i++) {
+	    const key = localStorage.key(i);
+	    const value = localStorage.getItem(key);
+
+	    lsOutput.innerHTML += `${key}: ${value}<br>`;
+	}
+
       </script>
   </body>
 </html>
