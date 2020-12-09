@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap" rel="stylesheet">
+
+    <title>CSS Scroll Snap</title>
+
+    <style>
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+      }
+
+      html {
+	  font-family: 'Roboto', sans-serif;
+      }
+
+      section {
+	  min-height: 100vh;
+	  width: 100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  background: #333;
+      }
+      
+      .container {
+	  width: 90%;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  text-align: center;
+      }
+
+      .container h1 {
+	  font-size: 5em;
+	  font-weight: 100;
+	  color: dodgerblue;
+	  margin-bottom: 40px;
+      }
+
+      .container h2 {
+	  margin-bottom: 20px;
+	  color: whitesmoke;
+      }
+
+      .images-list {
+	  width: 100%;
+	  display: flex;
+	  overflow-x: auto;
+	  gap: 40px;
+	  scroll-snap-type: x;
+	  /* scroll-padding: 1rem; */
+      }
+
+      img {
+	  scroll-snap-align: center;
+	  margin-bottom: 10px;
+	  border-radius: 5px;
+      }
+      
+      .loader {
+	  position: fixed;
+	  z-index: 99;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  background: dodgerblue;
+	  color: whitesmoke;
+      }
+
+      .loader.hidden {
+	  animation: fadeOut 0.5s forwards;
+      }
+
+      @keyframes fadeOut {
+	  100% {
+	      opacity: 0;
+	      visibility: hidden;
+	  }
+      }
+
+
+      
+    </style>
+  </head>
+  <body>
+    
+    <section>
+      <div class="loader">
+	<p>Loading...</p>
+      </div>
+
+      <div class="container">
+	<div class="images-list">
+
+	</div>
+      </div>
+    </section>
+
+    <footer style="color: #222; border-top: 0.5px solid #ccc; text-align: center; padding: 5px;">
+      <p><small>Coded by <a style="color: #222; text-decoration: none;" href="https://github.com/rodionsibov"><b>Rodion Sibov</b></a> | <span class="year"></span></small></p>
+    </footer>
+
+    <script>
+      // change the footer background color and update the year
+      document.querySelector('footer').style.background = `#${Math.random().toString(16).slice(2, 8)}30`
+      document.querySelector('.year').textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      
+      const imageList = document.querySelector('.images-list');
+      const baseURL = 'https://randomuser.me/api/?results=10';
+
+      window.addEventListener('load', () => {
+	  document.querySelector('.loader').classList.add('hidden');	  
+	  imagesApp();
+	  	  
+      })
+
+      const imagesApp = async () => {
+	  const data = await fetchAPI();
+	  generateHTML(data);
+      }
+      
+      const fetchAPI = async () => {
+	  const data = await fetch(baseURL).then(res => res.json());
+	  console.log(data.results);
+	  return data.results;
+      }
+
+      const generateHTML = (data) => {
+	  const divEl = document.createElement('div');
+	  divEl.innerHTML = '<h1>CSS Scroll Snap</h1><h2>Top Users</h2>';
+	  document.querySelector('.container').insertBefore(divEl, imageList);
+
+	  let html = '';
+	  data.map(item => {
+	      html += `
+<img src="${item.picture.large}">
+`;
+	  })
+
+	  imageList.innerHTML = html;
+      }
+
+      
+      
+    </script>
+  </body>
+</html>
