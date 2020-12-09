@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <title>Element.getBoundingClientRect - JS DOM</title>
+
+    <style>
+
+      body {
+	  padding: 50px 0;
+      }
+
+      .box {
+	  margin: 40px auto;
+	  width: 200px;
+	  height: 200px;
+	  background: green;
+	  transition: 1s ease background;
+      }
+      
+      p {
+	  padding: 0 20px;
+	  color: #222;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <p>Duis velit ipsum, condimentum sed accumsan vel, ullamcorper a sem. Pellentesque faucibus velit vitae mi pretium sollicitudin. Sed vestibulum bibendum justo nec elementum. In egestas convallis arcu a mollis. In volutpat ornare augue, in varius lacus hendrerit non. Curabitur accumsan, arcu et placerat imperdiet, augue justo tincidunt ex, ut lacinia mi ligula at ante. Nulla nec leo at mi rhoncus iaculis. Curabitur sit amet massa urna. Vestibulum leo lorem, mollis sit amet aliquam non, dignissim vel ipsum. Quisque varius ante eros, id iaculis lectus ultricies vitae. Suspendisse feugiat lectus mi, sed pretium massa maximus id. Donec tristique, ipsum vitae porttitor scelerisque, neque elit pharetra turpis, nec lacinia tortor erat in purus. Pellentesque tempor ante sed molestie gravida. </p>
+    <p>Duis sit amet mauris ex. Vivamus non iaculis erat. Praesent non dignissim diam. Aliquam non velit tellus. Cras et pulvinar tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur vehicula sem convallis lectus luctus condimentum eget ut justo. </p>
+    <p>Cras rhoncus bibendum mauris sit amet eleifend. Curabitur luctus maximus justo, a suscipit eros mollis id. Nullam sit amet est tincidunt nibh auctor fringilla id vitae quam. Quisque mi magna, semper eu ligula a, vestibulum pulvinar lorem. Quisque euismod dapibus magna, a aliquet turpis lacinia sit amet. Ut a nibh massa. Nulla massa dolor, pretium ut aliquam id, sagittis a nisi. Curabitur tristique bibendum cursus. Vivamus urna felis, convallis consequat malesuada vel, interdum blandit arcu. Aenean sem dolor, viverra in fermentum ac, gravida id erat. </p>
+    <p>Donec ut mauris eu lectus aliquet semper eu rutrum sapien. Donec ante velit, molestie in nisl sit amet, scelerisque rutrum sem. Praesent pretium, nibh id euismod commodo, neque enim feugiat lacus, nec maximus nulla nisl vel justo. Duis placerat dolor nec cursus aliquet. Aenean tincidunt purus ac nulla eleifend commodo. Nunc fringilla maximus fringilla. Vestibulum nec gravida arcu, id mollis quam. Quisque elementum nulla neque, lobortis lacinia lacus placerat ut. Mauris eget sapien augue.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt quis quam ac efficitur. Aliquam mollis a ipsum ac mollis. Suspendisse sodales pellentesque nulla a suscipit. Nulla consectetur, quam vitae consectetur laoreet, risus magna molestie risus, sed aliquam quam mi ac est. Nunc et elit sed sem tristique congue. Sed at malesuada neque. Morbi sollicitudin massa quis erat hendrerit condimentum. In sed mauris ligula. Proin convallis mauris ac nisi laoreet lacinia. Curabitur posuere accumsan augue ac varius. Proin libero nisi, iaculis a dictum scelerisque, congue eget lorem. Praesent faucibus, est quis vehicula lacinia, leo nunc efficitur purus, eu tempus quam lorem quis sem.</p>
+    <div class="box"> </div>
+    
+      <script>
+
+	const box = document.querySelector('.box');
+
+	window.addEventListener('scroll', () => {
+	    if (box.getBoundingClientRect().top < window.innerHeight) {
+		box.style.background = 'red';
+	    }
+	})
+	
+    </script>
+  </body>
+</html>
