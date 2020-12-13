@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>CSS background image zoom and rotate</title>
+    <style>
+      * {
+	  margin: 0px;
+	  padding: 0px;
+	  box-sizing: border-box;
+      }
+
+
+      .outer-div {
+	  height: 300px;
+	  width: 300px;
+	  overflow: hidden;    
+	  position: absolute;
+	  margin: auto;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  
+      }
+
+      .inner-div {
+
+	  height: 100%;
+	  width: 100%;
+	  background-size: cover;
+	  background-position: center;
+	  transition: all 0.7s ease;
+	  background-image: url("https://picsum.photos/400");
+      }
+
+      .inner-div:hover {
+	  transform: scale(1.3) rotate(3deg);
+      }
+    </style>
+
+
+  </head>
+  <body>
+
+    <div class="outer-div">
+      <div class="inner-div"></div>
+    </div>
+
+  </body>
+</html>

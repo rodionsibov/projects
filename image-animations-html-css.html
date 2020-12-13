@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Image Transitions</title>
+
+    <style>
+      * {
+	  margin: 0px;
+	  padding: 0px;
+	  box-sizing: border-box;
+      }
+
+      .title {
+	  height: 20vh;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+      }
+
+      .images {
+	  display: flex;
+	  justify-content: space-around;
+	  align-content: center;
+      }
+
+      .image-container {
+	  height: 360px;
+	  width: 640px;
+	  position: relative;
+      }
+
+      .image-container img {
+	  height: 100%;
+	  width: 100%;
+	  object-fit: cover;
+	  
+      }
+
+      .transition-image {
+	  position: absolute;
+	  top: 0px;
+	  left: 0px;
+	  opacity: 0;
+	  transition: opacity 0.5s ease;
+      }
+
+
+      .transition-image:hover {
+	  opacity: 1;
+      }
+
+
+      .fade::after {
+	  content: "Photo by Pixabay from Pexels";
+	  color: white;
+	  display: flex;
+	  font-size: 20px;
+	  justify-content: center;
+	  align-items: center;
+	  background: black;
+	  width: 100%;
+	  height: 100%;
+	  position: absolute;
+	  top: 0px;
+	  left: 0px;
+	  opacity: 0;
+	  transition: opacity 0.5s ease;
+
+      }
+
+      .fade:hover::after {
+	  opacity: 0.5;
+	  
+	  
+      }
+    </style>
+
+
+  </head>
+  <body>
+    <h1 class="title">Image Transitions</h1>
+    <div class="images">
+      
+      <div class="image-container">
+
+	<img src="https://picsum.photos/600?random=1">
+	<img class="transition-image" src="https://picsum.photos/600?random=2">
+      </div>
+
+      <div class="image-container fade">
+	<img src="https://picsum.photos/600?random=3">
+      </div>
+
+    </div>
+  </body>
+</html>

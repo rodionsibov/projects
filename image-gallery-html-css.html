@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Image Gallery</title>
+    <style>
+      * {
+	  margin: 0px;
+	  padding: 0px;
+	  box-sizing: border-box;
+      }
+      .gallery-highlight {
+	  width: 80%;
+	  height: 50%;
+      }
+
+      section {
+	  display: flex;
+	  height: 100vh;
+      }
+
+      .room-gallery {
+	  width: 50%;
+	  justify-content: center;
+	  align-items: center;
+	  display: flex;
+	  flex-direction: column;
+      }
+
+      .room-description h1 {
+	  font-size: 60px;
+      }
+
+      .room-description p {
+	  font-family: sans-serif;
+      }
+
+      .room-description {
+	  width: 50%;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+	  background: #f5cdaa;
+      }
+
+      .room-preview {
+	  display: flex;
+	  width: 80%;
+	  border-top: 4px solid white;
+      }
+
+
+      .room-preview img {
+	  height: 100px;
+	  flex-grow: 1;
+	  opacity: 0.6;
+	  cursor: pointer;
+	  transition: opacity 0.3s ease;
+      }
+
+      img.room-active {
+	  opacity: 1;
+      }
+    </style>
+
+  </head>
+  <body>
+    <section>
+      <div class="room-description">
+	<h1>Our Rooms</h1>
+	<p>Enjoy our exotic romantic rooms</p>
+      </div>
+      <div class="room-gallery">
+
+	<img class="gallery-highlight" src="https://picsum.photos/800?random=1" alt="">
+
+	<div class="room-preview">
+
+	  <img class="room-active" src="https://picsum.photos/800?random=1">
+	  <img src="https://picsum.photos/800?random=2">
+	  <img src="https://picsum.photos/800?random=3">
+	</div>
+
+      </div>
+
+    </section>
+
+    <script>
+
+      function imageGallery () {
+	  const highlight = document.querySelector(".gallery-highlight");
+	  const previews = document.querySelectorAll(".room-preview img");
+
+
+
+	  previews.forEach(preview => {
+	      preview.addEventListener("click", function () {
+		  highlight.src = this.src;
+		  previews.forEach(preview => preview.classList.remove("room-active"));
+		  
+		  preview.classList.add("room-active");
+	      });
+	  });
+      }
+
+      imageGallery();
+
+    </script>
+
+  </body>
+</html>
