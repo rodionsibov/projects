@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Background Changer</title>
+    <style>
+
+      * {
+	  margin: 0px;
+	  padding: 0px;
+	  box-sizing: border-box;
+      }
+
+      button {
+	  margin: 20px;
+	  background-color: black;
+	  color: white;
+	  font-size: 16px;
+	  padding: 20px 50px;
+	  border: none;
+	  outline: none;
+	  cursor: pointer;
+	  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+	  text-transform: uppercase;
+
+      }
+
+      button:hover {
+	  background-color: rgba(0, 0, 0, 0.5);
+
+      }
+
+      body {
+	  font-size: 15px;
+	  background-color: rgb(215, 29, 251);
+	  font-family: 'Muli', sans-serif;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  min-height: 100vh;
+	  transition: background 0.3s ease;
+      }
+
+      
+    </style>
+
+  </head>
+  <body>
+    <button id="change">Change</button>
+    <p id="color" title="RGB color values are supported in all major browsers.">rgb(0, 0, 0)</p>
+    
+    <script>
+
+
+      const change = document.getElementById('change');
+      const color = document.getElementById('color');
+      const body = document.body;
+
+      change.addEventListener('click', changeBG);
+
+      function changeBG() {
+	  const col1 = getRandomRGB();
+	  const col2 = getRandomRGB();
+	  const col3 = getRandomRGB();
+	  const colorString = `rgb(${col1}, ${col2}, ${col3})`;
+	  body.style.background = colorString;
+	  color.innerText = colorString;
+      }
+
+      function getRandomRGB() {
+	  return Math.floor(Math.random() * 256);
+      }
+
+
+    </script>
+
+  </body>
+</html>
