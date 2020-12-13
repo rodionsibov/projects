@@ -7,9 +7,6 @@
 
     <meta name="description" content="Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	  rel="stylesheet">    
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -17,20 +14,7 @@
 
     <!-- Styles -->
     <style>
-
-
-      body {
-
-      }
       
-      iframe {
-	  margin: 10px;
-	  border: none;
-	  min-width: 300px;
-	  height: 400px;
-      }
-
-
       .progress {
 	  height: 3px;
 	  width: 102%;
@@ -47,165 +31,100 @@
 	  height: 100%;
 	  width: 0%;
       }
-
-      ::selection {
-	  background: navy;
-	  color: gold;
-
-      }
-
       
     </style>
   </head>
   <body>
 
-
-<div class="progress">
-  <div class="progress__highlight" id="js-highlight"></div>
-</div>
-
-<div id="js-container">
-
-    
-    <!-- home page  -->
-    <div class="container">
-      <div class="col mt-5 text-center">
-	  <h1 class="typewriter display-3">My projects</h1><br>
-	  <p class="lead">Hello, I am Rodion. <strong>I have a life interest for all things web and developing code.</strong><br>I will use this website to share my personal <abbr title="You are free to modify, save, share, use or do whatever you want with it">projects.</abbr></p>
-	  <p><mark>The more you practice, the better your skills will become</mark> 😉</p>
-      </div>
+    <div class="progress">
+      <div class="progress__highlight" id="js-highlight"></div>
     </div>
+
+    <div id="js-container">
+
+      <!-- Header -->
+      <div class="container mt-4">
+	<div class="jumbotron">
+	  <h1 class="typewriter display-4">Mini web projects using HTML, CSS & JS</h1>
+	  <p class="lead">Hello, I am Rodion. I have a life interest for all things web and developing code. </p>
+	  <hr class="my-4">
+	  <p>The more you practice, the better your skills will become! You are free to modify, save, share, use or do whatever you want with them. Experiment and have fun! 😉</p>
+	</div>
+      </div>
+
       <!-- Projects -->
-
-    <!-- 
-    <div class="container mt-5">
-      <hr>
-      <div class="row mt-5 text-center">
-
-	<div class="col">
-	  <iframe src="./page-for-you.html"></iframe>
-	  <p><a href="./page-for-you.html" target="_blank">Open project</a></p>
+      <div class="container mb-5">
+      <div class="row row-cols-md-3">
+	<div class="col mb-4">
+	  <div class="card">
+	    <div class="card-img-top embed-responsive embed-responsive-1by1">
+	      <iframe class="embed-responsive-item" src="pulse-effect.html"></iframe>
+	    </div>
+	    <div class="card-body">
+	      <h5 class="card-title">Card title</h5>
+	      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+	    </div>
+	    <div class="card-footer">
+	      <small class="text-muted">Last updated 3 mins ago</small>
+	    </div>
+	  </div>
 	</div>
-
-	<div class="col">
-	  <iframe src="./js-fetch-api.html"></iframe>
-	  <p><a href="./js-fetch-api.html" target="_blank">Open project</a></p>
-	</div>
-
-	<div class="col">
-	  <iframe src="./image-manipulation.html"></iframe>
-	  <p><a href="./image-manipulation.html" target="_blank">Open project</a></p>
-	</div>
-
-	<div class="col">
-	  <iframe src="./smooth-scroll.html"></iframe>
-	  <p><a href="./smooth-scroll.html" target="_blank">Open project</a></p>
-	</div>
-
-	<div class="col">
-	  <iframe src="./progress.html"></iframe>
-	  <p><a href="./progress.html" target="_blank">Open project</a></p>
-	</div>
-
-	<div class="col">
-	  <iframe src="./line-throuhg-effect.html"></iframe>
-	  <p><a href="./line-throuhg-effect.html" target="_blank">Open project</a></p>
-	</div>
-
-	<div class="col">
-	  <iframe src="./kinetic-loader-animation.html"></iframe>
-	  <p><a href="./kinetic-loader-animation.html" target="_blank">Open project</a></p>
-	</div>
-
-
-
-	<div class="col">
-	<iframe src="./negotiating.html"></iframe>
-	  <p><a href="./negotiating.html" target="_blank">Open project</a></p>
-	</div>
-
-	<div class="col">
-	<iframe src="./background-clip-text.html"></iframe>
-	  <p><a href="./background-clip-text.html" target="_blank">Open project</a></p>
-	</div>
-
-	<div class="col">
-	<iframe src="image-reflection.html"></iframe>
-	  <p><a href="image-reflection.html" target="_blank">Open project</a></p>
-	</div>
-
-	<div class="col">
-	  <iframe src="./custom-progress-bar.html"></iframe>
-	  <p><a href="./custom-progress-bar.html" target="_blank">Open project</a></p>
-	</div>
-
-	<div class="col">
-	<iframe src="under-construction-page.html"></iframe>
-	  <p><a href="under-construction-page.html" target="_blank">Open project</a></p>
-	</div>
-
       </div>
-    </div>
-
-
-
-</div>
- -->    
-    <!-- Footer -->
-
-    <div class="container">
-	<div style="position: fixed; bottom: 10px; left: 0;" class="col text-center small mb-3 mt-5">
-	  <span class="text-muted">Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov/projects">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</span>
-	</div>
-    </div>
-
-
-
-    <!-- Optional JavaScript -->
-
-
-
-
+      </div> 
+    </div> <!-- js-container -->
     
-    <script>
+      <footer style="text-align: center; padding: 10px;">
+	<small>Made with ❤ by <a style="color: #222; text-decoration: none;" href="https://github.com/rodionsibov" target="_blank">Rodion Sibov</a> | <span class="year"></span></small>
+      </footer>
 
-      const container = document.getElementById('js-container');
-      const highlight = document.getElementById('js-highlight');
-      var containerHeight;
-
-      window.onscroll = function() {
-
-	  containerHeight = container.offsetHeight - window.innerHeight;
-	  containerPos = container.getBoundingClientRect();
-	  diff = containerHeight + containerPos.top;
-	  progressPercentage =  diff / containerHeight * 100;
-	  cssWidth = Math.floor(100 - progressPercentage);
-  
-	  highlight.style.width = cssWidth + "%"; 
-
-      };
+      <script>
+	document.querySelector('.year').textContent = new Date().getFullYear();
+      </script>
 
 
-    </script>
-    
 
-    <script>
-      function w(d,e,c) {
-	  b = d.slice(0, c),
-	  b == d ? e.innerHTML = b : (e.innerHTML = b + "|",
-				      setTimeout(w, 100, d, e, c + 1))
-      }
+      <!-- Optional JavaScript -->
+      
+      <script>
 
-      window.addEventListener("DOMContentLoaded", function() {
-	  for (i of document.getElementsByClassName("typewriter"))
-	      w(i.innerHTML, i, 0)
-      }, false)
-    </script>
+	const container = document.getElementById('js-container');
+	const highlight = document.getElementById('js-highlight');
+	var containerHeight;
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	window.onscroll = function() {
+
+	    containerHeight = container.offsetHeight - window.innerHeight;
+	    containerPos = container.getBoundingClientRect();
+	    diff = containerHeight + containerPos.top;
+	    progressPercentage =  diff / containerHeight * 100;
+	    cssWidth = Math.floor(100 - progressPercentage);
+
+	    highlight.style.width = cssWidth + "%"; 
+
+	};
+
+
+      </script>
+      
+
+      <script>
+	function w(d,e,c) {
+	    b = d.slice(0, c),
+	    b == d ? e.innerHTML = b : (e.innerHTML = b + "|",
+					setTimeout(w, 100, d, e, c + 1))
+	}
+
+	window.addEventListener("DOMContentLoaded", function() {
+	    for (i of document.getElementsByClassName("typewriter"))
+		w(i.innerHTML, i, 0)
+	}, false)
+
+      </script>
+
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   </body>
 </html>
