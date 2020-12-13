@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+      * {
+	  margin: 0px;
+	  padding: 0px;
+	  box-sizing: border-box;
+      }
+
+      body {
+	  font-family: 'Poppins', sans-serif;
+      }
+
+      figcaption {
+	  opacity: 0.5;
+	  font-size: 80%;
+	  bottom: 15px;
+	  left: 20px;
+	  position: absolute;
+	  bottom: 15px;
+	  left: 10px;
+	  color: white;
+      }
+
+      figure img {
+	  width: 100%;
+	  height: 100vh;
+	  object-fit: cover;
+      }
+
+      .subscribe-sections {
+	  height: 100vh;
+	  text-align: center;
+	  padding: 100px;
+      }
+
+      .subscribe-sections h2 {
+	  margin-bottom: 20px;
+      }
+
+      .modal-btn {
+	  width: 150px;
+	  height: 50px;
+	  background-color: #cfb495;
+	  font-size: 110%;
+	  border-radius: 5px;
+	  border: none;
+	  font-weight: bold;
+	  cursor: pointer;
+	  margin: 40px;
+	  transition-duration: 0.3s;
+	  opacity: 0.7;
+	  outline: none;
+      }
+
+
+      .modal-btn:hover {
+	  opacity: 1;
+
+      }
+
+
+      .modal-btn:active {
+	  background-color: #cfb495;
+	  transform: translateY(2px);
+      }
+
+
+      header {
+	  position: absolute;
+	  top: 10%;
+	  left: 7%;
+	  font-size: 22px;
+	  background: #ffffff;
+	  padding: 10px 20px;
+	  border-radius: 4px;
+	  
+      }
+
+      figure {
+	  position: relative;
+      }
+
+
+      .modal-bg {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100vh;
+	  background-color: rgba(0, 0, 0, 0.5);
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  visibility: hidden;
+	  opacity: 0;
+	  transition: visibility 0s, opacity 0.5s;
+      }
+
+      .bg-active {
+	  visibility: visible;
+	  opacity: 1;
+      }
+
+      .modal {
+	  box-shadow: 10xp 10px 10px black;
+	  padding: 40px 0px 40px 0px;
+	  background-color: #fffdf9;
+	  width: 30%;
+	  height: 60%;
+	  display: flex;
+	  justify-content: space-around;
+	  align-items: center;
+	  flex-direction: column;
+	  border-radius: 5px;
+	  position: relative;
+      }
+
+      .modal input {
+	  outline: none;
+	  padding: 6px;
+	  width: 70%;
+	  border: none;
+	  border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+	  background-color: #fffdf9;
+      }
+
+      .modal-close {
+	  position: absolute;
+	  top: 8px;
+	  right: 15px;
+	  font-size: 80%;
+	  opacity: 0.5;
+	  cursor: pointer;
+      }
+
+      .modal button {
+	  width: 150px;
+	  height: 50px;
+	  background-color: #fe346e;
+	  font-size: 110%;
+	  border-radius: 5px;
+	  border: none;
+	  font-weight: bold;
+	  cursor: pointer;
+	  transition-duration: 0.3s;
+	  opacity: 0.7;
+	  color: white;
+	  outline: none;
+      }
+
+
+      .modal button:hover {
+	  opacity: 1;
+      }
+      
+
+    </style>
+  </head>
+  <body>
+
+    <figure>
+      <img src="https://source.unsplash.com/random">
+    </figure>
+
+    <header>
+      <h2>The modal</h2>
+      <p>Scroll down to see the modal</p>
+    </header>
+    <div class="subscribe-sections">
+      <h2>This is the modal</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <button class="modal-btn"><span>Modal</span>
+	
+      </button>
+    </div>
+
+    <div class="modal-bg">
+      <div class="modal">
+	<h2>Subscribe to our thing</h2>
+
+	<label for="name">Name: </label>
+	<input type="text" id="name" name="name">
+	<label for="email">Email: </label>
+	<input type="email" id="email" name="email">
+	<button>Subscribe</button>
+	<span class="modal-close">X</span>
+      </div>
+    </div>
+    
+    
+    <script>
+
+      var  modalBtn = document.querySelector('.modal-btn');
+      var  modalBg = document.querySelector('.modal-bg');
+      var modalClose = document.querySelector('.modal-close');
+
+      modalBtn.addEventListener('click', function(){
+	  modalBg.classList.add('bg-active'); 
+      });
+
+      modalClose.addEventListener('click', function(){
+	  modalBg.classList.remove('bg-active'); 
+      });
+
+    </script>
+  </body>
+</html>
