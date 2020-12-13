@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Nav highlight</title>
+
+    <style>
+
+      * {
+	  margin: 0px;
+	  padding: 0px;
+	  box-sizing: border-box;
+      }
+
+      body {
+	  font-family: sans-serif;
+	  
+      }
+
+      header {
+	  height: 100vh;
+	  background-image: url("https://images.pexels.com/photos/1387037/pexels-photo-1387037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+	  background-size: cover;
+	  
+      }
+
+      nav ul {
+	  display: flex;
+	  justify-content: space-around;
+	  align-items: center;
+	  height: 10vh;
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  background: white;
+	  width: 100%;
+	  list-style: none;
+	  
+      }
+
+
+      #one,
+      #two,
+      #three {
+	  height:100vh;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  color: white;
+      }
+
+      #one {
+	  background: rgb(43, 87, 102);
+      }
+
+      #two {
+	  background: rgb(56, 43, 102);
+      }
+
+      #three {
+	  background: rgb(102, 81, 43);
+      }
+
+
+      nav a {
+	  color: black;
+	  font-size: 18px;
+	  text-decoration: none;
+	  position: relative;
+
+      }
+
+
+      nav a::after {
+	  content: "";
+	  width: 100%;
+	  height: 100%;
+	  position: absolute;
+	  border-bottom: 2px solid green;
+	  top: 0;
+	  left: 0;
+	  transform: translateX(-100%);
+	  transition: transform 0.5s ease;
+      }
+
+      nav li {
+	  overflow: hidden;
+	  height: 25px;
+      }
+
+      a.active::after {
+	  transform: translateX(0%);
+      }
+
+
+    </style>
+
+
+  </head>
+  <body>
+    <header>
+      <nav>
+	<ul>
+	  <li><a href="#one">One</a></li>
+	  <li><a href="#two">Two</a></li>
+	  <li><a href="#three">Three</a></li>
+	</ul>
+      </nav>
+    </header>
+
+    <section id="one"><h1>One</h1></section>
+    <section id="two"><h1>Two</h1></section>
+    <section id="three"><h1>Three</h1></section>
+
+
+
+    <script>
+
+      function sanNav(){
+	  const sections = document.querySelectorAll("section");
+	  const navLinks = document.querySelectorAll("nav a");
+
+	  sections.forEach(section => {
+	      section.addEventListener("mouseenter", function () {
+		  const id = this.getAttribute("id");
+		  const navActive = document.querySelector(`a[href = "#${id}"]`);
+		  navLinks.forEach(link => link.classList.remove("active"));
+		  navActive.classList.add("active");
+	      })
+	  });
+      }
+
+      sanNav();
+
+      
+    </script>
+
+  </body>
+</html>

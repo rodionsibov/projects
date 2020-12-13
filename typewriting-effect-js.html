@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap" rel="stylesheet">
+    <script defer src="./app.js"></script>
+    <title>Document</title>
+    <style>
+      body {
+	  font-family: 'Muli', sans-serif;
+	  padding: 0;
+	  margin: 0;
+	  box-sizing: border-box;
+      }
+
+      h1 {
+	  margin: 120px 0 0 50px;
+	  font-size: 4rem;
+      }
+
+      .intro {
+	  display: flex;
+	  height: 100vh;
+	  background: url("https://images.pexels.com/photos/196646/pexels-photo-196646.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+	  background-size: cover;
+      }
+
+      .typing {
+	  margin-left: 15px;
+	  position: relative;
+      }
+
+      .typing::after {
+	  content: "";
+	  position: absolute;
+	  right: -5px;
+	  width: 1px;
+	  height: 4rem;
+	  border-right: 3px solid black;
+	  animation: blink 0.5s infinite ease;
+      }
+
+
+      @keyframes blink {
+	  0% {
+	      opacity: 0;
+	  }
+	  100% {
+	      opacity: 1;
+	  }
+      }
+
+    </style>
+
+
+    
+  </head>
+  <body>
+
+
+    <div class="intro">
+
+      <h1>Hello I make</h1>
+      <h1 class="typing">hi</h1>
+
+    </div>
+    <script>
+      const texts = ['websites', 'illustrations', 'pancakes'];
+      let count = 0;
+      let index = 0;
+      let currentText = '';
+      let letter = '';
+
+      (function type(){
+	  if (count === texts.length) {
+	      count = 0;
+	      
+	  }
+	  currentText = texts[count];
+	  letter = currentText.slice(0, ++index);
+	  
+	  document.querySelector('.typing').textContent = letter;
+	  if(letter.length === currentText.length) {
+	      count++;
+	      index = 0;
+	      
+	  }
+
+	  setTimeout(type, 200);
+	  
+      }());
+
+    </script>
+
+  </body>
+</html>

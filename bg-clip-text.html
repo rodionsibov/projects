@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Background Clip Text</title>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black&amp;display=swap" rel="stylesheet">
+    <style>
+
+      body {
+	  margin: 0;
+      }
+      .text {
+	  
+	  display: flex;
+	  justify-content: center;
+	  height: 100vh;
+	  align-items: center;
+
+	  text-transform: uppercase;
+	  background: linear-gradient(45deg, red, blue);
+	  -webkit-background-clip: text;
+	  color: transparent; 
+	  font-family: 'Archivo Black', sans-serif;
+	  font-size: 15rem;
+	  background-size: 300%;
+	  animation: bg-anim 1s infinite alternate;
+
+      }
+
+      @keyframes bg-anim {
+	  0% {
+	      background-position: right;
+	  }
+	  100% {
+	      background-position: left;
+	  }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="text">Hello</div>
+  </body>
+</html>

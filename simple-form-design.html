@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      * {
+	  margin: 0px;
+	  padding: 0px;
+	  box-sizing: border-box;
+      }
+
+      section {
+	  background-color: #3E57DB;
+	  padding: 20px 20px;
+	  width: 300px;
+	  height: 160px;
+	  color: white;
+	  border-radius: 5px;
+	  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+	  font-size: 1.1rem;   
+	  margin: 5px auto;
+      }
+
+      p {
+	  font-size: 0.8rem;
+	  opacity: 0.8;
+	  margin: 5px auto;
+      }
+
+      input {
+	  background-color: rgba(0, 0, 0, 0.3);
+	  border-radius: 50px;
+	  color: white;
+	  font-size: 14px;
+	  padding: 10px 15px;
+	  margin: 15px auto;
+	  width: 100%;
+	  border: none;
+	  outline: none;
+      }
+
+      body {
+	  background-color: #F8F9FD;
+	  font-family: 'Muli', sans-serif;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  min-height: 100vh;
+      }
+
+    </style>
+
+    <title>Live User Filter</title>
+  </head>
+  <body>
+    <section>
+      <h1>Live User Filter</h1>
+      <p>Search by name and/or location</p>
+      <form method="post">
+	<input type="text" name="search" placeholder="Search">
+      </form>
+    </section>
+    <script src="./app.js">
+    </script>
+
+  </body>
+</html>
