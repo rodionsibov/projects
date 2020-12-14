@@ -10,7 +10,10 @@
 
     <title>Online - Offline</title>
     <style>
-
+      .emoji {
+	  font-size: 5em;
+	  margin-top: 20px;
+      }
       </style>
   </head>
   <body>
@@ -21,6 +24,7 @@
       <div class="d-grid gap-2">
 	<button class="btn btn-outline-primary btn-lg" type="button">Check Status</button>
       </div>
+      <div class="emoji">🤔</div>
     </main> <!-- ./container -->
 
     
@@ -28,7 +32,7 @@
     <script>
 
       const ooUpdate = document.querySelector("#ooUpdate");
-
+      const emojiEl = document.querySelector(".emoji");
 
       // Add envent listeners
 
@@ -36,18 +40,21 @@
 	  ooUpdate.textContent = "We are online!";
 	  ooUpdate.classList.remove("alert-warning");
 	  ooUpdate.classList.add("alert-info");
+	  emojiEl.textContent = "😀"
       })
 
       window.addEventListener("offline", () => {
 	  ooUpdate.textContent = "We are offline :(";
 	  ooUpdate.classList.remove("alert-info");
 	  ooUpdate.classList.add("alert-warning");
+	  emojiEl.textContent = "😟"
       })
 
       document.querySelector("button").addEventListener("click", () => {
 	  if (navigator.onLine) {
 	      ooUpdate.textContent = "We are online!";
-	  ooUpdate.classList.add("alert-info");
+	      ooUpdate.classList.add("alert-info");
+	      emojiEl.textContent = "😀"
 	  }
 	  
       })
