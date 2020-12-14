@@ -111,42 +111,13 @@
 
       </script>
 
-
+      <script src="projectsInfo.js"></script>
       <script>
 
-	const projectsURL = [
-	    {
-		title: "Login Form | Bootstrap",
-		text: "This card has supporting text below as a natural lead-in to additional content.",
-		url: "login-form-bootstrap.html",
-	    },
-	    {
-		title: "Complete Responsive Portfolio",
-		text: "This card has supporting text below as a natural lead-in to additional content.",
-		url: "complete-res-portfolio.html",
-	    },
-	    {
-		title: "Background Changer",
-		text: "This card has supporting text below as a natural lead-in to additional content.",
-		url: "color-generator.html",
-	    },
-	    {
-		title: "Quiz App",
-		text: "This card has supporting text below as a natural lead-in to additional content.",
-		url: "quiz-app.html",
-	    },
-	    {
-		title: "Our Team Section",
-		text: "This card has supporting text below as a natural lead-in to additional content.",
-		url: "our-team-section.html",
-	    },
-	]
-
-
 	let html = "";
-	for (project of projectsURL) {
-	    const min = Math.floor(Math.random() * 55) + 1;
-	    
+	for (project of projectsInfo) {
+//	    const diffMin = Math.ceil(Math.abs(new Date() - new Date(project.date)) / (60 * 60 * 24));
+
 	    html += `
 	<div class="col mb-4">
 	  <div class="card">
@@ -158,12 +129,13 @@
 	      <p class="card-text">${project.text}</p>
 	    </div>
 	    <div class="card-footer">
-	      <small class="text-muted">Last updated ${min} mins ago</small>
+	      <small class="text-muted">Last updated ${new Date(project.date).toDateString()}</small>
 	    </div>
 	  </div>
 	</div>
 
 `;
+
 	}
 	document.querySelector("#projects").innerHTML = html;
 	
