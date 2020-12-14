@@ -11,20 +11,18 @@
 
       body {
 	  margin: 0;
-      }
-      .text {
-	  
-	  display: flex;
-	  justify-content: center;
+	  display: grid;
+	  place-items: center;
 	  height: 100vh;
-	  align-items: center;
+      }
 
+      .text {
 	  text-transform: uppercase;
-	  background: linear-gradient(45deg, red, blue);
+	  background: linear-gradient(45deg, green, lime);
 	  -webkit-background-clip: text;
 	  color: transparent; 
 	  font-family: 'Archivo Black', sans-serif;
-	  font-size: 15rem;
+	  font-size: 20vw;
 	  background-size: 300%;
 	  animation: bg-anim 1s infinite alternate;
 
