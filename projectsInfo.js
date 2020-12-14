@@ -119,11 +119,19 @@ const projectsInfo = [
 	url: "simple-dot-loaders.html",
 	date: "Nov 28 2020 21:58",
     },
+
     {
 	title: "Sum of Digits",
 	text: "Finding sum of digits of a number until sum becomes single digit.",
 	url: "add-digits-app.html",
 	date: "Nov 27 2020 20:19",
+    },
+
+    {
+	title: "App is coming soon",
+	text: "We are working on something big. We will be back soon.",
+	url: "app-coming-soon.html",
+	date: "Dec 15 2020 00:49",
     },
 
     {
