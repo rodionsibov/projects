@@ -15,6 +15,7 @@ The more you practice, the better your skills will become! You are free to modif
 1. https://rodionsibov.github.io/projects/quiz-app.html :star:
 1. https://rodionsibov.github.io/projects/simple-dot-loaders.html
 1. https://rodionsibov.github.io/projects/add-digits-app.html
+
 1. https://rodionsibov.github.io/projects/bouncing-dvd-logo.html
 1. https://rodionsibov.github.io/projects/custom-slider.html :star:
 1. https://rodionsibov.github.io/projects/complete-res-portfolio.html :star:
