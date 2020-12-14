@@ -176,19 +176,18 @@
 	</a>
 	<h1 class="mobile-text">Website<br>APP<br>UI/UX</h1>
 	<p>
-	  Nam velit nulla, hendrerit quis lectus accumsan, condimentum bibendum lectus. Nullam consequat eleifend faucibus. Maecenas metus lacus, pulvinar a ultricies nec, pharetra nec tellus. Quisque quis diam varius, malesuada magna eu, sagittis nulla.</p>
+	  Nullam consequat eleifend faucibus. Maecenas metus lacus, pulvinar a ultricies nec, pharetra nec tellus. Quisque quis diam varius, malesuada magna eu, sagittis nulla.</p>
 	<button>Click Me</button>
       </div>
     </section>
 
-    <footer style="background-color: #333; color: #222; border-top: 0.5px solid #ccc; text-align: center; padding: 5px;">
-      <p><small>Coded by <a style="color: #222; text-decoration: none;" href="https://github.com/rodionsibov"><b>Rodion Sibov</b></a> | 2020</small></p>
+    <footer style="background-color: #222; color: #fff; text-align: center; padding: 5px;">
+      <p><small>Coded by <a style="color: #fff; text-decoration: none;" href="https://github.com/rodionsibov"><b>Rodion Sibov</b></a> | <span class="year">2020</span></small></p>
     </footer>
     
     <script>
-      // change the footer background color
-      const footerEl = document.querySelector('footer');
-      footerEl.style.background = `#${Math.random().toString(16).slice(2, 8)}10`
+
+      document.querySelector(".year").innerHTML = new Date().getFullYear();
 
       // section code
       const parentBgEl = document.querySelector('.bg');
