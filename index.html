@@ -47,7 +47,7 @@
 
       <!-- Header -->
       <div class="container mt-4">
-	<div class="jumbotron">
+	<div class="jumbotron bg-light">
 	  <h1 class="display-4">Mini web projects using HTML, CSS & JS</h1>
 	  <p class="lead">Hello, I am Rodion. I have a life interest for all things web and developing code. </p>
 	  <hr class="my-4">
@@ -56,8 +56,8 @@
       </div>
 
       <!-- Projects -->
-      <div  class="container mb-5">
-	<div id="projects" class="row row-cols-3">
+      <div  class="container">
+	<div id="projects" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
 	  
 	</div>
       </div> 
@@ -116,27 +116,37 @@
 
 	const projectsURL = [
 	    {
-		title: "Card title",
+		title: "Login Form Bootstrap",
 		text: "This card has supporting text below as a natural lead-in to additional content.",
-		url: "image-animated-navbar.html",
+		url: "login-form-bootstrap.html",
 	    },
 	    {
 		title: "Card title",
 		text: "This card has supporting text below as a natural lead-in to additional content.",
-		url: "modal-js-css.html",
+		url: "complete-res-portfolio.html",
 	    },
 	    {
 		title: "Card title",
 		text: "This card has supporting text below as a natural lead-in to additional content.",
-		url: "modal-js-css.html",
+		url: "quiz-app.html",
+	    },
+	    {
+		title: "Background Changer",
+		text: "This card has supporting text below as a natural lead-in to additional content.",
+		url: "color-generator.html",
+	    },
+	    {
+		title: "Card title",
+		text: "This card has supporting text below as a natural lead-in to additional content.",
+		url: "our-team-section.html",
 	    },
 	]
 
 
-
 	let html = "";
 	for (project of projectsURL) {
-	    console.log(project)
+	    const min = Math.floor(Math.random() * 55) + 1;
+	    
 	    html += `
 	<div class="col mb-4">
 	  <div class="card">
@@ -144,11 +154,11 @@
 	      <iframe class="embed-responsive-item" src="${project.url}"></iframe>
 	    </div>
 	    <div class="card-body">
-	      <h5 class="card-title">Card title</h5>
-	      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+	      <h5 class="card-title"><a href="${project.url}" target="_blank">${project.title}</a></h5>
+	      <p class="card-text">${project.text}</p>
 	    </div>
 	    <div class="card-footer">
-	      <small class="text-muted">Last updated 3 mins ago</small>
+	      <small class="text-muted">Last updated ${min} mins ago</small>
 	    </div>
 	  </div>
 	</div>
