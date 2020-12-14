@@ -50,10 +50,31 @@ const projectsInfo = [
     },
 
     {
-	title: "Progress Bar",
-	text: "Create and style a Button with the HTML Button Element. Use a hover effect.",
+	title: "CSS Scroll Snapping",
+	text: "Allows you to lock the viewport to certain elements or locations after a user has finished scrolling.",
+	url: "css-scroll-snap.html",
+	date: "Dec 09 2020 15:07",
+    },
+
+    {
+	title: "Local Storage in JavaScript",
+	text: "Store simple data persistently for your web application directly through the web browser itself.",
+	url: "local-storage.html",
+	date: "Dec 10 2020 03:21",
+    },
+
+    {
+	title: "Online & Offline Events",
+	text: "Simple messages that appear, showing the status of the online state of the browser.",
+	url: "online-offline.html",
+	date: "Dec 10 2020 10:21",
+    },
+
+    {
+	title: "Progress Bar | JS Classes",
+	text: "Using the method setUpdate, you are also able to quite easily update its value.",
 	url: "progress-bar.html",
-	date: "Jun 16 2020 20:21",
+	date: "Dec 10 2020 20:21",
     },
 
     {
