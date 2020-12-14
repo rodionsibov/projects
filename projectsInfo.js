@@ -50,6 +50,20 @@ const projectsInfo = [
     },
 
     {
+	title: "Icon Button Notification Badge",
+	text: "Icon Button with a Notification Badge using HTML and CSS.",
+	url: "icon-button-with-notification-badge.html",
+	date: "Dec 04 2020 00:27",
+    },
+
+    {
+	title: "Binary Decoder",
+	text: "Can decode your binary code to plain text and also you can covert your plain text to binary code.",
+	url: "binary-decoder-app.html",
+	date: "Dec 07 2020 00:24",
+    },
+
+    {
 	title: "CSS Scroll Snapping",
 	text: "Allows you to lock the viewport to certain elements or locations after a user has finished scrolling.",
 	url: "css-scroll-snap.html",
@@ -57,10 +71,31 @@ const projectsInfo = [
     },
 
     {
+	title: "On Hover Background Change",
+	text: "Modern hero section with on hover background change.",
+	url: "on-hover-bg-change.html",
+	date: "Dec 03 2020 21:51",
+    },
+
+    {
 	title: "Local Storage in JavaScript",
 	text: "Store simple data persistently for your web application directly through the web browser itself.",
 	url: "local-storage.html",
 	date: "Dec 10 2020 03:21",
+    },
+
+    {
+	title: "Animation Effects CSS",
+	text: "CSS Animation, hover effects and transitions.",
+	url: "page-pre-loader.html",
+	date: "Dec 10 2020 16:07",
+    },
+
+    {
+	title: "Overlapping Layout",
+	text: "Overlapping layout wit CSS FlexBox. This is a popular layout that you might saw on many website.",
+	url: "overlapping-layout.html",
+	date: "Dec 03 2020 16:18",
     },
 
     {
@@ -75,6 +110,20 @@ const projectsInfo = [
 	text: "Using the method setUpdate, you are also able to quite easily update its value.",
 	url: "progress-bar.html",
 	date: "Dec 10 2020 20:21",
+    },
+
+
+    {
+	title: "Simple Dot Loaders",
+	text: "Simple CSS dot loaders.",
+	url: "simple-dot-loaders.html",
+	date: "Nov 28 2020 21:58",
+    },
+    {
+	title: "Sum of Digits",
+	text: "Finding sum of digits of a number until sum becomes single digit.",
+	url: "add-digits-app.html",
+	date: "Nov 27 2020 20:19",
     },
 
     {
