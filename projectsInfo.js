@@ -11,7 +11,7 @@ const projectsInfo = [
 	title: "Complete Responsive Portfolio",
 	text: "One Page Full Website Project For Practice. HTML & CSS Responsive Website.",
 	url: "complete-res-portfolio.html",
-	date: "Apr 12 2020 01:20",
+	date: "Nov 25 2020 14:20",
     },
 
     {
@@ -132,6 +132,55 @@ const projectsInfo = [
 	text: "We are working on something big. We will be back soon.",
 	url: "app-coming-soon.html",
 	date: "Dec 15 2020 00:49",
+    },
+
+    {
+	title: "Bouncing DVD Logo",
+	text: "Bouncing DVD logo Animation with vanilla JavaScript.",
+	url: "bouncing-dvd-logo.html",
+	date: "Nov 27 2020 14:39",
+    },
+
+    {
+	title: "Speech Recognition App",
+	text: "SpeeCh recognition app using javascript web speech API.",
+	url: "speech-recognition-app.html",
+	date: "Dec 04 2020 00:45",
+    },
+
+    {
+	title: "Loruki",
+	text: "Responsive Website | HTML, CSS Grid, Flexbox & More.",
+	url: "res-website-grid.html",
+	date: "Nov 23 2020 13:30",
+    },
+
+    {
+	title: "Multi Step Form",
+	text: "Multi Step Form Using HTML, CSS & JavaScript",
+	url: "multi-step-form.html",
+	date: "Nov 23 2020 21:55",
+    },
+
+    {
+	title: "Contacts App",
+	text: "Use a free, open-source API for generating random user data.",
+	url: "contacts-app.html",
+	date: "Nov 24 2020 14:25",
+    },
+
+    {
+	title: "Neon Effect",
+	text: "CSS neon glowing light with flickering effect.",
+	url: "neon-glowing-effect.html",
+	date: "Nov 24 2020 15:30",
+    },
+
+    {
+	title: "Custom Slider",
+	text: "Create custom slider with vanilla Javascript.",
+	url: "custom-slider.html",
+	date: "Nov 25 2020 12:46",
     },
 
     {
