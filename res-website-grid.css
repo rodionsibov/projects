@@ -492,36 +492,44 @@ code, pre {
 /* Animations */
 @keyframes slideInFromLeft {
     0% {
+	opacity: 0;
 	transform: translateX(-100%);
     }
     100% {
+	opacity: 1;
 	transform: translateX(0);
     }
 }
 
 @keyframes slideInFromRight {
     0% {
+	opacity: 0;
 	transform: translateX(100%);
     }
     100% {
+	opacity: 1;
 	transform: translateX(0);
     }
 }
 
 @keyframes slideInFromTop {
     0% {
+	opacity: 0;
 	transform: translateY(-100%);
     }
     100% {
+	opacity: 1;
 	transform: translateY(0);
     }
 }
 
 @keyframes slideInFromBottom {
     0% {
+	opacity: 0;
 	transform: translateY(100%);
     }
     100% {
+	opacity: 1;
 	transform: translateY(0);
     }
 }
@@ -546,14 +554,14 @@ code, pre {
     .showcase-text {
 	text-align: center;
 	margin-top: 40px;
-	animation: slideInFromTop 1s ease-in;
+
     }
 
     .showcase-form {
 	justify-self: center;
 	margin: auto;
 	width: 100%;
-	animation: slideInFromBottom 1s ease-in;
+
     }
 
     .cli .grid > *:first-child {
