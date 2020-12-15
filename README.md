@@ -22,13 +22,13 @@ The more you practice, the better your skills will become! You are free to modif
 1. https://rodionsibov.github.io/projects/contacts-app.html
 1. https://rodionsibov.github.io/projects/multi-step-form.html
 1. https://rodionsibov.github.io/projects/res-website-grid.html :star:
-
 1. https://rodionsibov.github.io/projects/speech-recognition-app.html :star:
 1. https://rodionsibov.github.io/projects/scroll-down-button.html
 1. https://rodionsibov.github.io/projects/basic-tooltip.html
 1. https://rodionsibov.github.io/projects/color-generator.html
 1. https://rodionsibov.github.io/projects/our-team-section.html :star: 
 1. https://rodionsibov.github.io/projects/flex-box-photo-gallery.html :star:
+
 1. https://rodionsibov.github.io/projects/css-animated-navigation-menu-bar.html
 1. https://rodionsibov.github.io/projects/key-code-generator.html
 1. https://rodionsibov.github.io/projects/read-more-show-more-button.html
