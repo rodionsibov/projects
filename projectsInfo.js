@@ -32,7 +32,7 @@ const projectsInfo = [
 	title: "Our Team Section",
 	text: "Sections are often used to list the employers in a firm with contact info.",
 	url: "our-team-section.html",
-	date: "Feb 02 2020 11:20",
+	date: "Nov 18 2020 11:54",
     },
 
     {
@@ -139,6 +139,34 @@ const projectsInfo = [
 	text: "Bouncing DVD logo Animation with vanilla JavaScript.",
 	url: "bouncing-dvd-logo.html",
 	date: "Nov 27 2020 14:39",
+    },
+
+    {
+	title: "Photo Gallery",
+	text: "",
+	url: "flex-box-photo-gallery.html",
+	date: "Nov 17 2020 15:56",
+    },
+
+    {
+	title: "Random Color Generator",
+	text: "",
+	url: "color-generator.html",
+	date: "Nov 18 2020 17:03",
+    },
+
+    {
+	title: "Basic Tooltip | Infotip",
+	text: "",
+	url: "basic-tooltip.html",
+	date: "Nov 18 2020 17:11",
+    },
+
+    {
+	title: "Scroll Down Animated Button",
+	text: "",
+	url: "scroll-down-button.html",
+	date: "Nov 19 2020 14:33",
     },
 
     {
