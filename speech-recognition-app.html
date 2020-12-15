@@ -69,6 +69,18 @@
       .texts p.replay {
 	  text-align: right;
       }
+
+      .micro {
+	  font-size: 4em;
+	  cursor: pointer;
+	  text-align: center;
+	  margin: 30px 0;
+	  transition: 0.2s ease transform;
+      }
+
+      .micro:hover {
+	  transform: translateY(-2px);
+      }
       
     </style>
   </head>
@@ -82,7 +94,7 @@
 	  <p>Hello World!</p>
 	</div>
       </div>
-      
+      <div class="micro">🎙️</div>
     </section>
 
     
@@ -143,8 +155,11 @@
       recognition.addEventListener('end', () => {
 	  recognition.start();
       })
-      
-      recognition.start();
+
+      document.querySelector(".micro").addEventListener("click", () => {
+	  recognition.start();	  
+      })
+
 
     </script>
   </body>
