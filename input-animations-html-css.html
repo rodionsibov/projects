@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./style.css">
-    <script defer src="./app.js"></script>
+
     <title>Input Animation</title>
 
     <style>
@@ -16,13 +15,19 @@
       }
 
       body {
-	  height: 60vh;
+	  height: 100vh;
 	  display: flex;
-	  justify-content: space-around;
+	  justify-content: center;
 	  align-items: center;
 	  flex-direction: column;
 	  font-family: sans-serif;
       }
+
+      h1 {
+	  color: #333;
+	  margin-bottom: 20px;
+      }
+
 
       .form {
 	  width: 50%;
@@ -81,6 +86,14 @@
       .form input:valid + .label-name::after {
 	  transform: translateX(0%);
       }
+
+      @media screen and (max-width: 678px) {
+	  .form {
+	      width: 70%;
+	  }
+
+      }
+      
     </style>
     
   </head>

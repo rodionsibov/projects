@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./style.css">
-    <title>Blank page</title>
+
+    <title>SVG Animation Text</title>
 
     <style>
       * {
@@ -14,22 +14,29 @@
 	  box-sizing: border-box;
       }
 
-      #logo {
-	  position: absolute;
-	  top: 50%;
-	  left: 50%;
-	  transform: translate(-50%, -50%);
+      body {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  min-height: 100vh;
+	  padding-top: 40px;
+      }
+       
+      .element {
+	  width: 200px;
       }
 
-      #logo path {
-	  stroke-dasharray: 1400;
-	  stroke-dashoffset: 1400;
-
-	  animation: line-anim 2s ease forwards 0.3s;
+      .element path {
+	  fill: transparent;
+	  stroke-width: 1;
+	  stroke: black;
+	  stroke-dasharray: 166;
+	  stroke-dashoffset: 166;
+	  animation: anim 4s ease forwards;
       }
-
-      @keyframes line-anim {
-	  to {
+      
+      @keyframes anim {
+	  100% {
 	      stroke-dashoffset: 0;
 	  }
       }
@@ -37,21 +44,16 @@
 
   </head>
   <body>
-
-    <svg id="logo" width="275" height="298" viewBox="0 0 275 298" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M53.9742 291.602H57.8835L59.2094 287.924L83.6778 220.056H190.729L215.563 287.949L216.9 291.602H220.79H257.881H265.968L263.078 284.049L158.207 9.91384L156.839 6.33722H153.009H121.378H117.546L116.179 9.91695L11.496 284.052L8.61284 291.602H16.6949H53.9742ZM98.6269 179.178L137.204 72.8165L175.938 179.178H98.6269Z" stroke="black" stroke-width="11.13"/>
-    </svg>
-
-
-
-
     
-    <script>
-      const logo = document.querySelectorAll('#logo path')
+    <svg class="element" viewBox="0 -1 24 34" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 0C16.7614 0 19 2.23858 19 5V17C19 20.866 15.866 24 12 24C8.13401 24 5 20.866 5 17V9H7V17C7 19.7614 9.23858 22 12 22C14.7614 22 17 19.7614 17 17V5C17 3.34315 15.6569 2 14 2C12.3431 2 11 3.34315 11 5V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V6H15V17C15 18.6569 13.6569 20 12 20C10.3431 20 9 18.6569 9 17V5C9 2.23858 11.2386 0 14 0Z" fill="currentColor" /></svg>
 
 
-      for(let i = 0; i < logo.length; i++){
-	  console.log(`Letter ${i} is ${logo[i].getTotalLength()}`);
+<script>
+      const svgEl = document.querySelectorAll(".element path")
+
+
+      for (let i = 0; i < svgEl.length; i++){
+	  // console.log(`Letter ${i} is ${svgEl[i].getTotalLength()}`);
       }
 
 

@@ -1,5 +1,236 @@
 const projectsInfo = [
 
+    // {
+    // 	title: "The Bakary",
+    // 	text: "",
+    // 	url: "simple-landing-page-cooking-master.html",
+    // 	date: "Dec 13 2020 14:10",
+    // },
+
+    // {
+    // 	title: "Modal JS / CSS",
+    // 	text: "",
+    // 	url: "modal-js-css.html",
+    // 	date: "Dec 14 2020 02:17",
+    // },
+
+    // {
+    // 	title: "Navigation Bar",
+    // 	text: "",
+    // 	url: "responsive-navbar.html",
+    // 	date: "Dec 13 2020 14:14",
+    // },
+
+    // {
+    // 	title: "Form Validation",
+    // 	text: "",
+    // 	url: "form-validation.html",
+    // 	date: "Dec 13 2020 12:45",
+    // },
+
+    // {
+    // 	title: "CSS Flip Card",
+    // 	text: "",
+    // 	url: "css-flip-card.html",
+    // 	date: "Dec 13 2020 13:45",
+    // },
+
+    // {
+    // 	title: "Image Gallery",
+    // 	text: "",
+    // 	url: "image-gallery-html-css.html",
+    // 	date: "Dec 13 2020 13:50",
+    // },
+
+    // {
+    // 	title: "Image Transitions",
+    // 	text: "",
+    // 	url: "image-animations-html-css.html",
+    // 	date: "Dec 13 2020 13:57",
+    // },
+
+    // {
+    // 	title: "CSS BgImage Zoom and Rotate",
+    // 	text: "",
+    // 	url: "bg-image-zoom-rotate-css.html",
+    // 	date: "Dec 13 2020 13:37",
+    // },
+
+    // {
+    // 	title: "Transition Background CSS3.html",
+    // 	text: "",
+    // 	url: "transition-background-css3.html",
+    // 	date: "Dec 12 2020 10:20",
+    // },
+
+    // {
+    // 	title: "Nav Highlight",
+    // 	text: "",
+    // 	url: "animated-navbar.html",
+    // 	date: "Dec 14 2020 10:20",
+    // },
+
+    // {
+    // 	title: "Typewriting Effect",
+    // 	text: "",
+    // 	url: "typewriting-effect-js.html",
+    // 	date: "Dec 14 2020 10:20",
+    // },
+
+    // {
+    // 	title: "Element.getBoundingClientRect - JS DOM",
+    // 	text: "",
+    // 	url: "get-bounding-client-rect.html",
+    // 	date: "Dec 14 2020 10:20",
+    // },
+
+    // {
+    // 	title: "Course Card UI Design",
+    // 	text: "",
+    // 	url: "course-card-ui-design.html",
+    // 	date: "Dec 12 2020 11:20",
+    // },
+
+    // {
+    // 	title: "Basic JS Game",
+    // 	text: "",
+    // 	url: "basic-js-game.html",
+    // 	date: "Dec 14 2020 10:20",
+    // },
+
+    // {
+    // 	title: "Text Decoration Color",
+    // 	text: "",
+    // 	url: "text-decoration-color.html",
+    // 	date: "Dec 04 2020 12:40",
+    // },
+
+    // {
+    // 	title: "CSS Transition",
+    // 	text: "",
+    // 	url: "css-transition.html",
+    // 	date: "Dec 04 2020 12:40",
+    // },
+
+    // {
+    // 	title: "Bouncing Particle Effects",
+    // 	text: "Canvas animation",
+    // 	url: "bouncing-particle-effects.html",
+    // 	date: "Dec 04 2020 12:40",
+    // },
+
+    // {
+    // 	title: "",
+    // 	text: "",
+    // 	url: "weather-forecast-app.html",
+    // 	date: "Dec 04 2020 12:40",
+    // },
+
+    // {
+    // 	title: "Advance Tooltip, Image Hotspot",
+    // 	text: "",
+    // 	url: "image-hotspot-advance-tooltip.html",
+    // 	date: "Dec 04 2020 12:40",
+    // },
+
+    {
+	title: "Interesting Fact About Numbers",
+	text: "",
+	url: "fact-about-numbers.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Countdown Timer",
+	text: "",
+	url: "countdown-timer-js.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Featured Section",
+	text: "",
+	url: "featured-section.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Read More / Show More Button",
+	text: "",
+	url: "read-more-show-more-button.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Blog Cards",
+	text: "",
+	url: "blog-cards.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Full Functional HTML Form",
+	text: "",
+	url: "html-form-to-mail.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Simple CSS Loader Animation",
+	text: "",
+	url: "css-loading-animation.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Simple Calc",
+	text: "",
+	url: "calc.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "User Select Property",
+	text: "",
+	url: "user-select-property.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Input Animation",
+	text: "",
+	url: "input-animations-html-css.html",
+	date: "Dec 13 2020 14:40",
+    },
+
+    {
+	title: "Get Mouse Position",
+	text: "",
+	url: "get-mouse-position.html",
+	date: "Dec 14 2020 10:20",
+    },
+
+    {
+	title: "Simple Form Design",
+	text: "",
+	url: "simple-form-design.html",
+	date: "Dec 14 2020 10:20",
+    },
+
+    {
+	title: "Video Inside Text",
+	text: "",
+	url: "video-inside-text.html",
+	date: "Dec 14 2020 10:20",
+    },
+
+    {
+	title: "Video",
+	text: "",
+	url: "video.html",
+	date: "Dec 14 2020 10:20",
+    },
+
     {
 	title: "Login Form | Bootstrap",
 	text: "Basic login form HTML, CSS code through the Bootstrap Framework.", 
@@ -85,6 +316,27 @@ const projectsInfo = [
     },
 
     {
+	title: "SVG Animation Text",
+	text: "",
+	url: "svg-animation-text-css.html",
+	date: "Dec 13 2020 14:08",
+    },
+
+    {
+	title: "Image Gallery",
+	text: "",
+	url: "image-gallery.html",
+	date: "Dec 13 2020 14:37",
+    },
+
+    {
+	title: "Pulse Effect",
+	text: "",
+	url: "pulse-effect.html",
+	date: "Dec 13 2020 23:15",
+    },
+
+    {
 	title: "Animation Effects CSS",
 	text: "CSS Animation, hover effects and transitions.",
 	url: "page-pre-loader.html",
@@ -160,6 +412,20 @@ const projectsInfo = [
 	text: "",
 	url: "basic-tooltip.html",
 	date: "Nov 18 2020 17:11",
+    },
+
+    {
+	title: "Key Code Generator",
+	text: "",
+	url: "key-code-generator.html",
+	date: "Nov 16 2020 21:15",
+    },
+
+    {
+	title: "Navigation Menu Bar",
+	text: "",
+	url: "css-animated-navigation-menu-bar.html",
+	date: "Nov 17 2020 14:32",
     },
 
     {

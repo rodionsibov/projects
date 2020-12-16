@@ -13,53 +13,51 @@
 	  margin: 0;
 	  padding: 0;
 	  font-family: 'Roboto', sans-serif;
-	  
-  }
+      }
 
+      
       .banner {
-	  width: 100%;
 	  height: 100vh;
-	  overflow: hidden;
 	  display: flex;
 	  justify-content: center;
 	  align-items: center;
+	  flex-direction: column;
       }
 
       .banner video {
-	  position: absolute;
-	  top: 0;
-	  left: 0;
 	  width: 100%;
 	  height: 100%;
 	  object-fit: cover;
       }
 
       .banner h2 {
-	  font-weight: 900;
 	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100%;
-	  background: white;
-	  font-size: 30vw;
+	  line-height: 150px;
+	  font-weight: 900;
+	  font-size: 10em;
 	  text-align: center;
-	  text-transform: uppercase;
-	  color: black;
-	  line-height: 100vh;
+	  background: gold;
 	  mix-blend-mode: screen;
+	  border-radius: 8px;
+	  padding: 10px;
+	  opacity: 0.8;
+	  cursor: pointer;
+	  transition: 0.3s ease all;
       }
 
-      footer {
-	  background: dodgerblue;
-	  color: white;
-	  padding: 20px;
-	  text-align: center;
+      .banner h2:hover {
+	  opacity: 1;
+	  transform: scale(1.01);
+	  
+      }
+
+      @media screen and (max-width: 678px) {
+	  .banner h2 {
+	      font-size: 5.5em;
+	      line-height: 80px;
+	  }
       }
       
-      footer a {
-	  color: white;
-      }
       
     </style>
     <body>
@@ -68,15 +66,8 @@
 	<video autoplay muted loop>
 	  <source src="https://www.youtubestock.com/static/preview/stock-video-no-copyright-video-copyright-free-4k-motion-graphics-green-screen-background-animation-download-151932.mp4" type="video/mp4">
 	</video>
-	<h2>Video</h2>
+	<h2>Video <br>Inside<br> Text</h2>
       </div>
 
-      <footer>
-	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
-      </footer>
-
-      <script>
-
-      </script>
     </body>
   </head>
