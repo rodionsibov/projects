@@ -15,15 +15,13 @@
 	  align-items: center;
 	  min-height: 100vh;
 	  margin: 0;
-	  background: #111;
       }
 
       .text {
 	  text-transform: uppercase;
-	  font-size: 6em;
+	  font-size: 35vw;
 	  font-family: 'Oswald', sans-serif;
 	  background: url('https://source.unsplash.com/random');
-	  text-shadow: 0 0 80px rgba(255,255,255,0.5);
 	  -webkit-background-clip: text;
 	  -webkit-text-fill-color: transparent;
 	  -webkit-animation: aitf 80s linear infinite;
@@ -39,20 +37,10 @@
     </style>
   </head>
   <body>
-    <div class="text">Animated text fill</div>
+    <div class="text">Text</div>
     <script>
       
      
-      const text = document.querySelector('.text')
-      const str = text.innerText.split(' ').join('')
-      const random = Math.floor(Math.random() * str.length)
-      const randomLetter = str.charAt(random).toUpperCase()
-
-      if (window.outerWidth < 400) {
-	  text.innerText = randomLetter
-	  text.style.fontSize = '15em'
-      }
-
     </script>
   </body>
 </html>

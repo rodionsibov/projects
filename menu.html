@@ -12,28 +12,33 @@
       img {
 	  max-width: 100%;
       }
+
+      section {
+	  min-height: 100vh;
+      }
       
     </style>
     <body>
 
-      <section class="menu container mb-5">
+      <section class="menu container">
 	<!-- title -->
-      <div class="title text-center mt-3">
-	<h1>Curabitur</h1>
-	<hr>
-      </div>
-      <!-- filter buttons-->
-      <div class="btn-container container my-4 text-center">
+	<div class="title text-center mt-3">
+	  <h1>Menu</h1>
+	  <hr>
+	</div>
+	<!-- filter buttons-->
+	<div class="btn-container container my-4 text-center">
 
-      </div>
-      <!-- menu items -->
-      <div class="section-center row">
-	<!-- single item -->
+	</div>
+	<!-- menu items -->
+	<div class="section-center row">
+	  <!-- single item -->
 
-	<!-- end of single item -->
-	
-      </div>
-    </section>
+	  <!-- end of single item -->
+	  
+	</div>
+      </section>
+
       <footer class="p-4 bg-light text-muted text-center">
 	<small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</a></small>
       </footer>
@@ -89,22 +94,22 @@
 	    document.querySelector('.btn-container').innerHTML = categoryBtns;
 	    const filterBtn = document.querySelectorAll('.filter-btn');
 
-	// filter items
-	filterBtn.forEach(btn => {
-	    btn.addEventListener('click', (e) => {
-		const category = e.currentTarget.dataset.id;
-		const menuCategory = menu.filter(item => {
-		    if (item.category === category) {
-			return item;
+	    // filter items
+	    filterBtn.forEach(btn => {
+		btn.addEventListener('click', (e) => {
+		    const category = e.currentTarget.dataset.id;
+		    const menuCategory = menu.filter(item => {
+			if (item.category === category) {
+			    return item;
+			}
+		    })
+		    if (category === 'all') {
+			displayMenuItems(menu)
+		    } else {
+			displayMenuItems(menuCategory)
 		    }
 		})
-		if (category === 'all') {
-		    displayMenuItems(menu)
-		} else {
-		    displayMenuItems(menuCategory)
-		}
 	    })
-	})
 
 	});
 
@@ -125,6 +130,6 @@
 	} 
 
 
-      </script>
+	</script>
     </body>
   </head>

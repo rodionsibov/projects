@@ -10,56 +10,53 @@
 
       * {
 	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
       }
 
       body {
 	  font-family: 'Lato', sans-serif;
-	  background: #ffe9ec;
+	  color: #222;
       }
       
       .section-center {
 	  display: flex;
-	  height: 100vh;
-	  margin: 100px auto 0;
-	  width: 80%;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  min-height: 100vh;
       }
 
       article {
-	  width: 100%;
-	  padding: 0 20px;
+	  text-align: center;
+	  width: 80%;
       }
       
       h3 {
-	  font-size: 1.7rem;
+	  font-size: 3rem;
 	  margin-bottom: 1rem;
-	  text-transform: uppercase;
-	  color: darkmagenta;
-	  letter-spacing: 5px;
+	  color: #ff5d7d;
       }
 
       h4 {
-	  font-size: 1rem;
+	  font-size: 1.5rem;
 	  margin-bottom: 1rem;
 	  letter-spacing: 1px;
       }
 
-      p {
-	  color: #555;
-	  margin: 20px 0 30px;
-	  line-height: 25px;
-      }
-
       .deadline {
 	  display: flex;
+	  justify-content: center;
+	  margin-top: 40px;
+	  gap: 20px;
       }
 
       .deadline-format {
-	  background: darkmagenta;
+	  background: #5cd0b3;
 	  color: whitesmoke;
 	  padding: 15px 20px;
 	  border-radius: 5px;
 	  text-align: center;
-	  margin-right: 10px;
       }
       
       .deadline-format h4 {
@@ -68,57 +65,34 @@
       }
       
 
-      .gift-image img{
-	  width: 100%;
-	  border-radius: 5px;
+      .gift-image img {
+	  max-width: 100%;
+      }
+
+      .gift-image {
+	  width: 200px;
 	  margin-bottom: 20px;
-	  transition: 5s;
-	  
-      }
-
-      .gift-image img:hover {
-	  opacity: 0;
-      }
-
-      @media (max-width: 900px) {
-	  .section-center {
-	      flex-direction: column;
-	      height: auto;
-	      margin: 30px auto;
-
-	  }
- 
       }
       
-      @media (max-width: 360px) {
+      @media (max-width: 678px) {
 	  .section-center {
-	      width: 100%;
+	      padding: 40px 0;
 	  }
-	  
+
+	  .gift-image {
+	      width: 100px;
+	  }
+
 	  .deadline {
-	      justify-content: space-around;
+	      margin-top: 20px;
+	      gap: 5px;
 	  }
 
 	  .deadline-format {
-	      margin: 0;
-	  }
-
-	  h3, .giveaway {
-	      text-align: center;
-	      padding: 0 30px;
+	      padding: 10px 15px;
 	  }
 	  
       }
-
-      footer {
-	  text-align: center;
-	  color: gray;
-      }
-
-      footer a {
-	  color: gray;
-      }
-
       
     </style>
     <body>
@@ -126,7 +100,7 @@
       <section class="section-center">
 	<!-- image -->
 	<article class="gift-image">
-	  <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1448&q=80" alt="gift" title="Photo by Ekaterina Shevchenko | https://unsplash.com/photos/ZLTlHeKbh04">
+	  <img src="https://www.flaticon.com/svg/static/icons/svg/3663/3663778.svg">
 	</article>
 	<!-- info -->
 	<article class="gift-info">

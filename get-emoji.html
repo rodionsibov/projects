@@ -14,16 +14,14 @@
       
       * {
 	  margin: 0;
+	  font-family: 'Lato', sans-serif;
       }
       
-      body {
-	  font-family: 'Lato', sans-serif;
-
+      .container {
 	  display: flex;
 	  justify-content: center;
 	  align-items: center;
-	  height: 100vh;
-	  margin: 0;
+	  min-height: 100vh;
 	  flex-direction: column;
       }
       
@@ -60,13 +58,9 @@
       }
 
       #emoji {
-	  font-size: 20vh;
-
+	  font-size: 20vw;
 	  animation: move-down 1s both;
 	  opacity: 0;
-	  overflow: hidden;
-	  max-width: 100%;
-	  max-height: 100%;
       }
       
       @keyframes move-down {
@@ -92,8 +86,6 @@
 
 
       .footer {
-	  position: fixed;
-	  bottom: 10px;
 	  text-align: center;
 	  padding: 30px;
 	  color: lightslategray;
@@ -108,10 +100,10 @@
 
   </head>
   <body>
-    
+    <div class="container">
     <div id="emoji">🙂</div>
     <button id="btn">Get New Emoji</button>
-
+    </div>
 
     <div class="footer">
       <small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>

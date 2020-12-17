@@ -21,7 +21,7 @@
 	  justify-content: center;
 	  height: 100vh;
 	  text-align: center;
-	  color: black;
+	  color: #222;
       }
 
       #time {
@@ -37,20 +37,14 @@
 	  opacity: 0.6;
       }
 
-      @media (max-width: 700px) {
-	  #time {
-	      font-size: 6rem;
-	  }
-      }
-
       @media (max-width: 400px) {
 	  #time {
-	      font-size: 4rem;
+	      font-size: 3.5rem;
 	  }
 
 	  h1 {
-	      margin-top: 1rem;
-	      font-size: 1.5rem;
+	      margin-top: 2.3rem;
+	      font-size: 1.3rem;
 	  }
 
 	  h2 {
@@ -113,12 +107,12 @@
 		// Morning
 		document.body.style.background = 'url(https://images.unsplash.com/photo-1476673160081-cf065607f449?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80) center center/cover no-repeat'
 		greeting.textContent = 'Good Morning';
-		document.body.style.color = '#333';
+		document.body.style.color = '#222';
 	    } else if (hour < 18) {
 		// Afternoon
 		document.body.style.background = 'url(https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80) center center/cover no-repeat'
 		greeting.textContent = 'Good Afternoon';
-		document.body.style.color = 'white';
+		document.body.style.color = '#222';
 	    } else {
 		// Evening
 		document.body.style.background = 'url(https://images.unsplash.com/photo-1481988535861-271139e06469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1367&q=80) center center/cover no-repeat'
