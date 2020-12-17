@@ -34,7 +34,7 @@
 	  height: 100%;
 	  width: 0%;
       }
-      
+
     </style>
   </head>
   <body>
@@ -63,65 +63,64 @@
       </div> 
     </div> <!-- js-container -->
     
-      <footer style="text-align: center; padding: 10px;">
-	<small>Made with ❤ by <a style="color: #222; text-decoration: none;" href="https://github.com/rodionsibov" target="_blank">Rodion Sibov</a> | <span class="year"></span></small>
-      </footer>
+    <footer style="text-align: center; padding: 10px;">
+      <small>Made with ❤ by <a style="color: #222; text-decoration: none;" href="https://github.com/rodionsibov" target="_blank">Rodion Sibov</a> | <span class="year"></span></small>
+    </footer>
 
-      <script>
-	document.querySelector('.year').textContent = new Date().getFullYear();
-      </script>
-
-
-
-      <!-- Optional JavaScript -->
-      
-      <script>
-
-	const container = document.getElementById('js-container');
-	const highlight = document.getElementById('js-highlight');
-	var containerHeight;
-
-	window.onscroll = function() {
-
-	    containerHeight = container.offsetHeight - window.innerHeight;
-	    containerPos = container.getBoundingClientRect();
-	    diff = containerHeight + containerPos.top;
-	    progressPercentage =  diff / containerHeight * 100;
-	    cssWidth = Math.floor(100 - progressPercentage);
-
-	    highlight.style.width = cssWidth + "%"; 
-
-	};
+    <script>
+      document.querySelector('.year').textContent = new Date().getFullYear();
+    </script>
 
 
-      </script>
-      
 
-      <script>
-	function w(d,e,c) {
-	    b = d.slice(0, c),
-	    b == d ? e.innerHTML = b : (e.innerHTML = b + "|",
-					setTimeout(w, 100, d, e, c + 1))
-	}
+    <!-- Optional JavaScript -->
+    
+    <script>
 
-	window.addEventListener("DOMContentLoaded", function() {
-	    for (i of document.getElementsByClassName("typewriter"))
-		w(i.innerHTML, i, 0)
-	}, false)
+      const container = document.getElementById('js-container');
+      const highlight = document.getElementById('js-highlight');
+      var containerHeight;
 
-      </script>
+      window.onscroll = function() {
 
-      <script src="projectsInfo.js"></script>
-      <script>
-	// get first n elements of array 
-const items = projectsInfo.slice(0, 2);
-	console.log(projectsInfo)
-	
-	let html = "";
-	for (project of items) {
-//	    const diffMin = Math.ceil(Math.abs(new Date() - new Date(project.date)) / (60 * 60 * 24));
+	  containerHeight = container.offsetHeight - window.innerHeight;
+	  containerPos = container.getBoundingClientRect();
+	  diff = containerHeight + containerPos.top;
+	  progressPercentage =  diff / containerHeight * 100;
+	  cssWidth = Math.floor(100 - progressPercentage);
 
-	    html += `
+	  highlight.style.width = cssWidth + "%"; 
+
+      };
+
+
+    </script>
+    
+
+    <script>
+      function w(d,e,c) {
+	  b = d.slice(0, c),
+	  b == d ? e.innerHTML = b : (e.innerHTML = b + "|",
+				      setTimeout(w, 100, d, e, c + 1))
+      }
+
+      window.addEventListener("DOMContentLoaded", function() {
+	  for (i of document.getElementsByClassName("typewriter"))
+	      w(i.innerHTML, i, 0)
+      }, false)
+
+    </script>
+
+    <script src="projectsInfo.js"></script>
+    <script>
+
+
+      // get first n elements of array 
+      let html = "";
+      for (project of projectsInfo) {
+	  //	    const diffMin = Math.ceil(Math.abs(new Date() - new Date(project.date)) / (60 * 60 * 24));
+
+	  html += `
 	<div class="col mb-4">
 	  <div class="card">
 	    <div class="card-img-top embed-responsive embed-responsive-1by1">
@@ -139,12 +138,12 @@ const items = projectsInfo.slice(0, 2);
 
 `;
 
-	}
-	document.querySelector("#projects").innerHTML = html;
-	
+      }
+      document.querySelector("#projects").innerHTML = html;
+
 
       </script>
-      
+    
 
   </body>
 </html>
