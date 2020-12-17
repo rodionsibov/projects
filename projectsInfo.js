@@ -1,191 +1,9 @@
 const projectsInfo = [
 
-    // {
-    // 	title: "The Bakary",
-    // 	text: "",
-    // 	url: "simple-landing-page-cooking-master.html",
-    // 	date: "Dec 13 2020 14:10",
-    // },
-
-    // {
-    // 	title: "Modal JS / CSS",
-    // 	text: "",
-    // 	url: "modal-js-css.html",
-    // 	date: "Dec 14 2020 02:17",
-    // },
-
-    // {
-    // 	title: "Navigation Bar",
-    // 	text: "",
-    // 	url: "responsive-navbar.html",
-    // 	date: "Dec 13 2020 14:14",
-    // },
-
-    // {
-    // 	title: "Form Validation",
-    // 	text: "",
-    // 	url: "form-validation.html",
-    // 	date: "Dec 13 2020 12:45",
-    // },
-
-    // {
-    // 	title: "CSS Flip Card",
-    // 	text: "",
-    // 	url: "css-flip-card.html",
-    // 	date: "Dec 13 2020 13:45",
-    // },
-
-    // {
-    // 	title: "Image Gallery",
-    // 	text: "",
-    // 	url: "image-gallery-html-css.html",
-    // 	date: "Dec 13 2020 13:50",
-    // },
-
-    // {
-    // 	title: "Image Transitions",
-    // 	text: "",
-    // 	url: "image-animations-html-css.html",
-    // 	date: "Dec 13 2020 13:57",
-    // },
-
-    // {
-    // 	title: "CSS BgImage Zoom and Rotate",
-    // 	text: "",
-    // 	url: "bg-image-zoom-rotate-css.html",
-    // 	date: "Dec 13 2020 13:37",
-    // },
-
-    // {
-    // 	title: "Transition Background CSS3.html",
-    // 	text: "",
-    // 	url: "transition-background-css3.html",
-    // 	date: "Dec 12 2020 10:20",
-    // },
-
-    // {
-    // 	title: "Nav Highlight",
-    // 	text: "",
-    // 	url: "animated-navbar.html",
-    // 	date: "Dec 14 2020 10:20",
-    // },
-
-    // {
-    // 	title: "Typewriting Effect",
-    // 	text: "",
-    // 	url: "typewriting-effect-js.html",
-    // 	date: "Dec 14 2020 10:20",
-    // },
-
-    // {
-    // 	title: "Element.getBoundingClientRect - JS DOM",
-    // 	text: "",
-    // 	url: "get-bounding-client-rect.html",
-    // 	date: "Dec 14 2020 10:20",
-    // },
-
-    // {
-    // 	title: "Course Card UI Design",
-    // 	text: "",
-    // 	url: "course-card-ui-design.html",
-    // 	date: "Dec 12 2020 11:20",
-    // },
-
-    // {
-    // 	title: "Basic JS Game",
-    // 	text: "",
-    // 	url: "basic-js-game.html",
-    // 	date: "Dec 14 2020 10:20",
-    // },
-
-    // {
-    // 	title: "Text Decoration Color",
-    // 	text: "",
-    // 	url: "text-decoration-color.html",
-    // 	date: "Dec 04 2020 12:40",
-    // },
-
-    // {
-    // 	title: "CSS Transition",
-    // 	text: "",
-    // 	url: "css-transition.html",
-    // 	date: "Dec 04 2020 12:40",
-    // },
-
-    // {
-    // 	title: "Bouncing Particle Effects",
-    // 	text: "Canvas animation",
-    // 	url: "bouncing-particle-effects.html",
-    // 	date: "Dec 04 2020 12:40",
-    // },
-
-    // {
-    // 	title: "",
-    // 	text: "",
-    // 	url: "weather-forecast-app.html",
-    // 	date: "Dec 04 2020 12:40",
-    // },
-
-    // {
-    // 	title: "Advance Tooltip, Image Hotspot",
-    // 	text: "",
-    // 	url: "image-hotspot-advance-tooltip.html",
-    // 	date: "Dec 04 2020 12:40",
-    // },
-
-    // {
-    // 	title: "",
-    // 	text: "",
-    // 	url: "portfolio-website.html",
-    // 	date: "Dec 04 2020 12:40",
-    // },
-
-    // {
-    // 	title: "",
-    // 	text: "",
-    // 	url: "responsive-portfolio.html",
-    // 	date: "Dec 04 2020 12:40",
-    // },
-
-    // {
-    // 	title: "",
-    // 	text: "",
-    // 	url: "dynamic-images.html",
-    // 	date: "Dec 04 2020 12:40",
-    // },
-
-    // {
-    // 	title: "",
-    // 	text: "",
-    // 	url: "google-search-page.html",
-    // 	date: "Dec 04 2020 12:40",
-    // },
-
-    // {
-    // 	title: "",
-    // 	text: "",
-    // 	url: "grid-layout-with-image.html",
-    // 	date: "Dec 04 2020 12:40",
-    // },
-
     {
 	title: "Cards Hover Effects",
 	text: "",
 	url: "card-hover.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Clip Mask ",
-	text: "",
-	url: "clip-mask.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Color Flipper ",
-	text: "",
-	url: "color-flipper.html",
 	date: "Dec 04 2020 12:40",
     },
 
@@ -197,17 +15,10 @@ const projectsInfo = [
     },
 
     {
-	title: "Dark Mode ",
+	title: "Random Color Generator",
 	text: "",
-	url: "dark-mode.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Div Box ",
-	text: "",
-	url: "div-box.html",
-	date: "Dec 04 2020 12:40",
+	url: "color-generator.html",
+	date: "Nov 18 2020 17:03",
     },
 
     {
@@ -232,30 +43,9 @@ const projectsInfo = [
     },
 
     {
-	title: "Image Reflection ",
-	text: "",
-	url: "image-reflection.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
 	title: "MyBookList App ",
 	text: "",
 	url: "js-booklist-app.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Get Cat&Dog ",
-	text: "JS Fetch API",
-	url: "js-fetch-api.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Loading Page",
-	text: "",
-	url: "loading-page.html",
 	date: "Dec 04 2020 12:40",
     },
 
@@ -270,13 +60,6 @@ const projectsInfo = [
 	title: "Modal",
 	text: "",
 	url: "modal.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Negotiating",
-	text: "",
-	url: "negotiating.html",
 	date: "Dec 04 2020 12:40",
     },
 
@@ -316,13 +99,6 @@ const projectsInfo = [
     },
 
     {
-	title: "Scroll",
-	text: "",
-	url: "smooth-scroll.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
 	title: "Quick Autocomplete App",
 	text: "",
 	url: "quick-autocomplete-app.html",
@@ -333,6 +109,13 @@ const projectsInfo = [
 	title: "Countdown Timer",
 	text: "",
 	url: "countdown-timer.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Get Cat&Dog ",
+	text: "JS Fetch API",
+	url: "js-fetch-api.html",
 	date: "Dec 04 2020 12:40",
     },
 
@@ -386,6 +169,20 @@ const projectsInfo = [
     },
 
     {
+	title: "Dark Mode ",
+	text: "",
+	url: "dark-mode.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Clip Mask ",
+	text: "",
+	url: "clip-mask.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
 	title: "Tooltips",
 	text: "",
 	url: "tooltips.html",
@@ -410,6 +207,13 @@ const projectsInfo = [
 	title: "Clip-path",
 	text: "CSS clip-path mousemove effects",
 	url: "css-dynamic.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Div Box ",
+	text: "",
+	url: "div-box.html",
 	date: "Dec 04 2020 12:40",
     },
 
@@ -800,13 +604,6 @@ const projectsInfo = [
     },
 
     {
-	title: "Random Color Generator",
-	text: "",
-	url: "color-generator.html",
-	date: "Nov 18 2020 17:03",
-    },
-
-    {
 	title: "Basic Tooltip | Infotip",
 	text: "",
 	url: "basic-tooltip.html",
@@ -874,6 +671,41 @@ const projectsInfo = [
 	text: "Create custom slider with vanilla Javascript.",
 	url: "custom-slider.html",
 	date: "Nov 25 2020 12:46",
+    },
+
+    {
+	title: "Image Reflection ",
+	text: "",
+	url: "image-reflection.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Negotiating",
+	text: "",
+	url: "negotiating.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Color Flipper ",
+	text: "",
+	url: "color-flipper.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Loading Page",
+	text: "",
+	url: "loading-page.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Scroll",
+	text: "",
+	url: "smooth-scroll.html",
+	date: "Dec 04 2020 12:40",
     },
 
     {
