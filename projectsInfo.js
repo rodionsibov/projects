@@ -133,6 +133,160 @@ const projectsInfo = [
     // 	date: "Dec 04 2020 12:40",
     // },
 
+    // {
+    // 	title: "",
+    // 	text: "",
+    // 	url: "portfolio-website.html",
+    // 	date: "Dec 04 2020 12:40",
+    // },
+
+    // {
+    // 	title: "",
+    // 	text: "",
+    // 	url: "responsive-portfolio.html",
+    // 	date: "Dec 04 2020 12:40",
+    // },
+
+    // {
+    // 	title: "",
+    // 	text: "",
+    // 	url: "dynamic-images.html",
+    // 	date: "Dec 04 2020 12:40",
+    // },
+
+    // {
+    // 	title: "",
+    // 	text: "",
+    // 	url: "google-search-page.html",
+    // 	date: "Dec 04 2020 12:40",
+    // },
+
+    // {
+    // 	title: "",
+    // 	text: "",
+    // 	url: "grid-layout-with-image.html",
+    // 	date: "Dec 04 2020 12:40",
+    // },
+
+    {
+	title: "Smooth Scroll",
+	text: "Smooth scroll landing page",
+	url: "landing-page-with-smooth-scroll.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Travel",
+	text: "Travel website landing page design",
+	url: "travel-landing-page.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Web Solutions",
+	text: "",
+	url: "grid-css-res-web-layout.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Grid Website Layout",
+	text: "",
+	url: "responsiv-grid-css-website-layout.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Mousemove Parallax",
+	text: "Mousemove Parallax | Vanilla JavaScript",
+	url: "background-parallax.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Background Animation Effects",
+	text: "",
+	url: "animated-background.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Vertical Timeline",
+	text: "",
+	url: "vertical-timeline.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Tabs",
+	text: "",
+	url: "tabs.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Typewriting Effect",
+	text: "",
+	url: "typewriting.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Sign Up Form",
+	text: "Intro Component with Sign Up Form",
+	url: "signup-form-js-validation.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Tooltip & Toggle",
+	text: "Bootstrap 5 Vanilla JS tutorial by Themesberg",
+	url: "vanilla-js-bootstrap5.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Single Price Grid Component",
+	text: "",
+	url: "single-price-grid-component.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Copy to Clipboard",
+	text: "",
+	url: "copy-to-clipboard-js.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "A custom cursor for website",
+	text: "",
+	url: "custom-cursor.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Dark theme switcher",
+	text: "Dark theme switcher for website using CSS and JS",
+	url: "dark-theme-switcher.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Random Joke Generator",
+	text: "Random Joke Generator | JavaScript Fetch API",
+	url: "random-joke-generator.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Blog Cards",
+	text: "",
+	url: "blog-cards.html",
+	date: "Dec 04 2020 12:40",
+    },
+
     {
 	title: "Interesting Fact About Numbers",
 	text: "",
@@ -158,13 +312,6 @@ const projectsInfo = [
 	title: "Read More / Show More Button",
 	text: "",
 	url: "read-more-show-more-button.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Blog Cards",
-	text: "",
-	url: "blog-cards.html",
 	date: "Dec 04 2020 12:40",
     },
 
@@ -243,13 +390,6 @@ const projectsInfo = [
 	text: "One Page Full Website Project For Practice. HTML & CSS Responsive Website.",
 	url: "complete-res-portfolio.html",
 	date: "Nov 25 2020 14:20",
-    },
-
-    {
-	title: "Background Changer",
-	text: "This card has supporting text below as a natural lead-in to additional content.",
-	url: "color-generator.html",
-	date: "Mar 11 2020 11:20",
     },
 
     {
