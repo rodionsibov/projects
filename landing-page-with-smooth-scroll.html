@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/family=Catamaran&display=swap" rel="stylesheet">
-
 
     <title>Smooth Scroll Landing Page</title>
     <style>
@@ -12,6 +10,7 @@
       * {
 	  margin: 0;
 	  padding: 0;
+	  box-sizing: border-box;
       }
 
       body {
@@ -58,6 +57,7 @@
 	  text-decoration: none;
 	  text-transform: uppercase;
 	  color: #f4f4f4;
+	  transition: 0.3s ease all;
       }
 
       .navbar ul li a:hover {
@@ -100,11 +100,26 @@
 	  background: url('https://images.unsplash.com/photo-1479669732031-affb2ce2d265?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2378&q=80') no-repeat center center/cover;
       }
       
-      @media (max-width: 400px) {
+      @media (max-width: 500px) {
 	  .navbar ul li {
 	      margin: 1rem 0.4rem;
 	      padding: 0;
 	  }
+
+	  section {
+	      padding: 0 30px;
+	  }
+
+	  section h1 {
+	      line-height: 50px;
+	      font-size: 2.5rem;
+	      margin-bottom: 20px;
+	  }
+
+	  section p {
+	      font-size: 1.1rem;
+	  }
+
       }
       
     </style>
