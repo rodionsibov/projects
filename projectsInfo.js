@@ -169,6 +169,265 @@ const projectsInfo = [
     // },
 
     {
+	title: "Cards Hover Effects",
+	text: "",
+	url: "card-hover.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Clip Mask ",
+	text: "",
+	url: "clip-mask.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Color Flipper ",
+	text: "",
+	url: "color-flipper.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Counter ",
+	text: "",
+	url: "counter.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Dark Mode ",
+	text: "",
+	url: "dark-mode.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Div Box ",
+	text: "",
+	url: "div-box.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Fetch API Sandbox ",
+	text: "",
+	url: "fetch-api.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "My Contacts ",
+	text: "",
+	url: "filterable-list.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Get Emoji ",
+	text: "",
+	url: "get-emoji.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Image Reflection ",
+	text: "",
+	url: "image-reflection.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "MyBookList App ",
+	text: "",
+	url: "js-booklist-app.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Get Cat&Dog ",
+	text: "JS Fetch API",
+	url: "js-fetch-api.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Loading Page",
+	text: "",
+	url: "loading-page.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Menu",
+	text: "",
+	url: "menu.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Modal",
+	text: "",
+	url: "modal.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Negotiating",
+	text: "",
+	url: "negotiating.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Get a Good Vibe",
+	text: "",
+	url: "page-for-you.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Placeholder Shown",
+	text: "",
+	url: "placeholder-shown.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Progress",
+	text: "",
+	url: "progress.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Reflection",
+	text: "",
+	url: "reflection.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Review",
+	text: "",
+	url: "review.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Scroll",
+	text: "",
+	url: "smooth-scroll.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Quick Autocomplete App",
+	text: "",
+	url: "quick-autocomplete-app.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Countdown Timer",
+	text: "",
+	url: "countdown-timer.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Dynamic Page",
+	text: "",
+	url: "dynamic-landing-page.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Login",
+	text: "",
+	url: "login.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Ads Manager",
+	text: "",
+	url: "ads-manager.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Landing Page",
+	text: "",
+	url: "product-landing-page.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Lorem Ipsum",
+	text: "",
+	url: "lorem-ipsum.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Grocery Bud",
+	text: "",
+	url: "grocery-bud.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Tooltips",
+	text: "",
+	url: "animated-text-fill.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Tooltips",
+	text: "",
+	url: "tooltips.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "3D Rotating Gallery",
+	text: "CSS 3D rotating image gallery",
+	url: "3d-rotating-image-gallery.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Mini Calendar",
+	text: "",
+	url: "calendar.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Clip-path",
+	text: "CSS clip-path mousemove effects",
+	url: "css-dynamic.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Image Distortion Hover Effects",
+	text: "",
+	url: "liquid-distortion.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Password Generator",
+	text: "Random password generator with copy button",
+	url: "password-generator.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
 	title: "Smooth Scroll",
 	text: "Smooth scroll landing page",
 	url: "landing-page-with-smooth-scroll.html",
