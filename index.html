@@ -61,6 +61,12 @@
 	  
 	</div>
       </div> 
+
+      <div class="container text-center mb-4 mt-4">
+	<button type="button" class="btn btn-primary">Load More</button>
+      </div>
+      
+      
     </div> <!-- js-container -->
     
     <footer style="text-align: center; padding: 10px;">
@@ -114,13 +120,23 @@
     <script src="projectsInfo.js"></script>
     <script>
 
+      // get first n elements of array
+      let loadMore = 12;
+      const btn = document.querySelector("button");
+      
+      btn.addEventListener("click", () => {
+	  loadMore += 6;
+	  showProjects();
+      })
 
-      // get first n elements of array 
-      let html = "";
-      for (project of projectsInfo) {
-	  //	    const diffMin = Math.ceil(Math.abs(new Date() - new Date(project.date)) / (60 * 60 * 24));
+      const showProjects = () => {
+	  const items = projectsInfo.slice(0, loadMore);
 
-	  html += `
+	  let html = "";
+	  for (project of items) {
+	      //	    const diffMin = Math.ceil(Math.abs(new Date() - new Date(project.date)) / (60 * 60 * 24));
+
+	      html += `
 	<div class="col mb-4">
 	  <div class="card">
 	    <div class="card-img-top embed-responsive embed-responsive-1by1">
@@ -138,8 +154,12 @@
 
 `;
 
+	  }
+	  document.querySelector("#projects").innerHTML = html;
+	  
       }
-      document.querySelector("#projects").innerHTML = html;
+      showProjects();
+
 
 
       </script>
