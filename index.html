@@ -114,16 +114,16 @@
       <script src="projectsInfo.js"></script>
       <script>
 	// get first n elements of array 
-	// const items = projectsInfo.slice(0, 3);
-	// console.log(items)
+	const items = projectsInfo.slice(0, 3);
+	console.log(items)
 	
 	let html = "";
-	for (project of projectsInfo) {
+	for (project of items) {
 //	    const diffMin = Math.ceil(Math.abs(new Date() - new Date(project.date)) / (60 * 60 * 24));
 
 	    html += `
 	<div class="col mb-4">
-	  <div class="card border-dark">
+	  <div class="card">
 	    <div class="card-img-top embed-responsive embed-responsive-1by1">
 	      <iframe class="embed-responsive-item" src="${project.url}"></iframe>
 	    </div>
@@ -131,7 +131,7 @@
 	      <h5 class="card-title"><a href="${project.url}" target="_blank">${project.title}</a></h5>
 	      <p class="card-text">${project.text}</p>
 	    </div>
-	    <div class="card-footer">
+	    <div class="card-footer bg-transparent">
 	      <small class="text-muted">Last updated ${new Date(project.date).toDateString()}</small>
 	    </div>
 	  </div>
