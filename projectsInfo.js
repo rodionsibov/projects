@@ -8,13 +8,6 @@ const projectsInfo = [
     },
 
     {
-	title: "Cards Hover Effects",
-	text: "",
-	url: "card-hover.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
 	title: "Counter ",
 	text: "",
 	url: "counter.html",
@@ -26,13 +19,6 @@ const projectsInfo = [
 	text: "",
 	url: "color-generator.html",
 	date: "Nov 18 2020 17:03",
-    },
-
-    {
-	title: "Fetch API Sandbox ",
-	text: "",
-	url: "fetch-api.html",
-	date: "Dec 04 2020 12:40",
     },
 
     {
@@ -57,20 +43,6 @@ const projectsInfo = [
     },
 
     {
-	title: "Modal",
-	text: "",
-	url: "modal.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Get a Good Vibe",
-	text: "",
-	url: "page-for-you.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
 	title: "Placeholder Shown",
 	text: "",
 	url: "placeholder-shown.html",
@@ -85,24 +57,10 @@ const projectsInfo = [
     },
 
     {
-	title: "Progress",
-	text: "",
-	url: "progress.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Review",
-	text: "",
-	url: "review.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Quick Autocomplete App",
-	text: "",
-	url: "quick-autocomplete-app.html",
-	date: "Dec 04 2020 12:40",
+	title: "Green Button",
+	text: "Create and style a Button with the HTML Button Element. Use a hover effect.",
+	url: "button.html",
+	date: "Jun 16 2020 20:21",
     },
 
     {
@@ -113,114 +71,9 @@ const projectsInfo = [
     },
 
     {
-	title: "Get Cat&Dog ",
-	text: "JS Fetch API",
-	url: "js-fetch-api.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Dynamic Page",
-	text: "",
-	url: "dynamic-landing-page.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
 	title: "Login",
 	text: "",
 	url: "login.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Ads Manager",
-	text: "",
-	url: "ads-manager.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Landing Page",
-	text: "",
-	url: "product-landing-page.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Lorem Ipsum",
-	text: "",
-	url: "lorem-ipsum.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Grocery Bud",
-	text: "",
-	url: "grocery-bud.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Tooltips",
-	text: "",
-	url: "animated-text-fill.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Dark Mode ",
-	text: "",
-	url: "dark-mode.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Clip Mask ",
-	text: "",
-	url: "clip-mask.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Tooltips",
-	text: "",
-	url: "tooltips.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "3D Rotating Gallery",
-	text: "CSS 3D rotating image gallery",
-	url: "3d-rotating-image-gallery.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Mini Calendar",
-	text: "",
-	url: "calendar.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Clip-path",
-	text: "CSS clip-path mousemove effects",
-	url: "css-dynamic.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Div Box ",
-	text: "",
-	url: "div-box.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Image Distortion Hover Effects",
-	text: "",
-	url: "liquid-distortion.html",
 	date: "Dec 04 2020 12:40",
     },
 
@@ -239,30 +92,30 @@ const projectsInfo = [
     },
 
     {
-	title: "Travel",
-	text: "Travel website landing page design",
-	url: "travel-landing-page.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Web Solutions",
-	text: "",
-	url: "grid-css-res-web-layout.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "Grid Website Layout",
-	text: "",
-	url: "responsiv-grid-css-website-layout.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
 	title: "Mousemove Parallax",
 	text: "Mousemove Parallax | Vanilla JavaScript",
 	url: "background-parallax.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Modal",
+	text: "",
+	url: "modal.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Get a Good Vibe",
+	text: "",
+	url: "page-for-you.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Quick Autocomplete App",
+	text: "",
+	url: "quick-autocomplete-app.html",
 	date: "Dec 04 2020 12:40",
     },
 
@@ -372,6 +225,13 @@ const projectsInfo = [
     },
 
     {
+	title: "Fetch API Sandbox ",
+	text: "",
+	url: "fetch-api.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
 	title: "Read More / Show More Button",
 	text: "",
 	url: "read-more-show-more-button.html",
@@ -396,6 +256,13 @@ const projectsInfo = [
 	title: "Simple Calc",
 	text: "",
 	url: "calc.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Get Cat&Dog ",
+	text: "JS Fetch API",
+	url: "js-fetch-api.html",
 	date: "Dec 04 2020 12:40",
     },
 
@@ -470,17 +337,25 @@ const projectsInfo = [
     },
 
     {
+	title: "Travel",
+	text: "Travel website landing page design",
+	url: "travel-landing-page.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Grid Website Layout",
+	text: "",
+	url: "responsiv-grid-css-website-layout.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+
+    {
 	title: "CSS Background Clip Text",
 	text: "It allows a background image to be clipped by a text element.",
 	url: "bg-clip-text.html",
 	date: "Jun 16 2020 23:28",
-    },
-
-    {
-	title: "Green Button",
-	text: "Create and style a Button with the HTML Button Element. Use a hover effect.",
-	url: "button.html",
-	date: "Jun 16 2020 20:21",
     },
 
     {
@@ -586,6 +461,13 @@ const projectsInfo = [
 	text: "Bouncing DVD logo Animation with vanilla JavaScript.",
 	url: "bouncing-dvd-logo.html",
 	date: "Nov 27 2020 14:39",
+    },
+
+    {
+	title: "Web Solutions",
+	text: "",
+	url: "grid-css-res-web-layout.html",
+	date: "Dec 04 2020 12:40",
     },
 
     {
@@ -712,6 +594,125 @@ const projectsInfo = [
 	text: "",
 	url: "image-gallery.html",
 	date: "Dec 13 2020 14:37",
+    },
+
+    {
+	title: "Ads Manager",
+	text: "",
+	url: "ads-manager.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Landing Page",
+	text: "",
+	url: "product-landing-page.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Lorem Ipsum",
+	text: "",
+	url: "lorem-ipsum.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Dynamic Page",
+	text: "",
+	url: "dynamic-landing-page.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Grocery Bud",
+	text: "",
+	url: "grocery-bud.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Tooltips",
+	text: "",
+	url: "animated-text-fill.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Dark Mode ",
+	text: "",
+	url: "dark-mode.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Clip Mask ",
+	text: "",
+	url: "clip-mask.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Tooltips",
+	text: "",
+	url: "tooltips.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Progress",
+	text: "",
+	url: "progress.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Cards Hover Effects",
+	text: "",
+	url: "card-hover.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Review",
+	text: "",
+	url: "review.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "3D Rotating Gallery",
+	text: "CSS 3D rotating image gallery",
+	url: "3d-rotating-image-gallery.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Mini Calendar",
+	text: "",
+	url: "calendar.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Clip-path",
+	text: "CSS clip-path mousemove effects",
+	url: "css-dynamic.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Div Box ",
+	text: "",
+	url: "div-box.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Image Distortion Hover Effects",
+	text: "",
+	url: "liquid-distortion.html",
+	date: "Dec 04 2020 12:40",
     },
 
     {
