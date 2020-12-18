@@ -156,8 +156,6 @@
       const searchResultDiv = document.querySelector('.search-result');
       const container = document.querySelector('.container');
       let searchQuery = '';
-      // const APP_ID = '0afafdc7';
-      // const APP_key = '160d4b731396746f446124e1a7bbe0af';
 
       searchForm.addEventListener('submit', (e) => {
 	  e.preventDefault();
@@ -166,7 +164,7 @@
       });
 
       async function fetchAPI(s) {
-	  // const baseURL= `https://api.edamam.com/search?q=pizza&app_id=${APP_ID}&app_key=${APP_key}`;
+
 	  const baseURL= `https://randomuser.me/api/?seed=${s}`
 	  const response = await fetch(baseURL)
 	  const data = await response.json();

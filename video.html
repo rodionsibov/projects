@@ -106,7 +106,7 @@
 
 	const preloader = document.querySelector('.preloader')
 	window.addEventListener('load', (e) => {
-	    console.log(e.timeStamp)
+
 	    document.querySelector('.progress-bar').style.width = `${e.timeStamp}%`
 	    preloader.classList.add('hide-preloader')
 	})

@@ -143,7 +143,6 @@
     <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
     <script>
 
-      const key = '6a73ed993fb67076477df40767903d8a';
       const formEl = document.querySelector('form');
       const details = document.querySelector('.details');
 
@@ -160,7 +159,7 @@
       }
 
       async function fetchAPI(location) {
-//	  const baseURL = `http://api.weatherstack.com/current?access_key=${key}&query=${location}`;
+
 	  const baseURL = `http://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=civillight&output=json`;
 
 	  const res = await fetch(baseURL);
