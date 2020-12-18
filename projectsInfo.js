@@ -1,6 +1,13 @@
 const projectsInfo = [
 
     {
+	title: "Hamburger Nav Animation",
+	text: "",
+	url: "css-hamburger-animation.html",
+	date: "Dec 18 2020 15:45",
+    },
+
+    {
 	title: "Cards Hover Effects",
 	text: "",
 	url: "card-hover.html",
@@ -25,13 +32,6 @@ const projectsInfo = [
 	title: "Fetch API Sandbox ",
 	text: "",
 	url: "fetch-api.html",
-	date: "Dec 04 2020 12:40",
-    },
-
-    {
-	title: "My Contacts ",
-	text: "",
-	url: "filterable-list.html",
 	date: "Dec 04 2020 12:40",
     },
 
@@ -78,16 +78,16 @@ const projectsInfo = [
     },
 
     {
-	title: "Progress",
+	title: "My Contacts ",
 	text: "",
-	url: "progress.html",
+	url: "filterable-list.html",
 	date: "Dec 04 2020 12:40",
     },
 
     {
-	title: "Reflection",
+	title: "Progress",
 	text: "",
-	url: "reflection.html",
+	url: "progress.html",
 	date: "Dec 04 2020 12:40",
     },
 
@@ -526,13 +526,6 @@ const projectsInfo = [
     },
 
     {
-	title: "Image Gallery",
-	text: "",
-	url: "image-gallery.html",
-	date: "Dec 13 2020 14:37",
-    },
-
-    {
 	title: "Pulse Effect",
 	text: "",
 	url: "pulse-effect.html",
@@ -566,7 +559,6 @@ const projectsInfo = [
 	url: "progress-bar.html",
 	date: "Dec 10 2020 20:21",
     },
-
 
     {
 	title: "Simple Dot Loaders",
@@ -706,6 +698,20 @@ const projectsInfo = [
 	text: "",
 	url: "smooth-scroll.html",
 	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Reflection",
+	text: "",
+	url: "reflection.html",
+	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Image Gallery",
+	text: "",
+	url: "image-gallery.html",
+	date: "Dec 13 2020 14:37",
     },
 
     {
