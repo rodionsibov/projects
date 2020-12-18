@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap" rel="stylesheet">
+
+    <title>CSS Only Hamburger Nav Animation</title>
+
+    <style>
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+      }
+
+      html {
+	  font-family: 'Roboto', sans-serif;
+      }
+      
+      section {
+	  min-height: 100vh;
+	  padding: 100px 0;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+      }
+
+      .menu-btn {
+	  position: relative;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  width: 80px;
+	  height: 80px;
+	  cursor: pointer;
+	  transition: 0.5s all;
+	  opacity: 0;
+	  z-index: 2;
+      }
+
+      .menu-btn-burger {
+	  z-index: 0;
+	  width: 50px;
+	  height: 6px;
+	  position: absolute;
+	  background: #333;
+	  transition: 0.5s all;
+      }
+      
+      .menu-btn-burger::before,
+      .menu-btn-burger::after {
+	  content: "";
+	  position: absolute;
+	  z-index: 0;
+	  width: 50px;
+	  height: 6px;
+	  background: #333;
+	  transition: 0.5s ease-in-out all;
+      }
+
+      .menu-btn-burger::before {
+	  transform: translateY(-16px);
+      }
+
+      .menu-btn-burger::after {
+	  transform: translateY(16px);
+      }
+
+      .menu-btn:checked + .menu-btn-burger {
+	  transform: translateX(-50px);
+	  background: transparent;
+      }
+      
+      .menu-btn:checked + .menu-btn-burger::before {
+	  transform: rotate(45deg) translate(35px, -35px);
+      }
+
+      .menu-btn:checked + .menu-btn-burger::after {
+	  transform: rotate(-45deg) translate(35px, 35px);
+      }
+      
+    </style>
+  </head>
+  <body>
+    
+    <section>
+      <input type="checkbox" class="menu-btn">
+      <div class="menu-btn-burger"></div>
+
+    </section>
+
+    
+    <footer style="background-color: #333; color: #fff; padding: 5px; text-align: center;">
+      <p><small>Coded by <a style="color: #fff;" href="https://github.com/rodionsibov">Rodion Sibov</a> | 2020</small></p>
+    </footer>
+
+    <script>
+
+    </script>
+  </body>
+</html>
