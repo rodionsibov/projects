@@ -122,11 +122,13 @@
 
       // get first n elements of array
       let loadMore = 12;
+
       const btn = document.querySelector("button");
       
       btn.addEventListener("click", () => {
-	  loadMore += 6;
+	  loadMore > projectsInfo.length ? btn.disabled = true : loadMore += 6;
 	  showProjects();
+
       })
 
       const showProjects = () => {
