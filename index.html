@@ -120,7 +120,7 @@
     <script src="projectsInfo.js"></script>
     <script>
 
-      // get first n elements of array
+      // get first n elements of the array
       let loadMore = 12;
 
       const btn = document.querySelector("button");
@@ -133,7 +133,8 @@
 
       const showProjects = () => {
 	  const items = projectsInfo.slice(0, loadMore);
-
+	  // const items = projectsInfo.filter(project => project.title === "Positive Quotes")
+	  
 	  let html = "";
 	  for (project of items) {
 	      //	    const diffMin = Math.ceil(Math.abs(new Date() - new Date(project.date)) / (60 * 60 * 24));
