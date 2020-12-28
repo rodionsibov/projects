@@ -555,9 +555,9 @@ const projectsInfo = [
     },
 
     {
-	title: "Negotiating",
+	title: "Positive Quotes",
 	text: "",
-	url: "negotiating.html",
+	url: "positive-quotes.html",
 	date: "Dec 04 2020 12:40",
     },
 
