@@ -1,0 +1,94 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Hello, world!</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+      }
+      
+      body {
+	  color: #444;
+	  background: snow;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+	  font-family: 'Roboto', sans-serif;
+	  height: 100vh;
+      }
+
+
+      .quotes {
+	  animation: blink 5s infinite;
+	  font-size: 4vw;
+	  text-align: center;
+	  font-weight: lighter;
+	  padding: 20px 150px;
+	  opacity: 0;
+      }
+      
+      @keyframes blink {
+	  to {
+	      opacity: 1;
+	  }
+      }
+
+      @media screen and (max-width: 678px) {
+	  .quotes {
+	      font-size: 8vw;
+	      padding: 20px 30px;
+	  }
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <p>The rules of negotiating</p>
+    <h1 class="quotes"></h1>
+
+
+    <script>
+
+      const quotes = [
+	  "“It always seems impossible until it is done.”",
+	  "“Winning doesn’t always mean being first. Winning means you’re doing better than you’ve done before.”",
+	  "“You’re off to great places, today is your day. Your mountain is waiting, so get on your way.”",
+	  "“Optimism is a happiness magnet. If you stay positive good things and good people will be drawn to you.”",
+	  "“Hard work keeps the wrinkles out of the mind and spirit.”",
+	  "“The happiness of your life depends upon the quality of your thoughts.”",
+	  "“Be so happy that, when other people look at you, they become happy too.”",
+      ];
+
+      const quote = quotes[Math.floor(Math.random() * quotes.length)];
+      document.querySelector(".quotes").innerText = quote;	  
+
+      let x = true;      
+      setInterval(() => {
+	  // window.location.reload()
+	  if (x) {
+	      const quote = quotes[Math.floor(Math.random() * quotes.length)];
+	      document.querySelector(".quotes").innerText = quote;
+	      x = false;
+	  } else {
+	      const quote = quotes[Math.floor(Math.random() * quotes.length)];
+	      document.querySelector(".quotes").innerText = quote;
+	      x = true;
+	  }
+      }, 5000);
+      
+      
+    </script>
+
+  </body>
+</html>
