@@ -35,6 +35,17 @@
 	  width: 0%;
       }
 
+      .header {
+	  margin-top: 40px;
+      }
+
+      @media screen and (max-width: 700px) {
+	  .header {
+	      margin-top: 100px;
+	  }
+      }
+
+      
     </style>
   </head>
   <body>
@@ -45,17 +56,15 @@
 
     <div id="js-container">
 
-
-      <nav class="navbar navbar-light bg-light fixed-top">
-	<form class="form-inline">
-	  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-	  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-	</form>
-      </nav>
-      
+	<nav style="backdrop-filter: blur(5px); background: #ffffff20; border-bottom: 1px solid #ddd" class="navbar fixed-top">
+	  <form class="form-inline">
+	    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+	    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	  </form>
+	</nav>
       
       <!-- Header -->
-      <div class="container mt-4">
+      <div class="header container">
 	<div class="jumbotron bg-light">
 	  <h1 class="display-4 typewriter">Mini web projects using HTML, CSS & JS</h1>
 	  <p class="lead">Hello, I am Rodion. I have a life interest for all things web and developing code. </p>
@@ -132,11 +141,10 @@
       // get first n elements of the array
       let loadMore = 12;
       const projects = projectsInfo.slice(0, loadMore);
-      
-      document.querySelector("#loadMore").addEventListener("click", () => {
-	  loadMore > projectsInfo.length ? btn.disabled = true : loadMore = 6;
-	  showProjects(projects);
 
+      document.querySelector("#loadMore").addEventListener("click", () => {
+	  loadMore > projectsInfo.length ? document.querySelector("#loadMore").disabled = true : loadMore += 6;
+	  showProjects(projectsInfo.slice(0, loadMore));
       })
 
       document.querySelector("form button").addEventListener("click", (e) => {
@@ -152,12 +160,14 @@
 	  }); 
 
 	  showProjects(filteredProjects);
+	  document.querySelector("#loadMore").disabled = true;
+	  document.querySelector("#loadMore").classList.add("btn-light")
       })
 
       const showProjects = (projects) => {
 	  let html = "";
 	  for (project of projects) {
-	      //	    const diffMin = Math.ceil(Math.abs(new Date() - new Date(project.date)) / (60 * 60 * 24));
+	      //const diffMin = Math.ceil(Math.abs(new Date() - new Date(project.date)) / (60 * 60 * 24));
 
 	      html += `
 	<div class="col mb-4">
