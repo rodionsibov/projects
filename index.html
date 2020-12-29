@@ -147,7 +147,7 @@
 	  }
 
 	  const filteredProjects = projectsInfo.filter(project => {
-	      const regex = new RegExp(`^${searchText}`, "gi");
+	      const regex = new RegExp(`${searchText}`, "gi");
 	      return project.title.match(regex);
 	  }); 
 
