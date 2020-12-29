@@ -7,6 +7,8 @@
 
     <meta name="description" content="Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.">
 
+    <!-- <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css"> -->
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -33,17 +35,18 @@
 	  background: dodgerblue;
 	  height: 100%;
 	  width: 0%;
+	  backdrop-filter: blur(5px); 
       }
 
-      .header {
-	  margin-top: 40px;
-      }
+      /* .header { */
+      /* 	  margin-top: 40px; */
+      /* } */
 
-      @media screen and (max-width: 700px) {
-	  .header {
-	      margin-top: 100px;
-	  }
-      }
+      /* @media screen and (max-width: 700px) { */
+      /* 	  .header { */
+      /* 	      margin-top: 100px; */
+      /* 	  } */
+      /* } */
 
       
     </style>
@@ -56,12 +59,15 @@
 
     <div id="js-container">
 
-	<nav style="backdrop-filter: blur(5px); background: #ffffff20; border-bottom: 1px solid #ddd" class="navbar fixed-top">
-	  <form class="form-inline">
-	    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <nav class="navbar navbar-light">
+	<a class="navbar-brand" href="https://rodionsibov.github.io/projects/">
+	  <span class="badge badge-primary">{RS}</span>
+	</a>
+	  <form class="form-inline my-2 my-lg-0">
+	    <input class="form-control mr-sm-2" type="search" placeholder="Search">
 	    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 	  </form>
-	</nav>
+      </nav>
       
       <!-- Header -->
       <div class="header container">
@@ -98,12 +104,24 @@
 
 
     <!-- Optional JavaScript -->
+
+    <script>
+      const badgeEl = document.querySelector(".badge");
+      setInterval(() => {
+	  badgeEl.classList.toggle("badge-success");
+	  
+      }, 5000)
+      
+    </script>
+
+
+
     
     <script>
 
       const container = document.getElementById('js-container');
       const highlight = document.getElementById('js-highlight');
-      var containerHeight;
+      let containerHeight;
 
       window.onscroll = function() {
 
@@ -152,6 +170,7 @@
        	  const searchText = document.querySelector("form input").value
 	  if (!searchText) {
 	      return;
+	      
 	  }
 
 	  const filteredProjects = projectsInfo.filter(project => {
@@ -160,8 +179,7 @@
 	  }); 
 
 	  showProjects(filteredProjects);
-	  document.querySelector("#loadMore").disabled = true;
-	  document.querySelector("#loadMore").classList.add("btn-light")
+	  document.querySelector("#loadMore").style.display = "none";
       })
 
       const showProjects = (projects) => {
