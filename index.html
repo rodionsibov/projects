@@ -45,10 +45,19 @@
 
     <div id="js-container">
 
+
+      <nav class="navbar navbar-light bg-light fixed-top">
+	<form class="form-inline">
+	  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+	  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	</form>
+      </nav>
+      
+      
       <!-- Header -->
       <div class="container mt-4">
 	<div class="jumbotron bg-light">
-	  <h1 class="typewriter display-4">Mini web projects using HTML, CSS & JS</h1>
+	  <h1 class="display-4 typewriter">Mini web projects using HTML, CSS & JS</h1>
 	  <p class="lead">Hello, I am Rodion. I have a life interest for all things web and developing code. </p>
 	  <hr class="my-4">
 	  <p>The more you practice, the better your skills will become! You are free to modify, save, share, use or do whatever you want with them. Experiment and have fun! 😉</p>
@@ -63,7 +72,7 @@
       </div> 
 
       <div class="container text-center mb-4 mt-4">
-	<button type="button" class="btn btn-primary">Load More</button>
+	<button id="loadMore" type="button" class="btn btn-primary">Load More</button>
       </div>
       
       
@@ -122,21 +131,32 @@
 
       // get first n elements of the array
       let loadMore = 12;
-
-      const btn = document.querySelector("button");
+      const projects = projectsInfo.slice(0, loadMore);
       
-      btn.addEventListener("click", () => {
-	  loadMore > projectsInfo.length ? btn.disabled = true : loadMore += 6;
-	  showProjects();
+      document.querySelector("#loadMore").addEventListener("click", () => {
+	  loadMore > projectsInfo.length ? btn.disabled = true : loadMore = 6;
+	  showProjects(projects);
 
       })
 
-      const showProjects = () => {
-	  const items = projectsInfo.slice(0, loadMore);
-	  // const items = projectsInfo.filter(project => project.title === "Positive Quotes")
-	  
+      document.querySelector("form button").addEventListener("click", (e) => {
+       	  e.preventDefault();
+       	  const searchText = document.querySelector("form input").value
+	  if (!searchText) {
+	      return;
+	  }
+
+	  const filteredProjects = projectsInfo.filter(project => {
+	      const regex = new RegExp(`^${searchText}`, "gi");
+	      return project.title.match(regex);
+	  }); 
+
+	  showProjects(filteredProjects);
+      })
+
+      const showProjects = (projects) => {
 	  let html = "";
-	  for (project of items) {
+	  for (project of projects) {
 	      //	    const diffMin = Math.ceil(Math.abs(new Date() - new Date(project.date)) / (60 * 60 * 24));
 
 	      html += `
@@ -161,7 +181,7 @@
 	  document.querySelector("#projects").innerHTML = html;
 	  
       }
-      showProjects();
+      showProjects(projects);
 
 
 
