@@ -8,7 +8,7 @@ const projectsInfo = [
     },
 
     {
-	title: "Counter ",
+	title: "Counter",
 	text: "",
 	url: "counter.html",
 	date: "Dec 04 2020 12:40",
