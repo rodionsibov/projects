@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Using Fetch to get Data from an API </title>
+
+  </head>
+  <body>
+
+    <h1>Authors</h1>
+    <ul id="authors"></ul>
+    <script>
+
+      const ul = document.querySelector("#authors");
+      const url = "https://randomuser.me/api/?results=10";
+
+
+      const createNode = (element) => {
+	  return document.createElement(element);
+      }
+
+      const append = (parent, el) => {
+	  return parent.appendChild(el);
+      }
+
+      fetch(url)
+    .then(resp => resp.json())
+    .then(data => {
+	let authors = data.results;
+	return authors.map(author => {
+	    let li = createNode("li");
+	    let img = createNode("img");
+	    let span = createNode("span");
+	    img.src = author.picture.medium;
+	    span.innerHTML = `${author.name.first} ${author.name.last}`;
+	    append(li, img);
+	    append(li, span);
+	    append(ul, li);
+	})
+    })
+    .catch(error => console.log(error));
+
+
+      const url2 = 'https://randomuser.me/api';
+
+      let data = {
+	  name: 'Sammy'
+      }
+
+      let fetchData = {
+	  method: 'POST',
+	  body: data,
+	  headers: new Headers()
+      }
+
+      fetch(url2, fetchData)
+      
+      
+    </script>
+
+
+  </body>
+</html>
