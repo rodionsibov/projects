@@ -16,10 +16,6 @@
 
     <style>
       
-      body {
-
-      }
-
       .progress {
 	  height: 3px;
 	  width: 102%;
@@ -38,16 +34,6 @@
 	  backdrop-filter: blur(5px); 
       }
 
-      /* .header { */
-      /* 	  margin-top: 40px; */
-      /* } */
-
-      /* @media screen and (max-width: 700px) { */
-      /* 	  .header { */
-      /* 	      margin-top: 100px; */
-      /* 	  } */
-      /* } */
-
       
     </style>
   </head>
@@ -59,24 +45,23 @@
 
     <div id="js-container">
 
-      <nav class="navbar navbar-light">
-	<a class="navbar-brand" href="https://rodionsibov.github.io/projects/">
-	  <span class="badge badge-primary">{RS}</span>
-	</a>
-	  <form class="form-inline my-2 my-lg-0">
-	    <input class="form-control mr-sm-2" type="search" placeholder="Search">
-	    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-	  </form>
-      </nav>
       
       <!-- Header -->
-      <div class="header container">
-	<div class="jumbotron bg-light">
+      <div class="container my-4">
+	    <a class="navbar-brand" href="https://rodionsibov.github.io/projects/">
+	      <span class="badge badge-primary">{RS}</span>
+	    </a>
+	    <small class="date text-muted"></small>
+
 	  <h1 class="display-4 typewriter">Mini web projects using HTML, CSS & JS</h1>
 	  <p class="lead">Hello, I am Rodion. I have a life interest for all things web and developing code. </p>
-	  <hr class="my-4">
 	  <p>The more you practice, the better your skills will become! You are free to modify, save, share, use or do whatever you want with them. Experiment and have fun! 😉</p>
-	</div>
+	    <form class="form-inline my-2 my-lg-0">
+	    <input class="form-control mr-sm-2" type="search" placeholder="Search">
+	    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	    <small class="form-text how-many-projects text-muted ml-3"></small>
+	    </form>
+
       </div>
 
       <!-- Projects -->
@@ -99,6 +84,10 @@
 
     <script>
       document.querySelector('.year').textContent = new Date().getFullYear();
+
+      document.querySelector('.date').textContent = new Date()
+    .toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+    
     </script>
 
 
@@ -156,6 +145,8 @@
     <script src="projectsInfo.js"></script>
     <script>
 
+      document.querySelector(".how-many-projects").innerHTML = `There are ${projectsInfo.length} projects`;
+      
       // get first n elements of the array
       let loadMore = 12;
       const projects = projectsInfo.slice(0, loadMore);
