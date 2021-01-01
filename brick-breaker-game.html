@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <title>Hello world!</title>
+    <style>
+
+      #gameScreen {
+	  border: 2px solid #222;
+	  margin: 10px;
+      }
+
+      img {
+	  display: none;
+      }
+      
+    </style>
+
+
+  </head>
+  <body>
+    <!-- <div class="container"> -->
+    <!--   <h1 class="text-center mt-5">Exercises JS</h1> -->
+    <!-- </div> -->
+
+    <div id="root" class="container">
+
+      <!-- <form> -->
+      <!-- 	<input type="url" name="website" placeholder="http://johndoe.com" required pattern="(http|https)://.+" /> -->
+      <!-- 	</form> -->
+      
+    </div>
+    <img id="img-ball" src="https://www.flaticon.com/svg/static/icons/svg/587/587393.svg">
+    <img id="img-brick" src="https://www.flaticon.com/svg/static/icons/svg/844/844978.svg">
+    <canvas id="gameScreen" width="800" height="600"></canvas>
+    <script>
+      
+      const canvas = document.querySelector("#gameScreen");
+      const ctx = canvas.getContext("2d");
+
+      const gameWidth = 800;
+      const gameHeight = 600;
+      
+      const level1 = [
+	  // [1,0,0,1,1,0,0,1,1,0,0,1,1,0,0,1],
+	  // [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+	  // [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+	  // [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+	  [0,0,0,0,0,0,0,0,0,0,0,0,1,]
+      ]
+      
+      const level2 = [
+	  [1,0,0,1,1,0,0,1,1,0,0,1,1,0,0,1],
+	  [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+	  [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+	  [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+      ]
+      
+      function buildLevel(game, level) {
+	  let bricks = [];
+	  
+	  level.forEach((row, rowIndex) => {
+	      row.forEach((brick, brickIndex) => {
+		  if (brick === 1) {
+		      let position = {
+			  x: 50  * brickIndex,
+			  y: 50 + 50 * rowIndex,
+			  
+		      }
+		      bricks.push(new Brick(game, position));
+		  }
+	      })
+	  })
+	  return bricks;
+      }
+      
+
+      class Paddle {
+	  constructor(game) {
+	      this.gameWidth = game.gameWidth;
+	      this.width = 150;
+	      this.height = 20;
+	      this.maxSpeed = 7;
+	      this.speed = 0;
+	      this.position = {
+		  x: game.gameWidth / 2 - this.width / 2,
+		  y: game.gameHeight - this.height - 10,
+	      }
+	  }
+
+	  draw(ctx) {
+	      ctx.fillStyle = "#333"
+	      ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+	  }
+	  
+	  update(deltaTime) {
+	      this.position.x += this.speed;
+	      if (this.position.x < 0) this.position.x = 0;
+	      if (this.position.x + this.width > this.gameWidth) this.position.x = this.gameWidth - this.width;
+	  }
+
+	  moveLeft() {
+	      this.speed = -this.maxSpeed;
+	  }
+
+	  moveRight() {
+	      this.speed = this.maxSpeed;
+	  }
+	  
+	  stop() {
+	      this.speed = 0;
+	  }
+      }
+
+      class InputHandler {
+	  constructor(paddle, game) {
+	      document.addEventListener("keydown", (event) => {
+		  switch (event.keyCode) {
+		  case 37:
+		      paddle.moveLeft();
+		      break;
+		  case 39:
+		      paddle.moveRight();
+		      break;
+		  case 27:
+		      game.togglePause();
+		      break;
+		  }
+	      });
+
+	      document.addEventListener("keyup", (event) => {
+		  switch (event.keyCode) {
+		  case 37:
+		      if (paddle.speed < 0) paddle.stop();
+		      break;
+		  case 39:
+		      if (paddle.speed > 0) paddle.stop();
+		      break;
+		  case 32:
+		      game.start();
+		      break;
+		  }
+	      });
+	  }
+
+	  
+      }
+
+      class Ball {
+	  constructor(game) {
+	      this.gameWidth = game.gameWidth;
+	      this.gameHeight = game.gameHeight;
+	      this.image = document.querySelector("#img-ball");
+
+	      this.game = game;
+	      this.size = 30;
+	      this.reset();
+	  }
+
+	  reset() {
+	      this.position = {
+		  x: 10,
+		  y: 400,
+	      };
+	      this.speed = {
+		  x: 4,
+		  y: -2,
+	      };
+
+	  }
+	  
+	  draw(ctx) {
+	      ctx.drawImage(this.image, this.position.x, this.position.y, this.size, this.size);
+	  }
+
+	  update(deltaTime) {
+	      this.position.x += this.speed.x;
+	      this.position.y += this.speed.y;
+	      // wall on left or right
+	      if (this.position.x > this.gameWidth - this.size || this.position.x < 0) {
+		  this.speed.x = -this.speed.x;
+	      }
+	      // wall on top
+	      if (this.position.y < 0) {
+		  this.speed.y = -this.speed.y;
+	      }
+
+	      // bottom of game
+	      if (this.position.y - this.size > this.gameHeight) {
+		  this.game.lives--;
+		  this.reset();
+	      }
+
+
+	      // check collision with paddle
+	      if (detectCollision(this, this.game.paddle)) {
+		  this.speed.y = - this.speed.y;
+		  this.position.y = this.game.paddle.position.y - this.size;
+	      }
+
+	  }
+	  
+      }
+      
+      class Brick {
+	  constructor(game, position) {
+	      this.image = document.querySelector("#img-brick");
+
+	      this.game = game;
+	      this.position = position;
+	      this.width = 50;
+	      this.height = 50;
+
+
+	      this.markedForDeletion = false;
+	  }
+
+	  update() {
+	      if (detectCollision(this.game.ball, this)){
+		  this.game.ball.speed.y = - this.game.ball.speed.y;
+		  this.markedForDeletion = true;
+	      }
+	  }
+
+	  draw(ctx) {
+	      ctx.drawImage(this.image, this.position.x, this.position.y, this.width, this.height);
+	  }
+
+      }
+
+      const GAMESTATE = {
+	  PAUSED: 0,
+	  RUNNING: 1,
+	  MENU: 2,
+	  GAMEOVER: 3,
+	  NEWLEVEL: 4, 
+      }
+       
+      class Game {
+	  constructor(gameWidth, gameHeight) {
+	      this.gameWidth = gameWidth;
+	      this.gameHeight = gameHeight;
+
+	      this.gamestate = GAMESTATE.MENU;
+	      this.paddle = new Paddle(this);
+	      this.ball = new Ball(this);
+	      this.gameObjects = [];
+	      this.bricks = [];
+	      this.lives = 3;
+	      this.levels = [level1, level2];
+	      this.currentLevel = 0;
+	      new InputHandler(this.paddle, this);
+	  }
+	  
+	  start() {
+	      if (this.gamestate !== GAMESTATE.MENU &&
+		 this.gamestate !== GAMESTATE.NEWLEVEL) return;
+	      
+	      this.bricks = buildLevel(this, this.levels[this.currentLevel]);
+	      this.ball.reset();
+	      this.gameObjects = [
+		  this.ball,
+		  this.paddle,
+	      ];
+
+	      this.gamestate = GAMESTATE.RUNNING;
+
+	  }
+
+	  update(deltaTime) {
+	      if (this.lives === 0) this.gamestate = GAMESTATE.GAMEOVER;
+	      if (this.gamestate === GAMESTATE.PAUSED ||
+		  this.gamestate === GAMESTATE.MENU ||
+		  this.gamestate === GAMESTATE.GAMEOVER) return;
+
+	      if (this.bricks.length === 0) {
+		  this.currentLevel++;
+		  this.gamestate = GAMESTATE.NEWLEVEL;
+		  this.start();
+	      }
+
+	      [...this.gameObjects, ...this.bricks].forEach(object => object.update(deltaTime));
+	      this.bricks = this.bricks.filter(brick => !brick.markedForDeletion);
+
+	  }
+
+	  draw(ctx) {
+	      [...this.gameObjects, ...this.bricks].forEach(object => object.draw(ctx));
+	      
+	      if (this.gamestate === GAMESTATE.PAUSED) {
+		  ctx.rect(0, 0, this.gameWidth, this.gameHeight);
+		  ctx.fillStyle = "rgba(0,0,0,0.8)";
+		  ctx.fill();
+
+		  ctx.font = "30px Arial";
+		  ctx.fillStyle = "white";
+		  ctx.textAlign = "center";
+		  ctx.fillText("Paused", this.gameWidth / 2, this.gameHeight / 2);
+		  
+	      }
+	      if (this.gamestate === GAMESTATE.MENU) {
+		  ctx.rect(0, 0, this.gameWidth, this.gameHeight);
+		  ctx.fillStyle = "rgba(0,0,0,1)";
+		  ctx.fill();
+
+		  ctx.font = "30px Arial";
+		  ctx.fillStyle = "white";
+		  ctx.textAlign = "center";
+		  ctx.fillText("Press SPACEBAR to Start", this.gameWidth / 2, this.gameHeight / 2);
+		  
+	      }
+	      if (this.gamestate === GAMESTATE.GAMEOVER) {
+		  ctx.rect(0, 0, this.gameWidth, this.gameHeight);
+		  ctx.fillStyle = "rgba(0,0,0,1)";
+		  ctx.fill();
+
+		  ctx.font = "30px Arial";
+		  ctx.fillStyle = "white";
+		  ctx.textAlign = "center";
+		  ctx.fillText("GAME OVER", this.gameWidth / 2, this.gameHeight / 2);
+		  
+	      }
+	  }
+
+	  togglePause() {
+	      if (this.gamestate === GAMESTATE.PAUSED) {
+		  this.gamestate = GAMESTATE.RUNNING;
+	      } else {
+		  this.gamestate = GAMESTATE.PAUSED;
+	      }
+	  }
+      }
+
+      function detectCollision(ball, gameObject) {
+	  let bottomOfBall = ball.position.y + ball.size;
+	  let topOfBall = ball.position.y;
+	  let topOfObject = gameObject.position.y;
+	  let leftSideOfObject = gameObject.position.x;
+	  let rightSideOfObject = gameObject.position.x + gameObject.width;
+	  let bottomOfObject = gameObject.position.y + gameObject.height;
+	  if (bottomOfBall >= topOfObject &&
+	      topOfBall <= bottomOfObject &&
+	      ball.position.x >= leftSideOfObject &&
+	      ball.position.x + ball.size <= rightSideOfObject) {
+	      return true;
+	  } else {
+	      return false;
+	  }
+
+      }
+      
+      
+      let game = new Game(gameWidth, gameHeight);
+
+      let lastTime = 0;
+
+      function gameLoop(timestamp) {
+	  let deltaTime = timestamp - lastTime;
+	  lastTime = timestamp;
+	  ctx.clearRect(0, 0, gameWidth, gameHeight);
+	  game.update(deltaTime);
+	  game.draw(ctx);
+
+	  
+	  requestAnimationFrame(gameLoop);
+      }
+
+      requestAnimationFrame(gameLoop);
+
+
+
+    </script>
+  </body>
+</html>
