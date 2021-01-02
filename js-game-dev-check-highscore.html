@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Check High Score | How to use Local Storage</title>
+
+    <style>
+      
+
+    </style>
+  </head>
+  <body>
+    <div class="high-score">HIGH SCORE: 0</div>
+
+    <script>
+      
+      const highScoreBoard = document.querySelector(".high-score");
+      let score = 0;
+      let highscore = localStorage.getItem("game1HighScore", score) || 0;
+      highScoreBoard.textContent = "HIGH SCORE: " + highscore;
+
+      function checkHighScore() {
+	  if (score > localStorage.getItem("game1HighScore")) {
+	      localStorage.setItem("game1HighScore", score);
+	      highscore = score;
+	      highScoreBoard.textContent = "HIGH SCORE: " + highscore;
+	  }
+      }
+
+
+    </script>
+  </body>
+</html>
