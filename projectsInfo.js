@@ -716,13 +716,6 @@ const projectsInfo = [
     },
 
     {
-	title: "Brick Breaker Game",
-	text: "",
-	url: "brick-breaker-game.html",
-	date: "Jan  2021 15:45",
-    },
-
-    {
 	title: "Weight Converter App",
 	text: "This calculator can convert values between the common weight and mass units.",
 	url: "weight-converter-app.html",
