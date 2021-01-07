@@ -1,6 +1,13 @@
 const projectsInfo = [
 
     {
+	title: "Video Background Page",
+	text: "",
+	url: "video-background-page.html",
+	date: "Jan 07 2021 20:45",
+    },
+
+    {
 	title: "Hamburger Nav Animation",
 	text: "",
 	url: "css-hamburger-animation.html",
