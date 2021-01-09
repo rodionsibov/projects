@@ -4,7 +4,7 @@ const projectsInfo = [
 	title: "Drop Down Menu",
 	text: "",
 	url: "drop-down-menu.html",
-	date: "Jan 07 2021 20:45",
+	date: "Jan 08 2021 22:45",
     },
 
     {
@@ -159,6 +159,13 @@ const projectsInfo = [
 	text: "",
 	url: "typewriting.html",
 	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Top Banner",
+	text: "",
+	url: "top-banner.html",
+	date: "Jan 08 2021 19:40",
     },
 
     {
