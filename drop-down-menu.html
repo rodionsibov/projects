@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <title>Drop Down Menu</title>
+
+    <style>
+
+      :root {
+	  --color-1: #18191a;
+	  --color-2: #242526;
+	  --color-3: #b0b3b8;
+	  --color-4: #3a3b3c;
+      }
+
+      
+      * {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  user-select: none;
+	  font-family: 'Poppins', sans-serif;
+      }
+
+      body {
+	  overflow: hidden;
+	  background: var(--color-1);
+      }
+
+      nav {
+	  position: absolute;
+	  top: 30%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+      }
+
+      nav .drop-btn {
+	  width: 300px;
+	  background: var(--color-2);
+	  color: var(--color-3);
+	  line-height: 50px;
+	  padding: 0 20px;
+	  border-radius: 5px;
+	  font-size: 20px;
+	  font-weight: 500;
+      }
+
+      nav .drop-btn span {
+	  float: right;
+	  line-height: 50px;
+	  font-size: 28px;
+	  cursor: pointer;
+      }
+      
+      nav .wrapper {
+	  position: absolute;
+	  top: 65px;
+	  display: flex;
+	  width: 300px;
+	  overflow: hidden;
+	  background: var(--color-2);
+	  border-radius: 5px;
+	  display: none;
+	  transition: 0.3s ease;
+
+      }
+
+      nav .wrapper.show {
+	  display: block;
+	  display: flex;
+      }
+
+
+      nav .wrapper .setting-drop,
+      nav .wrapper .help-drop {
+	  display: none;
+      }
+
+      nav .wrapper ul  {
+	  list-style: none;
+	  width: 300px;
+	  padding: 10px;
+	  transition: 0.3s ease;
+      }
+
+      nav .wrapper ul li {
+	  line-height: 55px;
+	  
+      }
+
+      nav .wrapper ul li a {
+	  position: relative;
+	  text-decoration: none;
+	  color: var(--color-3);
+	  display: flex;
+	  font-size: 18px;
+	  font-weight: 500;
+	  padding: 0 10px;
+	  align-items: center;
+	  border-radius: 8px;
+      }
+
+      nav .wrapper ul li:hover a {
+	  background: var(--color-4);
+      }
+
+      .wrapper ul li a .icon {
+	  height: 40px;
+	  width: 40px;
+	  margin-right: 13px;
+	  background: #ffffff1a;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  text-align: center;
+	  border-radius: 50%;
+      }
+
+      .wrapper ul li a i {
+	  position: absolute;
+	  right: 10px;
+	  font-size: 25px;
+	  pointer-events: none;
+      }
+
+      .wrapper ul .arrow {
+	  padding-left: 10px;
+	  font-size: 20px;
+	  color: var(--color-3);
+	  font-weight: 500;
+	  cursor: pointer;
+      }
+
+      .wrapper ul .arrow span {
+	  margin-right: 15px;
+      }
+      
+    </style>
+    
+  </head>
+  <body>
+    <nav>
+      <div class="drop-btn">
+	Drop down <span class="fas fa-caret-down"></span>
+      </div>
+
+    <div class="wrapper">
+      <ul class="menu-bar">
+	<li><a href="#"><div class="icon"><span class="fas fa-home"></span></div>Home</a></li>
+	<li class="setting-item"><a href="#"><div class="icon"><span class="fas fa-cog"></span></div>Settings & privacy <i class="fas fa-angle-right"></i></a></li>
+	<li class="help-item"><a href="#"><div class="icon"><span class="fas fa-question-circle"></span></div>Help & support <i class="fas fa-angle-right"></i></a></li>
+	<li><a href="#"><div class="icon"><span class="fas fa-user"></span></div>About us</a></li>
+	<li><a href="#"><div class="icon"><span class="fas fa-comment-alt"></span></div>Feedback</a></li>
+      </ul>
+
+
+      <!-- Settings & privacy Menu-items -->
+      <ul class="setting-drop">
+	<li class="arrow back-setting-btn" ><span class="fas fa-arrow-left"></span>Settings & privacy</li>
+	<li><a href="#"><div class="icon"><span class="fas fa-user"></span></div>Personal info</a></li>
+	<li><a href="#"><div class="icon"><span class="fas fa-lock"></span></div>Password </a></li>
+	<li><a href="#"><div class="icon"><span class="fas fa-address-book"></span></div>Activity log</a></li>
+	<li><a href="#"><div class="icon"><span class="fas fa-globe-asia"></span></div>Languages</a></li>
+	<li><a href="#"><div class="icon"><span class="fas fa-sign-out-alt"></span></div>Log out</a></li>
+      </ul>
+
+      <!-- Help & support Menu-items -->
+      <ul class="help-drop">
+	<li class="arrow back-help-btn" ><span class="fas fa-arrow-left"></span>Help & support</li>
+	<li><a href="#"><div class="icon"><span class="fas fa-question-circle"></span></div>Help centre</a></li>
+	<li><a href="#"><div class="icon"><span class="fas fa-envelope"></span></div>Support inbox </a></li>
+	<li><a href="#"><div class="icon"><span class="fas fa-comment-alt"></span></div>Send feedback</a></li>
+	<li><a href="#"><div class="icon"><span class="fas fa-exclamation-circle"></span></div>Languages</a></li>
+      </ul>
+
+      
+    </div>
+    </nav>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+      const dropBtn = document.querySelector(".drop-btn");
+      const menuWrapper = document.querySelector(".wrapper");
+      const menuBar = document.querySelector(".menu-bar");
+      const settingDrop = document.querySelector(".setting-drop");
+      const helpDrop = document.querySelector(".help-drop");
+      const settingItem = document.querySelector(".setting-item");
+      const helpItem = document.querySelector(".help-item");
+      const backSettingBtn = document.querySelector(".back-setting-btn");
+      const backHelpBtn = document.querySelector(".back-help-btn");
+      
+      dropBtn.addEventListener("click", () => {
+	  menuWrapper.classList.toggle("show");
+      })
+      
+      settingItem.addEventListener("click", () => {
+	  menuBar.style.marginLeft = "-300px";
+	  setTimeout(() => {
+	      settingDrop.style.display = "block";
+	  }, 100);
+      })
+      
+      helpItem.addEventListener("click", () => {
+	  menuBar.style.marginLeft = "-300px";
+	  setTimeout(() => {
+	      settingDrop.style.display = "block";
+	  }, 100);
+      })
+
+      backSettingBtn.addEventListener("click", () => {
+	  menuBar.style.marginLeft = "0px";
+	  settingDrop.style.display = "none";
+      })
+
+      backHelpBtn.addEventListener("click", () => {
+	  menuBar.style.marginLeft = "0px";
+	  settingDrop.style.display = "none";
+      })
+      
+    </script>
+
+  </body>
+</html>

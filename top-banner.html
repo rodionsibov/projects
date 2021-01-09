@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Web Page Banner</title>
+
+    <style>
+
+      html,
+      body {
+	  margin: 0;
+	  font-family: 'Poppins', sans-serif;
+      }
+
+      .banner {
+	  background: seagreen;
+      }
+
+      .banner-content {
+	  padding: 16px;
+	  max-width: 600px;
+	  margin: 0 auto;
+	  display: flex;
+	  align-items: center;
+	  
+      }
+
+      .banner-text {
+	  flex-grow: 1;
+	  line-height: 1.4;
+	  
+      }
+
+      .banner-close {
+	  background: none;
+	  border: none;
+	  cursor: pointer;
+      }
+
+      .banner-close > span,
+      .banner-text {
+	  color: #fff;
+      }
+      
+    </style>
+    
+  </head>
+  <body>
+
+    <div class="banner">
+      <div class="banner-content">
+	<div class="banner-text">
+	  <strong>Reminder: </strong> your subscription expires in 22 days. Renew to avoid account suspension.
+	</div>
+	<button class="banner-close" type="button">
+	  <span class="material-icons"> close </span>
+	</button>
+      </div>
+    </div>
+    
+    <script>
+      document.querySelector(".banner-close").addEventListener("click", e => {
+	  e.target.closest(".banner").style.display = "none";
+      })
+    </script>
+
+  </body>
+</html>

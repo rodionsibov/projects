@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Paste File from Clipboard</title>
+  </head>
+  <body>
+    <h1>Paste File from Clipboard</h1>
+    
+    <form>
+      <input type="file" name="myFile" id="myFile">
+      <button type="submit">Upload</button>
+    </form>
+
+    <img id="imagePreview" alt="Preview">
+
+    <script>
+
+      addEventListener("paste", e => {
+	  if (e.clipboardData.files.length > 0) {
+	      const fileInput = document.querySelector("#myFile");
+	      fileInput.files = e.clipboardData.files;
+
+	      if (e.clipboardData.files[0].type.startsWith("image/")) {
+		  setPreviewImage(e.clipboardData.files[0]);
+	      }
+	  }
+      })
+
+      function setPreviewImage(file) {
+	  const fileReader = new FileReader();
+	  fileReader.readAsDataURL(file);
+	  fileReader.onload = () => {
+	      document.querySelector("#imagePreview").src = fileReader.result
+	  }
+      }
+      
+      </script>
+</body>
+</html>
