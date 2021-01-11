@@ -162,13 +162,6 @@ const projectsInfo = [
     },
 
     {
-	title: "Top Banner",
-	text: "",
-	url: "top-banner.html",
-	date: "Jan 08 2021 19:40",
-    },
-
-    {
 	title: "Sign Up Form",
 	text: "Intro Component with Sign Up Form",
 	url: "signup-form-js-validation.html",
@@ -734,6 +727,20 @@ const projectsInfo = [
 	text: "",
 	url: "liquid-distortion.html",
 	date: "Dec 04 2020 12:40",
+    },
+
+    {
+	title: "Button With Loading Spinner",
+	text: "",
+	url: "button-with-spinner.html",
+	date: "Jan 10 2021 12:40",
+    },
+
+    {
+	title: "Top Banner",
+	text: "",
+	url: "top-banner.html",
+	date: "Jan 08 2021 19:40",
     },
 
     {
