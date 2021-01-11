@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <title>Async/Await with Fetch</title>
+
+    <style>
+
+      * {
+	  font-family: 'Poppins', sans-serif;
+	  
+      }
+      
+      
+    </style>
+    
+  </head>
+  <body>
+
+    <h1>Async/Await with Fetch</h1>
+    <script>
+      
+      async function loadProjects() {
+	  //return (await fetch("./states.json")).json();
+
+	  const response = await fetch("./states.json");
+	  const data = await response.json();
+
+	  // do stuff with the data
+	  return data;
+      }
+
+      document.addEventListener("DOMContentLoaded", async () => {
+	  let data = [];
+	  try {
+	      data = await loadProjects();
+	  } catch (e) {
+	      console.log("Erorr!");
+	      console.log(e);
+	  }
+
+	  console.log(data);
+      })
+      
+    </script>
+  </body>
+</html>

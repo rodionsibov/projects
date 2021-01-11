@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <title>Button With Loading Spinner</title>
+
+    <style>
+
+      * {
+	  font-family: 'Poppins', sans-serif;
+	  
+      }
+      
+      .button {
+	  position: relative;
+	  padding: 8px 16px;
+	  background: seagreen;
+	  border: none;
+	  outline: none;
+	  border-radius: 2px;
+	  cursor: pointer;
+      }
+
+      .button:active {
+	  background: green;
+      }
+
+      .button-text {
+	  font-weight: bold;
+	  font-size: 20px;
+	  color: white;
+	  transition: all 0.2s;
+      }
+
+      .button-loading .button-text {
+	  visibility: hidden;
+	  opacity: 0;
+      }
+
+      .button-loading::after {
+	  content: "";
+	  position: absolute;
+	  width: 16px;
+	  height: 16px;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  margin: auto;
+	  border: 4px solid transparent;
+	  border-top-color: #fff;
+	  border-radius: 50%;
+	  animation: button-loading-spinner 1s ease infinite;
+      }
+
+      @keyframes button-loading-spinner {
+	  from {
+	      transform: rotate(0turn);
+	  }
+	  to {
+	      transform: rotate(1turn);
+	  }
+      }
+
+      
+    </style>
+    
+  </head>
+  <body>
+    <button class="button" type="button">
+      <span class="button-text">Save Changes</span>
+    </button>
+
+    <script>
+
+      document.querySelector(".button").addEventListener("click", (e) => {
+	  // e.target.closest("button").classList.toggle("button-loading");
+	  document.querySelector(".button").classList.toggle("button-loading");
+	  
+      })
+      
+      
+    </script>
+  </body>
+</html>
