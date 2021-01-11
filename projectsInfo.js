@@ -758,6 +758,13 @@ const projectsInfo = [
     },
 
     {
+	title: "Image Hover Text Overlay",
+	text: "",
+	url: "image-hover-text-overlay.html",
+	date: "Jan 11 2021 18:20",
+    },
+
+    {
 	title: "Weight Converter App",
 	text: "This calculator can convert values between the common weight and mass units.",
 	url: "weight-converter-app.html",

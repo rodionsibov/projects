@@ -17,19 +17,100 @@
 	  box-sizing: border-box;
       }
 
+      .image {
+	  position: relative;
+	  width: 100%;
+	  max-width: 400px; 
+      }
 
+      .image-img {
+	  display: block;
+	  width: 100%;
+      }
+
+      .image-overlay {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  background: rgba(0, 0, 0, 0.6);
+	  color: white;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  opacity: 0;
+	  transition: 0.25s opacity;
+      }
+
+      .image-overlay-blur {
+	  backdrop-filter: blur(5px);
+      }
+
+      .image-overlay-primary {
+	  background: seagreen;
+      }
+      
+      .image-overlay > * {
+	  transform: translateY(20px);
+	  transition: 0.25s transform;
+      }
+
+      
+      .image-overlay:hover {
+	  opacity: 1;
+      }
+
+      .image-overlay:hover > * {
+	  transform: translateY(0);
+      }
+      
+      .image-title {
+	  font-size: 2em;
+	  font-weight: bold;
+      }
+
+      .image-description {
+	  font-size: 1.1em;
+	  margin-top: 0.1em;
+      }
+      
     </style>
     
   </head>
   <body>
 
-    
-    <script>
+    <div class="image">
+      <img class="image-img" src="https://picsum.photos/600?random=1" alt="">
+      <div class="image-overlay">
+	<div class="image-title">Image</div>
+	<p class="image-description">
+	  Here we have a cool image.
+	</p>
+      </div>
+    </div>
+
+    <div class="image">
+      <img class="image-img" src="https://picsum.photos/600?random=2" alt="">
+      <div class="image-overlay image-overlay-blur">
+	<div class="image-title">Image</div>
+	<p class="image-description">
+	  Here we have a cool image.
+	</p>
+      </div>
+    </div>
+
+    <div class="image">
+      <img class="image-img" src="https://picsum.photos/600?random=3" alt="">
+      <div class="image-overlay image-overlay-primary">
+	<div class="image-title">Image</div>
+	<p class="image-description">
+	  Here we have a cool image.
+	</p>
+      </div>
+    </div>
 
 
-
-
-
-    </script>
   </body>
 </html>
