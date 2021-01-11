@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <title>Placeholder Image Generator with JS & HTML5 Canvas</title>
+
+    <style>
+
+      * {
+	  font-family: 'Poppins', sans-serif;
+	  box-sizing: border-box;
+      }
+
+      .input {
+	  height: 30px;
+	  
+      }
+      
+      #inputWidth,
+      #inputHeight {
+	  width: 100px;
+      }
+
+      #inputDataUrl {
+	  width: 100%;
+	  max-width: 600px;
+      }
+
+      #imagePreview {
+	  width: 100%;
+      }
+      
+    </style>
+    
+  </head>
+  <body>
+
+    <h1>Placeholder Image Generator</h1>
+    <h3>Dimensions</h3>
+    <input type="number" class="input" id="inputWidth" value="400">
+    x
+    <input type="number" class="input" id="inputHeight" value="300">
+    <button id="buttonGenerate" type="button">Generate</button>
+    <h3>Data URL</h3>
+    <input type="text" class="input" id="inputDataUrl" placeholder="Please generate a placeholder image!" readonly>
+    <h3>Preview</h3>
+    <img alt="Preview Image" id="imagePreview" style="display: none;">
+
+
+    <script>
+
+      const inputWidth = document.querySelector("#inputWidth");
+      const inputHeight = document.querySelector("#inputHeight");
+      const inputDataUrl = document.querySelector("#inputDataUrl");
+      const imagePreview = document.querySelector("#imagePreview");
+
+      document.querySelector("#buttonGenerate").addEventListener("click", () => {
+	  const MIN_SIDE_LENGTH = 200;
+
+	  // validation
+	  if (isNaN(inputWidth.value)
+	      || isNaN(inputHeight.value)
+	      || inputWidth.value < MIN_SIDE_LENGTH
+	      || inputHeight.value < MIN_SIDE_LENGTH) {
+	      alert(`Please enter a valid image size. The minimum length is ${MIN_SIDE_LENGTH}`);
+	      return;
+	  }
+
+	  const canvasElement = createPlaceholderCanvas(inputWidth.value, inputHeight.value);
+	  const dataUrl = canvasElement.toDataURL();
+
+	  inputDataUrl.value = dataUrl;
+	  imagePreview.src = dataUrl;
+	  imagePreview.style.display = "block";
+	  imagePreview.style.maxWidth = `${inputWidth.value}px`;
+	  
+	  
+      })
+
+      function createPlaceholderCanvas(width, height) {
+	  const element = document.createElement("canvas");
+	  const context = element.getContext("2d");
+
+	  element.width = width;
+	  element.height = height;
+
+	  // fill in the background
+	  context.fillStyle = "#ddd";
+	  context.fillRect(0, 0, element.width, element.height);
+
+	  // place the text
+	  context.font = "bold 20px sans-serif";
+	  context.fillStyle = "#999";
+	  context.textAlign = "center";
+	  context.textBaseLine = "middle";
+	  context.fillText(`${width}x${height}`, element.width / 2, element.height / 2);
+	  
+	  return element;
+      }
+
+
+    </script>
+  </body>
+</html>
