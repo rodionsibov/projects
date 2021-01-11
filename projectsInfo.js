@@ -744,6 +744,20 @@ const projectsInfo = [
     },
 
     {
+	title: "Placeholder Image",
+	text: "",
+	url: "placeholder-image-generator.html",
+	date: "Jan 11 2021 09:22",
+    },
+
+    {
+	title: "Set Selection Range",
+	text: "",
+	url: "set-selection-range.html",
+	date: "Jan 11 2021 11:10",
+    },
+
+    {
 	title: "Weight Converter App",
 	text: "This calculator can convert values between the common weight and mass units.",
 	url: "weight-converter-app.html",
