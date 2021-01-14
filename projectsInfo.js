@@ -695,6 +695,13 @@ const projectsInfo = [
     },
 
     {
+	title: "Weight Converter App",
+	text: "This calculator can convert values between the common weight and mass units.",
+	url: "weight-converter-app.html",
+	date: "Jun 16 2020 10:20",
+    },
+
+    {
 	title: "3D Rotating Gallery",
 	text: "CSS 3D rotating image gallery",
 	url: "3d-rotating-image-gallery.html",
@@ -765,9 +772,10 @@ const projectsInfo = [
     },
 
     {
-	title: "Weight Converter App",
-	text: "This calculator can convert values between the common weight and mass units.",
-	url: "weight-converter-app.html",
-	date: "Jun 16 2020 10:20",
+	title: "Sidebar Navigation Menu",
+	text: "",
+	url: "sidebar-navigation-menu.html",
+	date: "Jan 13 2021 23:20",
     },
+
 ]
