@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <title>Sidebar Navigation Menu</title>
+
+    <style>
+
+      * {
+	  font-family: 'Poppins', sans-serif;
+	  box-sizing: border-box;
+	  margin: 0;
+	  padding: 0;
+      }
+
+      body {
+	  --header-height: 50px;
+	  
+	  margin-top: var(--header-height);
+      }
+      
+
+      .header {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: var(--header-height);
+	  background: #333;
+	  display: flex;
+	  
+      }
+
+      .header-button {
+	  width: var(--header-height);
+	  flex-shrink: 0;
+	  background: none;
+	  outline: none;
+	  border: none;
+	  color: white;
+	  cursor: pointer;
+      }
+
+
+      .nav-links {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  z-index: 2;
+	  height: 100vh;
+	  width: 250px;
+	  background: white;
+	  transform: translateX(-250px);
+	  transition: transform 0.3s;
+      }
+
+      .nav-open .nav-links {
+	  transform: translateX(0);
+	  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      }
+
+      .nav-link {
+	  display: flex;
+	  align-items: center;
+	  color: #666;
+	  font-weight: bold;
+	  font-size: 14px;
+	  text-decoration: none;
+	  padding: 12px 15px;
+	  transition: background 0.2s;
+      }
+
+      .nav-link > i {
+	  margin-right: 15px;
+      }
+
+      .nav-link-active {
+	  color: seagreen;
+      }
+
+      .nav-link-active,
+      .nav-link:hover {
+	  background: #eee;
+      }
+
+      .nav-overlay {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100vw;
+	  height: 100vh;
+	  background: rgba(0,0,0,0.5);
+	  backdrop-filter: blur(2px);
+	  visibility: hidden;
+	  opacity: 0;
+	  transition: opacity 0.3s;
+      }
+
+      .nav-open .nav-overlay {
+	  visibility: visible;
+	  opacity: 1;
+      }
+
+      main {
+	  padding: 20px;
+      }
+      
+      main p {
+	  margin-bottom: 20px;
+      }
+
+    </style>
+    
+  </head>
+  <body>
+
+    
+    <header class="header">
+      <button class="header-button" id="btnNav" type="button">
+	<i class="material-icons">menu</i>
+      </button>
+    </header>
+
+    <nav class="nav">
+      <div class="nav-links">
+	<a href="#" class="nav-link"><i class="material-icons">dashboard</i>Dashboard</a>
+	<a href="#" class="nav-link nav-link-active"><i class="material-icons">source</i>Projects</a>
+	<a href="#" class="nav-link"><i class="material-icons">lock</i>Security</a>
+	<a href="#" class="nav-link"><i class="material-icons">history</i>History</a>
+	<a href="#" class="nav-link"><i class="material-icons">person</i>Profile</a>
+      </div>
+      <div class="nav-overlay"></div>
+    </nav>
+
+    <main>
+      <p>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra vitae massa a lobortis. Nunc ornare mattis sem, eget commodo nisl commodo et. Etiam consectetur efficitur nisl vitae viverra. Aenean ut est pretium, facilisis nisl eu, mattis sapien. Integer quis quam neque. Suspendisse dolor sem, congue in auctor eu, venenatis nec ligula. Nam suscipit pellentesque bibendum. Morbi rhoncus vestibulum sapien, nec vestibulum lorem eleifend vel. Vestibulum sed rutrum eros, vitae eleifend orci. In hac habitasse platea dictumst. Quisque placerat, dui ac pulvinar vulputate, felis augue consequat ex, sit amet eleifend nisi dolor id ligula.
+      </p>
+      <p>
+      In consequat mi libero, et rhoncus mauris auctor finibus. Cras imperdiet est vitae felis dignissim egestas. Integer dapibus nisi nulla, eget sagittis justo scelerisque vitae. Vivamus a odio ac magna vestibulum ornare eget non purus. Cras eget feugiat risus, vitae lobortis eros. Nulla elit quam, pulvinar in congue et, congue sit amet diam. Nunc pharetra massa pellentesque, facilisis ex ut, accumsan velit. Sed imperdiet sem nec condimentum auctor.
+      </p>
+      <p>
+      Mauris consectetur orci quis orci aliquet dictum. Phasellus tincidunt tempor eleifend. Nullam dictum feugiat elit eget vestibulum. Vivamus ut magna lacinia, imperdiet nisi ut, rhoncus est. Quisque massa elit, eleifend vitae sollicitudin nec, pharetra nec est. Sed non blandit massa. Vivamus non sodales elit. Donec sit amet varius justo, id tincidunt purus. In consequat ut mi quis viverra. Sed sed tristique lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+      </p>
+      <p>
+      Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam id tincidunt orci. Nullam a pretium lacus, ac tincidunt tellus. Morbi id nibh a sapien congue bibendum ac dapibus dolor. Phasellus feugiat, arcu ut ultricies ornare, augue magna volutpat libero, sed varius magna turpis vitae nibh. Nulla ac justo risus. Aenean ut neque augue. Maecenas vitae ex sapien. Vestibulum tincidunt placerat turpis sit amet posuere. Aenean ultricies posuere ullamcorper. Suspendisse in quam a nisi imperdiet sagittis.
+      </p>
+      <p>
+	Donec congue porttitor tincidunt. Fusce et ipsum id felis mollis fermentum. Ut nec vulputate dolor, quis viverra nibh. Maecenas tincidunt pulvinar nunc, ac convallis mauris vestibulum sed. Duis nec magna in est consequat molestie sit amet vel sem. In nec dui ligula. Praesent vehicula enim sed ipsum consequat rhoncus in sed nisl. Cras nisl dolor, sollicitudin a purus non, tincidunt pulvinar turpis. Donec enim magna, tristique tristique lacus quis, accumsan tempor nulla. Curabitur ut consequat libero. Donec porta nisl id ex aliquam posuere. Nulla facilisi. Vestibulum est tortor, consectetur a ligula vel, sagittis viverra urna.
+      </p>
+    </main>
+
+    <script>
+
+      addEventListener("DOMContentLoaded", () => {
+	  const nav = document.querySelector(".nav");
+
+	  document.querySelector("#btnNav").addEventListener("click", () => {
+	      nav.classList.add("nav-open");
+	  })
+
+	  document.querySelector(".nav-overlay").addEventListener("click", () => {
+	      nav.classList.remove("nav-open");
+	  })
+      })
+
+    </script>
+    
+
+    
+  </body>
+
+
+</html>
