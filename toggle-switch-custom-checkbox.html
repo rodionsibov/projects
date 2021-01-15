@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+    
+    <title>Toggle Switch</title>
+
+    <style>
+
+      .toggle {
+	  --width: 40px;
+	  --height: calc(var(--width) / 2);
+	  --border-radius: calc(var(--height) / 2);
+
+	  display: inline-block;
+	  cursor: pointer;
+      }
+
+      .toggle-input {
+	  display: none;
+      }
+
+      .toggle-fill {
+	  position: relative;
+	  width: var(--width);
+	  height: var(--height);
+	  border-radius: var(--border-radius);
+	  background: #ddd;
+	  transition: background 0.2s;
+      }
+
+    </style>
+    
+  </head>
+  <body>
+    <labal class="toggle" for="myToggle">
+      <input class="toggle-input" type="checkbox" id="myToggle">
+      <div class="toggle-fill"></div>
+    </labal>
+    
+  </body>
+
+
+</html>
