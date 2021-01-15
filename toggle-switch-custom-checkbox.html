@@ -34,14 +34,35 @@
 	  transition: background 0.2s;
       }
 
+      .toggle-input:checked ~ .toggle-fill {
+	  background: seagreen;
+      }
+
+      .toggle-fill::after {
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  height: var(--height);
+	  width: var(--height);
+	  background: white;
+	  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+	  border-radius: var(--border-radius);
+	  transition: transform 0.2s;
+      }
+
+      .toggle-input:checked ~ .toggle-fill::after {
+	  transform: translateX(var(--height));
+      }
+
     </style>
     
   </head>
   <body>
-    <labal class="toggle" for="myToggle">
+    <label class="toggle" for="myToggle">
       <input class="toggle-input" type="checkbox" id="myToggle">
       <div class="toggle-fill"></div>
-    </labal>
+    </label>
     
   </body>
 

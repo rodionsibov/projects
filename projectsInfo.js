@@ -778,4 +778,11 @@ const projectsInfo = [
 	date: "Jan 13 2021 23:20",
     },
 
+    {
+	title: "Toggle Switch",
+	text: "",
+	url: "toggle-switch-custom-checkbox.html",
+	date: "Jan 15 2021 20:14",
+    },
+
 ]
