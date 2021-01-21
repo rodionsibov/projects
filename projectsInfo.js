@@ -1,6 +1,13 @@
 const projectsInfo = [
 
     {
+	title: "Login / SignUp Form",
+	text: "",
+	url: "login-sign-up-form.html",
+	date: "Jan 21 2021 15:45",
+    },
+
+    {
 	title: "Drop Down Menu",
 	text: "",
 	url: "drop-down-menu.html",
