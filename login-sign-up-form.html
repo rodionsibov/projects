@@ -8,14 +8,142 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	  rel="stylesheet">
 
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
     <title>Login / Sign Up Form</title>
 
     <style>
+      body {
+	  --color-primary: lightseagreen;
+	  --color-primary-dark: seagreen;
+	  --color-secondary: navy;
+	  --color-error: #cc3333;
+	  --color-success: #4bb544;
+	  --border-radius: 4px;
+
+	  margin: 0;
+	  height: 100vh;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  font-size: 18px;
+	  background: #222;
+      }
+
+      .container {
+	  width: 400px;
+	  max-width: 400px;
+	  margin: 1rem;
+	  padding: 2rem;
+	  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+	  border-radius: var(--border-radius);
+	  background: #fff;
+      }
+
+      .container,
+      .form-input,
+      .form-button {
+	  font: 400 1rem 'Roboto', sans-serif;
+      }
+      
+      .form-hidden {
+	  display: none;
+      }
+
+      .form > *:first-child {
+	  margin-top: 0;
+      }
+
+      .form > *:last-child {
+	  margin-bottom: 0;
+      }
+
+      .form-title {
+	  margin-bottom: 2rem;
+	  text-align: center; 
+      }
+      
+      .form-message {
+	  text-align: center;
+	  margin-bottom: 1rem;
+      }
+
+      .form-message-success {
+	  color: var(--color-success)
+      }
+
+      .form-message-error {
+	  color: var(--color-error)
+      }
+
+      .form-input-group {
+	  margin-bottom: 1rem;
+      }
+
+      .form-input {
+	  display: block;
+	  width: 100%;
+	  padding: 0.75rem;
+	  box-sizing: border-box;
+	  border-radius: var(--border-radius);
+	  border: 2px solid #ddd;
+	  outline: none;
+	  background: #eee;
+	  transition: background 0.2s, border-color 0.2s;
+      }
       
 
+      .form-input:focus {
+	  border-color: var(--color-primary);
+	  background: #fff;
+      }
+
+      .form-input-error {
+	  color: var(--color-error);
+	  border-color: var(--color-error);
+      }
+
+      .form-input-error-message {
+	  margin-top: 0.5rem;
+	  font-size: 0.85rem;
+	  color: var(--color-error);
+      }
+      
+      .form-button {
+	  width: 100%;
+	  padding: 1rem 2rem;
+	  font-weight: bold;
+	  font-size: 1.1rem;
+	  color: #fff;
+	  border: none;
+	  border-radius: var(--border-radius);
+	  outline: none;
+	  cursor: pointer;
+	  background: var(--color-primary);
+      }
+
+      .form-button:hover {
+	  background: var(--color-primary-dark);
+      }
+      
+      .form-button:active {
+	  transform: scale(0.98);
+      }
+
+      .form-text {
+	  text-align: center;
+	  
+      }
+
+      .form-link {
+	  color: var(--color-secondary);
+	  text-decoration: none;
+      }
+      
+      .form-link:hover {
+	  text-decoration: underline;
+      }
     </style>
 
   </head>
@@ -23,15 +151,120 @@
     <div class="container">
       <form class="form" id="login">
 	<h1 class="form-title">Login</h1>
-	<div class="form-message form-message-error">Incorrect username/password combination.</div>
+	<div class="form-message form-message-error">
+	  <!-- Incorrect username/password combination. -->
+	</div>
 	<div class="form-input-group">
 	  <input type="text" class="form-input" placeholder="Username or email">
+	  <div class="form-input-error-message">
+	    <!-- This is an error message -->
+	  </div>
 	</div>
+	<div class="form-input-group">
+	  <input type="password" class="form-input" placeholder="Password">
+	  <div class="form-input-error-message"></div>
+	</div>
+	<button class="form-button" type="submit">Continue</button>
+	<p class="form-text">
+	  <a href="#" class="form-link">Forgot your password?</a>
+	</p>
+	<p class="form-text">
+	  <a id="linkCreateAccount" href="./" class="form-link">Don't have an account? Create account</a>
+	</p>
+      </form>
+
+      <form class="form form-hidden" id="createAccount">
+	<h1 class="form-title">Create Account</h1>
+	<div class="form-message form-message-error">
+	  <!-- Incorrect username/password combination. -->
+	</div>
+	<div class="form-input-group">
+	  <input type="text" class="form-input" id="signupUsername" placeholder="Username">
+	  <div class="form-input-error-message">
+	    <!-- This is an error message -->
+	  </div>
+	</div>
+	<div class="form-input-group">
+	  <input type="text" class="form-input" placeholder="Email Address">
+	  <div class="form-input-error-message">
+	    <!-- This is an error message -->
+	  </div>
+	</div>
+	<div class="form-input-group">
+	  <input type="password" class="form-input" placeholder="Password">
+	  <div class="form-input-error-message"></div>
+	</div>
+	<div class="form-input-group">
+	  <input type="password" class="form-input" placeholder="Confirm password">
+	  <div class="form-input-error-message"></div>
+	</div>
+	<button class="form-button" type="submit">Continue</button>
+	<p class="form-text">
+	  <a id="linkLogin" href="./" class="form-link">Already have an account? Sign in</a>
+	</p>
       </form>
     </div>
     
     <script>
 
+      function setFormMessage(formElement, type, message) {
+	  const messageElement = formElement.querySelector('.form-message')
+
+	  messageElement.textContent = message
+	  messageElement.classList.remove('form-message-success', 'form-message-error')
+	  messageElement.classList.add(`form-message-${type}`)
+      }
+
+      function setInputError(inputElement, message) {
+	  inputElement.classList.add('form-input-error')
+	  inputElement.parentElement.querySelector('.form-input-error-message').textContent = message
+      }
+
+      function clearInputError(inputElement) {
+	  inputElement.classList.remove('form-input-error')
+	  inputElement.parentElement.querySelector('.form-input-error-message').textContent = ''
+      }
+
+
+      
+      document.addEventListener('DOMContentLoaded', () => {
+	  const loginForm = document.querySelector('#login')
+	  const createAccountForm = document.querySelector('#createAccount')
+	  
+	  document.querySelector('#linkCreateAccount').addEventListener('click', (e) => {
+	      e.preventDefault()
+	      loginForm.classList.add('form-hidden')
+	      createAccountForm.classList.remove('form-hidden')
+	  })
+
+	  document.querySelector('#linkLogin').addEventListener('click', (e) => {
+	      e.preventDefault()
+	      loginForm.classList.remove('form-hidden')
+	      createAccountForm.classList.add('form-hidden')
+	  })
+
+
+	  loginForm.addEventListener('submit', e => {
+	      e.preventDefault()
+
+	      setFormMessage(loginForm, 'error', 'Invalid username/password combination')
+	  })
+
+	  document.querySelectorAll('.form-input').forEach(inputElement => {
+	      inputElement.addEventListener('blur', e => {
+		  if (e.target.id === 'signupUsername' && e.target.value.length > 0 && e.target.value.length < 10) {
+		      setInputError(inputElement, 'Username must be at least 10 characters in length')
+		  }
+	      })
+
+	      inputElement.addEventListener('input', e => {
+		  clearInputError(inputElement)
+	      })
+
+	  })
+
+	  
+      })
       
 
     </script>
