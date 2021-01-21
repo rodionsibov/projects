@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>CSV Viewer</title>
+
+    <style>
+
+      table {
+	  border-collapse: collapse;
+	  border-radius: 5px;
+	  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+	  overflow: hidden;
+	  font-family: "Roboto", sans-serif;
+	  font-size: 14px;
+      }
+
+      th {
+	  background: lightseagreen;
+	  color: white;
+	  text-align: left;
+	  font-weight: bold;
+      }
+
+      th,
+      td {
+	  padding: 10px 20px;
+      }
+
+      tr:nth-child(even) {
+	  background: #eee;
+	  
+      }
+
+      
+    </style>
+
+  </head>
+  <body>
+    <input type="file" id="csvFileInput" style="padding-bottom: 15px">
+    <table id="csvRoot"></table>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script>
+      
+      class TableCsv {
+	  constructor(root) {
+	      this.root = root;
+	  }
+
+	  setHeader(headerColumns) {
+	      this.root.insertAdjacentHTML("afterbegin", `
+<thead>
+<tr>
+${headerColumns.map(text => `<th>${text}</th>`).join("")}
+</tr>
+</thead>
+`);
+	  }
+
+
+	  setBody(data) {
+	      const rowsHtml = data.map(row => {
+		  return `
+<tr>
+${row.map(text => `<td>${text}</td>`).join("")}
+</tr>
+`;
+	      })
+
+	      this.root.insertAdjacentHTML("beforeend", `
+<tbody>
+${rowsHtml.join("")}
+</tbody>
+`);
+	  }
+
+
+	  clear() {
+	      this.root.innerHTML = "";
+	  }
+
+	  update(data, headerColumns = []) {
+	      this.clear();
+	      this.setHeader(headerColumns);
+	      this.setBody(data);
+	  }
+
+
+
+
+      }
+
+      const tableRoot = document.querySelector("#csvRoot");
+      const csvFileInput = document.querySelector("#csvFileInput");
+      const tableCsv = new TableCsv(tableRoot);
+
+      csvFileInput.addEventListener("change", e => {
+	  Papa.parse(csvFileInput.files[0], {
+	      delimiter: ",",
+	      skipEmptyLines: true,
+	      complite: results => {
+		  tableCsv.update(results.data.slice(1), results.data[0])
+	      }
+	  })
+      })
+
+
+
+
+    </script>
+  </body>
+</html>
