@@ -799,4 +799,11 @@ const projectsInfo = [
 	date: "Jan 21 2021 19:20",
     },
 
+    {
+	title: "Collapsible Sidebar",
+	text: "",
+	url: "collapsible-nav-menu.html",
+	date: "Jan 25 2021 22:12",
+    },
+
 ]
