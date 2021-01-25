@@ -52,6 +52,10 @@
 	  width: var(--nav-icon-width);
       }
 
+      .nav-collapsed .nav-label {
+	  display: none;
+      }
+
       .nav-link {
 	  display: flex;
 	  align-items: center;
@@ -71,6 +75,25 @@
 	  justify-content: center;
 	  flex-shrink: 0;
       }
+
+      .nav-label {
+	  white-space: nowrap;
+      }
+
+      .nav-border {
+	  position: absolute;
+	  left: 100%;
+	  top: 0;
+	  width: var(--nav-border-width);
+	  height: inherit;
+	  background: #ddd;
+	  transition: background 0.2s;
+	  cursor: ew-resize;
+      }
+
+      .nav-border:hover {
+	  background: #ccc;
+      }
       
     </style>
 
@@ -79,6 +102,7 @@
 
     <div class="page-container">
       <nav class="nav">
+	<div class="nav-border"></div>
 	<a href="#" class="nav-link">
 	  <div class="nav-icon-container"><i class="material-icons">dashboard</i></div>
 	  <span class="nav-label">Dashboard</span>
@@ -102,7 +126,24 @@
     </div>
     
     <script>
+      // Navigation
+      {
+	  const collapsedClass = "nav-collapsed";
+	  const lsKey = "navCollapsed";
 
+	  const nav = document.querySelector(".nav");
+	  const navBorder = nav.querySelector(".nav-border");
+
+	  
+	  if (localStorage.getItem(lsKey) === "true") {
+	      nav.classList.add(collapsedClass);
+	  }
+	  
+	  navBorder.addEventListener("click", () => {
+	      nav.classList.toggle(collapsedClass);
+	      localStorage.setItem(lsKey, nav.classList.contains(collapsedClass));
+	  });
+      }
       
     </script>
 </body>
