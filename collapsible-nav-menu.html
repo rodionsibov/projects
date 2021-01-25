@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Collapsible Sidebar</title>
+
+    <style>
+
+      :root {
+	  --nav-icon-width: 50px;
+	  --nav-border-width: 8px; 
+      }
+
+      html,
+      body {
+	  height: 100%;
+	  margin: 0;
+	  font-family: "Roboto", sans-serif;
+      }
+
+      .page-container {
+	  height: inherit;
+	  display: flex;
+      }
+
+      .main {
+	  height: inherit;
+	  padding: 0;
+	  padding-left: var(--nav-border-width);
+	  overflow-y: auto;
+      }
+
+      .nav {
+	  width: 200px;
+	  height: inherit;
+	  position: relative;
+	  background: #eee;
+	  transition: width 0.2s;
+	  flex-shrink: 0;
+      }
+
+      .nav-collapsed {
+	  width: var(--nav-icon-width);
+      }
+
+      .nav-link {
+	  display: flex;
+	  align-items: center;
+	  color: rgba(0,0,0,0.75);
+	  text-decoration: none;
+      }
+
+      .nav-link:hover {
+	  background: #ddd;
+      }
+
+      .nav-icon-container {
+	  width: var(--nav-icon-width);
+	  height: var(--nav-icon-width);
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  flex-shrink: 0;
+      }
+      
+    </style>
+
+  </head>
+  <body>
+
+    <div class="page-container">
+      <nav class="nav">
+	<a href="#" class="nav-link">
+	  <div class="nav-icon-container"><i class="material-icons">dashboard</i></div>
+	  <span class="nav-label">Dashboard</span>
+	</a>
+	<a href="#" class="nav-link">
+	  <div class="nav-icon-container"><i class="material-icons">alarm</i></div>
+	  <span class="nav-label">Alerts</span>
+	</a>
+	<a href="#" class="nav-link">
+	  <div class="nav-icon-container"><i class="material-icons">extension</i></div>
+	  <span class="nav-label">Plugins</span>
+	</a>
+	<a href="#" class="nav-link">
+	  <div class="nav-icon-container"><i class="material-icons">power_settings_new</i></div>
+	  <span class="nav-label">Log Out</span>
+	</a>
+      </nav>
+      
+      <main class="main">
+      </main>
+    </div>
+    
+    <script>
+
+      
+    </script>
+</body>
+</html>
