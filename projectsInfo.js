@@ -813,4 +813,11 @@ const projectsInfo = [
 	date: "Jan 26 2021 17:55",
     },
 
+    {
+	title: "Loading Indicator CSS",
+	text: "",
+	url: "css-only-loading-indicator.html",
+	date: "Jan 26 2021 28:",
+    },
+
 ]
