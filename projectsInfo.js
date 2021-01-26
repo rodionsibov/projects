@@ -1,6 +1,13 @@
 const projectsInfo = [
 
     {
+	title: "Responsive Gauge",
+	text: "",
+	url: "responsive-gauge.html",
+	date: "Jan 26 2021 23:59",
+    },
+
+    {
 	title: "Login / SignUp Form",
 	text: "",
 	url: "login-sign-up-form.html",
