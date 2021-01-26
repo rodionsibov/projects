@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Responsive Gauge</title>
+
+    <style>
+
+      body {
+	  background: #222;
+      }
+      
+      .gauge {
+	  width: 100%;
+	  max-width: 250px;
+	  font-family: "Roboto", sans-serif;
+	  font-size: 32px;
+	  color: white;
+      }
+
+      .gauge-body {
+	  width: 100%;
+	  height: 0;
+	  padding-bottom: 50%;
+	  background: lightgray;
+	  position: relative;
+	  border-top-left-radius: 100% 200%;
+	  border-top-right-radius: 100% 200%;
+	  overflow: hidden;
+      }
+
+      .gauge-fill {
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
+	  width: inherit;
+	  height: 100%;
+	  background: lightseagreen;
+	  transform-origin: center top;
+	  transform: rotate(0.25turn); 
+	  transition: transform 0.2s ease-out;
+      }
+      
+      .gauge-cover {
+	  width: 75%;
+	  height: 150%;
+	  background: #222;
+	  border-radius: 50%;
+	  position: absolute;
+	  top: 25%;
+	  left: 50%;
+	  transform: translateX(-50%);
+
+	  /* Text */
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  padding-bottom: 25%;
+	  box-sizing: border-box;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+
+    <div class="gauge">
+      <div class="gauge-body">
+	<div class="gauge-fill"></div>
+	<div class="gauge-cover"></div>
+      </div>
+    </div>
+
+    <script>
+
+      const gaugeElement = document.querySelector(".gauge");
+
+      function setGaugeValue(gauge, value) {
+	  if (value < 0 || value > 1) {
+	      return;
+	  }
+
+	  gauge.querySelector(".gauge-fill").style.transform = `rotate(${value / 2}turn)`;
+	  gauge.querySelector(".gauge-cover").textContent = `${Math.round(value * 100)}%`;
+      }
+
+
+      
+      setInterval(() => {
+	  setGaugeValue(gaugeElement, Math.random())
+      }, 2000)
+
+    </script>
+    
+</body>
+</html>
