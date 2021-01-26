@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Styling Drop Down Menus</title>
+
+    <style>
+      .select {
+	  padding: 8px 12px;
+	  color: #333;
+	  background: #eee;
+	  border: 1px solid #ddd;
+	  cursor: pointer;
+	  border-radius: 5px;
+	  /* Replace default styling (arrow) */
+	  appearance: none;
+	  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50'><polygon points='0,0 100,0 50,50' style='fill:%23666;'/></svg>");
+	  background-position: right 10px top 50%;
+	  background-repeat: no-repeat;
+	  background-size: 10px;
+	  padding-right: 30px;
+      }
+
+      .select:focus,
+      .select:hover {
+	  outline: none;
+	  border: 1px solid #bbb;
+      }
+
+      .select option {
+	  background: #fff;
+      }
+      
+    </style>
+
+  </head>
+  <body>
+    <select class="select">
+      <option disabled selected>Make</option>
+      <option value="honda">Honda</option>
+      <option value="toyota">Toyota</option>
+      <option value="mazda">Mazda</option>
+      
+      
+    </select>
+</body>
+</html>
