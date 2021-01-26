@@ -806,4 +806,11 @@ const projectsInfo = [
 	date: "Jan 25 2021 22:12",
     },
 
+    {
+	title: "Styling Drop Down Menus",
+	text: "",
+	url: "styled-select-menu.html",
+	date: "Jan 26 2021 17:55",
+    },
+
 ]
