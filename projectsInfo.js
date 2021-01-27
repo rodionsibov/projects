@@ -824,7 +824,28 @@ const projectsInfo = [
 	title: "Loading Indicator CSS",
 	text: "",
 	url: "css-only-loading-indicator.html",
-	date: "Jan 26 2021 28:",
+	date: "Jan 26 2021 18:13",
+    },
+
+    {
+	title: "Bottom Nav Menu",
+	text: "",
+	url: "bottom-icon-nav-menu.html",
+	date: "Jan 27 2021 16:58",
+    },
+
+    {
+	title: "Nav Menu",
+	text: "",
+	url: "drop-down-nav-menu.html",
+	date: "Jan 27 2021 18:11",
+    },
+
+    {
+	title: "Vertical Nav Menu",
+	text: "",
+	url: "vertical-nav-menu.html",
+	date: "Jan 27 2021 17:11",
     },
 
 ]
