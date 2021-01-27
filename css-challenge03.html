@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CSS Challenge</title>
+    <style>
+
+      body {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  height: 100vh;
+	  margin: 0;
+      }
+      
+      .tree {
+	  border-left: 120px solid transparent;
+	  border-right: 120px solid transparent;
+	  border-top: 100px solid transparent;
+	  border-bottom: 100px solid green;
+	  position: relative;
+	  bottom: 50px;
+      }
+
+      .tree::before {
+	  content: "";
+	  position: absolute;
+	  bottom: -60px;
+	  left: -120px;
+	  border-left: 120px solid transparent;
+	  border-right: 120px solid transparent;
+	  border-top: 100px solid transparent;
+	  border-bottom: 100px solid lime;
+	
+      }
+      
+      .tree::after {
+	  content: "";
+	  position: absolute;
+	  top: -60px;
+	  left: -120px;
+	  border-left: 120px solid transparent;
+	  border-right: 120px solid transparent;
+	  border-top: 100px solid transparent;
+	  border-bottom: 100px solid lime;
+	  z-index: -1;
+      }
+
+
+      
+    </style>
+  </head>
+  <body>
+      <div class="tree"></div>	
+    
+  </body>
+</html>

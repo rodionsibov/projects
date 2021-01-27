@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CSS Challenge</title>
+    <style>
+
+      body {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  height: 100vh;
+	  margin: 0;
+      }
+      
+      .big-circle {
+	  width: 300px;
+	  height: 300px;
+	  border-radius: 50%;
+	  background: white;
+      }
+
+      .small-circle {
+	  width: 250px;
+	  height: 250px;
+	  background: green;
+	  border-radius: 50%;
+	  position: absolute;
+      }
+
+      .lines {
+	  position: absolute;
+	  z-index: 2;
+	  top: 53px;
+      }
+
+      .lines-circle {
+	  position: absolute;
+	  width: 300px;
+	  height: 300px;
+	  border-radius: 50%;
+	  overflow: hidden;
+      }
+      
+      .line {
+	  width: 300px;
+	  height: 28px;
+      }
+
+      .line:nth-child(odd) {
+	  background: white;
+      }
+
+      .line:nth-child(even) {
+	  background: gold;
+      }
+      
+    </style>
+  </head>
+  <body>
+
+    <div class="big-circle">
+    </div>
+
+
+    <div class="lines-circle">
+    <div class="lines">
+      <div class="line"></div>	
+      <div class="line"></div>	
+      <div class="line"></div>	
+      <div class="line"></div>	
+      <div class="line"></div>	
+      <div class="line"></div>	
+      <div class="line"></div>
+    </div>
+    </div>
+
+    <div class="small-circle">
+    </div>
+    
+  </body>
+</html>

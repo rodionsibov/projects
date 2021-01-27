@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CSS Challenge</title>
+    <style>
+
+      .big {
+	  width: 200px;
+	  height: 200px;
+	  background: navy;
+	  border-radius: 50%;
+	  border-top-left-radius: 0;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  position: relative;
+      }
+
+      .small {
+	  width: 50%;
+	  height: 50%;
+	  background: white;
+	  border-radius: 50%;
+	  border-top-left-radius: 0;
+      }
+
+      .box {
+	  width: 25%;
+	  height: 25%;
+	  background: white;
+	  position: absolute;
+	  top: 0;
+	  left: 25%;
+	  
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="big">
+      <div class="small"></div>
+      <div class="box"></div>	
+    </div>
+    
+  </body>
+</html>
