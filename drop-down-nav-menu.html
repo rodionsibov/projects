@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Drop Down Menu</title>
+
+    <style>
+
+      .nav {
+	  display: flex;
+	  background: lightseagreen;
+	  
+      }
+
+      .nav * {
+	  font: 500 15px "Roboto", sans-serif;
+      }
+
+      .nav-link {
+	  position: relative;
+	  display: block;
+	  padding: 10px 15px;
+	  color: white;
+	  text-decoration: none;
+	  cursor: pointer;
+	  white-space: nowrap;
+	  background: lightseagreen;
+	  user-select: none;
+	  -webkit-tap-highlight-color: transparent;
+	  transition: background 0.2s;
+      }
+
+      .nav-link:hover {
+	  background: teal;
+      }
+
+      .nav-link-group {
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
+	  min-width: 100%;
+	  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	  opacity: 0;
+	  visibility: hidden;
+	  transform: translateY(-10px);
+      }
+
+      .nav-link:hover .nav-link-group {
+	  opacity: 1;
+	  visibility: visible;
+	  transform: translateY(0px);
+	  transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+	  
+      }
+      
+    </style>
+
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="#" class="nav-link">Home</a>
+      <div class="nav-link">
+	Video Tutorials
+	<div class="nav-link-group">
+	  <a href="#" class="nav-link">HTML</a>
+	  <a href="#" class="nav-link">CSS</a>
+	  <a href="#" class="nav-link">JavaScript</a>
+	</div>
+      </div>
+      <a href="#" class="nav-link">Contact</a>
+    </nav>
+
+    <script>
+    </script>
+    
+</body>
+</html>
