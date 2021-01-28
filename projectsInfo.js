@@ -848,4 +848,11 @@ const projectsInfo = [
 	date: "Jan 27 2021 17:11",
     },
 
+    {
+	title: "Avatar Generator",
+	text: "",
+	url: "user-avatar-image-generator.html",
+	date: "Jan 28 2021 11:25",
+    },
+
 ]
