@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Avatar Generator</title>
+
+    <style>
+
+      body {
+	  display: grid;
+	  place-items: center;
+	  height: 100vh;
+	  margin: 0;
+      }
+
+      #avatar {
+	  border-radius: 50%;
+	  width: 100px;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <img alg="Avatar" id="avatar">
+    <script>
+
+      function generateAvatar(text, foregroundColor = "white", backgroundColor = "black") {
+	  const canvas = document.createElement("canvas");
+	  const context = canvas.getContext("2d");
+
+	  canvas.width = 200;
+	  canvas.height = 200;
+
+	  context.fillStyle = backgroundColor;
+	  context.fillRect(0, 0, canvas.width, canvas.height);
+
+	  context.font ="bold 90px Arial";
+	  context.fillStyle = foregroundColor;
+	  context.textAlign = "center";
+	  context.textBaseline = "middle";
+	  context.fillText(text, canvas.width / 2, canvas.height / 2);
+
+	  return canvas.toDataURL("image/png");
+	  
+      }
+
+      document.querySelector("#avatar").src = generateAvatar("RS", "white", "teal")
+
+      
+    </script>
+  </body>
+</html>
