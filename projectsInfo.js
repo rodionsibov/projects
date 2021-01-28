@@ -1,6 +1,13 @@
 const projectsInfo = [
 
     {
+	title: "Todo App",
+	text: "",
+	url: "todo-app.html",
+	date: "Jan 29 2021 00:54",
+    },
+
+    {
 	title: "Responsive Gauge",
 	text: "",
 	url: "responsive-gauge.html",
