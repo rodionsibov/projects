@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Instant Search Bar</title>
+
+    <style>
+
+      .instant-search {
+	  position: relative;
+	  max-width: 250px;
+      }
+
+      .instant-search,
+      instant-search-input {
+	  font-family: "Roboto", sans-serif;
+      }
+
+      .instant-search,
+      .instant-search * {
+	  transition: background 0.15s, box-shadow 0.15s;
+      }
+
+      .instant-search:focus-within {
+	  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+      }
+
+      .instant-search-loading::after {
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  height: 2px;
+	  background: teal;
+	  border-radius: 5px;
+	  animation: searchIndicator 0.5s infinite ease-in-out;
+      }
+
+      @keyframes searchIndicator {
+	  0% {
+	      width: 15%;
+	  }
+	  50% {
+	      width: 100%;
+	  }
+	  100% {
+	      width: 15%;
+	  }
+      }
+      
+      
+      .instant-search,
+      .instant-search-input-container {
+	  border-radius: 5px;
+      }
+
+      .instant-search-input-container {
+	  display: inline-flex;
+	  box-sizing: border-box;
+	  width: 100%;
+	  padding: 6px;
+	  background: #eee;
+      }
+
+      .instant-search-input-container:focus-within {
+	  background: #fff;
+      }
+
+      .instant-search-input {
+	  flex-grow: 1;
+	  border: none;
+	  outline: none;
+	  width: 100%;
+	  padding: 0 6px;
+	  background: transparent;
+      }
+
+      .instant-search-result-container {
+	  max-height: 250px;
+	  overflow-y: auto;
+	  visibility: hidden;
+	  opacity: 0;
+	  transition: visibility 0.1s, opacity 0.1s;
+      }
+
+      .instant-search-result-container-visible {
+	  visibility: visible;
+	  opacity: 1;
+      }
+
+      .instant-search-result {
+	  display: block;
+	  color: #333;
+	  text-decoration: none;
+	  padding: 10px;
+	  font-size: 0.8em;
+	  cursor: pointer;
+	  
+      }
+
+      .instant-search-result:hover {
+	  background: #eee;
+      }
+
+      .instant-search-result:not(:last-of-type) {
+	  border-bottom: 1px solid #eee;
+      }
+
+      .instant-search-title {
+	  font-size: 1.1em;
+	  font-weight: bold;
+      }
+
+      .instant-search-paragraph {
+	  line-height: 1.5;
+	  margin: 8px 0;
+      }
+      
+    </style>
+
+  </head>
+  <body>
+    <div id="searchProjects" class="instant-search">
+      <div class="instant-search-input-container">
+	<input type="text" class="instant-search-input" spellcheck="false" placeholder="Search Projects">
+	<i class="material-icons instant-search-icon">search</i>
+      </div>
+
+      <!-- <div class="instant-search-result-container"> -->
+      <!-- 	<a href="#" class="instant-search-result"> -->
+      <!-- 	  <div class="instant-search-title">First & Last Name</div> -->
+      <!-- 	  <p class="instant-search-paragraph"> -->
+      <!-- 	    Sed rutrum, lorem ac porta ultrices, mi arcu feugiat neque, sed cursus felis nibh vitae metus. Proin et metus eu tortor varius pellentesque. Mauris nec volutpat purus. In lorem diam, accumsan vel nisi eu, laoreet consequat nisi. Nunc dictum dignissim ornare. Nulla aliquam magna id elit commodo euismod. Donec porta eu dui eget ullamcorper. Nullam non scelerisque nisl. -->
+
+      <!-- 	  </p> -->
+      <!-- 	</a> -->
+      <!-- 	<a href="#" class="instant-search-result"> -->
+      <!-- 	  <div class="instant-search-title">First & Last Name</div> -->
+      <!-- 	  <p class="instant-search-paragraph"> -->
+      <!-- 	    Sed rutrum, lorem ac porta ultrices, mi arcu feugiat neque, sed cursus felis nibh vitae metus. Proin et metus eu tortor varius pellentesque. Mauris nec volutpat purus. In lorem diam, accumsan vel nisi eu, laoreet consequat nisi. Nunc dictum dignissim ornare. Nulla aliquam magna id elit commodo euismod. Donec porta eu dui eget ullamcorper. Nullam non scelerisque nisl. -->
+
+      <!-- 	  </p> -->
+      <!-- 	</a> -->
+      <!-- </div> -->
+
+    </div>
+    
+    <script src="./instant-search.js" type="module"></script>
+  </body>
+</html>
