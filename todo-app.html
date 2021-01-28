@@ -32,15 +32,17 @@
 	  height: 100vh;
 	  width: 100%;
 	  background: linear-gradient(to bottom, var(--color1) 0%, var(--color2) 100%);
+	  display: grid;
+	  place-items: center;
       }
       
       .container {
-	  margin: 120px auto;
-	  max-width: 400px;
+	  max-width: 340px;
 	  width: 100%;
 	  background: white;
 	  border-radius: 5px;
 	  padding: 25px;
+	  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
       }
 
       .container header {
@@ -75,11 +77,21 @@
 	  cursor: pointer;
 	  border-radius: 3px;
 	  margin-left: 5px;
+	  opacity: 0.6;
+	  pointer-events: none;
+      }
+
+      .inputField button.active {
+	  opacity: 1;
+	  pointer-events: auto;
       }
       
       .inputField button span {
 	  font-size: 30px;
 	  font-weight: bold;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
       }
 
       .container .todoList {
@@ -137,6 +149,14 @@
 	  cursor: pointer;
 	  border-radius: 3px;
 	  padding: 6px 10px;
+	  opacity: 0.6;
+	  pointer-events: none;
+      }
+
+      .footer button.active {
+	  opacity: 1;
+	  pointer-events: auto;
+	  
       }
       
     </style>
@@ -150,15 +170,91 @@
 	<button><span class="material-icons">add</span></button>
       </div>
       <ul class="todoList">
-	<li>some text<span class="material-icons">delete</span></li>
-	<li>some text<span class="material-icons">delete</span></li>
-	<li>some text<span class="material-icons">delete</span></li>
-	<li>some text<span class="material-icons">delete</span></li>
+	<!-- Data comes from local storage -->
       </ul>
       <div class="footer">
-	<span> you have 4 pending tasks</span>
+	<span> you have <span class="pendingNum"></span> pending tasks</span>
 	<button>Clear All</button>
       </div>
     </div>
+
+
+    <script>
+
+      const inputBox = document.querySelector(".inputField input");
+      const addBtn = document.querySelector("button");
+      const todoList = document.querySelector(".todoList");
+      const deleteAllBtn = document.querySelector(".footer button");
+
+      inputBox.addEventListener("keyup", () => {
+	  let userData = inputBox.value;
+	  
+	  if (userData.trim() != 0) {
+	      addBtn.classList.add("active");
+	  } else {
+	      addBtn.classList.remove("active");
+	  }
+      })
+      showTasks();
+
+      addBtn.addEventListener("click", () => {
+	  let userData = inputBox.value;
+	  let getLocalStorage = localStorage.getItem("New Todo");
+	  if (getLocalStorage === null) {
+	      listArr = [];
+	  } else {
+	      listArr = JSON.parse(getLocalStorage);
+	  }
+
+	  listArr.push(userData);
+	  localStorage.setItem("New Todo", JSON.stringify(listArr));
+	  showTasks();
+	  addBtn.classList.remove("active");
+      })
+
+      function showTasks() {
+	  let getLocalStorage = localStorage.getItem("New Todo");
+	  if (getLocalStorage === null) {
+	      listArr = [];
+	  } else {
+	      listArr = JSON.parse(getLocalStorage);
+	  }
+
+	  const pendingNum = document.querySelector(".pendingNum");
+	  pendingNum.textContent = listArr.length;
+
+	  if (listArr.length > 0) {
+	      deleteAllBtn.classList.add("active");
+	  } else {
+	      deleteAllBtn.classList.remove("active");
+	  }
+	  
+	  let newLiTag = "";
+	  listArr.forEach((el, index) => {
+	      newLiTag += `
+	<li>${el}<span onclick="deleteTask(${index})" class="material-icons">delete</span></li>
+`;
+	  });
+
+	  todoList.innerHTML = newLiTag;
+	  inputBox.value = "";
+      }
+
+      function deleteTask(index) {
+	  let getLocalStorage = localStorage.getItem("New Todo");
+	  listArr = JSON.parse(getLocalStorage);
+	  listArr.splice(index, 1);
+	  localStorage.setItem("New Todo", JSON.stringify(listArr));
+	  showTasks();
+      }
+
+      deleteAllBtn.addEventListener("click", () => {
+	  listArr = [];
+	  localStorage.setItem("New Todo", JSON.stringify(listArr));
+	  showTasks();
+      })
+      
+
+    </script>
   </body>
 </html>
