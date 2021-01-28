@@ -18,6 +18,7 @@
       :root {
 	  --color1: #68eacc;
 	  --color2: #496be8;
+	  --color3: #8e49e8;
       }
       
       * {
@@ -47,9 +48,97 @@
 	  font-weight: bold;
       }
 
-      container
-      
+      .container .inputField {
+	  display: flex;
+	  height: 45px;
+	  width: 100%;
+	  margin: 20px 0;
+      }
 
+      .inputField input {
+	  outline: none;
+	  width: 85%;
+	  height: 100%;
+	  border: 1px solid #ccc;
+	  font-size: 17px;
+	  border-radius: 3px;
+	  padding-left: 15px;
+      }
+
+      .inputField button {
+	  width: 60px;
+	  height: 100%;
+	  border: none;
+	  outline: none;
+	  background: var(--color3);
+	  color: white;
+	  cursor: pointer;
+	  border-radius: 3px;
+	  margin-left: 5px;
+      }
+      
+      .inputField button span {
+	  font-size: 30px;
+	  font-weight: bold;
+      }
+
+      .container .todoList {
+	  max-height: 250px;
+	  overflow-y: auto;
+      }
+      
+      .todoList li {
+	  list-style: none;
+	  height: 45px;
+	  line-height: 45px;
+	  position: relative;
+	  background: #f2f2f2;
+	  border-radius: 3px;
+	  margin-bottom: 8px;
+	  padding: 0 15px;
+	  cursor: default;
+	  overflow: hidden;
+      }
+
+      .todoList li span {
+	  position: absolute;
+	  right: -45px;
+	  top: 0;
+	  color: white;
+	  width: 45px;
+	  height: 45px;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  border-radius: 0 3px 3px 0;
+	  background: #e74c3c;
+	  cursor: pointer;
+	  transition: all 0.3s ease;
+      }
+
+      .todoList li:hover span {
+	  right: 0;
+      }
+      
+      .container .footer {
+	  display: flex;
+	  width: 100%;
+	  margin-top: 20px;
+	  align-items: center;
+	  justify-content: space-between;
+      }
+
+      .footer button {
+	  border: none;
+	  outline: none;
+	  background: var(--color3);
+	  color: white;
+	  font-size: 16px;
+	  cursor: pointer;
+	  border-radius: 3px;
+	  padding: 6px 10px;
+      }
+      
     </style>
 
   </head>
