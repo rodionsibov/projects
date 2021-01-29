@@ -862,4 +862,11 @@ const projectsInfo = [
 	date: "Jan 28 2021 11:25",
     },
 
+    {
+	title: "Image Comparison",
+	text: "",
+	url: "image-comparison.html",
+	date: "Jan 29 2021 09:20",
+    },
+
 ]
