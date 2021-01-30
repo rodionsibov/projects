@@ -869,4 +869,11 @@ const projectsInfo = [
 	date: "Jan 29 2021 09:20",
     },
 
+    {
+	title: "Image Comparison",
+	text: "",
+	url: "sum-calc.html",
+	date: "Jan 30 2021 10:23",
+    },
+
 ]
