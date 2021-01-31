@@ -1,0 +1,34 @@
+[
+    {
+	"desc": "rcode Primary",
+	"color": "forestgreen"
+    },
+    {
+	"desc": "rcode Primary Light",
+	"color": "limegreen"
+    },
+    {
+	"desc": "rcode Secondary",
+	"color": "royalblue"
+    },
+    {
+	"desc": "rcode Secondary Light",
+	"color": "powderblue"
+    },
+    {
+	"desc": "rcode Tertiary",
+	"color": "indigo"
+    },
+    {
+	"desc": "rcode Tertiary Light",
+	"color": "mediumpurple"
+    },
+    {
+	"desc": "rcode Red",
+	"color": "crimson"
+    },
+    {
+	"desc": "rcode Red Light",
+	"color": "lightcoral"
+    }
+]

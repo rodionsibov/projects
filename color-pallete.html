@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Color Pallete</title>
+
+    <style>
+
+      body {
+	  margin: 15px;
+	  
+      }
+
+      .pallete,
+      .pallete * {
+	  box-sizing: border-box;
+      }
+
+      .pallete {
+	  font-family: "Roboto", sans-serif;
+	  display: grid;
+	  gap: 15px;
+	  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      .pallete-color {
+	  height: 150px;
+	  position: relative;
+      }
+
+      .pallete-desc {
+	  padding: 10px;
+	  position: absolute;
+	  left: 0;
+	  bottom: 0;
+	  width: 100%;
+	  background: rgba(0,0,0,0.4);
+	  color: #fff;
+      }
+
+      .pallete-input {
+	  width: 100%;
+	  padding: 10px;
+	  outline: none;
+	  border: 1px solid #ddd;
+	  border-top: none;
+      }
+
+      
+    </style>
+
+  </head>
+  <body>
+    <div class="pallete">
+
+      <!-- <div class="pallete-item"> -->
+      <!-- 	<div class="pallete-color"> -->
+      <!-- 	  <div class="pallete-desc">rcode Primary</div>  -->
+      <!-- 	</div> -->
+      <!-- 	<input type="text" class="pallete-input" value="#343434"> -->
+      <!-- </div> -->
+
+    </div>
+
+
+    <script>
+      function createElementWithClass(tagName, classes) {
+	  const el = document.createElement(tagName);
+
+	  el.setAttribute("class", classes);
+
+	  return el;
+      }
+
+      function createItem(color, desc) {
+	  const elmItem = createElementWithClass("div", "pallete-item");
+	  const elmColor = createElementWithClass("div", "pallete-color");
+	  const elmDesc = createElementWithClass("div", "pallete-desc");
+	  const elmInput = createElementWithClass("input", "pallete-input");
+
+	  elmColor.style.background = color;
+	  elmInput.value = color;
+	  elmDesc.textContent = desc;
+
+	  elmItem.appendChild(elmColor);
+	  elmItem.appendChild(elmInput);
+	  elmColor.appendChild(elmDesc);
+
+	  elmInput.onfocus = () => elmInput.select();
+
+	  return elmItem;
+      }
+      
+      const palleteContainer = document.querySelector(".pallete");
+
+      fetch("./rcode.json").then(response => {
+	  return response.json();
+      }).then(colorList => {
+	  for (const {desc, color} of colorList) {
+	      console.log(desc, color)
+	      palleteContainer.appendChild(createItem(color, desc));
+	  }
+      })
+
+      
+    </script>
+  </body>
+</html>
