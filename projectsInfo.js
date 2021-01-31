@@ -877,6 +877,20 @@ const projectsInfo = [
     },
 
     {
+	title: "Auto Complete",
+	text: "",
+	url: "auto-complete-suggestions.html",
+	date: "Jan 31 2021 21:22",
+    },
+
+    {
+	title: "Styling Validation",
+	text: "",
+	url: "styling-validation-errors.html",
+	date: "Jan 31 2021 20:13",
+    },
+
+    {
 	title: "Color Pallete",
 	text: "",
 	url: "color-pallete.html",
