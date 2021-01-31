@@ -876,4 +876,11 @@ const projectsInfo = [
 	date: "Jan 30 2021 10:23",
     },
 
+    {
+	title: "Color Pallete",
+	text: "",
+	url: "color-pallete.html",
+	date: "Jan 31 2021 19:03",
+    },
+
 ]
