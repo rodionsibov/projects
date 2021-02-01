@@ -16,22 +16,22 @@
 
     <style>
       
-      .progress {
-	  height: 3px;
-	  width: 102%;
+      .scrolled-indicator {
 	  position: fixed;
 	  top: 0;
+	  left: 0;
+	  height: 3px;
+	  width: 100%;
 	  z-index: 100;
-	  left: -1%;
-	  overflow: hidden;
+	  background: #eee;
       }
 
-      .progress__highlight {
-	  transition: width 0.15s linear;
-	  background: dodgerblue;
+      .scrolled-indicator-fill {
 	  height: 100%;
+	  background: dodgerblue;
+	  transition: width 0.2s linear;
 	  width: 0%;
-	  backdrop-filter: blur(5px); 
+	  border-radius: 10px;
       }
 
       
@@ -39,13 +39,10 @@
   </head>
   <body>
 
-    <div class="progress">
-      <div class="progress__highlight" id="js-highlight"></div>
+    <div class="scrolled-indicator">
+      <div class="scrolled-indicator-fill"></div>
     </div>
 
-    <div id="js-container">
-
-      
       <!-- Header -->
       <div class="container my-4">
 	    <a class="navbar-brand" href="https://rodionsibov.github.io/projects/">
@@ -76,7 +73,7 @@
       </div>
       
       
-    </div> <!-- js-container -->
+     <!-- js-container -->
     
     <footer style="text-align: center; padding: 10px;">
       <small>Made with ❤ by <a style="color: #222; text-decoration: none;" href="https://github.com/rodionsibov" target="_blank">Rodion Sibov</a> | <span class="year"></span></small>
@@ -92,8 +89,6 @@
 
 
 
-    <!-- Optional JavaScript -->
-
     <script>
       const badgeEl = document.querySelector(".badge");
       setInterval(() => {
@@ -107,24 +102,16 @@
 
     
     <script>
-
-      const container = document.getElementById('js-container');
-      const highlight = document.getElementById('js-highlight');
-      let containerHeight;
-
-      window.onscroll = function() {
-
-	  containerHeight = container.offsetHeight - window.innerHeight;
-	  containerPos = container.getBoundingClientRect();
-	  diff = containerHeight + containerPos.top;
-	  progressPercentage =  diff / containerHeight * 100;
-	  cssWidth = Math.floor(100 - progressPercentage);
-
-	  highlight.style.width = cssWidth + "%"; 
-
-      };
-
-
+      const scrolledIndicatorFill = document.querySelector(".scrolled-indicator-fill");
+      window.addEventListener("scroll", () => {
+	  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+	  const scrolled = window.scrollY;
+	  let percentageScrolled = 100;
+	  if (scrollable > 0) {
+	      percentageScrolled = Math.ceil(scrolled / scrollable * 100);
+	  }
+	  scrolledIndicatorFill.style.width = `${percentageScrolled}%`; 
+      });
     </script>
     
 
