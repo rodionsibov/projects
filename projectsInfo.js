@@ -897,4 +897,11 @@ const projectsInfo = [
 	date: "Jan 31 2021 19:03",
     },
 
+    {
+	title: "Form Design",
+	text: "",
+	url: "styling-forms.html",
+	date: "Feb 01 2021 14:44",
+    },
+
 ]
