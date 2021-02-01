@@ -11,156 +11,61 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <title>Form Design</title>
+    <title>Custom Radion Button</title>
 
     <style>
 
+
       body {
-	  padding: 25px;
-      }
-
-      .form {
-	  font-family: "Roboto", sans-serif;
-	  font-size: 16px;
-      }
-
-      .form * {
-	  box-sizing: border-box;
-	  line-height: 1.5;
-      }
-
-      .form-title {
-	  font-size: 2em;
-	  font-weight: 700;
-      }
-
-      .form-item {
-	  display: flex;
-	  flex-direction: column;
+	  margin: 20px;
 	  
       }
 
-      .form-item > * {
-	  align-self: flex-start;
+      .radio {
+	  display: inline-flex;
+	  overflow: hidden;
+	  border-radius: 15px;
+	  box-shadow: 0 0 5px rgba(0,0,0,0.2);
       }
 
-      .form-label {
-	  font-weight: 700;
-	  padding: 10px 0;
+      .radio-input {
+	  display: none;
       }
 
-      .form-input {
-	  width: 100%;
-	  max-width: 450px;
-	  padding: 0.8em;
-	  font-size: 0.9em;
-	  outline: none;
-	  border: 1px solid #ddd;
-	  border-radius: 4px;
-	  background: #f9f9f9;
-	  transition: background 0.2s, border-color 0.2s, color 0.2s;
-	  font-family: inherit;
-      }
-
-      .form-input:focus {
-	  background: white;
-      }
-
-      .form-input::placeholder {
-	  color: #bbb;
-      }
-
-      .form-input-error {
-	  color: #d50000;
-	  background: #fff8f8;
-	  border-color: #d50000;
-      }
-
-      .form-input-error::placeholder {
-	  color: #fbbfbf;
-      }
-
-      .form-error {
-	  padding-top: 10px;
-	  color: #d50000;
-	  font-size: 0.9em;
-	  visibility: hidden;
-      }
-
-      .form-input-error + .form-error {
-	  visibility: visible;
-      }
-
-      .form-input-small {
-	  max-width: 250px;
-      }
-
-      textarea.form-input {
-	  resize: none;
-	  min-height: 200px;
-      }
-      
-      .form-btn {
-	  font-family: inherit;
-	  font-weight: 700;
-	  font-size: 1.1em;
-	  padding: 10px 16px;
-	  margin: 10px 0;
+      .radio-label {
+	  padding: 8px 14px;
+	  font-size: 14px;
+	  font-family: "Roboto", sans-serif;
 	  color: white;
 	  background: seagreen;
-	  border: 2px solid green;
-	  border-radius: 5px;
 	  cursor: pointer;
-	  outline: none;
+	  transition: background 0.1s
       }
 
-      .form-btn:active {
+      .radio-label:not(:last-of-type) {
+	  border-right: 1px solid green;
+      }
+
+      .radio-input:checked + .radio-label {
 	  background: green;
       }
-
+      
     </style>
 
   </head>
   <body>
 
-    <form class="form">
-      <div class="form-title">Sign Up</div>
-      <p class="form-desc">
-	Integer scelerisque ligula leo, vel dignissim augue ullamcorper vel. Donec eget lectus tellus. Maecenas ullamcorper enim enim, et imperdiet diam interdum fringilla. Aliquam ornare scelerisque justo, eget ultrices neque sollicitudin sit amet. Donec id turpis dui. Vestibulum fermentum id tellus at ornare. Integer vitae nibh et odio maximus bibendum.
-      <p>
-	<div class="form-item">
-	  <label class="form-label" for="givennames">Given Names</label>
-	  <input type="text" class="form-input" name="givennames" id="givennames" placeholder="Enter your given name(s)">
-	  <span class="form-error">A sample error message</span>
-	</div>
-	<div class="form-item">
-	  <label class="form-label" for="numusers">Number of Users</label>
-	  <input type="number" class="form-input form-input-small" name="numusers" id="numusers" min="1" max="5" placeholder="How many users? (Max. 5)">
-	  <span class="form-error">A sample error message</span>
-	</div>
-	<div class="form-item">
-	  <label class="form-label" for="expirydate">Expiration Date</label>
-	  <input type="date" class="form-input form-input-small" name="expirydate" id="expirydate" placeholder="Enter an experation date">
-	  <span class="form-error">A sample error message</span>
-	</div>
-	<div class="form-item">
-	  <label class="form-label" for="message">Message</label>
-	  <textarea maxlength="500" class="form-input" name="message" id="message" placeholder="Enter a detailed message about why you wish to signup. (Max. 500 chars)"></textarea>
-	  <span class="form-error">A sample error message</span>
-	</div>
-	<div class="form-item">
-	  <button class="form-btn" type="submit">Sign Up</button>
-	</div>
-    </form>
+    <div class="radio">
+      <input type="radio" class="radio-input" value="option1" name="myRadio" id="myRadio1">
+      <label class="radio-label" for="myRadio1">Option 1</label>
+      <input type="radio" class="radio-input" value="option2" name="myRadio" id="myRadio2">
+      <label class="radio-label" for="myRadio2">Option 2</label>
+      <input type="radio" class="radio-input" value="option3" name="myRadio" id="myRadio3">
+      <label class="radio-label" for="myRadio3">Option 3</label>
+    </div>
 
+    
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-	  document.querySelectorAll(".form-input").forEach(input => {
-	      input.addEventListener("input", () => {
-		  input.className = input.className.replace(/form-input-error ?/, "")
-	      })
-	  })
-      })
       
     </script>
   </body>
