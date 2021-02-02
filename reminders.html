@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Reminders</title>
+
+    <style>
+
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container m-3">
+      <div class="row">
+        <div class="col-4">
+          <h3>Lists</h3>
+          <form class="form-inline" data-container="new-list-form">
+            <input type="text" class="form-control mr-2 mb-2" name="name">
+            <input type="submit" class="btn btn-primary" value="Add List">
+          </form>
+          <div data-container="lists">
+          </div>
+        </div>
+        <div class="col-4">
+          <h3>Tasks</h3>
+          <form class="form-inline" data-container="new-task-form">
+            <input type="text" class="form-control mr-2 mb-2" name="name">
+            <input type="submit" class="btn btn-primary" value="Add Task">
+          </form>
+          <div data-container="tasks">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      const render = (elements, state) => {
+	  const { listsContainer, tasksContainer } = elements;
+	  
+	  const ulForLists = document.createElement('ul');
+	  state.lists.forEach((list) => {
+	      const li = document.createElement('li');
+	      let nameContainer;
+	      if (state.activeListId === list.id) {
+		  nameContainer = document.createElement('b');
+		  nameContainer.innerHTML = list.name;
+	      } else {
+		  nameContainer = document.createElement('a');
+		  nameContainer.setAttribute('href', `#${list.name.toLowerCase()}`);
+		  nameContainer.innerHTML = list.name;
+		  nameContainer.addEventListener('click', (e) => {
+		      e.preventDefault();
+		      state.activeListId = list.id;
+		      render(elements, state);
+		  });
+	      }
+	      li.appendChild(nameContainer);
+	      ulForLists.appendChild(li);
+	  });
+	  
+	  listsContainer.innerHTML = '';
+	  listsContainer.appendChild(ulForLists);
+	  
+	  const taskForRendering = state.tasks.filter(({ listId }) => listId === state.activeListId);
+	  tasksContainer.innerHTML = '';
+	  if (taskForRendering.length > 0) {
+	      const ulForTasks = document.createElement('ul');
+	      taskForRendering.forEach((task) => {
+		  const li = document.createElement('li');
+		  li.innerHTML = task.name;
+		  ulForTasks.appendChild(li);
+	      });
+	      tasksContainer.appendChild(ulForTasks);
+	  }
+	  
+	  // NOTE: reseting should be more granular
+	  elements.newListForm.reset();
+	  elements.newTaskForm.reset();
+      };
+      
+      const app = () => {
+	  const generalList = { id: Date.now(), name: 'General' };
+	  const state = {
+	      activeListId: generalList.id,
+	      lists: [generalList],
+	      tasks: [],
+	  };
+	  
+	  const elements = {
+	      listsContainer: document.querySelector('[data-container="lists"]'),
+	      tasksContainer: document.querySelector('[data-container="tasks"]'),
+	      newListForm: document.querySelector('[data-container="new-list-form"]'),
+	      newTaskForm: document.querySelector('[data-container="new-task-form"]'),
+	  };
+	  
+	  elements.newListForm.addEventListener('submit', (e) => {
+	      e.preventDefault();
+	      const formData = new FormData(e.target);
+	      const value = formData.get('name');
+	      // если хотим добавлять только задачи с уникальным именем
+	      const wasAddedBefore = !!state.lists.find(
+		  ({ name }) => name.toLowerCase() === value.toLowerCase(),
+	      );
+	      if (value !== '' && !wasAddedBefore) {
+		  const newList = { id: Date.now(), name: value };
+		  state.lists.push(newList);
+		  render(elements, state);
+	      } else {
+		  // NOTE: render with errors
+	      }
+	  });
+	  
+	  elements.newTaskForm.addEventListener('submit', (e) => {
+	      e.preventDefault();
+	      const formData = new FormData(e.target);
+	      const value = formData.get('name');
+	      if (value !== '') {
+		  const newTask = { name: value, listId: state.activeListId };
+		  state.tasks.push(newTask);
+		  render(elements, state);
+	      } else {
+		  // NOTE: render with errors
+	      }
+	  });
+
+	  render(elements, state);
+      };
+      
+      app();
+
+    </script>
+  </body>
+</html>

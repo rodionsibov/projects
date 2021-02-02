@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Characters Remaining (Text Areas)</title>
+
+    <style>
+
+      body {
+	  font-family: "Roboto", sans-serif;
+      }
+      
+      #myTextarea {
+	  height: 150px;
+	  width: 100%;
+
+      }
+
+      #myTextareaRemainingChars {
+	  color: #333;
+	  text-align: right;
+	  margin-top: 5px;
+	  font-size: 14px;
+	  font-weight: bold;
+	  
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <h1>Characters Remaining</h1>
+
+    <p>Please fill out the form below.</p>
+    <textarea id="myTextarea"></textarea>
+    <div id="myTextareaRemainingChars">250 characters remaining</div>
+    <script>
+      const myTextArea = document.querySelector("#myTextarea");
+      const remainingCharsText = document.querySelector("#myTextareaRemainingChars");
+      const MAX_CHARS = 250; 
+
+      myTextArea.addEventListener("input", () => {
+	  const remaining = MAX_CHARS - myTextArea.value.length;
+	  const color = remaining < MAX_CHARS * 0.1 ? "red" : null;
+	  
+	  remainingCharsText.textContent = `${remaining} characters remaining`;
+	  remainingCharsText.style.color = color;
+      })
+
+    </script>
+  </body>
+</html>
