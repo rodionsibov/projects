@@ -918,4 +918,11 @@ const projectsInfo = [
 	date: "Feb 01 2021 16:14",
     },
 
+    {
+	title: "Characters Remaining",
+	text: "",
+	url: "characters-remaining-counter.html",
+	date: "Feb 02 2021 11:14",
+    },
+
 ]
