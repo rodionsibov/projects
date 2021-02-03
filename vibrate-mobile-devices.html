@@ -15,7 +15,16 @@
 
     <style>
 
-
+      body {
+	  text-align: center;
+      }
+      
+      .button {
+	  max-width: 300px;
+	  width: 100%;
+	  padding: 20px;
+	  margin: 5px;
+      }
 
     </style>
 
@@ -23,7 +32,7 @@
   <body>
 
     <h1>The Vibration API</h1>
-    <button class="button" onclick="vibrate(1000)">Vibrate Single</button>
+    <button class="button" onclick="vibrate(1000)">Vibrate Single</button><br>
     <button class="button" onclick="vibratePattern()">Vibrate Pattern</button>
     
     <script>
