@@ -7,6 +7,10 @@
 
     <meta name="description" content="Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.">
 
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+    
     <!-- <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css"> -->
     
     <!-- Bootstrap CSS -->
@@ -34,11 +38,31 @@
 	  border-radius: 10px;
       }
 
+      #btnScrollToTop {
+	  position: fixed;
+	  right: 10px;
+	  bottom: 10px;
+	  width: 50px;
+	  height: 50px;
+	  border-radius: 50%;
+	  background: #e62739;
+	  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	  color: white;
+	  outline: none;
+	  cursor: pointer;
+	  border: none;
+      }
+
+      #btnScrollToTop:active {
+	  background: #cc2333;
+      }
       
     </style>
   </head>
   <body>
 
+    <button id="btnScrollToTop"><span class="material-icons">arrow_upward</span></button>
+    
     <div class="scrolled-indicator">
       <div class="scrolled-indicator-fill"></div>
     </div>
@@ -192,6 +216,16 @@
 
       </script>
     
-
+    <script>
+      const btnScrollToTop = document.querySelector("#btnScrollToTop");
+      btnScrollToTop.addEventListener("click", () => {
+	  window.scrollTo({
+	      top: 0,
+	      left: 0,
+	      behavior: "smooth"
+	  })
+      })
+    </script>
+    
   </body>
 </html>
