@@ -925,4 +925,11 @@ const projectsInfo = [
 	date: "Feb 02 2021 11:14",
     },
 
+    {
+	title: "The Vibration API",
+	text: "",
+	url: "vibrate-mobile-devices.html",
+	date: "Feb 03 2021 16:11",
+    },
+
 ]
