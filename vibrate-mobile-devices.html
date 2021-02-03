@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>The Vibration API</title>
+
+    <style>
+
+
+
+    </style>
+
+  </head>
+  <body>
+
+    <h1>The Vibration API</h1>
+    <button class="button" onclick="vibrate(1000)">Vibrate Single</button>
+    <button class="button" onclick="vibratePattern()">Vibrate Pattern</button>
+    
+    <script>
+
+      function vibrate(ms) {
+	  navigator.vibrate(ms);
+      }
+
+      function vibratePattern() {
+	  navigator.vibrate([300, 100, 300, 100, 300]);
+      }
+
+    </script>
+  </body>
+</html>

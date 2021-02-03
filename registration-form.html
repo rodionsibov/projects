@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Registration Form</title>
+
+    <style>
+
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm-8 col-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Sign up</h5>
+              <div data-container="sign-up">
+                <form data-form="sign-up" method="post">
+                  <div class="form-group">
+                    <label for="sign-up-name">Name</label>
+                    <input id="sign-up-name" type="text" class="form-control" name="name">
+                  </div>
+                  <div class="form-group">
+                    <label for="sign-up-email">Email<sup>*</sup></label>
+                    <input id="sign-up-email" required type="email" class="form-control" name="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="sign-up-password">Password<sup>*</sup></label>
+                    <input id="sign-up-password" required type="password" class="form-control" name="password">
+                  </div>
+                  <div class="form-group">
+                    <label for="sign-up-password-confirmation">Password Confirmation<sup>*</sup></label>
+                    <input id="sign-up-password-confirmation" required type="password" class="form-control" name="passwordConfirmation">
+                  </div>
+                  <input type="submit" class="btn btn-primary" value="Submit" disabled>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <script>
+
+
+      import _ from 'lodash';
+      import * as yup from 'yup';
+      import onChange from 'on-change';
+      import axios from 'axios';
+
+      // Never hardcore urls
+      const routes = {
+	  usersPath: () => '/users',
+      };
+
+      const schema = yup.object().shape({
+	  email: yup.string().required().email(),
+	  password: yup.string().required().min(6),
+	  passwordConfirmation: yup.string()
+	      .required()
+	      .oneOf(
+		  [yup.ref('password'), null],
+		  'Password confirmation does not match to password',
+	      ),
+      });
+
+      const errorMessages = {
+	  network: {
+	      error: 'Network Problems. Try again.',
+	  },
+      };
+
+      // Используйте эту функцию для выполнения валидации
+      const validate = (fields) => {
+	  try {
+	      schema.validateSync(fields, { abortEarly: false });
+	      return {};
+	  } catch (e) {
+	      return _.keyBy(e.inner, 'path');
+	  }
+      };
+
+
+
+
+
+
+
+
+
+
+
+
+      const updateValidationState = (watchedState) => {
+	  const errors = validate(watchedState.form.fields);
+	  watchedState.form.valid = _.isEqual(errors, {});
+	  watchedState.form.errors = errors;
+      };
+      
+      const renderErrors = (elements, errors) => {
+	  Object.entries(elements).forEach(([name, element]) => {
+	      const errorElement = element.nextElementSibling;
+	      const error = errors[name];
+	      if (errorElement) {
+		  element.classList.remove('is-invalid');
+		  errorElement.remove();
+	      }
+	      if (!error) {
+		  return;
+	      }
+	      const feedbackElement = document.createElement('div');
+	      feedbackElement.classList.add('invalid-feedback');
+	      feedbackElement.innerHTML = error.message;
+	      element.classList.add('is-invalid');
+	      element.after(feedbackElement);
+	  });
+      };
+      
+      export default () => {
+	  const state = {
+	      form: {
+		  processState: 'filling',
+		  processError: null,
+		  fields: {
+		      name: '',
+		      email: '',
+		      password: '',
+		      passwordConfirmation: '',
+		  },
+		  valid: true,
+		  errors: {},
+	      },
+	  };
+	  
+	  const container = document.querySelector('[data-container="sign-up"]');
+	  const form = document.querySelector('[data-form="sign-up"]');
+	  const fieldElements = {
+	      name: document.getElementById('sign-up-name'),
+	      email: document.getElementById('sign-up-email'),
+	      password: document.getElementById('sign-up-password'),
+	      passwordConfirmation: document.getElementById('sign-up-password-confirmation'),
+	  };
+	  const submitButton = form.querySelector('[type="submit"]');
+	  
+	  const processStateHandler = (processState) => {
+	      switch (processState) {
+	      case 'failed':
+		  submitButton.disabled = false;
+		  break;
+	      case 'filling':
+		  submitButton.disabled = false;
+		  break;
+	      case 'sending':
+		  submitButton.disabled = true;
+		  break;
+	      case 'finished':
+		  container.innerHTML = 'User Created!';
+		  break;
+	      default:
+		  throw new Error(`Unknown state: ${processState}`);
+	      }
+	  };
+	  
+	  const watchedState = onChange(state, (path, value) => {
+	      switch (path) {
+	      case 'form.processState':
+		  processStateHandler(value);
+		  break;
+	      case 'form.valid':
+		  submitButton.disabled = !value;
+		  break;
+	      case 'form.errors':
+		  renderErrors(fieldElements, value);
+		  break;
+	      default:
+		  break;
+	      }
+	  });
+	  
+	  Object.entries(fieldElements).forEach(([name, element]) => {
+	      element.addEventListener('input', (e) => {
+		  watchedState.form.fields[name] = e.target.value;
+		  updateValidationState(watchedState);
+	      });
+	  });
+	  
+	  form.addEventListener('submit', async (e) => {
+	      e.preventDefault();
+	      watchedState.form.processState = 'sending';
+	      try {
+		  await axios.post(routes.usersPath(), watchedState.form.fields);
+		  watchedState.form.processState = 'finished';
+	      } catch (err) {
+		  // В реальных приложениях также требуется корректно обрабатывать сетевые ошибки
+		  watchedState.form.processError = errorMessages.network.error;
+		  watchedState.form.processState = 'failed';
+		  // здесь это опущено в целях упрощения приложения
+		  throw err;
+	      }
+	  });
+      };
+    </script>
+  </body>
+</html>
