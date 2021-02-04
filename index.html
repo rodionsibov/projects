@@ -147,14 +147,14 @@
 	  setInterval(() => badgeEl.classList.toggle("badge-success"), 5000);
 
 	  const state = {
-	      projectsOnPage: 2,
+	      projectsOnPage: 12,
 	      projectsQuantity: null
 	  }
 	  
 	  const data = await (await fetch("./projects.json")).json();
 	  state.projectsQuantity = data.length;
 	  
-	  
+	  console.log(data)
 	  document.querySelector(".how-many-projects").innerHTML = `There are ${state.projectsQuantity} projects`;
 	  render(data, state);
 
@@ -163,7 +163,7 @@
 	      
 	      const formData = new FormData(e.target);
 	      const value = formData.get('name');
-	      console.log(data)
+
 	      const searchText = document.querySelector("form input").value
 	      if (!searchText) {
 		  return;
@@ -173,13 +173,12 @@
 		  const regex = new RegExp(`${searchText}`, "gi");
 		  return project.title.match(regex);
 	      });
-	      render(filteredProjects);
+	      render(filteredProjects, filteredProjects.length);
+	      document.querySelector(".how-many-projects").innerHTML = `There are ${filteredProjects.length} projects`;
 	      document.querySelector("#loadMore").style.display = "none";
 	  })
 
 	  document.querySelector("#loadMore").addEventListener("click", () => {
-	      state.projectsOnPage = 3
-	      console.log(data)
 	      state.projectsOnPage > state.projectsQuantity
 	      	  ? document.querySelector("#loadMore").disabled = true
 	      	  : state.projectsOnPage += 6;
@@ -190,8 +189,8 @@
       app();
 
       const render = (data, state) => {
-	  data.splice(state.projectsOnPage);
-	  document.querySelector("#projects").innerHTML = data.map(project => {
+	  const projects = data.slice(0, state.projectsOnPage);
+	  document.querySelector("#projects").innerHTML = projects.map(project => {
 	      return `
 	<div class="col mb-4">
 	  <div class="card">
@@ -209,7 +208,7 @@
 	</div>
 
 `;
-	  }).join();
+	  }).join("");
       }
 
       </script>
