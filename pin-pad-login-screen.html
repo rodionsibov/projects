@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Pin Login</title>
+
+    <style>
+
+      body {
+	  font-family: "Roboto", sans-serif;
+	  height: 100vh;
+	  margin: 0;
+	  display: grid;
+	  place-items: center;
+      }
+
+      .pin-login {
+	  display: inline-block;
+	  border-radius: 10px;
+	  padding: 10px;
+	  font-size: 28px;
+	  background: #d9deff;
+	  border: 2px solid #363b5e;
+	  user-select: none;
+      }
+
+      .pin-login__text {
+	  margin: 10px auto;
+	  padding: 10px;
+	  display: block;
+	  width: 50%;
+	  font-size: 0.5em;
+	  text-align: center;
+	  letter-spacing: 0.2em;
+	  background: rgba(0,0,0,0.15);
+	  border: none;
+	  border-radius: 10px;
+	  outline: none;
+	  cursor: default;
+      }
+
+      .pin-login__text--error {
+	  color: #901818;
+	  background: #ffb3b3;
+	  animation: loginError 0.1s 2;
+      }
+
+      @keyframes loginError {
+	  25% {
+	      transform: translateX(-3px);
+	  }
+	  75% {
+	      transform: translateX(3px);
+	  }
+      }
+      
+      .pin-login__key {
+	  width: 60px;
+	  height: 60px;
+	  margin: 10px;
+	  background: rgba(0,0,0,0.15);
+	  color: #363b5e;
+	  border-radius: 50%;
+	  display: inline-flex;
+	  align-items: center;
+	  justify-content: center;
+	  font-weight: bold;
+	  cursor: pointer;
+      }
+      
+      .pin-login__key:active {
+	  background: rgba(0,0,0,0.25);
+	  -webkit-tap-highlight-color: transparent;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <div class="pin-login" id="mainPinLogin">
+      <input type="password" readonly class="pin-login__text">
+      <div class="pin-login__numpad">
+	<!-- <div class="pin-login__key">0</div> -->
+	<!-- <div class="pin-login__key material-icons">done</div> -->
+      </div>
+    </div>
+
+    <script>
+      
+      class PinLogin {
+	  constructor({el, loginEndpoint, redirectTo, maxNumbers = Infinity}) {
+	      this.el = {
+		  main: el,
+		  numPad: el.querySelector(".pin-login__numpad"),
+		  textDisplay: el.querySelector(".pin-login__text")
+	      };
+
+	      this.loginEndpoint = loginEndpoint;
+	      this.redirectTo = redirectTo;
+	      this.maxNumbers = maxNumbers;
+	      this.value = "";
+
+	      this._generatePad();
+	  }
+
+
+	  _generatePad() {
+	      const padLayout = [
+		  "1", "2", "3",
+		  "4", "5", "6",
+		  "7", "8", "9",
+		  "backspace", "0", "done"
+	      ];
+
+	      padLayout.forEach(key => {
+		  const insertBreak = key.search(/[369]/) !== -1;
+		  const keyEl = document.createElement("div");
+
+		  keyEl.classList.add("pin-login__key");
+		  keyEl.classList.toggle("material-icons", isNaN(key));
+		  keyEl.textContent = key;
+		  keyEl.addEventListener("click", () => {
+		      this._handleKeyPress(key);
+		  })
+		  this.el.numPad.appendChild(keyEl);
+
+		  if (insertBreak) {
+		      this.el.numPad.appendChild(document.createElement("br"));
+		  }
+
+	      });
+	      
+	  }
+
+
+	  _handleKeyPress(key) {
+	      switch(key) {
+	      case "backspace":
+		  this.value = this.value.substring(0, this.value.length - 1);
+		  break;
+	      case "done":
+		  this._attemptLogin();
+		  break;
+	      default:
+		  if (this.value.length < this.maxNumbers && !isNaN(key)) {
+		      this.value += key;
+		  }
+		  break;
+	      }
+
+	      this._updateValueText();
+	  }
+
+
+	  _updateValueText() {
+	      console.log(this.value)
+	  }
+	  
+      }
+
+      new PinLogin({
+	  el: document.querySelector("#mainPinLogin"),
+	  loginEndpoint: "",
+	  redirectTo: "dashboard.html",
+	  maxNumbers: 4
+      });
+
+    </script>
+  </body>
+</html>
