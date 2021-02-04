@@ -7,7 +7,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	  rel="stylesheet">
-
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -15,7 +15,94 @@
 
     <style>
 
+      body {
+	  background: lightseagreen;
+	  font-family: "Roboto", sans-serif;
+      }
 
+      h1 {
+	  text-align: center;
+	  color: #ffffff99;
+	  margin-top: 50px;
+	  margin-bottom: 10px;
+      }
+
+      #todo {
+	  margin: auto;
+	  max-width: 500px;
+	  width: 100%;
+	  background: white;
+	  box-shadow: 0 4px 12px -9px black;
+	  border-radius: 6px;
+	  max-height: 70vh;
+	  overflow: auto;
+      }
+
+      #list {
+	  width: 100%;
+	  padding: 0;
+	  box-sizing: border-box;
+      }
+
+      #list li:hover {
+	  background: #eee;
+      }
+
+      #list li.item {
+	  display: flex;
+	  align-items: center;
+	  width: 100%;
+	  padding: 20px 30px 10px 30px;
+	  box-sizing: border-box;
+      }
+
+      #list.item span {
+	  font-size: 24px;
+	  flex-grow: 1;
+	  color: #595959;
+      }
+
+      ion-icon {
+	  color: #cecece;
+      }
+      
+      li.item a {
+	  padding: 10px;
+	  cursor: pointer;
+	  align-self: flex-end;
+      }
+
+      li.item a:hover {
+	  color: grey;
+	  transition: all 200ms linear;
+      }
+      
+      input {
+	  padding: 10px;
+	  border-radius: 0px;
+	  border: none;
+	  background: #f6f4f4;
+	  border-bottom: 2px solid #e5e5e5;
+	  width: 100%;
+	  font-size: 40px;
+	  color: #696969;
+	  padding: 30px 45px;
+	  outline: none;
+	  box-sizing: border-box;
+      }
+
+      ::-webkit-input-placeholder {
+	  color: #bbb;
+      }
+      
+      footer {
+	  position: absolute;
+	  bottom: 10px;
+	  right: 10px;
+	  color: #ffffff99;
+	  font-size: 0.8em;
+      }
+      
     </style>
 
   </head>
@@ -23,14 +110,14 @@
 
     <h1>Todoodles</h1>
     <div id="todo">
-      <input id="add-item" type="text" name="item" placeholder="Add an item..." onclick=""view.addItem(event)>
+      <input id="add-item" type="text" name="item" placeholder="Add an item..." onkeypress="view.addItem(event)">
       <ul id="list">
 	<li></li>
       </ul>
 
     </div>
 
-    <footer>Just another potato project.</footer>
+    <footer>Just another project.</footer>
 
     <script>
       
@@ -40,16 +127,63 @@
 
       view = {
 	  clearList: function() {
-
+	      const range = document.createRange()
+	      range.selectNodeContents(document.querySelector("#list"))
+	      range.deleteContents()
 	  },
 
 	  render: function() {
-	      
+	      this.clearList()
+
+	      if (model.items.length != 0) {
+		  list = document.querySelector("#list")
+
+		  for (let i = 0; i < model.items.length; i++) {
+		      item = document.createElement("li")
+		      span = document.createElement("span")
+		      check = document.createElement("a")
+		      cross = document.createElement("a")
+		      iconCheck = document.createElement("ion-icon")
+		      iconCross = document.createElement("ion-icon")
+
+		      item.className = "item"
+		      span.className = "item-text"
+		      check.className = "item-complete"
+		      cross.className = "item-delete"
+
+		      span.textContent = model.items[i].text
+
+		      if (model.items[i].completed) {
+			  span.setAttribute("style", "text-decoration: line-through; color: #bbb;")
+		      }
+
+		      iconCheck.setAttribute("name", "checkmark-outline")
+		      iconCheck.setAttribute("data-id", i)
+		      iconCross.setAttribute("name", "trash-outline")
+		      iconCross.setAttribute("data-id", i)
+
+		      check.setAttribute("onclick", "controller.completeItem('" + i + "')")
+		      cross.setAttribute("onclick", "controller.deleteItem('" + i + "')")
+
+		      check.appendChild(iconCheck)
+		      cross.appendChild(iconCross)
+		      item.appendChild(span)
+		      item.appendChild(check)
+		      item.appendChild(cross)
+
+		      list.appendChild(item)
+		      
+		  }
+	      }
 	  },
 
 	  addItem: function(e) {
-	      if ((e.code === "enter") || (e.code === "NumpadEnter")) {
-		  
+	      if ((e.code == "Enter") || (e.code == "NumpadEnter")) {
+		  input = document.querySelector("#add-item")
+		  if ((input.value != "") || (input.value != " ")) {
+		      controller.addItem(input.value)
+		      return false
+		  }
 	      }
 	  }
       }
@@ -59,9 +193,9 @@
 	      view.render()
 	  },
 	  
-	  addItem: function() {
+	  addItem: function(item) {
 	      list_item = { text: item, completed: false }
-	      model.items.push(list_item)
+	      model.items.unshift(list_item)
 	      document.querySelector("#add-item").value = ""
 	      view.render()
 	  },
@@ -77,8 +211,8 @@
 	  },
       }
 
-      
 
     </script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
   </body>
 </html>
