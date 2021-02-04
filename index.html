@@ -53,6 +53,7 @@
 	  outline: none;
 	  cursor: pointer;
 	  border: none;
+	  z-index: 100;
       }
 
       #btnScrollToTop:active {
@@ -154,7 +155,7 @@
 	  const data = await (await fetch("./projects.json")).json();
 	  state.projectsQuantity = data.length;
 	  
-	  console.log(data)
+
 	  document.querySelector(".how-many-projects").innerHTML = `There are ${state.projectsQuantity} projects`;
 	  render(data, state);
 
@@ -163,7 +164,7 @@
 	      
 	      const formData = new FormData(e.target);
 	      const value = formData.get('name');
-	      console.log(value)
+
 
 	      const searchText = document.querySelector("form input").value
 	      if (!searchText) {
