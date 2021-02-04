@@ -58,10 +58,14 @@
 	  },
 	  
 	  addItem: function() {
+	      list_item = { text: item, completed: false }
+	      model.items.push(list_item)
+	      document.querySelector("#add-item").value = ""
 	      view.render()
 	  },
 
-	  completeItem: function() {
+	  completeItem: function(item_index) {
+	      model.items[item_index].completed = !model.items[item_index].completed
 	      view.render()
 	  },
 	  
