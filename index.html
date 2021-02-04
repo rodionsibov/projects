@@ -80,9 +80,9 @@
 	  <p class="lead">Hello, I am Rodion. I have a life interest for all things web and developing code. </p>
 	  <p>The more you practice, the better your skills will become! You are free to modify, save, share, use or do whatever you want with them. Experiment and have fun! 😉</p>
 	    <form class="form-inline my-2 my-lg-0">
-	    <input class="form-control mr-sm-2" type="search" placeholder="Search">
-	    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-	    <small class="form-text how-many-projects text-muted ml-3"></small>
+	      <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search">
+	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	      <small class="form-text how-many-projects text-muted ml-3"></small>
 	    </form>
 
       </div>
@@ -163,6 +163,7 @@
 	      
 	      const formData = new FormData(e.target);
 	      const value = formData.get('name');
+	      console.log(value)
 
 	      const searchText = document.querySelector("form input").value
 	      if (!searchText) {
