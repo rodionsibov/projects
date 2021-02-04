@@ -103,25 +103,6 @@
       <small>Made with ❤ by <a style="color: #222; text-decoration: none;" href="https://github.com/rodionsibov" target="_blank">Rodion Sibov</a> | <span class="year"></span></small>
     </footer>
 
-    <script>
-      document.querySelector('.year').textContent = new Date().getFullYear();
-
-      document.querySelector('.date').textContent = new Date()
-    .toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
-    
-    </script>
-
-
-
-    <script>
-      const badgeEl = document.querySelector(".badge");
-      setInterval(() => {
-	  badgeEl.classList.toggle("badge-success");
-	  
-      }, 5000)
-      
-    </script>
-
 
 
     
@@ -153,44 +134,65 @@
 
     </script>
 
-    <script src="projectsInfo.js"></script>
-
     <script>
 
-      document.querySelector(".how-many-projects").innerHTML = `There are ${projectsInfo.length} projects`;
-      
-      // get first n elements of the array
-      let loadMore = 12;
-      const projects = projectsInfo.slice(0, loadMore);
 
-      document.querySelector("#loadMore").addEventListener("click", () => {
-	  loadMore > projectsInfo.length ? document.querySelector("#loadMore").disabled = true : loadMore += 6;
-	  showProjects(projectsInfo.slice(0, loadMore));
-      })
 
-      document.querySelector("form button").addEventListener("click", (e) => {
-       	  e.preventDefault();
-       	  const searchText = document.querySelector("form input").value
-	  if (!searchText) {
-	      return;
-	      
+      const app = async () => {
+	  document.querySelector('.date').textContent = new Date()
+	      .toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+	  document.querySelector('.year').textContent = new Date().getFullYear();
+	  
+	  const badgeEl = document.querySelector(".badge");
+	  setInterval(() => badgeEl.classList.toggle("badge-success"), 5000);
+
+	  const state = {
+	      projectsOnPage: 2,
+	      projectsQuantity: null
 	  }
+	  
+	  const data = await (await fetch("./projects.json")).json();
+	  state.projectsQuantity = data.length;
+	  
+	  
+	  document.querySelector(".how-many-projects").innerHTML = `There are ${state.projectsQuantity} projects`;
+	  render(data, state);
 
-	  const filteredProjects = projectsInfo.filter(project => {
-	      const regex = new RegExp(`${searchText}`, "gi");
-	      return project.title.match(regex);
-	  }); 
+	  document.querySelector("form").addEventListener("submit", (e) => {
+       	      e.preventDefault();
+	      
+	      const formData = new FormData(e.target);
+	      const value = formData.get('name');
+	      console.log(data)
+	      const searchText = document.querySelector("form input").value
+	      if (!searchText) {
+		  return;
+	      }
 
-	  showProjects(filteredProjects);
-	  document.querySelector("#loadMore").style.display = "none";
-      })
+	      const filteredProjects = data.filter(project => {
+		  const regex = new RegExp(`${searchText}`, "gi");
+		  return project.title.match(regex);
+	      });
+	      render(filteredProjects);
+	      document.querySelector("#loadMore").style.display = "none";
+	  })
 
-      const showProjects = (projects) => {
-	  let html = "";
-	  for (project of projects) {
-	      //const diffMin = Math.ceil(Math.abs(new Date() - new Date(project.date)) / (60 * 60 * 24));
+	  document.querySelector("#loadMore").addEventListener("click", () => {
+	      state.projectsOnPage = 3
+	      console.log(data)
+	      state.projectsOnPage > state.projectsQuantity
+	      	  ? document.querySelector("#loadMore").disabled = true
+	      	  : state.projectsOnPage += 6;
+	      render(data, state);
+	  })
 
-	      html += `
+      }
+      app();
+
+      const render = (data, state) => {
+	  data.splice(state.projectsOnPage);
+	  document.querySelector("#projects").innerHTML = data.map(project => {
+	      return `
 	<div class="col mb-4">
 	  <div class="card">
 	    <div class="card-img-top embed-responsive embed-responsive-1by1">
@@ -207,14 +209,8 @@
 	</div>
 
 `;
-
-	  }
-	  document.querySelector("#projects").innerHTML = html;
-	  
+	  }).join();
       }
-      showProjects(projects);
-
-
 
       </script>
     
