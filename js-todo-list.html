@@ -69,7 +69,8 @@
 	      view.render()
 	  },
 	  
-	  deleteItem: function() {
+	  deleteItem: function(item_index) {
+	      model.items.splice(item_index, 1)
 	      view.render()
 	  },
       }
