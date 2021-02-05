@@ -6,116 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
-
     <title>Penguins Organizer (Fetch API Sandbox)</title>
 
     <style>
 
-      footer {
-	  display: none;
-      }
       
     </style>
 
   </head>
   <body>
-    <div class="container mt-5">
-      <a href=""><h1>Users</h1>
-	
-      </a>
-      <a href=""><h1>Todos</h1>
-	
-      </a>
+    <div class="box">
+      <a href=""><h1>Users</h1> </a>
+      <a href=""><h1>Todos</h1> </a>
     </div>
     
-    <footer style="padding: 5px; background: #333; color: white; text-align: center;">
-      <small>This website was created and is maintained by <a style="color: white; text-decoration: none;" href="https://github.com/rodionsibov">Rodion Sibov</a> &bull; <span class="year"></span></small>
-    </footer>
-
-    <script>
-      const year = new Date().getFullYear()
-      document.querySelector('.year').innerHTML = year;
-    </script>
-
     <script>
       // "https://jsonplaceholder.typicode.com/todos"
       // "https://jsonplaceholder.typicode.com/users"
 
-      // ##### User Class #####
-      class User {
-	  constructor(name, email, company) {
-	      this.name = name;
-	      this.email = email;
-	      this.company = company;
-	  }
-      }
-
-      const newUser = new User('myName', 'myCompany', 'my@email.com')
-
-
-
-
-
-      // ##### UI Class #####
-      class UI {
-	  static displayUsers() {
-
-	  }
-
-	  static showAlert(message, className) {
-	      const div = document.createElement('div')
-	      div.className = `alert alert-${className}`
-	      div.appendChild(document.createTextNode(message))
-	      document.body.insertBefore(div, document.body.querySelector('#root'))
-
-	      //Vanish in 3 Seconds
-	      setTimeout(() => {
-		  document.querySelector('.alert').remove()
-	      }, 3000)
-	  }
-      }
-
-
-      // ##### Store Class #####
-
-      class Store {
-	  static getUsersAndTodos() {
-
-	      
-	      (async () => {
-       		  const usersData = await fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json())
-       		  const todosData =  await fetch('https://jsonplaceholder.typicode.com/todos').then(res => res.json())
-		  const usersFilter = usersData.map(({name, email, company: {name: company}}) => ({name, email, company}))
-		  const todosFilter = todosData.filter(todo => todo.id < 5)
-		  
-		  localStorage.setItem('users', JSON.stringify(usersFilter))
-		  localStorage.setItem('todos', JSON.stringify(todosFilter))
-
-		  let users, todos
-		  localStorage.getItem('users' === null)
-		      ? users = []
-		      : users = JSON.parse(localStorage.getItem('users'))
-
-		  localStorage.getItem('todos' === null)
-		      ? todos = []
-		      : todos = JSON.parse(localStorage.getItem('todos'))
-
-	      })()
-
-	  }
-	  
-	  
-	  static addUser() {
-	      
-	  }
-      }
-
+    
 
       //Event Display 
 
@@ -125,18 +34,5 @@
 
 
     </script>
-    
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-	-->
-  </body>
+      </body>
 </html>
