@@ -10,21 +10,49 @@
 
     <style>
 
+      * {
+	  box-sizing: border-box;
+      }
+      
+      input {
+	  border: none;
+	  border-bottom: 1px solid #ccc;
+	  width: 90%;
+	  margin: 20px 0;
+      }
+      
+      .users-block {
+	  display: fixed;
+	  position: absolute;
+	  top: 20px;
+	  left: 20px;
+	  height: 100%;
+	  width: 200px;
+	  border-right: 1px solid #ccc;
+      }
+
+      .todos-block {
+	  position: absolute;
+	  top: 20px;
+	  left: 230px;
+      }
       
     </style>
 
   </head>
   <body>
     
-    <input id="addItem" autofocus>
 
-    <h1>Users</h1>
-    <div id="users"> </div> 
-
-    <h1>Todos</h1>
-    <div id="todos"> </div> 
+    <div class="users-block">
+      <h1>Users</h1>
+      <input id="addItem" placeholder="Add item...">
+      <div id="users"> </div> 
+    </div>
     
-
+    <div class="todos-block">
+      <h1>Todos <span id="todosCount"></span></h1>
+      <div id="todos"> </div> 
+    </div>
 
     <script>
 
@@ -39,36 +67,41 @@
 
       view = {
 	  render() {
-//	      document.querySelector("#users").innerHTML = "";
-	      
 	      const users = document.querySelector("#users");
 	      users.innerHTML = model.items.map(item => {
 			  return `
-<div id="${item.id}" onclick="view.showTodos(${item.id})">${item.text}</div>
+<a href="#"><div id="${item.id}" onclick="view.showTodos(${item.id})">${item.text}</div></a>
 `;
-		  
 	      }).join("");
-	      
-	      
 	  },
 
 	  showTodos(userId) {
+	      const todosCount = document.querySelector("#todosCount");
+	      const itemCount = model.todos.filter(el => el.userId === userId).length;
+	      const completedItemCount = model.todos.filter(el => el.userId === userId).filter(el => el.completed).length;
+	      todosCount.textContent = `${completedItemCount} / ${itemCount}`;
+
 	      const todos = document.querySelector("#todos");
 	      todos.innerHTML = model.todos
-		  .filter(el => el === userId)
-		  .map(item => {
-		  return `
-<div>${item.text}</div>
+		  .filter(el => el.userId === userId)
+		  .map((item, index) => {
+		      if (!item.completed) {
+			  return `
+<div style="color: green;" onclick="controller.completeItem(${index})">${item.text}</div>
 `;
-	      }).join("");
-
+		      } else {
+			  return `
+<div style="text-decoration: line-through; color: red;" onclick="controller.completeItem(${index})">${item.text}</div>
+`;
+		      }
+		  }).join("");
 	  },
 	  
 	  addItem(e) {
 	      if (e.code === "Enter") {
 		  const input = document.querySelector("#addItem");
 		  if (input.value !== "") {
-		      controller.addItem(input.value);
+		      controller.addUser(input.value);
 		      return false;
 		  }
 	      }
@@ -77,26 +110,28 @@
       }
 
       controller = {
-	  state: {
-	      
-	  },
-	  
 	  init() {
 	      view.render();
 	      this.getUsers();
 	      this.getTodos();
+	      console.log(model.todos)
 	  },
 
-	  addItem(item, id) {
-	      const listItem = {text: item, completed: false, id: id};
+	  addUser(item, id) {
+	      const listItem = {text: item, id: id};
 	      model.items.unshift(listItem);
 	      document.querySelector("#addItem").value = "";
 	      view.render();
 	  },
 
-	  completeItem(itemIndex) {
-	      model.items[itemIndex].completed = !model.items[itemIndex].completed;
+	  addTodo(item, completed, userId) {
+	      const listItem = {text: item, completed: completed, userId: userId};
+	      model.todos.unshift(listItem);
 	      view.render();
+	  },
+
+	  completeItem(itemIndex) {
+	      model.todos[itemIndex].completed = !model.todos[itemIndex].completed;
 	  },
 
 	  deleteItem(itemIndex) {
@@ -106,20 +141,15 @@
 
 	  async getUsers() {
 	      const data = await (await fetch(urlUsers)).json();
-	      data.forEach(el => this.addItem(el.name, el.id));
+	      data.forEach(el => this.addUser(el.name, el.id));
 	  },
 	  
 	  async getTodos() {
 	      const data = await (await fetch(urlTodos)).json();
-	      data.forEach(el => this.addTodos(el.title, el.completed, el.userId));
+	      data.forEach(el => this.addTodo(el.title, el.completed, el.userId));
 
 	  },
 
-	  addTodos(item, completed, userId) {
-	      const listItem = {text: item, completed: completed, userId: userId};
-	      model.todos.unshift(listItem);
-	      view.render();
-	  }
       }
 
 
@@ -132,6 +162,7 @@
       document.querySelector("#addItem").addEventListener("keypress", (e) => {
 	  view.addItem(e);
       })
+
       
     </script>
       </body>
