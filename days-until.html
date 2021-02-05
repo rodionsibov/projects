@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	  rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Days Until</title>
+
+    <style>
+
+      body {
+	  font-family: "Roboto", sans-serif;
+      }
+
+      .until {
+	  max-width: 500px;
+	  margin: 20px;
+	  display: grid;
+	  grid-template-columns: repeat(4, 1fr);
+	  gap: 1em;
+	  padding: 1em;
+	  border-radius: 5px;
+	  background: teal;
+	  box-shadow: 0 0 5px rgba(0,0,0,0.25);
+      }
+
+      .until__component {
+	  text-align: center;
+	  background: white;
+	  border-radius: 5px;
+      }
+
+      .until__numeric {
+	  color: #333;
+	  padding: 0.5em 0;
+	  font-size: 3em;
+	  font-weight: bold;
+      }
+
+      .until__unit {
+	  font-size: 1.2em;
+	  padding-bottom: 1em;
+	  font-weight: bold;
+	  color: crimson;
+      }
+
+      .until__event {
+	  grid-column: span 4;
+	  text-align: center;
+	  color: white;
+	  font-weight: bold;
+      }
+      
+    </style>
+
+  </head>
+  <body>
+    <div class="until" id="myCountDown">
+      <div class="until__component">
+	<div class="until__numeric until__numeric--days">00</div>
+	<div class="until__unit">Days</div>
+      </div>
+      <div class="until__component">
+	<div class="until__numeric until__numeric--hours">00</div>
+	<div class="until__unit">Hours</div>
+      </div>
+      <div class="until__component">
+	<div class="until__numeric until__numeric--minutes">00</div>
+	<div class="until__unit">Minutes</div>
+      </div>
+      <div class="until__component">
+	<div class="until__numeric until__numeric--seconds">00</div>
+	<div class="until__unit">Seconds</div>
+      </div>
+      <div class="until__event">Until 03 February 2021</div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/duration.min.js"></script>
+    <script>
+      
+      dayjs.extend(dayjs_plugin_duration);
+
+      function activateCountdown(element, dateString) {
+	  const targetDate = dayjs(dateString);
+
+	  element.querySelector(".until__event").textContent = `Until ${ targetDate.format("D MMMM YYYY") }`;
+
+	  setInterval(() => {
+	      const now = dayjs();
+	      const duration = dayjs.duration(targetDate.diff(now));
+
+	      if (duration.asMilliseconds() <= 0) return;
+
+	      element.querySelector(".until__numeric--seconds").textContent = duration.seconds().toString().padStart(2, "0");
+	      element.querySelector(".until__numeric--minutes").textContent = duration.minutes().toString().padStart(2, "0");
+	      element.querySelector(".until__numeric--hours").textContent = duration.hours().toString().padStart(2, "0");
+	      element.querySelector(".until__numeric--days").textContent = duration.asDays().toFixed(0).toString().padStart(2, "0");
+
+	  }, 250);
+      }
+
+      activateCountdown(document.querySelector("#myCountDown"), "2021-12-31");
+      
+    </script>
+    
+  </body>
+</html>
