@@ -16,42 +16,48 @@
   </head>
   <body>
     
-    <div id="root" class="box">
-      <a href=""><h1>Users</h1> </a>
+    <input id="addItem" autofocus>
+      <h1 id="users">Users</h1> 
       <a href=""><h1>Todos</h1> </a>
-    </div>
-    <input id="addItem">
+
+
     <script>
 
-      // API
-      // "https://jsonplaceholder.typicode.com/todos"
-      // "https://jsonplaceholder.typicode.com/users"
 
-      // Modal
+      const urlTodos = "https://jsonplaceholder.typicode.com/todos"
+      const urlUsers = "https://jsonplaceholder.typicode.com/users"
+
       model = {
 	  items: []
       }
       
       view = {
 	  render() {
-	      document.querySelector("#root").innerHTML = "";
+//	      document.querySelector("#users").innerHTML = "";
 	      
 	      if (model.items.length !== 0) {
-		  
-		  console.log("render")
+		  const users = document.querySelector("#users");
 
-		  model.forEach(item => {
+		  users.innerHTML = model.items.map((item, index) => {
 		      if (item.completed) {
-			  console.log("text-decoration line through, color gray")
+			  return `
+<div id="${index}" style="text-decoration: line-through; font-size: 0.7em; color: green" onclick="controller.completeItem(${index})">${item.text}</div>
+`
+		      } else {
+			  return `
+<div id="${index}" style="font-size: 0.7em; color: black" onclick="controller.completeItem(${index})">${item.text}</div>
+`
+
 		      }
-		  })
+
+		  }).join("");
 		  
 	      }
 	  },
 
 	  addItem(e) {
 	      if (e.code === "Enter") {
-		  input = document.querySelector("#addItem")
+		  const input = document.querySelector("#addItem");
 		  if (input.value !== "") {
 		      controller.addItem(input.value);
 		      return false;
@@ -70,8 +76,8 @@
 	      view.render();
 	  },
 
-	  addItem(item) {
-	      listItem = {text: item, completed: false};
+	  addItem(item, completed = false) {
+	      const listItem = {text: item, completed: completed};
 	      model.items.unshift(listItem);
 	      document.querySelector("#addItem").value = "";
 	      view.render();
@@ -85,18 +91,26 @@
 	  deleteItem(itemIndex) {
 	      model.items.splice(itemIndex, 1);
 	      view.render();
+	  },
+
+	  async getItem() {
+	      const data = await (await fetch(urlTodos)).json();
+	      console.log(data)
+	      data.forEach(el => this.addItem(el.title, el.completed));
+	      
 	  }
       }
+
 
       
       // Event Display 
       addEventListener('DOMContentLoaded', () => {
 	  controller.init();
-
+	  controller.getItem();
       })
 
       document.querySelector("#addItem").addEventListener("keypress", (e) => {
-	  view.addItem(e)
+	  view.addItem(e);
       })
       
     </script>
