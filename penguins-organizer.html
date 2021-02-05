@@ -15,11 +15,12 @@
 
   </head>
   <body>
-    <div class="box">
+    
+    <div id="root" class="box">
       <a href=""><h1>Users</h1> </a>
       <a href=""><h1>Todos</h1> </a>
     </div>
-    
+    <input id="addItem">
     <script>
 
       // API
@@ -27,18 +28,77 @@
       // "https://jsonplaceholder.typicode.com/users"
 
       // Modal
-      modal = {
-	  
+      model = {
+	  items: []
       }
-      console.log(modal)
       
+      view = {
+	  render() {
+	      document.querySelector("#root").innerHTML = "";
+	      
+	      if (model.items.length !== 0) {
+		  
+		  console.log("render")
 
+		  model.forEach(item => {
+		      if (item.completed) {
+			  console.log("text-decoration line through, color gray")
+		      }
+		  })
+		  
+	      }
+	  },
+
+	  addItem(e) {
+	      if (e.code === "Enter") {
+		  input = document.querySelector("#addItem")
+		  if (input.value !== "") {
+		      controller.addItem(input.value);
+		      return false;
+		  }
+	      }
+	  }
+
+      }
+
+      controller = {
+	  state: {
+	      
+	  },
+	  
+	  init() {
+	      view.render();
+	  },
+
+	  addItem(item) {
+	      listItem = {text: item, completed: false};
+	      model.items.unshift(listItem);
+	      document.querySelector("#addItem").value = "";
+	      view.render();
+	  },
+
+	  completeItem(itemIndex) {
+	      model.items[itemIndex].completed = !model.items[itemIndex].completed;
+	      view.render();
+	  },
+
+	  deleteItem(itemIndex) {
+	      model.items.splice(itemIndex, 1);
+	      view.render();
+	  }
+      }
+
+      
       // Event Display 
-      document.addEventListener('DOMContentLoaded', () => {
+      addEventListener('DOMContentLoaded', () => {
+	  controller.init();
 
       })
 
-
+      document.querySelector("#addItem").addEventListener("keypress", (e) => {
+	  view.addItem(e)
+      })
+      
     </script>
       </body>
 </html>
