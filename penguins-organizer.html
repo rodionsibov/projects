@@ -12,29 +12,64 @@
 
       * {
 	  box-sizing: border-box;
+	  
       }
       
       input {
 	  border: none;
 	  border-bottom: 1px solid #ccc;
 	  width: 90%;
-	  margin: 20px 0;
+	  margin-bottom: 20px;
+	  outline: none;
       }
       
       .users-block {
-	  display: fixed;
-	  position: absolute;
-	  top: 20px;
+	  position: fixed;
+	  top: 0;
 	  left: 20px;
-	  height: 100%;
-	  width: 200px;
+	  height: 100vh;
+	  width: 250px;
 	  border-right: 1px solid #ccc;
+	  overflow: auto;
+	  padding-bottom: 40px;
       }
 
       .todos-block {
 	  position: absolute;
-	  top: 20px;
-	  left: 230px;
+	  top: 0;
+	  margin-left: 300px;
+      }
+
+      .todos-title {
+	  color: #ccc;
+      }
+
+      ol {
+	  font-size: 1.1em;
+      }
+
+      .user {
+	  display: block;
+	  font-size: 1.1em;
+	  margin-bottom: 5px;
+      }
+      
+      .user:not(:first-child) {
+	  margin-top: 20px;
+      }
+
+      .user-company {
+	  font-size: 0.9em;
+	  font-weight: bold;
+      }
+
+      .user-email {
+	  color: #444;
+	  font-size: 0.9em;
+      }
+
+      .users {
+	  font-family: sans-serif;
       }
       
     </style>
@@ -45,13 +80,13 @@
 
     <div class="users-block">
       <h1>Users</h1>
-      <input id="addItem" placeholder="Add item...">
-      <div id="users"> </div> 
+      <input id="addItem" placeholder="Add User...">
+      <div id="users" class="users"> </div> 
     </div>
     
     <div class="todos-block">
-      <h1>Todos <span id="todosCount"></span></h1>
-      <div id="todos"> </div> 
+      <h1 class="todos-title">Todos <span id="todosCount"></span></h1>
+      <ol id="todos"> </ol> 
     </div>
 
     <script>
@@ -70,28 +105,33 @@
 	      const users = document.querySelector("#users");
 	      users.innerHTML = model.items.map(item => {
 			  return `
-<a href="#"><div id="${item.id}" onclick="view.showTodos(${item.id})">${item.text}</div></a>
+<a href="#" class="user"><div id="${item.id}" onclick="view.showTodos(${item.id})">${item.name}</div></a>
+<div class="user-email">Email: ${item.email}</div>
+<div class="user-company">Company: ${item.company}</div>
 `;
 	      }).join("");
 	  },
 
 	  showTodos(userId) {
 	      const todosCount = document.querySelector("#todosCount");
+	      const todosTitle = document.querySelector(".todos-title");
+	      todosTitle.style.color = "black";
+	      
 	      const itemCount = model.todos.filter(el => el.userId === userId).length;
 	      const completedItemCount = model.todos.filter(el => el.userId === userId).filter(el => el.completed).length;
 	      todosCount.textContent = `${completedItemCount} / ${itemCount}`;
-
+	      
 	      const todos = document.querySelector("#todos");
 	      todos.innerHTML = model.todos
 		  .filter(el => el.userId === userId)
 		  .map((item, index) => {
 		      if (!item.completed) {
 			  return `
-<div style="color: green;" onclick="controller.completeItem(${index})">${item.text}</div>
+<li style="color: crimson;" onclick="controller.completeItem(${index})">${item.text}</li>
 `;
 		      } else {
 			  return `
-<div style="text-decoration: line-through; color: red;" onclick="controller.completeItem(${index})">${item.text}</div>
+<li style="text-decoration: line-through; color: green;" onclick="controller.completeItem(${index})">${item.text}</li>
 `;
 		      }
 		  }).join("");
@@ -114,11 +154,11 @@
 	      view.render();
 	      this.getUsers();
 	      this.getTodos();
-	      console.log(model.todos)
+	      console.log(model.items)
 	  },
 
-	  addUser(item, id) {
-	      const listItem = {text: item, id: id};
+	  addUser(name, id = Date.now(), email = `${name}@${name.split("").reverse().join("")}.com`, company = `${name} company`) {
+	      const listItem = {name, id, email, company};
 	      model.items.unshift(listItem);
 	      document.querySelector("#addItem").value = "";
 	      view.render();
@@ -141,7 +181,7 @@
 
 	  async getUsers() {
 	      const data = await (await fetch(urlUsers)).json();
-	      data.forEach(el => this.addUser(el.name, el.id));
+	      data.forEach(el => this.addUser(el.name, el.id, el.email.toLowerCase(), el.company.name));
 	  },
 	  
 	  async getTodos() {
