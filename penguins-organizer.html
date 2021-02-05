@@ -38,14 +38,14 @@
 	      if (model.items.length !== 0) {
 		  const users = document.querySelector("#users");
 
-		  users.innerHTML = model.items.map((item, index) => {
+		  users.innerHTML = model.items.map(item => {
 		      if (item.completed) {
 			  return `
-<div id="${index}" style="text-decoration: line-through; font-size: 0.7em; color: green" onclick="controller.completeItem(${index})">${item.text}</div>
+<div id="${item.id}" style="text-decoration: line-through; font-size: 0.7em; color: green" onclick="controller.completeItem(${item.id})">${item.text}</div>
 `
 		      } else {
 			  return `
-<div id="${index}" style="font-size: 0.7em; color: black" onclick="controller.completeItem(${index})">${item.text}</div>
+<div id="${item.id}" style="font-size: 0.7em; color: black" onclick="controller.completeItem(${item.id})">${item.text}</div>
 `
 
 		      }
@@ -76,15 +76,15 @@
 	      view.render();
 	  },
 
-	  addItem(item, completed = false) {
-	      const listItem = {text: item, completed: completed};
+	  addItem(item, id) {
+	      const listItem = {text: item, completed: false, id: id};
 	      model.items.unshift(listItem);
 	      document.querySelector("#addItem").value = "";
 	      view.render();
 	  },
 
 	  completeItem(itemIndex) {
-	      model.items[itemIndex].completed = !model.items[itemIndex].completed;
+	      model.items[itemIndex-1].completed = !model.items[itemIndex-1].completed;
 	      view.render();
 	  },
 
@@ -93,11 +93,15 @@
 	      view.render();
 	  },
 
-	  async getItem() {
+	  async getUsers() {
+	      const data = await (await fetch(urlUsers)).json();
+	      data.forEach(el => this.addItem(el.name, el.id));
+	  },
+	  
+	  async getTodos() {
 	      const data = await (await fetch(urlTodos)).json();
-	      console.log(data)
-	      data.forEach(el => this.addItem(el.title, el.completed));
-	      
+	      console.log("todos:", data)
+
 	  }
       }
 
@@ -106,7 +110,9 @@
       // Event Display 
       addEventListener('DOMContentLoaded', () => {
 	  controller.init();
-	  controller.getItem();
+	  controller.getUsers();
+	  controller.getTodos();
+	  console.log(model.items)
       })
 
       document.querySelector("#addItem").addEventListener("keypress", (e) => {
