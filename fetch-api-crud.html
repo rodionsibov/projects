@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <title>Fetch API</title>
+
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="row mt-3">
+	<div class="col-md-6">
+	  <h3>Add New Post</h3>
+	  <form class="add-post-form">
+	    <div class="form-group">
+	      <label for="titleValue">Title</label>
+	      <input type="text" class="form-control" id="titleValue">
+	    </div>
+	    <div class="form-group">
+	      <label for="bodyValue">Content</label>
+	      <textarea class="form-control" id="bodyValue"></textarea>
+	    </div>
+	    <button type="submit" class="btn btn-primary">Add Post</button>
+	  </form>
+	</div> 
+      </div>
+
+      <div class="posts-list row">
+      </div>
+      
+    </div>
+
+    <script>
+
+      const postsList = document.querySelector(".posts-list");
+      const addPostForm = document.querySelector(".add-post-form");
+      const titleValue = document.querySelector("#titleValue");
+      const bodyValue = document.querySelector("#bodyValue");
+
+      let output = "";
+
+      const renderPosts = (posts) => {
+	  posts.forEach(post => {
+	      output += `
+	      <div class="card mt-4 col-md-6 bg-light">
+		<div class="card-body">
+		  <h5 class="card-title">${post.name}</h5>
+		  <h6 class="card-subtitle mb-2 text-muted">${post.email}</h6>
+		  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		  <a href="#" class="card-link">Edit</a>
+		  <a href="#" class="card-link">Delete</a>
+		</div>
+	      </div>
+`;
+	  });
+	  postsList.innerHTML = output;
+	  
+      }
+
+
+      const url = "./api/users.json";
+
+      // Get - Read the posts
+      // Method: GET
+      fetch(url)
+    .then(res => res.json())
+    .then(data => renderPosts(data))
+
+      // Create - Insert new post
+      // Method: POST
+
+      addPostForm.addEventListener("submit", (e) => {
+	  e.preventDefault();
+
+	  fetch(url, {
+	      method: "POST",
+	      headers: {
+		  "Content-type": "application/json"
+	      },
+	      body: JSON.stringify({
+		  title: titleValue.value,
+		  body: bodyValue.value
+	      })
+	  })
+	      .then(res => res.json())
+	      .then(data => {
+		  console.log(data)
+		  // const dataArr = [];
+		  // dataArr.push(data);
+		  // renderPosts(dataArr);
+	      })
+	      .catch(err => console.log(err))
+
+      })
+      
+    </script>
+    
+  </body>
+</html>
