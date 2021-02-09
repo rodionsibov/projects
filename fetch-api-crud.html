@@ -41,19 +41,19 @@
       const addPostForm = document.querySelector(".add-post-form");
       const titleValue = document.querySelector("#titleValue");
       const bodyValue = document.querySelector("#bodyValue");
-
+      const btnSubmit = document.querySelector(".btn");
       let output = "";
 
       const renderPosts = (posts) => {
 	  posts.forEach(post => {
 	      output += `
 	      <div class="card mt-4 col-md-6 bg-light">
-		<div class="card-body">
+		<div class="card-body" data-id=${post.id}>
 		  <h5 class="card-title">${post.name}</h5>
 		  <h6 class="card-subtitle mb-2 text-muted">${post.email}</h6>
 		  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-		  <a href="#" class="card-link">Edit</a>
-		  <a href="#" class="card-link">Delete</a>
+		  <a href="#" class="card-link" id="editPost">Edit</a>
+		  <a href="#" class="card-link" id="deletePost">Delete</a>
 		</div>
 	      </div>
 `;
@@ -71,9 +71,59 @@
     .then(res => res.json())
     .then(data => renderPosts(data))
 
+      
+      postsList.addEventListener("click", (e) => {
+	  e.preventDefault();
+	  let delButtonIsPressed = e.target.id === "deletePost";
+	  let editButtonIsPressed = e.target.id === "editPost";
+	  let id = e.target.parentElement.dataset.id;
+
+	  // Delete - remove the existing post
+	  // Method: DELETE
+
+	  if (delButtonIsPressed) {
+	      fetch(`${url}/${id}`, {
+		  method: "DELETE"
+	      })
+		  .then(res => res.json())
+		  .then(() => location.reload())
+	  }
+	  
+	  if (editButtonIsPressed) {
+	      const parent = e.target.parentElement;
+	      let titleContent = parent.querySelector(".card-title").textContent;
+	      let bodyContent = parent.querySelector(".card-subtitle").textContent;
+
+	      titleValue.value = titleContent;
+	      bodyValue.value = bodyContent;
+	      
+	  }
+
+	  // Update - update the existing post
+	  // Method: PATCH
+
+	  btnSubmit.addEventListener("click", (e) => {
+	      e.preventDefault();
+	      
+	      fetch(`${url}/${id}`, {
+		  method: "PATCH",
+		  headers: {
+		      "Content-type": "application/json"
+		  },
+		  body: JSON.stringify({
+		      title: titleValue.value,
+		      body: bodyValue.value
+		  })
+	      })
+		  .then(res => res.json())
+		  .then(() => location.reload())
+	  })
+	  
+      })
+      
       // Create - Insert new post
       // Method: POST
-
+      
       addPostForm.addEventListener("submit", (e) => {
 	  e.preventDefault();
 
@@ -90,12 +140,17 @@
 	      .then(res => res.json())
 	      .then(data => {
 		  console.log(data)
-		  // const dataArr = [];
-		  // dataArr.push(data);
-		  // renderPosts(dataArr);
+		   const dataArr = [];
+		   dataArr.push(data);
+		   renderPosts(dataArr);
 	      })
 	      .catch(err => console.log(err))
+	  
+	  // reset input field to empty
 
+	  titleValue.value = "";
+	  bodyValue.value = "";
+	  
       })
       
     </script>
