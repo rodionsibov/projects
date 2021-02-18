@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap" rel="stylesheet">
+        <title>TypeWriter</title>
+        <style>
+         body {
+             font-family: 'Muli', sans-serif;
+             padding: 0;
+             margin: 0;
+             box-sizing: border-box;
+             background-color: darkslategray;
+             color: white;
+             text-align: center;
+         }
+         #text {
+	     margin-top: 100px;
+	     font-size: 3em;
+         }
+        </style>
+    </head>
+    <body>
+        <h1 id="text"></h1>
+        <script>
+         const textDisplay = document.querySelector("#text")
+         const phrases = ["Hello, my name is Ros.", "I love to code."]
+	 let i = 0;
+	 let j = 0;
+	 let currentPhrase = []
+	 let isDeleting = false
+	 let isEnd = false
+
+         function loop() {
+	     isEnd = false
+	     textDisplay.innerHTML = currentPhrase.join("")
+	     
+	     if (i < phrases.length) {
+		 
+		 if (!isDeleting && j <= phrases[i].length) {
+		     currentPhrase.push(phrases[i][j])
+		     j++
+		 }
+		 
+		 if (isDeleting && j <= phrases[i].length) {
+		     currentPhrase.pop(phrases[i][j])
+		     j--
+		 }
+
+		 if (j == phrases[i].length) {
+		     isEnd = true
+		     isDeleting = true
+		 }
+
+		 if (isDeleting && j === 0) {
+		     currentPhrase = []
+		     isDeleting = false
+		     i++;
+		     if (i == phrases.length) {
+			 i = 0
+		     }
+		 }
+
+	     }
+
+	     const spedUp = Math.random() * (80 - 50) + 50
+	     const normalSpeed = Math.random() * (300 - 200) + 200
+	     const time = isEnd ? 2000 : isDeleting ? spedUp : normalSpeed
+	     setTimeout(loop, time)
+	 }
+	 
+	 loop()
+
+        </script>
+    </body>
+</html>
