@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limit Input Characters</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(to top, cyan 0%, magenta 100%);
+        }
+
+        .wrapper {
+            background-color: #fff;
+            padding: 20px;
+            width: 450px;
+            border-radius: 5px;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+        }
+
+        .wrapper form {
+            position: relative;
+            height: 55px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        form i {
+            position: absolute;
+            width: 55px;
+            text-align: center;
+            font-size: 23px;
+            color: #c4c4c4;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        form input:valid~i {
+            color: magenta;
+        }
+
+        form input {
+            height: 100%;
+            width: 100%;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            padding: 0 50px 0 45px;
+            font-size: 20px;
+            outline: none;
+            transition: all 0.1s ease;
+        }
+
+        form input:focus {
+            border-color: magenta;
+        }
+
+        form input::placeholder {
+            color: #c4c4c4;
+        }
+
+        form .counter {
+            position: absolute;
+            right: 3px;
+            width: 55px;
+            text-align: center;
+            color: #c4c4c4;
+            pointer-events: none;
+            border-left: 1px solid #d8d8d8;
+            font-size: 20px;
+        }
+
+        form input:valid~.counter {
+            color: magenta;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form action="">
+            <input type="text" placeholder="username" required maxlength="16">
+            <i class="fas fa-at"></i>
+            <span class="counter"></span>
+        </form>
+    </div>
+    <script>
+        const input = document.querySelector('form input')
+        const counter = document.querySelector('form .counter')
+        const maxLength = input.getAttribute('maxlength')
+        counter.textContent = maxLength
+
+        input.addEventListener('keyup', () => {
+            counter.textContent = maxLength - input.value.length
+        })
+    </script>
+</body>
+
+</html>
