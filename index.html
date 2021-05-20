@@ -1,230 +1,229 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta name="description" content="Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.">
+    <meta name="description"
+        content="Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.">
 
-    <link type="image/svg+xml" rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2280%22>🧔</text></svg>">
-    
+    <link type="image/svg+xml" rel="shortcut icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2280%22>🧔</text></svg>">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	  rel="stylesheet">
-    
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!-- <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css"> -->
-    
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Rodion - My Personal Projects</title>
 
     <style>
-      
-      .scrolled-indicator {
-	  position: fixed;
-	  top: 0;
-	  left: 0;
-	  height: 3px;
-	  width: 100%;
-	  z-index: 100;
-	  background: #eee;
-      }
+        .scrolled-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            z-index: 100;
+            background: #eee;
+        }
 
-      .scrolled-indicator-fill {
-	  height: 100%;
-	  background: dodgerblue;
-	  transition: width 0.2s linear;
-	  width: 0%;
-	  border-radius: 10px;
-      }
+        .scrolled-indicator-fill {
+            height: 100%;
+            background: dodgerblue;
+            transition: width 0.2s linear;
+            width: 0%;
+            border-radius: 10px;
+        }
 
-      #btnScrollToTop {
-	  position: fixed;
-	  right: 10px;
-	  bottom: 10px;
-	  width: 50px;
-	  height: 50px;
-	  border-radius: 50%;
-	  background: #e62739;
-	  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-	  color: white;
-	  outline: none;
-	  cursor: pointer;
-	  border: none;
-	  z-index: 100;
-      }
+        #btnScrollToTop {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #e62739;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            color: white;
+            outline: none;
+            cursor: pointer;
+            border: none;
+            z-index: 100;
+        }
 
-      #btnScrollToTop:active {
-	  background: #cc2333;
-      }
-      
+        #btnScrollToTop:active {
+            background: #cc2333;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
 
     <button id="btnScrollToTop"><span class="material-icons">arrow_upward</span></button>
-    
+
     <div class="scrolled-indicator">
-      <div class="scrolled-indicator-fill"></div>
+        <div class="scrolled-indicator-fill"></div>
     </div>
 
-      <!-- Header -->
-      <div class="container my-4">
-	    <a class="navbar-brand" href="https://rodionsibov.github.io/projects/">
-	      <span class="badge badge-primary">{RS}</span>
-	    </a>
-	    <small class="date text-muted"></small>
+    <!-- Header -->
+    <div class="container my-4">
+        <a class="navbar-brand" href="https://rodionsibov.github.io/projects/">
+            <span class="badge badge-primary">{RS}</span>
+        </a>
+        <small class="date text-muted"></small>
 
-	  <h1 class="display-4 typewriter">Mini web projects using HTML, CSS & JS</h1>
-	  <p class="lead">Hello, I am Rodion. I have a life interest for all things web and developing code. </p>
-	  <p>The more you practice, the better your skills will become! You are free to modify, save, share, use or do whatever you want with them. Experiment and have fun! 😉</p>
-	    <form class="form-inline my-2 my-lg-0">
-	      <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search">
-	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-	      <small class="form-text how-many-projects text-muted ml-3"></small>
-	    </form>
+        <h1 class="display-4 typewriter">Mini web projects using HTML, CSS & JS</h1>
+        <p class="lead">Hello, I am Rodion. I have a life interest for all things web and developing code. </p>
+        <p>The more you practice, the better your skills will become! You are free to modify, save, share, use or do
+            whatever you want with them. Experiment and have fun! 😉</p>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <small class="form-text how-many-projects text-muted ml-3"></small>
+        </form>
 
-      </div>
+    </div>
 
-      <!-- Projects -->
-      <div  class="container">
-	<div id="projects" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
-	  <!-- comes from object -->
-	</div>
-      </div> 
+    <!-- Projects -->
+    <div class="container">
+        <div id="projects" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+            <!-- comes from object -->
+        </div>
+    </div>
 
-      <div class="container text-center mb-4 mt-4">
-	<button id="loadMore" type="button" class="btn btn-primary">Load More</button>
-      </div>
-      
-      
+    <div class="container text-center mb-4 mt-4">
+        <button id="loadMore" type="button" class="btn btn-primary">Load More</button>
+    </div>
+
+
     <footer style="text-align: center; padding: 10px;">
-      <small>Made with ❤ by <a style="color: #222; text-decoration: none;" href="https://github.com/rodionsibov" target="_blank">Rodion Sibov</a> | <span class="year"></span></small>
+        <small>Made with ❤ by <a style="color: #222; text-decoration: none;" href="https://github.com/rodionsibov"
+                target="_blank">Rodion Sibov</a> | <span class="year"></span></small>
     </footer>
 
 
 
-    
-    <script>
-      const scrolledIndicatorFill = document.querySelector(".scrolled-indicator-fill");
-      window.addEventListener("scroll", () => {
-	  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-	  const scrolled = window.scrollY;
-	  let percentageScrolled = 100;
-	  if (scrollable > 0) {
-	      percentageScrolled = Math.ceil(scrolled / scrollable * 100);
-	  }
-	  scrolledIndicatorFill.style.width = `${percentageScrolled}%`; 
-      });
-    </script>
-    
 
     <script>
-      function w(d,e,c) {
-	  b = d.slice(0, c),
-	  b == d ? e.innerHTML = b : (e.innerHTML = b + "|",
-				      setTimeout(w, 100, d, e, c + 1))
-      }
-
-      window.addEventListener("DOMContentLoaded", function() {
-	  for (i of document.getElementsByClassName("typewriter"))
-	      w(i.innerHTML, i, 0)
-      }, false)
-
+        const scrolledIndicatorFill = document.querySelector(".scrolled-indicator-fill");
+        window.addEventListener("scroll", () => {
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = window.scrollY;
+            let percentageScrolled = 100;
+            if (scrollable > 0) {
+                percentageScrolled = Math.ceil(scrolled / scrollable * 100);
+            }
+            scrolledIndicatorFill.style.width = `${percentageScrolled}%`;
+        });
     </script>
 
     <script>
+        function w(d, e, c) {
+            b = d.slice(0, c),
+                b == d ? e.innerHTML = b : (e.innerHTML = b + "|",
+                    setTimeout(w, 100, d, e, c + 1))
+        }
+
+        window.addEventListener("DOMContentLoaded", function () {
+            for (i of document.getElementsByClassName("typewriter"))
+                w(i.innerHTML, i, 0)
+        }, false)
+    </script>
+
+    <script>
+        const app = async () => {
+            document.querySelector('.date').textContent = new Date()
+                .toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+            document.querySelector('.year').textContent = new Date().getFullYear();
+
+            const badgeEl = document.querySelector(".badge");
+            setInterval(() => badgeEl.classList.toggle("badge-success"), 5000);
+
+            const state = {
+                projectsOnPage: 12,
+                projectsQuantity: null
+            }
+
+            const data = await (await fetch("./projects.json")).json();
+            state.projectsQuantity = data.length;
 
 
+            document.querySelector(".how-many-projects").innerHTML = `There are ${state.projectsQuantity} projects`;
+            render(data, state);
 
-      const app = async () => {
-	  document.querySelector('.date').textContent = new Date()
-	      .toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
-	  document.querySelector('.year').textContent = new Date().getFullYear();
-	  
-	  const badgeEl = document.querySelector(".badge");
-	  setInterval(() => badgeEl.classList.toggle("badge-success"), 5000);
+            document.querySelector("form").addEventListener("submit", (e) => {
+                e.preventDefault();
 
-	  const state = {
-	      projectsOnPage: 12,
-	      projectsQuantity: null
-	  }
-	  
-	  const data = await (await fetch("./projects.json")).json();
-	  state.projectsQuantity = data.length;
-	  
-
-	  document.querySelector(".how-many-projects").innerHTML = `There are ${state.projectsQuantity} projects`;
-	  render(data, state);
-
-	  document.querySelector("form").addEventListener("submit", (e) => {
-       	      e.preventDefault();
-	      
-	      const formData = new FormData(e.target);
-	      const value = formData.get('name');
+                const formData = new FormData(e.target);
+                const value = formData.get('name');
 
 
-	      const searchText = document.querySelector("form input").value
-	      if (!searchText) {
-		  return;
-	      }
+                const searchText = document.querySelector("form input").value
+                if (!searchText) {
+                    return;
+                }
 
-	      const filteredProjects = data.filter(project => {
-		  const regex = new RegExp(`${searchText}`, "gi");
-		  return project.title.match(regex);
-	      });
-	      render(filteredProjects, filteredProjects.length);
-	      document.querySelector(".how-many-projects").innerHTML = `There are ${filteredProjects.length} projects`;
-	      document.querySelector("#loadMore").style.display = "none";
-	  })
+                const filteredProjects = data.filter(project => {
+                    const regex = new RegExp(`${searchText}`, "gi");
+                    return project.title.match(regex);
+                });
+                render(filteredProjects, filteredProjects.length);
+                document.querySelector(".how-many-projects").innerHTML = `There are ${filteredProjects.length} projects`;
+                document.querySelector("#loadMore").style.display = "none";
+            })
 
-	  document.querySelector("#loadMore").addEventListener("click", () => {
-	      state.projectsOnPage > state.projectsQuantity
-	      	  ? document.querySelector("#loadMore").disabled = true
-	      	  : state.projectsOnPage += 6;
-	      render(data, state);
-	  })
+            document.querySelector("#loadMore").addEventListener("click", () => {
+                state.projectsOnPage > state.projectsQuantity
+                    ? document.querySelector("#loadMore").disabled = true
+                    : state.projectsOnPage += 6;
+                render(data, state);
+            })
 
-      }
-      app();
+        }
+        app();
 
-      const render = (data, state) => {
-	  const projects = data.slice(0, state.projectsOnPage);
-	  document.querySelector("#projects").innerHTML = projects.map(project => {
-	      return `
-	<div class="col mb-4">
-	  <div class="card">
-	    <div class="card-img-top embed-responsive embed-responsive-1by1">
-	      <iframe class="embed-responsive-item" src="${project.url}"></iframe>
-	    </div>
-	    <div class="card-body">
-	      <h5 class="card-title"><a href="${project.url}" target="_blank">${project.title}</a></h5>
-	      <p class="card-text">${project.text}</p>
-	    </div>
-	    <div class="card-footer bg-transparent">
-	      <small class="text-muted">Last updated ${new Date(project.date).toDateString()}</small>
-	    </div>
-	  </div>
-	</div>
+        const render = (data, state) => {
+            const projects = data.slice(0, state.projectsOnPage);
+            document.querySelector("#projects").innerHTML = projects.map(project => {
+                return `
+    <div class="col mb-4">
+      <div class="card">
+        <div class="card-img-top embed-responsive embed-responsive-1by1">
+          <iframe class="embed-responsive-item" src="${project.url}"></iframe>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><a href="${project.url}" target="_blank">${project.title}</a></h5>
+          <p class="card-text">${project.text}</p>
+        </div>
+        <div class="card-footer bg-transparent">
+          <small class="text-muted">Last updated ${new Date(project.date).toDateString()}</small>
+        </div>
+      </div>
+    </div>
 
 `;
-	  }).join("");
-      }
-
-      </script>
-    
-    <script>
-      const btnScrollToTop = document.querySelector("#btnScrollToTop");
-      btnScrollToTop.addEventListener("click", () => {
-	  window.scrollTo({
-	      top: 0,
-	      left: 0,
-	      behavior: "smooth"
-	  })
-      })
+            }).join("");
+        }
     </script>
-    
-  </body>
+
+    <script>
+        const btnScrollToTop = document.querySelector("#btnScrollToTop");
+        btnScrollToTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            })
+        })
+    </script>
+
+</body>
+
 </html>
