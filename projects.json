@@ -1,5 +1,17 @@
 [
     {
+        "title": "Sticky Headers",
+        "text": "",
+        "url": "sticky-headers.html",
+        "date": "May 25 2021 17:28"
+    },
+    {
+        "title": "Tailwind Navbar",
+        "text": "",
+        "url": "tailwind-navbar.html",
+        "date": "May 25 2021 17:32"
+    },
+    {
         "title": "Stripe Homepage with Tailwind CSS",
         "text": "",
         "url": "stripe-homepage-tailwind.html",
