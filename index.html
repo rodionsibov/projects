@@ -83,6 +83,7 @@
         <p class="lead">Hello, I am Rodion. I have a life interest for all things web and developing code. </p>
         <p>The more you practice, the better your skills will become! You are free to modify, save, share, use or do
             whatever you want with them. Experiment and have fun! 😉</p>
+
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -94,7 +95,7 @@
     <!-- Projects -->
     <div class="container">
         <div id="projects" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
-            <!-- comes from object -->
+            <!-- projects goes here -->
         </div>
     </div>
 
@@ -112,6 +113,7 @@
 
 
     <script>
+        // scrolled indicator
         const scrolledIndicatorFill = document.querySelector(".scrolled-indicator-fill");
         window.addEventListener("scroll", () => {
             const scrollable = document.documentElement.scrollHeight - window.innerHeight;
@@ -125,6 +127,7 @@
     </script>
 
     <script>
+        // typewriter
         function w(d, e, c) {
             b = d.slice(0, c),
                 b == d ? e.innerHTML = b : (e.innerHTML = b + "|",
@@ -158,12 +161,12 @@
             document.querySelector(".how-many-projects").innerHTML = `There are ${state.projectsQuantity} projects`;
             render(data, state);
 
+            // search
             document.querySelector("form").addEventListener("submit", (e) => {
                 e.preventDefault();
 
                 const formData = new FormData(e.target);
                 const value = formData.get('name');
-
 
                 const searchText = document.querySelector("form input").value
                 if (!searchText) {
@@ -196,7 +199,7 @@
     <div class="col mb-4">
       <div class="card">
         <div class="card-img-top embed-responsive embed-responsive-1by1">
-          <iframe class="embed-responsive-item" src="${project.url}"></iframe>
+          <iframe class="embed-responsive-item" src="${project.url}" loading="lazy"></iframe>
         </div>
         <div class="card-body">
           <h5 class="card-title"><a href="${project.url}" target="_blank">${project.title}</a></h5>
@@ -208,12 +211,13 @@
       </div>
     </div>
 
-`;
+`
             }).join("");
         }
     </script>
 
     <script>
+        // button scroll to top
         const btnScrollToTop = document.querySelector("#btnScrollToTop");
         btnScrollToTop.addEventListener("click", () => {
             window.scrollTo({
