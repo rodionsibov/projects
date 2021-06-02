@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snap to Scroll</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+        }
+
+        body .container {
+            width: 100%;
+            height: 100%;
+            scroll-snap-type: both mandatory;
+            overflow: scroll;
+            display: flex;
+        }
+
+        body .container section {
+            flex: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            scroll-snap-align: start;
+            scroll-margin-left: 100px;
+        }
+
+        body .container section:nth-of-type(1) {
+            background-color: #1c1c1c;
+            color: green;
+        }
+
+        body .container section:nth-of-type(2) {
+            background-color: #262626;
+            color: blue;
+        }
+
+        body .container section:nth-of-type(3) {
+            background-color: #303030;
+            color: yellow;
+        }
+
+        body .container section h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 8em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section>
+            <h1>Page One</h1>
+        </section>
+        <section>
+            <h1>Page Two</h1>
+        </section>
+        <section>
+            <h1>Page Three</h1>
+        </section>
+    </div>
+</body>
+
+</html>
