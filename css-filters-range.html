@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>CSS Filters</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        footer {
+            padding: 10px;
+            color: #888;
+            text-align: center;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        input[type="range"] {
+            width: inherit;
+        }
+
+        .container img {
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+        }
+
+        .blur {
+            filter: blur(1px);
+        }
+
+        .brightness {
+            filter: brightness(0.30);
+        }
+
+        .contrast {
+            filter: contrast(180%);
+        }
+
+        .grayscale {
+            filter: grayscale(100%);
+        }
+
+        .huerotate {
+            filter: hue-rotate(180deg);
+        }
+
+        .invert {
+            filter: invert(100%);
+        }
+
+        .opacity {
+            filter: opacity(70%);
+        }
+
+        .saturate {
+            filter: saturate(3);
+        }
+
+        .sepia {
+            filter: sepia(100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CSS filters</h1>
+        <img class="img" src="" alt="">
+        <input type="range">
+        <p class="filter"></p>
+    </div>
+    <footer>
+        <small>
+            Developed by <a href="https://github.com/rodionsibov">Rodion Sibov </a> &bull; <span class="date"></span>
+        </small>
+    </footer>
+    <script>
+        document.querySelector('.date').textContent = new Date().getFullYear()
+
+        const filters = [
+            "brightness",
+            "contrast",
+            "grayscale",
+            "huerotate",
+            "invert",
+            "opacity",
+            "saturate",
+            "sepia"
+        ]
+
+        const imgFiles = [
+            "./img/00.jpg",
+            "./img/01.jpg",
+            "./img/02.jpg",
+            "./img/03.jpg",
+            "./img/04.jpg",
+            "./img/05.jpg",
+            "./img/06.jpg",
+            "./img/07.jpg",
+            "./img/08.jpg",
+            "./img/09.jpg",
+            "./img/10.jpg",
+            "./img/11.jpg",
+            "./img/12.jpg",
+            "./img/13.jpg",
+            "./img/14.jpg",
+            "./img/15.jpg"
+        ]
+        const imgEl = document.querySelector('.img')
+        const rangeEl = document.querySelector('input[type="range"]')
+        const filterEl = document.querySelector('.filter')
+        rangeEl.value = 0
+        rangeEl.max = imgFiles.length - 1
+        imgEl.src = imgFiles[0]
+        rangeEl.addEventListener('change', () => {
+            const filterRandom = filters[Math.floor(Math.random() * filters.length)]
+            imgEl.className = filterRandom
+            imgEl.src = imgFiles[rangeEl.value]
+            filterEl.textContent = filterRandom[0].toUpperCase() + filterRandom.slice(1)
+        })
+
+
+    </script>
+</body>
+
+</html>
