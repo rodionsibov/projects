@@ -1,365 +1,351 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	  rel="stylesheet">    
-
-    
+    <meta name="description"
+        content="Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Rodion - My Personal Projects | Image Gallery</title>
-
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
 
-      @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+        * {
+            margin: 0;
+        }
 
-      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+        body {
+            background: whitesmoke;
+            color: lightslategray;
+            font-family: 'Roboto', sans-serif;
+        }
 
-      * {
-	  margin: 0;
-      }
-      
-      body {
-	  
-	  background: whitesmoke;
-	  color: lightslategray;
-	  font-family: 'Roboto', sans-serif;
+        h1 {
+            font-weight: normal;
+            font-size: 4em;
+            font-family: 'EB Garamond', serif;
+            line-height: 55px;
+            margin: 40px;
+        }
 
-      }
-      
-      h1 {
-	  font-weight: normal;
-	  font-size: 4em;
-	  font-family: 'EB Garamond', serif;
-	  line-height: 55px;
-	  margin: 40px;
-      }
+        @media screen and (max-width: 360px) {}
 
-      @media screen and (max-width: 360px) {
-      }
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 90%;
+            margin: auto;
+        }
 
-      .header {
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: lightslategray;
+        }
 
-	  display: flex;
-	  flex-direction: column;
-	  align-items: center;
-	  text-align: center;
-	  width: 90%;
-	  margin: auto;
-      }
+        a {
+            color: lightslategray;
+        }
 
-      .footer {
-	  text-align: center;
-	  padding: 30px;
-	  color: lightslategray;
-      }
+        .progress {
+            height: 2px;
+            width: 102%;
+            position: fixed;
+            top: 0;
+            z-index: 200;
+            left: -1%;
+            overflow: hidden;
+        }
 
-      a {
-	  color: lightslategray;
-      }
+        .progress__highlight {
+            transition: width 0.15s linear;
+            background: cornflowerblue;
+            height: 100%;
+            width: 0%;
+        }
 
-      .progress {
-	  height: 2px;
-	  width: 102%;
-	  position: fixed;
-	  top: 0;
-	  z-index: 200;
-	  left: -1%;
-	  overflow: hidden;
-      }
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            width: 90%;
+            margin: 10px auto 0;
+            flex-wrap: wrap;
+        }
 
-      .progress__highlight {
-	  transition: width 0.15s linear;
-	  background: cornflowerblue;
-	  height: 100%;
-	  width: 0%;
-      }
+        .images {
+            background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black),
+                linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            position: relative;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            overflow: hidden;
+            animation: blink 2s;
+        }
 
-      
-      ::selection {
-	  background: green;
-	  color: gold;
+        /* filters */
+        .blur {
+            filter: blur(0);
+        }
 
-      }
+        .blur:hover {
+            filter: blur(1px);
+        }
 
-      .image-gallery {
+        .brightness {
+            filter: brightness(1);
+        }
 
-	  
-	  display: flex;
-	  justify-content: center;
-	  width: 90%;
-	  margin: 10px auto 0;
-	  flex-wrap: wrap;
-      }
-      
-      .images {
-	  background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black),
-			    linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
-	  background-size: 60px 60px;
-	  background-position: 0 0, 30px 30px;
+        .brightness:hover {
+            filter: brightness(0.30);
+        }
 
-	  position: relative;
-	  width: 300px;
-	  height: 300px;
+        .contrast {
+            filter: contrast(1);
+        }
 
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  margin: 10px;
-	  overflow: hidden;
-      	  animation: blink 2s;
-      }
+        .contrast:hover {
+            filter: contrast(180%);
+        }
 
-      /* filters */
-      
-      .blur {filter: blur(0);}
-      .blur:hover {filter: blur(1px);}
-      .brightness {filter: brightness(1);}
-      .brightness:hover {filter: brightness(0.30);}
-      .contrast {filter: contrast(1);}
-      .contrast:hover {filter: contrast(180%);}
-      .grayscale {filter: grayscale(0);}
-      .grayscale:hover {filter: grayscale(100%);}
-      .huerotate {filter: hue-rotate(0deg);}
-      .huerotate:hover {filter: hue-rotate(180deg);}
-      .invert {filter: invert(0);}
-      .invert:hover {filter: invert(100%);}
-      .opacity {filter: opacity(1);}
-      .opacity:hover {filter: opacity(70%);}
-      .saturate {filter: saturate(1);}
-      .saturate:hover {filter: saturate(3);}
-      .sepia {filter: sepia(0);}
-      .sepia:hover {filter: sepia(100%);}
-      
+        .grayscale {
+            filter: grayscale(0);
+        }
 
+        .grayscale:hover {
+            filter: grayscale(100%);
+        }
 
-      .images img {
-	  transition: all 0.3s ease;
-	  z-index: 100;
-	  object-fit: cover;
-	  height: 100%;
-	  width: 100%;
-      }
+        .huerotate {
+            filter: hue-rotate(0deg);
+        }
 
-      .images img:hover {
- 	  cursor: crosshair;
-	  transform: scale(1.1) rotate(-3deg);
+        .huerotate:hover {
+            filter: hue-rotate(180deg);
+        }
 
+        .invert {
+            filter: invert(0);
+        }
 
-      }
+        .invert:hover {
+            filter: invert(100%);
+        }
 
-      .images::after {
-	  content: "Image size 300x300 px";
-	  position: absolute;
-	  font-size: 12px;
-	  color: white;
-	  background: gray;
-	  padding: 5px;
-	  font-family: sans;
-      }
+        .opacity {
+            filter: opacity(1);
+        }
 
-      .vibe {
-	  
-	  letter-spacing: 10px;
-	  text-transform: uppercase;
-	  margin: 20px;
-      	  animation: blink 2s;
-	  padding-bottom: 10px; 
-	  border-bottom: 1px solid #eee;
-      }
-      
-      button {
-	  vertical-align: 10%;
-	  font-family: inherit;
-	  border-radius: 5px;
-	  margin: 5px;
-	  background: transparent;
-	  letter-spacing: 1px;
-	  text-transform: uppercase;
-	  cursor: pointer;
-	  padding: 20px;
-	  border: none;
-	  transition: all 0.1s;
-	  font-size: 0.7em;
-	  font-weight: bold;
-      }
+        .opacity:hover {
+            filter: opacity(70%);
+        }
 
-      button:focus {
-	  outline: none;
-      }
+        .saturate {
+            filter: saturate(1);
+        }
 
-      @keyframes blink {
-	  from {
-	      opacity: 0;
-	  }
-	  to {
-	      opacity: 1;
-	  }
-      }
+        .saturate:hover {
+            filter: saturate(3);
+        }
 
-      sup {
-	  font-size: 0.3em;
-      }
-      
+        .sepia {
+            filter: sepia(0);
+        }
+
+        .sepia:hover {
+            filter: sepia(100%);
+        }
+
+        .images img {
+            transition: all 0.3s ease;
+            z-index: 100;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .images img:hover {
+            cursor: crosshair;
+            transform: scale(1.1) rotate(-3deg);
+        }
+
+        .images::after {
+            content: "Image size 300x300 px";
+            position: absolute;
+            font-size: 12px;
+            color: white;
+            background: gray;
+            padding: 5px;
+            font-family: sans;
+        }
+
+        .vibe {
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            margin: 20px;
+            animation: blink 2s;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        button {
+            vertical-align: 10%;
+            font-family: inherit;
+            border-radius: 5px;
+            margin: 5px;
+            background: transparent;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding: 20px;
+            border: none;
+            transition: all 0.1s;
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        @keyframes blink {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        sup {
+            font-size: 0.3em;
+        }
     </style>
-  </head>
-  <body>
+</head>
 
+<body>
     <div class="progress">
-      <div class="progress__highlight" id="js-highlight"></div>
+        <div class="progress__highlight" id="js-highlight"></div>
     </div>
-    
-    <div id="js-container"> 
-
-
-      <div class="header">
-	<div class="vibe"></div>
-	<h1>Image Gallery<sup> beta</sup></h1>
-	<div id="demo"></div>
-      </div>
-      
-      <div class="image-gallery">
-	
-
-      </div>
-      <!-- progress end -->
+    <div id="js-container">
+        <div class="header">
+            <div class="vibe"></div>
+            <h1>Image Gallery<sup> beta</sup></h1>
+            <div id="demo"></div>
+        </div>
+        <div class="image-gallery">
+        </div>
     </div>
-    
-
     <div class="footer">
-      <small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
+        <small>
+            Written, designed, and built by Rodion Sibov, a designer who you can find on
+            <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned
+            <a href="mailto:rodionsibov@gmail.com">Email.</a>
+        </small>
     </div>
-
     <script>
-      //filter effect on hover
+        const filters = [
+            "brightness",
+            "contrast",
+            "grayscale",
+            "huerotate",
+            "invert",
+            "opacity",
+            "saturate",
+            "sepia"
+        ]
 
-      const filters = [
-	  "brightness",
-	  "contrast",
-	  "grayscale",
-	  "huerotate",
-	  "invert",
-	  "opacity",
-	  "saturate",
-	  "sepia"
-      ]
+        const imgFile = [
+            "./img/00.jpg",
+            "./img/01.jpg",
+            "./img/02.jpg",
+            "./img/03.jpg",
+            "./img/04.jpg",
+            "./img/05.jpg",
+            "./img/06.jpg",
+            "./img/07.jpg",
+            "./img/08.jpg",
+            "./img/09.jpg",
+            "./img/10.jpg",
+            "./img/11.jpg",
+            "./img/12.jpg",
+            "./img/13.jpg",
+            "./img/14.jpg",
+            "./img/15.jpg"
+        ]
+        imgFile.sort((a, b) => Math.random() - 0.5)
+        const imgGalleryDiv = document.querySelector('.image-gallery')
 
-      const imgFile = [
-	  "./img/00.jpg",
-	  "./img/01.jpg",
-	  "./img/02.jpg",
-	  "./img/03.jpg",
-	  "./img/04.jpg",
-	  "./img/05.jpg",
-	  "./img/06.jpg",
-	  "./img/07.jpg",
-	  "./img/08.jpg",
-	  "./img/09.jpg",
-	  "./img/10.jpg",
-	  "./img/11.jpg",
-	  "./img/12.jpg",
-	  "./img/13.jpg",
-	  "./img/14.jpg",
-	  "./img/15.jpg"
-      ]
-
-      const imgGalleryDiv = document.querySelector('.image-gallery')
-
-      for (let i = 0; i < imgFile.length; i++){
-	  const newDiv = document.createElement('div')
-	  imgGalleryDiv.appendChild(newDiv)
-	  const att = document.createAttribute('class')
-	  att.value = "images"
-	  newDiv.setAttributeNode(att)
-	  
-      }
-      
-      const imgEl = document.querySelectorAll('.images')
-
-
-      for (let i = 0; i < imgEl.length; i++){
-	  const imgFileRandom = imgFile[Math.floor(Math.random() * imgFile.length)]
-	  const filterRandom = filters[Math.floor(Math.random() * filters.length)]
-
-	  imgEl[i].innerHTML = `<img title="${filterRandom.toUpperCase()}" class="${filterRandom}" src="${imgFileRandom}">`
-
-
-	  
-      }
-
-
-      </script>
-
-
-    <script>
-      //progress-bar
-      
-      const container = document.getElementById('js-container');
-      const highlight = document.getElementById('js-highlight');
-      var containerHeight;
-
-      window.onscroll = function() {
-
-	  containerHeight = container.offsetHeight - window.innerHeight;
-	  containerPos = container.getBoundingClientRect();
-	  diff = containerHeight + containerPos.top;
-	  progressPercentage =  diff / containerHeight * 100;
-	  cssWidth = Math.floor(100 - progressPercentage);
-	  
-	  highlight.style.width = cssWidth + "%"; 
-
-      };
+        for (let i = 0; i < imgFile.length; i++) {
+            const divEl = document.createElement('div')
+            const imgEl = document.createElement('img')
+            divEl.className = "images"
+            imgEl.src = imgFile[i]
+            const filterRandom = filters[Math.floor(Math.random() * filters.length)]
+            imgEl.title = filterRandom[0].toUpperCase() + filterRandom.slice(1)
+            imgEl.className = filterRandom
+            divEl.appendChild(imgEl)
+            imgGalleryDiv.appendChild(divEl)
+        }
 
     </script>
-    
     <script>
-      //vibes
-
-      const vibes = [
-	  "Never look back",
-	  "All we need is love",
-	  "Enjoy every moment",
-	  "Follow your heart",
-	  
-	  "Get everything in writing ",
-	  "Always keep the door open",
-	  "Information is power",
-	  "Always be positive",
-	  "Don’t be the decision maker",
-	  "Have alternatives",
-	  "Proclaim reasons for everything",
-	  "Be motivated by more than just money",
-	  "Understand what they value",
-	  "Be winnable"
-
-      ];
-
-      var vibe = vibes[Math.floor(Math.random() * Math.floor(vibes.length))];
-      document.querySelector(".vibe").append(vibe);
-
+        const container = document.getElementById('js-container');
+        const highlight = document.getElementById('js-highlight');
+        let containerHeight;
+        window.onscroll = function () {
+            containerHeight = container.offsetHeight - window.innerHeight;
+            containerPos = container.getBoundingClientRect();
+            diff = containerHeight + containerPos.top;
+            progressPercentage = diff / containerHeight * 100;
+            cssWidth = Math.floor(100 - progressPercentage);
+            highlight.style.width = cssWidth + "%";
+        };
     </script>
-
     <script>
-      //type effect
-      
-      var i = 0;
-      var txt = `Let's have fun with CSS filters and show you some examples:`; 
-      var speed = 50;
-            
-      function typeWriter() {
-	  if (i < txt.length) {
-	      document.getElementById("demo").innerHTML += txt.charAt(i);
-	      i++;
-	      setTimeout(typeWriter, speed);
-	  }
-      }
+        const vibes = [
+            "Never look back",
+            "All we need is love",
+            "Enjoy every moment",
+            "Follow your heart",
+            "Get everything in writing ",
+            "Always keep the door open",
+            "Information is power",
+            "Always be positive",
+            "Don’t be the decision maker",
+            "Have alternatives",
+            "Proclaim reasons for everything",
+            "Be motivated by more than just money",
+            "Understand what they value",
+            "Be winnable"
+        ];
 
-      window.addEventListener("DOMContentLoaded", typeWriter(), false);
+        let vibe = vibes[Math.floor(Math.random() * vibes.length)];
+        document.querySelector(".vibe").append(vibe);
     </script>
+    <script>
+        let i = 0;
+        let txt = `Let's have fun with CSS filters and show you some examples:`;
+        let speed = 50;
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("demo").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        window.addEventListener("DOMContentLoaded", typeWriter(), false);
+    </script>
+</body>
 
-    
-  </body>
 </html>
