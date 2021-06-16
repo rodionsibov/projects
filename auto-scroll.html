@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body class="space-y-4 p-8 md:w-1/2 m-auto bg-gray-900 text-gray-500">
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, repellendus. Placeat animi voluptatibus veniam
+        itaque neque vitae? Blanditiis in quo aperiam dolor a molestias asperiores natus, modi repellat incidunt
+        expedita!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, repellendus. Placeat animi voluptatibus veniam
+        itaque neque vitae? Blanditiis in quo aperiam dolor a molestias asperiores natus, modi repellat incidunt
+        expedita!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, repellendus. Placeat animi voluptatibus veniam
+        itaque neque vitae? Blanditiis in quo aperiam dolor a molestias asperiores natus, modi repellat incidunt
+        expedita!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, repellendus. Placeat animi voluptatibus veniam
+        itaque neque vitae? Blanditiis in quo aperiam dolor a molestias asperiores natus, modi repellat incidunt
+        expedita!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, repellendus. Placeat animi voluptatibus veniam
+        itaque neque vitae? Blanditiis in quo aperiam dolor a molestias asperiores natus, modi repellat incidunt
+        expedita!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, repellendus. Placeat animi voluptatibus veniam
+        itaque neque vitae? Blanditiis in quo aperiam dolor a molestias asperiores natus, modi repellat incidunt
+        expedita!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, repellendus. Placeat animi voluptatibus veniam
+        itaque neque vitae? Blanditiis in quo aperiam dolor a molestias asperiores natus, modi repellat incidunt
+        expedita!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, repellendus. Placeat animi voluptatibus veniam
+        itaque neque vitae? Blanditiis in quo aperiam dolor a molestias asperiores natus, modi repellat incidunt
+        expedita!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, repellendus. Placeat animi voluptatibus veniam
+        itaque neque vitae? Blanditiis in quo aperiam dolor a molestias asperiores natus, modi repellat incidunt
+        expedita!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, repellendus. Placeat animi voluptatibus veniam
+        itaque neque vitae? Blanditiis in quo aperiam dolor a molestias asperiores natus, modi repellat incidunt
+        expedita!
+    </p>
+
+    <script>
+        let scrollerId
+        let paused = true
+
+        function startScroll() {
+            let id = setInterval(() => {
+                window.scrollBy(0, 2)
+                if (window.innerHeight + window.scrollY == document.body.offsetHeight) {
+                    stopScroll()
+                }
+            }, 10)
+            return id
+        }
+
+        function stopScroll() {
+            clearInterval(scrollerId)
+        }
+
+        document.body.addEventListener('click', () => {
+            if (paused == true) {
+                scrollerId = startScroll()
+                paused = false
+            } else {
+                stopScroll()
+                paused = true
+            }
+        })
+    </script>
+</body>
+
+</html>
