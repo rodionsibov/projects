@@ -5,10 +5,14 @@ document.querySelector('.year').textContent = new Date().getFullYear();
 fetch('./projects.json')
     .then(res => res.json())
     .then(data => {
-        const projects = data.slice(0, 40)
+        const projects = data.slice(0, 8)
         document.querySelector('.projects').innerHTML = projects.map(project => `
-        <div class="box">
-            <h3>${project.title}</h3>
+        <div class="project">
+            <div class="project-header">
+                <div><a href="${project.url}" target="_blank">${project.title}</a></div>
+                <div>Last updated ${new Date(project.date).toDateString()}</div>
+            </div>
+            <iframe src="${project.url}" loading="lazy"></iframe>
         </div>
         `).join('')
 
@@ -26,49 +30,53 @@ fetch('./projects.json')
                     return project.title.toLowerCase().includes(e.target.value.toLowerCase())
                 })
                 document.querySelector('.projects').innerHTML = filteredProjects.map(project => `
-                <div class="box">
-                    <h3>${project.title}</h3>
+                <div class="project">
+                    <div class="project-header">
+                        <div><a href="${project.url}" target="_blank">${project.title}</a></div>
+                        <div>Last updated ${new Date(project.date).toDateString()}</div>
+                    </div>
+                    <iframe src="${project.url}" loading="lazy"></iframe>
                 </div>
                 `).join('')
-                const boxes = document.querySelectorAll('.box');
-                const checkBoxes = () => {
+                const projectsEl = document.querySelectorAll('.project');
+                const checkProjects = () => {
                     const triggerBottom = (window.innerHeight / 5) * 4;
 
-                    boxes.forEach((box) => {
-                        const boxTop = box.getBoundingClientRect().top;
+                    projectsEl.forEach((project) => {
+                        const projectTop = project.getBoundingClientRect().top;
 
-                        if (boxTop < triggerBottom) {
-                            box.classList.add("show");
+                        if (projectTop < triggerBottom) {
+                            project.classList.add("show");
                         } else {
-                            box.classList.remove("show");
+                            project.classList.remove("show");
                         }
                     });
                 };
-                checkBoxes();
-                window.addEventListener('scroll', checkBoxes);
+                checkProjects();
+                window.addEventListener('scroll', checkProjects);
                 document.querySelector('.search-info').textContent = `There are ${filteredProjects.length} projects`
             } else {
                 document.querySelector('.search-info').textContent = ''
             }
         })
 
-        const boxes = document.querySelectorAll('.box');
+        const projectsEl = document.querySelectorAll('.project');
 
-        const checkBoxes = () => {
+        const checkProjects = () => {
             const triggerBottom = (window.innerHeight / 5) * 4;
 
-            boxes.forEach((box) => {
-                const boxTop = box.getBoundingClientRect().top;
+            projectsEl.forEach((project) => {
+                const projectTop = project.getBoundingClientRect().top;
 
-                if (boxTop < triggerBottom) {
-                    box.classList.add("show");
+                if (projectTop < triggerBottom) {
+                    project.classList.add("show");
                 } else {
-                    box.classList.remove("show");
+                    project.classList.remove("show");
                 }
             });
         };
-        checkBoxes();
-        window.addEventListener('scroll', checkBoxes);
+        checkProjects();
+        window.addEventListener('scroll', checkProjects);
     })
     .catch(err => console.log(err))
 

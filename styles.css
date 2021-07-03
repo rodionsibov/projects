@@ -167,29 +167,77 @@ mark {
     color: var(--color3);
 }
 
-.box {
-    background-color: var(--color5);
-    color: var(--color3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 300px;
-    text-align: center;
-    padding: 20px 30px;
-    margin: 20px auto;
-    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
-    transform: translateX(400%);
-    transition: transform 0.4s ease, background-color 0.3s ease;
+.projects {
+    display: grid;
+    grid-template-columns:  repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 40px;
 }
 
-.box:hover {
+.project {
+    background-color: var(--color1);
+    color: var(--color3);
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    transform: translateX(400%);
+    opacity: 0.7;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.project-header {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.project-header div:nth-child(1) {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.project-header div:nth-child(1) a {
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.project-header div:nth-child(1) a:hover {
+    text-decoration: underline;
+}
+
+.project-header div:nth-child(2) {
+    padding: 5px 8px;
+    color: var(--color3);
     background-color: var(--color4);
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+.project iframe {
+    width: 100%;
+    border: none;
+}
+
+.project:hover {
+    opacity: 1;
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.6);
 }
   
-.box:nth-of-type(even) {
+.project:nth-of-type(even) {
     transform: translateX(-400%);
 }
-.box.show {
+.project.show {
     transform: translateX(0);
 }
 
