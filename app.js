@@ -5,7 +5,7 @@ document.querySelector('.year').textContent = new Date().getFullYear();
 fetch('./projects.json')
     .then(res => res.json())
     .then(data => {
-        const projects = data.slice(0, 8)
+        const projects = data
         document.querySelector('.projects').innerHTML = projects.map(project => `
         <div class="project">
             <div class="project-header">
