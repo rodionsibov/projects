@@ -18,6 +18,10 @@ fetch('./projects.json')
 
         document.querySelector('form').addEventListener('submit', e => {
             e.preventDefault()
+            document.querySelector('.search-icon').classList.toggle('hide')
+            document.querySelector('.close-icon').classList.toggle('show')
+            document.querySelector('form').classList.toggle('show')
+            if (document.querySelector('form').classList.contains('show')) getVibes()
         })
 
         // search
