@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color1: #8ecae6;
+    --color2: #219ebc;
+    --color3: #023047;
+    --color4: #ffb703;
+    --color5: #fb8500;
+}
+
+body {
+    background-color: var(--color3);
+    color: var(--color1);
+    font-family: "Muli", sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: lighter;
+}
+
+section {
+    max-width: 700px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+h1,
+h2 {
+    margin: 50px 0;
+}
+
+p {
+    margin-top: 20px;
+}
+
+.search-button {
+    background-color: var(--color3);
+    border: none;
+    color: var(--color1);
+    position: fixed;
+    right: 20px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s ease;
+}
+
+.search-button:hover {
+    color: var(--color2);
+}
+
+.search-icon,
+.close-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.search-icon.hide {
+    display: none;
+}
+
+.close-icon {
+    display: none;
+}
+
+.close-icon.show {
+    display: block;
+}
+
+.search-form {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    width: 100%;
+    height: 90vh;
+    background-color: hsla(204, 78%, 12%, 0.7);
+    color: var(--color1);
+    transition: transform 0.5s ease;
+    transform: translateY(-100%);
+    backdrop-filter: blur(4px);
+}
+
+.search-form.show {
+    transform: translateY(0);
+}
+
+.form-control {
+  position: relative;
+  margin: 20px 0 10px;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid var(--color4);
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: var(--color4);
+    font-weight: bold;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+}
+
+.form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+.form-control label span {
+    display: inline-block;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    color: var(--color1);
+    transform: translateY(-30px);
+}
+
+.vibe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    user-select: none;
+    padding: 30px;
+    width: 80%;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    color: var(--color5);
+}
+
+.vibe:active {
+    transform: scale(0.98);
+}
+
+mark {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 5px;
+    background-color: var(--color4);
+    color: var(--color3);
+}
+
+.box {
+    background-color: var(--color5);
+    color: var(--color3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    text-align: center;
+    padding: 20px 30px;
+    margin: 20px auto;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    transform: translateX(400%);
+    transition: transform 0.4s ease, background-color 0.3s ease;
+}
+
+.box:hover {
+    background-color: var(--color4);
+}
+  
+.box:nth-of-type(even) {
+    transform: translateX(-400%);
+}
+.box.show {
+    transform: translateX(0);
+}
+
+#btnScrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0;
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+#btnScrollToTop.show {
+    opacity: 0.3;
+}
+
+#btnScrollToTop:hover {
+    opacity: 0.9;
+}
+
+footer a {
+    display: inline-block;
+    color: var(--color1);
+    text-decoration: none;
+}
+  
+footer a::after {
+    content: '';
+    width: 0;
+    height: 1px;
+    display: block;
+    background: var(--color1);
+    transition: 0.3s ease;
+}
+  
+footer a:hover::after {
+    width: 100%;
+}
