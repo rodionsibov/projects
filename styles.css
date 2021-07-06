@@ -10,8 +10,8 @@
     --color1: #fff;
     --color2: #234;
     --color3: #123;
-    --color4: #ffb703;
-    --color5: #fb8500;
+    --color4: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    --color5: #FFCC70;
 }
 
 body {
@@ -112,11 +112,11 @@ p {
 .form-control input {
     background-color: transparent;
     border: 0;
-    border-bottom: 2px solid var(--color4);
+    border-bottom: 2px solid var(--color5);
     width: 100%;
     padding: 15px 0;
     font-size: 18px;
-    color: var(--color4);
+    color: var(--color5);
     font-weight: bold;
 }
 
@@ -163,8 +163,9 @@ mark {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 5px;
-    background-color: var(--color4);
+    background-image: var(--color4);
     color: var(--color3);
+    line-height: 1.9;
 }
 
 .projects {
