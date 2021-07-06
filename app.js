@@ -7,14 +7,26 @@ fetch('./projects.json')
     .then(data => {
         const projects = data
         document.querySelector('.projects').innerHTML = projects.map(project => `
-        <div class="project">
-            <div class="project-header">
-                <div><a href="${project.url}" target="_blank">${project.title}</a></div>
-                <div>Last updated ${new Date(project.date).toDateString()}</div>
+            <div class="project">
+                <div class="emojis" title="Emojis World is created and maintained by Anton Bourtnik"></div>
+                <div class="project-header">
+                    <div><a href="${project.url}" target="_blank">${project.title}</a></div>
+                    <div>Last updated ${new Date(project.date).toDateString()}</div>
+                </div>
             </div>
-            <iframe src="${project.url}" loading="lazy"></iframe>
-        </div>
-        `).join('')
+            `).join('')
+        // <iframe src="${project.url}" loading="lazy"></iframe>
+
+        fetch(`https://api.emojisworld.io/v1/random?&limit=${projects.length}`)
+            .then(res => res.json())
+            .then(data => {
+                document.querySelectorAll('.emojis').forEach((item, index) => {
+                    item.textContent = `${data.results[index].emoji}`
+                })
+
+            })
+            .catch(err => console.log(err))
+
 
         document.querySelector('form').addEventListener('submit', e => {
             e.preventDefault()
@@ -35,13 +47,25 @@ fetch('./projects.json')
                 })
                 document.querySelector('.projects').innerHTML = filteredProjects.map(project => `
                 <div class="project">
+                    <div class="emojis" title="Emojis World is created and maintained by Anton Bourtnik"></div>
                     <div class="project-header">
                         <div><a href="${project.url}" target="_blank">${project.title}</a></div>
                         <div>Last updated ${new Date(project.date).toDateString()}</div>
                     </div>
-                    <iframe src="${project.url}" loading="lazy"></iframe>
                 </div>
                 `).join('')
+                // <iframe src="${project.url}" loading="lazy"></iframe>
+
+                fetch(`https://api.emojisworld.io/v1/random?&limit=${projects.length}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        document.querySelectorAll('.emojis').forEach((item, index) => {
+                            item.textContent = `${data.results[index].emoji}`
+                        })
+
+                    })
+                    .catch(err => console.log(err))
+                    
                 const projectsEl = document.querySelectorAll('.project');
                 const checkProjects = () => {
                     const triggerBottom = (window.innerHeight / 5) * 4;
@@ -59,10 +83,13 @@ fetch('./projects.json')
                 checkProjects();
                 window.addEventListener('scroll', checkProjects);
                 document.querySelector('.search-info').textContent = `There are ${filteredProjects.length} projects`
+                document.querySelector('#howManyProjects').textContent = `[ ${filteredProjects.length} ]`
             } else {
                 document.querySelector('.search-info').textContent = ''
             }
         })
+
+        document.querySelector('#howManyProjects').textContent = `[ ${projects.length} ]`
 
         const projectsEl = document.querySelectorAll('.project');
 
