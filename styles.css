@@ -48,8 +48,8 @@ p {
     position: fixed;
     right: 20px;
     top: 10px;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -61,13 +61,13 @@ p {
 }
 
 .search-button:hover {
-    color: var(--color2);
+    color: var(--color5);
 }
 
 .search-icon,
 .close-icon {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .search-icon.hide {
@@ -233,8 +233,8 @@ mark {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
     opacity: 0;
     display: none;

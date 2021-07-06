@@ -38,9 +38,6 @@ fetch('./projects.json')
 
         // search
         document.querySelector('input').addEventListener('keyup', e => {
-            // input clear if escape
-            if (e.key === 'Escape') return e.target.value = ''
-
             if (e.target.value !== '') {
                 const filteredProjects = projects.filter(project => {
                     return project.title.toLowerCase().includes(e.target.value.toLowerCase())
@@ -65,7 +62,7 @@ fetch('./projects.json')
 
                     })
                     .catch(err => console.log(err))
-                    
+
                 const projectsEl = document.querySelectorAll('.project');
                 const checkProjects = () => {
                     const triggerBottom = (window.innerHeight / 5) * 4;
@@ -120,7 +117,7 @@ document.querySelector('.search-button').addEventListener('click', () => {
 })
 
 window.addEventListener('keyup', e => {
-    if (e.key === '/') {
+    if (e.key === 'Escape') {
         document.querySelector('.search-icon').classList.toggle('hide')
         document.querySelector('.close-icon').classList.toggle('show')
         document.querySelector('form').classList.toggle('show')
