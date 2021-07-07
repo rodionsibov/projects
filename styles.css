@@ -58,6 +58,7 @@ p {
     cursor: pointer;
     z-index: 10;
     transition: color 0.3s ease;
+    opacity: 0.7;
 }
 
 .search-button:hover {
