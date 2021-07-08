@@ -205,6 +205,7 @@ mark {
     text-decoration: none;
     transition: 0.3s ease;
     color: var(--color1);
+    font-weight: bold;
 }
 
 .project-header div:nth-child(1) a:hover {
@@ -212,7 +213,7 @@ mark {
 }
 
 .project-header div:nth-child(2) {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .project iframe {
