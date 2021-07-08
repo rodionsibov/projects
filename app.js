@@ -6,27 +6,9 @@ fetch('./projects.json')
     .then(res => res.json())
     .then(data => {
         const projects = data
-        document.querySelector('.projects').innerHTML = projects.map(project => `
-            <div class="project">
-                <div class="emojis" title="Emojis World is created and maintained by Anton Bourtnik"></div>
-                <div class="project-header">
-                    <div><a href="${project.url}" target="_blank">${project.title}</a></div>
-                    <div>Last updated ${new Date(project.date).toDateString()}</div>
-                </div>
-            </div>
-            `).join('')
-        // <iframe src="${project.url}" loading="lazy"></iframe>
-
-        fetch(`https://api.emojisworld.io/v1/random?&limit=${projects.length}`)
-            .then(res => res.json())
-            .then(data => {
-                document.querySelectorAll('.emojis').forEach((item, index) => {
-                    item.textContent = `${data.results[index].emoji}`
-                })
-
-            })
-            .catch(err => console.log(err))
-
+        document.querySelector('#howManyProjects').textContent = `[ ${projects.length} ]`
+        renderProjects(projects)
+        fetchEmojis(projects)
 
         document.querySelector('form').addEventListener('submit', e => {
             e.preventDefault()
@@ -35,76 +17,10 @@ fetch('./projects.json')
             document.querySelector('form').classList.toggle('show')
             if (document.querySelector('form').classList.contains('show')) getVibes()
         })
-
         // search
-        document.querySelector('input').addEventListener('keyup', e => {
-            if (e.target.value !== '') {
-                const filteredProjects = projects.filter(project => {
-                    return project.title.toLowerCase().includes(e.target.value.toLowerCase())
-                })
-                document.querySelector('.projects').innerHTML = filteredProjects.map(project => `
-                <div class="project">
-                    <div class="emojis" title="Emojis World is created and maintained by Anton Bourtnik"></div>
-                    <div class="project-header">
-                        <div><a href="${project.url}" target="_blank">${project.title}</a></div>
-                        <div>Last updated ${new Date(project.date).toDateString()}</div>
-                    </div>
-                </div>
-                `).join('')
-                // <iframe src="${project.url}" loading="lazy"></iframe>
-
-                fetch(`https://api.emojisworld.io/v1/random?&limit=${projects.length}`)
-                    .then(res => res.json())
-                    .then(data => {
-                        document.querySelectorAll('.emojis').forEach((item, index) => {
-                            item.textContent = `${data.results[index].emoji}`
-                        })
-
-                    })
-                    .catch(err => console.log(err))
-
-                const projectsEl = document.querySelectorAll('.project');
-                const checkProjects = () => {
-                    const triggerBottom = (window.innerHeight / 5) * 4;
-
-                    projectsEl.forEach((project) => {
-                        const projectTop = project.getBoundingClientRect().top;
-
-                        if (projectTop < triggerBottom) {
-                            project.classList.add("show");
-                        } else {
-                            project.classList.remove("show");
-                        }
-                    });
-                };
-                checkProjects();
-                window.addEventListener('scroll', checkProjects);
-                document.querySelector('.search-info').textContent = `There are ${filteredProjects.length} projects`
-                document.querySelector('#howManyProjects').textContent = `[ ${filteredProjects.length} ]`
-            } else {
-                document.querySelector('.search-info').textContent = ''
-            }
-        })
-
-        document.querySelector('#howManyProjects').textContent = `[ ${projects.length} ]`
-
-        const projectsEl = document.querySelectorAll('.project');
-
-        const checkProjects = () => {
-            const triggerBottom = (window.innerHeight / 5) * 4;
-
-            projectsEl.forEach((project) => {
-                const projectTop = project.getBoundingClientRect().top;
-
-                if (projectTop < triggerBottom) {
-                    project.classList.add("show");
-                } else {
-                    project.classList.remove("show");
-                }
-            });
-        };
+        searchProjects(projects)
+        // add animation on scroll
         checkProjects();
-        window.addEventListener('scroll', checkProjects);
     })
     .catch(err => console.log(err))
 
@@ -278,8 +194,64 @@ function w(d, e, c) {
         b == d ? e.innerHTML = b : (e.innerHTML = b + "|",
             setTimeout(w, 100, d, e, c + 1))
 }
-
 window.addEventListener("DOMContentLoaded", function () {
     for (i of document.getElementsByClassName("typewriter"))
         w(i.innerHTML, i, 0)
 }, false)
+
+// utils
+function fetchEmojis(projects) {
+    fetch(`https://api.emojisworld.io/v1/random?&limit=${projects.length}`)
+        .then(res => res.json())
+        .then(data => {
+            document.querySelectorAll('.emojis').forEach((item, index) => {
+                item.textContent = `${data.results[index].emoji}`
+            })
+        })
+        .catch(err => console.log(err))
+}
+
+function checkProjects() {
+    const triggerBottom = (window.innerHeight / 5) * 4;
+    document.querySelectorAll('.project').forEach((project) => {
+        const projectTop = project.getBoundingClientRect().top;
+        if (projectTop < triggerBottom) {
+            project.classList.add("show");
+        } else {
+            project.classList.remove("show");
+        }
+    });
+};
+
+window.addEventListener('scroll', checkProjects);
+
+function renderProjects(projects) {
+    document.querySelector('.projects').innerHTML = projects.map(project => `
+            <div class="project">
+                <div class="emojis" title="Emojis World is created and maintained by Anton Bourtnik"></div>
+                <div class="project-header">
+                    <div><a href="${project.url}" target="_blank">${project.title}</a></div>
+                    <div>Last updated ${new Date(project.date).toDateString()}</div>
+                </div>
+            </div>
+            `).join('')
+    // <iframe src="${project.url}" loading="lazy"></iframe>
+}
+
+function searchProjects(projects) {
+    document.querySelector('input').addEventListener('keyup', e => {
+        if (e.target.value !== '') {
+            const filteredProjects = projects.filter(project => {
+                return project.title.toLowerCase().includes(e.target.value.toLowerCase())
+            })
+            renderProjects(filteredProjects)
+            fetchEmojis(projects)
+            // add animation on scroll
+            checkProjects();
+            document.querySelector('.search-info').textContent = `There are ${filteredProjects.length} projects`
+            document.querySelector('#howManyProjects').textContent = `[ ${filteredProjects.length} ]`
+        } else {
+            document.querySelector('.search-info').textContent = ''
+        }
+    })
+}
