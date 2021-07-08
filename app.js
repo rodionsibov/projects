@@ -259,3 +259,27 @@ document.querySelector("#btnScrollToTop").addEventListener("click", () => {
         behavior: "smooth"
     })
 })
+
+// scrolled indicator
+const scrolledIndicatorFill = document.querySelector(".scrolled-indicator-fill");
+window.addEventListener("scroll", () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.scrollY;
+    let percentageScrolled = 100;
+    if (scrollable > 0) {
+        percentageScrolled = Math.ceil(scrolled / scrollable * 100);
+    }
+    scrolledIndicatorFill.style.width = `${percentageScrolled}%`;
+});
+
+// typewriter
+function w(d, e, c) {
+    b = d.slice(0, c),
+        b == d ? e.innerHTML = b : (e.innerHTML = b + "|",
+            setTimeout(w, 100, d, e, c + 1))
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+    for (i of document.getElementsByClassName("typewriter"))
+        w(i.innerHTML, i, 0)
+}, false)
