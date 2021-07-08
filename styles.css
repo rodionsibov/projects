@@ -193,7 +193,12 @@ mark {
 }
 
 .project-header div:nth-child(1) {
+    width: 200px;
     margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
 }
 
 .project-header div:nth-child(1) a {

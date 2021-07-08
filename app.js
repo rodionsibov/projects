@@ -41,8 +41,6 @@ window.addEventListener('keyup', e => {
     }
 })
 
-
-
 // label animation
 const labels = document.querySelectorAll('.form-control label');
 
@@ -236,6 +234,9 @@ function renderProjects(projects) {
             </div>
             `).join('')
     // <iframe src="${project.url}" loading="lazy"></iframe>
+    fetchEmojis(projects)
+    // add animation on scroll
+    checkProjects()
 }
 
 function searchProjects(projects) {
@@ -245,13 +246,12 @@ function searchProjects(projects) {
                 return project.title.toLowerCase().includes(e.target.value.toLowerCase())
             })
             renderProjects(filteredProjects)
-            fetchEmojis(projects)
-            // add animation on scroll
-            checkProjects();
             document.querySelector('.search-info').textContent = `There are ${filteredProjects.length} projects`
             document.querySelector('#howManyProjects').textContent = `[ ${filteredProjects.length} ]`
         } else {
+            document.querySelector('#howManyProjects').textContent = `[ ${projects.length} ]`
             document.querySelector('.search-info').textContent = ''
+            renderProjects(projects)
         }
     })
 }
