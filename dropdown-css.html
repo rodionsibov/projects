@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown button {
+            height: 2.5rem;
+            padding: 0 1.25rem;
+            background: #333;
+            color: #fff;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .dropdown nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: 300ms all;
+            border: 2px solid #333;
+            border-radius: 0.25rem;
+            width: 12.5rem;
+        }
+
+        .dropdown nav ul {
+            padding: 0.188rem 0;
+        }
+
+        .dropdown nav ul li a {
+            display: block;
+            padding: 0.438rem 0.625rem;
+            color: #333;
+        }
+
+        .dropdown nav ul li a:hover {
+            background: #f8f8f8;
+        }
+
+        .dropdown:focus-within nav {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0.25rem);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dropdown">
+        <button>Menu</button>
+        <nav tabindex="0">
+            <ul>
+                <li>
+                    <a href="#">
+                        Edit
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Delete
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Reply
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
