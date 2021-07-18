@@ -6,6 +6,7 @@ fetch('./projects.json')
     .then(res => res.json())
     .then(data => {
         const projects = data
+        projects.sort(() => Math.random() - 0.5)
         document.querySelector('#howManyProjects').textContent = `[ ${projects.length} ]`
         renderProjects(projects)
         fetchEmojis(projects)
