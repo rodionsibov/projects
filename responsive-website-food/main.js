@@ -40,5 +40,11 @@ function scrollHeader() {
     if(this.scrollY >= 200) nav.classList.add('scroll-header')
     else nav.classList.remove('scroll-header')
 }
-
 window.addEventListener('scroll', scrollHeader)
+
+function scrollTop() {
+    const scrollTop = document.querySelector('#scroll-top')
+    if(this.scrollY >= 560) scrollTop.classList.add('scroll-top')
+    else scrollTop.classList.remove('scroll-top')
+}
+window.addEventListener('scroll', scrollTop)
