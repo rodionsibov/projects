@@ -3,7 +3,7 @@ const showMenu = (toggleId, navId) => {
     const nav = document.querySelector(`#${navId}`)
     if(toggle && nav) {
         toggle.addEventListener('click', () => {
-            nav.classList.toggle('show')
+            nav.classList.toggle('show-menu')
         })
     }
 }
@@ -13,7 +13,7 @@ const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction() {
     const navMenu = document.querySelector('#nav-menu')
-    navMenu.classList.remove('show')
+    navMenu.classList.remove('show-menu')
 }
 
 navLink.forEach(n => n.addEventListener('click', linkAction))

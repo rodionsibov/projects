@@ -173,6 +173,6 @@ img {
     cursor: pointer;
 }
 
-.show {
+.show-menu {
     top: var(--header-height);
 }
