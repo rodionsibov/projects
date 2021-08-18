@@ -243,8 +243,23 @@ img {
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
     transition: 0.3s;
+    margin-bottom: var(--mb-3);
 }
 
 .button:hover {
     background-color: var(--first-color-alt);
+}
+
+.about__data {
+    text-align: center;
+}
+
+.about__description {
+    margin-bottom: var(--mb-3);
+}
+
+.about__image {
+    width: 280px;
+    border-radius: 0.5rem;
+    justify-self: center;
 }
