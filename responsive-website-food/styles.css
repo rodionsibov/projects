@@ -213,3 +213,38 @@ img {
     visibility: visible;
     bottom: 1.5rem;
 }
+
+.home__container {
+    height: calc(100vh - var(--header-height));
+    align-content: center;
+}
+
+.home__title {
+    font-size: var(--biggest-font-size);
+    color: var(--first-color);
+    margin-bottom: var(--mb-1);
+}
+
+.home__subtitle {
+    font-size: var(--h1-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-4);
+}
+
+.home__img {
+    width: 300px;
+    justify-self: center;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--first-color);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: var(--first-color-alt);
+}
