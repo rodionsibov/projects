@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bxs-chevron-up scrolltop__icon'></i>
+    </a>
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="#" class="nav__log">Tasty</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+    <main class="l-main">
+        <section class="home" id="home">
+            <div class="home__container bd-container bd-grid">
+                <div class="home__data">
+                    <h1 class="home__title">Tasty food</h1>
+                    <h2 class="home__subtitle">Try the best food of <br> the week.</h2>
+                    <a href="#" class="button">View Menu</a>
+                </div>
+                <img src="https://source.unsplash.com/collection/190727/800x450" class="home__img" alt="">
+            </div>
+        </section>
+        <section class="about section bd-container" id="about">
+            <div class="about__container bd-grid">
+                <div class="about__data">
+                    <span class="section-subtitle">About us</span>
+                    <h2 class="section-title">We cook the best <br> tasty food</h2>
+                    <p class="about__description">
+                        We cook the best food in the entire city, with excellent customer service, the best meals and at
+                        the best price, visit us.
+                    </p>
+                    <a href="#" class="button">Explore history</a>
+                </div>
+                <img src="https://source.unsplash.com/collection/190727/800x451" class="about__img" alt="">
+            </div>
+        </section>
+        <section class="services section bd-container" id="services">
+            <span class="section-subtitle">Offering</span>
+            <h2 class="section-title">Our amazing services</h2>
+            <div class="services__container bg-grid">
+                <div class="services__content">
+                    <!-- <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/restaurant-219-707360.png"
+                        class="services__img" alt=""> -->
+                    <svg height="512" id="Outline" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
+                        <title />
+                        <g>
+                            <path
+                                d="M256,424a167.968,167.968,0,0,1-48.7-7.165L200.719,199.6A28.046,28.046,0,0,0,224,172V40H208v80H184V40H168v80H144V40H128v83.817a185.46,185.46,0,0,0-15.284,16.708A132.4,132.4,0,0,0,114.286,120c0-44.86-21.586-80-49.143-80C45.681,40,28.605,57.555,20.581,85.815l15.392,4.37C41.87,69.418,53.319,56,65.143,56c16.006,0,33.143,25.717,33.143,64s-17.137,64-33.143,64S32,158.283,32,120a116.894,116.894,0,0,1,.953-14.971l-15.867-2.058A132.8,132.8,0,0,0,16,120c0,29.533,9.356,54.853,23.612,68.708l-7.56,249.471Q32,439.082,32,440a32,32,0,0,0,64,0q0-.916-.052-1.821l-2.929-96.674a184.261,184.261,0,0,0,29.164,40.785l11.634-10.984A167.271,167.271,0,0,1,91.46,290.074l-1.753-57.848A168.959,168.959,0,0,1,128,147.209V172a28.024,28.024,0,0,0,14.6,24.581,128.149,128.149,0,0,0,4.912,127.379l-1.812,59.8,15.992.484L167.276,200h17.448l7.235,238.776c0,.08.006.16.011.24.02.325.03.654.03.984a16,16,0,0,1-32,0c0-.33.01-.659.03-.984,0-.08.009-.16.011-.24l1.167-38.534-15.992-.484-1.165,38.423q-.049.9-.051,1.819a32,32,0,0,0,64,0q0-.915-.051-1.819l-.138-4.558A184.774,184.774,0,0,0,332.764,423.27l-6.682-14.539A166.611,166.611,0,0,1,256,424ZM79.959,438.776c0,.08.006.16.011.24.02.325.03.654.03.984a16,16,0,0,1-32,0c0-.33.01-.659.03-.984,0-.08.009-.16.011-.24l7.282-240.309A32.2,32.2,0,0,0,72.7,199.1l.969,31.961a186.47,186.47,0,0,0,1.845,60.873ZM208,172a12.013,12.013,0,0,1-12,12H156a12.013,12.013,0,0,1-12-12V136h64Zm-64,84a112.024,112.024,0,0,1,6.734-38.323l-2.127,70.192A112.193,112.193,0,0,1,144,256Z" />
+                            <path
+                                d="M256,88a168.337,168.337,0,0,1,153.348,99.276l14.6-6.552A184.36,184.36,0,0,0,256,72c-5.57,0-11.195.252-16.718.75l1.436,15.935C245.765,88.23,250.907,88,256,88Z" />
+                            <path
+                                d="M256,144a111.158,111.158,0,0,1,89.612,44.805l12.793-9.61A127.025,127.025,0,0,0,256,128a129.432,129.432,0,0,0-17.057,1.128l2.114,15.859A113.542,113.542,0,0,1,256,144Z" />
+                            <path
+                                d="M256,384a127.639,127.639,0,0,0,68.273-19.709l-8.545-13.528a112.343,112.343,0,0,1-89.6,13.212L221.872,379.4A128.217,128.217,0,0,0,256,384Z" />
+                            <path
+                                d="M488,200H328a8,8,0,0,0-8,8v16a7.94,7.94,0,0,0,.07,1.057l30.843,231.322A18.056,18.056,0,0,0,368.755,472h86.2a17.944,17.944,0,0,0,17.911-16.209L487.96,304.8,472.04,303.2l-15.1,151a1.994,1.994,0,0,1-1.99,1.8H368.755a2.008,2.008,0,0,1-1.983-1.735L341.4,264H475.96l-2.32,23.2,15.921,1.592,6.4-64a7.828,7.828,0,0,0,.04-.8V208A8,8,0,0,0,488,200ZM339.271,248,336,223.469V216H480v7.6L477.56,248Z" />
+                            <path
+                                d="M236.161,322.175l16.591,9.073,9.073,16.591a8,8,0,0,0,14.038,0l9.074-16.591,16.591-9.073a8,8,0,0,0,0-14.038l-16.591-9.074-9.074-16.591a8,8,0,0,0-14.038,0l-9.073,16.591-16.591,9.074a8,8,0,0,0,0,14.038Zm26.324-10.2a8.007,8.007,0,0,0,3.181-3.181l3.178-5.813,3.179,5.813a8.007,8.007,0,0,0,3.181,3.181l5.813,3.179-5.813,3.178a8.007,8.007,0,0,0-3.181,3.181l-3.179,5.813-3.178-5.813a8.007,8.007,0,0,0-3.181-3.181l-5.813-3.178Z" />
+                            <path
+                                d="M402.472,106.175l16.591,9.073,9.074,16.591a8,8,0,0,0,14.038,0l9.073-16.591,16.591-9.073a8,8,0,0,0,0-14.038l-16.591-9.074-9.073-16.591a8,8,0,0,0-14.038,0l-9.074,16.591-16.591,9.074a8,8,0,0,0,0,14.038Zm26.324-10.2a8.007,8.007,0,0,0,3.181-3.181l3.179-5.813,3.178,5.813a8.007,8.007,0,0,0,3.181,3.181l5.813,3.179-5.813,3.178a8.007,8.007,0,0,0-3.181,3.181l-3.178,5.813-3.179-5.813a8.007,8.007,0,0,0-3.181-3.181l-5.813-3.178Z" />
+                            <rect height="16" transform="translate(35.028 751.391) rotate(-83.29)" width="136.938"
+                                x="371.531" y="348" />
+                        </g>
+                    </svg>
+                    <h3 class="services__title">Excellent food</h3>
+                    <p class="services__description">
+                        We offer our clients excellent quality services for many years, with the best and delicious food
+                        in the city.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
