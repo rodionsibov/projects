@@ -81,10 +81,6 @@ img {
     height: auto;
 }
 
-.services__img {
-    width: 100px;
-}
-
 .section {
     padding: 4rem 0 2rem;
 }
@@ -266,4 +262,20 @@ img {
     width: 280px;
     border-radius: 0.5rem;
     justify-self: center;
+}
+
+.services__container {
+    row-gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.services__content {
+    text-align: center;
+}
+
+.services__img {
+    width: 64px;
+    height: 64px;
+    fill: var(--first-color);
+    margin-bottom: var(--mb-2);
 }
