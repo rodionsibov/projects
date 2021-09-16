@@ -81,6 +81,10 @@ img {
     height: auto;
 }
 
+.services__img {
+    width: 100px;
+}
+
 .section {
     padding: 4rem 0 2rem;
 }
