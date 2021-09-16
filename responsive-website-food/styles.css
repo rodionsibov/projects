@@ -289,3 +289,25 @@ img {
 .services__description {
     padding: 0 1.5rem;
 }
+
+.menu__container {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+}
+
+.menu__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--container-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(3, 74, 40, 0.15);
+    padding: 0.75rem;
+}
+
+.menu__img {
+    width: 100px;
+    align-self: center;
+    margin-bottom: var(--mb-2);
+}
+
