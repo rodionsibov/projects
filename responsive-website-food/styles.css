@@ -279,3 +279,13 @@ img {
     fill: var(--first-color);
     margin-bottom: var(--mb-2);
 }
+
+.services__title {
+    font-size: var(--h3-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-1);
+}
+
+.services__description {
+    padding: 0 1.5rem;
+}
