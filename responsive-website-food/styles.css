@@ -327,3 +327,13 @@ img {
 .menu__detail {
     margin-bottom: var(--mb-1);
 }
+
+.menu__button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    margin-bottom: 0;
+    padding: 0.625rem 0.813rem;
+    border-radius: 0.5rem 0 0.5rem 0;
+}
