@@ -6,8 +6,8 @@
     font-family: 'Roboto Mono', monospace;
     font-size: 2rem;
   }
-  
-  .text_hide {
+
+  .text-hide {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -16,7 +16,7 @@
     background-color: white;
   }
 
-  .text_cursor{
+  .text-cursor{
     position: absolute;
     top: 0;
     bottom: 0;
