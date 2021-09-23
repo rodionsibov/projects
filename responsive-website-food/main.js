@@ -37,15 +37,35 @@ window.addEventListener('scroll', scrollActive)
 
 function scrollHeader() {
     const nav = document.querySelector('#header')
-    if(this.scrollY >= 200) nav.classList.add('scroll-header')
+    if (this.scrollY >= 200) nav.classList.add('scroll-header')
     else nav.classList.remove('scroll-header')
 }
 window.addEventListener('scroll', scrollHeader)
 
 function scrollTop() {
     const scrollTop = document.querySelector('#scroll-top')
-    if(this.scrollY >= 560) scrollTop.classList.add('scroll-top')
+    if (this.scrollY >= 560) scrollTop.classList.add('scroll-top')
     else scrollTop.classList.remove('scroll-top')
 }
 window.addEventListener('scroll', scrollTop)
 
+const themeButton = document.querySelector('#theme-button')
+const darkTheme = 'dark-theme'
+const iconTheme = 'bx-sun'
+const selectedTheme = localStorage.getItem('selected-theme')
+const selectedIcon = localStorage.getItem('selected-icon')
+
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx-moon' : 'bx-sun'
+
+if (selectedTheme) {
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+    themeButton.classList[selectedIcon === 'bx-moon' ? 'add' : 'remove'](iconTheme)
+}
+
+themeButton.addEventListener('click', () => {
+    document.body.classList.toggle(darkTheme)
+    themeButton.classList.toggle(iconTheme)
+    localStorage.setItem('selected-theme', getCurrentTheme())
+    localStorage.setItem('selected-icon', getCurrentIcon())
+})

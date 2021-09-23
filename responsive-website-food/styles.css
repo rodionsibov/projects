@@ -369,11 +369,13 @@ img {
 .app__store {
     width: 220px;
     margin: 0 var(--mb-1);
+    border-radius: 0.5rem;
 }
 
 .app__img {
     width: 230px;
     justify-self: center;
+    border-radius: 0.5rem;
 }
 
 .contact__container {
@@ -487,6 +489,11 @@ img {
 
     .nav__toggle {
         display: none;
+    }
+
+    .change-theme {
+        position: initial;
+        margin-left: var(--mb-2);
     }
 
     .home__container {
