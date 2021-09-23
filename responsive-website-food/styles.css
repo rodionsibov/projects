@@ -54,6 +54,22 @@ html {
     scroll-behavior: smooth;
 }
 
+body.dark-theme {
+    --title-color: #f1f3f2;
+    --text-color: #c7d1cc;
+    --body-color: #1d2521;
+    --container-color: #27302c;
+}
+
+.change-theme {
+    position: absolute;
+    right: 1rem;
+    top: 1.8rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
 body {
     margin: var(--header-height) 0 0 0;
     font-family: var(--body-font);
@@ -500,3 +516,20 @@ img {
         margin: 0 var(--mb-1) 0 0;
     }
 }
+
+@media screen and (min-width: 960px) {
+    .bd-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home__img {
+        width: 500px;
+    }
+
+    .about__container,
+    .app__container {
+        column-gap: 7rem;
+    }
+}
+
