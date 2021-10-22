@@ -6,7 +6,7 @@
   
 body {
     font-family: sans-serif;
-    height: 100vh;
+    padding: 20px;
     display: grid;
     place-content: center;
     background-color: #eee;
@@ -108,10 +108,10 @@ button:disabled {
 
 .btn-1,
 .btn-2 {
-    padding: 10px;
+    padding: 10px 15px;
     width: 100%;
     display: flex;
-    gap: 15px;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     border: 2px solid #c4c4c4;
@@ -139,6 +139,6 @@ span {
 }
 
 footer {
-    margin: 100px 0 10px;
+    margin-top: 100px;
     opacity: 0.5;
 }
