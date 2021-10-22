@@ -37,7 +37,7 @@ readFile('./test.json', 'utf8', (err, data) => {
     projects = JSON.parse(data)
     for (const item of projects) {
         if (item.url === project.url) {
-            console.log('Error: Check URL');
+            console.log('Error: Check URL!');
             return
         }
     }
