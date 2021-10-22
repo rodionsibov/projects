@@ -21,6 +21,12 @@ const options = {
 //     })
 // })
 
+const isSameDay = (a, b) => {
+    return a.getFullYear() === b.getFullYear() &&
+        a.getMonth() === b.getMonth() &&
+        a.getDate() === b.getDate()
+}
+
 const project = {
     title: 'JavaScrip Form Validation',
     text: '',
