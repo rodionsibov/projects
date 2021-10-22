@@ -6,20 +6,45 @@
   
 body {
     font-family: sans-serif;
-    padding: 20px;
-    display: grid;
-    place-content: center;
-    background-color: #eee;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    width: 45%;
     max-width: 400px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    border-radius: 8px;
     padding: 50px;
+    margin: auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: blue;
+    width: 55%;
+    min-height: 100vh;
+    padding: 10px 20px;
+    color: white;
+}
+  
+.image {
+    background-image: url("https://svgshare.com/i/_gZ.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 65%;
+}
+
+.text {
+    text-align: center;
+    color: white;
+    font-size: 18px;
 }
 
 .title {
@@ -38,7 +63,7 @@ form input {
     height: 40px;
     border-radius: 8px;
     outline: none;
-    border: 2px solid #bbb;
+    border: 2px solid lightgrey;
     padding: 0 30px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -84,7 +109,7 @@ button {
     background-color: blue;
     border: none;
     border-radius: 8px;
-    color: #fff;
+    color: white;
     font-size: 20px;
     cursor: pointer;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -114,7 +139,7 @@ button:disabled {
     gap: 10px;
     justify-content: center;
     align-items: center;
-    border: 2px solid #c4c4c4;
+    border: 2px solid lightgrey;
     border-radius: 8px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -138,7 +163,3 @@ span {
     cursor: pointer;
 }
 
-footer {
-    margin-top: 100px;
-    opacity: 0.5;
-}
