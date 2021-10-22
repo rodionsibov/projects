@@ -1,7 +1,5 @@
 const { readdir, stat, writeFile, readFile } = require('fs')
 
-
-
 const options = {
     day: 'numeric',
     year: 'numeric',
@@ -14,8 +12,14 @@ const options = {
 // readdir('./', (err, files) => {
 //     files.forEach(file => {
 //         stat(file, (err, stats) => {
-//             if (stats.isDirectory()) {
-//                 console.log(`${file} -> ${stats.birthtime.toLocaleString()}`)
+//             if (stats.isDirectory() && isSameDay(stats.birthtime, new Date())) {
+//                 readFile(`${file}/index.html`, 'utf8', (err, data) => {
+//                     if (err) {
+//                         console.error(err);
+//                         return
+//                     }
+//                     console.log(data);
+//                 })
 //             }
 //         })
 //     })
@@ -25,6 +29,13 @@ const isSameDay = (a, b) => {
     return a.getFullYear() === b.getFullYear() &&
         a.getMonth() === b.getMonth() &&
         a.getDate() === b.getDate()
+}
+
+const parseTitle = (body) => {
+    let match = body.match(/<title>([^<]*)<\/title>/) // regular expression to parse contents of the <title> tag
+    if (!match || typeof match[1] !== 'string')
+        throw new Error('Unable to parse the title tag')
+    return match[1]
 }
 
 const project = {
