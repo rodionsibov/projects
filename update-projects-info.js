@@ -28,7 +28,7 @@ const project = {
     date: new Intl.DateTimeFormat('default', options).format(new Date())
 }
 
-readFile('./test.json', 'utf8', (err, data) => {
+readFile('./projects.json', 'utf8', (err, data) => {
     if (err) {
         console.error(err);
         return
