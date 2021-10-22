@@ -1,11 +1,5 @@
 [
     {
-        "title": "New project4",
-        "text": "description",
-        "url": "url",
-        "date": "10/22/2021, 15:08"
-    },
-    {
         "title": "Website Restaurant",
         "text": "Responsive Website Design Using HTML CSS And JavaScript 🥗 | Website Restaurant Light/Dark mode",
         "url": "responsive-website-food/index.html",
@@ -916,5 +910,11 @@
         "text": "",
         "url": "limit-input-char.html",
         "date": "Apr 30 2021 20:25"
+    },
+    {
+        "title": "JavaScrip Form Validation",
+        "text": "",
+        "url": "js-form-validation/index.html",
+        "date": "10/22/2021, 16:33"
     }
 ]

@@ -1,14 +1,6 @@
 const { readdir, stat, writeFile, readFile } = require('fs')
 
-readdir('./', (err, files) => {
-    files.forEach(file => {
-        stat(file, (err, stats) => {
-            if (stats.isDirectory() && stats.birthtime === new Date()) {
-                console.log(`${file} -> ${stats.birthtime.toLocaleString()}`)
-            }
-        })
-    })
-})
+
 
 const options = {
     day: 'numeric',
@@ -19,13 +11,22 @@ const options = {
     hour12: false
 }
 
+// readdir('./', (err, files) => {
+//     files.forEach(file => {
+//         stat(file, (err, stats) => {
+//             if (stats.isDirectory()) {
+//                 console.log(`${file} -> ${stats.birthtime.toLocaleString()}`)
+//             }
+//         })
+//     })
+// })
+
 const project = {
-    title: 'New project4',
-    text: 'description',
-    url: 'url',
+    title: 'JavaScrip Form Validation',
+    text: '',
+    url: 'js-form-validation/index.html',
     date: new Intl.DateTimeFormat('default', options).format(new Date())
 }
-
 
 readFile('./test.json', 'utf8', (err, data) => {
     if (err) {
@@ -37,11 +38,11 @@ readFile('./test.json', 'utf8', (err, data) => {
     projects = JSON.parse(data)
     for (const item of projects) {
         if (item.url === project.url) {
-            console.log('Error: Check URL!');
+            console.log('Error: Check URL, please!');
             return
         }
     }
-    projects.unshift(project)
+    projects.push(project)
 
     writeFile('./test.json', JSON.stringify(projects), err => {
         if (err) {
