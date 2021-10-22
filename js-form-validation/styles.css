@@ -6,14 +6,19 @@
   
 body {
     font-family: sans-serif;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background-color: #eee;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     max-width: 400px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
     padding: 50px;
 }
 
@@ -33,7 +38,7 @@ form input {
     height: 40px;
     border-radius: 8px;
     outline: none;
-    border: 2px solid #c4c4c4;
+    border: 2px solid #bbb;
     padding: 0 30px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -44,7 +49,7 @@ form div {
 }
 
 input:focus {
-    border: 2px solid #f2796e;
+    border: 2px solid blue;
 }
 
 form i {
@@ -54,30 +59,30 @@ form i {
 
 .failure-icon,
 .error {
-  color: red;
+    color: red;
 }
 
 .success-icon {
-  color: green;
+    color: green;
 }
 
 .error {
-  font-size: 14.5px;
-  margin-top: 5px;
+    font-size: 14.5px;
+    margin-top: 5px;
 }
 
 .success-icon,
 .failure-icon {
-  right: 0;
-  opacity: 0;
+    right: 0;
+    opacity: 0;
 }
 
 button {
     margin-top: 15px;
     width: 100%;
     height: 45px;
-    background-color: #f2796e;
-    border: 2px solid #f2796e;
+    background-color: blue;
+    border: none;
     border-radius: 8px;
     color: #fff;
     font-size: 20px;
@@ -87,5 +92,9 @@ button {
 }
 
 button:hover {
-    opacity: 0.8;
+    opacity: 0.9;
+}
+
+button:disabled {
+    opacity: 0.3;
 }
