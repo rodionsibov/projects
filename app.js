@@ -230,7 +230,7 @@ function renderProjects(projects) {
                 <div class="emojis" title="Emojis World is created and maintained by Anton Bourtnik"></div>
                 <div class="project-header">
                     <div><a href="${project.url}" target="_blank">${project.title}</a></div>
-                    <div>Last updated ${new Date(project.date).toDateString()}</div>
+                    <div>Last updated ${project.date}</div>
                 </div>
             </div>
             `).join('')
