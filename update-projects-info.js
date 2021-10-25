@@ -1,4 +1,5 @@
 const { readdir, stat, writeFile, readFile } = require('fs')
+const path = require('path')
 
 const options = {
     day: 'numeric',
@@ -11,11 +12,11 @@ const options = {
 
 readdir('./', (err, files) => {
     const projects = []
+    console.log(path.base);
     for (const file of files) {
-        if (file.includes('index.html')) {
-
-            stat(file, (err, stats) => {
-                readFile(`${file}`, 'utf8', (err, data) => {
+        if (file.includes('.html')) {
+            readFile(file, 'utf8', (err, data) => {
+                stat(file, (err, stats) => {
                     if (err) {
                         console.error(err);
                         return
@@ -24,20 +25,20 @@ readdir('./', (err, files) => {
                     parseDescription(data);
 
                     const project = {
-                        id: Math.random().toString(36).substr(2,9),
+                        id: Math.random().toString(36).substr(2, 9),
                         title: parseTitle(data),
                         description: parseDescription(data),
                         path: `${file}`,
-                        date: new Intl.DateTimeFormat('default', options).format(new Date())
+                        date: new Intl.DateTimeFormat('default', options).format(stats.mtime)
                     }
 
                     projects.push(project)
-                    // writeFile('./projects.json', JSON.stringify(projects), err => {
-                    //     if (err) {
-                    //         console.error(err);
-                    //         return
-                    //     };
-                    // })
+                    writeFile('./projects.json', JSON.stringify(projects), err => {
+                        if (err) {
+                            console.error(err);
+                            return
+                        };
+                    })
                 })
             })
         }

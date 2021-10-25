@@ -1,1542 +1,1542 @@
 [
     {
-        "id": "fy08446ed",
+        "id": "eqefqwzd1",
         "title": "CSS 3D Rotating Image Gallery",
         "description": "",
         "path": "3d-rotating-image-gallery.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "joa182f3w",
-        "title": "Sum of Digits",
-        "description": "",
-        "path": "add-digits-app.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "2znocqb8j",
-        "title": "Ads Manager",
-        "description": "",
-        "path": "ads-manager.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "pgxk51f2t",
-        "title": "Document",
-        "description": "",
-        "path": "animated-grid-bg.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "f0pyy25c2",
+        "id": "yyjnl6ls7",
         "title": "Background Animation Effects",
         "description": "",
         "path": "animated-background.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "g7zmywgbt",
-        "title": "Async/Await with Fetch",
+        "id": "t57lxpj5p",
+        "title": "Sum of Digits",
         "description": "",
-        "path": "async-await-fetch-api.html",
-        "date": "10/25/2021, 19:28"
+        "path": "add-digits-app.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "nglmq5j88",
-        "title": "App is coming soon",
-        "description": "",
-        "path": "app-coming-soon.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "jodtqlizo",
-        "title": "Animated text fill",
-        "description": "",
-        "path": "animated-text-fill.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "ex1buvm7a",
-        "title": "Document",
-        "description": "",
-        "path": "auto-scroll.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "m80aalg0t",
+        "id": "wrbk0rnv0",
         "title": "Nav highlight",
         "description": "",
         "path": "animated-navbar.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "d3sajzavy",
-        "title": "HTML \"datalist\" element",
+        "id": "qqcw85d57",
+        "title": "Document",
         "description": "",
-        "path": "auto-complete-suggestions.html",
-        "date": "10/25/2021, 19:28"
+        "path": "animated-grid-bg.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "yhfh9xbkr",
-        "title": "Background Changer",
+        "id": "k8tap3wps",
+        "title": "App is coming soon",
         "description": "",
-        "path": "background-changer.html",
-        "date": "10/25/2021, 19:28"
+        "path": "app-coming-soon.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "beuijiv6u",
-        "title": "Background Clip Text",
+        "id": "5gfw5u67p",
+        "title": "Animated text fill",
         "description": "",
-        "path": "bg-clip-text.html",
-        "date": "10/25/2021, 19:28"
+        "path": "animated-text-fill.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "p65crej49",
+        "id": "25cie2wyp",
+        "title": "Ads Manager",
+        "description": "",
+        "path": "ads-manager.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "p3suflar7",
         "title": "animation",
         "description": "",
         "path": "animation.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "3h61raf8b",
-        "title": "Basic Tooltip | Infotip",
+        "id": "2noyewzav",
+        "title": "HTML \"datalist\" element",
         "description": "",
-        "path": "basic-tooltip.html",
-        "date": "10/25/2021, 19:28"
+        "path": "auto-complete-suggestions.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "m3xf9vunm",
+        "id": "qbgl5ghpy",
+        "title": "Async/Await with Fetch",
+        "description": "",
+        "path": "async-await-fetch-api.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "v4bsi7bhc",
+        "title": "Document",
+        "description": "",
+        "path": "auto-scroll.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "gqulm76ia",
         "title": "Mousemove Parallax | Vanilla JavaScript",
         "description": "",
         "path": "background-parallax.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "lutg4zc6o",
+        "id": "j54gc6ogr",
+        "title": "Basic Tooltip | Infotip",
+        "description": "",
+        "path": "basic-tooltip.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "niyh39x7n",
+        "title": "Background Changer",
+        "description": "",
+        "path": "background-changer.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "lcha94hto",
+        "title": "Background Clip Text",
+        "description": "",
+        "path": "bg-clip-text.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "1vun10lud",
         "title": "Document",
         "description": "",
         "path": "big-shadow-card.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "07oz9376v",
+        "id": "pwptt1cfs",
         "title": "CSS background image zoom and rotate",
         "description": "",
         "path": "bg-image-zoom-rotate-css.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "m4ass38g1",
+        "id": "qjrrook1r",
         "title": "Binary Decoder",
         "description": "",
         "path": "binary-decoder-app.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "4jgco8618",
-        "title": "Blog Cards",
-        "description": "",
-        "path": "blog-cards.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "194h3nogr",
-        "title": "Bouncing Particle Effects | Canvas Animation",
-        "description": "",
-        "path": "bouncing-particle-effects.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "orm1m4awv",
+        "id": "pbzclw1mb",
         "title": "Bottom Nav Bar with icons",
         "description": "",
         "path": "bottom-icon-nav-menu.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "m5ut2so4m",
-        "title": "Button With Loading Spinner",
+        "id": "cfh6cpf9x",
+        "title": "Blog Cards",
         "description": "",
-        "path": "button-with-spinner.html",
-        "date": "10/25/2021, 19:28"
+        "path": "blog-cards.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "tz7gav5oe",
+        "id": "glcpacvel",
+        "title": "Bouncing Particle Effects | Canvas Animation",
+        "description": "",
+        "path": "bouncing-particle-effects.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "1n00o7otq",
         "title": "Document",
         "description": "",
         "path": "bouncing-dvd-logo.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "mck37nrit",
-        "title": "Hello, world!",
-        "description": "",
-        "path": "button.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "4qaxf56r3",
-        "title": "Mini Calendar UI",
-        "description": "",
-        "path": "calendar.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "ymkk7eqwj",
-        "title": "Simple Calc",
-        "description": "",
-        "path": "calc.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "smnay53sz",
+        "id": "4ex6ryhqs",
         "title": "Cards Hover Effects",
         "description": "",
         "path": "card-hover.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "mw6fulw15",
+        "id": "5772gue4d",
+        "title": "Mini Calendar UI",
+        "description": "",
+        "path": "calendar.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "0d6vq5fxn",
+        "title": "Simple Calc",
+        "description": "",
+        "path": "calc.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "yryekz2d6",
         "title": "Characters Remaining (Text Areas)",
         "description": "",
         "path": "characters-remaining-counter.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "hvncnnklf",
+        "id": "6a21sxmzn",
+        "title": "Button With Loading Spinner",
+        "description": "",
+        "path": "button-with-spinner.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "eg910h049",
+        "title": "Hello, world!",
+        "description": "",
+        "path": "button.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "2jmnltsgv",
         "title": "CSS Clip-Mask Parallax Scrolling Effects",
         "description": "",
         "path": "clip-mask.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "e4u3q3uvx",
-        "title": "Collapsible Sidebar",
-        "description": "",
-        "path": "collapsible-nav-menu.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "9unf9xvx1",
+        "id": "68sk20l43",
         "title": "Color Flipper",
         "description": "",
         "path": "color-flipper.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "rx0lftfif",
+        "id": "2c3us0qd2",
+        "title": "Collapsible Sidebar",
+        "description": "",
+        "path": "collapsible-nav-menu.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "3gud45tfb",
         "title": "Color Pallete",
         "description": "",
         "path": "color-pallete.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "d4g3k9e1r",
-        "title": "Random Color Generator",
-        "description": "",
-        "path": "color-generator.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "uu8t4k5t1",
-        "title": "Copy to Clipboard",
-        "description": "",
-        "path": "copy-to-clipboard-js.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "z24hs7007",
-        "title": "Personal Portfolio | Responsive Website Design",
-        "description": "",
-        "path": "complete-res-portfolio.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "c3wdggc7j",
-        "title": "Countdown",
-        "description": "",
-        "path": "countdown-timer.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "r1esck7ki",
+        "id": "uunr1q8d3",
         "title": "Contacts App",
         "description": "",
         "path": "contacts-app.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "3io7o831w",
-        "title": "Course Card UI Design",
+        "id": "eppvfsnqq",
+        "title": "Personal Portfolio | Responsive Website Design",
         "description": "",
-        "path": "course-card-ui-design.html",
-        "date": "10/25/2021, 19:28"
+        "path": "complete-res-portfolio.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "649oyooaj",
+        "id": "82kin4vcw",
+        "title": "Random Color Generator",
+        "description": "",
+        "path": "color-generator.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "9gsb5gjq2",
+        "title": "Countdown",
+        "description": "",
+        "path": "countdown-timer.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "t46kas3dd",
         "title": "Countdown Timer",
         "description": "",
         "path": "countdown-timer-js.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "5a3oan3vh",
-        "title": "Navigation Menu Bar",
+        "id": "ia7xjtire",
+        "title": "Copy to Clipboard",
         "description": "",
-        "path": "css-animated-navigation-menu-bar.html",
-        "date": "10/25/2021, 19:28"
+        "path": "copy-to-clipboard-js.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "9uuqyfv31",
-        "title": "Counter",
+        "id": "so98zg5li",
+        "title": "Course Card UI Design",
         "description": "",
-        "path": "counter.html",
-        "date": "10/25/2021, 19:28"
+        "path": "course-card-ui-design.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "89d0bx91q",
+        "id": "7d5yapxd0",
         "title": "CSS Challenge",
         "description": "",
         "path": "css-challenge01.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "d245emgtb",
-        "title": "CSS Challenge",
+        "id": "pbh96zpj1",
+        "title": "Counter",
         "description": "",
-        "path": "css-challenge02.html",
-        "date": "10/25/2021, 19:28"
+        "path": "counter.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "5txobw6f0",
-        "title": "CSS Clip-path Mousemove Effects",
+        "id": "e1j6q9snh",
+        "title": "Navigation Menu Bar",
         "description": "",
-        "path": "css-dynamic.html",
-        "date": "10/25/2021, 19:28"
+        "path": "css-animated-navigation-menu-bar.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "09aggyne4",
-        "title": "CSS Challenge",
-        "description": "",
-        "path": "css-challenge03.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "tktagpud7",
-        "title": "CSS Filters",
-        "description": "",
-        "path": "css-filters-range.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "82c8s5ac6",
+        "id": "r350t2af0",
         "title": "CSS Only Hamburger Nav Animation",
         "description": "",
         "path": "css-hamburger-animation.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "hcohfbf07",
+        "id": "alyvikqlg",
+        "title": "CSS Challenge",
+        "description": "",
+        "path": "css-challenge02.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "xy2ctn95b",
         "title": "Blank Page",
         "description": "",
         "path": "css-flip-card.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "yttzwll4z",
+        "id": "v9dyw1hx4",
+        "title": "CSS Clip-path Mousemove Effects",
+        "description": "",
+        "path": "css-dynamic.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "1vjuyw0j5",
+        "title": "CSS Challenge",
+        "description": "",
+        "path": "css-challenge03.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "n3k6epupz",
         "title": "Simple CSS Loader Animation",
         "description": "",
         "path": "css-loading-animation.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "s5pltogrq",
+        "id": "sxpe63575",
         "title": "Loading Indicator CSS",
         "description": "",
         "path": "css-only-loading-indicator.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "b7im4bh46",
-        "title": "CSS Scroll Snap",
-        "description": "",
-        "path": "css-scroll-snap.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "k2dqxlli8",
+        "id": "v7y31qmi3",
         "title": "CSS Transition",
         "description": "",
         "path": "css-transition.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "bl5sw3dch",
-        "title": "CSV Viewer",
+        "id": "tkpkgv33f",
+        "title": "CSS Filters",
         "description": "",
-        "path": "csv-viewer.html",
-        "date": "10/25/2021, 19:28"
+        "path": "css-filters-range.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "4bra0z5qn",
-        "title": "Curve Header",
+        "id": "wgt2v29j3",
+        "title": "CSS Scroll Snap",
         "description": "",
-        "path": "curved-header.html",
-        "date": "10/25/2021, 19:28"
+        "path": "css-scroll-snap.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "2hdsiydcm",
+        "id": "s2yyjzbau",
         "title": "A custom cursor for website",
         "description": "",
         "path": "custom-cursor.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "tnjhffeoe",
-        "title": "Custom Slider",
+        "id": "j713fij2a",
+        "title": "Curve Header",
         "description": "",
-        "path": "custom-slider.html",
-        "date": "10/25/2021, 19:28"
+        "path": "curved-header.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "3522mjbrc",
+        "id": "ntyyatolv",
+        "title": "CSV Viewer",
+        "description": "",
+        "path": "csv-viewer.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "smkilh5iw",
         "title": "Hello, world!",
         "description": "",
         "path": "custom-progress-bar.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "jofxm24y0",
+        "id": "nnyda8xsl",
+        "title": "Custom Slider",
+        "description": "",
+        "path": "custom-slider.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "0tmy79d9k",
         "title": "Hello, world!",
         "description": "Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.",
         "path": "cutout-text.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "chyr2x9xk",
-        "title": "Dark theme switcher for website using CSS and JS",
-        "description": "",
-        "path": "dark-theme-switcher.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "cwpyswzoq",
+        "id": "ulppwbpiu",
         "title": "Dark Mode Effects",
         "description": "",
         "path": "dark-mode.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "t114b8dak",
-        "title": "Div Box",
+        "id": "wkz9f9v6z",
+        "title": "Dark theme switcher for website using CSS and JS",
         "description": "",
-        "path": "div-box.html",
-        "date": "10/25/2021, 19:28"
+        "path": "dark-theme-switcher.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "5x5lxboy7",
+        "id": "qasuvcko4",
         "title": "Document",
         "description": "",
         "path": "dashboard-stats-card.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "nfa8ayw2w",
+        "id": "ylu9m3vt2",
         "title": "Days Until",
         "description": "",
         "path": "days-until.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "7lzdy6e1c",
-        "title": "DragnDrop",
+        "id": "wyrwo9ckx",
+        "title": "Div Box",
         "description": "",
-        "path": "drag-and-drop.html",
-        "date": "10/25/2021, 19:28"
+        "path": "div-box.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "ezdfb6sga",
+        "id": "rp0z7a7u9",
         "title": "Drop Down Menu",
         "description": "",
         "path": "drop-down-menu.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "jgbr1z19m",
-        "title": "Document",
+        "id": "k2lz79gah",
+        "title": "DragnDrop",
         "description": "",
-        "path": "dropdown-css.html",
-        "date": "10/25/2021, 19:28"
+        "path": "drag-and-drop.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "pedxunokf",
+        "id": "wia6dcpi0",
         "title": "Drop Down Menu",
         "description": "",
         "path": "drop-down-nav-menu.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "sh1o4p923",
+        "id": "p9akwsrbk",
+        "title": "Document",
+        "description": "",
+        "path": "dropdown-css.html",
+        "date": "9/23/2021, 14:31"
+    },
+    {
+        "id": "9t5emfrhz",
         "title": "Awesome Web Page Design",
         "description": "",
         "path": "dynamic-images.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "b7f34lgbl",
-        "title": "Edit in Place",
-        "description": "",
-        "path": "edit-in-place.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "lnkqclxjj",
-        "title": "Welcome",
-        "description": "",
-        "path": "dynamic-landing-page.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "vvrqrqcpa",
+        "id": "937bmimp3",
         "title": "Interesting Fact About Numbers | API",
         "description": "",
         "path": "fact-about-numbers.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "gwhb1b0ad",
+        "id": "9cnsd25p9",
+        "title": "Welcome",
+        "description": "",
+        "path": "dynamic-landing-page.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "ry346fu35",
+        "title": "Edit in Place",
+        "description": "",
+        "path": "edit-in-place.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "q5zwlccuj",
         "title": "Fancy Form",
         "description": "",
         "path": "fancy-form-ui.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "9vq1qrw1y",
-        "title": "Fetch API",
-        "description": "",
-        "path": "fetch-api-crud.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "a6wd75xhy",
+        "id": "1eva8z75d",
         "title": "Featured Section",
         "description": "",
         "path": "featured-section.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "g9kunm0ij",
-        "title": "Fetch API Sandbox",
-        "description": "",
-        "path": "fetch-api.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "vd8g0gwtk",
-        "title": "My Contacts",
-        "description": "",
-        "path": "filterable-list.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "yy6bdjybs",
+        "id": "2tfp000qi",
         "title": "Document",
         "description": "",
         "path": "fixed-bottom-nav.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "bwp24kupr",
+        "id": "8xydfq165",
+        "title": "Fetch API",
+        "description": "",
+        "path": "fetch-api-crud.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "2o8eb76ih",
+        "title": "My Contacts",
+        "description": "",
+        "path": "filterable-list.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "b1s1pz71d",
         "title": "Photo Gallery",
         "description": "",
         "path": "flex-box-photo-gallery.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "kyxhy4p0t",
-        "title": "3D Flip Card Hover Effects",
-        "description": "",
-        "path": "flip-card-hover.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "wpb4xsmkl",
-        "title": "Blank page",
-        "description": "",
-        "path": "form-validation.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "9akub9vlr",
-        "title": "Fun Animated Card",
-        "description": "",
-        "path": "fun-animated-card.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "62pueo3jl",
+        "id": "4h16u6mdx",
         "title": "Full Screen Navigation",
         "description": "",
         "path": "fullscreen-nav-menu.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "qd8ghkqth",
+        "id": "kk5jgft32",
+        "title": "Blank page",
+        "description": "",
+        "path": "form-validation.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "p7d3kgu8s",
+        "title": "Fetch API Sandbox",
+        "description": "",
+        "path": "fetch-api.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "6m0uc45vd",
+        "title": "3D Flip Card Hover Effects",
+        "description": "",
+        "path": "flip-card-hover.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "xhyl9y49f",
+        "title": "Fun Animated Card",
+        "description": "",
+        "path": "fun-animated-card.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "tdymo0ajh",
         "title": "Photo Gallery App ",
         "description": "",
         "path": "gallery-app.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "o7cxc5mcn",
-        "title": "Element.getBoundingClientRect - JS DOM",
-        "description": "",
-        "path": "get-bounding-client-rect.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "qbkg0sbj4",
+        "id": "kthsw2hrs",
         "title": "Hello, world!",
         "description": "",
         "path": "get-emoji.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "3avfk6bod",
+        "id": "bje27f7gz",
         "title": "Using Fetch to get Data from an API ",
         "description": "",
         "path": "get-data-fetch-api.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "ply4nozi4",
-        "title": "Get Mouse Position",
-        "description": "",
-        "path": "get-mouse-position.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "yisuwjqzx",
+        "id": "hefx1bby9",
         "title": "Glassmorphism",
         "description": "",
         "path": "glassmorphism.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "oht2jqua5",
+        "id": "80wqx4wcz",
         "title": "Gooey Animation Effects",
         "description": "",
         "path": "gooey.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "77dyfoym2",
+        "id": "q7xjrldtw",
+        "title": "Element.getBoundingClientRect - JS DOM",
+        "description": "",
+        "path": "get-bounding-client-rect.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "dia0s8txv",
         "title": "Google Search Webpage Design",
         "description": "",
         "path": "google-search-page.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "t191qlem7",
+        "id": "2nn4rd72x",
+        "title": "Get Mouse Position",
+        "description": "",
+        "path": "get-mouse-position.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "p9z4hkw22",
         "title": "Acme Web Solutions",
         "description": "",
         "path": "grid-css-res-web-layout.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "d0x4k6bdz",
-        "title": "Health Panel",
-        "description": "",
-        "path": "grid-layout-with-image.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "o2egaefip",
-        "title": "Grocery Bud",
-        "description": "",
-        "path": "grocery-bud.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "itos32yra",
+        "id": "c3xt7uesk",
         "title": "Document",
         "description": "",
         "path": "heartbeat.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "m93i4hqjq",
+        "id": "4m42ke4r6",
+        "title": "Health Panel",
+        "description": "",
+        "path": "grid-layout-with-image.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "qctbvbosp",
         "title": "Hello World!",
         "description": "",
         "path": "how-old.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "tiwv1pwll",
-        "title": "Full Functional HTML Form without any Back-End",
+        "id": "0yf318cdl",
+        "title": "Grocery Bud",
         "description": "",
-        "path": "html-form-to-mail.html",
-        "date": "10/25/2021, 19:28"
+        "path": "grocery-bud.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "ihqywjmxx",
-        "title": "Icon Button Notification Badge",
-        "description": "",
-        "path": "icon-button-with-notification-badge.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "7xp63iax7",
-        "title": "Image Comparison Slider",
-        "description": "",
-        "path": "image-comparison.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "nwre0g7oq",
+        "id": "5xh8ke55o",
         "title": "Image Transitions",
         "description": "",
         "path": "image-animations-html-css.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "3fzgxv57o",
+        "id": "kj015zl8k",
+        "title": "Image Comparison Slider",
+        "description": "",
+        "path": "image-comparison.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "rdeha9rg4",
         "title": "Image Gallery",
         "description": "",
         "path": "image-gallery-html-css.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "vafzu9nxf",
+        "id": "550wr0dtv",
+        "title": "Full Functional HTML Form without any Back-End",
+        "description": "",
+        "path": "html-form-to-mail.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "u0rlfdp2p",
+        "title": "Icon Button Notification Badge",
+        "description": "",
+        "path": "icon-button-with-notification-badge.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "2rflbk21k",
         "title": "Advance Tooltip, Image Hotspot",
         "description": "",
         "path": "image-hotspot-advance-tooltip.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "td1dpxjjf",
-        "title": "Hello, world!",
-        "description": "",
-        "path": "image-reflection.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "a8ybd4iya",
-        "title": "Hello, world!",
-        "description": "",
-        "path": "image-manipulation.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "lc3z6io2d",
+        "id": "gt901sfd2",
         "title": "Rodion - My Personal Projects | Image Gallery",
         "description": "",
         "path": "image-gallery.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "0yzkwvynw",
-        "title": "Input Animation",
+        "id": "f9shnhmx5",
+        "title": "Hello, world!",
         "description": "",
-        "path": "input-animations-html-css.html",
-        "date": "10/25/2021, 19:28"
+        "path": "image-manipulation.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "7dphbkwyf",
-        "title": "Item Lister",
+        "id": "9bulshos9",
+        "title": "Hello, world!",
         "description": "",
-        "path": "item-lister.html",
-        "date": "10/25/2021, 19:28"
+        "path": "image-reflection.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "vhu1jkh4r",
+        "id": "z03ghh6w5",
         "title": "Rodion - My Personal Projects",
         "description": "Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.",
         "path": "index.html",
-        "date": "10/25/2021, 19:28"
+        "date": "10/25/2021, 16:47"
     },
     {
-        "id": "10tkt3fcw",
-        "title": "Instant Search Bar",
-        "description": "",
-        "path": "instant-search-bar.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "7hwdwlw8t",
-        "title": "MyBookList App",
-        "description": "",
-        "path": "js-booklist-app.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "jkdu5vphi",
+        "id": "w9qbt6eqr",
         "title": "Image Hover Text Overlay Effect",
         "description": "",
         "path": "image-hover-text-overlay.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "328qvnq3o",
+        "id": "sn0l16umc",
+        "title": "Input Animation",
+        "description": "",
+        "path": "input-animations-html-css.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "gcx440llf",
+        "title": "Item Lister",
+        "description": "",
+        "path": "item-lister.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "uqp26271n",
+        "title": "Instant Search Bar",
+        "description": "",
+        "path": "instant-search-bar.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "aebwjtcx4",
         "title": "Hello, world!",
         "description": "",
         "path": "js-fetch-api.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "8q54ilfj6",
-        "title": "Todo List",
+        "id": "1znuvh403",
+        "title": "MyBookList App",
         "description": "",
-        "path": "js-todo-list.html",
-        "date": "10/25/2021, 19:28"
+        "path": "js-booklist-app.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "er4smhwdc",
+        "id": "nbxfivi2g",
         "title": "Key Code Generator",
         "description": "",
         "path": "key-code-generator.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "u488cjl9x",
+        "id": "bl79tx3ox",
+        "title": "Todo List",
+        "description": "",
+        "path": "js-todo-list.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "03z77h395",
         "title": "Hello, world!",
         "description": "",
         "path": "kinetic-loader-animation.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "by4h3vu83",
-        "title": "Limit Input Characters",
-        "description": "",
-        "path": "limit-input-char.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "gcj3gps92",
+        "id": "fur03wati",
         "title": "Smooth Scroll Landing Page",
         "description": "",
         "path": "landing-page-with-smooth-scroll.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "ngxqz2cs2",
+        "id": "jk78chixv",
+        "title": "Limit Input Characters",
+        "description": "",
+        "path": "limit-input-char.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "h7qfdu3f0",
         "title": "Hello, world!",
         "description": "",
         "path": "line-throuhg-effect.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "l24wn83pj",
-        "title": "Image Distortion Hover Effects",
-        "description": "",
-        "path": "liquid-distortion.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "b12jwoe87",
-        "title": "Fullpage Loading Animation",
-        "description": "",
-        "path": "loading-page.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "cqenyuhtc",
+        "id": "hjf09qw3j",
         "title": "Landing Page",
         "description": "",
         "path": "laptop-ui-master.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "4la51cwwf",
-        "title": "Bootstrap Login Form",
+        "id": "qhlpnk96n",
+        "title": "Image Distortion Hover Effects",
         "description": "",
-        "path": "login-form-bootstrap.html",
-        "date": "10/25/2021, 19:28"
+        "path": "liquid-distortion.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "21mp4a3i2",
+        "id": "ddzn2a3to",
         "title": "Local Storage - JS",
         "description": "",
         "path": "local-storage.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "levwd9own",
-        "title": "Login / Sign Up Form",
+        "id": "6i7a3m200",
+        "title": "Fullpage Loading Animation",
         "description": "",
-        "path": "login-sign-up-form.html",
-        "date": "10/25/2021, 19:28"
+        "path": "loading-page.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "2hxkynx5v",
+        "id": "ouoo4z8jo",
         "title": "Animated Login Form",
         "description": "",
         "path": "login-form.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "qfe3prkua",
+        "id": "cxxk7vgns",
         "title": "Login",
         "description": "",
         "path": "login.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "9ze7bllo7",
+        "id": "0h1wwx9dh",
+        "title": "Login / Sign Up Form",
+        "description": "",
+        "path": "login-sign-up-form.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "damb0h9xq",
+        "title": "Bootstrap Login Form",
+        "description": "",
+        "path": "login-form-bootstrap.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "f9sxi2ptx",
         "title": "Menu",
         "description": "",
         "path": "menu.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "ex0hvwnbl",
+        "id": "8se234cot",
         "title": "Lorem Ipsum",
         "description": "",
         "path": "lorem-ipsum.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "4hab8t537",
+        "id": "xz7c5yk1q",
         "title": "Document",
         "description": "",
         "path": "modal-js-css.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "y0mwussyy",
-        "title": "Multi Step Form",
-        "description": "",
-        "path": "multi-step-form.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "kbzdnpzo4",
-        "title": "Hello, world!",
-        "description": "",
-        "path": "modal.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "pzr56ryeg",
-        "title": "Multilingual",
-        "description": "",
-        "path": "multilingual.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "8oprbla26",
-        "title": "Document",
-        "description": "",
-        "path": "neon-glowing-effect.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "o58smvneu",
+        "id": "boge0juxa",
         "title": "Hello, world!",
         "description": "",
         "path": "negotiating.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "1q24u18u2",
+        "id": "vg0qejlcr",
+        "title": "Multi Step Form",
+        "description": "",
+        "path": "multi-step-form.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "2zido5yz1",
+        "title": "Hello, world!",
+        "description": "",
+        "path": "modal.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "xy74d8vzb",
+        "title": "Document",
+        "description": "",
+        "path": "neon-glowing-effect.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "84jt02lss",
+        "title": "Multilingual",
+        "description": "",
+        "path": "multilingual.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "4zxvlwu3y",
         "title": "On Hover Background Change",
         "description": "",
         "path": "on-hover-bg-change.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "etcu6mfsp",
-        "title": "Our Team",
-        "description": "",
-        "path": "our-team-section.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "o4kxsi5vk",
-        "title": "Document",
-        "description": "",
-        "path": "overlapping-layout.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "gn7609kp6",
-        "title": "Online - Offline",
-        "description": "",
-        "path": "online-offline.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "3tj2dwotq",
-        "title": "Hello, world!",
-        "description": "",
-        "path": "page-for-you.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "wmaom01gt",
-        "title": "Random Password Generator with Copy Button",
-        "description": "",
-        "path": "password-generator.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "qqtg13nks",
+        "id": "o42ftft6n",
         "title": "Hello, world!",
         "description": "",
         "path": "notification.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "tylr4wxb3",
+        "id": "xytgbmhr3",
+        "title": "Online - Offline",
+        "description": "",
+        "path": "online-offline.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "179bhwb33",
+        "title": "Document",
+        "description": "",
+        "path": "overlapping-layout.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "0ru6377wk",
+        "title": "Hello, world!",
+        "description": "",
+        "path": "page-for-you.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "rvyio9u7b",
+        "title": "Random Password Generator with Copy Button",
+        "description": "",
+        "path": "password-generator.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "wpa7wir95",
+        "title": "Our Team",
+        "description": "",
+        "path": "our-team-section.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "dd5h0381m",
         "title": "Custom Loader",
         "description": "",
         "path": "page-pre-loader.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "bntsbh5rv",
+        "id": "hh9d5zzdt",
         "title": "Paste File from Clipboard",
         "description": "",
         "path": "paste-files-clipboard.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "ibg6c8xb3",
+        "id": "tjqc2pe1a",
         "title": "Penguins Organizer (Fetch API Sandbox)",
         "description": "",
         "path": "penguins-organizer.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "spz8th6za",
+        "id": "bxbbqjcso",
         "title": "Placeholder Image Generator with JS & HTML5 Canvas",
         "description": "",
         "path": "placeholder-image-generator.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "1bijpk0n0",
+        "id": "34gwwvyvq",
         "title": "Pin Login",
         "description": "",
         "path": "pin-pad-login-screen.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "inoqobw4o",
+        "id": "od88uvv13",
         "title": "Placeholder Shown",
         "description": "",
         "path": "placeholder-shown.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "3g3h418sw",
+        "id": "qadgqqvsv",
         "title": "Rodion - Web developer",
         "description": "",
         "path": "portfolio-website.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "5oyvy78d0",
-        "title": "Progress Bar",
-        "description": "",
-        "path": "progress-bar.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "z409sjr0m",
-        "title": "Hello, world!",
-        "description": "",
-        "path": "positive-quotes.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "i7gdcycwe",
+        "id": "sy0kwy37s",
         "title": "Etiam - vitae tellus augue",
         "description": "",
         "path": "product-landing-page.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "r0ekc33t1",
+        "id": "r0um6p8uj",
+        "title": "Progress Bar",
+        "description": "",
+        "path": "progress-bar.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "r0hwacnc9",
+        "title": "Hello, world!",
+        "description": "",
+        "path": "positive-quotes.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "pd0x4wpoa",
         "title": "Hello, world!",
         "description": "",
         "path": "progress.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "6qkdg9m4w",
-        "title": "Snap to Scroll",
-        "description": "",
-        "path": "pure-css-scroll-snapping.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "r8ynxqydc",
-        "title": "Pulse Effect",
-        "description": "",
-        "path": "pulse-effect.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "wy5x94yj4",
-        "title": "Quiz App",
-        "description": "",
-        "path": "quiz-app.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "r0mzx1lge",
+        "id": "aoybjhf58",
         "title": "Quick Autocomplete App",
         "description": "",
         "path": "quick-autocomplete-app.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "clsdlsyq8",
+        "id": "55l6ga8pb",
+        "title": "Quiz App",
+        "description": "",
+        "path": "quiz-app.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "g8nnty5w9",
+        "title": "Pulse Effect",
+        "description": "",
+        "path": "pulse-effect.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "n5pc8lkg7",
+        "title": "Snap to Scroll",
+        "description": "",
+        "path": "pure-css-scroll-snapping.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "krididvr3",
         "title": "Custom Radion Button",
         "description": "",
         "path": "radio-groups.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "94j4zs1e4",
+        "id": "fjnvqukvk",
         "title": "Random Joke Generator | JavaScript Fetch API",
         "description": "",
         "path": "random-joke-generator.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "ezr72e0tj",
+        "id": "i86i973k9",
         "title": "CSS Reflection",
         "description": "",
         "path": "reflection.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "8dyv7k2h6",
+        "id": "n535085iq",
         "title": "Read More / Show More Button",
         "description": "",
         "path": "read-more-show-more-button.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "kxxxm3kv7",
+        "id": "l2tax1yic",
         "title": "Registration Form",
         "description": "",
         "path": "registration-form.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "xqmnwq3c6",
+        "id": "92brhmc83",
         "title": "Reminders",
         "description": "",
         "path": "reminders.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "xxcckvfq4",
+        "id": "zhlljbnzz",
         "title": "Loruki | Cloud Hosting for Everyone",
         "description": "",
         "path": "res-website-grid-features-docs.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "45a07fzlz",
-        "title": "Loruki | Cloud Hosting for Everyone",
-        "description": "",
-        "path": "res-website-grid-features.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "ae1e2lxmc",
+        "id": "526t1aejm",
         "title": "Loruki | Cloud Hosting for Everyone",
         "description": "",
         "path": "res-website-grid.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "7gdj62y1p",
-        "title": "GridBiz",
-        "description": "",
-        "path": "responsiv-grid-css-website-layout.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "oil69odrp",
+        "id": "ww8gh01ba",
         "title": "Responsive Gauge",
         "description": "",
         "path": "responsive-gauge.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "u4cia5cnp",
-        "title": "Navigation Bar",
+        "id": "102qak8dp",
+        "title": "Loruki | Cloud Hosting for Everyone",
         "description": "",
-        "path": "responsive-navbar.html",
-        "date": "10/25/2021, 19:28"
+        "path": "res-website-grid-features.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "0se7lql4f",
-        "title": "Welcome to My Portfolio",
+        "id": "fn4jfsv7b",
+        "title": "GridBiz",
         "description": "",
-        "path": "responsive-portfolio.html",
-        "date": "10/25/2021, 19:28"
+        "path": "responsiv-grid-css-website-layout.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "q5va8m10e",
-        "title": "Review Project",
-        "description": "",
-        "path": "review.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "v7o8s5s7j",
+        "id": "5afbeshhe",
         "title": "Scroll Down Animated Button",
         "description": "",
         "path": "scroll-down-button.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "u43st1nuh",
+        "id": "e5s06xydr",
+        "title": "Navigation Bar",
+        "description": "",
+        "path": "responsive-navbar.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "gp6wmf8y8",
+        "title": "Review Project",
+        "description": "",
+        "path": "review.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "44ap6k1j3",
         "title": "Rodion - Search",
         "description": "Hello, I am Rodion. I have a life interest for all things web and developing code. I will use this website to share my personal projects.",
         "path": "search.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "ppgbibv3n",
+        "id": "3lbwj9u1o",
+        "title": "Welcome to My Portfolio",
+        "description": "",
+        "path": "responsive-portfolio.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "a1wso2ell",
         "title": "Using Set Selection Range method JS",
         "description": "",
         "path": "set-selection-range.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "06i0ktas6",
+        "id": "1te4g75gd",
         "title": "Show / Hide Description",
         "description": "",
         "path": "show-description.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "fq165klzd",
-        "title": "Frontend. Intro Component with Sign Up Form",
-        "description": "",
-        "path": "signup-form-js-validation.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "lm15nxjv3",
-        "title": "Simple Dot Loaders",
-        "description": "",
-        "path": "simple-dot-loaders.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "hzi7l2c15",
-        "title": "Sidebar Navigation Menu",
-        "description": "",
-        "path": "sidebar-navigation-menu.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "6q92gpaip",
-        "title": "Show / Hide Password Toggle",
-        "description": "",
-        "path": "show-hide-password.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "24ltngplf",
+        "id": "4elba8zl1",
         "title": "Simple Filter App",
         "description": "",
         "path": "simple-filter-app.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "unllralrv",
+        "id": "zv2psbg12",
+        "title": "Sidebar Navigation Menu",
+        "description": "",
+        "path": "sidebar-navigation-menu.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "v3s8gv5q0",
         "title": "Simple Form Design",
         "description": "",
         "path": "simple-form-design.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "zyxyor8gr",
+        "id": "adpmy75e2",
+        "title": "Frontend. Intro Component with Sign Up Form",
+        "description": "",
+        "path": "signup-form-js-validation.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "uf32rzkp3",
+        "title": "Show / Hide Password Toggle",
+        "description": "",
+        "path": "show-hide-password.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "25uox8rio",
         "title": "The Bakary",
         "description": "",
         "path": "simple-landing-page-cooking-master.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "jkuyuktwh",
+        "id": "pg86yc6lm",
         "title": "Single Price Grid Component",
         "description": "",
         "path": "single-price-grid-component.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "irpqp7xqp",
+        "id": "3r8tm89a2",
         "title": "Simple Todo",
         "description": "",
         "path": "simple-todo-app.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "ko27jdcsf",
+        "id": "h77y3jcyr",
+        "title": "Simple Dot Loaders",
+        "description": "",
+        "path": "simple-dot-loaders.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "yhspacbwe",
         "title": "Hello, world!",
         "description": "",
         "path": "smooth-scroll.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "pmn5zatt8",
-        "title": "Speech Recognition App",
-        "description": "",
-        "path": "speech-recognition-app.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "hnia0c52g",
+        "id": "fad4v0x1l",
         "title": "Sorting Tables",
         "description": "",
         "path": "sort-tables.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "cavzaz5mw",
-        "title": "Document",
-        "description": "",
-        "path": "stripe-homepage-tailwind.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "k7der0a84",
+        "id": "p0zi10ngh",
         "title": "Document",
         "description": "",
         "path": "sticky-headers.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "uwsyf4ea4",
-        "title": "Styling Validation Errors",
+        "id": "4m5vom7gc",
+        "title": "Document",
         "description": "",
-        "path": "styling-validation-errors.html",
-        "date": "10/25/2021, 19:28"
+        "path": "stripe-homepage-tailwind.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "ayiohzaly",
+        "id": "wt9weay66",
+        "title": "Speech Recognition App",
+        "description": "",
+        "path": "speech-recognition-app.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "cqxnr48aq",
         "title": "Styling Drop Down Menus",
         "description": "",
         "path": "styled-select-menu.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "decaeqol8",
+        "id": "6a1ojk89y",
         "title": "Form Design",
         "description": "",
         "path": "styling-forms.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "57ad7fqo9",
+        "id": "4zhnfkyhf",
         "title": "SVG Animation Text",
         "description": "",
         "path": "svg-animation-text-css.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "6a9nvlyai",
+        "id": "zwri22rc9",
+        "title": "Styling Validation Errors",
+        "description": "",
+        "path": "styling-validation-errors.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "wdlluhiye",
         "title": "Sum Calc",
         "description": "",
         "path": "sum-calc.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "0qyrrroof",
+        "id": "grk77lt5u",
         "title": "Tabs",
         "description": "",
         "path": "tabs-app-mvc.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "elfowlo8b",
+        "id": "hkkjmroh2",
         "title": "Tabs Project",
         "description": "",
         "path": "tabs.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "be8w3yiv6",
-        "title": "Document",
-        "description": "",
-        "path": "tailwind-css-page.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "65f8vtsbc",
+        "id": "vu39976a3",
         "title": "Document",
         "description": "",
         "path": "tailwind-navbar.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "aaupxdyyk",
+        "id": "1bb2vb4bv",
         "title": "Text Decoration Color",
         "description": "",
         "path": "text-decoration-color.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "raqp86cl3",
-        "title": "Todo App",
-        "description": "",
-        "path": "todo-app.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "lj2g5ikby",
-        "title": "Web Page Banner",
-        "description": "",
-        "path": "top-banner.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "a1nq9pj30",
+        "id": "5827gefs0",
         "title": "Document",
         "description": "",
-        "path": "transition-background-css3.html",
-        "date": "10/25/2021, 19:28"
+        "path": "tailwind-css-page.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "v8twli1qw",
+        "id": "el8xmnmcb",
         "title": "Toggle Switch",
         "description": "",
         "path": "toggle-switch-custom-checkbox.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "kakhi0spy",
+        "id": "6pl27tfsp",
+        "title": "Todo App",
+        "description": "",
+        "path": "todo-app.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "a1z6q3s19",
+        "title": "Document",
+        "description": "",
+        "path": "transition-background-css3.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "gbr8ynzfj",
+        "title": "Web Page Banner",
+        "description": "",
+        "path": "top-banner.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "f50jbz5kx",
         "title": "Tooltips",
         "description": "",
         "path": "tooltips.html",
-        "date": "10/25/2021, 19:28"
+        "date": "10/25/2021, 19:54"
     },
     {
-        "id": "o9yzab8iy",
-        "title": "Typed CSS",
-        "description": "",
-        "path": "typed-css.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "35tt0od2k",
-        "title": "TypeWriter",
-        "description": "",
-        "path": "typewriter-js.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "mjb3bzgky",
+        "id": "1w6shkebv",
         "title": "Travel Website Landing Page Design",
         "description": "",
         "path": "travel-landing-page.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "2d5r7lhtx",
-        "title": "Document",
+        "id": "vef9punz0",
+        "title": "Typed CSS",
         "description": "",
-        "path": "typewriting-effect-js.html",
-        "date": "10/25/2021, 19:28"
+        "path": "typed-css.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "f6vvdbouw",
+        "id": "taw35zsm8",
+        "title": "TypeWriter",
+        "description": "",
+        "path": "typewriter-js.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "e5p0pwvtc",
         "title": "Hello World!",
         "description": "",
         "path": "typewriting.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "qebzhftxa",
+        "id": "v5u1p72v7",
         "title": "Hello, world!",
         "description": "",
         "path": "under-construction-page.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "9e8yceh98",
-        "title": "user-select",
+        "id": "sqw6fbbp7",
+        "title": "Document",
         "description": "",
-        "path": "user-select-property.html",
-        "date": "10/25/2021, 19:28"
+        "path": "typewriting-effect-js.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "e5srb6rwn",
+        "id": "tmwi2ov9k",
         "title": "Avatar Generator",
         "description": "",
         "path": "user-avatar-image-generator.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "7bpvhzhfx",
-        "title": "Vertical Icon Menu",
+        "id": "4y1u3zdrb",
+        "title": "user-select",
         "description": "",
-        "path": "vertical-nav-menu.html",
-        "date": "10/25/2021, 19:28"
+        "path": "user-select-property.html",
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "n37czi6bz",
+        "id": "onc7bm6c6",
         "title": "Bootstrap 5 Vanilla JS tutorial by Themesberg",
         "description": "",
         "path": "vanilla-js-bootstrap5.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "fdgb725ba",
+        "id": "jxq44cojw",
         "title": "The Vibration API",
         "description": "",
         "path": "vibrate-mobile-devices.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "nk4xmryae",
+        "id": "00wpr72pm",
+        "title": "Vertical Icon Menu",
+        "description": "",
+        "path": "vertical-nav-menu.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "gln36p7mq",
         "title": "Vertical Timeline",
         "description": "",
         "path": "vertical-timeline.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "lgo33hd9u",
-        "title": "Travel Landing Page",
-        "description": "",
-        "path": "video-background-page.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "xenc3y3m7",
+        "id": "thliwcrav",
         "title": "Video Inside Text",
         "description": "",
         "path": "video-inside-text.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "12wnk730o",
+        "id": "b096st8pt",
+        "title": "Travel Landing Page",
+        "description": "",
+        "path": "video-background-page.html",
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "qjkj7mkvg",
         "title": "Video",
         "description": "",
         "path": "video.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
     },
     {
-        "id": "auq7o2xix",
-        "title": "Weather Forecast App",
-        "description": "",
-        "path": "weather-forecast-app.html",
-        "date": "10/25/2021, 19:28"
-    },
-    {
-        "id": "tmlkli24h",
+        "id": "b242vp7dd",
         "title": "Weight Converter",
         "description": "",
         "path": "weight-converter-app.html",
-        "date": "10/25/2021, 19:28"
+        "date": "9/16/2021, 12:14"
+    },
+    {
+        "id": "633bf80w6",
+        "title": "Weather Forecast App",
+        "description": "",
+        "path": "weather-forecast-app.html",
+        "date": "9/16/2021, 12:14"
     }
 ]
