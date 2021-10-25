@@ -11,6 +11,7 @@ const options = {
 }
 
 readdir('./', (err, files) => {
+    
     const projects = []
     console.log(path.base);
     for (const file of files) {
