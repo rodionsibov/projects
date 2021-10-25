@@ -10,32 +10,53 @@ const options = {
 }
 
 // readdir('./', (err, files) => {
-//     files.forEach(file => {
+//     files.find(file => {
+//         file === 'video.html'
 //         stat(file, (err, stats) => {
-//             if (stats.isDirectory() && isSameDay(stats.birthtime, new Date())) {
-//                 readFile(`${file}/index.html`, 'utf8', (err, data) => {
-//                     if (err) {
-//                         console.error(err);
-//                         return
-//                     }
-//                     console.log(data);
-//                 })
-//             }
+//             readFile(file`, 'utf8', (err, data) => {
+//                 if (err) {
+//                     console.error(err);
+//                     return
+//                 }
+//                 console.log(data);
+//             })
 //         })
 //     })
 // })
 
-const isSameDay = (a, b) => {
-    return a.getFullYear() === b.getFullYear() &&
-        a.getMonth() === b.getMonth() &&
-        a.getDate() === b.getDate()
-}
+readdir('./', (err, files) => {
+    const file = files.find(file => file === 'temp-folder')
+    stat(file, (err, stats) => {
+        readFile(`${file}/index.html`, 'utf8', (err, data) => {
+            if (err) {
+                console.error(err);
+                return
+            }
+            parseDescription(data);
+        })
+    })
+})
+
+
+// const isSameDay = (a, b) => {
+//     return a.getFullYear() === b.getFullYear() &&
+//         a.getMonth() === b.getMonth() &&
+//         a.getDate() === b.getDate()
+// }
 
 const parseTitle = (body) => {
     let match = body.match(/<title>([^<]*)<\/title>/) // regular expression to parse contents of the <title> tag
     if (!match || typeof match[1] !== 'string')
         throw new Error('Unable to parse the title tag')
     return match[1]
+}
+
+const parseDescription = (body) => {
+    let match = body.match(/<meta name="description" content="([^]+)"/) // regular expression to parse contents of the <meta> tag
+    // if (!match || typeof match[1] !== 'string')
+    //     throw new Error('Unable to parse the title tag')
+    console.log(match[1]);
+    // return match[1]
 }
 
 const project = {
@@ -45,27 +66,27 @@ const project = {
     date: new Intl.DateTimeFormat('default', options).format(new Date())
 }
 
-readFile('./projects.json', 'utf8', (err, data) => {
-    if (err) {
-        console.error(err);
-        return
-    }
+// readFile('./projects.json', 'utf8', (err, data) => {
+//     if (err) {
+//         console.error(err);
+//         return
+//     }
 
-    let projects
-    projects = JSON.parse(data)
-    for (const item of projects) {
-        if (item.url === project.url) {
-            console.log('Error: Check URL, please!');
-            return
-        }
-    }
-    projects.push(project)
+//     let projects
+//     projects = JSON.parse(data)
+//     for (const item of projects) {
+//         if (item.url === project.url) {
+//             console.log('Error: Check URL, please!');
+//             return
+//         }
+//     }
+//     projects.push(project)
 
-    writeFile('./test.json', JSON.stringify(projects), err => {
-        if (err) {
-            console.error(err);
-            return
-        };
-        console.log(`Project ${project.title} added successfully. There are ${projects.length} projects.`);
-    })
-})
+//     writeFile('./test.json', JSON.stringify(projects), err => {
+//         if (err) {
+//             console.error(err);
+//             return
+//         };
+//         console.log(`Project ${ project.title } added successfully.There are ${ projects.length } projects.`);
+//     })
+// })
