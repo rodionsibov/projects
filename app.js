@@ -200,7 +200,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 // utils
 function fetchEmojis(projects) {
-    fetch(`https://api.emojisworld.io/v1/random?&limit=${projects.length}`)
+    fetch(`https://api.emojisworld.fr/v1/random?&limit=${projects.length}`)
         .then(res => res.json())
         .then(data => {
             document.querySelectorAll('.emojis').forEach((item, index) => {
