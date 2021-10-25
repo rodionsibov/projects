@@ -12,7 +12,7 @@ const options = {
 readdir('./', (err, files) => {
     const projects = []
     for (const file of files) {
-        if (file.includes('.html')) {
+        if (file.includes('index.html')) {
 
             stat(file, (err, stats) => {
                 readFile(`${file}`, 'utf8', (err, data) => {
@@ -22,6 +22,7 @@ readdir('./', (err, files) => {
                     }
                     parseTitle(data)
                     parseDescription(data);
+
                     const project = {
                         id: Math.random().toString(36).substr(2,9),
                         title: parseTitle(data),
@@ -29,13 +30,14 @@ readdir('./', (err, files) => {
                         path: `${file}`,
                         date: new Intl.DateTimeFormat('default', options).format(new Date())
                     }
+
                     projects.push(project)
-                    writeFile('./test2.json', JSON.stringify(projects), err => {
-                        if (err) {
-                            console.error(err);
-                            return
-                        };
-                    })
+                    // writeFile('./projects.json', JSON.stringify(projects), err => {
+                    //     if (err) {
+                    //         console.error(err);
+                    //         return
+                    //     };
+                    // })
                 })
             })
         }
