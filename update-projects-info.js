@@ -53,10 +53,9 @@ const parseTitle = (body) => {
 
 const parseDescription = (body) => {
     let match = body.match(/<meta name="description" content="([^]+)"/) // regular expression to parse contents of the <meta> tag
-    // if (!match || typeof match[1] !== 'string')
-    //     throw new Error('Unable to parse the title tag')
-    console.log(match[1]);
-    // return match[1]
+    if (!match || typeof match[1] !== 'string')
+        throw new Error('Unable to parse the title tag')
+    return match[1]
 }
 
 const project = {
