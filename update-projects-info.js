@@ -11,34 +11,38 @@ const options = {
 
 readdir('./', (err, files) => {
     const projects = []
-    const file = files.find(file => file === 'temp-folder')
     // files.includes()
-    stat(file, (err, stats) => {
-        readFile(`${file}/index.html`, 'utf8', (err, data) => {
-            if (err) {
-                console.error(err);
-                return
-            }
-            parseTitle(data)
-            parseDescription(data);
-            const project = {
-                id: Date.now(),
-                title: parseTitle(data),
-                description: parseDescription(data),
-                path: `${file}/index.html`,
-                date: new Intl.DateTimeFormat('default', options).format(new Date())
-            }
-            projects.push(project)
-            console.log(projects);
-            writeFile('./test2.json', JSON.stringify(projects), err => {
-                if (err) {
-                    console.error(err);
-                    return
-                };
-                console.log(`Project ${project.title} added successfully.There are ${projects.length} projects.`);
+    for (const file of files) {
+        if (file.includes('index.html')) {
+            console.log(file);
+
+            stat(file, (err, stats) => {
+                readFile(`${file}`, 'utf8', (err, data) => {
+                    if (err) {
+                        console.error(err);
+                        return
+                    }
+                    parseTitle(data)
+                    parseDescription(data);
+                    const project = {
+                        id: Date.now(),
+                        title: parseTitle(data),
+                        description: parseDescription(data),
+                        path: `${file}`,
+                        date: new Intl.DateTimeFormat('default', options).format(new Date())
+                    }
+                    projects.push(project)
+                    writeFile('./test2.json', JSON.stringify(projects), err => {
+                        if (err) {
+                            console.error(err);
+                            return
+                        };
+                    })
+                })
             })
-        })
-    })
+        }
+    }
+    
 })
 
 
@@ -56,10 +60,10 @@ const parseTitle = (body) => {
 }
 
 const parseDescription = (body) => {
-    let match = body.match(/<meta name="description" content="([^]+)"/) // regular expression to parse contents of the <meta> tag
-    if (!match || typeof match[1] !== 'string') 
-        throw new Error('Unable to parse the title tag')
-    return match[1]
+    let match = body.match(/<meta name="description" content="([^<]*)">/) // regular expression to parse contents of the <meta> tag
+    // if (!match || typeof match[1] !== 'string')
+    //     throw new Error('Unable to parse the meta tag')
+    return match?.[1] || ''
 }
 
 
