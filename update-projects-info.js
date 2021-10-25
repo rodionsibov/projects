@@ -11,10 +11,8 @@ const options = {
 
 readdir('./', (err, files) => {
     const projects = []
-    // files.includes()
     for (const file of files) {
-        if (file.includes('index.html')) {
-            console.log(file);
+        if (file.includes('.html')) {
 
             stat(file, (err, stats) => {
                 readFile(`${file}`, 'utf8', (err, data) => {
@@ -25,7 +23,7 @@ readdir('./', (err, files) => {
                     parseTitle(data)
                     parseDescription(data);
                     const project = {
-                        id: Date.now(),
+                        id: Math.random().toString(36).substr(2,9),
                         title: parseTitle(data),
                         description: parseDescription(data),
                         path: `${file}`,
@@ -42,15 +40,7 @@ readdir('./', (err, files) => {
             })
         }
     }
-    
 })
-
-
-// const isSameDay = (a, b) => {
-//     return a.getFullYear() === b.getFullYear() &&
-//         a.getMonth() === b.getMonth() &&
-//         a.getDate() === b.getDate()
-// }
 
 const parseTitle = (body) => {
     let match = body.match(/<title>([^<]*)<\/title>/) // regular expression to parse contents of the <title> tag
@@ -67,22 +57,3 @@ const parseDescription = (body) => {
 }
 
 
-
-// readFile('./projects.json', 'utf8', (err, data) => {
-//     if (err) {
-//         console.error(err);
-//         return
-//     }
-
-//     let projects
-//     projects = JSON.parse(data)
-//     for (const item of projects) {
-//         if (item.url === project.url) {
-//             console.log('Error: Check URL, please!');
-//             return
-//         }
-//     }
-//     projects.push(project)
-
-//     
-// })
