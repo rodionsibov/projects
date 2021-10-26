@@ -11,15 +11,30 @@ const options = {
 
 readdir('./', (err, files) => {
     const projects = []
-    for (const file of files) {
-        if (file.includes('.html')) {
-            readFile(file, 'utf8', (err, data) => {
-                stat(file, (err, stats) => {
-                    if (err) {
-                        console.error(err);
-                        return
-                    }
+    files.forEach(file => {
+        stat(file, (err, stats) => {
+            if (err) {
+                console.error(err);
+                return
+            }
 
+            if (stats.isDirectory() && !['.git', 'api', 'img'].includes(file)) {
+                readFile(`${file}/index.html`, 'utf8', (err, data) => {
+                    parseTitle(data)
+                    parseDescription(data);
+
+                    const project = {
+                        id: Math.random().toString(36).substr(2, 9),
+                        title: parseTitle(data),
+                        description: parseDescription(data),
+                        path: `${file}/index.html`,
+                        date: new Intl.DateTimeFormat('default', options).format(stats.mtime)
+                    }
+                    projects.push(project)
+                })
+            }
+            if (file.includes('.html')) {
+                readFile(`${file}`, 'utf8', (err, data) => {
                     parseTitle(data)
                     parseDescription(data);
 
@@ -30,19 +45,17 @@ readdir('./', (err, files) => {
                         path: `${file}`,
                         date: new Intl.DateTimeFormat('default', options).format(stats.mtime)
                     }
-
                     projects.push(project)
                     writeFile('./projects.json', JSON.stringify(projects), err => {
                         if (err) {
-                            console.error(err);
+                            console.error(err)
                             return
-                        };
+                        }
                     })
                 })
-            })
-        }
-    }
-    console.log('Done');
+            }
+        })
+    })
 })
 
 const parseTitle = (body) => {
