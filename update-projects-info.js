@@ -33,7 +33,7 @@ readdir('./', (err, files) => {
                     projects.push(project)
                 })
             }
-            if (file.includes('.html')) {
+            if (file.includes('.html') && !file.includes('index.html')) {
                 readFile(`${file}`, 'utf8', (err, data) => {
                     parseTitle(data)
                     parseDescription(data);
