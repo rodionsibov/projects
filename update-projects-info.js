@@ -14,7 +14,7 @@ readdir('./', (err, files) => {
     const projects = []
     console.log(path.base);
     for (const file of files) {
-        if (file.includes('.html')) {
+        if (file.includes('video.html')) {
             readFile(file, 'utf8', (err, data) => {
             })
 
@@ -23,6 +23,7 @@ readdir('./', (err, files) => {
                     console.error(err);
                     return
                 }
+                console.log(stats);
             })
 
             // parseTitle(data)
