@@ -237,7 +237,7 @@ function renderProjects(projects) {
                 </div>
             </div>
             `).join('')
-    // <iframe src="${project.url}" loading="lazy"></iframe>
+            // <iframe src="${project.path}" loading="lazy"></iframe>
     fetchEmojis(projects)
     // add animation on scroll
     checkProjects()
