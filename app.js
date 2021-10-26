@@ -27,6 +27,7 @@ fetch('./projects.json')
 
 // search button press
 document.querySelector('.search-button').addEventListener('click', () => {
+    document.querySelector('form')[0].focus()
     document.querySelector('.search-icon').classList.toggle('hide')
     document.querySelector('.close-icon').classList.toggle('show')
     document.querySelector('form').classList.toggle('show')
@@ -35,6 +36,7 @@ document.querySelector('.search-button').addEventListener('click', () => {
 
 window.addEventListener('keyup', e => {
     if (e.key === 'Escape') {
+        document.querySelector('form')[0].focus()
         document.querySelector('.search-icon').classList.toggle('hide')
         document.querySelector('.close-icon').classList.toggle('show')
         document.querySelector('form').classList.toggle('show')
@@ -142,7 +144,6 @@ function getVibes() {
 document.querySelector('.vibe').addEventListener('click', e => {
     const input = document.body.appendChild(document.createElement("input"));
     input.value = e.target.textContent;
-    input.focus();
     input.select();
     document.execCommand('copy');
     input.parentNode.removeChild(input);
@@ -150,7 +151,8 @@ document.querySelector('.vibe').addEventListener('click', e => {
     const divEl = e.target.appendChild(document.createElement('div'))
     divEl.textContent = 'Copied 😉'
     divEl.style.marginTop = '20px'
-    divEl.style.color = 'var(--color4)'
+    divEl.style.fontSize = '1.2rem'
+    divEl.style.color = 'var(--color1)'
     setTimeout(() => {
         divEl.parentNode.removeChild(divEl)
     }, 500)
@@ -200,11 +202,12 @@ window.addEventListener("DOMContentLoaded", function () {
 
 // utils
 function fetchEmojis(projects) {
-    fetch(`https://api.emojisworld.fr/v1/random?&limit=${projects.length}`)
+    fetch(`https://raw.githubusercontent.com/github/gemoji/master/db/emoji.json`)
         .then(res => res.json())
         .then(data => {
             document.querySelectorAll('.emojis').forEach((item, index) => {
-                item.textContent = `${data.results[index].emoji}`
+                data.sort(() => Math.random() - 0.5)
+                item.textContent = `${data[index].emoji}`
             })
         })
         .catch(err => console.log(err))
