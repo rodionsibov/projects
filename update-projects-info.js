@@ -1,5 +1,4 @@
 const { readdir, stat, writeFile, readFile } = require('fs')
-const path = require('path')
 
 const options = {
     day: 'numeric',
