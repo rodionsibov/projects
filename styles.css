@@ -94,7 +94,7 @@ p {
     left: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-around;
     padding: 30px;
     width: 100%;
     height: 100vh;
@@ -111,7 +111,7 @@ p {
 
 .form-control {
   position: relative;
-  margin: 0 0 100px;
+  margin: 50px 0 0;
 }
 
 .form-control input {
@@ -148,11 +148,8 @@ p {
 }
 
 .vibe {
-    position: absolute;
-    left: 0;
-    top: 0;
+    order: 2;
     user-select: none;
-    padding: 50px 70px 0 30px;
     transition: transform 0.3s ease;
     cursor: pointer;
     color: var(--color5);
