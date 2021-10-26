@@ -152,7 +152,7 @@ document.querySelector('.vibe').addEventListener('click', e => {
     divEl.textContent = 'Copied 😉'
     divEl.style.marginTop = '20px'
     divEl.style.fontSize = '1.2rem'
-    divEl.style.position` = 'absolute'
+    divEl.style.position = 'absolute'
     divEl.style.color = 'var(--color1)'
     setTimeout(() => {
         divEl.parentNode.removeChild(divEl)
