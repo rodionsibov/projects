@@ -167,6 +167,19 @@ mark {
     background-image: var(--color4);
     color: var(--color3);
     line-height: 1.9;
+    animation: bg-anim 5s infinite alternate;
+    background-size: 200%;
+
+}
+
+@keyframes bg-anim {
+    0% {
+        background-position: right;
+    }
+    100% {
+        background-position: left;
+    }
+
 }
 
 .projects {
