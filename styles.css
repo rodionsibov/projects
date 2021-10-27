@@ -159,7 +159,7 @@ p {
     margin: 0 0 30px;
 }
 
-.vibe::first-letter {
+.vibe::first-letter:not(div) {
     font-size: 200%;
 }
 

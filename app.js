@@ -148,11 +148,10 @@ document.querySelector('.vibe').addEventListener('click', e => {
     document.execCommand('copy');
     input.parentNode.removeChild(input);
 
-    const divEl = e.target.appendChild(document.createElement('div'))
+    const divEl = e.target.insertAdjacentElement('afterbegin', document.createElement('div'))
     divEl.textContent = 'Copied 😉'
-    divEl.style.marginTop = '10px'
-    divEl.style.fontSize = '1.2rem'
-    divEl.style.position = 'absolute'
+    divEl.style.marginBottom = '10px'
+    divEl.style.fontSize = '1.1rem'
     divEl.style.color = 'var(--color1)'
     setTimeout(() => {
         divEl.parentNode.removeChild(divEl)
@@ -238,7 +237,7 @@ function renderProjects(projects) {
                 </div>
             </div>
             `).join('')
-            // <iframe src="${project.path}" loading="lazy"></iframe>
+    // <iframe src="${project.path}" loading="lazy"></iframe>
     fetchEmojis(projects)
     // add animation on scroll
     checkProjects()
