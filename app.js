@@ -150,7 +150,7 @@ document.querySelector('.vibe').addEventListener('click', e => {
 
     const divEl = e.target.appendChild(document.createElement('div'))
     divEl.textContent = 'Copied 😉'
-    divEl.style.marginTop = '20px'
+    divEl.style.marginTop = '10px'
     divEl.style.fontSize = '1.2rem'
     divEl.style.position = 'absolute'
     divEl.style.color = 'var(--color1)'
