@@ -150,8 +150,9 @@ document.querySelector('.vibe').addEventListener('click', e => {
 
     const divEl = e.target.insertAdjacentElement('afterbegin', document.createElement('div'))
     divEl.textContent = 'Copied 😉'
-    divEl.style.marginBottom = '10px'
+    divEl.style.top = '-50px'
     divEl.style.fontSize = '1.1rem'
+    divEl.style.position = 'absolute'
     divEl.style.color = 'var(--color1)'
     setTimeout(() => {
         divEl.parentNode.removeChild(divEl)
