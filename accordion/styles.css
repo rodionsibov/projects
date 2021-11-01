@@ -57,3 +57,12 @@ h1 {
     border: none;
     border-bottom: 1px solid grey;
 }
+
+.accordion .container.active .content {
+    height: 150px;
+}
+
+.accordion .container.active .label::before {
+    content: '-';
+    font-size: 30px;
+}
