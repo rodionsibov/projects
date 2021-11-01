@@ -1,20 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  background-color: #0A2344;
-  font-family: 'rubik', sans-serif;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    font-family: 'Rubik', sans-serif;
+    margin: 20px;
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .accordion {
-  width: 800px;
-  margin: 90px auto;
-  color: #333;
-  background-color: white;
-  padding: 45px 45px;
+    max-width: 800px;
+    margin: 90px auto;
+    color: #333;
+    background-color: white;
+    padding: 45px 45px;
+    border-radius: 8px;
+    border: 12px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
 }
 
 .accordion .container {
@@ -43,10 +57,9 @@ h1 {
 .accordion .content {
     position: relative;
     background: white;
-    height: 0;
+    max-height: 0;
     font-size: 20px;
     text-align: justify;
-    width: 780px;
     overflow: hidden;
     transition: 0.5s;
 }
@@ -58,11 +71,31 @@ h1 {
     border-bottom: 1px solid grey;
 }
 
+.accordion hr:nth-last-child(1) {
+    margin-bottom: 20px;
+}
+
 .accordion .container.active .content {
-    height: 150px;
+    max-height: 500px;
 }
 
 .accordion .container.active .label::before {
     content: '-';
     font-size: 30px;
+}
+
+@media (max-width: 500px) {
+    .accordion .label {
+        font-size: 20px;
+    }
+
+    .accordion .content {
+        font-size: 16px;
+        text-align: inherit;
+        line-height: 1.4rem;
+    }
+
+    .accordion {
+        padding: 10px;
+    }
 }
