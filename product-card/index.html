@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Product Card</title>
+</head>
+<body>
+    <div class="card" :style="bgImage">
+        <div class="badge">{{ product.colorVariant }}</div>
+        <h3 class="title">
+          <router-link :to="{ name: 'Product', params: { id: product.id } }">
+            {{ product.name }}
+          </router-link>
+        </h3>
+        <p class="price">
+          <span class="currency">$</span>{{ product.price.toFixed(2) }}
+        </p>
+        <p class="description">{{ description }}</p>
+        <button class="view-product-button">
+          View Product
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="arrow"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
+            />
+          </svg>
+        </button>
+      </div>
+      <script src="main.js"></script>
+</body>
+</html>
