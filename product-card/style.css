@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 50px auto;
+    font-family: 'Lato', sans-serif;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 5%;
+    padding: 20px;
+    color: whitesmoke;
+    border-radius: 0 20px 0 0;
+    transition: 0.2s transform;
+    overflow: hidden;
+  }
+
+.card::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.6);
+}
+  
+.card:hover {
+    transform: scale(0.99);
+}
+
+.card .title a {
+    position: relative;
+    font-size: 3.5rem;
+    font-weight: 100;
+    margin: 0;
+    padding-bottom: 5px;
+    color: whitesmoke;
+    border-bottom: 3px solid indigo;
+    overflow-wrap: break-word;
+    z-index: 1;
+    text-decoration: none;
+}
+ 
+.card .title a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    animation: line 5s 3 ease-in-out alternate;
+    border-bottom: 3px solid whitesmoke;
+    opacity: 0.3;
+}
+
+@keyframes line {
+    from {
+      width: 100%;
+    }
+}
+
+.card p.price {
+    align-self: end;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    z-index: 1;
+}
+
+.card span.currency {
+    font-weight: initial;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.card p.description {
+    color: whitesmoke;
+    font-size: 1rem;
+    z-index: 1;
+}
+
+.card button.view-product-button {
+    align-self: start;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: indigo;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 0 0 20px 0;
+    transition: 0.2s letter-spacing;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.card button.view-product-button:hover {
+    letter-spacing: 2px;
+}
+
+.card button.view-product-button:active {
+    opacity: 0.7;
+}
+
+.card .arrow {
+    width: 20px;
+    margin-left: 5px;
+}
+
+.card .badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    height: 10px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+    background-color: indigo;
+    color: white;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  @media (min-width: 500px) {
+    .card {
+      width: 350px;
+      margin: 10px;
+    }
+  }
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 5%;
+    padding: 20px;
+    color: whitesmoke;
+    border-radius: 0 20px 0 0;
+    transition: 0.2s transform;
+    overflow: hidden;
+}
+
+.card::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.card:hover {
+    transform: scale(0.99);
+}
+
+.card .title a {
+    position: relative;
+    font-size: 3.5rem;
+    font-weight: 100;
+    margin: 0;
+    padding-bottom: 5px;
+    color: whitesmoke;
+    border-bottom: 3px solid indigo;
+    overflow-wrap: break-word;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.card .title a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    animation: line 5s 3 ease-in-out alternate;
+    border-bottom: 3px solid whitesmoke;
+    opacity: 0.3;
+  }
+  @keyframes line {
+    from {
+      width: 100%;
+    }
+  }
+  .card p.price {
+    align-self: end;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    z-index: 1;
+  }
+  .card span.currency {
+    font-weight: initial;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  .card p.description {
+    color: whitesmoke;
+    font-size: 1rem;
+    z-index: 1;
+  }
+  .card button.view-product-button {
+    align-self: start;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: indigo;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 0 0 20px 0;
+    transition: 0.2s letter-spacing;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  .card button.view-product-button:hover {
+    letter-spacing: 2px;
+  }
+  .card button.view-product-button:active {
+    opacity: 0.7;
+  }
+  .card .arrow {
+    width: 20px;
+    margin-left: 5px;
+  }
+  .card .badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    height: 10px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+    background-color: indigo;
+    color: white;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  @media (min-width: 500px) {
+    .card {
+      width: 350px;
+      margin: 10px;
+    }
+  }
