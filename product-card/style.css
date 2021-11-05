@@ -21,7 +21,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
     margin: 5%;
     padding: 20px;
     color: whitesmoke;
@@ -37,14 +37,14 @@ body {
     height: 100%;
     width: 100%;
     content: "";
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
 }
   
 .card:hover {
-    transform: scale(0.99);
+    transform: scale(0.98);
 }
 
-.card .title {
+.card .title a {
     position: relative;
     font-size: 3.5rem;
     font-weight: 900;
@@ -57,7 +57,7 @@ body {
     text-decoration: none;
 }
  
-.card .title::after {
+.card .title a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -78,7 +78,7 @@ body {
     align-self: end;
     font-size: 1.5rem;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 20px 0;
     z-index: 1;
 }
 
@@ -92,7 +92,7 @@ body {
     color: whitesmoke;
     font-size: 1rem;
     z-index: 1;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
 }
 
 .card button.view-product-button {
