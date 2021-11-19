@@ -23,10 +23,10 @@
 
         .card {
             background-color: white;
-            --padding: 1rem; 
+            --padding: 1rem;
             border: 1px solid #777;
             border-radius: .25rem;
-            max-width: 300px;
+            overflow: hidden;
         }
 
         .card.card-shadow {
@@ -42,7 +42,7 @@
         }
 
         .card-header.card-image {
-            padding: var(--padding);
+            padding: 0;
             overflow: hidden;
         }
 
@@ -53,14 +53,22 @@
             aspect-ratio: 16/9;
             object-fit: cover;
             object-position: center;
+            transition: 200ms transform ease-in-out;
+        }
+
+        .card:hover > .card-header.card-image > img {
+            transform: scale(1.025);
         }
 
         .card-body {
             margin-bottom: .9rem;
+            padding: 0 var(--padding);
         }
 
         .card-footer {
             margin-top: 1rem;
+            padding: var(--padding);
+            padding-top: 0;
         }
 
         .btn {
@@ -114,9 +122,7 @@
         </div>
         <div class="card card-shadow">
             <div class="card-header card-image">
-                <img src="https://source.unsplash.com/TiVPTYCG_3E" alt="">
                 <img src="https://source.unsplash.com/b_79nOqf95I" alt="">
-                <img src="https://source.unsplash.com/178j8tJrNlc" alt="">
             </div>
             <div class="card-body">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut consequatur nihil quisquam veniam iusto
