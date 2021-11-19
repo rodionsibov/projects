@@ -35,7 +35,8 @@
         }
 
         .btn {
-            background-color: hsl(200, 50%, 50%);
+            --color: hsl(200, 50%, 50%);
+            background-color: var(--color);
             color: white;
             border: none;
             font-size: 1rem;
@@ -43,6 +44,18 @@
             border-radius: .25em;
             cursor: pointer;
         }
+
+        .btn:hover, .btn:focus {
+            background-color: hsl(200, 50%, 60%);
+        }
+
+        .btn.btn-outline {
+            background: none;
+            border: 1px solid var(--color);
+            color: var(--color);
+        }
+
+        
     </style>
 </head>
 
