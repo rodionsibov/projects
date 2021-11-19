@@ -23,7 +23,7 @@
 
         .card {
             background-color: white;
-            padding: 1rem;
+            --padding: 1rem; 
             border: 1px solid #777;
             border-radius: .25rem;
             max-width: 300px;
@@ -36,10 +36,13 @@
 
         .card-header {
             font-size: 1.5rem;
+            padding: var(--padding);
+            padding-bottom: 0;
             margin-bottom: .5rem;
         }
 
         .card-header.card-image {
+            padding: var(--padding);
             overflow: hidden;
         }
 
