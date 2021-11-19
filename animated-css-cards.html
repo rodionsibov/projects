@@ -14,6 +14,13 @@
             font-family: 'Open Sans', sans-serif;
         }
 
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
         .card {
             background-color: white;
             padding: 1rem;
@@ -46,12 +53,13 @@
             color: white;
             border: none;
             font-size: 1rem;
-            padding: .5em  .75em;
+            padding: .5em .75em;
             border-radius: .25em;
             cursor: pointer;
         }
 
-        .btn:hover, .btn:focus {
+        .btn:hover,
+        .btn:focus {
             background-color: hsl(200, 50%, 60%);
         }
 
@@ -61,29 +69,60 @@
             color: var(--color);
         }
 
-        .btn.btn-outline:hover, .btn.btn-outline:focus {
+        .btn.btn-outline:hover,
+        .btn.btn-outline:focus {
             background-color: hsl(200, 50%, 90%);
         }
 
-        .btn + .btn {
+        .btn+.btn {
             margin-left: .25rem;
         }
     </style>
 </head>
 
 <body>
-    <div class="card card-shadow">
-        <div class="card-header">124 Main St</div>
-        <div class="card-body">
-
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut consequatur nihil quisquam veniam iusto eligendi
-            id
-            maiores consectetur cum sint vero reprehenderit numquam, doloribus dignissimos totam quia iste deleniti
-            sapiente?
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-header">124 Main St</div>
+            <div class="card-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut consequatur nihil quisquam veniam iusto
+                eligendi
+                id
+                maiores consectetur cum sint vero reprehenderit numquam, doloribus dignissimos totam quia iste deleniti
+                sapiente?
+            </div>
+            <div class="card-footer">
+                <button class="btn">Details</button>
+                <button class="btn btn-outline">Contact Seller</button>
+            </div>
         </div>
-        <div class="card-footer">
-            <button class="btn">Details</button>
-            <button class="btn btn-outline">Contact Seller</button>
+        <div class="card">
+            <div class="card-header">124 Main St</div>
+            <div class="card-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut consequatur nihil quisquam veniam iusto
+                eligendi
+                id
+                maiores consectetur cum sint vero reprehenderit numquam, doloribus dignissimos totam quia iste deleniti
+                sapiente?
+            </div>
+            <div class="card-footer">
+                <button class="btn">Details</button>
+                <button class="btn btn-outline">Contact Seller</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">124 Main St</div>
+            <div class="card-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut consequatur nihil quisquam veniam iusto
+                eligendi
+                id
+                maiores consectetur cum sint vero reprehenderit numquam, doloribus dignissimos totam quia iste deleniti
+                sapiente?
+            </div>
+            <div class="card-footer">
+                <button class="btn">Details</button>
+                <button class="btn btn-outline">Contact Seller</button>
+            </div>
         </div>
     </div>
 </body>
