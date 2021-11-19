@@ -56,6 +56,7 @@ readdir('./', (err, files) => {
             }
         })
     })
+    console.log('Done');
 })
 
 const parseTitle = (body) => {
