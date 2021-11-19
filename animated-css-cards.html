@@ -39,6 +39,19 @@
             margin-bottom: .5rem;
         }
 
+        .card-header.card-image {
+            overflow: hidden;
+        }
+
+        .card-header.card-image>img {
+            display: block;
+            width: 100%;
+            max-height: 200px;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            object-position: center;
+        }
+
         .card-body {
             margin-bottom: .9rem;
         }
@@ -96,8 +109,12 @@
                 <button class="btn btn-outline">Contact Seller</button>
             </div>
         </div>
-        <div class="card">
-            <div class="card-header">124 Main St</div>
+        <div class="card card-shadow">
+            <div class="card-header card-image">
+                <img src="https://source.unsplash.com/TiVPTYCG_3E" alt="">
+                <img src="https://source.unsplash.com/b_79nOqf95I" alt="">
+                <img src="https://source.unsplash.com/178j8tJrNlc" alt="">
+            </div>
             <div class="card-body">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut consequatur nihil quisquam veniam iusto
                 eligendi
