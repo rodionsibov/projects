@@ -215,7 +215,6 @@ function fetchEmojis(projects) {
 }
 
 function checkProjects() {
-    console.log('animation');
     const triggerBottom = (window.innerHeight / 5) * 4;
     document.querySelectorAll('.project').forEach((project) => {
         const projectTop = project.getBoundingClientRect().top;
