@@ -233,7 +233,7 @@ function renderProjects(projects) {
             <div class="project">
                 <div class="emojis" title="Emojis World is created and maintained by Anton Bourtnik"></div>
                 <div class="project-header">
-                    <div><a href="${project.path}" target="_blank" title="${project.description}">${project.title}</a></div>
+                    <div><a href="${project.path}" target="_blank" title="${project.title}">${project.title}</a></div>
                     <div>Last updated ${project.date}</div>
                 </div>
             </div>
