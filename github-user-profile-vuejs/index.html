@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <title>GitHub User Profile | VueJS</title>
+</head>
+
+<body>
+    <div id="app" class="p-4 md:p-10">
+        <h1 class="text-center text-2xl font-bold my-4">GitHub Profiles</h1>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
+            <github-user-card v-for="username in usernames" :key="username" :username="username"></github-user-card>
+        </div>
+
+    </div>
+
+    <script type="text/x-template" id="github-user-card">
+
+    <div class="rounded shadow-lg">
+        <div class="hover:opacity-90">
+            <img :src="user.avatar_url" class="rounded-t-md w-full" alt="">
+        </div>
+        <div class="p-4">
+            <a :href="user.html_url" class="text-xl font-bold">{{ user.name }}</a>
+            <div class="text-gray-500">
+                <span class="text-xs font-bold">Joined in {{ createdAt }}</span>
+            </div>
+            <div class="description">
+                {{ user.bio }}
+            </div>
+        </div>
+        <div class="flex space-x-1 items-center p-4 text-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+              </svg>
+            <a class="text-xs" :href="user.followers_url">
+                {{ user.followers }}
+            </a>
+        </div>
+    </div>
+</script>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    usernames: ['brynary', 'danielkellyio', 'hootlex', 'rahaug' ]
+                }
+            }
+        })
+            .component('github-user-card', {
+                template: '#github-user-card',
+                props: {
+                    username: {
+                        type: String,
+                        required: true,
+                        // validator: (value) => {
+                        //     return ['danielkellyio'].includes(value)
+                        // }
+                    }
+                },
+                data() {
+                    return {
+                        user: {}
+                    }
+                },
+                computed: {
+                    createdAt() {
+                        return new Date(this.user.created_at).toLocaleDateString()
+                    }
+                },
+                async created() {
+                    const res = await axios.get(`https://api.github.com/users/${this.username}`)
+                    this.user = res.data
+                },
+            }).mount('#app')
+    </script>
+</body>
+
+</html>
