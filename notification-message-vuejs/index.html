@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <title>Notification Message | Vue.js</title>
+</head>
+
+<body>
+    <div id="app" class="p-4 md:p-10">
+        <h1 class="text-center text-2xl font-bold my-4">Notification Center</h1>
+        <div class="flex flex-wrap gap-4">
+            
+            <notification-message>
+            </notification-message>
+            <notification-message type="succes" header="Oh no!">
+                <p>Your flight has been <b>canceled</b></p>
+            </notification-message>
+            <notification-message type="error" header="Oh no!">
+                <p>Your flight has been <b>canceled</b></p>
+            </notification-message>
+            <notification-message type="warning" >
+            </notification-message>
+            
+        </div>
+    </div>
+
+    <script type="text/x-template" id="notification-message-template">
+        <div v-if="isNotificationMessageOpen" 
+            :class="{
+                'bg-red-50 text-red-800 border-red-200': type === 'error', 
+                'bg-yellow-50 text-yellow-800 border-yellow-200': type === 'warning', 
+                'bg-blue-50 text-blue-800 border-blue-200': type === 'info', 
+                'bg-green-50 text-green-800 border-green-200': type === 'succes'}" 
+
+            class="relative duration-200 hover:-translate-y-1 p-4 border-2 rounded-md">
+            
+            <svg @click="closeNotificationMessage" xmlns="http://www.w3.org/2000/svg" class="hover:opacity-60 cursor-pointer h-6 w-6 absolute right-2 top-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <div class="text-xl font-bold">
+                {{ header }}
+            </div>
+            <slot>
+                <p>Go to your <a href="" class="hover:underline"><b>Special Offers</b></a> page to see now.</p>
+            </slot>
+        </div>
+
+</script>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        Vue.createApp({})
+            .component('notification-message', {
+                template: '#notification-message-template',
+                props: {
+                    type: {
+                        type: String,
+                        required: true,
+                        default: 'info'
+                    },
+                    header: {
+                        default: 'You are eligible for a reward',
+                        type: String,
+                    }
+                },
+                data() {
+                    return {
+                        isNotificationMessageOpen: true,
+                    }
+                },
+                methods: {
+                    closeNotificationMessage() {
+                        this.isNotificationMessageOpen = false
+                    }
+                }
+            },
+            ).mount('#app')
+    </script>
+</body>
+
+</html>
